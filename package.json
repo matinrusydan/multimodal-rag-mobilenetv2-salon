@@ -27,6 +27,6 @@
     "typescript": "^5.7.2"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["@biomejs/biome", "argon2", "esbuild", "onnxruntime-node"]
+    "onlyBuiltDependencies": ["@biomejs/biome", "argon2", "esbuild", "onnxruntime-node", "sharp"]
   }
 }

@@ -126,7 +126,7 @@ features/
 
 ## 7. RBAC Frontend
 
-- **`src/middleware.ts`** (Next middleware) melindungi route: `/admin/*` wajib login + punya permission tertentu.
+- **`src/proxy.ts`** (Next.js 16 `proxy`, pengganti middleware) melindungi route: `/admin/*` wajib login + punya permission tertentu.
 - Route group `(app)/admin` menampilkan halaman management (users, roles, permissions, routes, menus) dengan permission per aksi.
 - **Menu dinamis** berdasarkan permission user (data dari `menus` + `role_menus`).
 - Sidebar admin hanya menampilkan menu yang user berhak akses.
