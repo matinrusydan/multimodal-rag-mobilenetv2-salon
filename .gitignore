@@ -38,3 +38,7 @@ data/test/
 
 # Logs
 *.log
+
+# Agent docs (lokal saja, jangan commit)
+AGENTS.md
+PRD.md
