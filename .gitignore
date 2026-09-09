@@ -1,20 +1,25 @@
 # Environment
 .env
 .env.local
+.env.*.local
+
+# Node.js / build
+node_modules/
+dist/
+build/
+.next/
+out/
+*.tsbuildinfo
+.turbo/
+coverage/
 
 # Python
 __pycache__/
 *.py[cod]
 *.egg-info/
-dist/
-build/
 .venv/
 venv/
 env/
-
-# Node.js
-node_modules/
-frontend/dist/
 
 # IDE
 .vscode/
@@ -24,10 +29,17 @@ frontend/dist/
 .DS_Store
 Thumbs.db
 
+# Logs
+*.log
+*.pid
+
 # ChromaDB (generated)
 chroma_db/
 
 # Model weights (large files, simpan terpisah)
+apps/api/cv/weights/*.pth
+apps/api/cv/weights/*.pt
+apps/api/cv/weights/*.onnx
 backend/cv/weights/*.pth
 backend/cv/weights/*.pt
 
@@ -36,8 +48,8 @@ data/train/
 data/val/
 data/test/
 
-# Logs
-*.log
+# Secrets / lokal-only
+.envrc
 
 # Agent docs (lokal saja, jangan commit)
 AGENTS.md
