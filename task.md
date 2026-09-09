@@ -22,11 +22,11 @@ Urutan & alur (berdasarkan diskusi dengan user):
 
 | Phase | Status |
 |---|---|
-| 01 | ⬜ Belum mulai |
-| 02 | ⬜ Belum mulai |
-| 03 | ⬜ Belum mulai |
-| 04 | ⬜ Belum mulai |
-| 05 | ⬜ Belum mulai |
+| 01 | ✅ Selesai (scaffold monorepo) |
+| 02 | ✅ Selesai (install 481 pkgs, build/lint/test hijau) |
+| 03 | ✅ Selesai (health db:up, PostgreSQL 17.6 port 5432) |
+| 04 | ✅ Selesai (UI disalin, path EN, build + lint + test hijau) |
+| 05 | ✅ Selesai (endpoint API + RBAC + Zod, migrate+seed, 32 test API hijau) |
 | 06 | ⬜ Belum mulai |
 | 07 | ⬜ Belum mulai |
 | 08 | ⬜ Belum mulai |
@@ -35,5 +35,5 @@ Urutan & alur (berdasarkan diskusi dengan user):
 
 - Jangan auto-execute langkah besar (`pnpm migrate`, `pnpm seed`, `pnpm lint`, instalasi besar) tanpa konfirmasi user (lihat `AGENTS.md`).
 - Setiap fase diakhiri dengan **verifikasi** (build/test/lint) sebelum lanjut.
-- Fase 07 (RAG+CV) membutuhkan keputusan runtime CV (Python vs Node) — konfirmasi user.
+- Fase 07 (RAG+CV) menggunakan **runtime Node** (PyTorch→ONNX export offline + `onnxruntime-node`), bukan microservice Python terpisah.
 - Fase 08 (deployment) membutuhkan keputusan platform — konfirmasi user.

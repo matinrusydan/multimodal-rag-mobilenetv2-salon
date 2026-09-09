@@ -5,6 +5,15 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
+    "api#build": {
+      "outputs": []
+    },
+    "api#test": {
+      "outputs": []
+    },
+    "web#test": {
+      "outputs": []
+    },
     "dev": {
       "cache": false,
       "persistent": true

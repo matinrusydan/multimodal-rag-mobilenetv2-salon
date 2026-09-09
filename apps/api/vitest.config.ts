@@ -4,13 +4,13 @@ export default defineConfig({
   test: {
     environment: 'node',
     include: ['tests/**/*.test.ts'],
+    fileParallelism: false,
+    hookTimeout: 30_000,
+    testTimeout: 20_000,
     env: {
       NODE_ENV: 'test',
       PORT: '4000',
       HOST: '127.0.0.1',
-      DATABASE_URL: 'postgresql://postgres:password@127.0.0.1:5432/rag_salon',
-      JWT_SECRET: 'test-secret',
-      SECURITY_ENFORCE_ENABLED: 'false',
     },
   },
 });

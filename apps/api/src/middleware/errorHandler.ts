@@ -3,6 +3,10 @@ import { ZodError } from 'zod';
 import { logger } from '../config/logger';
 import { HttpError, sendProblem } from '../utils/problemDetails';
 
+interface PgError extends Error {
+  code?: string;
+}
+
 export const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
   if (err instanceof ZodError) {
     const detail = err.issues
@@ -19,6 +23,16 @@ export const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
 
   if (err instanceof SyntaxError && 'body' in err) {
     sendProblem(res, { title: 'JSON tidak valid', detail: err.message }, 400);
+    return;
+  }
+
+  const pgErr = err as PgError;
+  if (pgErr.code === '23505') {
+    sendProblem(
+      res,
+      { title: 'Data sudah ada', detail: 'Data dengan nilai unik tersebut sudah digunakan' },
+      409,
+    );
     return;
   }
 
