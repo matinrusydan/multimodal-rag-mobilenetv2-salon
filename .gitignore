@@ -1,0 +1,40 @@
+# Environment
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Node.js
+node_modules/
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ChromaDB (generated)
+chroma_db/
+
+# Model weights (large files, simpan terpisah)
+backend/cv/weights/*.pth
+backend/cv/weights/*.pt
+
+# Dataset (large files, simpan terpisah)
+data/train/
+data/val/
+data/test/
+
+# Logs
+*.log
