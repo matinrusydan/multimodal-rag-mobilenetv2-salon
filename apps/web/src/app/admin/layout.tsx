@@ -10,7 +10,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   const session = await getSession();
   const user = session?.user;
   if (!user) {
-    redirect('/login');
+    redirect('/auth');
   }
 
   const canAdmin =

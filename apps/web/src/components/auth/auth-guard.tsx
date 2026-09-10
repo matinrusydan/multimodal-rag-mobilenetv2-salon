@@ -12,7 +12,7 @@ type AuthGuardProps = {
   redirectTo?: string;
 };
 
-export function AuthGuard({ children, redirectTo = '/login' }: AuthGuardProps) {
+export function AuthGuard({ children, redirectTo = '/auth' }: AuthGuardProps) {
   const router = useRouter();
   const { isLoggedIn, isReady } = useAuth();
 

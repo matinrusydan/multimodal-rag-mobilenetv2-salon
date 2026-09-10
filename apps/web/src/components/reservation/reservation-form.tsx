@@ -137,7 +137,7 @@ export function ReservationForm() {
 
       if (!res.ok || !body?.data) {
         if (res.status === 401) {
-          router.push('/login');
+          router.push('/auth');
           return;
         }
         setSubmitError(body?.detail ?? body?.title ?? 'Gagal membuat reservasi.');

@@ -169,7 +169,7 @@ export function StackedServicesScroll() {
       }
     }
 
-    window.location.href = '/login';
+    window.location.href = '/auth';
   };
 
   // Fade out indicators when scrolling begins

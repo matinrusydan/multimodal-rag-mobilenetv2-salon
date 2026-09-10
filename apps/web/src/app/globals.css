@@ -309,6 +309,29 @@
     font-weight: 800;
   }
 
+  .site-header__auth-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--salon-burgundy);
+    border-radius: 999px;
+    padding: 0.45rem 1rem;
+    color: var(--salon-burgundy);
+    font-size: 0.9rem;
+    font-weight: 800;
+    transition: opacity 180ms ease;
+  }
+
+  .site-header__auth-link:hover {
+    opacity: 0.82;
+  }
+
+  .site-header__auth-link--primary {
+    border-color: transparent;
+    background: var(--auth-button);
+    color: var(--salon-white);
+  }
+
   .site-header__menu-button {
     display: none;
     width: 2.5rem;

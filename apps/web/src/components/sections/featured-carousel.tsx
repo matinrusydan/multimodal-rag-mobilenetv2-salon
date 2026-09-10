@@ -57,7 +57,7 @@ export function FeaturedServicesCarousel() {
       }
     }
 
-    window.location.href = '/login';
+    window.location.href = '/auth';
   };
 
   // Format currency

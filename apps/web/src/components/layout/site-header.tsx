@@ -77,12 +77,15 @@ export function SiteHeader({ className }: SiteHeaderProps) {
             </>
           ) : (
             <>
-              <Button href="/login" variant="outline" size="sm">
+              <a href="/auth" className="site-header__auth-link">
                 Masuk
-              </Button>
-              <Button href="/register" size="sm">
+              </a>
+              <a
+                href="/auth?mode=register"
+                className="site-header__auth-link site-header__auth-link--primary"
+              >
                 Daftar
-              </Button>
+              </a>
             </>
           )}
         </div>
@@ -117,12 +120,16 @@ export function SiteHeader({ className }: SiteHeaderProps) {
               </>
             ) : (
               <>
-                <Button href="/login" variant="outline" onClick={() => setIsOpen(false)}>
+                <a href="/auth" className="site-header__auth-link" onClick={() => setIsOpen(false)}>
                   Masuk
-                </Button>
-                <Button href="/register" onClick={() => setIsOpen(false)}>
+                </a>
+                <a
+                  href="/auth?mode=register"
+                  className="site-header__auth-link site-header__auth-link--primary"
+                  onClick={() => setIsOpen(false)}
+                >
                   Daftar
-                </Button>
+                </a>
               </>
             )}
           </nav>

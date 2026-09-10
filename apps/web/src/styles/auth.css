@@ -6,7 +6,34 @@
     justify-content: center;
     background: radial-gradient(circle at 82% 14%, rgba(169, 29, 99, 0.08), transparent 22rem),
       var(--auth-background);
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .auth-figma-flow {
+    display: grid;
+    width: 100%;
+    max-width: 80rem;
+    justify-items: center;
+    gap: 1.75rem;
+  }
+
+  .auth-figma-back-wrap {
+    justify-self: start;
+    margin-left: 0.5rem;
+  }
+
+  .auth-figma-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--auth-accent);
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: opacity 180ms ease;
+  }
+
+  .auth-figma-back-link:hover {
+    opacity: 0.78;
   }
 
   .auth-figma-grid {
@@ -22,21 +49,6 @@
     width: 100%;
     max-width: 28rem;
     margin-inline: auto;
-  }
-
-  .auth-figma-back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--auth-accent);
-    font-size: 0.875rem;
-    font-weight: 700;
-    transition: opacity 180ms ease;
-  }
-
-  .auth-figma-back-link:hover {
-    opacity: 0.78;
   }
 
   .auth-figma-heading {

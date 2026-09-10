@@ -34,7 +34,7 @@ export function GuardRedirect({
     }
 
     if (!isLoggedIn) {
-      router.replace('/login');
+      router.replace('/auth');
       return;
     }
 

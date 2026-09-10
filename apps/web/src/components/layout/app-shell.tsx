@@ -15,7 +15,7 @@ type AppShellProps = {
 export function AppShell({ children }: AppShellProps) {
   const pathname = usePathname();
   const isSplash = pathname === '/';
-  const isAuth = pathname === '/login' || pathname === '/register';
+  const isAuth = pathname.startsWith('/auth');
 
   if (isSplash || isAuth) {
     return (

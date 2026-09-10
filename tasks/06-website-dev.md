@@ -16,7 +16,7 @@
 ## 2. Auth Frontend (iron-session)
 
 - [x] `src/lib/web-session.ts` — get/set/clear iron-session cookie `tien_session` (httpOnly, berisi JWT + user compact).
-- [x] Halaman login/register terhubung ke `POST /api/auth/login` / `register` (via Route Handler proxy `/api/auth/*`).
+- [x] `/auth` (1 URL merge login+daftar) terhubung ke `POST /api/auth/login` / `register` (toggle `?mode=register`, animasi panel lintas arah).
 - [x] `GET /api/auth/session` memulihkan status login + event `tien-auth-change` (use-auth refactor).
 - [x] Guard: `src/proxy.ts` (cookie presence → redirect `/login`) + `AuthGuard`/`GuardRedirect` + `admin/layout.tsx` (permission).
 

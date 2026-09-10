@@ -59,8 +59,8 @@ export function SiteFooter({ className }: SiteFooterProps) {
           <h3>Informasi</h3>
           <Link href="/about">Tentang</Link>
           <Link href="/contact">Kontak</Link>
-          <Link href="/login">Login</Link>
-          <Link href="/register">Daftar</Link>
+          <Link href="/auth">Masuk</Link>
+          <Link href="/auth?mode=register">Daftar</Link>
         </div>
       </div>
       <div className="site-container site-footer__bottom">

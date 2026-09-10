@@ -32,8 +32,7 @@ src/app/
 │   ├── services/[slug]/page.tsx /services/[slug]
 │   ├── about/page.tsx          /about
 │   ├── contact/page.tsx        /contact
-│   ├── login/page.tsx          /login
-│   └── register/page.tsx       /register
+│   └── auth/page.tsx           /auth         (login + daftar, 1 URL)
 ├── (app)/                      route group “wajib login”
 │   ├── reservation/page.tsx            /reservation
 │   ├── reservation/summary/page.tsx    /reservation/summary
@@ -62,8 +61,7 @@ Folder `app/` asli (`TIEN-SALON-New`) diubah ke Bahasa Inggris:
 | `/payment` | `/payment` | Pembayaran (simulasi) |
 | `/tentang` | `/about` | Tentang |
 | `/kontak` | `/contact` | Kontak |
-| `/login` | `/login` | Login |
-| `/daftar` | `/register` | Daftar |
+| `/auth` | `/auth` | Login + Daftar (merge, toggle via `?mode=register`) |
 | _(baru)_ | `/consult` | Chatbot konsultasi RAG |
 
 Semua `href`, `redirect`, dan `NAV_ITEMS` di `lib/constants.ts` mengikuti mapping ini. Konten teks di layar **tetap Bahasa Indonesia**.
@@ -109,7 +107,7 @@ features/
 ## 5. SSR & Data Fetching
 
 - Halaman memakai **Server Components**; fetch data dari backend di server (menggunakan `BACKEND_URL`, bukan `NEXT_PUBLIC_*`) lalu render SSR.
-- `lib/api.ts` menyediakan helper fetch server-side (membawa cookie/session).
+- `lib/backend.ts` menyediakan helper fetch server-side (`backendRequest` + `ApiError`, membawa Bearer token).
 - Client-side interaksi (upload foto, chat, form) memakai `"use client"` dan memanggil `NEXT_PUBLIC_API_URL`.
 
 ---
@@ -118,7 +116,7 @@ features/
 
 - Session HTTP dikelola **iron-session** (cookie).
 - `lib/session.ts` — helper read/write/clear.
-- Guard halaman: redirect ke `/login` bila belum login.
+- Guard halaman: redirect ke `/auth` bila belum login.
 - Guard alur reservasi: cek sessionStorage (pola `TIEN-SALON-New`).
 - Sync status via `GET /api/auth/session` + event `tien-auth-change`.
 
