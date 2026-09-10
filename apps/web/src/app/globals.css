@@ -1253,6 +1253,73 @@
     color: var(--salon-magenta);
   }
 
+  .service-check-list {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .service-check-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 1px solid rgba(234, 212, 223, 0.9);
+    border-radius: var(--radius-lg);
+    background: var(--salon-white);
+    padding: 0.85rem 1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  .service-check-item--active {
+    border-color: var(--salon-magenta);
+    box-shadow: 0 0 0 3px rgba(194, 24, 91, 0.12);
+  }
+
+  .service-check-item__name {
+    color: var(--salon-ink);
+    font-weight: 800;
+  }
+
+  .service-check-item__meta {
+    color: var(--salon-muted);
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .reservation-preview__list,
+  .summary-card__services ul,
+  .success-card__services {
+    display: grid;
+    gap: 0.55rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .reservation-preview__list li,
+  .summary-card__services li,
+  .success-card__services li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--salon-muted);
+    line-height: 1.7;
+  }
+
+  .reservation-preview__list li span:last-child,
+  .summary-card__services li span:last-child,
+  .success-card__services li span:last-child {
+    color: var(--salon-ink);
+    font-weight: 800;
+  }
+
+  .summary-card__services ul {
+    border-top: 1px dashed rgba(234, 212, 223, 0.9);
+    padding-top: 0.85rem;
+  }
+
   .reservation-form {
     display: grid;
     gap: 1.2rem;
@@ -1497,6 +1564,247 @@
     flex-wrap: wrap;
     gap: 0.85rem;
     margin-top: 1rem;
+  }
+
+  .admin-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .admin-nav__link {
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.45rem 0.9rem;
+    border: 1px solid rgba(234, 212, 223, 0.9);
+    color: var(--salon-muted);
+    font-weight: 800;
+  }
+
+  .admin-panel {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .admin-panel h1 {
+    color: var(--salon-ink);
+    font-size: 1.6rem;
+    font-weight: 900;
+  }
+
+  .admin-panel__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .admin-panel__form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    align-items: end;
+    border: 1px solid rgba(234, 212, 223, 0.9);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.82);
+    padding: 1.25rem;
+  }
+
+  .admin-field {
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .admin-field > span {
+    color: var(--salon-ink);
+    font-weight: 800;
+  }
+
+  .admin-field input,
+  .admin-field select,
+  .admin-field textarea {
+    width: 100%;
+    border: 1px solid rgba(234, 212, 223, 0.9);
+    border-radius: var(--radius-md);
+    background: var(--salon-white);
+    padding: 0.55rem 0.7rem;
+    color: var(--salon-ink);
+  }
+
+  .admin-field__checks {
+    display: grid;
+    gap: 0.35rem;
+    max-height: 12rem;
+    overflow-y: auto;
+  }
+
+  .admin-check {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--salon-muted);
+    font-size: 0.85rem;
+  }
+
+  .admin-panel__actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .admin-table {
+    overflow-x: auto;
+    border: 1px solid rgba(234, 212, 223, 0.9);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.82);
+  }
+
+  .admin-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid rgba(234, 212, 223, 0.7);
+    font-size: 0.9rem;
+    vertical-align: middle;
+  }
+
+  .admin-table th {
+    color: var(--salon-muted);
+    background: var(--salon-pink-50);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .admin-table td {
+    color: var(--salon-ink);
+  }
+
+  .admin-table__actions {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .admin-table__empty {
+    text-align: center;
+    color: var(--salon-muted);
+  }
+
+  .admin-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .admin-dashboard-card {
+    display: grid;
+    gap: 0.4rem;
+    border: 1px solid rgba(234, 212, 223, 0.9);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.82);
+    padding: 1.25rem;
+    color: var(--salon-ink);
+  }
+
+  .admin-dashboard-card h2 {
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+
+  .admin-dashboard-card p {
+    color: var(--salon-muted);
+  }
+
+  .consult-chat {
+    display: grid;
+    gap: 1rem;
+    border: 1px solid rgba(234, 212, 223, 0.9);
+    border-radius: var(--radius-xl);
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: var(--shadow-card);
+    padding: clamp(1.25rem, 4vw, 2rem);
+  }
+
+  .consult-chat__banner {
+    display: flex;
+    justify-content: center;
+  }
+
+  .consult-chat__context {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: var(--radius-lg);
+    background: var(--salon-pink-50);
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: var(--salon-muted);
+  }
+
+  .consult-chat__messages {
+    display: grid;
+    gap: 0.85rem;
+    max-height: 26rem;
+    overflow-y: auto;
+    padding-right: 0.25rem;
+  }
+
+  .consult-chat__bubble {
+    max-width: 82%;
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius-lg);
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  .consult-chat__bubble--assistant {
+    justify-self: start;
+    background: var(--salon-pink-50);
+    color: var(--salon-ink);
+  }
+
+  .consult-chat__bubble--user {
+    justify-self: end;
+    background: var(--salon-magenta);
+    color: var(--salon-white);
+  }
+
+  .consult-chat__sources {
+    display: grid;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+    padding: 0;
+    list-style: none;
+    font-size: 0.75rem;
+    opacity: 0.85;
+  }
+
+  .consult-chat__typing {
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+
+  .consult-chat__composer {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .consult-chat__composer input[type="text"] {
+    flex: 1;
+    border: 1px solid rgba(234, 212, 223, 0.9);
+    border-radius: var(--radius-md);
+    background: var(--salon-white);
+    padding: 0.6rem 0.8rem;
+    color: var(--salon-ink);
   }
 
   @keyframes spin {

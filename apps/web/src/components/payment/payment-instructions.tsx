@@ -6,19 +6,14 @@ const instructions: Record<PaymentMethodId, string[]> = {
     'Scan QRIS dummy di halaman ini.',
     'Klik tombol simulasi berhasil.',
   ],
-  virtual_account: [
-    'Pilih transfer virtual account.',
-    'Masukkan BCA VA 1234567890123.',
-    'Konfirmasi pembayaran demo.',
-  ],
-  ewallet: [
-    'Pilih GoPay, OVO, atau Dana.',
-    'Gunakan nomor dummy 081234567890.',
-    'Selesaikan simulasi pembayaran.',
-  ],
-  bank_transfer: [
+  transfer: [
     'Transfer ke BCA 123-456-7890.',
     'Nama rekening TIEN SALON.',
+    'Klik simulasi berhasil setelah membaca instruksi.',
+  ],
+  cash: [
+    'Siapkan nominal tunai sesuai total.',
+    'Bayar langsung di kasir salon.',
     'Klik simulasi berhasil setelah membaca instruksi.',
   ],
 };

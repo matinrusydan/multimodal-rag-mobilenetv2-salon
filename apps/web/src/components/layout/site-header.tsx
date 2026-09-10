@@ -22,8 +22,14 @@ type SiteHeaderProps = {
 export function SiteHeader({ className }: SiteHeaderProps) {
   const pathname = usePathname();
   const router = useRouter();
-  const { auth, isLoggedIn, logout } = useAuth();
+  const { user, isLoggedIn, logout } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+
+  const isAdmin =
+    user?.type === 0 ||
+    ['users', 'roles', 'permissions', 'routes', 'menus'].some((resource) =>
+      user?.permissions?.includes(`${resource}.read`),
+    );
 
   const handleLogout = () => {
     logout();
@@ -59,7 +65,12 @@ export function SiteHeader({ className }: SiteHeaderProps) {
               <Button href="/reservation" size="sm">
                 Reservasi
               </Button>
-              <span className="site-header__greeting">Halo, {auth?.user.name}</span>
+              {isAdmin ? (
+                <Button href="/admin" variant="outline" size="sm">
+                  Admin
+                </Button>
+              ) : null}
+              <span className="site-header__greeting">Halo, {user?.name}</span>
               <Button variant="outline" size="sm" onClick={handleLogout}>
                 Keluar
               </Button>
@@ -94,7 +105,12 @@ export function SiteHeader({ className }: SiteHeaderProps) {
                 <Button href="/reservation" onClick={() => setIsOpen(false)}>
                   Reservasi
                 </Button>
-                <span className="site-header__greeting">Halo, {auth?.user.name}</span>
+                {isAdmin ? (
+                  <Button href="/admin" onClick={() => setIsOpen(false)}>
+                    Admin
+                  </Button>
+                ) : null}
+                <span className="site-header__greeting">Halo, {user?.name}</span>
                 <Button variant="outline" onClick={handleLogout}>
                   Keluar
                 </Button>

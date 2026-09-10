@@ -8,8 +8,6 @@ import type React from 'react';
 import { useEffect, useState } from 'react';
 
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
-import { SESSION_KEYS } from '@/lib/constants';
-import { writeSession } from '@/lib/session';
 import { notifyAuthChange, useAuth } from '@/lib/use-auth';
 
 export default function RegisterPage() {
@@ -17,6 +15,7 @@ export default function RegisterPage() {
   const { isLoggedIn, isReady } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     email: '',
@@ -39,7 +38,7 @@ export default function RegisterPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
@@ -47,15 +46,31 @@ export default function RegisterPage() {
       return;
     }
 
-    writeSession(SESSION_KEYS.auth, {
-      isLoggedIn: true,
-      user: {
-        name: formData.username || 'Pelanggan Demo',
-        email: formData.email || 'demo@example.com',
-      },
-    });
-    notifyAuthChange();
-    router.push('/home');
+    setError('');
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.username,
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+      if (!res.ok) {
+        const body = (await res.json().catch(() => null)) as { detail?: string; title?: string };
+        setError(body.detail ?? body.title ?? 'Gagal mendaftar. Silakan coba lagi.');
+        return;
+      }
+      notifyAuthChange();
+      router.push('/home');
+    } catch {
+      setError('Terjadi kesalahan jaringan. Silakan coba lagi.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Definisikan transisi untuk KEDUA elemen
@@ -186,8 +201,8 @@ export default function RegisterPage() {
             {error && <p className="text-red-500 text-sm font-semibold mt-1">{error}</p>}
 
             {/* Register Button */}
-            <button type="submit" className="auth-figma-submit">
-              DAFTAR
+            <button type="submit" className="auth-figma-submit" disabled={isSubmitting}>
+              {isSubmitting ? 'MEMPROSES...' : 'DAFTAR'}
             </button>
           </form>
 

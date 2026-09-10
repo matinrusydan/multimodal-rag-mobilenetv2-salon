@@ -2,32 +2,29 @@
 
 import { useRouter } from 'next/navigation';
 import type React from 'react';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Field } from '@/components/ui/field';
-import { PriceDisplay } from '@/components/ui/price-display';
-import { getServiceById, services } from '@/data/services';
+import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { JAM_OPTIONS, SESSION_KEYS } from '@/lib/constants';
 import { formatRupiah, getTomorrowInputValue, isPastTimeForDate } from '@/lib/format';
-import { type TienAuth, type TienReservation, readSession, writeSession } from '@/lib/session';
-import { generateInvoiceNumber } from '@/lib/utils';
+import { type TienReservation, readSession, writeSession } from '@/lib/session';
+import { useAuth } from '@/lib/use-auth';
+import { cn } from '@/lib/utils';
+import type { Service } from '@rag-salon/shared-types';
 
 type FormState = {
-  customerName: string;
-  email: string;
   phone: string;
-  serviceId: string;
+  serviceIds: number[];
   date: string;
   time: string;
   notes: string;
 };
 
 const initialState: FormState = {
-  customerName: '',
-  email: '',
   phone: '',
-  serviceId: '',
+  serviceIds: [],
   date: '',
   time: '',
   notes: '',
@@ -35,36 +32,62 @@ const initialState: FormState = {
 
 export function ReservationForm() {
   const router = useRouter();
+  const { user } = useAuth();
+  const [services, setServices] = useState<Service[]>([]);
+  const [isLoadingCatalog, setIsLoadingCatalog] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
 
   useEffect(() => {
-    const auth = readSession<TienAuth>(SESSION_KEYS.auth);
-    const reservation = readSession<TienReservation>(SESSION_KEYS.reservation);
+    let active = true;
+    async function load() {
+      try {
+        const res = await fetch('/api/services', { cache: 'no-store' });
+        if (active && res.ok) {
+          const body = (await res.json()) as { data: Service[] };
+          setServices(body.data);
+        }
+      } finally {
+        if (active) setIsLoadingCatalog(false);
+      }
+    }
+    load();
 
+    const reservation = readSession<TienReservation>(SESSION_KEYS.reservation);
     if (reservation) {
       setForm({
-        customerName: reservation.customerName,
-        email: reservation.email,
         phone: reservation.phone,
-        serviceId: reservation.serviceId,
+        serviceIds: reservation.items.map((item) => item.serviceId),
         date: reservation.date,
         time: reservation.time,
-        notes: reservation.notes,
+        notes: reservation.notes ?? '',
       });
-      return;
+    } else {
+      setForm((current) => ({
+        ...current,
+        date: getTomorrowInputValue(),
+      }));
     }
 
-    setForm((current) => ({
-      ...current,
-      customerName: auth?.user.name ?? '',
-      email: auth?.user.email ?? '',
-      date: getTomorrowInputValue(),
-    }));
+    return () => {
+      active = false;
+    };
   }, []);
 
-  const selectedService = useMemo(() => getServiceById(form.serviceId), [form.serviceId]);
-  const totalPrice = selectedService?.discountPrice ?? selectedService?.price ?? 0;
+  const selectedServices = services.filter((service) => form.serviceIds.includes(service.id));
+  const totalPrice = selectedServices.reduce((sum, service) => sum + service.price, 0);
+
+  const toggleService = (id: number) => {
+    setForm((current) => ({
+      ...current,
+      serviceIds: current.serviceIds.includes(id)
+        ? current.serviceIds.filter((item) => item !== id)
+        : [...current.serviceIds, id],
+    }));
+    setErrors((current) => ({ ...current, serviceIds: undefined }));
+  };
 
   const updateField = (field: keyof FormState, value: string) => {
     setForm((current) => ({ ...current, [field]: value }));
@@ -74,12 +97,10 @@ export function ReservationForm() {
   const validate = () => {
     const nextErrors: Partial<Record<keyof FormState, string>> = {};
 
-    if (!form.customerName.trim()) nextErrors.customerName = 'Nama lengkap wajib diisi.';
-    if (!form.email.trim()) nextErrors.email = 'Email wajib diisi.';
     if (!form.phone.trim()) nextErrors.phone = 'Nomor telepon wajib diisi.';
     if (form.phone.replace(/\D/g, '').length < 10)
       nextErrors.phone = 'Nomor telepon minimal 10 digit.';
-    if (!form.serviceId) nextErrors.serviceId = 'Pilih layanan terlebih dahulu.';
+    if (form.serviceIds.length === 0) nextErrors.serviceIds = 'Pilih minimal satu layanan.';
     if (!form.date) nextErrors.date = 'Tanggal reservasi wajib diisi.';
     if (!form.time) nextErrors.time = 'Jam reservasi wajib diisi.';
     if (form.notes.length > 500) nextErrors.notes = 'Catatan maksimal 500 karakter.';
@@ -88,51 +109,62 @@ export function ReservationForm() {
     return Object.keys(nextErrors).length === 0;
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setSubmitError('');
 
-    if (!validate() || !selectedService) {
+    if (!validate()) {
       return;
     }
 
-    writeSession(SESSION_KEYS.reservation, {
-      customerName: form.customerName,
-      email: form.email,
-      phone: form.phone,
-      serviceId: selectedService.id,
-      serviceName: selectedService.name,
-      servicePrice: totalPrice,
-      serviceDurationMinutes: selectedService.durationMinutes,
-      date: form.date,
-      time: form.time,
-      notes: form.notes,
-      invoiceNumber: generateInvoiceNumber(),
-    });
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('/api/reservations', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          serviceIds: form.serviceIds,
+          date: form.date,
+          time: form.time,
+          notes: form.notes || undefined,
+        }),
+      });
+      const body = (await res.json().catch(() => null)) as {
+        data?: TienReservation;
+        detail?: string;
+        title?: string;
+      } | null;
 
-    router.push('/reservation/summary');
+      if (!res.ok || !body?.data) {
+        if (res.status === 401) {
+          router.push('/login');
+          return;
+        }
+        setSubmitError(body?.detail ?? body?.title ?? 'Gagal membuat reservasi.');
+        return;
+      }
+
+      const reservation = body.data;
+      writeSession(SESSION_KEYS.reservation, {
+        ...reservation,
+        customerName: user?.name ?? '',
+        email: user?.email ?? '',
+        phone: form.phone,
+      });
+      router.push('/reservation/summary');
+    } catch {
+      setSubmitError('Terjadi kesalahan jaringan. Silakan coba lagi.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+  if (isLoadingCatalog) {
+    return <LoadingSpinner label="Memuat katalog layanan..." />;
+  }
 
   return (
     <form className="form-card reservation-form" onSubmit={handleSubmit}>
-      <div className="form-grid form-grid--2">
-        <Field label="Nama Lengkap" htmlFor="customerName" error={errors.customerName}>
-          <input
-            id="customerName"
-            value={form.customerName}
-            onChange={(event) => updateField('customerName', event.target.value)}
-            required
-          />
-        </Field>
-        <Field label="Email" htmlFor="email" error={errors.email}>
-          <input
-            id="email"
-            type="email"
-            value={form.email}
-            onChange={(event) => updateField('email', event.target.value)}
-            required
-          />
-        </Field>
-      </div>
       <Field label="Nomor Telepon" htmlFor="phone" error={errors.phone}>
         <input
           id="phone"
@@ -142,20 +174,31 @@ export function ReservationForm() {
           required
         />
       </Field>
-      <Field label="Pilihan Layanan" htmlFor="serviceId" error={errors.serviceId}>
-        <select
-          id="serviceId"
-          value={form.serviceId}
-          onChange={(event) => updateField('serviceId', event.target.value)}
-          required
-        >
-          <option value="">Pilih layanan</option>
-          {services.map((service) => (
-            <option key={service.id} value={service.id}>
-              {service.name} - {formatRupiah(service.discountPrice ?? service.price)}
-            </option>
-          ))}
-        </select>
+      <Field
+        label="Pilihan Layanan"
+        htmlFor="serviceIds"
+        hint="Boleh pilih lebih dari satu"
+        error={errors.serviceIds}
+      >
+        <div className="service-check-list">
+          {services.map((service) => {
+            const active = form.serviceIds.includes(service.id);
+            return (
+              <button
+                key={service.id}
+                type="button"
+                className={cn('service-check-item', active && 'service-check-item--active')}
+                onClick={() => toggleService(service.id)}
+                aria-pressed={active}
+              >
+                <span className="service-check-item__name">{service.name}</span>
+                <span className="service-check-item__meta">
+                  {service.durationMin} menit • {formatRupiah(service.price)}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </Field>
       <div className="form-grid form-grid--2">
         <Field label="Tanggal Reservasi" htmlFor="date" error={errors.date}>
@@ -200,21 +243,26 @@ export function ReservationForm() {
       </Field>
       <aside className="reservation-preview">
         <h2>Preview Reservasi</h2>
-        {selectedService ? (
+        {selectedServices.length > 0 ? (
           <>
-            <p>{selectedService.name}</p>
-            <span>{selectedService.durationMinutes} menit</span>
-            <PriceDisplay
-              price={selectedService.price}
-              discountPrice={selectedService.discountPrice}
-            />
+            <ul className="reservation-preview__list">
+              {selectedServices.map((service) => (
+                <li key={service.id}>
+                  <span>{service.name}</span>
+                  <span>{formatRupiah(service.price)}</span>
+                </li>
+              ))}
+            </ul>
+            <span>Total</span>
+            <strong>{formatRupiah(totalPrice)}</strong>
           </>
         ) : (
           <p className="muted-text">Pilih layanan untuk melihat total harga.</p>
         )}
       </aside>
-      <Button type="submit" size="lg">
-        Simpan dan Lihat Ringkasan
+      {submitError ? <p className="text-red-500 text-sm font-semibold">{submitError}</p> : null}
+      <Button type="submit" size="lg" disabled={isSubmitting}>
+        {isSubmitting ? 'Menyimpan...' : 'Simpan dan Lihat Ringkasan'}
       </Button>
     </form>
   );

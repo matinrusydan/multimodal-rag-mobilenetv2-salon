@@ -8,14 +8,14 @@ import type React from 'react';
 import { useEffect, useState } from 'react';
 
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
-import { SESSION_KEYS } from '@/lib/constants';
-import { writeSession } from '@/lib/session';
 import { notifyAuthChange, useAuth } from '@/lib/use-auth';
 
 export default function LoginPage() {
   const router = useRouter();
   const { isLoggedIn, isReady } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     emailOrUsername: '',
     password: '',
@@ -35,20 +35,29 @@ export default function LoginPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError('');
+    setIsSubmitting(true);
 
-    // Save auth session data
-    writeSession(SESSION_KEYS.auth, {
-      isLoggedIn: true,
-      user: {
-        name: 'Pelanggan Demo',
-        email: formData.emailOrUsername || 'demo@example.com',
-      },
-    });
-    notifyAuthChange();
-
-    router.push('/home');
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ email: formData.emailOrUsername, password: formData.password }),
+      });
+      if (!res.ok) {
+        const body = (await res.json().catch(() => null)) as { detail?: string; title?: string };
+        setError(body.detail ?? body.title ?? 'Gagal masuk. Silakan coba lagi.');
+        return;
+      }
+      notifyAuthChange();
+      router.push('/home');
+    } catch {
+      setError('Terjadi kesalahan jaringan. Silakan coba lagi.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Definisikan transisi untuk KEDUA elemen
@@ -125,8 +134,9 @@ export default function LoginPage() {
             </div>
 
             {/* Login Button */}
-            <button type="submit" className="auth-figma-submit">
-              LOGIN
+            {error && <p className="text-red-500 text-sm font-semibold mt-1">{error}</p>}
+            <button type="submit" className="auth-figma-submit" disabled={isSubmitting}>
+              {isSubmitting ? 'MEMPROSES...' : 'LOGIN'}
             </button>
           </form>
 

@@ -6,7 +6,8 @@ import { Section } from '@/components/ui/section';
 
 export const metadata: Metadata = {
   title: 'Reservasi',
-  description: 'Form reservasi statis TIEN SALON dengan validasi client-side dan sessionStorage.',
+  description:
+    'Form reservasi TIEN SALON dengan pilihan multi-layanan dan penyimpanan ke API backend.',
 };
 
 export default function ReservationPage() {
@@ -15,7 +16,7 @@ export default function ReservationPage() {
       <Section
         eyebrow="Reservasi"
         title="Atur jadwal perawatanmu"
-        description="Form ini bersifat statis dan menyimpan data reservasi ke sessionStorage sesuai PRD."
+        description="Data reservasi disimpan ke API backend dengan autentikasi cookie session."
       >
         <ReservationForm />
       </Section>

@@ -27,7 +27,7 @@ Urutan & alur (berdasarkan diskusi dengan user):
 | 03 | ✅ Selesai (health db:up, PostgreSQL 17.6 port 5432) |
 | 04 | ✅ Selesai (UI disalin, path EN, build + lint + test hijau) |
 | 05 | ✅ Selesai (endpoint API + RBAC + Zod, migrate+seed, 32 test API hijau) |
-| 06 | ⬜ Belum mulai |
+| 06 | ✅ Selesai (web terintegrasi API; auth iron-session, reservasi multi-layanan, payment, admin RBAC, /consult) |
 | 07 | ⬜ Belum mulai |
 | 08 | ⬜ Belum mulai |
 

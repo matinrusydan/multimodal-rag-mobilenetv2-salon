@@ -25,7 +25,7 @@ export function ReservationSummary() {
     <section className="summary-card">
       <div className="summary-card__header">
         <p>Nomor Invoice</p>
-        <strong>{reservation.invoiceNumber}</strong>
+        <strong>{reservation.id}</strong>
       </div>
       <div className="summary-card__grid">
         <div>
@@ -35,13 +35,22 @@ export function ReservationSummary() {
           <p>{reservation.phone}</p>
         </div>
         <div>
-          <h2>Detail Layanan</h2>
-          <p>{reservation.serviceName}</p>
-          <p>{reservation.serviceDurationMinutes} menit</p>
+          <h2>Detail Reservasi</h2>
           <p>
             {formatDate(reservation.date)} pukul {reservation.time}
           </p>
         </div>
+      </div>
+      <div className="summary-card__services">
+        <h2>Detail Layanan</h2>
+        <ul>
+          {reservation.items.map((item) => (
+            <li key={item.serviceId}>
+              <span>{item.serviceName}</span>
+              <span>{formatRupiah(item.price)}</span>
+            </li>
+          ))}
+        </ul>
       </div>
       {reservation.notes ? (
         <div className="summary-card__notes">
@@ -51,7 +60,7 @@ export function ReservationSummary() {
       ) : null}
       <div className="summary-card__total">
         <span>Total Pembayaran</span>
-        <strong>{formatRupiah(reservation.servicePrice)}</strong>
+        <strong>{formatRupiah(reservation.total)}</strong>
       </div>
       <div className="summary-card__actions">
         <Button variant="outline" onClick={() => router.push('/reservation')}>

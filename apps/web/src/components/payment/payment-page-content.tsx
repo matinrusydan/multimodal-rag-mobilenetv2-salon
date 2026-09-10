@@ -14,13 +14,21 @@ import { Button } from '@/components/ui/button';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { SESSION_KEYS } from '@/lib/constants';
 import { formatRupiah } from '@/lib/format';
-import { type TienReservation, readSession, writeSession } from '@/lib/session';
+import { type TienPayment, type TienReservation, readSession, writeSession } from '@/lib/session';
+
+type SimulateResult = {
+  paymentId: string;
+  status: 'paid';
+  amount: number;
+  paidAt: string;
+};
 
 export function PaymentPageContent() {
   const router = useRouter();
   const [reservation, setReservation] = useState<TienReservation | null>(null);
   const [method, setMethod] = useState<PaymentMethodId>('qris');
-  const [ewalletMethod, setEwalletMethod] = useState('GoPay');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     setReservation(readSession<TienReservation>(SESSION_KEYS.reservation));
@@ -35,12 +43,41 @@ export function PaymentPageContent() {
     return <LoadingSpinner label="Membaca invoice..." />;
   }
 
-  const handleSuccess = () => {
-    writeSession(SESSION_KEYS.payment, {
-      method,
-      methodLabel: method === 'ewallet' ? `E-Wallet - ${ewalletMethod}` : selectedMethod.label,
-    });
-    router.push('/reservation/success');
+  const handleSuccess = async () => {
+    setError('');
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('/api/payments/simulate', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ reservationId: reservation.id, method }),
+      });
+      const body = (await res.json().catch(() => null)) as {
+        data?: SimulateResult;
+        detail?: string;
+        title?: string;
+      } | null;
+
+      if (!res.ok || !body?.data) {
+        setError(body?.detail ?? body?.title ?? 'Gagal memproses pembayaran.');
+        return;
+      }
+
+      const payment = body.data;
+      writeSession(SESSION_KEYS.payment, {
+        id: payment.paymentId,
+        method,
+        methodLabel: selectedMethod.label,
+        status: payment.status,
+        amount: payment.amount,
+        paidAt: payment.paidAt,
+      });
+      router.push('/reservation/success');
+    } catch {
+      setError('Terjadi kesalahan jaringan. Silakan coba lagi.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -50,36 +87,18 @@ export function PaymentPageContent() {
       </div>
       <div className="payment-page__summary">
         <span>Invoice</span>
-        <strong>{reservation.invoiceNumber}</strong>
+        <strong>{reservation.id}</strong>
         <span>Total Pembayaran</span>
-        <strong>{formatRupiah(reservation.servicePrice)}</strong>
+        <strong>{formatRupiah(reservation.total)}</strong>
       </div>
       <PaymentMethod selected={method} onSelect={setMethod} />
-      {method === 'ewallet' ? (
-        <div className="payment-submethods" aria-label="Pilihan sub-metode e-wallet">
-          {['GoPay', 'OVO', 'Dana'].map((item) => (
-            <button
-              key={item}
-              type="button"
-              className={
-                ewalletMethod === item
-                  ? 'payment-submethods__item payment-submethods__item--active'
-                  : 'payment-submethods__item'
-              }
-              onClick={() => setEwalletMethod(item)}
-            >
-              {item}
-            </button>
-          ))}
-          <p>Nomor dummy: 081234567890</p>
-        </div>
-      ) : null}
       <PaymentInstructions method={method} />
       <div className="payment-page__timer" aria-label="Countdown simulasi 60 detik">
         00:60
       </div>
-      <Button size="lg" onClick={handleSuccess}>
-        Simulasikan Pembayaran Berhasil
+      {error ? <p className="text-red-500 text-sm font-semibold">{error}</p> : null}
+      <Button size="lg" onClick={handleSuccess} disabled={isSubmitting}>
+        {isSubmitting ? 'Memproses...' : 'Simulasikan Pembayaran Berhasil'}
       </Button>
     </section>
   );

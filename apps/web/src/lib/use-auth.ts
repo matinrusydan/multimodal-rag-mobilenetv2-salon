@@ -1,45 +1,66 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
-import { SESSION_KEYS } from '@/lib/constants';
-import { type TienAuth, clearAuthSession, readSession } from '@/lib/session';
+import { useCallback, useEffect, useState } from 'react';
 
 export const AUTH_CHANGE_EVENT = 'tien-auth-change';
+
+export interface AuthUser {
+  id: number;
+  name: string;
+  email: string;
+  type: number;
+  permissions: string[];
+  roles: string[];
+}
 
 export function notifyAuthChange() {
   window.dispatchEvent(new Event(AUTH_CHANGE_EVENT));
 }
 
 export function useAuth() {
-  const [auth, setAuth] = useState<TienAuth | null>(null);
+  const [auth, setAuth] = useState<{ user: AuthUser } | null>(null);
   const [isReady, setIsReady] = useState(false);
 
-  useEffect(() => {
-    const syncAuth = () => {
-      setAuth(readSession<TienAuth>(SESSION_KEYS.auth));
+  const load = useCallback(async () => {
+    try {
+      const res = await fetch('/api/auth/session', { cache: 'no-store' });
+      if (res.ok) {
+        const body = (await res.json()) as { data: { user: AuthUser } };
+        setAuth({ user: body.data.user });
+      } else {
+        setAuth(null);
+      }
+    } catch {
+      setAuth(null);
+    } finally {
       setIsReady(true);
-    };
-
-    syncAuth();
-    window.addEventListener(AUTH_CHANGE_EVENT, syncAuth);
-    window.addEventListener('storage', syncAuth);
-
-    return () => {
-      window.removeEventListener(AUTH_CHANGE_EVENT, syncAuth);
-      window.removeEventListener('storage', syncAuth);
-    };
+    }
   }, []);
 
-  const logout = () => {
-    clearAuthSession();
-    notifyAuthChange();
-  };
+  useEffect(() => {
+    load();
+    window.addEventListener(AUTH_CHANGE_EVENT, load);
+    return () => {
+      window.removeEventListener(AUTH_CHANGE_EVENT, load);
+    };
+  }, [load]);
+
+  const logout = useCallback(async () => {
+    try {
+      await fetch('/api/auth/logout', { method: 'POST' });
+    } finally {
+      setAuth(null);
+      setIsReady(true);
+      notifyAuthChange();
+    }
+  }, []);
 
   return {
     auth,
-    isLoggedIn: Boolean(auth?.isLoggedIn),
+    user: auth?.user ?? null,
+    isLoggedIn: Boolean(auth),
     isReady,
     logout,
+    refresh: load,
   };
 }

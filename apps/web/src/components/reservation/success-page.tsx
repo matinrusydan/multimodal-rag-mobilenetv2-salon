@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { SESSION_KEYS } from '@/lib/constants';
-import { formatDate } from '@/lib/format';
+import { formatDate, formatRupiah } from '@/lib/format';
 import {
   type TienPayment,
   type TienReservation,
@@ -55,13 +55,22 @@ export function SuccessPage() {
       <div className="summary-card success-card__summary">
         <div className="summary-card__header">
           <p>Nomor Invoice</p>
-          <strong>{reservation.invoiceNumber}</strong>
+          <strong>{reservation.id}</strong>
         </div>
-        <p>{reservation.serviceName}</p>
+        <ul className="success-card__services">
+          {reservation.items.map((item) => (
+            <li key={item.serviceId}>
+              <span>{item.serviceName}</span>
+              <span>{formatRupiah(item.price)}</span>
+            </li>
+          ))}
+        </ul>
         <p>
           {formatDate(reservation.date)} pukul {reservation.time}
         </p>
         <p>Metode pembayaran: {payment.methodLabel}</p>
+        <p>Status pembayaran: {payment.status}</p>
+        <p>Total dibayar: {formatRupiah(payment.amount)}</p>
       </div>
       <div className="summary-card__actions">
         <Button href="/home">Kembali ke Beranda</Button>

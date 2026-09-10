@@ -1,33 +1,37 @@
 import { SESSION_KEYS } from '@/lib/constants';
+import type { PaymentMethod } from '@rag-salon/shared-types';
 
-export interface TienAuth {
-  isLoggedIn: boolean;
-  user: {
-    name: string;
-    email: string;
-  };
+export interface TienReservationItem {
+  serviceId: number;
+  serviceName: string;
+  price: number;
 }
 
 export interface TienReservation {
+  id: string;
+  userId: number;
   customerName: string;
   email: string;
   phone: string;
-  serviceId: string;
-  serviceName: string;
-  servicePrice: number;
-  serviceDurationMinutes: number;
+  items: TienReservationItem[];
+  total: number;
+  status: string;
   date: string;
   time: string;
-  notes: string;
-  invoiceNumber: string;
+  notes?: string;
+  createdAt?: string;
 }
 
 export interface TienPayment {
-  method: 'qris' | 'virtual_account' | 'ewallet' | 'bank_transfer';
+  id?: string;
+  method: PaymentMethod;
   methodLabel: string;
+  status: string;
+  amount: number;
+  paidAt?: string;
 }
 
-type SessionValue = TienAuth | TienReservation | TienPayment;
+type SessionValue = TienReservation | TienPayment;
 
 function canUseSessionStorage() {
   return typeof window !== 'undefined' && typeof window.sessionStorage !== 'undefined';
@@ -66,10 +70,6 @@ export function removeSession(key: string) {
   }
 
   window.sessionStorage.removeItem(key);
-}
-
-export function clearAuthSession() {
-  removeSession(SESSION_KEYS.auth);
 }
 
 export function clearReservationFlow() {

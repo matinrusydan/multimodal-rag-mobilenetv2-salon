@@ -4,8 +4,9 @@ import Image from 'next/image';
 
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
+import type { PaymentMethod as PaymentMethodEnum } from '@rag-salon/shared-types';
 
-export type PaymentMethodId = 'qris' | 'virtual_account' | 'ewallet' | 'bank_transfer';
+export type PaymentMethodId = PaymentMethodEnum;
 
 export const paymentMethods = [
   {
@@ -14,19 +15,14 @@ export const paymentMethods = [
     description: 'Scan QR dummy untuk simulasi pembayaran.',
   },
   {
-    id: 'virtual_account',
-    label: 'Virtual Account',
-    description: 'BCA VA: 1234567890123.',
-  },
-  {
-    id: 'ewallet',
-    label: 'E-Wallet',
-    description: 'GoPay, OVO, Dana: 081234567890.',
-  },
-  {
-    id: 'bank_transfer',
+    id: 'transfer',
     label: 'Transfer Bank',
-    description: 'BCA 123-456-7890 a.n. TIEN SALON.',
+    description: 'Transfer ke BCA 123-456-7890 a.n. TIEN SALON.',
+  },
+  {
+    id: 'cash',
+    label: 'Tunai di Tempat',
+    description: 'Bayar langsung di kasir salon.',
   },
 ] satisfies { id: PaymentMethodId; label: string; description: string }[];
 
