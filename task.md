@@ -3,7 +3,7 @@
 Daftar **phase eksekusi** proyek. Setiap phase punya file task sendiri di folder `tasks/`.
 
 Urutan & alur (berdasarkan diskusi dengan user):
-**Scaffold root dulu**, lalu instalasi library → DB → copy UI → endpoint → website selesai → RAG+CV → deployment.
+**Scaffold root dulu**, lalu instalasi library → DB → copy UI → endpoint → website selesai → CV → RAG → deployment.
 
 | Phase | Judul | File Task |
 |---|---|---|
@@ -13,8 +13,9 @@ Urutan & alur (berdasarkan diskusi dengan user):
 | 04 | Copy-Paste UI dari TIEN-SALON-New | [`tasks/04-copy-ui.md`](./tasks/04-copy-ui.md) |
 | 05 | Membuat Endpoint API (Express + RBAC + Zod) | [`tasks/05-endpoints.md`](./tasks/05-endpoints.md) |
 | 06 | Development Website (Frontend selesai) | [`tasks/06-website-dev.md`](./tasks/06-website-dev.md) |
-| 07 | Membangun RAG + CV Pipeline | [`tasks/07-rag-cv.md`](./tasks/07-rag-cv.md) |
-| 08 | Deployment | [`tasks/08-deployment.md`](./tasks/08-deployment.md) |
+| 07 | Membangun CV Pipeline (MobileNetV2 → ONNX) | [`tasks/07-cv.md`](./tasks/07-cv.md) |
+| 08 | Membangun RAG Pipeline (ChromaDB + OpenAI) | [`tasks/08-rag.md`](./tasks/08-rag.md) |
+| 09 | Deployment | [`tasks/09-deployment.md`](./tasks/09-deployment.md) |
 
 ---
 
@@ -30,10 +31,12 @@ Urutan & alur (berdasarkan diskusi dengan user):
 | 06 | ✅ Selesai (web terintegrasi API; auth iron-session, reservasi multi-layanan, payment, admin RBAC, /consult) |
 | 07 | ⬜ Belum mulai |
 | 08 | ⬜ Belum mulai |
+| 09 | ⬜ Belum mulai |
 
 ## Catatan Eksekusi
 
 - Jangan auto-execute langkah besar (`pnpm migrate`, `pnpm seed`, `pnpm lint`, instalasi besar) tanpa konfirmasi user (lihat `AGENTS.md`).
 - Setiap fase diakhiri dengan **verifikasi** (build/test/lint) sebelum lanjut.
-- Fase 07 (RAG+CV) menggunakan **runtime Node** (PyTorch→ONNX export offline + `onnxruntime-node`), bukan microservice Python terpisah.
-- Fase 08 (deployment) membutuhkan keputusan platform — konfirmasi user.
+- Fase 07 (CV) menggunakan **runtime Node** (PyTorch→ONNX export offline + `onnxruntime-node`), bukan microservice Python terpisah.
+- Fase 08 (RAG) = ChromaDB (persisted) + OpenAI embedding/LLM, multimodal dengan `hair_context` dari fase 07.
+- Fase 09 (deployment) membutuhkan keputusan platform — konfirmasi user.

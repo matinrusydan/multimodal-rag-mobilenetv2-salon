@@ -55,4 +55,4 @@
 - [x] Smoke test manual: marketing SSR (data API) → login admin → session → reservasi → payment → admin CRUD + assign → chat RAG; guard redirect 307 → `/login`.
 - [ ] E2E (opsional): `reservation-flow` via Playwright.
 
-> **Catatan**: RAG+CV hanya versi placeholder-ish dari Phase 05 di phase ini. Fungsionalitas CV & RAG penuh (ChromaDB seeding, model) dilakukan di **Phase 07**. Smile test memakai OpenAI key lokal sehingga `/api/chat` sudah menjawab via RAG pipeline nyata.
+> **Catatan**: RAG+CV hanya versi placeholder-ish dari Phase 05 di phase ini. Fungsionalitas CV penuh (model MobileNetV2→ONNX) dilakukan di **Phase 07** & RAG penuh (ChromaDB seeding) di **Phase 08**. Smoke test memakai OpenAI key lokal sehingga `/api/chat` sudah menjawab via RAG pipeline nyata.

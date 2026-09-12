@@ -50,7 +50,7 @@
 
 ## 7. Konsultasi — Analyze & Chat (stub dulu)
 
-> RAG+CV penuh di **Phase 07**. Di phase ini buat **route + service skeleton** (placeholder respons) supaya frontend bisa dipasang.
+> RAG+CV penuh di **Phase 07 (CV)** & **Phase 08 (RAG)**. Di phase ini buat **route + service skeleton** (placeholder respons) supaya frontend bisa dipasang.
 
 - [x] `POST /api/analyze` — terima image (multer), kembalikan placeholder `{ hairLength, hairType, confidence }`.
 - [x] `POST /api/chat` — terima `{ message, hairContext }`, kembalikan placeholder reply.
@@ -76,4 +76,4 @@
 - [x] Uji RBAC: endpoint terproteksi menolak tanpa token / tanpa permission.
 - [x] `pnpm build` dan `pnpm lint` lolos.
 
-> **Catatan**: RAG+CV hanya stub skeleton di phase ini — implementasi penuh di Phase 07. Jangan auto-`pnpm migrate`/`seed` tanpa konfirmasi (AGENTS.md).
+> **Catatan**: RAG+CV hanya stub skeleton di phase ini — implementasi penuh di Phase 07 (CV) & Phase 08 (RAG). Jangan auto-`pnpm migrate`/`seed` tanpa konfirmasi (AGENTS.md).

@@ -1,6 +1,6 @@
-# Task — Phase 08: Deployment
+# Task — Phase 09: Deployment
 
-> Sebelumnya: Phase 07 RAG + CV selesai, seluruh fitur berfungsi lokal.
+> Sebelumnya: Phase 07 (CV) + Phase 08 (RAG) selesai, seluruh fitur berfungsi lokal.
 > Referensi: `docs/02-setup.md`, env vars di `AGENTS.md`.
 
 **Tujuan**: Menjadikan RAG-salon dapat diakses publik — meliputi build produksi, database produksi, layanan CV/RAG/LLM, dan hosting web.
@@ -17,7 +17,7 @@
   - **Database PostgreSQL** (managed / VPS)
   - **ChromaDB** (persisted, satu node)
   - **OpenAI** (cloud, via API key)
-  - **CV service** (bila Phase 07 pakai microservice Python)
+  - **CV service** (`onnxruntime-node` inline di Express, tanpa microservice Python)
 - [ ] Pilih strategi: monorepo build di CI vs pre-build image.
 - [ ] Konfirmasi domain & HTTPS (SSL).
 
