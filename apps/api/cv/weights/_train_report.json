@@ -1,0 +1,24 @@
+{
+  "task": "hair_type",
+  "backbone": "mobilenet_v2 (pretrained ImageNet)",
+  "classes": [
+    "lurus",
+    "bergelombang",
+    "keriting",
+    "sangat-keriting"
+  ],
+  "train_tensor": 1440,
+  "val_tensor": 120,
+  "epochs": 12,
+  "batch": 32,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "history": [],
+  "best_val_acc": NaN,
+  "onnx": "C:\\laragon\\www\\RAG-salon\\apps\\api\\cv\\weights\\hair_type.onnx",
+  "opset": 17,
+  "input": "input 1x3x224x224 float32 NCHW (RGB, ImageNet-normalized)",
+  "output": "logits 1x4 (INDEX sesuai classes)",
+  "duration_s": 11.6,
+  "catatan": "hair_length ONNX belum tersedia (dataset labeled panjang rambut belum ada)"
+}

@@ -1,0 +1,101 @@
+{
+  "dataset": "FIGARO-1k (partisi salon 4 kelas)",
+  "kelas": {
+    "lurus": {
+      "sample_terbaca": 10,
+      "channel": [
+        3
+      ],
+      "bit_depth": [
+        8
+      ],
+      "dtype": [
+        "uint8"
+      ],
+      "contoh_dimensi": [
+        "418x556",
+        "477x635",
+        "515x617",
+        "458x458",
+        "451x676",
+        "424x636",
+        "420x558",
+        "313x500",
+        "418x592",
+        "428x571"
+      ]
+    },
+    "bergelombang": {
+      "sample_terbaca": 10,
+      "channel": [
+        3
+      ],
+      "bit_depth": [
+        8
+      ],
+      "dtype": [
+        "uint8"
+      ],
+      "contoh_dimensi": [
+        "413x620",
+        "445x667",
+        "526x788",
+        "421x632",
+        "454x681",
+        "479x719",
+        "412x618",
+        "441x661",
+        "454x681",
+        "422x633"
+      ]
+    },
+    "keriting": {
+      "sample_terbaca": 10,
+      "channel": [
+        3
+      ],
+      "bit_depth": [
+        8
+      ],
+      "dtype": [
+        "uint8"
+      ],
+      "contoh_dimensi": [
+        "448x448",
+        "453x543",
+        "483x482",
+        "380x456",
+        "441x435",
+        "478x340",
+        "661x661",
+        "1000x746",
+        "472x808",
+        "628x628"
+      ]
+    },
+    "sangat-keriting": {
+      "sample_terbaca": 10,
+      "channel": [
+        3
+      ],
+      "bit_depth": [
+        8
+      ],
+      "dtype": [
+        "uint8"
+      ],
+      "contoh_dimensi": [
+        "368x276",
+        "779x780",
+        "1000x690",
+        "360x639",
+        "340x227",
+        "675x757",
+        "525x592",
+        "723x964",
+        "552x543",
+        "635x637"
+      ]
+    }
+  }
+}

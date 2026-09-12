@@ -1,0 +1,10 @@
+{
+  "classes": [
+    "lurus",
+    "bergelombang",
+    "keriting",
+    "sangat-keriting"
+  ],
+  "model": "mobilenet_v2",
+  "task": "hair_type"
+}

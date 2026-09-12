@@ -7,9 +7,11 @@ import { env } from './config/env';
 import { logger } from './config/logger';
 import { errorHandler } from './middleware/errorHandler';
 import routes from './routes';
+import { initCvService } from './services/CvService';
 
 export function createApp() {
   const app = express();
+  initCvService();
 
   app.use(
     helmet({

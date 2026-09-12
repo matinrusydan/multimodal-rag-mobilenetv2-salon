@@ -40,8 +40,12 @@ chroma_db/
 apps/api/cv/weights/*.pth
 apps/api/cv/weights/*.pt
 apps/api/cv/weights/*.onnx
+apps/api/cv/weights/*.onnx.data
 backend/cv/weights/*.pth
 backend/cv/weights/*.pt
+
+# Preprocessed tensors (artefak turunan; bisa diregenerasi via preprocess.py)
+apps/api/cv/preprocessed/
 
 # Dataset (large files, simpan terpisah)
 data/train/
