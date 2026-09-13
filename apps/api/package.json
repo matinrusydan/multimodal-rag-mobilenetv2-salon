@@ -11,7 +11,8 @@
     "test": "vitest run",
     "lint": "biome check src tests",
     "migrate": "tsx src/db/migrate.ts latest",
-    "seed": "tsx src/db/seed.ts"
+    "seed": "tsx src/db/seed.ts",
+    "rag:ingest": "tsx src/rag/ingest.ts"
   },
   "dependencies": {
     "@rag-salon/shared-types": "workspace:*",
