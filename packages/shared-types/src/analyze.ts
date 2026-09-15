@@ -1,9 +1,10 @@
 import { z } from 'zod';
-import { ClassificationResultSchema, HairContextSchema } from './common';
+import { ClassificationResultSchema, HairContextSchema, HairFeaturesSchema } from './common';
 
 export const AnalyzeResponseSchema = z.object({
   hairLength: ClassificationResultSchema,
   hairType: ClassificationResultSchema,
+  hairFeatures: HairFeaturesSchema.optional(),
   analyzedAt: z.string(),
   status: z.enum(['ok', 'low_confidence']).default('ok'),
 });

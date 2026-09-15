@@ -1,9 +1,10 @@
 import { z } from 'zod';
-import { HairContextSchema } from './common';
+import { HairContextSchema, HairFeaturesSchema } from './common';
 
 export const ChatRequestSchema = z.object({
   message: z.string().trim().min(1, 'Pesan tidak boleh kosong').max(2000),
   hairContext: HairContextSchema.optional(),
+  hairFeatures: HairFeaturesSchema.optional(),
   contextId: z.string().optional(),
 });
 export type ChatRequest = z.infer<typeof ChatRequestSchema>;

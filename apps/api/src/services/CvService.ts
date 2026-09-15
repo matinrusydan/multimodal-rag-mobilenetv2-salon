@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 import type {
   AnalyzeResponse,
   ClassificationResult,
+  HairFeatures,
   HairLengthLabel,
   HairTypeLabel,
 } from '@rag-salon/shared-types';
@@ -10,6 +11,7 @@ import * as ort from 'onnxruntime-node';
 import sharp from 'sharp';
 import { env } from '../config/env';
 import { logger } from '../config/logger';
+import { computeHairFeatures } from './hairFeatures';
 
 /** Preprocessing inference: IDENTIK dengan training val (task 07-cv.md §3). */
 const RESIZE_SIDE = 256;
@@ -63,9 +65,12 @@ export class CvService {
   async analyze(buffer: Buffer): Promise<AnalyzeResponse> {
     const t0 = Date.now();
     let hairType: ClassificationResult;
+    let hairFeatures: HairFeatures | undefined;
 
     if (this.typeSession) {
-      hairType = await this.#runType(buffer);
+      const { tensor, rgb } = await this.#preprocess(buffer);
+      hairType = await this.#runType(tensor);
+      hairFeatures = computeHairFeatures(rgb, CROP, CROP);
     } else {
       hairType = { label: 'bergelombang' as HairTypeLabel, confidence: 0.5 };
     }
@@ -76,38 +81,26 @@ export class CvService {
       confidence: 0.5,
     };
 
-    const lowLength = hairLength.confidence < this.threshold;
+    // fallback hair_length (conf 0.5) harus rendah walau conf == threshold (prod 0.5)
+    const lowLength = hairLength.confidence <= this.threshold;
     const lowType = hairType.confidence < this.threshold;
     const status: AnalyzeResponse['status'] = lowLength || lowType ? 'low_confidence' : 'ok';
 
-    logger.debug({ hairType, hairLength, elapsedMs: Date.now() - t0 }, 'CvService.analyze selesai');
+    logger.debug(
+      { hairType, hairLength, hairFeatures, elapsedMs: Date.now() - t0 },
+      'CvService.analyze selesai',
+    );
     return {
       hairLength,
       hairType,
+      hairFeatures,
       analyzedAt: new Date().toISOString(),
       status,
     };
   }
 
-  /** Preprocess + inference tunggal. Pipeline identik training val (RGB, resize 256 keep-aspect, center-crop 224, ImageNet norm). */
-  async #runType(buffer: Buffer): Promise<ClassificationResult> {
-    const tensor = await this.#preprocess(buffer);
-    const feeds: Record<string, ort.Tensor> = { input: tensor };
-    const result = (await this.typeSession?.run(feeds)) as { logits: ort.Tensor };
-    const output = (result?.logits?.data as Float32Array | undefined) ?? new Float32Array(0);
-    if (output.length === 0) {
-      throw new Error('Output ONNX hair_type kosong');
-    }
-    const probs = this.#softmax(output);
-    const idx = probs.indexOf(Math.max(...probs));
-    return {
-      label: HAIR_TYPE_LABELS[idx] as HairTypeLabel,
-      confidence: Number(probs[idx].toFixed(4)),
-    };
-  }
-
-  /** RGB 8-bit sRGB -> resize keep-aspect 256 -> center-crop 224 -> NCHW float32 normalisasi ImageNet. */
-  async #preprocess(buffer: Buffer): Promise<ort.Tensor> {
+  /** Preprocess tunggal: cropping RGB (untuk hair features) + tensor NCHW (inference). */
+  async #preprocess(buffer: Buffer): Promise<{ tensor: ort.Tensor; rgb: Uint8Array }> {
     const img = sharp(buffer).rotate().toColourspace('srgb').removeAlpha();
     const meta = await img.metadata();
     const w = meta.width ?? 0;
@@ -128,6 +121,8 @@ export class CvService {
       .toBuffer({ resolveWithObject: true });
 
     const { data } = resized;
+    const rgb = new Uint8Array(data.buffer, data.byteOffset, CROP * CROP * 3);
+
     const count = CROP * CROP;
     // NCHW: channels R, G, B masing-masing contiguous 224x224
     const out = new Float32Array(3 * count);
@@ -138,7 +133,23 @@ export class CvService {
         out[c * count + i] = (val - IMAGENET_MEAN[c]) / IMAGENET_STD[c];
       }
     }
-    return new ort.Tensor('float32', out, [1, 3, CROP, CROP]);
+    return { tensor: new ort.Tensor('float32', out, [1, 3, CROP, CROP]), rgb };
+  }
+
+  /** Inference tunggal dari tensor NCHW (hasil #preprocess). */
+  async #runType(tensor: ort.Tensor): Promise<ClassificationResult> {
+    const feeds: Record<string, ort.Tensor> = { input: tensor };
+    const result = (await this.typeSession?.run(feeds)) as { logits: ort.Tensor };
+    const output = (result?.logits?.data as Float32Array | undefined) ?? new Float32Array(0);
+    if (output.length === 0) {
+      throw new Error('Output ONNX hair_type kosong');
+    }
+    const probs = this.#softmax(output);
+    const idx = probs.indexOf(Math.max(...probs));
+    return {
+      label: HAIR_TYPE_LABELS[idx] as HairTypeLabel,
+      confidence: Number(probs[idx].toFixed(4)),
+    };
   }
 
   #softmax(logits: Float32Array): number[] {

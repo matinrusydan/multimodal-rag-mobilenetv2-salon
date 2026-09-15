@@ -23,6 +23,20 @@ export const ClassificationResultSchema = z.object({
 });
 export type ClassificationResult = z.infer<typeof ClassificationResultSchema>;
 
+/** Fitur rambut dari CV (HSV+GLCM) — port identik extract_features.py. */
+export const HairFeaturesSchema = z.object({
+  color: z.string().optional(),
+  texture: z.string().optional(),
+  health: z.string().optional(),
+  riskSigns: z
+    .object({
+      bleach: z.boolean().optional(),
+      dry: z.boolean().optional(),
+    })
+    .optional(),
+});
+export type HairFeatures = z.infer<typeof HairFeaturesSchema>;
+
 /** Format respons sukses standar: { ok: true, data } */
 export const ApiSuccessSchema = <T extends z.ZodType>(data: T) =>
   z.object({ ok: z.literal(true), data });

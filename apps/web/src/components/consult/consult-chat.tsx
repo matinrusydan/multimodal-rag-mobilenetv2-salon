@@ -6,7 +6,12 @@ import { useRef, useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import type { AnalyzeResponse, ChatResponse, HairContext } from '@rag-salon/shared-types';
+import type {
+  AnalyzeResponse,
+  ChatResponse,
+  HairContext,
+  HairFeatures,
+} from '@rag-salon/shared-types';
 
 type Message = {
   id: number;
@@ -31,6 +36,7 @@ export function ConsultChat() {
   const [input, setInput] = useState('');
   const [contextId, setContextId] = useState<string>();
   const [hairContext, setHairContext] = useState<HairContext>();
+  const [hairFeatures, setHairFeatures] = useState<HairFeatures>();
   const [isSending, setIsSending] = useState(false);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [error, setError] = useState('');
@@ -50,7 +56,7 @@ export function ConsultChat() {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ message, hairContext, contextId }),
+        body: JSON.stringify({ message, hairContext, hairFeatures, contextId }),
       });
       const body = (await res.json().catch(() => null)) as {
         data?: ChatResponse;
@@ -110,12 +116,25 @@ export function ConsultChat() {
         hairType: result.hairType.label as HairContext['hairType'],
       };
       setHairContext(context);
+      setHairFeatures(result.hairFeatures);
+      const parts = [
+        `Analisis foto selesai: panjang rambut ${context.hairLength}, jenis rambut ${context.hairType}.`,
+      ];
+      if (
+        result.hairFeatures?.color ||
+        result.hairFeatures?.texture ||
+        result.hairFeatures?.health
+      ) {
+        parts.push(
+          `Kondisi terdeteksi: warna ${result.hairFeatures.color}, tekstur ${result.hairFeatures.texture}, kesehatan ${result.hairFeatures.health}.`,
+        );
+      }
       setMessages((current) => [
         ...current,
         {
           id: nextMessageId(),
           role: 'assistant',
-          content: `Analisis foto selesai: panjang rambut ${context.hairLength}, jenis rambut ${context.hairType}. Rekomendasi berikutnya akan mempertimbangkan kondisi ini.`,
+          content: parts.join(' '),
         },
       ]);
     } catch {
@@ -136,10 +155,18 @@ export function ConsultChat() {
           <span>Konteks analisis aktif:</span>
           <Badge>{hairContext.hairLength}</Badge>
           <Badge>{hairContext.hairType}</Badge>
+          {hairFeatures?.color ? <Badge tone="amber">{hairFeatures.color}</Badge> : null}
+          {hairFeatures?.texture ? <Badge tone="amber">{hairFeatures.texture}</Badge> : null}
+          {hairFeatures?.health === 'kering' ? (
+            <Badge tone="rose">{hairFeatures.health}</Badge>
+          ) : null}
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => setHairContext(undefined)}
+            onClick={() => {
+              setHairContext(undefined);
+              setHairFeatures(undefined);
+            }}
             className="consult-chat__clear"
           >
             Hapus

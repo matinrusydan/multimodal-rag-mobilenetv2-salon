@@ -1,0 +1,8 @@
+# Python analysis for CV hair features (Phase 07/08 refinement)
+# Run inside apps/api/cv venv: pip install -r requirements.txt
+numpy>=2.0
+Pillow>=10.0
+opencv-python-headless>=4.9
+scikit-image>=0.24
+scipy>=1.13
+matplotlib>=3.9

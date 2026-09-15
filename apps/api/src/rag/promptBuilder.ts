@@ -1,15 +1,8 @@
-import type { HairContext } from '@rag-salon/shared-types';
+import type { HairContext, HairFeatures } from '@rag-salon/shared-types';
 import type { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 import type { RetrievedDoc } from './retriever';
 
-export interface HairFeatures {
-  /** Indikator kasar kondisi rambut dari CV/ekstraksi fitur (opsional). */
-  color?: string;
-  texture?: string;
-  health?: string;
-  /** true bila analisis memberi sinyal bleaching/kering. */
-  riskSigns?: { bleach?: boolean; dry?: boolean };
-}
+export type { HairFeatures };
 
 export interface PromptInput {
   query: string;

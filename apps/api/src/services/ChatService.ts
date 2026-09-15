@@ -3,7 +3,7 @@ import { ragService } from './RagService';
 
 export class ChatService {
   async chat(input: ChatRequest): Promise<ChatResponse> {
-    const result = await ragService.answer(input.message, input.hairContext);
+    const result = await ragService.answer(input.message, input.hairContext, input.hairFeatures);
     return {
       reply: result.reply,
       sources: result.sources,
