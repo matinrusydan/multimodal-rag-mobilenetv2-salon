@@ -18,6 +18,19 @@
       "cache": false,
       "persistent": true
     },
+    "ai#dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "crawl:site": {
+      "cache": false
+    },
+    "crawl:tips": {
+      "cache": false
+    },
+    "rag:ingest": {
+      "cache": false
+    },
     "test": {
       "dependsOn": ["build"],
       "outputs": ["coverage/**"]

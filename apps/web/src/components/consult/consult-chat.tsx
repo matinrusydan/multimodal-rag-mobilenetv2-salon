@@ -5,6 +5,7 @@ import { useRef, useState } from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { MarkdownLite } from '@/components/consult/markdown-lite';
 import { cn } from '@/lib/utils';
 import type {
   AnalyzeResponse,
@@ -17,7 +18,7 @@ type Message = {
   id: number;
   role: 'user' | 'assistant';
   content: string;
-  sources?: Array<{ file: string; snippet?: string }>;
+  sources?: Array<{ file: string; snippet?: string; url?: string }>;
 };
 
 const WELCOME: Message = {
@@ -120,13 +121,19 @@ export function ConsultChat() {
       const parts = [
         `Analisis foto selesai: panjang rambut ${context.hairLength}, jenis rambut ${context.hairType}.`,
       ];
-      if (
-        result.hairFeatures?.color ||
-        result.hairFeatures?.texture ||
-        result.hairFeatures?.health
-      ) {
+      if (result.hairFeatures?.color || result.hairFeatures?.texture) {
+        const bits: string[] = [];
+        if (result.hairFeatures.color) bits.push(`warna ${result.hairFeatures.color}`);
+        if (result.hairFeatures.texture) bits.push(`tekstur ${result.hairFeatures.texture}`);
+        parts.push(`Perkiraan visual (bukan diagnosis): ${bits.join(', ')}.`);
+      }
+      const risk = result.hairFeatures?.riskSigns;
+      if (risk?.bleach || risk?.dry) {
+        const flags: string[] = [];
+        if (risk.bleach) flags.push('indikasi pernah diwarnai/dibleach');
+        if (risk.dry) flags.push('indikasi cenderung kering');
         parts.push(
-          `Kondisi terdeteksi: warna ${result.hairFeatures.color}, tekstur ${result.hairFeatures.texture}, kesehatan ${result.hairFeatures.health}.`,
+          `Catatan: terdeteksi ${flags.join(' & ')} — perlu verifikasi stylist saat konsultasi.`,
         );
       }
       setMessages((current) => [
@@ -157,8 +164,9 @@ export function ConsultChat() {
           <Badge>{hairContext.hairType}</Badge>
           {hairFeatures?.color ? <Badge tone="amber">{hairFeatures.color}</Badge> : null}
           {hairFeatures?.texture ? <Badge tone="amber">{hairFeatures.texture}</Badge> : null}
-          {hairFeatures?.health === 'kering' ? (
-            <Badge tone="rose">{hairFeatures.health}</Badge>
+          {hairFeatures?.riskSigns?.dry ? <Badge tone="rose">indikasi kering</Badge> : null}
+          {hairFeatures?.riskSigns?.bleach ? (
+            <Badge tone="rose">indikasi bleach</Badge>
           ) : null}
           <Button
             variant="ghost"
@@ -184,16 +192,45 @@ export function ConsultChat() {
                 : 'consult-chat__bubble--assistant',
             )}
           >
-            <p>{message.content}</p>
+            <MarkdownLite content={message.content} />
             {message.sources && message.sources.length > 0 ? (
-              <ul className="consult-chat__sources">
-                {message.sources.map((source) => (
-                  <li key={source.file}>
-                    Sumber: {source.file}
-                    {source.snippet ? ` — ${source.snippet}` : ''}
-                  </li>
-                ))}
-              </ul>
+              <div className="consult-chat__sources-block">
+                <span className="consult-chat__sources-label">Sumber</span>
+                <ul className="consult-chat__sources">
+                  {message.sources.map((source, idx) => {
+                    const isWeb = source.file.startsWith('web:');
+                    const href =
+                      source.url ||
+                      (isWeb
+                        ? `https://www.alodokter.com/${source.file.replace(/^web:/, '')}`
+                        : undefined);
+                    const label = isWeb ? 'Alodokter' : source.file.replace(/\.md$/, '');
+                    return (
+                      <li key={`${source.file}-${idx}`}>
+                        {isWeb && href ? (
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="consult-chat__source-link"
+                          >
+                            <img
+                              src="https://www.google.com/s2/favicons?domain=alodokter.com&sz=32"
+                              alt=""
+                              width={14}
+                              height={14}
+                              className="consult-chat__favicon"
+                            />
+                            {label}
+                          </a>
+                        ) : (
+                          <span className="consult-chat__source-kb">{label}</span>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
             ) : null}
           </div>
         ))}

@@ -1800,14 +1800,101 @@
     color: var(--salon-white);
   }
 
+  .consult-chat__sources-block {
+    margin-top: 0.6rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(234, 212, 223, 0.25);
+  }
+
+  .consult-chat__sources-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 0.3rem;
+  }
+
   .consult-chat__sources {
-    display: grid;
-    gap: 0.25rem;
-    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.6rem;
+    margin: 0;
     padding: 0;
     list-style: none;
     font-size: 0.75rem;
-    opacity: 0.85;
+  }
+
+  .consult-chat__sources li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .consult-chat__source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--salon-gold, #c9a96e);
+    text-decoration: none;
+    border-bottom: 1px dotted currentColor;
+    padding-bottom: 1px;
+  }
+
+  .consult-chat__source-link:hover {
+    color: var(--salon-gold-dark, #b8965a);
+  }
+
+  .consult-chat__favicon {
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .consult-chat__source-kb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(201, 169, 110, 0.18);
+    color: var(--salon-gold, #c9a96e);
+    border: 1px solid rgba(201, 169, 110, 0.35);
+  }
+
+  .consult-chat__content {
+    word-break: break-word;
+    line-height: 1.6;
+  }
+
+  .consult-chat__content p.consult-chat__md-p {
+    margin: 0 0 0.5rem;
+  }
+
+  .consult-chat__content p.consult-chat__md-p:last-child {
+    margin-bottom: 0;
+  }
+
+  .consult-chat__md-list {
+    margin: 0 0 0.5rem;
+    padding-left: 1.1rem;
+    list-style: disc;
+  }
+
+  .consult-chat__md-list:last-child {
+    margin-bottom: 0;
+  }
+
+  .consult-chat__md-list li {
+    margin-bottom: 0.2rem;
+  }
+
+  .consult-chat__content code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.85em;
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.15);
   }
 
   .consult-chat__typing {

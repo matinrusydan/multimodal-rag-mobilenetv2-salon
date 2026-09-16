@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import { cvService } from '../services/CvService';
+import { aiAnalyze } from '../services/aiClient';
 import { HttpError, sendProblem } from '../utils/problemDetails';
 import { ok } from '../utils/response';
 
@@ -18,6 +18,6 @@ export async function analyze(req: Request, res: Response): Promise<void> {
     throw new HttpError(400, 'Format gambar harus JPG, PNG, atau WebP');
   }
 
-  const result = await cvService.analyze(req.file.buffer);
+  const result = await aiAnalyze(req.file.buffer, req.file.mimetype);
   ok(res, result);
 }

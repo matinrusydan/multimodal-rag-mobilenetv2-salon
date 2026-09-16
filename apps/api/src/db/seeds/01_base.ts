@@ -146,21 +146,25 @@ const SERVICES = [
 
 export async function seed(knex: Knex): Promise<void> {
   await knex.transaction(async (trx) => {
-    // permissions
-    const permissionRows = await trx('permissions')
+    // permissions (idempotent: skip existing name)
+    await trx('permissions')
       .insert(PERMISSIONS.map(([name, resource]) => ({ name, resource })))
-      .returning(['id', 'name']);
+      .onConflict('name')
+      .ignore();
+    const permissionRows = await trx('permissions').select(['id', 'name']).whereIn('name', PERMISSIONS.map(([name]) => name));
     const permissionIdByName = new Map(permissionRows.map((p) => [p.name, p.id]));
 
-    // roles
-    const roleRows = await trx('roles')
+    // roles (idempotent: skip existing code)
+    await trx('roles')
       .insert([
         { name: 'Super Admin', code: 'SUPER_ADMIN', type: 0, description: 'Akses penuh sistem' },
         { name: 'Admin', code: 'ADMIN', type: 1, description: 'Pengelola layanan & RBAC' },
         { name: 'Staff', code: 'STAFF', type: 1, description: 'Staff salon' },
         { name: 'Customer', code: 'CUSTOMER', type: 1, description: 'Pelanggan' },
       ])
-      .returning(['id', 'code']);
+      .onConflict('code')
+      .ignore();
+    const roleRows = await trx('roles').select(['id', 'code']).whereIn('code', ['SUPER_ADMIN', 'ADMIN', 'STAFF', 'CUSTOMER']);
     const roleIdByCode = new Map(roleRows.map((r) => [r.code, r.id]));
 
     // role_permissions (SUPER_ADMIN: semua via wildcard, cukup isi role_permissions dengan semua)
@@ -177,26 +181,43 @@ export async function seed(knex: Knex): Promise<void> {
     for (const pid of permissionIdByName.values()) {
       if (superAdminId) rolePermissions.push({ role_id: superAdminId, permission_id: pid });
     }
-    await trx('role_permissions').insert(rolePermissions);
+    if (rolePermissions.length > 0) {
+      await trx('role_permissions').insert(rolePermissions).onConflict(['role_id', 'permission_id']).ignore();
+    }
 
     // routes + role_routes
-    const routeRows = await trx('routes').insert(ADMIN_ROUTES).returning(['id']);
-    const adminRoleId = roleIdByCode.get('ADMIN');
-    const routeRoleRows = routeRows.map((r) => ({ role_id: adminRoleId, route_id: r.id }));
-    if (superAdminId) {
-      for (const route of routeRows) {
-        routeRoleRows.push({ role_id: superAdminId, route_id: route.id });
-      }
+    const existingRoutePaths = await trx('routes').select(['id', 'path']).whereIn('path', ADMIN_ROUTES.map((r) => r.path));
+    const routeIdByPath = new Map(existingRoutePaths.map((r) => [r.path, r.id]));
+    const newRoutePaths = ADMIN_ROUTES.filter((r) => !routeIdByPath.has(r.path));
+    if (newRoutePaths.length > 0) {
+      const inserted = await trx('routes').insert(newRoutePaths).returning(['id', 'path']);
+      for (const r of inserted) routeIdByPath.set(r.path, r.id);
     }
-    await trx('role_routes').insert(routeRoleRows);
+    const adminRoleId = roleIdByCode.get('ADMIN');
+    const routeRoleRows: Array<{ role_id: number; route_id: number }> = [];
+    for (const route of ADMIN_ROUTES) {
+      const routeId = routeIdByPath.get(route.path);
+      if (!routeId) continue;
+      if (adminRoleId) routeRoleRows.push({ role_id: adminRoleId, route_id: routeId });
+      if (superAdminId) routeRoleRows.push({ role_id: superAdminId, route_id: routeId });
+    }
+    if (routeRoleRows.length > 0) {
+      await trx('role_routes').insert(routeRoleRows).onConflict(['role_id', 'route_id']).ignore();
+    }
 
     // menus + role_menus
-    const menuRows = await trx('menus').insert(MENUS).returning(['id']);
+    const existingMenuPaths = await trx('menus').select(['id', 'path']).whereIn('path', MENUS.map((m) => m.path));
+    const menuIdByPath = new Map(existingMenuPaths.map((m) => [m.path, m.id]));
+    const newMenus = MENUS.filter((m) => !menuIdByPath.has(m.path));
+    if (newMenus.length > 0) {
+      const inserted = await trx('menus').insert(newMenus).returning(['id', 'path']);
+      for (const m of inserted) menuIdByPath.set(m.path, m.id);
+    }
     const menuRoleRows: Array<{ role_id: number; menu_id: number }> = [];
     const customerRoleId = roleIdByCode.get('CUSTOMER');
     const staffRoleId = roleIdByCode.get('STAFF');
-    MENUS.forEach((menu, idx) => {
-      const menuId = menuRows[idx]?.id;
+    MENUS.forEach((menu) => {
+      const menuId = menuIdByPath.get(menu.path);
       if (!menuId) return;
       if (menu.path.startsWith('/admin')) {
         if (adminRoleId) menuRoleRows.push({ role_id: adminRoleId, menu_id: menuId });
@@ -208,7 +229,9 @@ export async function seed(knex: Knex): Promise<void> {
         if (superAdminId) menuRoleRows.push({ role_id: superAdminId, menu_id: menuId });
       }
     });
-    await trx('role_menus').insert(menuRoleRows);
+    if (menuRoleRows.length > 0) {
+      await trx('role_menus').insert(menuRoleRows).onConflict(['role_id', 'menu_id']).ignore();
+    }
 
     // users
     const passwordHash = await argon2.hash(DEMO_PASSWORD, { type: argon2.argon2id });
@@ -228,18 +251,24 @@ export async function seed(knex: Knex): Promise<void> {
           type: 1,
         },
       ])
+      .onConflict('email')
+      .ignore()
       .returning(['id', 'email']);
-    const userIdByEmail = new Map(userRows.map((u) => [u.email, u.id]));
-    await trx('user_roles').insert([
+    const seededUsers = await trx('users').select(['id', 'email']).whereIn('email', ['admin@rag-salon.id', 'staff@rag-salon.id', 'customer@rag-salon.id']);
+    const userIdByEmail = new Map(seededUsers.map((u) => [u.email, u.id]));
+    const userRoleRows = [
       { user_id: userIdByEmail.get('admin@rag-salon.id'), role_id: superAdminId },
       { user_id: userIdByEmail.get('staff@rag-salon.id'), role_id: roleIdByCode.get('STAFF') },
       {
         user_id: userIdByEmail.get('customer@rag-salon.id'),
         role_id: roleIdByCode.get('CUSTOMER'),
       },
-    ]);
+    ].filter((r) => r.user_id != null && r.role_id != null);
+    if (userRoleRows.length > 0) {
+      await trx('user_roles').insert(userRoleRows).onConflict(['user_id', 'role_id']).ignore();
+    }
 
     // services
-    await trx('services').insert(SERVICES);
+    await trx('services').insert(SERVICES).onConflict('slug').ignore();
   });
 }

@@ -3,15 +3,9 @@
   "kelas": {
     "lurus": {
       "sample_terbaca": 10,
-      "channel": [
-        3
-      ],
-      "bit_depth": [
-        8
-      ],
-      "dtype": [
-        "uint8"
-      ],
+      "channel": [3],
+      "bit_depth": [8],
+      "dtype": ["uint8"],
       "contoh_dimensi": [
         "418x556",
         "477x635",
@@ -27,15 +21,9 @@
     },
     "bergelombang": {
       "sample_terbaca": 10,
-      "channel": [
-        3
-      ],
-      "bit_depth": [
-        8
-      ],
-      "dtype": [
-        "uint8"
-      ],
+      "channel": [3],
+      "bit_depth": [8],
+      "dtype": ["uint8"],
       "contoh_dimensi": [
         "413x620",
         "445x667",
@@ -51,15 +39,9 @@
     },
     "keriting": {
       "sample_terbaca": 10,
-      "channel": [
-        3
-      ],
-      "bit_depth": [
-        8
-      ],
-      "dtype": [
-        "uint8"
-      ],
+      "channel": [3],
+      "bit_depth": [8],
+      "dtype": ["uint8"],
       "contoh_dimensi": [
         "448x448",
         "453x543",
@@ -75,15 +57,9 @@
     },
     "sangat-keriting": {
       "sample_terbaca": 10,
-      "channel": [
-        3
-      ],
-      "bit_depth": [
-        8
-      ],
-      "dtype": [
-        "uint8"
-      ],
+      "channel": [3],
+      "bit_depth": [8],
+      "dtype": ["uint8"],
       "contoh_dimensi": [
         "368x276",
         "779x780",

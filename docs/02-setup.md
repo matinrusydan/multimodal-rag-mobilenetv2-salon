@@ -70,9 +70,12 @@ AI_HOST=127.0.0.1
 GEMINI_API_KEY=...
 
 # Embedding & LLM provider
-AI_EMBEDDING_PROVIDER=gemini      # "gemini" (text-embedding-004, 768d)
-AI_LLM_PROVIDER=gemini            # "gemini" (gemini-2.0-flash)
+AI_EMBEDDING_PROVIDER=gemini      # "gemini" (gemini-embedding-001, 768d)
 
+AI_LLM_PROVIDER=gemini            # "gemini" (gemini-3.6-flash)
+# Fallback berantai saat model utama kena rate-limit/quota (429):
+AI_LLM_FALLBACK_MODELS=gemini-3.1-flash-lite,gemini-flash-lite-latest,gemini-3-flash-preview,gemini-flash-latest
+AI_LLM_COOLDOWN_SECONDS=120       # lama skip model yang kena 429 (detik)
 # ChromaDB
 AI_CHROMA_MODE=persistent          # "persistent" | "http"
 CHROMA_URL=http://127.0.0.1:8000   # hanya utk mode http
@@ -88,9 +91,15 @@ CRAWL_BASE_URL=http://127.0.0.1:3000   # situs salon lokal (Next.js dev)
 CRAWL_USE_BROWSER=false                  # false=raw HTTP; true=Playwright (SPA)
 CRAWL_DELAY_MS=1500
 CRAWL_TIPS_URL=https://alodokter.com    # sumber tips eksternal
+CRAWL_HEADLESS=false                  # false=bypass anti-bot; true=ringan
+WEB_FALLBACK_ENABLED=true             # live crawl alodokter saat query kesehatan rambut
+WEB_FALLBACK_MAX_DOCS=2
+WEB_CACHE_TTL_SECONDS=3600            # cache hasil crawl (detik)
 ```
 
 > **Catatan ChromaDB**: mode `persistent` (default) menggunakan ChromaDB embedded tanpa server terpisah — cocok untuk dev lokal. Mode `http` menghubungkan ke ChromaDB server di `CHROMA_URL`.
+
+> **Windows + uvicorn**: `uvicorn --reload` di Windows menggunakan selector loop yang tidak bisa spawn subprocess Playwright. Aliran `web_fallback` otomatis menjalankan crawl di thread terpisah (`asyncio.to_thread`) dengan fresh Proactor loop — tidak perlu konfigurasi tambahan.
 
 ### Untuk `apps/web` (Next.js)
 

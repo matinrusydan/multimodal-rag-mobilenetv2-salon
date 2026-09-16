@@ -167,7 +167,7 @@ apps/ai/
 │   │   ├── preprocessing.py      # resize 224x224 + normalisasi ImageNet
 │   │   └── labels.py             # mapping label panjang & jenis rambut
 │   ├── rag/
-│   │   ├── embedding.py          # Gemini text-embedding-004 (768d)
+│   │   ├── embedding.py          # Gemini gemini-embedding-001 (768d)
 │   │   ├── vectorStore.py        # ChromaDB (persistent | http)
 │   │   ├── chunker.py            # chunk 500-1000 token, overlap 100
 │   │   ├── retriever.py          # cosine similarity, top_k=5

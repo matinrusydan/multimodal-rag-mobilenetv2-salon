@@ -13,16 +13,38 @@
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineWidth": 100
+    "lineWidth": 100,
+    "lineEnding": "lf"
   },
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
       "trailingCommas": "all",
-      "semicolons": "always"
+      "semicolons": "always",
+      "lineEnding": "lf"
+    }
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "lineEnding": "lf"
     }
   },
   "files": {
-    "ignore": ["node_modules", "dist", ".next", "coverage", "apps/api/dist", "apps/web/.next"]
+    "ignore": [
+      "node_modules",
+      "dist",
+      ".next",
+      ".turbo",
+      ".venv",
+      "coverage",
+      ".kilo",
+      "apps/api/dist",
+      "apps/web/.next",
+      "apps/ai/.venv",
+      "apps/ai/chroma_db",
+      "apps/ai/cv/weights/*.onnx",
+      "apps/api/cv/weights/_train_report.json"
+    ]
   }
 }

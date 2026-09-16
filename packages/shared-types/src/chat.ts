@@ -12,6 +12,7 @@ export type ChatRequest = z.infer<typeof ChatRequestSchema>;
 export const ChatSourceSchema = z.object({
   file: z.string(),
   snippet: z.string().optional(),
+  url: z.string().optional(),
 });
 export type ChatSource = z.infer<typeof ChatSourceSchema>;
 

@@ -189,11 +189,11 @@ File: `app/rag/`
 
 | Langkah | Detail |
 |---|---|
-| Embedding | Gemini `text-embedding-004` (**768d**, MRL full), provider via `AI_EMBEDDING_PROVIDER=gemini` |
+| Embedding | Gemini `gemini-embedding-001` (**768d** via `outputDimensionality`), provider via `AI_EMBEDDING_PROVIDER=gemini` |
 | Vector store | ChromaDB **native Python**; mode `persistent` (default) atau `http` |
 | Search | cosine, `top_k = 5` |
 | Chunking (ingest) | size 500–1000 token, overlap 100 |
-| LLM | **Gemini** (2.0/Flash), provider via `AI_LLM_PROVIDER=gemini`; temperature 0.7, max_tokens 1000 |
+| LLM | **Gemini** (`gemini-3.6-flash`), provider via `AI_LLM_PROVIDER=gemini`; temperature 0.7, max_tokens 1000 |
 | Prompt | system + retrieved docs + `hair_context` (CV) + user query |
 | Knowledge base | `rag/knowledge/*.md` (harga, layanan, gaya-rambut, tips, booking) + `crawled-*.md` |
 
@@ -211,6 +211,33 @@ File: `app/crawler/`. Menghasilkan isi knowledge base. Dua skema:
 | **Tips eksternal** | `CRAWL_TIPS_URL` (default `https://alodokter.com`) | semua → `tips-perawatan` |
 
 Output: `rag/knowledge/crawled-*.md` dengan **YAML front-matter `topic`** (konten Bahasa Indonesia). Strategi `raw` (HTTP langsung, untuk halaman SSR/SSG) atau `browser` (Playwright, untuk SPA) via `CRAWL_USE_BROWSER`. Delay antar-request `CRAWL_DELAY_MS` (default 1500ms).
+
+**Stealth mode** (`--stealth` / `pnpm crawl:site -- --stealth`): dipakai untuk situs anti-bot seperti alodokter.com. Berbasis `UndetectedAdapter` + `AsyncPlaywrightCrawlerStrategy` (`app/crawler/stealth.py`):
+
+- `BrowserConfig(headless=False, enable_stealth=True, user_agent_mode="random", light_mode=True)` — anti-bot alodokter **butuh `headless=False`** (dikontrol env `CRAWL_HEADLESS`).
+- `CrawlerRunConfig(delay_before_return_html=0.5, wait_until="domcontentloaded", cache_mode=CacheMode.BYPASS, page_timeout=30000, only_text=True)` — konten muncul di atribut `result.markdown` (bukan `raw_markdown`). `domcontentloaded` dipilih (bukan `load`) karena ~1.2s lebih cepat tanpa kehilangan konten pada halaman alodokter.
+- **Anti-bot detector** (`app/crawler/antibot_detector.py`, adaptasi dari repo crawl4ai): hasil crawl yang terlihat seperti block page (Akamai/Cloudflare/PerimeterX/DataDome/403/429/empty-shell) ditolak sebelum ditulis ke KB atau dipakai RAG.
+
+**Live web fallback di RAG** (`app/rag/web_fallback.py`): tiga mode sumber berdasarkan query:
+
+| Query | Deteksi | Sumber jawaban |
+|---|---|---|
+| Kesehatan rambut murni (rontok, kebotakan, ketombe) | `detect_health_topic` | **Web-only** (live crawl alodokter, KB di-skip) |
+| Layanan salon + kekhawatiran kondisi rambut ("apakah aman smoothing setelah bleaching?") | `detect_hair_concern` | **Mix** (KB salon + web alodokter) |
+| Layanan salon biasa (harga, booking) | — | **KB lokal** saja |
+
+Crawl pandu via `asyncio.to_thread(crawl_url_sync, ...)` agar spawn browser berada di **fresh Proactor loop** (uvicorn selector loop Windows tidak bisa spawn subprocess Playwright).
+
+**Optimasi latensi** (dari ~15s → ~2–4s):
+
+- **Cache hasil crawl** per-URL in-memory, TTL `WEB_CACHE_TTL_SECONDS` (default 3600s). Request berikutnya untuk URL sama → instan.
+- **Cooldown model LLM**: model yang kena 429/quota ditandai cooldown (`AI_LLM_COOLDOWN_SECONDS`, default 120s; atau mengikuti `retryDelay` API) dan dilewati pada request berikutnya → tidak membuang waktu mencoba model yang sudah pasti gagal.
+- **Fallback LLM berantai** `AI_LLM_FALLBACK_MODELS` (default `gemini-3.1-flash-lite,gemini-flash-lite-latest,gemini-3-flash-preview,gemini-flash-latest`).
+- Prompt dipangkas (web 1100 char, KB 400 char, `max_output_tokens=900`, target ~180 kata).
+
+Kontrol tambahan: env `WEB_FALLBACK_ENABLED` (default `true`), `WEB_FALLBACK_MAX_DOCS` (default `2`).
+
+**Anti-halusinasi**: `prompt_builder.py` melarang LLM mengklaim kondisi rambut pelanggan (kering/rusak/bleaching) kecuali data tersebut diberikan eksplisit di KONTEKS/FITUR RAMBUT. Fitur CV (`app/cv/hair_features.py`) tidak lagi mengklaim `health: "kering"` — nilainya `"tidak-diketahui"` karena HSV+GLCM hanyalah heuristik, bukan klasifikasi kondisi terlatih. Yang dilaporkan hanya *indikasi* via `riskSigns.bleach` / `riskSigns.dry`.
 
 ```md
 ---

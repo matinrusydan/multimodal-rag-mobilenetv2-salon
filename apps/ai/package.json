@@ -1,0 +1,14 @@
+{
+  "name": "ai",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": ".venv\\Scripts\\python.exe -m uvicorn app.main:app --port 5000 --host 127.0.0.1",
+    "dev:reload": ".venv\\Scripts\\python.exe -m uvicorn app.main:app --reload --port 5000 --host 127.0.0.1",
+    "start": ".venv\\Scripts\\python.exe -m uvicorn app.main:app --port 5000 --host 127.0.0.1",
+    "test": ".venv\\Scripts\\python.exe -m pytest tests -q",
+    "crawl:site": ".venv\\Scripts\\python.exe -m app.crawler.crawl_site",
+    "crawl:tips": ".venv\\Scripts\\python.exe -m app.crawler.crawl_tips",
+    "rag:ingest": ".venv\\Scripts\\python.exe -m app.rag.ingest"
+  }
+}
