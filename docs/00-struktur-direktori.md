@@ -1,8 +1,8 @@
 # 00 — Struktur Direktori
 
-Dokumen ini mendefinisikan **seluruh struktur folder dan file yang akan dibangun** untuk monorepo RAG-salon. Berfungsi sebagai peta implementasi — setiap file yang tertulis di sini adalah target yang akan dibuat.
+Dokumen ini mendefinisikan **struktur folder dan file** untuk monorepo RAG-salon. Berfungsi sebagai peta implementasi — beberapa bagian sudah dibangun (`apps/api`, `apps/web`, `packages/*`), sisanya adalah target (terutama `apps/ai`).
 
-> Status: **Rencana target** — kode belum ada. Referensi arsitektur dari `dashboard-ops` (monorepo pnpm+Turbo, Express layer) dan UI dari `TIEN-SALON-New`.
+> Status: **Sebagian dibangun** — `apps/api` (Express + RBAC), `apps/web` (Next.js), dan `packages/*` sudah ada. `apps/ai` (FastAPI brain engine) masih rencana. Referensi arsitektur dari `dashboard-ops` (monorepo pnpm+Turbo, Express layer) dan UI dari `TIEN-SALON-New`.
 
 ---
 
@@ -28,7 +28,8 @@ rag-salon/
 │   ├── shared-types/            # Zod schemas dibagi FE↔BE
 │   └── shared-utils/            # helper util dibagi
 ├── apps/
-│   ├── api/                     # Backend Express + TypeScript
+│   ├── api/                     # Backend Express + TypeScript (proxy AI ke FastAPI)
+│   ├── ai/                      # Brain Engine FastAPI + Python (CV, RAG, Crawl4AI)
 │   └── web/                     # Frontend Next.js 16
 └── e2e/                         # (opsional) Playwright E2E
 ```
@@ -36,6 +37,8 @@ rag-salon/
 ---
 
 ## 2. `apps/api` — Backend Express + TypeScript
+
+Backend utama: REST API, auth, RBAC, service reservation/payment. Endpoint AI (`/api/analyze`, `/api/chat`) jadi **proxy** ke `apps/ai` (FastAPI). Lapisan Route→Controller→Service→Repository.
 
 ```
 apps/api/
@@ -87,8 +90,8 @@ apps/api/
 │   │   ├── ServiceService.ts
 │   │   ├── ReservationService.ts
 │   │   ├── PaymentService.ts
-│   │   ├── CvService.ts          # MobileNetV2 inference
-│   │   ├── RagService.ts         # ChromaDB + OpenAI
+│   │   ├── CvService.ts          # PROXY → FastAPI /ai/analyze (ai client)
+│   │   ├── RagService.ts         # PROXY → FastAPI /ai/chat (ai client)
 │   │   ├── ChatService.ts
 │   │   ├── UserService.ts
 │   │   ├── RoleService.ts
@@ -123,20 +126,8 @@ apps/api/
 │   │   ├── permission.schema.ts
 │   │   ├── route.schema.ts
 │   │   └── menu.schema.ts
-│   ├── cv/                       # Computer Vision pipeline
-│   │   ├── model.ts              # load + inference MobileNetV2
-│   │   ├── preprocessing.ts      # resize 224x224 + normalisasi
-│   │   └── labels.ts             # mapping label panjang & jenis rambut
-│   ├── rag/                      # RAG pipeline
-│   │   ├── embedding.ts          # text-embedding-3-small
-│   │   ├── vectorStore.ts        # ChromaDB (persistent)
-│   │   ├── promptBuilder.ts
-│   │   └── knowledge/            # knowledge base markdown
-│   │       ├── harga.md
-│   │       ├── layanan.md
-│   │       ├── gaya-rambut.md
-│   │       ├── tips-perawatan.md
-│   │       └── booking-info.md
+│   ├── cv/                       # (dipindah → apps/ai/cv/) CV pipeline Python[^1]
+│   ├── rag/                      # (dipindah → apps/ai/rag/) RAG pipeline Python[^1]
 │   ├── utils/
 │   │   ├── response.ts
 │   │   └── problemDetails.ts
@@ -150,9 +141,59 @@ apps/api/
     └── security.test.ts
 ```
 
+> [^1]: Saat restrukturisasi ke FastAPI tuntas, kode lamanya diarsipkan (bukan dihapus) di `apps/api/src/archive/`.
+
 ---
 
-## 3. `apps/web` — Frontend Next.js 16 (SSR)
+## 3. `apps/ai` — Brain Engine (FastAPI + Python)
+
+Runtime AI **native Python**: CV inference, RAG, dan crawler. Diakses Express sebagai proxy (publik tidak menyentuh `5000` langsung). Knowledge base markdown berada di sini.
+
+```
+apps/ai/
+├── package.json                  # skrip dev + turbo (jalankan uvicorn)
+├── pyproject.toml                # (opsional) metadata Python
+├── requirements.txt              # deps Python (fastapi, onnxruntime, chromadb, dll)
+├── .venv/                        # virtualenv lokal (tidak di-commit)
+├── app/
+│   ├── main.py                   # ENTRY: FastAPI app + lifespan
+│   ├── config.py                 # baca env (AI_*, CHROMA_*, CRAWL_*, dll)
+│   ├── routers/
+│   │   ├── health.py             # GET /ai/health
+│   │   ├── analyze.py            # POST /ai/analyze (multipart → klasifikasi CV)
+│   │   └── chat.py               # POST /ai/chat (RAG Gemini)
+│   ├── cv/
+│   │   ├── model.py              # load + inference MobileNetV2 (onnxruntime)
+│   │   ├── preprocessing.py      # resize 224x224 + normalisasi ImageNet
+│   │   └── labels.py             # mapping label panjang & jenis rambut
+│   ├── rag/
+│   │   ├── embedding.py          # Gemini text-embedding-004 (768d)
+│   │   ├── vectorStore.py        # ChromaDB (persistent | http)
+│   │   ├── chunker.py            # chunk 500-1000 token, overlap 100
+│   │   ├── retriever.py          # cosine similarity, top_k=5
+│   │   ├── promptBuilder.py      # system + retrieved docs + hair_context
+│   │   ├── ingest.py             # ingest knowledge → ChromaDB (idempotent)
+│   │   └── knowledge/            # knowledge base markdown
+│   │       ├── harga.md
+│   │       ├── layanan.md
+│   │       ├── gaya-rambut.md
+│   │       ├── tips-perawatan.md
+│   │       ├── booking-info.md
+│   │       └── crawled-*.md      # (BARU) hasil Crawl4AI + front-matter topic
+│   └── crawler/
+│       ├── crawl_site.py         # skema situs TIEN (CRAWL_BASE_URL)
+│       ├── crawl_tips.py         # skema tips eksternal (CRAWL_TIPS_URL)
+│       └── topic_mapping.py      # URL pattern → topic
+└── tests/
+    ├── test_cv.py                # inference harapan (fake image)
+    ├── test_ingest.py            # planIngest pure fn (fake store)
+    ├── test_retriever.py         # retriever (fake store)
+    └── test_topics.py            # topic mapping
+```
+
+---
+
+## 4. `apps/web` — Frontend Next.js 16 (SSR)
 
 UI disalin dari `TIEN-SALON-New`, diorganisir ulang ke route group + FSD-ringan (global vs local component).
 
@@ -232,7 +273,7 @@ apps/web/
 
 ---
 
-## 4. `packages/shared-types`
+## 5. `packages/shared-types`
 
 ```
 packages/shared-types/
@@ -253,7 +294,7 @@ packages/shared-types/
 
 ---
 
-## 5. `packages/shared-utils`
+## 6. `packages/shared-utils`
 
 ```
 packages/shared-utils/
@@ -267,7 +308,7 @@ packages/shared-utils/
 
 ---
 
-## 6. `e2e` (opsional)
+## 7. `e2e` (opsional)
 
 ```
 e2e/
@@ -279,7 +320,7 @@ e2e/
 
 ---
 
-## 7. Catatan Konvensi Penamaan
+## 8. Catatan Konvensi Penamaan
 
 - **Folder route app/ (URL)**: Bahasa Inggris (`services`, `reservation`, `consult`, `admin`).
 - **Tabel & kolom DB**: snake_case (persis dashboard-ops).

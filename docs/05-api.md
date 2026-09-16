@@ -4,7 +4,7 @@ Spesifikasi endpoint REST API. Semua path & field nama dalam **Bahasa Inggris**;
 
 Base URL: `http://127.0.0.1:4000/api`
 
-> Status: **Rencana target** — endpoint berikut adalah spesifikasi yang akan diimplementasikan.
+> Status: **Sebagian dibangun** — endpoint bisnis sudah berjalan; endpoint AI adalah proxy ke FastBrain (`apps/ai`).
 
 ---
 
@@ -13,6 +13,7 @@ Base URL: `http://127.0.0.1:4000/api`
 - **Prefix**: semua route dibawah `/api`.
 - **Auth**: protected route memakai `Authorization: Bearer <JWT>` (via `requireAuth`).
 - **RBAC**: permission `<resource>.<action>` via `securityEnforce`.
+- **AI endpoints** (`/api/analyze`, `/api/chat`): di-Express hanya validasi + rate-limit, lalu **proxy** ke FastAPI `:5000` (`/ai/analyze`, `/ai/chat`).
 - **Format respons sukses**:
   ```json
   { "ok": true, "data": { ... } }
@@ -115,7 +116,7 @@ Base URL: `http://127.0.0.1:4000/api`
 
 | Method | Path | RBAC | Fungsi |
 |---|---|---|---|
-| POST | `/api/analyze` | publik (rate-limited) | Klasifikasi rambut dari foto |
+| POST | `/api/analyze` | publik (rate-limited) | Klasifikasi rambut dari foto — **proxy** → FastAPI `/ai/analyze` |
 
 Multipart `image/*` (PNG/JPG/WebP).
 
@@ -138,7 +139,7 @@ Jika confidence `< CONFIDENCE_THRESHOLD`: `status: "low_confidence"`.
 
 | Method | Path | RBAC | Fungsi |
 |---|---|---|---|
-| POST | `/api/chat` | publik (rate-limited) | Chatbot konsultasi rambut |
+| POST | `/api/chat` | publik (rate-limited) | Chatbot konsultasi rambut — **proxy** → FastAPI `/ai/chat` |
 
 ```json
 {
@@ -215,7 +216,8 @@ Superadmin (`type = 0` / role `SUPER_ADMIN`) melewati semua pengecekan.
 
 ## 10. Catatan
 
-- Rate-limit diterapkan pada `/api/analyze` & `/api/chat` (mis. per-IP) untuk mencegah abuse biaya OpenAI.
+- Rate-limit diterapkan pada `/api/analyze` & `/api/chat` (mis. per-IP) untuk mencegah abuse biaya LLM (Gemini).
+- Endpoint AI diteruskan ke FastBrain (`apps/ai` port `5000`); kegagalan FastBrain → error `502` (Problem Details).
 - Semua input divalidasi Zod; error disajikan sebagai Problem Details Bahasa Indonesia.
 
 ---

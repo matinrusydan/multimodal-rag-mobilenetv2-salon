@@ -2,7 +2,7 @@
 
 Dokumen ini menjelaskan arsitektur keseluruhan RAG-salon: **website salon** (layanan, reservasi, pembayaran) yang digabung dengan **chatbot konsultasi rambut berbasis Multimodal RAG** (Computer Vision + LLM).
 
-> Status: **Rencana target** — kode belum ada. Definisi label & kebutuhan produk diambil dari `PRD.md`.
+> Status: **Sebagian dibangun** — `apps/api` + `apps/web` ada; `apps/ai` (FastAPI brain engine) masih rencana. Definisi label & kebutuhan produk diambil dari `PRD.md`.
 
 ---
 
@@ -11,9 +11,11 @@ Dokumen ini menjelaskan arsitektur keseluruhan RAG-salon: **website salon** (lay
 | Komponen | Teknologi | Peran |
 |---|---|---|
 | **Frontend** | Next.js 16 (App Router, SSR) + TypeScript + Tailwind | Halaman publik salon, reservasi, payment, admin RBAC, dan halaman konsultasi |
-| **Backend** | Express + TypeScript | REST API, RBAC, service reservation/payment |
-| **CV Pipeline** | PyTorch + MobileNetV2 | Klasifikasi panjang & jenis rambut dari foto |
-| **RAG Pipeline** | ChromaDB + OpenAI (GPT-4o-mini, text-embedding-3-small) | Chatbot konsultasi berbasis knowledge base |
+| **Backend** | Express + TypeScript | REST API, RBAC, service reservation/payment; **proxy AI** ke FastAPI |
+| **Brain Engine** | FastAPI + Python | Runtime AI (CV, RAG, crawler) — `apps/ai`, port `5000` |
+| **CV Pipeline** | onnxruntime (Python) + MobileNetV2 ONNX | Klasifikasi panjang & jenis rambut dari foto |
+| **RAG Pipeline** | ChromaDB native (Python) + Gemini (embed & LLM) | Chatbot konsultasi berbasis knowledge base |
+| **Crawler** | Crawl4AI (Python) | Isi knowledge base: situs TIEN + tips eksternal |
 | **Database** | PostgreSQL + Knex | User, role, permission, service, reservation |
 | **Auth** | iron-session (FE) + JWT (BE) | Session autentikasi + RBAC |
 
@@ -24,7 +26,8 @@ Dokumen ini menjelaskan arsitektur keseluruhan RAG-salon: **website salon** (lay
 ```
 rag-salon/
 ├── apps/web       → Next.js 16 (frontend, UI dari TIEN-SALON-New + konsultasi)
-├── apps/api       → Express + TS (backend, RBAC, CV & RAG)
+├── apps/api       → Express + TS (backend, RBAC, proxy AI)
+├── apps/ai        → FastAPI + Python (brain engine: CV, RAG, Crawl4AI)
 ├── packages/shared-types → Zod schemas FE↔BE
 └── packages/shared-utils → helper util dibagi
 ```
@@ -32,6 +35,8 @@ rag-salon/
 - Package manager: **pnpm** workspace.
 - Task pipeline: **Turbo** (build/test/lint/local).
 - Lint & format: **Biome**.
+
+**Dua-tier AI**: Express hanya meneruskan (proxy) request AI ke FastAPI `:5000`. Publik tidak menyentuh FastAPI langsung.
 
 ---
 
@@ -41,28 +46,41 @@ rag-salon/
 User upload foto rambut
         │
         ▼
-[1] POST /api/analyze (foto)
+[1] POST /api/analyze (foto)                ← Express (rate-limit + validasi)
         │
-        ▼
-[2] CV Pipeline (MobileNetV2)
+        ▼  (proxy)
+[2] FastAPI /ai/analyze (apps/ai)
+        │  CV Pipeline (onnxruntime + MobileNetV2 ONNX)
         │  preprocessing 224x224 + normalisasi ImageNet
-        ▼
+        ▼  (kembali ke Express)
 [3] Hasil klasifikasi:
         │  hairLength: pendek/pendek-menengah/menengah/panjang
         │  hairType:   lurus/bergelombang/keriting/sangat-keriting
         │  + confidence
         ▼
-[4] POST /api/chat (pesan + hair_context dari CV)
+[4] POST /api/chat (pesan + hair_context dari CV)   ← Express
         │
-        ▼
-[5] RAG Pipeline:
-        │  embed query → ChromaDB similarity search (top_k=5)
+        ▼  (proxy)
+[5] FastAPI /ai/chat (apps/ai) — RAG Pipeline:
+        │  embed query (Gemini 768d) → ChromaDB similarity search (top_k=5)
         │  → prompt builder (system + retrieved docs + hair_context + query)
         ▼
-[6] GPT-4o-mini → respons konsultasi (Bahasa Indonesia)
+[6] Gemini LLM → respons konsultasi (Bahasa Indonesia)
 ```
 
 **Integrasi multimodal**: hasil CV (`hair_context`) menjadi bagian dari konteks prompt RAG, sehingga jawaban chatbot relevan dengan kondisi rambut pengguna.
+
+**Crawling & ingest (offline)**:
+
+```
+Crawl4AI script (apps/ai/crawler/) : situs TIEN lokal + alodokter.com
+        │
+        ▼  tulis markdown + front-matter topic
+apps/ai/rag/knowledge/crawled-*.md
+        │
+        ▼  pnpm rag:ingest (Chunker → Gemini embed → ChromaDB)
+ChromaDB (persistent | http)
+```
 
 ---
 

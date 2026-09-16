@@ -1,8 +1,8 @@
-# 03 — Backend (Express + TypeScript)
+# 03 — Backend (Express + TypeScript) & Brain Engine (FastAPI)
 
-Dokumen ini menjelaskan arsitektur backend `apps/api`: layering, auth, RBAC (diadopsi dari `dashboard-ops`), CV & RAG pipeline, dan konvensi.
+Dokumen ini menjelaskan arsitektur backend `apps/api`: layering, auth, RBAC (diadopsi dari `dashboard-ops`), plus arsitektur `apps/ai` sebagai brain engine AI (CV, RAG, Crawl4AI) dan bagaimana Express menjadi proxy ke-nya.
 
-> Status: **Rencana target** — kode belum ada.
+> Status: **Sebagian dibangun** — `apps/api` sudah berjalan. `apps/ai` masih rencana.
 
 ---
 
@@ -51,11 +51,11 @@ apps/api/src/
 ├── repositories/     # + BaseRepository
 ├── middleware/       # requireAuth, securityEnforce, errorHandler, requestValidator
 ├── schemas/          # Zod schema per resource
-├── cv/               # MobileNetV2 pipeline
-├── rag/              # ChromaDB + OpenAI
 ├── utils/            # response, problemDetails
 └── types/            # express.d.ts augmentasi
 ```
+
+> `cv/` dan `rag/` **tidak lagi di Express** — runtime AI pindah ke `apps/ai` (Python). Express memanggil FastAPI melalui client HTTP (proxy).
 
 ---
 
@@ -147,33 +147,86 @@ router.get(
 
 ---
 
-## 8. CV Pipeline (MobileNetV2)
+## 8. Proxy ke Brain Engine (Express → FastAPI)
 
-File: `src/cv/`
+Express bertindak sebagai **kurir** untuk endpoint AI. AI endpoints (`/api/analyze`, `/api/chat`) melakukan forward ke FastAPI `apps/ai` (`:5000`).
+
+```
+POST /api/analyze ──► httpx/fetch ──► POST http://127.0.0.1:5000/ai/analyze
+POST /api/chat    ──► httpx/fetch ──► POST http://127.0.0.1:5000/ai/chat
+```
+
+- **Rate-limit** (`postingLimiter`) dan **validasi Zod** tetap di Express (publik tidak boleh lihat FastAPI langsung).
+- **Multipart** (`/api/analyze`) diteruskan apa adanya (`multer.memoryStorage` → buffer → forward).
+- **Timeout** & retry terbatas (`AI_PROXY_TIMEOUT_MS`) supaya request bergantung FastAPI tidak menggantung.
+- Global error handler menangkap kegagalan FastAPI (down) → Problem Details `502`.
+
+---
+
+## 9. Brain Engine — `apps/ai` (FastAPI + Python)
+
+Runtime AI native Python. Terpisah dari Express agar bisa memakai ekosistem Python (onnxruntime, chromadb native, Crawl4AI) dan menempatkan seluruh AI stack kode Python di satu tempat.
+
+Structure: `app/{main,config}.py`, `app/routers/`, `app/cv/`, `app/rag/`, `app/crawler/`, `tests/`. Port `5000`.
+
+### 9.1 CV Pipeline (onnxruntime + MobileNetV2)
+
+File: `app/cv/`
 
 | Langkah | Detail |
 |---|---|
 | Preprocessing | resize 224×224, normalize ImageNet `mean=[0.485,0.456,0.406]`, `std=[0.229,0.224,0.225]` |
-| Model | MobileNetV2 (PyTorch, `.pth`), dua head: panjang & jenis |
-| Output | softmax → label + confidence |
-| Label mapping | `cv/labels.ts` (lihat label tetap) |
+| Model | `hair_length.onnx` + `hair_type.onnx` (MobileNetV2), inference via **onnxruntime** |
+| Output | softmax → label + confidence (format `HairFeaturesSchema` dari shared-types) |
+| Label mapping | `cv/labels.py` (lihat label tetap) |
 | Threshold | `< 0.5` → status "tidak yakin" |
 
----
+Endpoint: `POST /ai/analyze` (multipart image) → `{ hairLength, hairType, analyzedAt }`.
 
-## 9. RAG Pipeline
+### 9.2 RAG Pipeline (ChromaDB native + Gemini)
 
-File: `src/rag/`
+File: `app/rag/`
 
 | Langkah | Detail |
 |---|---|
-| Embedding | `text-embedding-3-small` (1536d) |
-| Vector store | ChromaDB persist (`CHROMA_PERSIST_DIR`) |
+| Embedding | Gemini `text-embedding-004` (**768d**, MRL full), provider via `AI_EMBEDDING_PROVIDER=gemini` |
+| Vector store | ChromaDB **native Python**; mode `persistent` (default) atau `http` |
 | Search | cosine, `top_k = 5` |
 | Chunking (ingest) | size 500–1000 token, overlap 100 |
-| LLM | GPT-4o-mini, temperature 0.7, max_tokens 1000 |
+| LLM | **Gemini** (2.0/Flash), provider via `AI_LLM_PROVIDER=gemini`; temperature 0.7, max_tokens 1000 |
 | Prompt | system + retrieved docs + `hair_context` (CV) + user query |
-| Knowledge base | `rag/knowledge/*.md` (harga, layanan, gaya-rambut, tips, booking) |
+| Knowledge base | `rag/knowledge/*.md` (harga, layanan, gaya-rambut, tips, booking) + `crawled-*.md` |
+
+**Ingest idempotent**: tiap chunk punya ID `file#hash#index` → upsert ke koleksi ChromaDB tidak membuat duplikat. `planIngest(files)` adalah fungsi murni (mudah di-test tanpa ChromaDB live).
+
+Endpoint: `POST /ai/chat` → `{ reply, sources, contextId }`.
+
+### 9.3 Crawler (Crawl4AI)
+
+File: `app/crawler/`. Menghasilkan isi knowledge base. Dua skema:
+
+| Skema | Sumber | Topic hasil |
+|---|---|---|
+| **Situs salon** | `CRAWL_BASE_URL` (default `http://127.0.0.1:3000`) | mapping URL → topic (`/services*`→`layanan`, `/reservation*`→`booking-info`, `/about`→`about`, default→`layanan`) |
+| **Tips eksternal** | `CRAWL_TIPS_URL` (default `https://alodokter.com`) | semua → `tips-perawatan` |
+
+Output: `rag/knowledge/crawled-*.md` dengan **YAML front-matter `topic`** (konten Bahasa Indonesia). Strategi `raw` (HTTP langsung, untuk halaman SSR/SSG) atau `browser` (Playwright, untuk SPA) via `CRAWL_USE_BROWSER`. Delay antar-request `CRAWL_DELAY_MS` (default 1500ms).
+
+```md
+---
+topic: tips-perawatan
+source: https://alodokter.com/artikel-tips
+type: crawled
+---
+# Judul Artikel
+...
+```
+
+### 9.4 Framework & Tooling
+
+- **FastAPI** + **Uvicorn**, validasi via **Pydantic** (mirip peran Zod di Express).
+- Error respon memakai **RFC 7807 Problem Details** (Bahasa Indonesia) — selaras dengan Express.
+- **Pytest** untuk unit test (tanpa ChromaDB/network untuk logic murni).
 
 ---
 
