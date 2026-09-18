@@ -1,0 +1,49 @@
+{
+  "analysis": "viewpoint_accuracy_asmode",
+  "mode": "pengukuran (as-is)",
+  "timestamp": "2026-09-18T07:03:14.692872+00:00",
+  "annotators": [
+    "A"
+  ],
+  "n_verified": 193,
+  "n_per_annotator": {
+    "A": 193
+  },
+  "metrics": {
+    "accuracy": 0.8031,
+    "accuracy_excluding_ragu": 0.8378,
+    "n_correct": 155,
+    "n_wrong": 30,
+    "n_ragu": 8,
+    "ragu_rate": 0.0415
+  },
+  "accuracy_per_predicted_class": {
+    "depan": {
+      "n": 41,
+      "correct": 30,
+      "accuracy": 0.7317
+    },
+    "samping": {
+      "n": 19,
+      "correct": 13,
+      "accuracy": 0.6842
+    },
+    "belakang": {
+      "n": 133,
+      "correct": 112,
+      "accuracy": 0.8421
+    }
+  },
+  "confusion_model_to_human": {
+    "belakang": {
+      "belakang_nyerong": 1,
+      "depan": 5,
+      "samping": 10
+    },
+    "depan": {
+      "samping": 3,
+      "depan": 3,
+      "belakang": 4
+    }
+  }
+}

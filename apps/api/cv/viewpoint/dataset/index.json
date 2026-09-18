@@ -1,0 +1,2121 @@
+{
+  "schema_version": "viewpoint_dataset_v1",
+  "created_at": "2026-09-18T07:07:14.920948+00:00",
+  "classes": [
+    "depan",
+    "samping",
+    "belakang"
+  ],
+  "n_total": 350,
+  "distribution": {
+    "depan": 45,
+    "samping": 31,
+    "belakang": 274
+  },
+  "source_distribution": {
+    "pilot_manual": 169,
+    "verification_human": 181
+  },
+  "records": [
+    {
+      "image_id": "figaro1k/sangat-keriting/00481.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00481.jpg",
+      "label": "samping",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00045.jpg",
+      "relpath": "dataset/figaro1k/lurus/00045.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00360.jpg",
+      "relpath": "dataset/figaro1k/keriting/00360.jpg",
+      "label": "samping",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00159.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00159.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00592.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00592.jpg",
+      "label": "depan",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00594.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00594.jpg",
+      "label": "depan",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00152.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00152.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00270.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00270.jpg",
+      "label": "depan",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00471.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00471.jpg",
+      "label": "depan",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00136.jpg",
+      "relpath": "dataset/figaro1k/lurus/00136.jpg",
+      "label": "samping",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00074.jpg",
+      "relpath": "dataset/figaro1k/lurus/00074.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00395.jpg",
+      "relpath": "dataset/figaro1k/keriting/00395.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00149.jpg",
+      "relpath": "dataset/figaro1k/lurus/00149.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00133.jpg",
+      "relpath": "dataset/figaro1k/lurus/00133.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00418.jpg",
+      "relpath": "dataset/figaro1k/keriting/00418.jpg",
+      "label": "depan",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00344.jpg",
+      "relpath": "dataset/figaro1k/keriting/00344.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00350.jpg",
+      "relpath": "dataset/figaro1k/keriting/00350.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00017.jpg",
+      "relpath": "dataset/figaro1k/lurus/00017.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00451.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00451.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00277.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00277.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00101.jpg",
+      "relpath": "dataset/figaro1k/lurus/00101.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00399.jpg",
+      "relpath": "dataset/figaro1k/keriting/00399.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00080.jpg",
+      "relpath": "dataset/figaro1k/lurus/00080.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00441.jpg",
+      "relpath": "dataset/figaro1k/keriting/00441.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00364.jpg",
+      "relpath": "dataset/figaro1k/keriting/00364.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00086.jpg",
+      "relpath": "dataset/figaro1k/lurus/00086.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00229.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00229.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00029.jpg",
+      "relpath": "dataset/figaro1k/lurus/00029.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00352.jpg",
+      "relpath": "dataset/figaro1k/keriting/00352.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00342.jpg",
+      "relpath": "dataset/figaro1k/keriting/00342.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00533.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00533.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00063.jpg",
+      "relpath": "dataset/figaro1k/lurus/00063.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00268.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00268.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00488.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00488.jpg",
+      "label": "samping",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00089.jpg",
+      "relpath": "dataset/figaro1k/lurus/00089.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00274.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00274.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00492.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00492.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00169.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00169.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00095.jpg",
+      "relpath": "dataset/figaro1k/lurus/00095.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00311.jpg",
+      "relpath": "dataset/figaro1k/keriting/00311.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00461.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00461.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00469.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00469.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00504.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00504.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00445.jpg",
+      "relpath": "dataset/figaro1k/keriting/00445.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00509.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00509.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00062.jpg",
+      "relpath": "dataset/figaro1k/lurus/00062.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00176.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00176.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00132.jpg",
+      "relpath": "dataset/figaro1k/lurus/00132.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00555.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00555.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00522.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00522.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00027.jpg",
+      "relpath": "dataset/figaro1k/lurus/00027.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00007.jpg",
+      "relpath": "dataset/figaro1k/lurus/00007.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00385.jpg",
+      "relpath": "dataset/figaro1k/keriting/00385.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00534.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00534.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00020.jpg",
+      "relpath": "dataset/figaro1k/lurus/00020.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00013.jpg",
+      "relpath": "dataset/figaro1k/lurus/00013.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00298.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00298.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00256.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00256.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00142.jpg",
+      "relpath": "dataset/figaro1k/lurus/00142.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00519.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00519.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00596.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00596.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00071.jpg",
+      "relpath": "dataset/figaro1k/lurus/00071.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00577.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00577.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00283.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00283.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00267.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00267.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00288.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00288.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00026.jpg",
+      "relpath": "dataset/figaro1k/lurus/00026.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00003.jpg",
+      "relpath": "dataset/figaro1k/lurus/00003.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00373.jpg",
+      "relpath": "dataset/figaro1k/keriting/00373.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00359.jpg",
+      "relpath": "dataset/figaro1k/keriting/00359.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00163.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00163.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00459.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00459.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00463.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00463.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00024.jpg",
+      "relpath": "dataset/figaro1k/lurus/00024.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00313.jpg",
+      "relpath": "dataset/figaro1k/keriting/00313.jpg",
+      "label": "depan",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00011.jpg",
+      "relpath": "dataset/figaro1k/lurus/00011.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00177.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00177.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00206.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00206.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00264.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00264.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00493.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00493.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00239.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00239.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00290.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00290.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00057.jpg",
+      "relpath": "dataset/figaro1k/lurus/00057.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00510.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00510.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00065.jpg",
+      "relpath": "dataset/figaro1k/lurus/00065.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00453.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00453.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00382.jpg",
+      "relpath": "dataset/figaro1k/keriting/00382.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00064.jpg",
+      "relpath": "dataset/figaro1k/lurus/00064.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00228.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00228.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00403.jpg",
+      "relpath": "dataset/figaro1k/keriting/00403.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00315.jpg",
+      "relpath": "dataset/figaro1k/keriting/00315.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00404.jpg",
+      "relpath": "dataset/figaro1k/keriting/00404.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00563.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00563.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00079.jpg",
+      "relpath": "dataset/figaro1k/lurus/00079.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00548.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00548.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00559.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00559.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00354.jpg",
+      "relpath": "dataset/figaro1k/keriting/00354.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00372.jpg",
+      "relpath": "dataset/figaro1k/keriting/00372.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00250.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00250.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00375.jpg",
+      "relpath": "dataset/figaro1k/keriting/00375.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00139.jpg",
+      "relpath": "dataset/figaro1k/lurus/00139.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00400.jpg",
+      "relpath": "dataset/figaro1k/keriting/00400.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00165.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00165.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00417.jpg",
+      "relpath": "dataset/figaro1k/keriting/00417.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00252.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00252.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00174.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00174.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00278.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00278.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00393.jpg",
+      "relpath": "dataset/figaro1k/keriting/00393.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00114.jpg",
+      "relpath": "dataset/figaro1k/lurus/00114.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00259.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00259.jpg",
+      "label": "samping",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00296.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00296.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00314.jpg",
+      "relpath": "dataset/figaro1k/keriting/00314.jpg",
+      "label": "depan",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00500.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00500.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00182.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00182.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00531.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00531.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00494.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00494.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00162.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00162.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00081.jpg",
+      "relpath": "dataset/figaro1k/lurus/00081.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00455.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00455.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00286.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00286.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00219.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00219.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00249.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00249.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00513.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00513.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00470.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00470.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00569.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00569.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00191.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00191.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00433.jpg",
+      "relpath": "dataset/figaro1k/keriting/00433.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00398.jpg",
+      "relpath": "dataset/figaro1k/keriting/00398.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00222.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00222.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00363.jpg",
+      "relpath": "dataset/figaro1k/keriting/00363.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00397.jpg",
+      "relpath": "dataset/figaro1k/keriting/00397.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00144.jpg",
+      "relpath": "dataset/figaro1k/lurus/00144.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00564.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00564.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00109.jpg",
+      "relpath": "dataset/figaro1k/lurus/00109.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00248.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00248.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00008.jpg",
+      "relpath": "dataset/figaro1k/lurus/00008.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00554.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00554.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00070.jpg",
+      "relpath": "dataset/figaro1k/lurus/00070.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00092.jpg",
+      "relpath": "dataset/figaro1k/lurus/00092.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00507.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00507.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00467.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00467.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00260.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00260.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00108.jpg",
+      "relpath": "dataset/figaro1k/lurus/00108.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00570.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00570.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00389.jpg",
+      "relpath": "dataset/figaro1k/keriting/00389.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00291.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00291.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00194.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00194.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00466.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00466.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00582.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00582.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00025.jpg",
+      "relpath": "dataset/figaro1k/lurus/00025.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00411.jpg",
+      "relpath": "dataset/figaro1k/keriting/00411.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00562.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00562.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00574.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00574.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00448.jpg",
+      "relpath": "dataset/figaro1k/keriting/00448.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00380.jpg",
+      "relpath": "dataset/figaro1k/keriting/00380.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00434.jpg",
+      "relpath": "dataset/figaro1k/keriting/00434.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00310.jpg",
+      "relpath": "dataset/figaro1k/keriting/00310.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00023.jpg",
+      "relpath": "dataset/figaro1k/lurus/00023.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00580.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00580.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00586.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00586.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00584.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00584.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00237.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00237.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00465.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00465.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00353.jpg",
+      "relpath": "dataset/figaro1k/keriting/00353.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00520.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00520.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00566.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00566.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00326.jpg",
+      "relpath": "dataset/figaro1k/keriting/00326.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00043.jpg",
+      "relpath": "dataset/figaro1k/lurus/00043.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00145.jpg",
+      "relpath": "dataset/figaro1k/lurus/00145.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00539.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00539.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00567.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00567.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00216.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00216.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00369.jpg",
+      "relpath": "dataset/figaro1k/keriting/00369.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00312.jpg",
+      "relpath": "dataset/figaro1k/keriting/00312.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00161.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00161.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00236.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00236.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00319.jpg",
+      "relpath": "dataset/figaro1k/keriting/00319.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00056.jpg",
+      "relpath": "dataset/figaro1k/lurus/00056.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00201.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00201.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00345.jpg",
+      "relpath": "dataset/figaro1k/keriting/00345.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00323.jpg",
+      "relpath": "dataset/figaro1k/keriting/00323.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00058.jpg",
+      "relpath": "dataset/figaro1k/lurus/00058.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00060.jpg",
+      "relpath": "dataset/figaro1k/lurus/00060.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00175.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00175.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00190.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00190.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00093.jpg",
+      "relpath": "dataset/figaro1k/lurus/00093.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00505.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00505.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00019.jpg",
+      "relpath": "dataset/figaro1k/lurus/00019.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00318.jpg",
+      "relpath": "dataset/figaro1k/keriting/00318.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00321.jpg",
+      "relpath": "dataset/figaro1k/keriting/00321.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00593.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00593.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00279.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00279.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00295.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00295.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00051.jpg",
+      "relpath": "dataset/figaro1k/lurus/00051.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00571.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00571.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00306.jpg",
+      "relpath": "dataset/figaro1k/keriting/00306.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00105.jpg",
+      "relpath": "dataset/figaro1k/lurus/00105.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00205.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00205.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00218.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00218.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00075.jpg",
+      "relpath": "dataset/figaro1k/lurus/00075.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00402.jpg",
+      "relpath": "dataset/figaro1k/keriting/00402.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00130.jpg",
+      "relpath": "dataset/figaro1k/lurus/00130.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00376.jpg",
+      "relpath": "dataset/figaro1k/keriting/00376.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00119.jpg",
+      "relpath": "dataset/figaro1k/lurus/00119.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00557.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00557.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00409.jpg",
+      "relpath": "dataset/figaro1k/keriting/00409.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00238.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00238.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00179.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00179.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00140.jpg",
+      "relpath": "dataset/figaro1k/lurus/00140.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00196.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00196.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00158.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00158.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00432.jpg",
+      "relpath": "dataset/figaro1k/keriting/00432.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00479.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00479.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00553.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00553.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00253.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00253.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00316.jpg",
+      "relpath": "dataset/figaro1k/keriting/00316.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00245.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00245.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00362.jpg",
+      "relpath": "dataset/figaro1k/keriting/00362.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00447.jpg",
+      "relpath": "dataset/figaro1k/keriting/00447.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00265.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00265.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00406.jpg",
+      "relpath": "dataset/figaro1k/keriting/00406.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00391.jpg",
+      "relpath": "dataset/figaro1k/keriting/00391.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00587.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00587.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00127.jpg",
+      "relpath": "dataset/figaro1k/lurus/00127.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00061.jpg",
+      "relpath": "dataset/figaro1k/lurus/00061.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00009.jpg",
+      "relpath": "dataset/figaro1k/lurus/00009.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00328.jpg",
+      "relpath": "dataset/figaro1k/keriting/00328.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00512.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00512.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00595.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00595.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00036.jpg",
+      "relpath": "dataset/figaro1k/lurus/00036.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00242.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00242.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00137.jpg",
+      "relpath": "dataset/figaro1k/lurus/00137.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00166.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00166.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00030.jpg",
+      "relpath": "dataset/figaro1k/lurus/00030.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/lurus/00016.jpg",
+      "relpath": "dataset/figaro1k/lurus/00016.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00527.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00527.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00365.jpg",
+      "relpath": "dataset/figaro1k/keriting/00365.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00442.jpg",
+      "relpath": "dataset/figaro1k/keriting/00442.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00394.jpg",
+      "relpath": "dataset/figaro1k/keriting/00394.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00292.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00292.jpg",
+      "label": "belakang",
+      "source": "pilot_manual"
+    },
+    {
+      "image_id": "figaro1k/keriting/00410.jpg",
+      "relpath": "dataset/figaro1k/keriting/00410.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00088.jpg",
+      "relpath": "dataset/figaro1k/lurus/00088.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00006.jpg",
+      "relpath": "dataset/figaro1k/lurus/00006.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00005.jpg",
+      "relpath": "dataset/figaro1k/lurus/00005.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00579.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00579.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00244.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00244.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00124.jpg",
+      "relpath": "dataset/figaro1k/lurus/00124.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00499.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00499.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00273.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00273.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00340.jpg",
+      "relpath": "dataset/figaro1k/keriting/00340.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00037.jpg",
+      "relpath": "dataset/figaro1k/lurus/00037.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00031.jpg",
+      "relpath": "dataset/figaro1k/lurus/00031.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00358.jpg",
+      "relpath": "dataset/figaro1k/keriting/00358.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00183.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00183.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00004.jpg",
+      "relpath": "dataset/figaro1k/lurus/00004.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00325.jpg",
+      "relpath": "dataset/figaro1k/keriting/00325.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00052.jpg",
+      "relpath": "dataset/figaro1k/lurus/00052.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00558.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00558.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00386.jpg",
+      "relpath": "dataset/figaro1k/keriting/00386.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00040.jpg",
+      "relpath": "dataset/figaro1k/lurus/00040.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00240.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00240.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00472.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00472.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00208.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00208.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00334.jpg",
+      "relpath": "dataset/figaro1k/keriting/00334.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00339.jpg",
+      "relpath": "dataset/figaro1k/keriting/00339.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00039.jpg",
+      "relpath": "dataset/figaro1k/lurus/00039.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00304.jpg",
+      "relpath": "dataset/figaro1k/keriting/00304.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00341.jpg",
+      "relpath": "dataset/figaro1k/keriting/00341.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00010.jpg",
+      "relpath": "dataset/figaro1k/lurus/00010.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00414.jpg",
+      "relpath": "dataset/figaro1k/keriting/00414.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00044.jpg",
+      "relpath": "dataset/figaro1k/lurus/00044.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00184.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00184.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00257.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00257.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00032.jpg",
+      "relpath": "dataset/figaro1k/lurus/00032.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00281.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00281.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00096.jpg",
+      "relpath": "dataset/figaro1k/lurus/00096.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00112.jpg",
+      "relpath": "dataset/figaro1k/lurus/00112.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00034.jpg",
+      "relpath": "dataset/figaro1k/lurus/00034.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00263.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00263.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00387.jpg",
+      "relpath": "dataset/figaro1k/keriting/00387.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00141.jpg",
+      "relpath": "dataset/figaro1k/lurus/00141.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00246.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00246.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00502.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00502.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00083.jpg",
+      "relpath": "dataset/figaro1k/lurus/00083.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00110.jpg",
+      "relpath": "dataset/figaro1k/lurus/00110.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00164.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00164.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00069.jpg",
+      "relpath": "dataset/figaro1k/lurus/00069.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00156.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00156.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00113.jpg",
+      "relpath": "dataset/figaro1k/lurus/00113.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00327.jpg",
+      "relpath": "dataset/figaro1k/keriting/00327.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00041.jpg",
+      "relpath": "dataset/figaro1k/lurus/00041.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00560.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00560.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00475.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00475.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00125.jpg",
+      "relpath": "dataset/figaro1k/lurus/00125.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00059.jpg",
+      "relpath": "dataset/figaro1k/lurus/00059.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00087.jpg",
+      "relpath": "dataset/figaro1k/lurus/00087.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00099.jpg",
+      "relpath": "dataset/figaro1k/lurus/00099.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00049.jpg",
+      "relpath": "dataset/figaro1k/lurus/00049.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00131.jpg",
+      "relpath": "dataset/figaro1k/lurus/00131.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00202.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00202.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00143.jpg",
+      "relpath": "dataset/figaro1k/lurus/00143.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00578.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00578.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00444.jpg",
+      "relpath": "dataset/figaro1k/keriting/00444.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00118.jpg",
+      "relpath": "dataset/figaro1k/lurus/00118.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00530.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00530.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00374.jpg",
+      "relpath": "dataset/figaro1k/keriting/00374.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00416.jpg",
+      "relpath": "dataset/figaro1k/keriting/00416.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00035.jpg",
+      "relpath": "dataset/figaro1k/lurus/00035.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00468.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00468.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00276.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00276.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00234.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00234.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00585.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00585.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00198.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00198.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00426.jpg",
+      "relpath": "dataset/figaro1k/keriting/00426.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00107.jpg",
+      "relpath": "dataset/figaro1k/lurus/00107.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00154.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00154.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00450.jpg",
+      "relpath": "dataset/figaro1k/keriting/00450.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00422.jpg",
+      "relpath": "dataset/figaro1k/keriting/00422.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00168.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00168.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00547.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00547.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00462.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00462.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00241.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00241.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00407.jpg",
+      "relpath": "dataset/figaro1k/keriting/00407.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00055.jpg",
+      "relpath": "dataset/figaro1k/lurus/00055.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00396.jpg",
+      "relpath": "dataset/figaro1k/keriting/00396.jpg",
+      "label": "samping",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00135.jpg",
+      "relpath": "dataset/figaro1k/lurus/00135.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00454.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00454.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00054.jpg",
+      "relpath": "dataset/figaro1k/lurus/00054.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00338.jpg",
+      "relpath": "dataset/figaro1k/keriting/00338.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00103.jpg",
+      "relpath": "dataset/figaro1k/lurus/00103.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00227.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00227.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00189.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00189.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00167.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00167.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00272.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00272.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00171.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00171.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00549.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00549.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00210.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00210.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00200.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00200.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00415.jpg",
+      "relpath": "dataset/figaro1k/keriting/00415.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00439.jpg",
+      "relpath": "dataset/figaro1k/keriting/00439.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00217.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00217.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/lurus/00104.jpg",
+      "relpath": "dataset/figaro1k/lurus/00104.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00543.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00543.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00178.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00178.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00231.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00231.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00528.jpg",
+      "relpath": "dataset/figaro1k/sangat-keriting/00528.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00215.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00215.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/keriting/00388.jpg",
+      "relpath": "dataset/figaro1k/keriting/00388.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00197.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00197.jpg",
+      "label": "belakang",
+      "source": "verification_human"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00269.jpg",
+      "relpath": "dataset/figaro1k/bergelombang/00269.jpg",
+      "label": "depan",
+      "source": "verification_human"
+    }
+  ]
+}
