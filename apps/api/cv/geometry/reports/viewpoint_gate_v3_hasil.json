@@ -1,0 +1,42 @@
+{
+  "analysis": "viewpoint_gate_v3_hasil",
+  "tanggal": "September 2026",
+  "pendekatan": "heuristik 3 kelas (depan/samping/belakang) di atas MediaPipe",
+  "kelas": ["depan", "samping", "belakang"],
+  "hasil_pengukuran_vs_manusia": {
+    "n_terverifikasi_digunakan": 95,
+    "akurasi": 0.80,
+    "detail_salah": {
+      "depan->samping": 6,
+      "belakang->samping": 5,
+      "belakang->depan": 3,
+      "depan->belakang": 3,
+      "belakang->belakang_nyerong": 1,
+      "samping->depan": 1
+    }
+  },
+  "catatan_distribusi_prediksi_600_figaro": {
+    "depan": 357,
+    "samping": 47,
+    "belakang": 196,
+    "peringatan": "depan masih false-positive tinggi (MediaPipe frontal_face_strong salah nyala ~73%)"
+  },
+  "temuan_kritis": [
+    "MediaPipe Pose berhalusinasi: frontal_face_strong=True pada 438/600 (73%) foto, termasuk belakang.",
+    "MediaPipe juga melaporkan nose_vis tinggi (>0.8) pada foto belakang.",
+    "shoulder_both_visible=431 (72%): hampir semua foto punya 2 bahu terlihat, sehingga kelas 'samping' sulit dipisahkan.",
+    "Grid search 3x3x3x3x3 kombinasi bobot: PLAFON akurasi = 80.0% (tidak bisa lebih tinggi).",
+    "Kesalahan dominan: depan<->samping dan belakang<->samping (batas sulit dengan landmark)."
+  ],
+  "kesimpulan": {
+    "status": "BATAS HEURISTIK TERCAPAI",
+    "plafon": "~80%",
+    "alasan": "Sinyal MediaPipe tidak cukup memisahkan depan/samping/belakang secara andal. Berbagai kombinasi aturan tetap mentok ~80%.",
+    "rekomendasi": "Untuk >80% (target >95%), BUTUH CNN viewpoint yang dilatih dari data (belajar dari piksel, bukan landmark). Perlu dataset viewpoint berimbang (~600), karena Figaro mayoritas belakang."
+  },
+  "yang_sudah_benar": [
+    "Migrasi 4->3 kelas (nyerong digabung) mengurangi sumber 'ragu'.",
+    "Sinyal 1-bahu/1-lengan menambah kemampuan deteksi 'samping'.",
+    "Aturan 'depan' diperketat (butuh frontal kuat + geometri simetris)."
+  ]
+}

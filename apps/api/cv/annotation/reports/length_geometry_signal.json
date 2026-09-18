@@ -1,0 +1,638 @@
+{
+  "analysis": "length_geometry_signal",
+  "annotator": "A",
+  "n_frames": 33,
+  "class_distribution": {
+    "long": 3,
+    "shoulder": 5,
+    "mid_back": 10,
+    "short": 15
+  },
+  "features": {
+    "bbox_aspect": {
+      "feature": "bbox_aspect",
+      "n_total": 33,
+      "per_class": {
+        "short": {
+          "n": 15,
+          "median": 1.0466,
+          "iqr_q1": 0.9677,
+          "iqr_q3": 1.10675,
+          "mean": 1.0558133333333333,
+          "std": 0.12425343264396974
+        },
+        "shoulder": {
+          "n": 5,
+          "median": 1.3259,
+          "iqr_q1": 1.2328,
+          "iqr_q3": 1.3389,
+          "mean": 1.28666,
+          "std": 0.07588269236130199
+        },
+        "mid_back": {
+          "n": 10,
+          "median": 1.74235,
+          "iqr_q1": 1.5743500000000001,
+          "iqr_q3": 1.8306,
+          "mean": 1.74049,
+          "std": 0.202503198602996
+        },
+        "long": {
+          "n": 3,
+          "median": 2.1858,
+          "iqr_q1": 1.97715,
+          "iqr_q3": 2.27215,
+          "mean": 2.1042666666666663,
+          "std": 0.3033327600727183
+        }
+      },
+      "kruskal_wallis": {
+        "H": 26.4171,
+        "p_value": 7.799627815533973e-06,
+        "k_groups": 4,
+        "n_total": 33,
+        "effect_size_epsilon_squared": 0.731785
+      },
+      "pairwise_mann_whitney_holm": [
+        {
+          "pair": "short vs shoulder",
+          "p_value": 0.0024509803921568627,
+          "holm_significant": true
+        },
+        {
+          "pair": "short vs mid_back",
+          "p_value": 3.588130594020882e-05,
+          "holm_significant": true
+        },
+        {
+          "pair": "short vs long",
+          "p_value": 0.0024509803921568627,
+          "holm_significant": true
+        },
+        {
+          "pair": "shoulder vs mid_back",
+          "p_value": 0.000666000666000666,
+          "holm_significant": true
+        },
+        {
+          "pair": "shoulder vs long",
+          "p_value": 0.03571428571428571,
+          "holm_significant": false
+        },
+        {
+          "pair": "mid_back vs long",
+          "p_value": 0.1118881118881119,
+          "holm_significant": false
+        }
+      ]
+    },
+    "bbox_h": {
+      "feature": "bbox_h",
+      "n_total": 33,
+      "per_class": {
+        "short": {
+          "n": 15,
+          "median": 399.0,
+          "iqr_q1": 354.0,
+          "iqr_q3": 432.0,
+          "mean": 405.06666666666666,
+          "std": 58.20955575292067
+        },
+        "shoulder": {
+          "n": 5,
+          "median": 403.0,
+          "iqr_q1": 397.0,
+          "iqr_q3": 419.0,
+          "mean": 494.0,
+          "std": 213.5415650406262
+        },
+        "mid_back": {
+          "n": 10,
+          "median": 525.5,
+          "iqr_q1": 498.0,
+          "iqr_q3": 564.0,
+          "mean": 534.3,
+          "std": 45.73607863480306
+        },
+        "long": {
+          "n": 3,
+          "median": 647.0,
+          "iqr_q1": 610.0,
+          "iqr_q3": 823.5,
+          "mean": 740.0,
+          "std": 228.18632737304836
+        }
+      },
+      "kruskal_wallis": {
+        "H": 18.3646,
+        "p_value": 0.000369895852298137,
+        "k_groups": 4,
+        "n_total": 33,
+        "effect_size_epsilon_squared": 0.480143
+      },
+      "pairwise_mann_whitney_holm": [
+        {
+          "pair": "short vs shoulder",
+          "p_value": 0.6115841073271414,
+          "holm_significant": false
+        },
+        {
+          "pair": "short vs mid_back",
+          "p_value": 0.0001804321664326008,
+          "holm_significant": true
+        },
+        {
+          "pair": "short vs long",
+          "p_value": 0.0024509803921568627,
+          "holm_significant": true
+        },
+        {
+          "pair": "shoulder vs mid_back",
+          "p_value": 0.07549130459838524,
+          "holm_significant": false
+        },
+        {
+          "pair": "shoulder vs long",
+          "p_value": 0.14285714285714285,
+          "holm_significant": false
+        },
+        {
+          "pair": "mid_back vs long",
+          "p_value": 0.03436233622352398,
+          "holm_significant": false
+        }
+      ]
+    },
+    "bbox_w": {
+      "feature": "bbox_w",
+      "n_total": 33,
+      "per_class": {
+        "short": {
+          "n": 15,
+          "median": 359.0,
+          "iqr_q1": 330.0,
+          "iqr_q3": 441.5,
+          "mean": 390.2,
+          "std": 84.47332630566206
+        },
+        "shoulder": {
+          "n": 5,
+          "median": 305.0,
+          "iqr_q1": 301.0,
+          "iqr_q3": 316.0,
+          "mean": 391.2,
+          "std": 195.71969752684578
+        },
+        "mid_back": {
+          "n": 10,
+          "median": 315.0,
+          "iqr_q1": 298.0,
+          "iqr_q3": 329.0,
+          "mean": 309.1,
+          "std": 28.442729983053475
+        },
+        "long": {
+          "n": 3,
+          "median": 324.0,
+          "iqr_q1": 310.0,
+          "iqr_q3": 374.0,
+          "mean": 348.0,
+          "std": 67.29041536504289
+        }
+      },
+      "kruskal_wallis": {
+        "H": 8.7607,
+        "p_value": 0.03264811737022666,
+        "k_groups": 4,
+        "n_total": 33,
+        "effect_size_epsilon_squared": 0.180021
+      },
+      "pairwise_mann_whitney_holm": [
+        {
+          "pair": "short vs shoulder",
+          "p_value": 0.1417698658410733,
+          "holm_significant": false
+        },
+        {
+          "pair": "short vs mid_back",
+          "p_value": 0.0032591556034711274,
+          "holm_significant": true
+        },
+        {
+          "pair": "short vs long",
+          "p_value": 0.4264705882352941,
+          "holm_significant": false
+        },
+        {
+          "pair": "shoulder vs mid_back",
+          "p_value": 0.8541107494330825,
+          "holm_significant": false
+        },
+        {
+          "pair": "shoulder vs long",
+          "p_value": 0.7857142857142857,
+          "holm_significant": false
+        },
+        {
+          "pair": "mid_back vs long",
+          "p_value": 0.4462475401164281,
+          "holm_significant": false
+        }
+      ]
+    },
+    "span_ratio": {
+      "feature": "span_ratio",
+      "n_total": 33,
+      "per_class": {
+        "short": {
+          "n": 15,
+          "median": 0.6018,
+          "iqr_q1": 0.5353,
+          "iqr_q3": 0.6943999999999999,
+          "mean": 0.6280533333333335,
+          "std": 0.1071955547230432
+        },
+        "shoulder": {
+          "n": 5,
+          "median": 0.875,
+          "iqr_q1": 0.7054,
+          "iqr_q3": 0.8785,
+          "mean": 0.7923600000000001,
+          "std": 0.13600265806225995
+        },
+        "mid_back": {
+          "n": 10,
+          "median": 0.92455,
+          "iqr_q1": 0.878325,
+          "iqr_q3": 0.9384,
+          "mean": 0.88455,
+          "std": 0.08887792189289757
+        },
+        "long": {
+          "n": 3,
+          "median": 0.9024,
+          "iqr_q1": 0.82915,
+          "iqr_q3": 0.9512,
+          "mean": 0.8861,
+          "std": 0.12286362358322335
+        }
+      },
+      "kruskal_wallis": {
+        "H": 18.6481,
+        "p_value": 0.00032323640035739857,
+        "k_groups": 4,
+        "n_total": 33,
+        "effect_size_epsilon_squared": 0.489004
+      },
+      "pairwise_mann_whitney_holm": [
+        {
+          "pair": "short vs shoulder",
+          "p_value": 0.02541279669762642,
+          "holm_significant": false
+        },
+        {
+          "pair": "short vs mid_back",
+          "p_value": 0.00018095049043756288,
+          "holm_significant": true
+        },
+        {
+          "pair": "short vs long",
+          "p_value": 0.00980392156862745,
+          "holm_significant": true
+        },
+        {
+          "pair": "shoulder vs mid_back",
+          "p_value": 0.09923409923409923,
+          "holm_significant": false
+        },
+        {
+          "pair": "shoulder vs long",
+          "p_value": 0.39285714285714285,
+          "holm_significant": false
+        },
+        {
+          "pair": "mid_back vs long",
+          "p_value": 1.0,
+          "holm_significant": false
+        }
+      ]
+    },
+    "face_ratio": {
+      "feature": "face_ratio",
+      "n_total": 29,
+      "per_class": {
+        "short": {
+          "n": 13,
+          "median": 1.5291,
+          "iqr_q1": 1.4326,
+          "iqr_q3": 1.8387,
+          "mean": 1.6624923076923075,
+          "std": 0.36945463515281207
+        },
+        "shoulder": {
+          "n": 5,
+          "median": 2.7762,
+          "iqr_q1": 2.7516,
+          "iqr_q3": 3.1269,
+          "mean": 2.95086,
+          "std": 0.6605115199600988
+        },
+        "mid_back": {
+          "n": 8,
+          "median": 3.0284,
+          "iqr_q1": 2.77975,
+          "iqr_q3": 3.201975,
+          "mean": 2.9720500000000003,
+          "std": 0.4407714244043375
+        },
+        "long": {
+          "n": 3,
+          "median": 3.4311,
+          "iqr_q1": 2.7465,
+          "iqr_q3": 3.5329499999999996,
+          "mean": 3.0426,
+          "std": 0.8553962765876408
+        }
+      },
+      "kruskal_wallis": {
+        "H": 18.5228,
+        "p_value": 0.00034309042065933484,
+        "k_groups": 4,
+        "n_total": 29,
+        "effect_size_epsilon_squared": 0.554385
+      },
+      "pairwise_mann_whitney_holm": [
+        {
+          "pair": "short vs shoulder",
+          "p_value": 0.0009337068160597573,
+          "holm_significant": true
+        },
+        {
+          "pair": "short vs mid_back",
+          "p_value": 1.9656985601258048e-05,
+          "holm_significant": true
+        },
+        {
+          "pair": "short vs long",
+          "p_value": 0.025,
+          "holm_significant": false
+        },
+        {
+          "pair": "shoulder vs mid_back",
+          "p_value": 0.7241647241647241,
+          "holm_significant": false
+        },
+        {
+          "pair": "shoulder vs long",
+          "p_value": 1.0,
+          "holm_significant": false
+        },
+        {
+          "pair": "mid_back vs long",
+          "p_value": 0.7757575757575759,
+          "holm_significant": false
+        }
+      ]
+    },
+    "area_ratio": {
+      "feature": "area_ratio",
+      "n_total": 33,
+      "per_class": {
+        "short": {
+          "n": 15,
+          "median": 0.3478,
+          "iqr_q1": 0.275145,
+          "iqr_q3": 0.44016,
+          "mean": 0.3504886666666666,
+          "std": 0.09892058913713613
+        },
+        "shoulder": {
+          "n": 5,
+          "median": 0.39961,
+          "iqr_q1": 0.28238,
+          "iqr_q3": 0.55804,
+          "mean": 0.414374,
+          "std": 0.174741528206663
+        },
+        "mid_back": {
+          "n": 10,
+          "median": 0.47657000000000005,
+          "iqr_q1": 0.4364825,
+          "iqr_q3": 0.5080225,
+          "mean": 0.458781,
+          "std": 0.066493619485047
+        },
+        "long": {
+          "n": 3,
+          "median": 0.31503,
+          "iqr_q1": 0.276205,
+          "iqr_q3": 0.341765,
+          "mean": 0.30696999999999997,
+          "std": 0.06593054148116789
+        }
+      },
+      "kruskal_wallis": {
+        "H": 8.8699,
+        "p_value": 0.031071148936628816,
+        "k_groups": 4,
+        "n_total": 33,
+        "effect_size_epsilon_squared": 0.183435
+      },
+      "pairwise_mann_whitney_holm": [
+        {
+          "pair": "short vs shoulder",
+          "p_value": 0.45795410781152823,
+          "holm_significant": false
+        },
+        {
+          "pair": "short vs mid_back",
+          "p_value": 0.005090727632189921,
+          "holm_significant": true
+        },
+        {
+          "pair": "short vs long",
+          "p_value": 0.6544117647058824,
+          "holm_significant": false
+        },
+        {
+          "pair": "shoulder vs mid_back",
+          "p_value": 0.7678987678987679,
+          "holm_significant": false
+        },
+        {
+          "pair": "shoulder vs long",
+          "p_value": 0.5714285714285714,
+          "holm_significant": false
+        },
+        {
+          "pair": "mid_back vs long",
+          "p_value": 0.013986013986013986,
+          "holm_significant": false
+        }
+      ]
+    },
+    "fill_ratio": {
+      "feature": "fill_ratio",
+      "n_total": 33,
+      "per_class": {
+        "short": {
+          "n": 15,
+          "median": 0.6812,
+          "iqr_q1": 0.65205,
+          "iqr_q3": 0.7259500000000001,
+          "mean": 0.6835999999999999,
+          "std": 0.06959605900172386
+        },
+        "shoulder": {
+          "n": 5,
+          "median": 0.7099,
+          "iqr_q1": 0.7088,
+          "iqr_q3": 0.7205,
+          "mean": 0.64262,
+          "std": 0.17787432923274793
+        },
+        "mid_back": {
+          "n": 10,
+          "median": 0.69025,
+          "iqr_q1": 0.655675,
+          "iqr_q3": 0.743,
+          "mean": 0.7023900000000001,
+          "std": 0.05559295418985715
+        },
+        "long": {
+          "n": 3,
+          "median": 0.6496,
+          "iqr_q1": 0.6047499999999999,
+          "iqr_q3": 0.6959,
+          "mean": 0.6505666666666666,
+          "std": 0.09115384431461646
+        }
+      },
+      "kruskal_wallis": {
+        "H": 0.9914,
+        "p_value": 0.8033222819664643,
+        "k_groups": 4,
+        "n_total": 33,
+        "effect_size_epsilon_squared": -0.062767
+      },
+      "pairwise_mann_whitney_holm": [
+        {
+          "pair": "short vs shoulder",
+          "p_value": 0.8659700722394221,
+          "holm_significant": false
+        },
+        {
+          "pair": "short vs mid_back",
+          "p_value": 0.5602735733449105,
+          "holm_significant": false
+        },
+        {
+          "pair": "short vs long",
+          "p_value": 0.5735294117647058,
+          "holm_significant": false
+        },
+        {
+          "pair": "shoulder vs mid_back",
+          "p_value": 1.0,
+          "holm_significant": false
+        },
+        {
+          "pair": "shoulder vs long",
+          "p_value": 0.7857142857142857,
+          "holm_significant": false
+        },
+        {
+          "pair": "mid_back vs long",
+          "p_value": 0.3706293706293706,
+          "holm_significant": false
+        }
+      ]
+    },
+    "solidity": {
+      "feature": "solidity",
+      "n_total": 33,
+      "per_class": {
+        "short": {
+          "n": 15,
+          "median": 0.9255,
+          "iqr_q1": 0.8735999999999999,
+          "iqr_q3": 0.9627,
+          "mean": 0.9036933333333331,
+          "std": 0.08905250029911461
+        },
+        "shoulder": {
+          "n": 5,
+          "median": 0.9143,
+          "iqr_q1": 0.892,
+          "iqr_q3": 0.9233,
+          "mean": 0.8290400000000002,
+          "std": 0.1932172171417444
+        },
+        "mid_back": {
+          "n": 10,
+          "median": 0.89795,
+          "iqr_q1": 0.8885,
+          "iqr_q3": 0.923975,
+          "mean": 0.91131,
+          "std": 0.03684657228140616
+        },
+        "long": {
+          "n": 3,
+          "median": 0.8815,
+          "iqr_q1": 0.8187,
+          "iqr_q3": 0.92555,
+          "mean": 0.8690000000000001,
+          "std": 0.10739697388660446
+        }
+      },
+      "kruskal_wallis": {
+        "H": 1.897,
+        "p_value": 0.5940533018614831,
+        "k_groups": 4,
+        "n_total": 33,
+        "effect_size_epsilon_squared": -0.034468
+      },
+      "pairwise_mann_whitney_holm": [
+        {
+          "pair": "short vs shoulder",
+          "p_value": 0.23000515995872037,
+          "holm_significant": false
+        },
+        {
+          "pair": "short vs mid_back",
+          "p_value": 0.4880740931652481,
+          "holm_significant": false
+        },
+        {
+          "pair": "short vs long",
+          "p_value": 0.49754901960784315,
+          "holm_significant": false
+        },
+        {
+          "pair": "shoulder vs mid_back",
+          "p_value": 0.9024365360883044,
+          "holm_significant": false
+        },
+        {
+          "pair": "shoulder vs long",
+          "p_value": 1.0,
+          "holm_significant": false
+        },
+        {
+          "pair": "mid_back vs long",
+          "p_value": 0.46853146853146854,
+          "holm_significant": false
+        }
+      ]
+    }
+  },
+  "significant_features": [
+    "bbox_aspect",
+    "bbox_h",
+    "bbox_w",
+    "span_ratio",
+    "face_ratio",
+    "area_ratio"
+  ],
+  "note": "This is E0 Gate. If NO features have significant signal, geometry-only approach for length is NOT supported by human GT. Use human GT as reference; Gemini/geometric pseudo-labels were NOT used."
+}

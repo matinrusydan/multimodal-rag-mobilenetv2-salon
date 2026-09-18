@@ -1,0 +1,47 @@
+{
+  "task": "hair_length",
+  "arch": "convnext_tiny",
+  "classes": [
+    "pendek",
+    "pendek-menengah",
+    "menengah",
+    "panjang"
+  ],
+  "train": 1124,
+  "val": 373,
+  "val_distribution": {
+    "pendek": 209,
+    "pendek-menengah": 67,
+    "menengah": 37,
+    "panjang": 60
+  },
+  "best_val_acc": 0.8606,
+  "best_epoch": 31,
+  "confusion_matrix": [
+    [
+      194,
+      9,
+      0,
+      6
+    ],
+    [
+      3,
+      49,
+      8,
+      7
+    ],
+    [
+      0,
+      5,
+      29,
+      3
+    ],
+    [
+      6,
+      3,
+      2,
+      49
+    ]
+  ],
+  "onnx": "C:\\laragon\\www\\RAG-salon\\apps\\api\\cv\\weights\\hair_length_champ_s7.onnx"
+}

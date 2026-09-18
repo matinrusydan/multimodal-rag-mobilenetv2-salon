@@ -1,0 +1,52 @@
+{
+  "task": "hair_length",
+  "version": "v2-anti-overfit",
+  "dataset": "merged (figaro + hairstyle40)",
+  "classes": [
+    "pendek",
+    "pendek-menengah",
+    "menengah",
+    "panjang"
+  ],
+  "train": 1854,
+  "val": 372,
+  "hyperparams": {
+    "epochs": 25,
+    "batch": 32,
+    "lr_head": 0.002,
+    "lr_full": 0.0003,
+    "warmup": 2,
+    "patience": 6,
+    "dropout": 0.3,
+    "label_smooth": 0.05
+  },
+  "best_val_acc": 0.7446,
+  "best_epoch": 21,
+  "confusion_matrix": [
+    [
+      120,
+      13,
+      2,
+      3
+    ],
+    [
+      14,
+      82,
+      19,
+      5
+    ],
+    [
+      4,
+      10,
+      32,
+      4
+    ],
+    [
+      4,
+      5,
+      12,
+      43
+    ]
+  ],
+  "onnx": "C:\\laragon\\www\\RAG-salon\\apps\\api\\cv\\weights\\hair_length_v2.onnx"
+}

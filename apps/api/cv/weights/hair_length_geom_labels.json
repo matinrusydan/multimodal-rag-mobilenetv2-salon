@@ -1,0 +1,10 @@
+{
+  "classes": [
+    "pendek",
+    "pendek-menengah",
+    "menengah",
+    "panjang"
+  ],
+  "model": "mobilenet_v2",
+  "task": "hair_length"
+}

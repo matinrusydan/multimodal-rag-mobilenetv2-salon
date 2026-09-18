@@ -1,0 +1,40 @@
+{
+  "task": "hair_length",
+  "arch": "convnext_tiny",
+  "classes": [
+    "pendek",
+    "pendek-menengah",
+    "menengah",
+    "panjang"
+  ],
+  "split": "holdout seed 42 25% (anti-leakage)",
+  "train": 1124,
+  "val": 373,
+  "val_distribution": {
+    "pendek": 209,
+    "pendek-menengah": 67,
+    "menengah": 37,
+    "panjang": 60
+  },
+  "ensemble_results": {
+    "s1": 0.8284,
+    "s1+TTA": 0.8284,
+    "s2": 0.8231,
+    "s2+TTA": 0.8257,
+    "s3": 0.8257,
+    "s3+TTA": 0.8177,
+    "s1+s2": 0.8123,
+    "s1+s2+TTA": 0.8257,
+    "s1+s3": 0.8284,
+    "s1+s3+TTA": 0.8338,
+    "s2+s3": 0.8418,
+    "s2+s3+TTA": 0.8391,
+    "s1+s2+s3": 0.8391,
+    "s1+s2+s3+TTA": 0.8391
+  },
+  "best": "s2+s3",
+  "best_acc": 0.8418,
+  "deployed_seed": 1,
+  "deployed_acc": 0.8284,
+  "onnx": "C:\\laragon\\www\\RAG-salon\\apps\\api\\cv\\weights\\hair_length_final.onnx"
+}

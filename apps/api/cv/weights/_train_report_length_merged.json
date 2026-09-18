@@ -1,0 +1,168 @@
+{
+  "task": "hair_length",
+  "dataset": "merged (figaro + figaro-extra + bald + hairstyle40)",
+  "label_source_figaro": "geometric",
+  "classes": [
+    "pendek",
+    "pendek-menengah",
+    "menengah",
+    "panjang"
+  ],
+  "train_tensor": 1854,
+  "val_tensor": 372,
+  "epochs": 20,
+  "batch": 32,
+  "lr": 0.0005,
+  "history": [
+    {
+      "epoch": 1,
+      "train_acc": 0.5814,
+      "val_acc": 0.6909,
+      "val_loss": 0.7762
+    },
+    {
+      "epoch": 2,
+      "train_acc": 0.7848,
+      "val_acc": 0.7231,
+      "val_loss": 0.7401
+    },
+    {
+      "epoch": 3,
+      "train_acc": 0.9008,
+      "val_acc": 0.7419,
+      "val_loss": 0.7456
+    },
+    {
+      "epoch": 4,
+      "train_acc": 0.9768,
+      "val_acc": 0.6962,
+      "val_loss": 0.7934
+    },
+    {
+      "epoch": 5,
+      "train_acc": 0.9865,
+      "val_acc": 0.7177,
+      "val_loss": 0.7681
+    },
+    {
+      "epoch": 6,
+      "train_acc": 0.9935,
+      "val_acc": 0.7339,
+      "val_loss": 0.7482
+    },
+    {
+      "epoch": 7,
+      "train_acc": 0.9984,
+      "val_acc": 0.7204,
+      "val_loss": 0.7064
+    },
+    {
+      "epoch": 8,
+      "train_acc": 0.9968,
+      "val_acc": 0.7285,
+      "val_loss": 0.7265
+    },
+    {
+      "epoch": 9,
+      "train_acc": 0.9984,
+      "val_acc": 0.7204,
+      "val_loss": 0.7272
+    },
+    {
+      "epoch": 10,
+      "train_acc": 0.9989,
+      "val_acc": 0.7446,
+      "val_loss": 0.7222
+    },
+    {
+      "epoch": 11,
+      "train_acc": 0.9989,
+      "val_acc": 0.7204,
+      "val_loss": 0.7319
+    },
+    {
+      "epoch": 12,
+      "train_acc": 0.9995,
+      "val_acc": 0.7339,
+      "val_loss": 0.7237
+    },
+    {
+      "epoch": 13,
+      "train_acc": 0.9995,
+      "val_acc": 0.75,
+      "val_loss": 0.7263
+    },
+    {
+      "epoch": 14,
+      "train_acc": 0.9989,
+      "val_acc": 0.7285,
+      "val_loss": 0.717
+    },
+    {
+      "epoch": 15,
+      "train_acc": 0.9995,
+      "val_acc": 0.7392,
+      "val_loss": 0.7306
+    },
+    {
+      "epoch": 16,
+      "train_acc": 0.9989,
+      "val_acc": 0.7527,
+      "val_loss": 0.7264
+    },
+    {
+      "epoch": 17,
+      "train_acc": 0.9995,
+      "val_acc": 0.7285,
+      "val_loss": 0.7158
+    },
+    {
+      "epoch": 18,
+      "train_acc": 0.9995,
+      "val_acc": 0.7312,
+      "val_loss": 0.7194
+    },
+    {
+      "epoch": 19,
+      "train_acc": 0.9995,
+      "val_acc": 0.7312,
+      "val_loss": 0.7172
+    },
+    {
+      "epoch": 20,
+      "train_acc": 1.0,
+      "val_acc": 0.7339,
+      "val_loss": 0.7142
+    }
+  ],
+  "best_val_acc": 0.7527,
+  "confusion_matrix": [
+    [
+      123,
+      11,
+      2,
+      2
+    ],
+    [
+      21,
+      82,
+      12,
+      5
+    ],
+    [
+      2,
+      13,
+      31,
+      4
+    ],
+    [
+      9,
+      6,
+      5,
+      44
+    ]
+  ],
+  "onnx": "C:\\laragon\\www\\RAG-salon\\apps\\api\\cv\\weights\\hair_length_merged.onnx",
+  "opset": 14,
+  "duration_s": 218.8
+}

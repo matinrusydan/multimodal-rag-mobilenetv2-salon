@@ -13,20 +13,6 @@ const EnvSchema = z.object({
   DB_POOL_MAX: z.coerce.number().default(10),
   JWT_SECRET: z.string().min(1, 'JWT_SECRET wajib diisi'),
   JWT_EXPIRES_IN: z.string().default('1d'),
-  OPENAI_API_KEY: z.string().optional(),
-  OPENAI_MODEL: z.string().default('gpt-4o-mini'),
-  OPENAI_EMBEDDING_MODEL: z.string().default('text-embedding-3-small'),
-  RAG_EMBEDDING_PROVIDER: z.enum(['openai', 'local']).default('openai'),
-  CHROMA_PERSIST_DIR: z.string().default('./chroma_db'),
-  CHROMA_URL: z.string().default('http://127.0.0.1:8000'),
-  RAG_TOP_K: z.coerce.number().default(5),
-  RAG_KNOWLEDGE_DIR: z.string().default('./rag/knowledge'),
-  RAG_MIN_CHUNK_TOKENS: z.coerce.number().default(500),
-  RAG_MAX_CHUNK_TOKENS: z.coerce.number().default(1000),
-  RAG_CHUNK_OVERLAP: z.coerce.number().default(100),
-  MODEL_LENGTH_PATH: z.string().default('./cv/weights/hair_length.onnx'),
-  MODEL_TYPE_PATH: z.string().default('./cv/weights/hair_type.onnx'),
-  CONFIDENCE_THRESHOLD: z.coerce.number().default(0.5),
   SECURITY_ENFORCE_ENABLED: z
     .enum(['true', 'false'])
     .default('true')

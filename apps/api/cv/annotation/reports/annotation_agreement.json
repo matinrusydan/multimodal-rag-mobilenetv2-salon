@@ -1,0 +1,135 @@
+{
+  "overall_raw_agreement": 0.7875,
+  "n_common_images": 80,
+  "length": {
+    "attribute": "length",
+    "n_images": 44,
+    "n_ordinal": 31,
+    "raw_agreement_ordinal": 0.9355,
+    "cohens_kappa": 0.897,
+    "linear_weighted_kappa": 0.9399,
+    "quadratic_weighted_kappa": 0.9687,
+    "confusion_matrix": [
+      [
+        15,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        3,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1
+      ]
+    ],
+    "classes": [
+      "short",
+      "shoulder",
+      "mid_back",
+      "long"
+    ],
+    "per_class": {
+      "short": {
+        "recall": 1.0,
+        "n_annotator_a": 15
+      },
+      "shoulder": {
+        "recall": 0.75,
+        "n_annotator_a": 4
+      },
+      "mid_back": {
+        "recall": 1.0,
+        "n_annotator_a": 10
+      },
+      "long": {
+        "recall": 0.5,
+        "n_annotator_a": 2
+      }
+    },
+    "ungradable_rate_a": 0.2045,
+    "ungradable_rate_b": 0.2727,
+    "confidence_distribution": {
+      "A": {
+        "high": 4,
+        "medium": 38,
+        "low": 2
+      },
+      "B": {
+        "medium": 34,
+        "high": 9,
+        "low": 1
+      }
+    },
+    "n_disagreements": 7,
+    "disagreement_boundary_counts": {
+      "long|mid_back": 1,
+      "shoulder|ungradable": 2,
+      "mid_back|shoulder": 1,
+      "None|ungradable": 2,
+      "long|ungradable": 1
+    },
+    "decision": "YELLOW"
+  },
+  "volume": {
+    "attribute": "visual_volume",
+    "provisional": true,
+    "n_images": 34,
+    "n_ordinal": 29,
+    "raw_agreement_ordinal": 0.8276,
+    "cohens_kappa": 0.7254,
+    "linear_weighted_kappa": 0.7779,
+    "quadratic_weighted_kappa": 0.8394,
+    "confusion_matrix": [
+      [
+        4,
+        1,
+        0
+      ],
+      [
+        1,
+        9,
+        2
+      ],
+      [
+        0,
+        1,
+        11
+      ]
+    ],
+    "classes": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "ungradable_rate_a": 0.0,
+    "ungradable_rate_b": 0.0588,
+    "n_disagreements": 10,
+    "disagreement_boundary_counts": {
+      "high|medium": 3,
+      "high|ungradable": 2,
+      "low|medium": 2,
+      "high|long": 1,
+      "medium|shoulder": 2
+    },
+    "decision": "YELLOW"
+  },
+  "note": "Decision (GREEN/YELLOW/RED) is a GUIDELINE, not scientific law. Interpret with disagreement patterns.",
+  "kappa_interpretation": {
+    "unweighted": "Treats all disagreements equally. Penalizes adjacent-class errors same as distant-class.",
+    "linear_weighted": "Penalty proportional to ordinal distance |i - j|.",
+    "quadratic_weighted": "Penalty proportional to squared ordinal distance (i - j)^2. More forgiving of adjacent-class errors. Preferred for ordinal data."
+  }
+}

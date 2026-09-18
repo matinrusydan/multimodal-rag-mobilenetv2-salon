@@ -1,0 +1,6482 @@
+[
+  {
+    "image_id": "figaro1k/sangat-keriting/00481.jpg",
+    "source": "figaro1k",
+    "viewpoint": "side",
+    "hair_type": "kinky",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 691,
+    "image_height": 864,
+    "annotation_timestamp": "2026-09-17T17:28:57.722380+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00045.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": true,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 374,
+    "image_height": 434,
+    "annotation_timestamp": "2026-09-17T17:28:58.370617+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00360.jpg",
+    "source": "figaro1k",
+    "viewpoint": "side",
+    "hair_type": "wavy",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 742,
+    "image_height": 495,
+    "annotation_timestamp": "2026-09-17T17:28:58.742622+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00159.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 454,
+    "image_height": 681,
+    "annotation_timestamp": "2026-09-17T17:28:59.206476+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00592.jpg",
+    "source": "figaro1k",
+    "viewpoint": "front",
+    "hair_type": "kinky",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "insufficient_visibility",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:28:59.688404+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00594.jpg",
+    "source": "figaro1k",
+    "viewpoint": "front",
+    "hair_type": "kinky",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 985,
+    "annotation_timestamp": "2026-09-17T17:29:01.060417+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00152.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "shoulder"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 445,
+    "image_height": 667,
+    "annotation_timestamp": "2026-09-17T17:29:01.804562+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00270.jpg",
+    "source": "figaro1k",
+    "viewpoint": "front",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "high",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 733,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:29:30.664280+00:00",
+    "annotator": "A",
+    "notes": "pendek sih tapi dari depan"
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00471.jpg",
+    "source": "figaro1k",
+    "viewpoint": "front",
+    "hair_type": "curly",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 660,
+    "image_height": 654,
+    "annotation_timestamp": "2026-09-17T17:29:33.928397+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00136.jpg",
+    "source": "figaro1k",
+    "viewpoint": "side",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "shoulder"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:29:35.633100+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00074.jpg",
+    "source": "figaro1k",
+    "viewpoint": "front",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "high",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 478,
+    "image_height": 679,
+    "annotation_timestamp": "2026-09-17T17:29:46.228304+00:00",
+    "annotator": "A",
+    "notes": "pendek sih tapi dari depan"
+  },
+  {
+    "image_id": "figaro1k/keriting/00395.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 439,
+    "image_height": 557,
+    "annotation_timestamp": "2026-09-17T17:29:48.784404+00:00",
+    "annotator": "A",
+    "notes": "rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/lurus/00149.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "insufficient_visibility",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:29:54.590389+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00133.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:30:04.724132+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00418.jpg",
+    "source": "figaro1k",
+    "viewpoint": "front",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 629,
+    "image_height": 798,
+    "annotation_timestamp": "2026-09-17T17:30:33.644374+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00344.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 858,
+    "image_height": 858,
+    "annotation_timestamp": "2026-09-17T17:30:37.492348+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00350.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 406,
+    "image_height": 541,
+    "annotation_timestamp": "2026-09-17T17:30:44.810809+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00017.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "shoulder"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 432,
+    "image_height": 648,
+    "annotation_timestamp": "2026-09-17T17:30:52.060588+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00451.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "insufficient_visibility",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 368,
+    "image_height": 276,
+    "annotation_timestamp": "2026-09-17T17:30:56.378318+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00277.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "shoulder"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 432,
+    "image_height": 648,
+    "annotation_timestamp": "2026-09-17T17:31:05.948645+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00101.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 496,
+    "image_height": 742,
+    "annotation_timestamp": "2026-09-17T17:31:11.370189+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00399.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 560,
+    "image_height": 746,
+    "annotation_timestamp": "2026-09-17T17:31:15.158363+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00080.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 521,
+    "image_height": 753,
+    "annotation_timestamp": "2026-09-17T17:31:26.622214+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/keriting/00441.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 685,
+    "annotation_timestamp": "2026-09-17T17:31:31.006553+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00364.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 530,
+    "image_height": 709,
+    "annotation_timestamp": "2026-09-17T17:31:35.388238+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00086.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 450,
+    "image_height": 677,
+    "annotation_timestamp": "2026-09-17T17:31:43.018590+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00229.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 397,
+    "image_height": 656,
+    "annotation_timestamp": "2026-09-17T17:31:53.388566+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/lurus/00029.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "long"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 538,
+    "image_height": 717,
+    "annotation_timestamp": "2026-09-17T17:31:59.550155+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00352.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "medium"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 396,
+    "image_height": 475,
+    "annotation_timestamp": "2026-09-17T17:32:09.824167+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00342.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "long"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 456,
+    "image_height": 583,
+    "annotation_timestamp": "2026-09-17T17:32:19.170422+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00533.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 594,
+    "image_height": 594,
+    "annotation_timestamp": "2026-09-17T17:32:27.184262+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00063.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 409,
+    "image_height": 412,
+    "annotation_timestamp": "2026-09-17T17:32:36.828560+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00268.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 705,
+    "image_height": 972,
+    "annotation_timestamp": "2026-09-17T17:32:41.020404+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00488.jpg",
+    "source": "figaro1k",
+    "viewpoint": "side",
+    "hair_type": "kinky",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": "insufficient_visibility",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 544,
+    "annotation_timestamp": "2026-09-17T17:32:56.244146+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00089.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 620,
+    "image_height": 929,
+    "annotation_timestamp": "2026-09-17T17:33:03.118647+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00274.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 697,
+    "annotation_timestamp": "2026-09-17T17:33:12.168276+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00492.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 631,
+    "image_height": 946,
+    "annotation_timestamp": "2026-09-17T17:33:15.718230+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00169.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "shoulder"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 539,
+    "image_height": 809,
+    "annotation_timestamp": "2026-09-17T17:33:24.332065+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00095.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 573,
+    "image_height": 778,
+    "annotation_timestamp": "2026-09-17T17:33:34.282315+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/keriting/00311.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 485,
+    "image_height": 727,
+    "annotation_timestamp": "2026-09-17T17:33:45.090464+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00461.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "kinky",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 519,
+    "image_height": 692,
+    "annotation_timestamp": "2026-09-17T17:34:01.674180+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00469.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:34:04.114295+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00504.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 999,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:34:06.098197+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00445.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 992,
+    "annotation_timestamp": "2026-09-17T17:34:08.160139+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00509.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 514,
+    "image_height": 732,
+    "annotation_timestamp": "2026-09-17T17:34:10.104021+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00062.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 433,
+    "image_height": 577,
+    "annotation_timestamp": "2026-09-17T17:34:12.636073+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00176.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 440,
+    "image_height": 660,
+    "annotation_timestamp": "2026-09-17T17:34:20.506101+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00132.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 474,
+    "image_height": 708,
+    "annotation_timestamp": "2026-09-17T17:34:24.319862+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00555.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 500,
+    "image_height": 750,
+    "annotation_timestamp": "2026-09-17T17:34:28.028326+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00522.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 683,
+    "image_height": 931,
+    "annotation_timestamp": "2026-09-17T17:34:31.254049+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00027.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 433,
+    "image_height": 661,
+    "annotation_timestamp": "2026-09-17T17:34:37.694343+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00007.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 420,
+    "image_height": 558,
+    "annotation_timestamp": "2026-09-17T17:34:45.192087+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00385.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 533,
+    "image_height": 801,
+    "annotation_timestamp": "2026-09-17T17:34:55.871895+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00534.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 549,
+    "image_height": 549,
+    "annotation_timestamp": "2026-09-17T17:34:59.051957+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00020.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 417,
+    "image_height": 417,
+    "annotation_timestamp": "2026-09-17T17:35:02.498449+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00013.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "other",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 926,
+    "image_height": 514,
+    "annotation_timestamp": "2026-09-17T17:35:09.068188+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00298.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 564,
+    "image_height": 845,
+    "annotation_timestamp": "2026-09-17T17:35:13.420504+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00256.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 495,
+    "image_height": 742,
+    "annotation_timestamp": "2026-09-17T17:35:15.515961+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00142.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:35:20.214072+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00519.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 731,
+    "image_height": 976,
+    "annotation_timestamp": "2026-09-17T17:35:22.853905+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00596.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:35:24.848081+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00071.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_right",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 439,
+    "image_height": 566,
+    "annotation_timestamp": "2026-09-17T17:35:32.998183+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00577.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:35:36.962120+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00283.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:35:42.828134+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00267.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 786,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:35:46.056089+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00288.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:35:49.442024+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00026.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "long"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 401,
+    "image_height": 863,
+    "annotation_timestamp": "2026-09-17T17:35:55.033807+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00003.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 515,
+    "image_height": 617,
+    "annotation_timestamp": "2026-09-17T17:36:05.401690+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00373.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "medium"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 533,
+    "image_height": 710,
+    "annotation_timestamp": "2026-09-17T17:36:15.651976+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00359.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "medium"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 549,
+    "image_height": 732,
+    "annotation_timestamp": "2026-09-17T17:36:23.701849+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00163.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 548,
+    "image_height": 822,
+    "annotation_timestamp": "2026-09-17T17:36:30.579814+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00459.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 552,
+    "image_height": 543,
+    "annotation_timestamp": "2026-09-17T17:36:33.479802+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00463.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 651,
+    "annotation_timestamp": "2026-09-17T17:36:35.582279+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00024.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 392,
+    "image_height": 628,
+    "annotation_timestamp": "2026-09-17T17:36:40.585640+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00313.jpg",
+    "source": "figaro1k",
+    "viewpoint": "front",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 451,
+    "image_height": 601,
+    "annotation_timestamp": "2026-09-17T17:36:47.548834+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00011.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "long"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 480,
+    "image_height": 720,
+    "annotation_timestamp": "2026-09-17T17:37:00.351985+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00177.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 461,
+    "image_height": 691,
+    "annotation_timestamp": "2026-09-17T17:37:07.142062+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00206.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 444,
+    "image_height": 591,
+    "annotation_timestamp": "2026-09-17T17:37:13.019743+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00264.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_right",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "shoulder"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 462,
+    "image_height": 693,
+    "annotation_timestamp": "2026-09-17T17:37:23.330009+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00493.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "insufficient_visibility",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 530,
+    "image_height": 354,
+    "annotation_timestamp": "2026-09-17T17:37:28.244135+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00239.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "insufficient_visibility",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 370,
+    "image_height": 370,
+    "annotation_timestamp": "2026-09-17T17:37:35.965864+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00290.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 907,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:37:38.273924+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00057.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_right",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 568,
+    "image_height": 804,
+    "annotation_timestamp": "2026-09-17T17:37:47.739842+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00510.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 503,
+    "image_height": 671,
+    "annotation_timestamp": "2026-09-17T17:37:50.327845+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00065.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 403,
+    "image_height": 403,
+    "annotation_timestamp": "2026-09-17T17:38:05.407730+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00453.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 690,
+    "annotation_timestamp": "2026-09-17T17:38:05.555693+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00382.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 999,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:38:05.687879+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00064.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 613,
+    "image_height": 460,
+    "annotation_timestamp": "2026-09-17T17:38:12.841632+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00228.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "insufficient_visibility",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 770,
+    "image_height": 954,
+    "annotation_timestamp": "2026-09-17T17:38:22.553884+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00403.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 479,
+    "image_height": 734,
+    "annotation_timestamp": "2026-09-17T17:38:25.645982+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00315.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 910,
+    "image_height": 570,
+    "annotation_timestamp": "2026-09-17T17:38:27.765966+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00404.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_left",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "medium"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 474,
+    "image_height": 586,
+    "annotation_timestamp": "2026-09-17T17:38:39.242201+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00563.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 794,
+    "image_height": 794,
+    "annotation_timestamp": "2026-09-17T17:38:41.685732+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00079.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 546,
+    "image_height": 728,
+    "annotation_timestamp": "2026-09-17T17:38:47.967950+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00548.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 556,
+    "image_height": 547,
+    "annotation_timestamp": "2026-09-17T17:38:51.119720+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00559.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 646,
+    "image_height": 429,
+    "annotation_timestamp": "2026-09-17T17:38:53.181963+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00354.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_left",
+    "hair_type": "wavy",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 541,
+    "image_height": 721,
+    "annotation_timestamp": "2026-09-17T17:39:02.987761+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00372.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 528,
+    "image_height": 502,
+    "annotation_timestamp": "2026-09-17T17:39:08.137710+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00250.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 369,
+    "image_height": 553,
+    "annotation_timestamp": "2026-09-17T17:39:11.341927+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00375.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 709,
+    "image_height": 709,
+    "annotation_timestamp": "2026-09-17T17:39:15.319634+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00139.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:39:17.355637+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00400.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 847,
+    "image_height": 565,
+    "annotation_timestamp": "2026-09-17T17:39:19.427756+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00165.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 456,
+    "image_height": 683,
+    "annotation_timestamp": "2026-09-17T17:39:24.869624+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00417.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "medium"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 354,
+    "image_height": 570,
+    "annotation_timestamp": "2026-09-17T17:39:31.831836+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00252.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 597,
+    "image_height": 630,
+    "annotation_timestamp": "2026-09-17T17:39:34.967651+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00174.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 450,
+    "image_height": 674,
+    "annotation_timestamp": "2026-09-17T17:39:39.993558+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00278.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 738,
+    "image_height": 554,
+    "annotation_timestamp": "2026-09-17T17:39:47.044300+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00393.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 505,
+    "image_height": 673,
+    "annotation_timestamp": "2026-09-17T17:39:49.959648+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00114.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_right",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 474,
+    "image_height": 711,
+    "annotation_timestamp": "2026-09-17T17:40:01.843917+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00259.jpg",
+    "source": "figaro1k",
+    "viewpoint": "side",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 486,
+    "image_height": 729,
+    "annotation_timestamp": "2026-09-17T17:40:10.637581+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00296.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 905,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:40:13.765672+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00314.jpg",
+    "source": "figaro1k",
+    "viewpoint": "front",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 384,
+    "image_height": 512,
+    "annotation_timestamp": "2026-09-17T17:40:20.575741+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00500.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 769,
+    "image_height": 799,
+    "annotation_timestamp": "2026-09-17T17:40:24.387592+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00182.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "shoulder"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 347,
+    "image_height": 444,
+    "annotation_timestamp": "2026-09-17T17:40:30.285375+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00531.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 344,
+    "image_height": 463,
+    "annotation_timestamp": "2026-09-17T17:40:32.767561+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00494.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:40:35.835762+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00162.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "long"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 505,
+    "image_height": 758,
+    "annotation_timestamp": "2026-09-17T17:40:42.645894+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00081.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 489,
+    "image_height": 622,
+    "annotation_timestamp": "2026-09-17T17:40:52.739893+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00455.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "insufficient_visibility",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 340,
+    "image_height": 227,
+    "annotation_timestamp": "2026-09-17T17:41:06.779624+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00286.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:41:09.975531+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00219.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_left",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 454,
+    "image_height": 545,
+    "annotation_timestamp": "2026-09-17T17:41:17.329617+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00249.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 365,
+    "image_height": 546,
+    "annotation_timestamp": "2026-09-17T17:41:29.057450+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00513.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 507,
+    "image_height": 678,
+    "annotation_timestamp": "2026-09-17T17:41:31.977465+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00470.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 716,
+    "image_height": 723,
+    "annotation_timestamp": "2026-09-17T17:41:34.431351+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00569.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 898,
+    "image_height": 599,
+    "annotation_timestamp": "2026-09-17T17:41:36.515445+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00191.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 380,
+    "image_height": 567,
+    "annotation_timestamp": "2026-09-17T17:41:42.477383+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00433.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 644,
+    "image_height": 668,
+    "annotation_timestamp": "2026-09-17T17:41:44.881421+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00398.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 519,
+    "image_height": 692,
+    "annotation_timestamp": "2026-09-17T17:41:51.283580+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00222.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 578,
+    "image_height": 867,
+    "annotation_timestamp": "2026-09-17T17:41:57.341329+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00363.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_left",
+    "hair_type": "wavy",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "shoulder"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 524,
+    "image_height": 698,
+    "annotation_timestamp": "2026-09-17T17:42:17.493312+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00397.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 323,
+    "image_height": 428,
+    "annotation_timestamp": "2026-09-17T17:42:24.779593+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/lurus/00144.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "insufficient_visibility",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:42:27.993670+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00564.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 838,
+    "image_height": 629,
+    "annotation_timestamp": "2026-09-17T17:42:30.269493+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00109.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_right",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 388,
+    "image_height": 582,
+    "annotation_timestamp": "2026-09-17T17:42:36.643635+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00248.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 454,
+    "image_height": 596,
+    "annotation_timestamp": "2026-09-17T17:42:43.167759+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/lurus/00008.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 313,
+    "image_height": 500,
+    "annotation_timestamp": "2026-09-17T17:42:48.929326+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00554.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 673,
+    "image_height": 724,
+    "annotation_timestamp": "2026-09-17T17:42:59.573276+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00070.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 495,
+    "image_height": 495,
+    "annotation_timestamp": "2026-09-17T17:43:04.681511+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00092.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 563,
+    "image_height": 845,
+    "annotation_timestamp": "2026-09-17T17:43:07.199368+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00507.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 902,
+    "image_height": 855,
+    "annotation_timestamp": "2026-09-17T17:43:10.995573+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00467.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 457,
+    "image_height": 525,
+    "annotation_timestamp": "2026-09-17T17:43:13.675266+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00260.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 491,
+    "image_height": 736,
+    "annotation_timestamp": "2026-09-17T17:43:16.261498+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00108.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 531,
+    "image_height": 796,
+    "annotation_timestamp": "2026-09-17T17:43:23.907652+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00570.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 762,
+    "image_height": 857,
+    "annotation_timestamp": "2026-09-17T17:43:26.639540+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00389.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 551,
+    "image_height": 735,
+    "annotation_timestamp": "2026-09-17T17:43:37.407435+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00291.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 981,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:43:41.655392+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00194.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "medium"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 446,
+    "image_height": 594,
+    "annotation_timestamp": "2026-09-17T17:43:51.105467+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00466.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 799,
+    "image_height": 744,
+    "annotation_timestamp": "2026-09-17T17:43:54.139623+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00582.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_right",
+    "hair_type": "kinky",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 538,
+    "image_height": 717,
+    "annotation_timestamp": "2026-09-17T17:44:01.681404+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00025.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 462,
+    "image_height": 611,
+    "annotation_timestamp": "2026-09-17T17:44:09.079222+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00411.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "medium"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 441,
+    "image_height": 441,
+    "annotation_timestamp": "2026-09-17T17:44:17.781177+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00562.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 526,
+    "image_height": 703,
+    "annotation_timestamp": "2026-09-17T17:44:20.301122+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00574.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 794,
+    "annotation_timestamp": "2026-09-17T17:44:22.485387+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00448.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:44:26.615360+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00380.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "insufficient_visibility",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 395,
+    "image_height": 528,
+    "annotation_timestamp": "2026-09-17T17:44:31.353322+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00434.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:44:34.337441+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00310.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 628,
+    "image_height": 628,
+    "annotation_timestamp": "2026-09-17T17:44:45.279511+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00023.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "insufficient_visibility",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 633,
+    "image_height": 447,
+    "annotation_timestamp": "2026-09-17T17:44:49.649192+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00580.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 716,
+    "image_height": 599,
+    "annotation_timestamp": "2026-09-17T17:45:03.277375+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00586.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:45:06.233886+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00584.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 881,
+    "annotation_timestamp": "2026-09-17T17:45:09.101705+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00237.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 741,
+    "image_height": 987,
+    "annotation_timestamp": "2026-09-17T17:45:15.659165+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00465.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 710,
+    "image_height": 568,
+    "annotation_timestamp": "2026-09-17T17:45:18.097127+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00353.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_left",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "medium"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 456,
+    "image_height": 547,
+    "annotation_timestamp": "2026-09-17T17:45:26.067189+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00520.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 776,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:45:29.311104+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00566.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:45:31.851227+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00326.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 283,
+    "image_height": 426,
+    "annotation_timestamp": "2026-09-17T17:45:38.013271+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00043.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "long"
+    },
+    "ungradable": false,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 287,
+    "image_height": 691,
+    "annotation_timestamp": "2026-09-17T17:45:42.747183+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00145.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:45:46.167158+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00539.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "insufficient_visibility",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 424,
+    "image_height": 462,
+    "annotation_timestamp": "2026-09-17T17:45:51.189550+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00567.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 686,
+    "image_height": 686,
+    "annotation_timestamp": "2026-09-17T17:45:53.901493+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00216.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 410,
+    "image_height": 547,
+    "annotation_timestamp": "2026-09-17T17:45:58.767183+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00369.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 357,
+    "image_height": 545,
+    "annotation_timestamp": "2026-09-17T17:46:02.287346+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00312.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 890,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:46:04.817389+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00161.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "long"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 461,
+    "image_height": 691,
+    "annotation_timestamp": "2026-09-17T17:46:10.029329+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00236.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 446,
+    "image_height": 543,
+    "annotation_timestamp": "2026-09-17T17:46:18.852945+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/keriting/00319.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 348,
+    "image_height": 463,
+    "annotation_timestamp": "2026-09-17T17:46:23.465304+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00056.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 511,
+    "image_height": 767,
+    "annotation_timestamp": "2026-09-17T17:46:30.507131+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00201.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 507,
+    "image_height": 734,
+    "annotation_timestamp": "2026-09-17T17:46:35.757200+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00345.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "medium"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 505,
+    "image_height": 421,
+    "annotation_timestamp": "2026-09-17T17:46:46.787169+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00323.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 394,
+    "image_height": 525,
+    "annotation_timestamp": "2026-09-17T17:46:52.741374+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00058.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 371,
+    "image_height": 461,
+    "annotation_timestamp": "2026-09-17T17:46:59.267067+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00060.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 616,
+    "image_height": 770,
+    "annotation_timestamp": "2026-09-17T17:47:04.071489+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00175.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 378,
+    "image_height": 566,
+    "annotation_timestamp": "2026-09-17T17:47:09.217048+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00190.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "shoulder"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 396,
+    "image_height": 594,
+    "annotation_timestamp": "2026-09-17T17:47:16.228255+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00093.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 674,
+    "image_height": 674,
+    "annotation_timestamp": "2026-09-17T17:47:23.441074+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00505.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 789,
+    "image_height": 987,
+    "annotation_timestamp": "2026-09-17T17:47:37.417037+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00019.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "shoulder"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 439,
+    "image_height": 585,
+    "annotation_timestamp": "2026-09-17T17:47:43.269035+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00318.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 338,
+    "image_height": 444,
+    "annotation_timestamp": "2026-09-17T17:47:48.663257+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00321.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 685,
+    "image_height": 946,
+    "annotation_timestamp": "2026-09-17T17:47:51.269137+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00593.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 732,
+    "annotation_timestamp": "2026-09-17T17:47:53.953108+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00279.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 771,
+    "annotation_timestamp": "2026-09-17T17:47:56.116919+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00295.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:47:58.044963+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00051.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 466,
+    "image_height": 621,
+    "annotation_timestamp": "2026-09-17T17:48:15.595351+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00571.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 594,
+    "image_height": 446,
+    "annotation_timestamp": "2026-09-17T17:48:18.411912+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00306.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 478,
+    "image_height": 340,
+    "annotation_timestamp": "2026-09-17T17:48:26.736985+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00105.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 414,
+    "image_height": 621,
+    "annotation_timestamp": "2026-09-17T17:48:38.861346+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00205.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 467,
+    "image_height": 584,
+    "annotation_timestamp": "2026-09-17T17:48:45.598908+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00218.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 387,
+    "image_height": 515,
+    "annotation_timestamp": "2026-09-17T17:48:50.255412+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00075.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_left",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 577,
+    "image_height": 865,
+    "annotation_timestamp": "2026-09-17T17:48:57.484999+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00402.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 727,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:49:00.631350+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00130.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 405,
+    "image_height": 539,
+    "annotation_timestamp": "2026-09-17T17:49:03.350821+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00376.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 475,
+    "image_height": 512,
+    "annotation_timestamp": "2026-09-17T17:49:10.021186+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/lurus/00119.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_right",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 475,
+    "image_height": 713,
+    "annotation_timestamp": "2026-09-17T17:49:22.387198+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00557.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 849,
+    "image_height": 849,
+    "annotation_timestamp": "2026-09-17T17:49:24.840934+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00409.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 478,
+    "image_height": 717,
+    "annotation_timestamp": "2026-09-17T17:49:29.824834+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00238.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 434,
+    "image_height": 652,
+    "annotation_timestamp": "2026-09-17T17:49:39.517063+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00179.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "shoulder"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 408,
+    "image_height": 612,
+    "annotation_timestamp": "2026-09-17T17:49:45.712884+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00140.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 834,
+    "image_height": 834,
+    "annotation_timestamp": "2026-09-17T17:49:48.510875+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00196.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back_left",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "shoulder"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 417,
+    "image_height": 625,
+    "annotation_timestamp": "2026-09-17T17:50:01.821668+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00158.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "long"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 441,
+    "image_height": 661,
+    "annotation_timestamp": "2026-09-17T17:50:07.346793+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00432.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 557,
+    "image_height": 835,
+    "annotation_timestamp": "2026-09-17T17:50:10.080842+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00479.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 781,
+    "image_height": 976,
+    "annotation_timestamp": "2026-09-17T17:50:12.344917+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00553.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 663,
+    "image_height": 994,
+    "annotation_timestamp": "2026-09-17T17:50:17.229076+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00253.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 381,
+    "image_height": 501,
+    "annotation_timestamp": "2026-09-17T17:50:20.406866+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00316.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 396,
+    "image_height": 528,
+    "annotation_timestamp": "2026-09-17T17:50:30.488713+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00245.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 849,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:50:41.261026+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/keriting/00362.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 863,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:50:43.973075+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00447.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:50:46.809227+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00265.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 611,
+    "image_height": 786,
+    "annotation_timestamp": "2026-09-17T17:50:49.130758+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00406.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 923,
+    "image_height": 692,
+    "annotation_timestamp": "2026-09-17T17:50:55.310724+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00391.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 611,
+    "image_height": 815,
+    "annotation_timestamp": "2026-09-17T17:51:03.608785+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00587.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:51:06.886727+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00127.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "low",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 874,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:51:16.088928+00:00",
+    "annotator": "A",
+    "notes": "Terhalang topi"
+  },
+  {
+    "image_id": "figaro1k/lurus/00061.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "short"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 633,
+    "image_height": 477,
+    "annotation_timestamp": "2026-09-17T17:51:20.338790+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00009.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 418,
+    "image_height": 592,
+    "annotation_timestamp": "2026-09-17T17:51:24.614855+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00328.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "curly",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": "high"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 414,
+    "image_height": 554,
+    "annotation_timestamp": "2026-09-17T17:51:28.825101+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00512.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 439,
+    "image_height": 658,
+    "annotation_timestamp": "2026-09-17T17:51:32.213360+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00595.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:51:34.544886+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00036.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 1000,
+    "annotation_timestamp": "2026-09-17T17:51:36.970846+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00242.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 551,
+    "image_height": 826,
+    "annotation_timestamp": "2026-09-17T17:51:39.506931+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00137.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 1000,
+    "image_height": 888,
+    "annotation_timestamp": "2026-09-17T17:51:41.950712+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00166.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "wavy",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 445,
+    "image_height": 666,
+    "annotation_timestamp": "2026-09-17T17:51:46.228841+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00030.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "mid_back"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 448,
+    "image_height": 671,
+    "annotation_timestamp": "2026-09-17T17:51:51.802922+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/lurus/00016.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "straight",
+    "hair_type_id": "lurus",
+    "conditional_attribute": {
+      "name": "length",
+      "value": "shoulder"
+    },
+    "ungradable": false,
+    "ungradable_reason": null,
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": true,
+      "shoulder": true,
+      "upper_back": true,
+      "mid_back": true
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 503,
+    "image_height": 754,
+    "annotation_timestamp": "2026-09-17T17:51:57.586816+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/sangat-keriting/00527.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "sangat-keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "insufficient_visibility",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 817,
+    "image_height": 551,
+    "annotation_timestamp": "2026-09-17T17:52:01.896659+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00365.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 544,
+    "image_height": 729,
+    "annotation_timestamp": "2026-09-17T17:52:05.819046+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00442.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 984,
+    "image_height": 656,
+    "annotation_timestamp": "2026-09-17T17:52:08.738813+00:00",
+    "annotator": "A",
+    "notes": ""
+  },
+  {
+    "image_id": "figaro1k/keriting/00394.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "keriting",
+    "conditional_attribute": {
+      "name": "visual_volume",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "severe_occlusion",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 586,
+    "image_height": 781,
+    "annotation_timestamp": "2026-09-17T17:52:19.136733+00:00",
+    "annotator": "A",
+    "notes": "Rambut diikat"
+  },
+  {
+    "image_id": "figaro1k/bergelombang/00292.jpg",
+    "source": "figaro1k",
+    "viewpoint": "back",
+    "hair_type": "",
+    "hair_type_id": "bergelombang",
+    "conditional_attribute": {
+      "name": "length",
+      "value": null
+    },
+    "ungradable": true,
+    "ungradable_reason": "invalid_viewpoint",
+    "confidence": "medium",
+    "visibility": {
+      "hair_ends": false,
+      "shoulder": false,
+      "upper_back": false,
+      "mid_back": false
+    },
+    "taxonomy_version": "pilot-v2",
+    "guideline_version": "pilot-v2",
+    "image_width": 519,
+    "image_height": 692,
+    "annotation_timestamp": "2026-09-17T17:52:26.918812+00:00",
+    "annotator": "A",
+    "notes": ""
+  }
+]

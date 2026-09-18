@@ -1,0 +1,74 @@
+{
+  "phase": "0_pose_feasibility",
+  "status": "KONDISIONAL_FINAL",
+  "timestamp_note": "lihat report lengkap di pose_feasibility.json",
+  "dataset": "Figaro-1k (sample dari anotasi viewpoint A v2)",
+  "sample": {
+    "back": 44,
+    "front": 8,
+    "side": 5,
+    "total": 57
+  },
+  "key_metrics_per_viewpoint": {
+    "back": {
+      "n": 44,
+      "pose_detected": 28,
+      "pose_detected_rate": 0.636,
+      "shoulder_ok": 27,
+      "shoulder_rate": 0.614,
+      "head_ok": 28,
+      "head_rate": 0.636,
+      "ears_ok": 28,
+      "no_pose": 16
+    },
+    "front": {
+      "n": 8,
+      "pose_detected": 8,
+      "pose_detected_rate": 1.0,
+      "shoulder_ok": 6,
+      "shoulder_rate": 0.75,
+      "head_ok": 8,
+      "head_rate": 1.0
+    },
+    "side": {
+      "n": 5,
+      "pose_detected": 5,
+      "pose_detected_rate": 1.0,
+      "shoulder_ok": 5,
+      "shoulder_rate": 1.0,
+      "head_ok": 5,
+      "head_rate": 1.0
+    }
+  },
+  "conditional_analysis": {
+    "description": "Detection rate ANTARA back-view yang pose-nya terdeteksi",
+    "back_pose_detected": 28,
+    "shoulder_ok_conditional": 27,
+    "shoulder_rate_conditional": 0.964,
+    "head_ok_conditional": 28,
+    "head_rate_conditional": 1.0,
+    "interpretation": "MediaPipe SANGAT andal (shoulder 96%, head 100%) KETIKA pose terdeteksi."
+  },
+  "gate_decision": {
+    "status": "KONDISIONAL",
+    "primary_gate": "shoulder_rate(back) >= 0.70 -> GAGAL (0.614)",
+    "p4_head_gate": "head_rate(back) >= 0.80 -> GAGAL (0.636)",
+    "actual_blocker": "pose_detection_rate(back) hanya 64% (16/44 no_pose)",
+    "conclusion": "Masalah BUKAN pemilihan landmark (bahu vs kepala), melainkan POSER DETECTION RATE. Di antara yang terdeteksi, MediaPipe andal (96-100%).",
+    "root_cause_hypothesis": [
+      "Sebagian foto 'back-view' Figaro sebenarnya bukan back-view murni (anotasi viewpoint tidak akurat)",
+      "Sebagian foto pose tertutup rambut sehingga MediaPipe gagal",
+      "Sebagian foto crop/komposisi tidak mendukung deteksi pose"
+    ],
+    "recommendation": "Lanjut ke FASE 1 (data cleaning): buang foto yang pose-nya TIDAK terdeteksi, sisakan hanya foto yang pose+landmark-nya valid. Setelah cleaning, gate diharapkan lulus karena conditional rate 96-100%."
+  },
+  "models_tested": {
+    "lite": {"shoulder_back": 0.614, "note": "model final dipakai"},
+    "heavy": {"shoulder_back": 0.568, "note": "TIDAK lebih baik dari lite"}
+  },
+  "pivot_options_evaluated": {
+    "P1_heavy_model": "GAGAL memperbaiki (0.568 < 0.614)",
+    "P4_head_reference": "Tidak menyelesaikan karena no_pose juga menghilangkan head",
+    "recommended_next": "P5 / Fase 1 data cleaning (buang no_pose) + dataset back-view baru"
+  }
+}

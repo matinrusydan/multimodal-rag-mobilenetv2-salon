@@ -41,20 +41,37 @@ apps/api/cv/weights/*.pth
 apps/api/cv/weights/*.pt
 apps/api/cv/weights/*.onnx
 apps/api/cv/weights/*.onnx.data
+apps/api/cv/weights/*.tflite
+apps/api/cv/weights/*.task
+apps/api/cv/geometry/weights/
 apps/ai/cv/weights/*.pth
 apps/ai/cv/weights/*.pt
 apps/ai/cv/weights/*.onnx
 apps/ai/cv/weights/*.onnx.data
+apps/ai/cv/weights/*.tflite
+apps/ai/cv/weights/*.task
 backend/cv/weights/*.pth
 backend/cv/weights/*.pt
 
 # Preprocessed tensors (artefak turunan; bisa diregenerasi via preprocess.py)
 apps/api/cv/preprocessed/
+apps/api/cv/preprocessed_length/
+apps/api/cv/preprocessed_length_merged/
 
 # Dataset (large files, simpan terpisah)
 data/train/
 data/val/
 data/test/
+apps/api/cv/dataset/extra/
+apps/api/cv/dataset/*.zip
+
+# Artefak riset sementara (figur & log; metrik JSON tetap di-commit)
+apps/api/cv/reports/*.png
+apps/api/cv/geometry/reports/**/*.png
+apps/api/cv/annotation/reports/**/*.png
+apps/api/cv/geometry/reports/*.log
+apps/api/cv/geometry/reports/*.log.err
+*.bak
 
 # Secrets / lokal-only
 .envrc

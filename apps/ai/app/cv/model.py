@@ -1,8 +1,9 @@
-"""MobileNetV2 ONNX inference via onnxruntime (Python).
+"""ONNX inference via onnxruntime (Python).
 
 Reuses the existing exported models:
-  - hair_type.onnx  : trained from figaro1k (4 hair-type classes).
-  - hair_length.onnx: pending labeled dataset -> fallback low_confidence 'menengah'.
+  - hair_type.onnx  : MobileNetV2 (4 hair-type classes, val acc ~85.8%).
+  - hair_length.onnx: ConvNeXt-Tiny (4 length classes, ensemble 3 seed, ~84%).
+                      Fallback low-confidence 'menengah' bila model tak tersedia.
 """
 
 from __future__ import annotations
@@ -86,7 +87,7 @@ class CvModel:
         """Return {"label": <HairLengthLabel>, "confidence": float} (ONNX bila ada)."""
         session = self.length_session
         if session is None:
-            # Pending labeled dataset -> fallback low confidence 'menengah'.
+            # Fallback bila model hair_length tidak tersedia -> low confidence 'menengah'.
             return {"label": HAIR_LENGTH_LABELS[2], "confidence": 0.5}
         logits = self._run(session, tensor)
         probs = self._softmax(logits)

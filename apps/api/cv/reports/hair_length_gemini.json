@@ -1,0 +1,571 @@
+{
+  "method": "gemini_vision",
+  "length_classes": [
+    "pendek",
+    "pendek-menengah",
+    "menengah",
+    "panjang"
+  ],
+  "target_frames": 120,
+  "n_labeled": 76,
+  "distribution_per_type": {
+    "lurus": {
+      "pendek": 0,
+      "pendek-menengah": 7,
+      "menengah": 22,
+      "panjang": 1
+    },
+    "bergelombang": {
+      "pendek": 0,
+      "pendek-menengah": 5,
+      "menengah": 25,
+      "panjang": 0
+    },
+    "keriting": {
+      "pendek": 0,
+      "pendek-menengah": 5,
+      "menengah": 6,
+      "panjang": 0
+    },
+    "sangat-keriting": {
+      "pendek": 3,
+      "pendek-menengah": 2,
+      "menengah": 0,
+      "panjang": 0
+    }
+  },
+  "records": {
+    "00001": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 1,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00002": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 2,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00003": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 3,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00004": {
+      "label": "pendek-menengah",
+      "confidence": 0.95,
+      "frame": 4,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00005": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 5,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00151": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 151,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00152": {
+      "label": "pendek-menengah",
+      "confidence": 0.95,
+      "frame": 152,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00153": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 153,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00154": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 154,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00155": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 155,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00301": {
+      "label": "menengah",
+      "confidence": 0.9,
+      "frame": 301,
+      "tipe_asal": "keriting",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00302": {
+      "label": "pendek-menengah",
+      "confidence": 0.9,
+      "frame": 302,
+      "tipe_asal": "keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00303": {
+      "label": "menengah",
+      "confidence": 0.85,
+      "frame": 303,
+      "tipe_asal": "keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00304": {
+      "label": "pendek-menengah",
+      "confidence": 0.95,
+      "frame": 304,
+      "tipe_asal": "keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00305": {
+      "label": "pendek-menengah",
+      "confidence": 0.85,
+      "frame": 305,
+      "tipe_asal": "keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00451": {
+      "label": "pendek",
+      "confidence": 0.95,
+      "frame": 451,
+      "tipe_asal": "sangat-keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00452": {
+      "label": "pendek-menengah",
+      "confidence": 0.9,
+      "frame": 452,
+      "tipe_asal": "sangat-keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00453": {
+      "label": "pendek-menengah",
+      "confidence": 0.85,
+      "frame": 453,
+      "tipe_asal": "sangat-keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00454": {
+      "label": "pendek",
+      "confidence": 0.95,
+      "frame": 454,
+      "tipe_asal": "sangat-keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00455": {
+      "label": "pendek",
+      "confidence": 0.95,
+      "frame": 455,
+      "tipe_asal": "sangat-keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00006": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 6,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00007": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 7,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00008": {
+      "label": "pendek-menengah",
+      "confidence": 0.95,
+      "frame": 8,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00009": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 9,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00010": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 10,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00011": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 11,
+      "tipe_asal": "lurus",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00012": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 12,
+      "tipe_asal": "lurus",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00013": {
+      "label": "menengah",
+      "confidence": 0.85,
+      "frame": 13,
+      "tipe_asal": "lurus",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00014": {
+      "label": "pendek-menengah",
+      "confidence": 0.95,
+      "frame": 14,
+      "tipe_asal": "lurus",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00015": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 15,
+      "tipe_asal": "lurus",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00016": {
+      "label": "pendek-menengah",
+      "confidence": 0.95,
+      "frame": 16,
+      "tipe_asal": "lurus",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00017": {
+      "label": "pendek-menengah",
+      "confidence": 0.95,
+      "frame": 17,
+      "tipe_asal": "lurus",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00018": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 18,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00019": {
+      "label": "pendek-menengah",
+      "confidence": 0.95,
+      "frame": 19,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00020": {
+      "label": "pendek-menengah",
+      "confidence": 0.95,
+      "frame": 20,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00021": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 21,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00022": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 22,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00023": {
+      "label": "menengah",
+      "confidence": 0.9,
+      "frame": 23,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00024": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 24,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00025": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 25,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00026": {
+      "label": "panjang",
+      "confidence": 0.95,
+      "frame": 26,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00027": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 27,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00028": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 28,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00029": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 29,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00030": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 30,
+      "tipe_asal": "lurus",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00156": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 156,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00157": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 157,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00158": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 158,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00159": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 159,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00160": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 160,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00161": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 161,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00162": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 162,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00163": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 163,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00164": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 164,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00165": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 165,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00166": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 166,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-3.1-flash-lite"
+    },
+    "00167": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 167,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00168": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 168,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00169": {
+      "label": "pendek-menengah",
+      "confidence": 0.9,
+      "frame": 169,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00170": {
+      "label": "pendek-menengah",
+      "confidence": 0.95,
+      "frame": 170,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00171": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 171,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00172": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 172,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00173": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 173,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00174": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 174,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00175": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 175,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00176": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 176,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00177": {
+      "label": "menengah",
+      "confidence": 0.85,
+      "frame": 177,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00178": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 178,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00179": {
+      "label": "pendek-menengah",
+      "confidence": 0.95,
+      "frame": 179,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00180": {
+      "label": "pendek-menengah",
+      "confidence": 0.9,
+      "frame": 180,
+      "tipe_asal": "bergelombang",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00306": {
+      "label": "pendek-menengah",
+      "confidence": 0.85,
+      "frame": 306,
+      "tipe_asal": "keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00307": {
+      "label": "menengah",
+      "confidence": 0.85,
+      "frame": 307,
+      "tipe_asal": "keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00308": {
+      "label": "pendek-menengah",
+      "confidence": 0.85,
+      "frame": 308,
+      "tipe_asal": "keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00309": {
+      "label": "menengah",
+      "confidence": 0.85,
+      "frame": 309,
+      "tipe_asal": "keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00310": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 310,
+      "tipe_asal": "keriting",
+      "model": "gemini-flash-lite-latest"
+    },
+    "00311": {
+      "label": "menengah",
+      "confidence": 0.95,
+      "frame": 311,
+      "tipe_asal": "keriting",
+      "model": "gemini-flash-lite-latest"
+    }
+  }
+}

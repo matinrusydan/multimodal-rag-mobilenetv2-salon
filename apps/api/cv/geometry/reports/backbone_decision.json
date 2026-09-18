@@ -1,0 +1,23 @@
+{
+  "decision": "efficientnet_v2_s",
+  "alternatives": ["convnext_tiny"],
+  "rationale": {
+    "accuracy": "efficientnet_v2_s (0.8293) > convnext_tiny (0.8177) pada hold-out identik, 3 seed",
+    "stability": "efficientnet_v2_s std (0.0086) < convnext_tiny std (0.0163) -> lebih stabil",
+    "size": "efficientnet_v2_s (20.2M) < convnext_tiny (27.8M) params -> lebih ringan untuk ONNX/deploy"
+  },
+  "results": {
+    "efficientnet_v2_s": {"acc_mean": 0.8293, "acc_std": 0.0086, "f1_mean": 0.758, "per_seed_acc": [0.8231, 0.8391, 0.8257]},
+    "convnext_tiny": {"acc_mean": 0.8177, "acc_std": 0.0163, "f1_mean": 0.7477, "per_seed_acc": [0.807, 0.8365, 0.8097]}
+  },
+  "setup": {
+    "split": "hold-out FIXED (anti-leakage)",
+    "train": 1124,
+    "val": 373,
+    "seeds": [42, 7, 123],
+    "epochs": 18,
+    "device": "NVIDIA RTX 3050 Laptop (CUDA)"
+  },
+  "recommendation": "Gunakan efficientnet_v2_s sebagai backbone hair_length final. Perlu retrain penuh (40 epoch) + export ONNX untuk deploy menggantikan ConvNeXt-Tiny saat ini.",
+  "note": "accuracy masih di bawah benchmark lama (convnext_tiny 80.97%) karena split & seed berbeda; yang penting adalah perbandingan ADIL pada split identik -> efficientnet_v2_s menang konsisten."
+}

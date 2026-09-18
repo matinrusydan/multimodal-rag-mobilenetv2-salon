@@ -1,0 +1,113 @@
+{
+  "task": "hair_length",
+  "version": "v6",
+  "classes": [
+    "pendek",
+    "pendek-menengah",
+    "menengah",
+    "panjang"
+  ],
+  "train": 1124,
+  "val": 373,
+  "val_ratio": 0.25,
+  "val_distribution": {
+    "pendek": 209,
+    "pendek-menengah": 67,
+    "menengah": 37,
+    "panjang": 60
+  },
+  "folds": [
+    {
+      "seed": 42,
+      "val_acc": 0.7668,
+      "confusion_matrix": [
+        [
+          182,
+          15,
+          0,
+          12
+        ],
+        [
+          10,
+          45,
+          6,
+          6
+        ],
+        [
+          1,
+          6,
+          29,
+          1
+        ],
+        [
+          9,
+          15,
+          6,
+          30
+        ]
+      ]
+    },
+    {
+      "seed": 7,
+      "val_acc": 0.7828,
+      "confusion_matrix": [
+        [
+          187,
+          10,
+          2,
+          10
+        ],
+        [
+          11,
+          42,
+          11,
+          3
+        ],
+        [
+          1,
+          5,
+          31,
+          0
+        ],
+        [
+          10,
+          11,
+          7,
+          32
+        ]
+      ]
+    },
+    {
+      "seed": 123,
+      "val_acc": 0.7828,
+      "confusion_matrix": [
+        [
+          190,
+          6,
+          2,
+          11
+        ],
+        [
+          12,
+          36,
+          13,
+          6
+        ],
+        [
+          1,
+          5,
+          31,
+          0
+        ],
+        [
+          10,
+          9,
+          6,
+          35
+        ]
+      ]
+    }
+  ],
+  "best_val_acc": 0.7828,
+  "onnx": "C:\\laragon\\www\\RAG-salon\\apps\\api\\cv\\weights\\hair_length_v6.onnx"
+}

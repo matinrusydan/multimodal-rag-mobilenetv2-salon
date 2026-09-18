@@ -14,11 +14,67 @@
   "lr": 0.001,
   "weight_decay": 0.0001,
   "history": [],
-  "best_val_acc": NaN,
+  "best_val_acc": 0.8583,
   "onnx": "C:\\laragon\\www\\RAG-salon\\apps\\api\\cv\\weights\\hair_type.onnx",
   "opset": 17,
   "input": "input 1x3x224x224 float32 NCHW (RGB, ImageNet-normalized)",
   "output": "logits 1x4 (INDEX sesuai classes)",
   "duration_s": 11.6,
-  "catatan": "hair_length ONNX belum tersedia (dataset labeled panjang rambut belum ada)"
+  "catatan": "hair_length ONNX belum tersedia (dataset labeled panjang rambut belum ada)",
+  "macro_f1": 0.8517,
+  "weighted_f1": 0.8517,
+  "per_class": {
+    "lurus": {
+      "precision": 0.7632,
+      "recall": 0.9667,
+      "f1": 0.8529,
+      "support": 30
+    },
+    "bergelombang": {
+      "precision": 0.9,
+      "recall": 0.6,
+      "f1": 0.72,
+      "support": 30
+    },
+    "keriting": {
+      "precision": 0.8966,
+      "recall": 0.8667,
+      "f1": 0.8814,
+      "support": 30
+    },
+    "sangat-keriting": {
+      "precision": 0.9091,
+      "recall": 1.0,
+      "f1": 0.9524,
+      "support": 30
+    }
+  },
+  "confusion_matrix": [
+    [
+      29,
+      0,
+      0,
+      1
+    ],
+    [
+      9,
+      18,
+      3,
+      0
+    ],
+    [
+      0,
+      2,
+      26,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      30
+    ]
+  ],
+  "eval_report": "cv/reports/eval_hair_type.json",
+  "catatan_metrik": "best_val_acc & F1 di-backfill dari evaluate_onnx.py (split=val, n=120). history kosong karena export dijalankan ulang saat .pth sudah ada (training di-skip)."
 }

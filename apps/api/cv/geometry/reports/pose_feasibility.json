@@ -1,0 +1,2407 @@
+{
+  "phase": "0_pose_feasibility",
+  "timestamp": "2026-09-17T20:51:54.402426+00:00",
+  "config": {
+    "per_view": 30,
+    "v_min": 0.5,
+    "min_det": 0.3,
+    "seed": 42,
+    "model": "lite"
+  },
+  "n_total": 57,
+  "summary_by_viewpoint": {
+    "back": {
+      "n": 44,
+      "shoulder_ok": 27,
+      "shoulder_rate": 0.6136,
+      "head_ok": 28,
+      "head_rate": 0.6364,
+      "ears_ok": 28,
+      "ears_rate": 0.6364,
+      "R_head_shoulder_mean": 2.835,
+      "R_head_shoulder_cv": 3.2588
+    },
+    "front": {
+      "n": 8,
+      "shoulder_ok": 6,
+      "shoulder_rate": 0.75,
+      "head_ok": 8,
+      "head_rate": 1.0,
+      "ears_ok": 8,
+      "ears_rate": 1.0,
+      "R_head_shoulder_mean": 0.4464,
+      "R_head_shoulder_cv": 0.1423
+    },
+    "side": {
+      "n": 5,
+      "shoulder_ok": 5,
+      "shoulder_rate": 1.0,
+      "head_ok": 5,
+      "head_rate": 1.0,
+      "ears_ok": 5,
+      "ears_rate": 1.0,
+      "R_head_shoulder_mean": 1.74,
+      "R_head_shoulder_cv": 0.9417
+    }
+  },
+  "gate": {
+    "status": "KONDISIONAL",
+    "basis": "shoulder_weak",
+    "shoulder_back_rate": 0.6136,
+    "head_back_rate": 0.6364,
+    "ears_back_rate": 0.6364,
+    "shoulder_threshold": 0.7,
+    "head_threshold": 0.8
+  },
+  "records": [
+    {
+      "image_wh": [
+        533,
+        710
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.6327,
+          "y": 0.4132,
+          "visibility": 0.9753
+        },
+        "ear_L": {
+          "x": 0.6348,
+          "y": 0.3805,
+          "visibility": 0.9798
+        },
+        "ear_R": {
+          "x": 0.4717,
+          "y": 0.3838,
+          "visibility": 0.9792
+        },
+        "shoulder_L": {
+          "x": 0.8372,
+          "y": 0.74,
+          "visibility": 0.9899
+        },
+        "shoulder_R": {
+          "x": 0.1195,
+          "y": 0.7253,
+          "visibility": 0.984
+        },
+        "hip_L": {
+          "x": 0.6784,
+          "y": 1.4888,
+          "visibility": 0.0035
+        },
+        "hip_R": {
+          "x": 0.2543,
+          "y": 1.4711,
+          "visibility": 0.0038
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.7327,
+      "W_shoulder_norm": 0.7177,
+      "H_head_norm": 0.3402,
+      "R_head_shoulder": 0.4739,
+      "W_ear_norm": 0.1631,
+      "image_id": "figaro1k/keriting/00373.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        781,
+        976
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.574,
+          "y": 0.3857,
+          "visibility": 0.9996
+        },
+        "ear_L": {
+          "x": 0.5987,
+          "y": 0.3651,
+          "visibility": 0.9994
+        },
+        "ear_R": {
+          "x": 0.4145,
+          "y": 0.3557,
+          "visibility": 0.9995
+        },
+        "shoulder_L": {
+          "x": 0.5028,
+          "y": 0.5849,
+          "visibility": 0.9418
+        },
+        "shoulder_R": {
+          "x": 0.3984,
+          "y": 0.6288,
+          "visibility": 0.961
+        },
+        "hip_L": {
+          "x": 0.5033,
+          "y": 1.1916,
+          "visibility": 0.4267
+        },
+        "hip_R": {
+          "x": 0.3519,
+          "y": 1.209,
+          "visibility": 0.4923
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.6069,
+      "W_shoulder_norm": 0.1044,
+      "H_head_norm": 0.238,
+      "R_head_shoulder": 2.2799,
+      "W_ear_norm": 0.1842,
+      "image_id": "figaro1k/sangat-keriting/00479.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/bergelombang/00253.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/lurus/00064.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        789,
+        987
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.6014,
+          "y": 0.6249,
+          "visibility": 0.9999
+        },
+        "ear_L": {
+          "x": 0.7231,
+          "y": 0.5444,
+          "visibility": 0.9998
+        },
+        "ear_R": {
+          "x": 0.2821,
+          "y": 0.5275,
+          "visibility": 0.9998
+        },
+        "shoulder_L": {
+          "x": 0.6945,
+          "y": 0.855,
+          "visibility": 0.9775
+        },
+        "shoulder_R": {
+          "x": 0.0362,
+          "y": 0.8914,
+          "visibility": 0.9793
+        },
+        "hip_L": {
+          "x": 0.5418,
+          "y": 1.7636,
+          "visibility": 0.0081
+        },
+        "hip_R": {
+          "x": 0.1027,
+          "y": 1.7903,
+          "visibility": 0.0144
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.8732,
+      "W_shoulder_norm": 0.6583,
+      "H_head_norm": 0.3076,
+      "R_head_shoulder": 0.4673,
+      "W_ear_norm": 0.441,
+      "image_id": "figaro1k/sangat-keriting/00505.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        528,
+        502
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.3626,
+          "y": 0.6902,
+          "visibility": 0.7673
+        },
+        "ear_L": {
+          "x": 0.468,
+          "y": 0.5453,
+          "visibility": 0.806
+        },
+        "ear_R": {
+          "x": 0.3276,
+          "y": 0.5983,
+          "visibility": 0.8013
+        },
+        "shoulder_L": {
+          "x": 0.868,
+          "y": 0.8086,
+          "visibility": 0.7479
+        },
+        "shoulder_R": {
+          "x": 0.3394,
+          "y": 0.8858,
+          "visibility": 0.8726
+        },
+        "hip_L": {
+          "x": 0.9457,
+          "y": 1.7642,
+          "visibility": 0.0205
+        },
+        "hip_R": {
+          "x": 0.6143,
+          "y": 1.7952,
+          "visibility": 0.043
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.8472,
+      "W_shoulder_norm": 0.5286,
+      "H_head_norm": 0.2359,
+      "R_head_shoulder": 0.4463,
+      "W_ear_norm": 0.1404,
+      "image_id": "figaro1k/keriting/00372.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        738,
+        554
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.5544,
+          "y": 0.2023,
+          "visibility": 0.9983
+        },
+        "ear_L": {
+          "x": 0.4973,
+          "y": 0.2852,
+          "visibility": 0.9993
+        },
+        "ear_R": {
+          "x": 0.6241,
+          "y": 0.223,
+          "visibility": 0.9995
+        },
+        "shoulder_L": {
+          "x": 0.3552,
+          "y": 0.5549,
+          "visibility": 0.9988
+        },
+        "shoulder_R": {
+          "x": 0.7745,
+          "y": 0.4687,
+          "visibility": 0.9994
+        },
+        "hip_L": {
+          "x": 0.4701,
+          "y": 1.0136,
+          "visibility": 0.6102
+        },
+        "hip_R": {
+          "x": 0.6814,
+          "y": 0.9591,
+          "visibility": 0.4484
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.5118,
+      "W_shoulder_norm": 0.4193,
+      "H_head_norm": 0.275,
+      "R_head_shoulder": 0.6558,
+      "W_ear_norm": 0.1268,
+      "image_id": "figaro1k/bergelombang/00278.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        370,
+        370
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.0374,
+          "y": 0.2692,
+          "visibility": 0.9658
+        },
+        "ear_L": {
+          "x": 0.0713,
+          "y": 0.2748,
+          "visibility": 0.9838
+        },
+        "ear_R": {
+          "x": 0.0567,
+          "y": 0.2617,
+          "visibility": 0.953
+        },
+        "shoulder_L": {
+          "x": 0.09,
+          "y": 0.3319,
+          "visibility": 0.998
+        },
+        "shoulder_R": {
+          "x": 0.0458,
+          "y": 0.284,
+          "visibility": 0.9911
+        },
+        "hip_L": {
+          "x": 0.0247,
+          "y": 0.4193,
+          "visibility": 0.9683
+        },
+        "hip_R": {
+          "x": 0.001,
+          "y": 0.3945,
+          "visibility": 0.9304
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.3079,
+      "W_shoulder_norm": 0.0442,
+      "H_head_norm": 0.0394,
+      "R_head_shoulder": 0.891,
+      "W_ear_norm": 0.0146,
+      "image_id": "figaro1k/bergelombang/00239.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        450,
+        677
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.5868,
+          "y": 0.5795,
+          "visibility": 0.9999
+        },
+        "ear_L": {
+          "x": 0.6764,
+          "y": 0.5643,
+          "visibility": 0.9998
+        },
+        "ear_R": {
+          "x": 0.4425,
+          "y": 0.5415,
+          "visibility": 0.9999
+        },
+        "shoulder_L": {
+          "x": 0.6051,
+          "y": 0.7899,
+          "visibility": 0.9959
+        },
+        "shoulder_R": {
+          "x": 0.2377,
+          "y": 0.7316,
+          "visibility": 0.9968
+        },
+        "hip_L": {
+          "x": 0.4184,
+          "y": 1.2856,
+          "visibility": 0.0481
+        },
+        "hip_R": {
+          "x": 0.244,
+          "y": 1.265,
+          "visibility": 0.0552
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.7608,
+      "W_shoulder_norm": 0.3674,
+      "H_head_norm": 0.199,
+      "R_head_shoulder": 0.5416,
+      "W_ear_norm": 0.2339,
+      "image_id": "figaro1k/lurus/00086.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        410,
+        547
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.4414,
+          "y": 0.3977,
+          "visibility": 0.9587
+        },
+        "ear_L": {
+          "x": 0.442,
+          "y": 0.4219,
+          "visibility": 0.9459
+        },
+        "ear_R": {
+          "x": 0.507,
+          "y": 0.4071,
+          "visibility": 0.9488
+        },
+        "shoulder_L": {
+          "x": 0.3673,
+          "y": 0.8385,
+          "visibility": 0.8148
+        },
+        "shoulder_R": {
+          "x": 0.5987,
+          "y": 0.8229,
+          "visibility": 0.8334
+        },
+        "hip_L": {
+          "x": 0.5311,
+          "y": 1.9039,
+          "visibility": 0.0159
+        },
+        "hip_R": {
+          "x": 0.541,
+          "y": 1.8703,
+          "visibility": 0.0137
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.8307,
+      "W_shoulder_norm": 0.2314,
+      "H_head_norm": 0.4218,
+      "R_head_shoulder": 1.8228,
+      "W_ear_norm": 0.065,
+      "image_id": "figaro1k/bergelombang/00216.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        1000,
+        685
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.4445,
+          "y": 0.6983,
+          "visibility": 0.954
+        },
+        "ear_L": {
+          "x": 0.4656,
+          "y": 0.4798,
+          "visibility": 0.9823
+        },
+        "ear_R": {
+          "x": 0.406,
+          "y": 0.5817,
+          "visibility": 0.9715
+        },
+        "shoulder_L": {
+          "x": 0.7284,
+          "y": 0.4919,
+          "visibility": 0.976
+        },
+        "shoulder_R": {
+          "x": 0.58,
+          "y": 0.8098,
+          "visibility": 0.9629
+        },
+        "hip_L": {
+          "x": 1.27,
+          "y": 0.8574,
+          "visibility": 0.3279
+        },
+        "hip_R": {
+          "x": 1.2059,
+          "y": 1.0835,
+          "visibility": 0.408
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.6508,
+      "W_shoulder_norm": 0.1484,
+      "H_head_norm": 0.0642,
+      "R_head_shoulder": 0.433,
+      "W_ear_norm": 0.0596,
+      "image_id": "figaro1k/keriting/00441.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/keriting/00328.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        1000,
+        1000
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.2246,
+          "y": 0.4616,
+          "visibility": 0.9983
+        },
+        "ear_L": {
+          "x": 0.3984,
+          "y": 0.4005,
+          "visibility": 0.9982
+        },
+        "ear_R": {
+          "x": 0.1365,
+          "y": 0.4752,
+          "visibility": 0.9974
+        },
+        "shoulder_L": {
+          "x": 0.7106,
+          "y": 0.7707,
+          "visibility": 0.9913
+        },
+        "shoulder_R": {
+          "x": 0.0384,
+          "y": 0.8308,
+          "visibility": 0.9813
+        },
+        "hip_L": {
+          "x": 0.6297,
+          "y": 1.6735,
+          "visibility": 0.0207
+        },
+        "hip_R": {
+          "x": 0.2092,
+          "y": 1.7096,
+          "visibility": 0.0252
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.8008,
+      "W_shoulder_norm": 0.6722,
+      "H_head_norm": 0.355,
+      "R_head_shoulder": 0.5281,
+      "W_ear_norm": 0.2619,
+      "image_id": "figaro1k/bergelombang/00286.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        633,
+        477
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.3853,
+          "y": 0.5013,
+          "visibility": 0.997
+        },
+        "ear_L": {
+          "x": 0.4021,
+          "y": 0.4907,
+          "visibility": 0.9972
+        },
+        "ear_R": {
+          "x": 0.4204,
+          "y": 0.4951,
+          "visibility": 0.9979
+        },
+        "shoulder_L": {
+          "x": 0.4284,
+          "y": 0.9027,
+          "visibility": 0.9966
+        },
+        "shoulder_R": {
+          "x": 0.5094,
+          "y": 0.9208,
+          "visibility": 0.9919
+        },
+        "hip_L": {
+          "x": 0.4383,
+          "y": 1.9765,
+          "visibility": 0.0607
+        },
+        "hip_R": {
+          "x": 0.4273,
+          "y": 1.9804,
+          "visibility": 0.0355
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.9117,
+      "W_shoulder_norm": 0.081,
+      "H_head_norm": 0.416,
+      "R_head_shoulder": 5.1364,
+      "W_ear_norm": 0.0183,
+      "image_id": "figaro1k/lurus/00061.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        611,
+        815
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.4327,
+          "y": 0.2391,
+          "visibility": 0.9994
+        },
+        "ear_L": {
+          "x": 0.4771,
+          "y": 0.1481,
+          "visibility": 0.9983
+        },
+        "ear_R": {
+          "x": 0.355,
+          "y": 0.2272,
+          "visibility": 0.9992
+        },
+        "shoulder_L": {
+          "x": 0.6143,
+          "y": 0.1828,
+          "visibility": 0.9999
+        },
+        "shoulder_R": {
+          "x": 0.3306,
+          "y": 0.3065,
+          "visibility": 1.0
+        },
+        "hip_L": {
+          "x": 0.7131,
+          "y": 0.4618,
+          "visibility": 0.9947
+        },
+        "hip_R": {
+          "x": 0.5559,
+          "y": 0.5093,
+          "visibility": 0.997
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.2446,
+      "W_shoulder_norm": 0.2837,
+      "H_head_norm": 0.0398,
+      "R_head_shoulder": 0.1405,
+      "W_ear_norm": 0.1221,
+      "image_id": "figaro1k/keriting/00391.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/bergelombang/00179.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/keriting/00323.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/keriting/00380.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        548,
+        822
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.497,
+          "y": 0.3225,
+          "visibility": 0.9681
+        },
+        "ear_L": {
+          "x": 0.5944,
+          "y": 0.3056,
+          "visibility": 0.9666
+        },
+        "ear_R": {
+          "x": 0.4265,
+          "y": 0.2924,
+          "visibility": 0.9484
+        },
+        "shoulder_L": {
+          "x": 0.755,
+          "y": 0.5739,
+          "visibility": 0.996
+        },
+        "shoulder_R": {
+          "x": 0.1849,
+          "y": 0.5474,
+          "visibility": 0.9946
+        },
+        "hip_L": {
+          "x": 0.6383,
+          "y": 1.1383,
+          "visibility": 0.0404
+        },
+        "hip_R": {
+          "x": 0.3127,
+          "y": 1.123,
+          "visibility": 0.0363
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.5606,
+      "W_shoulder_norm": 0.5701,
+      "H_head_norm": 0.2538,
+      "R_head_shoulder": 0.4452,
+      "W_ear_norm": 0.1679,
+      "image_id": "figaro1k/bergelombang/00163.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        1000,
+        881
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.4067,
+          "y": 0.7362,
+          "visibility": 0.9969
+        },
+        "ear_L": {
+          "x": 0.4993,
+          "y": 0.5935,
+          "visibility": 0.9968
+        },
+        "ear_R": {
+          "x": 0.2956,
+          "y": 0.6848,
+          "visibility": 0.9944
+        },
+        "shoulder_L": {
+          "x": 0.803,
+          "y": 0.9154,
+          "visibility": 0.9924
+        },
+        "shoulder_R": {
+          "x": 0.2167,
+          "y": 1.0156,
+          "visibility": 0.9896
+        },
+        "hip_L": {
+          "x": 0.8184,
+          "y": 1.9173,
+          "visibility": 0.004
+        },
+        "hip_R": {
+          "x": 0.3874,
+          "y": 1.9567,
+          "visibility": 0.0045
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.9655,
+      "W_shoulder_norm": 0.5863,
+      "H_head_norm": 0.294,
+      "R_head_shoulder": 0.5014,
+      "W_ear_norm": 0.2037,
+      "image_id": "figaro1k/sangat-keriting/00584.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        874,
+        1000
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.4821,
+          "y": 0.5647,
+          "visibility": 0.9976
+        },
+        "ear_L": {
+          "x": 0.6523,
+          "y": 0.5495,
+          "visibility": 0.998
+        },
+        "ear_R": {
+          "x": 0.4563,
+          "y": 0.5335,
+          "visibility": 0.996
+        },
+        "shoulder_L": {
+          "x": 0.7616,
+          "y": 0.7183,
+          "visibility": 0.9892
+        },
+        "shoulder_R": {
+          "x": 0.441,
+          "y": 0.6568,
+          "visibility": 0.9902
+        },
+        "hip_L": {
+          "x": 0.6978,
+          "y": 1.1937,
+          "visibility": 0.1952
+        },
+        "hip_R": {
+          "x": 0.4865,
+          "y": 1.1576,
+          "visibility": 0.2404
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.6876,
+      "W_shoulder_norm": 0.3206,
+      "H_head_norm": 0.1383,
+      "R_head_shoulder": 0.4314,
+      "W_ear_norm": 0.196,
+      "image_id": "figaro1k/lurus/00127.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        1000,
+        794
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.6318,
+          "y": 0.5027,
+          "visibility": 0.9995
+        },
+        "ear_L": {
+          "x": 0.7911,
+          "y": 0.4945,
+          "visibility": 0.999
+        },
+        "ear_R": {
+          "x": 0.4807,
+          "y": 0.449,
+          "visibility": 0.9993
+        },
+        "shoulder_L": {
+          "x": 0.8893,
+          "y": 0.864,
+          "visibility": 0.9984
+        },
+        "shoulder_R": {
+          "x": 0.3235,
+          "y": 0.8845,
+          "visibility": 0.9987
+        },
+        "hip_L": {
+          "x": 0.8021,
+          "y": 1.7453,
+          "visibility": 0.0024
+        },
+        "hip_R": {
+          "x": 0.4405,
+          "y": 1.7621,
+          "visibility": 0.0033
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.8742,
+      "W_shoulder_norm": 0.5658,
+      "H_head_norm": 0.3922,
+      "R_head_shoulder": 0.6931,
+      "W_ear_norm": 0.3104,
+      "image_id": "figaro1k/sangat-keriting/00574.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/lurus/00043.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        1000,
+        1000
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.2802,
+          "y": 0.3385,
+          "visibility": 0.9998
+        },
+        "ear_L": {
+          "x": 0.4355,
+          "y": 0.2997,
+          "visibility": 0.9997
+        },
+        "ear_R": {
+          "x": 0.2581,
+          "y": 0.3152,
+          "visibility": 0.9994
+        },
+        "shoulder_L": {
+          "x": 0.7018,
+          "y": 0.6315,
+          "visibility": 0.9983
+        },
+        "shoulder_R": {
+          "x": 0.1797,
+          "y": 0.665,
+          "visibility": 0.9983
+        },
+        "hip_L": {
+          "x": 0.6737,
+          "y": 1.3497,
+          "visibility": 0.0058
+        },
+        "hip_R": {
+          "x": 0.3147,
+          "y": 1.3597,
+          "visibility": 0.0067
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.6482,
+      "W_shoulder_norm": 0.5221,
+      "H_head_norm": 0.3304,
+      "R_head_shoulder": 0.6329,
+      "W_ear_norm": 0.1774,
+      "image_id": "figaro1k/lurus/00145.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/lurus/00016.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/lurus/00009.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        1000,
+        732
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.5288,
+          "y": 0.5775,
+          "visibility": 0.9997
+        },
+        "ear_L": {
+          "x": 0.6079,
+          "y": 0.5086,
+          "visibility": 0.9992
+        },
+        "ear_R": {
+          "x": 0.3776,
+          "y": 0.5568,
+          "visibility": 0.9991
+        },
+        "shoulder_L": {
+          "x": 0.7196,
+          "y": 0.839,
+          "visibility": 0.4535
+        },
+        "shoulder_R": {
+          "x": 0.3061,
+          "y": 0.8625,
+          "visibility": 0.436
+        },
+        "hip_L": {
+          "x": 0.6437,
+          "y": 1.7025,
+          "visibility": 0.0242
+        },
+        "hip_R": {
+          "x": 0.4142,
+          "y": 1.6912,
+          "visibility": 0.0297
+        }
+      },
+      "shoulder_ok": false,
+      "head_ok": true,
+      "ears_ok": true,
+      "W_ear_norm": 0.2303,
+      "image_id": "figaro1k/sangat-keriting/00593.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/bergelombang/00242.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        454,
+        681
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.4663,
+          "y": 0.2649,
+          "visibility": 0.8543
+        },
+        "ear_L": {
+          "x": 0.4096,
+          "y": 0.2873,
+          "visibility": 0.8707
+        },
+        "ear_R": {
+          "x": 0.5364,
+          "y": 0.2598,
+          "visibility": 0.8813
+        },
+        "shoulder_L": {
+          "x": 0.2682,
+          "y": 0.4885,
+          "visibility": 0.9716
+        },
+        "shoulder_R": {
+          "x": 0.761,
+          "y": 0.4999,
+          "visibility": 0.9952
+        },
+        "hip_L": {
+          "x": 0.4009,
+          "y": 1.0201,
+          "visibility": 0.7193
+        },
+        "hip_R": {
+          "x": 0.6718,
+          "y": 1.0308,
+          "visibility": 0.8718
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.4942,
+      "W_shoulder_norm": 0.4928,
+      "H_head_norm": 0.2235,
+      "R_head_shoulder": 0.4536,
+      "W_ear_norm": 0.1268,
+      "image_id": "figaro1k/bergelombang/00159.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        594,
+        594
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.6301,
+          "y": 0.4827,
+          "visibility": 0.9818
+        },
+        "ear_L": {
+          "x": 0.642,
+          "y": 0.3811,
+          "visibility": 0.9641
+        },
+        "ear_R": {
+          "x": 0.4678,
+          "y": 0.4492,
+          "visibility": 0.9649
+        },
+        "shoulder_L": {
+          "x": 0.6859,
+          "y": 0.5627,
+          "visibility": 0.9974
+        },
+        "shoulder_R": {
+          "x": 0.2467,
+          "y": 0.6578,
+          "visibility": 0.9924
+        },
+        "hip_L": {
+          "x": 0.2347,
+          "y": 0.9748,
+          "visibility": 0.9363
+        },
+        "hip_R": {
+          "x": 0.0209,
+          "y": 0.9997,
+          "visibility": 0.9554
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.6102,
+      "W_shoulder_norm": 0.4392,
+      "H_head_norm": 0.1726,
+      "R_head_shoulder": 0.3929,
+      "W_ear_norm": 0.1742,
+      "image_id": "figaro1k/sangat-keriting/00533.jpg",
+      "viewpoint_annotated": "back",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        524,
+        698
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.4511,
+          "y": 0.5145,
+          "visibility": 0.9915
+        },
+        "ear_L": {
+          "x": 0.6276,
+          "y": 0.449,
+          "visibility": 0.9783
+        },
+        "ear_R": {
+          "x": 0.3464,
+          "y": 0.451,
+          "visibility": 0.9852
+        },
+        "shoulder_L": {
+          "x": 0.8368,
+          "y": 0.7029,
+          "visibility": 0.988
+        },
+        "shoulder_R": {
+          "x": 0.2296,
+          "y": 0.7398,
+          "visibility": 0.9961
+        },
+        "hip_L": {
+          "x": 0.6893,
+          "y": 1.2756,
+          "visibility": 0.0608
+        },
+        "hip_R": {
+          "x": 0.3649,
+          "y": 1.2719,
+          "visibility": 0.1506
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.7213,
+      "W_shoulder_norm": 0.6072,
+      "H_head_norm": 0.2498,
+      "R_head_shoulder": 0.4115,
+      "W_ear_norm": 0.2812,
+      "image_id": "figaro1k/keriting/00363.jpg",
+      "viewpoint_annotated": "back_left",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        474,
+        586
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.0643,
+          "y": 0.1978,
+          "visibility": 0.9999
+        },
+        "ear_L": {
+          "x": 0.1245,
+          "y": 0.1749,
+          "visibility": 0.9998
+        },
+        "ear_R": {
+          "x": 0.0531,
+          "y": 0.204,
+          "visibility": 0.9999
+        },
+        "shoulder_L": {
+          "x": 0.2746,
+          "y": 0.212,
+          "visibility": 0.9997
+        },
+        "shoulder_R": {
+          "x": 0.0966,
+          "y": 0.3584,
+          "visibility": 0.9998
+        },
+        "hip_L": {
+          "x": 0.4424,
+          "y": 0.4324,
+          "visibility": 0.9996
+        },
+        "hip_R": {
+          "x": 0.3476,
+          "y": 0.5158,
+          "visibility": 0.9995
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.2852,
+      "W_shoulder_norm": 0.178,
+      "H_head_norm": 0.093,
+      "R_head_shoulder": 0.5223,
+      "W_ear_norm": 0.0714,
+      "image_id": "figaro1k/keriting/00404.jpg",
+      "viewpoint_annotated": "back_left",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        541,
+        721
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.4282,
+          "y": 0.2418,
+          "visibility": 0.997
+        },
+        "ear_L": {
+          "x": 0.4795,
+          "y": 0.2735,
+          "visibility": 0.9968
+        },
+        "ear_R": {
+          "x": 0.4798,
+          "y": 0.2399,
+          "visibility": 0.9989
+        },
+        "shoulder_L": {
+          "x": 0.4865,
+          "y": 0.4145,
+          "visibility": 0.9925
+        },
+        "shoulder_R": {
+          "x": 0.537,
+          "y": 0.3025,
+          "visibility": 0.9979
+        },
+        "hip_L": {
+          "x": 0.7195,
+          "y": 0.6626,
+          "visibility": 0.9186
+        },
+        "hip_R": {
+          "x": 0.7419,
+          "y": 0.6002,
+          "visibility": 0.9404
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.3585,
+      "W_shoulder_norm": 0.0505,
+      "H_head_norm": 0.1068,
+      "R_head_shoulder": 2.1142,
+      "W_ear_norm": 0.0003,
+      "image_id": "figaro1k/keriting/00354.jpg",
+      "viewpoint_annotated": "back_left",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        454,
+        545
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.2741,
+          "y": 0.7002,
+          "visibility": 0.9782
+        },
+        "ear_L": {
+          "x": 0.4197,
+          "y": 0.6396,
+          "visibility": 0.9827
+        },
+        "ear_R": {
+          "x": 0.4529,
+          "y": 0.6213,
+          "visibility": 0.9786
+        },
+        "shoulder_L": {
+          "x": 0.6896,
+          "y": 0.9886,
+          "visibility": 0.9258
+        },
+        "shoulder_R": {
+          "x": 0.6837,
+          "y": 0.8929,
+          "visibility": 0.932
+        },
+        "hip_L": {
+          "x": 0.778,
+          "y": 1.9005,
+          "visibility": 0.0311
+        },
+        "hip_R": {
+          "x": 0.7272,
+          "y": 1.8238,
+          "visibility": 0.0352
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.9407,
+      "W_shoulder_norm": 0.0059,
+      "H_head_norm": 0.287,
+      "R_head_shoulder": 48.6525,
+      "W_ear_norm": 0.0332,
+      "image_id": "figaro1k/bergelombang/00219.jpg",
+      "viewpoint_annotated": "back_left",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        417,
+        625
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.6857,
+          "y": 0.3369,
+          "visibility": 0.989
+        },
+        "ear_L": {
+          "x": 0.6308,
+          "y": 0.3097,
+          "visibility": 0.9891
+        },
+        "ear_R": {
+          "x": 0.5215,
+          "y": 0.3647,
+          "visibility": 0.9948
+        },
+        "shoulder_L": {
+          "x": 0.705,
+          "y": 0.5198,
+          "visibility": 0.8595
+        },
+        "shoulder_R": {
+          "x": 0.5076,
+          "y": 0.6762,
+          "visibility": 0.9391
+        },
+        "hip_L": {
+          "x": 0.5335,
+          "y": 1.303,
+          "visibility": 0.1076
+        },
+        "hip_R": {
+          "x": 0.3902,
+          "y": 1.3561,
+          "visibility": 0.1549
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.598,
+      "W_shoulder_norm": 0.1974,
+      "H_head_norm": 0.2609,
+      "R_head_shoulder": 1.3217,
+      "W_ear_norm": 0.1093,
+      "image_id": "figaro1k/bergelombang/00196.jpg",
+      "viewpoint_annotated": "back_left",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/keriting/00353.jpg",
+      "viewpoint_annotated": "back_left",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/lurus/00075.jpg",
+      "viewpoint_annotated": "back_left",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/lurus/00109.jpg",
+      "viewpoint_annotated": "back_right",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        439,
+        566
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.8059,
+          "y": 0.5583,
+          "visibility": 0.9854
+        },
+        "ear_L": {
+          "x": 0.5418,
+          "y": 0.5154,
+          "visibility": 0.9842
+        },
+        "ear_R": {
+          "x": 0.5049,
+          "y": 0.5152,
+          "visibility": 0.9894
+        },
+        "shoulder_L": {
+          "x": 0.4488,
+          "y": 0.8458,
+          "visibility": 0.9443
+        },
+        "shoulder_R": {
+          "x": 0.3783,
+          "y": 0.8746,
+          "visibility": 0.9313
+        },
+        "hip_L": {
+          "x": 0.4398,
+          "y": 1.7411,
+          "visibility": 0.0187
+        },
+        "hip_R": {
+          "x": 0.3141,
+          "y": 1.7632,
+          "visibility": 0.0117
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.8602,
+      "W_shoulder_norm": 0.0705,
+      "H_head_norm": 0.3306,
+      "R_head_shoulder": 4.6889,
+      "W_ear_norm": 0.0369,
+      "image_id": "figaro1k/lurus/00071.jpg",
+      "viewpoint_annotated": "back_right",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        474,
+        711
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.6162,
+          "y": 0.5697,
+          "visibility": 0.9928
+        },
+        "ear_L": {
+          "x": 0.5745,
+          "y": 0.538,
+          "visibility": 0.9933
+        },
+        "ear_R": {
+          "x": 0.4776,
+          "y": 0.4984,
+          "visibility": 0.9925
+        },
+        "shoulder_L": {
+          "x": 0.6247,
+          "y": 0.8892,
+          "visibility": 0.9783
+        },
+        "shoulder_R": {
+          "x": 0.2424,
+          "y": 0.7968,
+          "visibility": 0.9768
+        },
+        "hip_L": {
+          "x": 0.4191,
+          "y": 1.8097,
+          "visibility": 0.041
+        },
+        "hip_R": {
+          "x": 0.0695,
+          "y": 1.7834,
+          "visibility": 0.0558
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.843,
+      "W_shoulder_norm": 0.3823,
+      "H_head_norm": 0.3076,
+      "R_head_shoulder": 0.8047,
+      "W_ear_norm": 0.0969,
+      "image_id": "figaro1k/lurus/00114.jpg",
+      "viewpoint_annotated": "back_right",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        568,
+        804
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.7674,
+          "y": 0.4872,
+          "visibility": 0.906
+        },
+        "ear_L": {
+          "x": 0.6842,
+          "y": 0.4092,
+          "visibility": 0.8212
+        },
+        "ear_R": {
+          "x": 0.6107,
+          "y": 0.3904,
+          "visibility": 0.9323
+        },
+        "shoulder_L": {
+          "x": 0.6757,
+          "y": 0.8419,
+          "visibility": 0.9247
+        },
+        "shoulder_R": {
+          "x": 0.0896,
+          "y": 0.7916,
+          "visibility": 0.9789
+        },
+        "hip_L": {
+          "x": 0.4188,
+          "y": 1.8999,
+          "visibility": 0.0011
+        },
+        "hip_R": {
+          "x": -0.0314,
+          "y": 1.8885,
+          "visibility": 0.0022
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.8167,
+      "W_shoulder_norm": 0.5861,
+      "H_head_norm": 0.3878,
+      "R_head_shoulder": 0.6617,
+      "W_ear_norm": 0.0735,
+      "image_id": "figaro1k/lurus/00057.jpg",
+      "viewpoint_annotated": "back_right",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/lurus/00119.jpg",
+      "viewpoint_annotated": "back_right",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/sangat-keriting/00582.jpg",
+      "viewpoint_annotated": "back_right",
+      "view_group": "back"
+    },
+    {
+      "error": "no_pose",
+      "shoulder_ok": false,
+      "head_ok": false,
+      "landmarks": {},
+      "image_id": "figaro1k/bergelombang/00264.jpg",
+      "viewpoint_annotated": "back_right",
+      "view_group": "back"
+    },
+    {
+      "image_wh": [
+        629,
+        798
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.5907,
+          "y": 0.6088,
+          "visibility": 0.9958
+        },
+        "ear_L": {
+          "x": 0.621,
+          "y": 0.5039,
+          "visibility": 0.9957
+        },
+        "ear_R": {
+          "x": 0.34,
+          "y": 0.4922,
+          "visibility": 0.997
+        },
+        "shoulder_L": {
+          "x": 0.7845,
+          "y": 0.8892,
+          "visibility": 0.9908
+        },
+        "shoulder_R": {
+          "x": -0.1246,
+          "y": 0.8756,
+          "visibility": 0.9824
+        },
+        "hip_L": {
+          "x": 0.6123,
+          "y": 1.9259,
+          "visibility": 0.0023
+        },
+        "hip_R": {
+          "x": 0.0002,
+          "y": 1.9121,
+          "visibility": 0.0021
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.8824,
+      "W_shoulder_norm": 0.9091,
+      "H_head_norm": 0.3474,
+      "R_head_shoulder": 0.3822,
+      "W_ear_norm": 0.281,
+      "image_id": "figaro1k/keriting/00418.jpg",
+      "viewpoint_annotated": "front",
+      "view_group": "front"
+    },
+    {
+      "image_wh": [
+        660,
+        654
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.4635,
+          "y": 0.7115,
+          "visibility": 1.0
+        },
+        "ear_L": {
+          "x": 0.5987,
+          "y": 0.6611,
+          "visibility": 0.9998
+        },
+        "ear_R": {
+          "x": 0.2911,
+          "y": 0.6774,
+          "visibility": 0.9999
+        },
+        "shoulder_L": {
+          "x": 0.7171,
+          "y": 1.0064,
+          "visibility": 0.9997
+        },
+        "shoulder_R": {
+          "x": 0.1437,
+          "y": 0.9824,
+          "visibility": 0.9994
+        },
+        "hip_L": {
+          "x": 0.6073,
+          "y": 1.7994,
+          "visibility": 0.0002
+        },
+        "hip_R": {
+          "x": 0.1869,
+          "y": 1.786,
+          "visibility": 0.0001
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.9944,
+      "W_shoulder_norm": 0.5734,
+      "H_head_norm": 0.3111,
+      "R_head_shoulder": 0.5425,
+      "W_ear_norm": 0.3076,
+      "image_id": "figaro1k/sangat-keriting/00471.jpg",
+      "viewpoint_annotated": "front",
+      "view_group": "front"
+    },
+    {
+      "image_wh": [
+        1000,
+        1000
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.0994,
+          "y": 0.6526,
+          "visibility": 0.9983
+        },
+        "ear_L": {
+          "x": 0.3286,
+          "y": 0.6634,
+          "visibility": 0.9979
+        },
+        "ear_R": {
+          "x": -0.0125,
+          "y": 0.5446,
+          "visibility": 0.9972
+        },
+        "shoulder_L": {
+          "x": 0.3761,
+          "y": 1.1562,
+          "visibility": 0.4626
+        },
+        "shoulder_R": {
+          "x": -0.3146,
+          "y": 1.1189,
+          "visibility": 0.3482
+        },
+        "hip_L": {
+          "x": 0.2488,
+          "y": 2.5817,
+          "visibility": 0.0181
+        },
+        "hip_R": {
+          "x": -0.2393,
+          "y": 2.5828,
+          "visibility": 0.0209
+        }
+      },
+      "shoulder_ok": false,
+      "head_ok": true,
+      "ears_ok": true,
+      "W_ear_norm": 0.3411,
+      "image_id": "figaro1k/sangat-keriting/00592.jpg",
+      "viewpoint_annotated": "front",
+      "view_group": "front"
+    },
+    {
+      "image_wh": [
+        1000,
+        985
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.4666,
+          "y": 0.4786,
+          "visibility": 0.9999
+        },
+        "ear_L": {
+          "x": 0.6187,
+          "y": 0.4237,
+          "visibility": 0.9999
+        },
+        "ear_R": {
+          "x": 0.371,
+          "y": 0.3987,
+          "visibility": 0.9995
+        },
+        "shoulder_L": {
+          "x": 0.7686,
+          "y": 0.7139,
+          "visibility": 0.9996
+        },
+        "shoulder_R": {
+          "x": 0.2313,
+          "y": 0.6561,
+          "visibility": 0.9989
+        },
+        "hip_L": {
+          "x": 0.6281,
+          "y": 1.3377,
+          "visibility": 0.0403
+        },
+        "hip_R": {
+          "x": 0.2901,
+          "y": 1.301,
+          "visibility": 0.044
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.685,
+      "W_shoulder_norm": 0.5373,
+      "H_head_norm": 0.2513,
+      "R_head_shoulder": 0.4678,
+      "W_ear_norm": 0.2477,
+      "image_id": "figaro1k/sangat-keriting/00594.jpg",
+      "viewpoint_annotated": "front",
+      "view_group": "front"
+    },
+    {
+      "image_wh": [
+        478,
+        679
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.6242,
+          "y": 0.4731,
+          "visibility": 1.0
+        },
+        "ear_L": {
+          "x": 0.693,
+          "y": 0.4203,
+          "visibility": 1.0
+        },
+        "ear_R": {
+          "x": 0.3072,
+          "y": 0.3597,
+          "visibility": 1.0
+        },
+        "shoulder_L": {
+          "x": 0.6903,
+          "y": 0.8265,
+          "visibility": 1.0
+        },
+        "shoulder_R": {
+          "x": -0.1849,
+          "y": 0.64,
+          "visibility": 1.0
+        },
+        "hip_L": {
+          "x": 0.1821,
+          "y": 1.5238,
+          "visibility": 0.006
+        },
+        "hip_R": {
+          "x": -0.3809,
+          "y": 1.4061,
+          "visibility": 0.007
+        }
+      },
+      "shoulder_ok": false,
+      "head_ok": true,
+      "ears_ok": true,
+      "W_ear_norm": 0.3858,
+      "image_id": "figaro1k/lurus/00074.jpg",
+      "viewpoint_annotated": "front",
+      "view_group": "front"
+    },
+    {
+      "image_wh": [
+        733,
+        1000
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.4565,
+          "y": 0.4472,
+          "visibility": 0.9997
+        },
+        "ear_L": {
+          "x": 0.6331,
+          "y": 0.3752,
+          "visibility": 0.9991
+        },
+        "ear_R": {
+          "x": 0.3124,
+          "y": 0.3793,
+          "visibility": 0.9997
+        },
+        "shoulder_L": {
+          "x": 0.8847,
+          "y": 0.7077,
+          "visibility": 0.9986
+        },
+        "shoulder_R": {
+          "x": 0.1133,
+          "y": 0.7313,
+          "visibility": 0.9984
+        },
+        "hip_L": {
+          "x": 0.7643,
+          "y": 1.5465,
+          "visibility": 0.0009
+        },
+        "hip_R": {
+          "x": 0.2014,
+          "y": 1.5462,
+          "visibility": 0.0009
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.7195,
+      "W_shoulder_norm": 0.7714,
+      "H_head_norm": 0.3189,
+      "R_head_shoulder": 0.4134,
+      "W_ear_norm": 0.3207,
+      "image_id": "figaro1k/bergelombang/00270.jpg",
+      "viewpoint_annotated": "front",
+      "view_group": "front"
+    },
+    {
+      "image_wh": [
+        384,
+        512
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.6635,
+          "y": 0.4595,
+          "visibility": 0.9307
+        },
+        "ear_L": {
+          "x": 0.763,
+          "y": 0.4207,
+          "visibility": 0.9521
+        },
+        "ear_R": {
+          "x": 0.5474,
+          "y": 0.3966,
+          "visibility": 0.9573
+        },
+        "shoulder_L": {
+          "x": 0.863,
+          "y": 0.6831,
+          "visibility": 0.9496
+        },
+        "shoulder_R": {
+          "x": 0.2438,
+          "y": 0.6459,
+          "visibility": 0.9773
+        },
+        "hip_L": {
+          "x": 0.7282,
+          "y": 1.3066,
+          "visibility": 0.0566
+        },
+        "hip_R": {
+          "x": 0.4013,
+          "y": 1.3183,
+          "visibility": 0.1097
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.6645,
+      "W_shoulder_norm": 0.6192,
+      "H_head_norm": 0.2389,
+      "R_head_shoulder": 0.3858,
+      "W_ear_norm": 0.2156,
+      "image_id": "figaro1k/keriting/00314.jpg",
+      "viewpoint_annotated": "front",
+      "view_group": "front"
+    },
+    {
+      "image_wh": [
+        451,
+        601
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.3399,
+          "y": 0.3126,
+          "visibility": 0.8878
+        },
+        "ear_L": {
+          "x": 0.3542,
+          "y": 0.3004,
+          "visibility": 0.8768
+        },
+        "ear_R": {
+          "x": 0.4741,
+          "y": 0.3217,
+          "visibility": 0.9106
+        },
+        "shoulder_L": {
+          "x": 0.1773,
+          "y": 0.5542,
+          "visibility": 0.9513
+        },
+        "shoulder_R": {
+          "x": 0.6807,
+          "y": 0.5586,
+          "visibility": 0.9791
+        },
+        "hip_L": {
+          "x": 0.3282,
+          "y": 1.2797,
+          "visibility": 0.1101
+        },
+        "hip_R": {
+          "x": 0.562,
+          "y": 1.2875,
+          "visibility": 0.1222
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.5564,
+      "W_shoulder_norm": 0.5034,
+      "H_head_norm": 0.2448,
+      "R_head_shoulder": 0.4864,
+      "W_ear_norm": 0.1199,
+      "image_id": "figaro1k/keriting/00313.jpg",
+      "viewpoint_annotated": "front",
+      "view_group": "front"
+    },
+    {
+      "image_wh": [
+        691,
+        864
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.3582,
+          "y": 0.3848,
+          "visibility": 0.9912
+        },
+        "ear_L": {
+          "x": 0.5266,
+          "y": 0.3522,
+          "visibility": 0.9916
+        },
+        "ear_R": {
+          "x": 0.3077,
+          "y": 0.3612,
+          "visibility": 0.9833
+        },
+        "shoulder_L": {
+          "x": 0.6251,
+          "y": 0.6652,
+          "visibility": 0.9228
+        },
+        "shoulder_R": {
+          "x": 0.3603,
+          "y": 0.6187,
+          "visibility": 0.9037
+        },
+        "hip_L": {
+          "x": 0.639,
+          "y": 1.3064,
+          "visibility": 0.0527
+        },
+        "hip_R": {
+          "x": 0.4237,
+          "y": 1.2851,
+          "visibility": 0.0654
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.642,
+      "W_shoulder_norm": 0.2648,
+      "H_head_norm": 0.2759,
+      "R_head_shoulder": 1.0419,
+      "W_ear_norm": 0.2189,
+      "image_id": "figaro1k/sangat-keriting/00481.jpg",
+      "viewpoint_annotated": "side",
+      "view_group": "side"
+    },
+    {
+      "image_wh": [
+        742,
+        495
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.633,
+          "y": 0.6465,
+          "visibility": 0.9918
+        },
+        "ear_L": {
+          "x": 0.5502,
+          "y": 0.5683,
+          "visibility": 0.9913
+        },
+        "ear_R": {
+          "x": 0.4568,
+          "y": 0.6072,
+          "visibility": 0.9984
+        },
+        "shoulder_L": {
+          "x": 0.4773,
+          "y": 1.0017,
+          "visibility": 0.9447
+        },
+        "shoulder_R": {
+          "x": 0.3163,
+          "y": 1.0544,
+          "visibility": 0.9958
+        },
+        "hip_L": {
+          "x": 0.5589,
+          "y": 2.233,
+          "visibility": 0.1044
+        },
+        "hip_R": {
+          "x": 0.3854,
+          "y": 2.252,
+          "visibility": 0.1462
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 1.028,
+      "W_shoulder_norm": 0.161,
+      "H_head_norm": 0.4207,
+      "R_head_shoulder": 2.6131,
+      "W_ear_norm": 0.0934,
+      "image_id": "figaro1k/keriting/00360.jpg",
+      "viewpoint_annotated": "side",
+      "view_group": "side"
+    },
+    {
+      "image_wh": [
+        1000,
+        1000
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.2789,
+          "y": 0.4909,
+          "visibility": 0.9999
+        },
+        "ear_L": {
+          "x": 0.4806,
+          "y": 0.4829,
+          "visibility": 0.9999
+        },
+        "ear_R": {
+          "x": 0.3197,
+          "y": 0.4462,
+          "visibility": 0.9997
+        },
+        "shoulder_L": {
+          "x": 0.7113,
+          "y": 0.8626,
+          "visibility": 1.0
+        },
+        "shoulder_R": {
+          "x": 0.176,
+          "y": 0.7047,
+          "visibility": 0.9999
+        },
+        "hip_L": {
+          "x": 0.4509,
+          "y": 1.5668,
+          "visibility": 0.0027
+        },
+        "hip_R": {
+          "x": 0.1061,
+          "y": 1.4533,
+          "visibility": 0.0021
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.7836,
+      "W_shoulder_norm": 0.5353,
+      "H_head_norm": 0.3103,
+      "R_head_shoulder": 0.5797,
+      "W_ear_norm": 0.1609,
+      "image_id": "figaro1k/lurus/00136.jpg",
+      "viewpoint_annotated": "side",
+      "view_group": "side"
+    },
+    {
+      "image_wh": [
+        1000,
+        544
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.563,
+          "y": 0.4543,
+          "visibility": 0.998
+        },
+        "ear_L": {
+          "x": 0.4693,
+          "y": 0.4443,
+          "visibility": 0.9976
+        },
+        "ear_R": {
+          "x": 0.4475,
+          "y": 0.4886,
+          "visibility": 0.9979
+        },
+        "shoulder_L": {
+          "x": 0.485,
+          "y": 0.8595,
+          "visibility": 0.9108
+        },
+        "shoulder_R": {
+          "x": 0.3849,
+          "y": 0.904,
+          "visibility": 0.9038
+        },
+        "hip_L": {
+          "x": 0.5061,
+          "y": 1.9079,
+          "visibility": 0.0217
+        },
+        "hip_R": {
+          "x": 0.4171,
+          "y": 1.8938,
+          "visibility": 0.0213
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.8818,
+      "W_shoulder_norm": 0.1001,
+      "H_head_norm": 0.4194,
+      "R_head_shoulder": 4.1893,
+      "W_ear_norm": 0.0218,
+      "image_id": "figaro1k/sangat-keriting/00488.jpg",
+      "viewpoint_annotated": "side",
+      "view_group": "side"
+    },
+    {
+      "image_wh": [
+        486,
+        729
+      ],
+      "landmarks": {
+        "nose": {
+          "x": 0.4774,
+          "y": 0.6913,
+          "visibility": 0.9885
+        },
+        "ear_L": {
+          "x": 0.4966,
+          "y": 0.58,
+          "visibility": 0.9933
+        },
+        "ear_R": {
+          "x": 0.4544,
+          "y": 0.6141,
+          "visibility": 0.9907
+        },
+        "shoulder_L": {
+          "x": 0.8988,
+          "y": 0.5047,
+          "visibility": 0.9571
+        },
+        "shoulder_R": {
+          "x": 0.6939,
+          "y": 0.6392,
+          "visibility": 0.9483
+        },
+        "hip_L": {
+          "x": 1.6878,
+          "y": 0.4806,
+          "visibility": 0.0705
+        },
+        "hip_R": {
+          "x": 1.592,
+          "y": 0.5902,
+          "visibility": 0.0728
+        }
+      },
+      "shoulder_ok": true,
+      "head_ok": true,
+      "ears_ok": true,
+      "y_shoulder_norm": 0.5719,
+      "W_shoulder_norm": 0.2049,
+      "H_head_norm": 0.0565,
+      "R_head_shoulder": 0.2758,
+      "W_ear_norm": 0.0422,
+      "image_id": "figaro1k/bergelombang/00259.jpg",
+      "viewpoint_annotated": "side",
+      "view_group": "side"
+    }
+  ],
+  "error_counts": {
+    "no_pose": 16
+  }
+}

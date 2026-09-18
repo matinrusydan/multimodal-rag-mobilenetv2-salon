@@ -1,0 +1,6061 @@
+{
+  "method": "geometric",
+  "length_classes": [
+    "pendek",
+    "pendek-menengah",
+    "menengah",
+    "panjang"
+  ],
+  "weights_per_type": {
+    "lurus": {
+      "panjang": 0.85,
+      "tebal": 0.15
+    },
+    "bergelombang": {
+      "panjang": 0.8,
+      "tebal": 0.2
+    },
+    "keriting": {
+      "panjang": 0.55,
+      "tebal": 0.45
+    },
+    "sangat-keriting": {
+      "panjang": 0.35,
+      "tebal": 0.65
+    }
+  },
+  "quartiles": {
+    "q25": -0.48657,
+    "q50": -0.07369,
+    "q75": 0.43308
+  },
+  "distribution_per_type": {
+    "lurus": {
+      "pendek": 20,
+      "pendek-menengah": 39,
+      "menengah": 38,
+      "panjang": 53
+    },
+    "bergelombang": {
+      "pendek": 26,
+      "pendek-menengah": 36,
+      "menengah": 37,
+      "panjang": 51
+    },
+    "keriting": {
+      "pendek": 45,
+      "pendek-menengah": 26,
+      "menengah": 45,
+      "panjang": 34
+    },
+    "sangat-keriting": {
+      "pendek": 59,
+      "pendek-menengah": 49,
+      "menengah": 30,
+      "panjang": 12
+    }
+  },
+  "n": 600,
+  "records": [
+    {
+      "frame": 1,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.83938,
+      "bbox_aspect": 2.0189,
+      "solidity": 0.9777,
+      "span_ratio": 0.9622,
+      "face_ratio": null
+    },
+    {
+      "frame": 2,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.85686,
+      "bbox_aspect": 2.2058,
+      "solidity": 0.9428,
+      "span_ratio": 0.9622,
+      "face_ratio": 4.0464
+    },
+    {
+      "frame": 3,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.85174,
+      "bbox_aspect": 1.6986,
+      "solidity": 0.9571,
+      "span_ratio": 0.7763,
+      "face_ratio": 2.9207
+    },
+    {
+      "frame": 4,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.60073,
+      "bbox_aspect": 1.2906,
+      "solidity": 0.9025,
+      "span_ratio": 0.9891,
+      "face_ratio": 2.0591
+    },
+    {
+      "frame": 5,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.21252,
+      "bbox_aspect": 1.5558,
+      "solidity": 0.8351,
+      "span_ratio": 0.9275,
+      "face_ratio": null
+    },
+    {
+      "frame": 6,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.69412,
+      "bbox_aspect": 2.0461,
+      "solidity": 0.9297,
+      "span_ratio": 0.9072,
+      "face_ratio": null
+    },
+    {
+      "frame": 7,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.69735,
+      "bbox_aspect": 1.9683,
+      "solidity": 0.9881,
+      "span_ratio": 0.8889,
+      "face_ratio": null
+    },
+    {
+      "frame": 8,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.25743,
+      "bbox_aspect": 1.2203,
+      "solidity": 0.9705,
+      "span_ratio": 0.698,
+      "face_ratio": null
+    },
+    {
+      "frame": 9,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.43256,
+      "bbox_aspect": 1.7129,
+      "solidity": 0.9028,
+      "span_ratio": 0.9172,
+      "face_ratio": null
+    },
+    {
+      "frame": 10,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.71605,
+      "bbox_aspect": 1.9078,
+      "solidity": 0.9677,
+      "span_ratio": 0.9422,
+      "face_ratio": null
+    },
+    {
+      "frame": 11,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.02419,
+      "bbox_aspect": 1.9487,
+      "solidity": 0.9771,
+      "span_ratio": 0.7389,
+      "face_ratio": 3.0575
+    },
+    {
+      "frame": 12,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.03477,
+      "bbox_aspect": 1.5789,
+      "solidity": 0.9131,
+      "span_ratio": 0.6137,
+      "face_ratio": 1.6612
+    },
+    {
+      "frame": 13,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.86861,
+      "bbox_aspect": 1.4413,
+      "solidity": 0.8424,
+      "span_ratio": 0.9786,
+      "face_ratio": 2.9763
+    },
+    {
+      "frame": 14,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.13842,
+      "bbox_aspect": 1.3725,
+      "solidity": 0.8873,
+      "span_ratio": 0.5835,
+      "face_ratio": 1.7331
+    },
+    {
+      "frame": 15,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.4066,
+      "bbox_aspect": 2.2529,
+      "solidity": 0.9784,
+      "span_ratio": 0.771,
+      "face_ratio": 3.3276
+    },
+    {
+      "frame": 16,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.12325,
+      "bbox_aspect": 1.5783,
+      "solidity": 0.9769,
+      "span_ratio": 0.5212,
+      "face_ratio": 1.9749
+    },
+    {
+      "frame": 17,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.09162,
+      "bbox_aspect": 1.0799,
+      "solidity": 0.9328,
+      "span_ratio": 0.6049,
+      "face_ratio": 2.5621
+    },
+    {
+      "frame": 18,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.92411,
+      "bbox_aspect": 1.7357,
+      "solidity": 0.9655,
+      "span_ratio": 0.7352,
+      "face_ratio": 3.3288
+    },
+    {
+      "frame": 19,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.06795,
+      "bbox_aspect": 1.5632,
+      "solidity": 0.9825,
+      "span_ratio": 0.7402,
+      "face_ratio": null
+    },
+    {
+      "frame": 20,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.96843,
+      "bbox_aspect": 1.2776,
+      "solidity": 0.9667,
+      "span_ratio": 0.9161,
+      "face_ratio": 3.4414
+    },
+    {
+      "frame": 21,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.85528,
+      "bbox_aspect": 1.57,
+      "solidity": 0.9538,
+      "span_ratio": 0.8592,
+      "face_ratio": 2.7861
+    },
+    {
+      "frame": 22,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.73013,
+      "bbox_aspect": 1.5562,
+      "solidity": 0.9425,
+      "span_ratio": 0.8245,
+      "face_ratio": 2.7213
+    },
+    {
+      "frame": 23,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.25404,
+      "bbox_aspect": 0.9714,
+      "solidity": 0.9223,
+      "span_ratio": 0.9888,
+      "face_ratio": 1.768
+    },
+    {
+      "frame": 24,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.08594,
+      "bbox_aspect": 1.7718,
+      "solidity": 0.8921,
+      "span_ratio": 0.9395,
+      "face_ratio": 2.9648
+    },
+    {
+      "frame": 25,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.31979,
+      "bbox_aspect": 1.781,
+      "solidity": 0.9624,
+      "span_ratio": 0.9182,
+      "face_ratio": 3.5732
+    },
+    {
+      "frame": 26,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.25061,
+      "bbox_aspect": 2.618,
+      "solidity": 0.9012,
+      "span_ratio": 0.9768,
+      "face_ratio": null
+    },
+    {
+      "frame": 27,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.23537,
+      "bbox_aspect": 2.0952,
+      "solidity": 0.9233,
+      "span_ratio": 0.9319,
+      "face_ratio": 2.4739
+    },
+    {
+      "frame": 28,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.96245,
+      "bbox_aspect": 2.2947,
+      "solidity": 0.9222,
+      "span_ratio": 0.9545,
+      "face_ratio": 4.5592
+    },
+    {
+      "frame": 29,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.63445,
+      "bbox_aspect": 2.1858,
+      "solidity": 0.9696,
+      "span_ratio": 0.9024,
+      "face_ratio": 3.6348
+    },
+    {
+      "frame": 30,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.54535,
+      "bbox_aspect": 2.2454,
+      "solidity": 0.9385,
+      "span_ratio": 0.9136,
+      "face_ratio": 3.2094
+    },
+    {
+      "frame": 31,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": -0.02974,
+      "bbox_aspect": 1.258,
+      "solidity": 0.8012,
+      "span_ratio": 0.6868,
+      "face_ratio": 2.2868
+    },
+    {
+      "frame": 32,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.68176,
+      "bbox_aspect": 1.1111,
+      "solidity": 0.8797,
+      "span_ratio": 0.5917,
+      "face_ratio": null
+    },
+    {
+      "frame": 33,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.21805,
+      "bbox_aspect": 1.1371,
+      "solidity": 0.8571,
+      "span_ratio": 0.5768,
+      "face_ratio": 2.163
+    },
+    {
+      "frame": 34,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.12247,
+      "bbox_aspect": 1.1724,
+      "solidity": 0.8578,
+      "span_ratio": 0.7041,
+      "face_ratio": 1.803
+    },
+    {
+      "frame": 35,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.5208,
+      "bbox_aspect": 1.9768,
+      "solidity": 0.9381,
+      "span_ratio": 0.8565,
+      "face_ratio": 4.1748
+    },
+    {
+      "frame": 36,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": -0.01182,
+      "bbox_aspect": 1.1808,
+      "solidity": 0.4844,
+      "span_ratio": 0.875,
+      "face_ratio": 2.7516
+    },
+    {
+      "frame": 37,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.32203,
+      "bbox_aspect": 1.669,
+      "solidity": 0.615,
+      "span_ratio": 0.721,
+      "face_ratio": null
+    },
+    {
+      "frame": 38,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.79824,
+      "bbox_aspect": 1.3795,
+      "solidity": 0.8931,
+      "span_ratio": 0.8909,
+      "face_ratio": 3.2763
+    },
+    {
+      "frame": 39,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.49569,
+      "bbox_aspect": 1.2372,
+      "solidity": 0.8563,
+      "span_ratio": 0.8844,
+      "face_ratio": 2.6686
+    },
+    {
+      "frame": 40,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.11701,
+      "bbox_aspect": 1.2679,
+      "solidity": 0.7354,
+      "span_ratio": 0.7121,
+      "face_ratio": 3.1696
+    },
+    {
+      "frame": 41,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.07626,
+      "bbox_aspect": 1.2554,
+      "solidity": 0.8319,
+      "span_ratio": 0.6414,
+      "face_ratio": 2.2941
+    },
+    {
+      "frame": 42,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.39831,
+      "bbox_aspect": 1.2857,
+      "solidity": 0.7659,
+      "span_ratio": 0.9164,
+      "face_ratio": 2.4348
+    },
+    {
+      "frame": 43,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.98118,
+      "bbox_aspect": 2.3972,
+      "solidity": 0.9198,
+      "span_ratio": 0.9957,
+      "face_ratio": 4.0471
+    },
+    {
+      "frame": 44,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.58436,
+      "bbox_aspect": 1.7324,
+      "solidity": 0.9676,
+      "span_ratio": 0.9407,
+      "face_ratio": null
+    },
+    {
+      "frame": 45,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.1125,
+      "bbox_aspect": 1.539,
+      "solidity": 0.9588,
+      "span_ratio": 1.0,
+      "face_ratio": 2.6957
+    },
+    {
+      "frame": 46,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.99803,
+      "bbox_aspect": 1.5027,
+      "solidity": 0.8631,
+      "span_ratio": 1.0,
+      "face_ratio": 3.0054
+    },
+    {
+      "frame": 47,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.30604,
+      "bbox_aspect": 1.2069,
+      "solidity": 0.9187,
+      "span_ratio": 0.8171,
+      "face_ratio": 2.3077
+    },
+    {
+      "frame": 48,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.76013,
+      "bbox_aspect": 2.2911,
+      "solidity": 0.9268,
+      "span_ratio": 1.0,
+      "face_ratio": 3.2956
+    },
+    {
+      "frame": 49,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.46069,
+      "bbox_aspect": 2.102,
+      "solidity": 0.9579,
+      "span_ratio": 0.9981,
+      "face_ratio": 2.7487
+    },
+    {
+      "frame": 50,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.37397,
+      "bbox_aspect": 1.2752,
+      "solidity": 0.8156,
+      "span_ratio": 0.8055,
+      "face_ratio": 2.9434
+    },
+    {
+      "frame": 51,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.61621,
+      "bbox_aspect": 0.9407,
+      "solidity": 0.9255,
+      "span_ratio": 0.5362,
+      "face_ratio": 1.48
+    },
+    {
+      "frame": 52,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -1.16155,
+      "bbox_aspect": 0.9899,
+      "solidity": 0.8781,
+      "span_ratio": 0.4122,
+      "face_ratio": null
+    },
+    {
+      "frame": 53,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.91658,
+      "bbox_aspect": 1.1559,
+      "solidity": 0.9452,
+      "span_ratio": 0.4489,
+      "face_ratio": null
+    },
+    {
+      "frame": 54,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.4826,
+      "bbox_aspect": 1.0909,
+      "solidity": 0.9633,
+      "span_ratio": 0.9573,
+      "face_ratio": 2.012
+    },
+    {
+      "frame": 55,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.10425,
+      "bbox_aspect": 1.2258,
+      "solidity": 0.9069,
+      "span_ratio": 0.6603,
+      "face_ratio": 1.749
+    },
+    {
+      "frame": 56,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.78794,
+      "bbox_aspect": 0.9779,
+      "solidity": 0.8241,
+      "span_ratio": 0.5202,
+      "face_ratio": 1.1875
+    },
+    {
+      "frame": 57,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.65355,
+      "bbox_aspect": 0.9575,
+      "solidity": 0.9204,
+      "span_ratio": 0.5323,
+      "face_ratio": 1.3941
+    },
+    {
+      "frame": 58,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.12343,
+      "bbox_aspect": 1.1149,
+      "solidity": 0.9165,
+      "span_ratio": 0.7787,
+      "face_ratio": 2.1497
+    },
+    {
+      "frame": 59,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.41779,
+      "bbox_aspect": 1.0062,
+      "solidity": 0.9564,
+      "span_ratio": 0.5689,
+      "face_ratio": 1.5902
+    },
+    {
+      "frame": 60,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.46392,
+      "bbox_aspect": 1.0022,
+      "solidity": 0.8257,
+      "span_ratio": 0.5961,
+      "face_ratio": 1.8142
+    },
+    {
+      "frame": 61,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.11878,
+      "bbox_aspect": 1.1711,
+      "solidity": 0.9683,
+      "span_ratio": 0.7317,
+      "face_ratio": 1.1368
+    },
+    {
+      "frame": 62,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.46386,
+      "bbox_aspect": 1.1056,
+      "solidity": 0.9813,
+      "span_ratio": 0.6534,
+      "face_ratio": null
+    },
+    {
+      "frame": 63,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.23636,
+      "bbox_aspect": 1.0927,
+      "solidity": 0.9894,
+      "span_ratio": 0.8301,
+      "face_ratio": 1.8387
+    },
+    {
+      "frame": 64,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.24993,
+      "bbox_aspect": 0.9586,
+      "solidity": 0.9674,
+      "span_ratio": 0.7543,
+      "face_ratio": 1.1266
+    },
+    {
+      "frame": 65,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.29204,
+      "bbox_aspect": 1.1037,
+      "solidity": 0.9738,
+      "span_ratio": 0.8983,
+      "face_ratio": 1.8376
+    },
+    {
+      "frame": 66,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.02396,
+      "bbox_aspect": 1.2378,
+      "solidity": 0.8781,
+      "span_ratio": 0.6835,
+      "face_ratio": 2.1596
+    },
+    {
+      "frame": 67,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.33374,
+      "bbox_aspect": 0.8556,
+      "solidity": 0.9324,
+      "span_ratio": 0.6571,
+      "face_ratio": 1.8182
+    },
+    {
+      "frame": 68,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.39561,
+      "bbox_aspect": 1.0797,
+      "solidity": 0.9237,
+      "span_ratio": 0.6411,
+      "face_ratio": 1.2243
+    },
+    {
+      "frame": 69,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.04509,
+      "bbox_aspect": 1.0929,
+      "solidity": 0.9233,
+      "span_ratio": 0.8114,
+      "face_ratio": 1.6949
+    },
+    {
+      "frame": 70,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.38786,
+      "bbox_aspect": 1.2853,
+      "solidity": 0.9618,
+      "span_ratio": 0.8283,
+      "face_ratio": 2.1809
+    },
+    {
+      "frame": 71,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.07541,
+      "bbox_aspect": 1.0891,
+      "solidity": 0.9329,
+      "span_ratio": 0.6908,
+      "face_ratio": 2.0909
+    },
+    {
+      "frame": 72,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.33171,
+      "bbox_aspect": 1.0226,
+      "solidity": 0.954,
+      "span_ratio": 0.8808,
+      "face_ratio": 2.2484
+    },
+    {
+      "frame": 73,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.05053,
+      "bbox_aspect": 1.0882,
+      "solidity": 0.9529,
+      "span_ratio": 0.7655,
+      "face_ratio": 1.9458
+    },
+    {
+      "frame": 74,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.5963,
+      "bbox_aspect": 1.0319,
+      "solidity": 0.8981,
+      "span_ratio": 0.5243,
+      "face_ratio": 1.4355
+    },
+    {
+      "frame": 75,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.49057,
+      "bbox_aspect": 1.1314,
+      "solidity": 0.9014,
+      "span_ratio": 0.5075,
+      "face_ratio": 1.7352
+    },
+    {
+      "frame": 76,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.50273,
+      "bbox_aspect": 2.0577,
+      "solidity": 0.7584,
+      "span_ratio": 0.9791,
+      "face_ratio": 4.2028
+    },
+    {
+      "frame": 77,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 2.19633,
+      "bbox_aspect": 2.8533,
+      "solidity": 0.7719,
+      "span_ratio": 0.9953,
+      "face_ratio": 4.3673
+    },
+    {
+      "frame": 78,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.23172,
+      "bbox_aspect": 1.6725,
+      "solidity": 0.7763,
+      "span_ratio": 0.9516,
+      "face_ratio": 4.1296
+    },
+    {
+      "frame": 79,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.26312,
+      "bbox_aspect": 1.9837,
+      "solidity": 0.7704,
+      "span_ratio": 1.0,
+      "face_ratio": 3.193
+    },
+    {
+      "frame": 80,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.58257,
+      "bbox_aspect": 1.5509,
+      "solidity": 0.7501,
+      "span_ratio": 0.9309,
+      "face_ratio": 2.434
+    },
+    {
+      "frame": 81,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.39747,
+      "bbox_aspect": 0.9906,
+      "solidity": 0.9654,
+      "span_ratio": 0.5064,
+      "face_ratio": 1.9091
+    },
+    {
+      "frame": 82,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.35129,
+      "bbox_aspect": 1.2555,
+      "solidity": 0.9624,
+      "span_ratio": 0.4437,
+      "face_ratio": 1.9703
+    },
+    {
+      "frame": 83,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.02775,
+      "bbox_aspect": 1.2872,
+      "solidity": 0.908,
+      "span_ratio": 0.7341,
+      "face_ratio": 1.5551
+    },
+    {
+      "frame": 84,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.31508,
+      "bbox_aspect": 1.5608,
+      "solidity": 0.7743,
+      "span_ratio": 0.8347,
+      "face_ratio": 2.0447
+    },
+    {
+      "frame": 85,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.41943,
+      "bbox_aspect": 1.3542,
+      "solidity": 0.8103,
+      "span_ratio": 0.534,
+      "face_ratio": 1.5372
+    },
+    {
+      "frame": 86,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.41264,
+      "bbox_aspect": 1.3203,
+      "solidity": 0.974,
+      "span_ratio": 0.5968,
+      "face_ratio": null
+    },
+    {
+      "frame": 87,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.33315,
+      "bbox_aspect": 1.1789,
+      "solidity": 0.9314,
+      "span_ratio": 0.9371,
+      "face_ratio": 1.675
+    },
+    {
+      "frame": 88,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.60423,
+      "bbox_aspect": 1.3053,
+      "solidity": 0.9781,
+      "span_ratio": 0.5007,
+      "face_ratio": null
+    },
+    {
+      "frame": 89,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.34106,
+      "bbox_aspect": 1.2495,
+      "solidity": 0.778,
+      "span_ratio": 0.6254,
+      "face_ratio": 1.8328
+    },
+    {
+      "frame": 90,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.43556,
+      "bbox_aspect": 1.3383,
+      "solidity": 0.8157,
+      "span_ratio": 0.53,
+      "face_ratio": 1.5084
+    },
+    {
+      "frame": 91,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.38833,
+      "bbox_aspect": 1.2979,
+      "solidity": 0.8019,
+      "span_ratio": 0.732,
+      "face_ratio": 3.5192
+    },
+    {
+      "frame": 92,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.40753,
+      "bbox_aspect": 1.1554,
+      "solidity": 0.9108,
+      "span_ratio": 0.5278,
+      "face_ratio": 1.8583
+    },
+    {
+      "frame": 93,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": -0.04012,
+      "bbox_aspect": 1.1721,
+      "solidity": 0.9232,
+      "span_ratio": 0.6973,
+      "face_ratio": 2.0524
+    },
+    {
+      "frame": 94,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.82354,
+      "bbox_aspect": 1.5385,
+      "solidity": 0.9116,
+      "span_ratio": 0.969,
+      "face_ratio": 2.3474
+    },
+    {
+      "frame": 95,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.13724,
+      "bbox_aspect": 1.5733,
+      "solidity": 0.9414,
+      "span_ratio": 0.6208,
+      "face_ratio": 0.8944
+    },
+    {
+      "frame": 96,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.63455,
+      "bbox_aspect": 1.6626,
+      "solidity": 0.6665,
+      "span_ratio": 0.9632,
+      "face_ratio": 2.5564
+    },
+    {
+      "frame": 97,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.69204,
+      "bbox_aspect": 1.2908,
+      "solidity": 0.9405,
+      "span_ratio": 0.5046,
+      "face_ratio": null
+    },
+    {
+      "frame": 98,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.36554,
+      "bbox_aspect": 1.885,
+      "solidity": 0.873,
+      "span_ratio": 0.9383,
+      "face_ratio": 3.8494
+    },
+    {
+      "frame": 99,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.42137,
+      "bbox_aspect": 1.4033,
+      "solidity": 0.901,
+      "span_ratio": 0.7522,
+      "face_ratio": 2.5176
+    },
+    {
+      "frame": 100,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.29573,
+      "bbox_aspect": 1.7105,
+      "solidity": 0.9034,
+      "span_ratio": 0.8189,
+      "face_ratio": 4.4828
+    },
+    {
+      "frame": 101,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.57015,
+      "bbox_aspect": 1.123,
+      "solidity": 0.9834,
+      "span_ratio": 0.4677,
+      "face_ratio": 1.2437
+    },
+    {
+      "frame": 102,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.24506,
+      "bbox_aspect": 1.0849,
+      "solidity": 0.9439,
+      "span_ratio": 0.5789,
+      "face_ratio": 2.0842
+    },
+    {
+      "frame": 103,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.51889,
+      "bbox_aspect": 1.0549,
+      "solidity": 0.9434,
+      "span_ratio": 0.5333,
+      "face_ratio": 1.4275
+    },
+    {
+      "frame": 104,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.45495,
+      "bbox_aspect": 0.947,
+      "solidity": 0.9052,
+      "span_ratio": 0.6028,
+      "face_ratio": 1.7623
+    },
+    {
+      "frame": 105,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.16953,
+      "bbox_aspect": 1.1667,
+      "solidity": 0.9823,
+      "span_ratio": 0.6312,
+      "face_ratio": 2.7606
+    },
+    {
+      "frame": 106,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.38417,
+      "bbox_aspect": 1.0343,
+      "solidity": 0.9372,
+      "span_ratio": 0.6292,
+      "face_ratio": 1.3611
+    },
+    {
+      "frame": 107,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.38722,
+      "bbox_aspect": 1.2724,
+      "solidity": 0.9875,
+      "span_ratio": 0.7531,
+      "face_ratio": 2.3806
+    },
+    {
+      "frame": 108,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.24242,
+      "bbox_aspect": 1.0986,
+      "solidity": 0.9742,
+      "span_ratio": 0.6018,
+      "face_ratio": 1.7046
+    },
+    {
+      "frame": 109,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.14458,
+      "bbox_aspect": 1.2899,
+      "solidity": 0.9767,
+      "span_ratio": 0.7491,
+      "face_ratio": null
+    },
+    {
+      "frame": 110,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.79489,
+      "bbox_aspect": 0.9819,
+      "solidity": 0.8398,
+      "span_ratio": 0.5088,
+      "face_ratio": 1.5157
+    },
+    {
+      "frame": 111,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.26391,
+      "bbox_aspect": 1.0923,
+      "solidity": 0.9349,
+      "span_ratio": 0.6263,
+      "face_ratio": 1.6761
+    },
+    {
+      "frame": 112,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.74058,
+      "bbox_aspect": 0.8869,
+      "solidity": 0.9281,
+      "span_ratio": 0.4889,
+      "face_ratio": 1.4647
+    },
+    {
+      "frame": 113,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.49261,
+      "bbox_aspect": 1.382,
+      "solidity": 0.8683,
+      "span_ratio": 0.761,
+      "face_ratio": 3.2749
+    },
+    {
+      "frame": 114,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.01353,
+      "bbox_aspect": 1.1983,
+      "solidity": 0.9406,
+      "span_ratio": 0.5781,
+      "face_ratio": 2.6013
+    },
+    {
+      "frame": 115,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": -0.06017,
+      "bbox_aspect": 1.2056,
+      "solidity": 0.9139,
+      "span_ratio": 0.6803,
+      "face_ratio": 1.887
+    },
+    {
+      "frame": 116,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.52769,
+      "bbox_aspect": 0.9669,
+      "solidity": 0.9583,
+      "span_ratio": 0.5468,
+      "face_ratio": 1.5768
+    },
+    {
+      "frame": 117,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.15683,
+      "bbox_aspect": 1.5455,
+      "solidity": 0.9799,
+      "span_ratio": 0.5511,
+      "face_ratio": 1.2312
+    },
+    {
+      "frame": 118,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.33751,
+      "bbox_aspect": 1.488,
+      "solidity": 0.9233,
+      "span_ratio": 0.7145,
+      "face_ratio": 2.1225
+    },
+    {
+      "frame": 119,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.4419,
+      "bbox_aspect": 1.0691,
+      "solidity": 0.9712,
+      "span_ratio": 0.5428,
+      "face_ratio": 1.548
+    },
+    {
+      "frame": 120,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.36504,
+      "bbox_aspect": 1.2593,
+      "solidity": 0.9944,
+      "span_ratio": 0.6978,
+      "face_ratio": 2.6525
+    },
+    {
+      "frame": 121,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -1.08715,
+      "bbox_aspect": 0.8497,
+      "solidity": 0.6919,
+      "span_ratio": 0.509,
+      "face_ratio": 1.0807
+    },
+    {
+      "frame": 122,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.1621,
+      "bbox_aspect": 1.1842,
+      "solidity": 0.4655,
+      "span_ratio": 0.945,
+      "face_ratio": 1.6726
+    },
+    {
+      "frame": 123,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.34205,
+      "bbox_aspect": 2.7322,
+      "solidity": 0.6988,
+      "span_ratio": 1.0,
+      "face_ratio": 1.8975
+    },
+    {
+      "frame": 124,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -1.01821,
+      "bbox_aspect": 0.9118,
+      "solidity": 0.5765,
+      "span_ratio": 0.641,
+      "face_ratio": 1.011
+    },
+    {
+      "frame": 125,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.65066,
+      "bbox_aspect": 2.6391,
+      "solidity": 0.839,
+      "span_ratio": 0.7084,
+      "face_ratio": 0.8172
+    },
+    {
+      "frame": 126,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.2785,
+      "bbox_aspect": 0.9545,
+      "solidity": 0.9248,
+      "span_ratio": 0.6747,
+      "face_ratio": 1.6634
+    },
+    {
+      "frame": 127,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.47348,
+      "bbox_aspect": 1.3643,
+      "solidity": 0.8845,
+      "span_ratio": 0.528,
+      "face_ratio": 1.4005
+    },
+    {
+      "frame": 128,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.9502,
+      "bbox_aspect": 0.8704,
+      "solidity": 0.8919,
+      "span_ratio": 0.4488,
+      "face_ratio": 1.0379
+    },
+    {
+      "frame": 129,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -1.09633,
+      "bbox_aspect": 0.8515,
+      "solidity": 0.6144,
+      "span_ratio": 0.585,
+      "face_ratio": 0.8771
+    },
+    {
+      "frame": 130,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.27238,
+      "bbox_aspect": 1.8327,
+      "solidity": 0.9533,
+      "span_ratio": 0.9351,
+      "face_ratio": 3.092
+    },
+    {
+      "frame": 131,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.35996,
+      "bbox_aspect": 1.8021,
+      "solidity": 0.7108,
+      "span_ratio": 0.874,
+      "face_ratio": 1.6648
+    },
+    {
+      "frame": 132,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.09234,
+      "bbox_aspect": 1.1983,
+      "solidity": 0.7012,
+      "span_ratio": 0.7938,
+      "face_ratio": 2.6385
+    },
+    {
+      "frame": 133,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.14443,
+      "bbox_aspect": 1.7246,
+      "solidity": 0.7777,
+      "span_ratio": 0.576,
+      "face_ratio": 2.5374
+    },
+    {
+      "frame": 134,
+      "tipe": "lurus",
+      "panjang_label": "pendek",
+      "score": -0.62963,
+      "bbox_aspect": 0.9719,
+      "solidity": 0.7943,
+      "span_ratio": 0.6541,
+      "face_ratio": 1.1842
+    },
+    {
+      "frame": 135,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.40492,
+      "bbox_aspect": 2.4676,
+      "solidity": 0.8694,
+      "span_ratio": 0.876,
+      "face_ratio": 2.8911
+    },
+    {
+      "frame": 136,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.23248,
+      "bbox_aspect": 1.1853,
+      "solidity": 0.732,
+      "span_ratio": 0.659,
+      "face_ratio": 2.2264
+    },
+    {
+      "frame": 137,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.20669,
+      "bbox_aspect": 1.0242,
+      "solidity": 0.5202,
+      "span_ratio": 1.0,
+      "face_ratio": 1.6058
+    },
+    {
+      "frame": 138,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.32705,
+      "bbox_aspect": 1.3076,
+      "solidity": 0.5753,
+      "span_ratio": 0.948,
+      "face_ratio": 2.8131
+    },
+    {
+      "frame": 139,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.05988,
+      "bbox_aspect": 1.2165,
+      "solidity": 0.4905,
+      "span_ratio": 1.0,
+      "face_ratio": 1.8484
+    },
+    {
+      "frame": 140,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.33441,
+      "bbox_aspect": 1.2875,
+      "solidity": 0.4953,
+      "span_ratio": 0.8537,
+      "face_ratio": 1.3614
+    },
+    {
+      "frame": 141,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.94343,
+      "bbox_aspect": 1.8347,
+      "solidity": 0.7391,
+      "span_ratio": 0.899,
+      "face_ratio": 3.471
+    },
+    {
+      "frame": 142,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.94666,
+      "bbox_aspect": 3.4599,
+      "solidity": 0.854,
+      "span_ratio": 0.948,
+      "face_ratio": 1.7687
+    },
+    {
+      "frame": 143,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.67769,
+      "bbox_aspect": 1.4172,
+      "solidity": 0.8094,
+      "span_ratio": 0.8854,
+      "face_ratio": 2.8855
+    },
+    {
+      "frame": 144,
+      "tipe": "lurus",
+      "panjang_label": "pendek-menengah",
+      "score": -0.07941,
+      "bbox_aspect": 1.123,
+      "solidity": 0.5618,
+      "span_ratio": 0.986,
+      "face_ratio": 1.4607
+    },
+    {
+      "frame": 145,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.2004,
+      "bbox_aspect": 1.746,
+      "solidity": 0.7019,
+      "span_ratio": 0.976,
+      "face_ratio": 3.9355
+    },
+    {
+      "frame": 146,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.67803,
+      "bbox_aspect": 1.8508,
+      "solidity": 0.7106,
+      "span_ratio": 0.918,
+      "face_ratio": 2.3599
+    },
+    {
+      "frame": 147,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.73009,
+      "bbox_aspect": 1.537,
+      "solidity": 0.9726,
+      "span_ratio": 1.0,
+      "face_ratio": 1.3474
+    },
+    {
+      "frame": 148,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 0.9857,
+      "bbox_aspect": 2.8497,
+      "solidity": 0.8548,
+      "span_ratio": 0.815,
+      "face_ratio": null
+    },
+    {
+      "frame": 149,
+      "tipe": "lurus",
+      "panjang_label": "panjang",
+      "score": 1.22079,
+      "bbox_aspect": 2.4938,
+      "solidity": 0.7201,
+      "span_ratio": 1.0,
+      "face_ratio": 2.2026
+    },
+    {
+      "frame": 150,
+      "tipe": "lurus",
+      "panjang_label": "menengah",
+      "score": 0.13672,
+      "bbox_aspect": 1.5349,
+      "solidity": 0.8796,
+      "span_ratio": 0.7311,
+      "face_ratio": 1.6551
+    },
+    {
+      "frame": 151,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.99438,
+      "bbox_aspect": 1.6613,
+      "solidity": 0.8823,
+      "span_ratio": 0.9968,
+      "face_ratio": 2.9569
+    },
+    {
+      "frame": 152,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.23982,
+      "bbox_aspect": 1.3549,
+      "solidity": 0.9312,
+      "span_ratio": 0.5952,
+      "face_ratio": 2.7762
+    },
+    {
+      "frame": 153,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.88465,
+      "bbox_aspect": 1.7561,
+      "solidity": 0.8841,
+      "span_ratio": 0.731,
+      "face_ratio": 3.7161
+    },
+    {
+      "frame": 154,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.05033,
+      "bbox_aspect": 1.5755,
+      "solidity": 0.9094,
+      "span_ratio": 0.7927,
+      "face_ratio": 4.1066
+    },
+    {
+      "frame": 155,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.44832,
+      "bbox_aspect": 1.3936,
+      "solidity": 0.8485,
+      "span_ratio": 0.7019,
+      "face_ratio": 3.4143
+    },
+    {
+      "frame": 156,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.84384,
+      "bbox_aspect": 1.5599,
+      "solidity": 0.8831,
+      "span_ratio": 0.7789,
+      "face_ratio": 3.8095
+    },
+    {
+      "frame": 157,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.91266,
+      "bbox_aspect": 1.5131,
+      "solidity": 0.8784,
+      "span_ratio": 0.8398,
+      "face_ratio": 3.7883
+    },
+    {
+      "frame": 158,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.20384,
+      "bbox_aspect": 1.716,
+      "solidity": 0.8904,
+      "span_ratio": 0.8411,
+      "face_ratio": 4.1805
+    },
+    {
+      "frame": 159,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.65305,
+      "bbox_aspect": 1.4685,
+      "solidity": 0.9047,
+      "span_ratio": 0.7181,
+      "face_ratio": 3.4929
+    },
+    {
+      "frame": 160,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.90559,
+      "bbox_aspect": 1.4444,
+      "solidity": 0.866,
+      "span_ratio": 0.8626,
+      "face_ratio": 3.9565
+    },
+    {
+      "frame": 161,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.63795,
+      "bbox_aspect": 1.9375,
+      "solidity": 0.7881,
+      "span_ratio": 0.987,
+      "face_ratio": 4.9781
+    },
+    {
+      "frame": 162,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.85743,
+      "bbox_aspect": 1.7685,
+      "solidity": 0.8815,
+      "span_ratio": 0.7559,
+      "face_ratio": 3.4311
+    },
+    {
+      "frame": 163,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.38267,
+      "bbox_aspect": 1.5884,
+      "solidity": 0.9057,
+      "span_ratio": 0.6667,
+      "face_ratio": 2.5972
+    },
+    {
+      "frame": 164,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.86914,
+      "bbox_aspect": 1.6286,
+      "solidity": 0.8651,
+      "span_ratio": 0.7298,
+      "face_ratio": 4.0714
+    },
+    {
+      "frame": 165,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.52363,
+      "bbox_aspect": 1.5691,
+      "solidity": 0.9255,
+      "span_ratio": 0.6984,
+      "face_ratio": 2.6798
+    },
+    {
+      "frame": 166,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.74403,
+      "bbox_aspect": 1.6146,
+      "solidity": 0.9304,
+      "span_ratio": 0.7297,
+      "face_ratio": 3.24
+    },
+    {
+      "frame": 167,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.85172,
+      "bbox_aspect": 1.5271,
+      "solidity": 0.8557,
+      "span_ratio": 0.8362,
+      "face_ratio": 3.8014
+    },
+    {
+      "frame": 168,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.8071,
+      "bbox_aspect": 1.7411,
+      "solidity": 0.9347,
+      "span_ratio": 0.6486,
+      "face_ratio": 3.4097
+    },
+    {
+      "frame": 169,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.36369,
+      "bbox_aspect": 1.4851,
+      "solidity": 0.8815,
+      "span_ratio": 0.6168,
+      "face_ratio": 3.0613
+    },
+    {
+      "frame": 170,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.15865,
+      "bbox_aspect": 1.3485,
+      "solidity": 0.8841,
+      "span_ratio": 0.6022,
+      "face_ratio": 2.7987
+    },
+    {
+      "frame": 171,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.22515,
+      "bbox_aspect": 1.1432,
+      "solidity": 0.8936,
+      "span_ratio": 0.7633,
+      "face_ratio": 2.7989
+    },
+    {
+      "frame": 172,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.75825,
+      "bbox_aspect": 1.5219,
+      "solidity": 0.8714,
+      "span_ratio": 0.7897,
+      "face_ratio": 3.457
+    },
+    {
+      "frame": 173,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.13348,
+      "bbox_aspect": 1.6254,
+      "solidity": 0.8264,
+      "span_ratio": 0.7115,
+      "face_ratio": null
+    },
+    {
+      "frame": 174,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.75797,
+      "bbox_aspect": 1.5058,
+      "solidity": 0.884,
+      "span_ratio": 0.7641,
+      "face_ratio": 3.6786
+    },
+    {
+      "frame": 175,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.96313,
+      "bbox_aspect": 1.6909,
+      "solidity": 0.8649,
+      "span_ratio": 0.947,
+      "face_ratio": 2.8817
+    },
+    {
+      "frame": 176,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.10076,
+      "bbox_aspect": 1.603,
+      "solidity": 0.8737,
+      "span_ratio": 0.8136,
+      "face_ratio": 4.5126
+    },
+    {
+      "frame": 177,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.31443,
+      "bbox_aspect": 1.5355,
+      "solidity": 0.8873,
+      "span_ratio": 0.6889,
+      "face_ratio": 2.2775
+    },
+    {
+      "frame": 178,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.56569,
+      "bbox_aspect": 1.5372,
+      "solidity": 0.8628,
+      "span_ratio": 0.746,
+      "face_ratio": 3.2069
+    },
+    {
+      "frame": 179,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.1203,
+      "bbox_aspect": 1.198,
+      "solidity": 0.9271,
+      "span_ratio": 0.5931,
+      "face_ratio": 1.8426
+    },
+    {
+      "frame": 180,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.44618,
+      "bbox_aspect": 1.0,
+      "solidity": 0.9225,
+      "span_ratio": 0.4637,
+      "face_ratio": 1.9878
+    },
+    {
+      "frame": 181,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.15831,
+      "bbox_aspect": 1.6901,
+      "solidity": 0.9209,
+      "span_ratio": 0.9869,
+      "face_ratio": 2.7989
+    },
+    {
+      "frame": 182,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.05821,
+      "bbox_aspect": 1.3389,
+      "solidity": 0.9233,
+      "span_ratio": 0.9077,
+      "face_ratio": 3.951
+    },
+    {
+      "frame": 183,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.63572,
+      "bbox_aspect": 0.9566,
+      "solidity": 0.9488,
+      "span_ratio": 0.6034,
+      "face_ratio": null
+    },
+    {
+      "frame": 184,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.23138,
+      "bbox_aspect": 1.5674,
+      "solidity": 0.8437,
+      "span_ratio": 0.7971,
+      "face_ratio": 1.7742
+    },
+    {
+      "frame": 185,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.82887,
+      "bbox_aspect": 1.9568,
+      "solidity": 0.9088,
+      "span_ratio": 1.0,
+      "face_ratio": null
+    },
+    {
+      "frame": 186,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.29388,
+      "bbox_aspect": 1.9119,
+      "solidity": 0.887,
+      "span_ratio": 0.9223,
+      "face_ratio": 3.5537
+    },
+    {
+      "frame": 187,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.1023,
+      "bbox_aspect": 1.939,
+      "solidity": 0.8887,
+      "span_ratio": 0.9422,
+      "face_ratio": 2.6723
+    },
+    {
+      "frame": 188,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.84219,
+      "bbox_aspect": 1.8978,
+      "solidity": 0.8344,
+      "span_ratio": 0.8707,
+      "face_ratio": 2.5756
+    },
+    {
+      "frame": 189,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.15296,
+      "bbox_aspect": 1.6707,
+      "solidity": 0.8552,
+      "span_ratio": 0.9928,
+      "face_ratio": 3.4136
+    },
+    {
+      "frame": 190,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.45715,
+      "bbox_aspect": 1.3259,
+      "solidity": 0.892,
+      "span_ratio": 0.7054,
+      "face_ratio": 3.1269
+    },
+    {
+      "frame": 191,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.80269,
+      "bbox_aspect": 1.4675,
+      "solidity": 0.8931,
+      "span_ratio": 0.8748,
+      "face_ratio": 3.2
+    },
+    {
+      "frame": 192,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.05814,
+      "bbox_aspect": 1.356,
+      "solidity": 0.9326,
+      "span_ratio": 0.6387,
+      "face_ratio": 1.7983
+    },
+    {
+      "frame": 193,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.02558,
+      "bbox_aspect": 1.4541,
+      "solidity": 0.9029,
+      "span_ratio": 0.586,
+      "face_ratio": 2.3629
+    },
+    {
+      "frame": 194,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.32225,
+      "bbox_aspect": 1.0828,
+      "solidity": 0.9542,
+      "span_ratio": 0.5724,
+      "face_ratio": 1.4286
+    },
+    {
+      "frame": 195,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.68529,
+      "bbox_aspect": 1.231,
+      "solidity": 0.8679,
+      "span_ratio": 0.8747,
+      "face_ratio": 3.4615
+    },
+    {
+      "frame": 196,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.35512,
+      "bbox_aspect": 0.9917,
+      "solidity": 0.8907,
+      "span_ratio": 0.5728,
+      "face_ratio": 1.9247
+    },
+    {
+      "frame": 197,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.70983,
+      "bbox_aspect": 1.6143,
+      "solidity": 0.7774,
+      "span_ratio": 0.9278,
+      "face_ratio": 2.8392
+    },
+    {
+      "frame": 198,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.29459,
+      "bbox_aspect": 1.8012,
+      "solidity": 0.9302,
+      "span_ratio": 0.9462,
+      "face_ratio": 3.6687
+    },
+    {
+      "frame": 199,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.92174,
+      "bbox_aspect": 1.8953,
+      "solidity": 0.7568,
+      "span_ratio": 0.8071,
+      "face_ratio": 4.0222
+    },
+    {
+      "frame": 200,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.86755,
+      "bbox_aspect": 1.343,
+      "solidity": 0.9001,
+      "span_ratio": 0.8283,
+      "face_ratio": 3.8073
+    },
+    {
+      "frame": 201,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.85807,
+      "bbox_aspect": 1.0075,
+      "solidity": 0.8684,
+      "span_ratio": 0.5463,
+      "face_ratio": null
+    },
+    {
+      "frame": 202,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.57063,
+      "bbox_aspect": 0.9573,
+      "solidity": 0.8841,
+      "span_ratio": 0.4668,
+      "face_ratio": 1.8316
+    },
+    {
+      "frame": 203,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.22631,
+      "bbox_aspect": 1.0449,
+      "solidity": 0.9475,
+      "span_ratio": 0.6144,
+      "face_ratio": 1.6157
+    },
+    {
+      "frame": 204,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.42194,
+      "bbox_aspect": 1.1222,
+      "solidity": 0.7774,
+      "span_ratio": 0.6922,
+      "face_ratio": 1.6232
+    },
+    {
+      "frame": 205,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.08855,
+      "bbox_aspect": 1.2361,
+      "solidity": 0.9461,
+      "span_ratio": 0.6455,
+      "face_ratio": 2.1061
+    },
+    {
+      "frame": 206,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.18239,
+      "bbox_aspect": 1.2382,
+      "solidity": 0.948,
+      "span_ratio": 0.6684,
+      "face_ratio": 2.3512
+    },
+    {
+      "frame": 207,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.38491,
+      "bbox_aspect": 1.0231,
+      "solidity": 0.9492,
+      "span_ratio": 0.4992,
+      "face_ratio": 1.55
+    },
+    {
+      "frame": 208,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.86593,
+      "bbox_aspect": 0.9379,
+      "solidity": 0.9136,
+      "span_ratio": 0.4926,
+      "face_ratio": null
+    },
+    {
+      "frame": 209,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.67669,
+      "bbox_aspect": 0.9413,
+      "solidity": 0.9478,
+      "span_ratio": 0.5254,
+      "face_ratio": 0.821
+    },
+    {
+      "frame": 210,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.58465,
+      "bbox_aspect": 0.9194,
+      "solidity": 0.9094,
+      "span_ratio": 0.5201,
+      "face_ratio": 1.5397
+    },
+    {
+      "frame": 211,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": -0.00397,
+      "bbox_aspect": 1.0925,
+      "solidity": 0.92,
+      "span_ratio": 0.6898,
+      "face_ratio": 2.1477
+    },
+    {
+      "frame": 212,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.2684,
+      "bbox_aspect": 0.899,
+      "solidity": 0.9113,
+      "span_ratio": 0.6697,
+      "face_ratio": 1.8718
+    },
+    {
+      "frame": 213,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.22455,
+      "bbox_aspect": 1.1311,
+      "solidity": 0.9574,
+      "span_ratio": 0.6267,
+      "face_ratio": 1.3741
+    },
+    {
+      "frame": 214,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.31705,
+      "bbox_aspect": 1.1433,
+      "solidity": 0.9036,
+      "span_ratio": 0.9279,
+      "face_ratio": 1.8303
+    },
+    {
+      "frame": 215,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.48524,
+      "bbox_aspect": 1.0502,
+      "solidity": 0.951,
+      "span_ratio": 0.5068,
+      "face_ratio": 1.2182
+    },
+    {
+      "frame": 216,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.42277,
+      "bbox_aspect": 1.1987,
+      "solidity": 0.8668,
+      "span_ratio": 0.6728,
+      "face_ratio": null
+    },
+    {
+      "frame": 217,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.6634,
+      "bbox_aspect": 1.0176,
+      "solidity": 0.9691,
+      "span_ratio": 0.5298,
+      "face_ratio": null
+    },
+    {
+      "frame": 218,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.21096,
+      "bbox_aspect": 0.9971,
+      "solidity": 0.9549,
+      "span_ratio": 0.6621,
+      "face_ratio": 1.5291
+    },
+    {
+      "frame": 219,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": -0.00394,
+      "bbox_aspect": 1.0851,
+      "solidity": 0.9236,
+      "span_ratio": 0.7486,
+      "face_ratio": 1.7143
+    },
+    {
+      "frame": 220,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.30304,
+      "bbox_aspect": 1.2164,
+      "solidity": 0.8744,
+      "span_ratio": 0.7339,
+      "face_ratio": null
+    },
+    {
+      "frame": 221,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.47434,
+      "bbox_aspect": 0.968,
+      "solidity": 0.8639,
+      "span_ratio": 0.6993,
+      "face_ratio": 1.477
+    },
+    {
+      "frame": 222,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.60692,
+      "bbox_aspect": 1.0466,
+      "solidity": 0.9164,
+      "span_ratio": 0.466,
+      "face_ratio": 1.4326
+    },
+    {
+      "frame": 223,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.02929,
+      "bbox_aspect": 1.0082,
+      "solidity": 0.9083,
+      "span_ratio": 0.8315,
+      "face_ratio": 1.5226
+    },
+    {
+      "frame": 224,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.3886,
+      "bbox_aspect": 1.0421,
+      "solidity": 0.7579,
+      "span_ratio": 0.6934,
+      "face_ratio": 1.919
+    },
+    {
+      "frame": 225,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.45442,
+      "bbox_aspect": 1.1844,
+      "solidity": 0.9179,
+      "span_ratio": 0.9177,
+      "face_ratio": 2.0824
+    },
+    {
+      "frame": 226,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.29364,
+      "bbox_aspect": 1.5346,
+      "solidity": 0.903,
+      "span_ratio": 0.6611,
+      "face_ratio": 2.1145
+    },
+    {
+      "frame": 227,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.43463,
+      "bbox_aspect": 1.21,
+      "solidity": 0.8842,
+      "span_ratio": 0.791,
+      "face_ratio": 2.7183
+    },
+    {
+      "frame": 228,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.59302,
+      "bbox_aspect": 1.3273,
+      "solidity": 0.9444,
+      "span_ratio": 0.3826,
+      "face_ratio": 0.7918
+    },
+    {
+      "frame": 229,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.11536,
+      "bbox_aspect": 1.8507,
+      "solidity": 0.8541,
+      "span_ratio": 0.9451,
+      "face_ratio": 2.8972
+    },
+    {
+      "frame": 230,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.01715,
+      "bbox_aspect": 1.2508,
+      "solidity": 0.9213,
+      "span_ratio": 0.461,
+      "face_ratio": 3.0476
+    },
+    {
+      "frame": 231,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.13399,
+      "bbox_aspect": 1.1979,
+      "solidity": 0.8194,
+      "span_ratio": 0.6773,
+      "face_ratio": 1.983
+    },
+    {
+      "frame": 232,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.11888,
+      "bbox_aspect": 1.0843,
+      "solidity": 0.8586,
+      "span_ratio": 0.7569,
+      "face_ratio": 1.4677
+    },
+    {
+      "frame": 233,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.28469,
+      "bbox_aspect": 1.1964,
+      "solidity": 0.946,
+      "span_ratio": 0.8354,
+      "face_ratio": 1.8947
+    },
+    {
+      "frame": 234,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.47195,
+      "bbox_aspect": 1.5437,
+      "solidity": 0.9012,
+      "span_ratio": 0.7173,
+      "face_ratio": 2.6602
+    },
+    {
+      "frame": 235,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.37765,
+      "bbox_aspect": 1.279,
+      "solidity": 0.9648,
+      "span_ratio": 0.7219,
+      "face_ratio": 2.2774
+    },
+    {
+      "frame": 236,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.105,
+      "bbox_aspect": 1.2368,
+      "solidity": 0.8664,
+      "span_ratio": 0.8177,
+      "face_ratio": 1.9559
+    },
+    {
+      "frame": 237,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.40383,
+      "bbox_aspect": 1.3173,
+      "solidity": 0.8855,
+      "span_ratio": 0.4164,
+      "face_ratio": 1.7054
+    },
+    {
+      "frame": 238,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.25387,
+      "bbox_aspect": 1.5542,
+      "solidity": 0.8327,
+      "span_ratio": 0.9893,
+      "face_ratio": null
+    },
+    {
+      "frame": 239,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.66489,
+      "bbox_aspect": 1.0187,
+      "solidity": 0.9716,
+      "span_ratio": 0.8838,
+      "face_ratio": 3.0849
+    },
+    {
+      "frame": 240,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.3028,
+      "bbox_aspect": 1.4483,
+      "solidity": 0.8902,
+      "span_ratio": 0.6462,
+      "face_ratio": null
+    },
+    {
+      "frame": 241,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.12389,
+      "bbox_aspect": 1.0675,
+      "solidity": 0.9558,
+      "span_ratio": 0.6237,
+      "face_ratio": 1.9121
+    },
+    {
+      "frame": 242,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.24495,
+      "bbox_aspect": 1.0946,
+      "solidity": 0.7377,
+      "span_ratio": 0.5605,
+      "face_ratio": 3.3071
+    },
+    {
+      "frame": 243,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.1151,
+      "bbox_aspect": 1.1617,
+      "solidity": 0.9692,
+      "span_ratio": 0.6519,
+      "face_ratio": 2.2278
+    },
+    {
+      "frame": 244,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.21478,
+      "bbox_aspect": 1.1331,
+      "solidity": 0.9613,
+      "span_ratio": 0.6151,
+      "face_ratio": 1.4023
+    },
+    {
+      "frame": 245,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.76545,
+      "bbox_aspect": 1.1829,
+      "solidity": 0.8819,
+      "span_ratio": 0.414,
+      "face_ratio": 0.7826
+    },
+    {
+      "frame": 246,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.15951,
+      "bbox_aspect": 1.4836,
+      "solidity": 0.9545,
+      "span_ratio": 0.6239,
+      "face_ratio": null
+    },
+    {
+      "frame": 247,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.25514,
+      "bbox_aspect": 1.2848,
+      "solidity": 0.9041,
+      "span_ratio": 0.6566,
+      "face_ratio": 2.6603
+    },
+    {
+      "frame": 248,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.3142,
+      "bbox_aspect": 1.8243,
+      "solidity": 0.9242,
+      "span_ratio": 0.9581,
+      "face_ratio": 3.2079
+    },
+    {
+      "frame": 249,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": -0.03444,
+      "bbox_aspect": 1.3289,
+      "solidity": 0.9576,
+      "span_ratio": 0.7399,
+      "face_ratio": null
+    },
+    {
+      "frame": 250,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.28529,
+      "bbox_aspect": 1.3333,
+      "solidity": 0.9685,
+      "span_ratio": 0.7378,
+      "face_ratio": 1.8296
+    },
+    {
+      "frame": 251,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.67861,
+      "bbox_aspect": 1.0091,
+      "solidity": 0.6569,
+      "span_ratio": 0.6789,
+      "face_ratio": 1.4787
+    },
+    {
+      "frame": 252,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.62898,
+      "bbox_aspect": 0.813,
+      "solidity": 0.8075,
+      "span_ratio": 0.6556,
+      "face_ratio": 1.3906
+    },
+    {
+      "frame": 253,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.57475,
+      "bbox_aspect": 1.0994,
+      "solidity": 0.9317,
+      "span_ratio": 0.7944,
+      "face_ratio": 3.5221
+    },
+    {
+      "frame": 254,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.25746,
+      "bbox_aspect": 1.1763,
+      "solidity": 0.908,
+      "span_ratio": 0.8309,
+      "face_ratio": 1.9605
+    },
+    {
+      "frame": 255,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.41781,
+      "bbox_aspect": 1.0287,
+      "solidity": 0.9308,
+      "span_ratio": 0.5534,
+      "face_ratio": 1.4593
+    },
+    {
+      "frame": 256,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.25285,
+      "bbox_aspect": 1.0809,
+      "solidity": 0.891,
+      "span_ratio": 0.558,
+      "face_ratio": 2.25
+    },
+    {
+      "frame": 257,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.24368,
+      "bbox_aspect": 1.0705,
+      "solidity": 0.9214,
+      "span_ratio": 0.7776,
+      "face_ratio": null
+    },
+    {
+      "frame": 258,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.22359,
+      "bbox_aspect": 1.2354,
+      "solidity": 0.862,
+      "span_ratio": 0.6232,
+      "face_ratio": 1.7875
+    },
+    {
+      "frame": 259,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.02459,
+      "bbox_aspect": 1.2393,
+      "solidity": 0.9032,
+      "span_ratio": 0.5967,
+      "face_ratio": 2.574
+    },
+    {
+      "frame": 260,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.26476,
+      "bbox_aspect": 1.0123,
+      "solidity": 0.896,
+      "span_ratio": 0.5584,
+      "face_ratio": 2.4611
+    },
+    {
+      "frame": 261,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.00132,
+      "bbox_aspect": 1.1171,
+      "solidity": 0.8702,
+      "span_ratio": 0.5734,
+      "face_ratio": 3.0617
+    },
+    {
+      "frame": 262,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.50613,
+      "bbox_aspect": 1.4119,
+      "solidity": 0.7467,
+      "span_ratio": 0.8346,
+      "face_ratio": 3.2831
+    },
+    {
+      "frame": 263,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.29607,
+      "bbox_aspect": 1.1758,
+      "solidity": 0.9721,
+      "span_ratio": 0.8,
+      "face_ratio": 2.04
+    },
+    {
+      "frame": 264,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": -0.01123,
+      "bbox_aspect": 1.0286,
+      "solidity": 0.9098,
+      "span_ratio": 0.5714,
+      "face_ratio": 3.0462
+    },
+    {
+      "frame": 265,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.74247,
+      "bbox_aspect": 0.8861,
+      "solidity": 0.8308,
+      "span_ratio": 0.5344,
+      "face_ratio": 1.4789
+    },
+    {
+      "frame": 266,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.74025,
+      "bbox_aspect": 0.7455,
+      "solidity": 0.7304,
+      "span_ratio": 0.6491,
+      "face_ratio": 1.7206
+    },
+    {
+      "frame": 267,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.78236,
+      "bbox_aspect": 0.9654,
+      "solidity": 0.5936,
+      "span_ratio": 0.697,
+      "face_ratio": 1.4705
+    },
+    {
+      "frame": 268,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -1.02647,
+      "bbox_aspect": 0.8854,
+      "solidity": 0.6494,
+      "span_ratio": 0.5566,
+      "face_ratio": 1.1609
+    },
+    {
+      "frame": 269,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.91708,
+      "bbox_aspect": 0.8447,
+      "solidity": 0.8521,
+      "span_ratio": 0.476,
+      "face_ratio": 1.0447
+    },
+    {
+      "frame": 270,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -1.05812,
+      "bbox_aspect": 0.867,
+      "solidity": 0.8289,
+      "span_ratio": 0.352,
+      "face_ratio": 1.1733
+    },
+    {
+      "frame": 271,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.25266,
+      "bbox_aspect": 1.2531,
+      "solidity": 0.5854,
+      "span_ratio": 1.0,
+      "face_ratio": 2.6178
+    },
+    {
+      "frame": 272,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.12457,
+      "bbox_aspect": 2.1505,
+      "solidity": 0.7235,
+      "span_ratio": 1.0,
+      "face_ratio": 2.6738
+    },
+    {
+      "frame": 273,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.20796,
+      "bbox_aspect": 1.0477,
+      "solidity": 0.9016,
+      "span_ratio": 1.0,
+      "face_ratio": null
+    },
+    {
+      "frame": 274,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.13432,
+      "bbox_aspect": 1.0818,
+      "solidity": 0.8297,
+      "span_ratio": 0.759,
+      "face_ratio": 1.9593
+    },
+    {
+      "frame": 275,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": -0.01251,
+      "bbox_aspect": 1.1379,
+      "solidity": 0.6757,
+      "span_ratio": 1.0,
+      "face_ratio": 1.4795
+    },
+    {
+      "frame": 276,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -1.14749,
+      "bbox_aspect": 0.7949,
+      "solidity": 0.6248,
+      "span_ratio": 0.496,
+      "face_ratio": 1.494
+    },
+    {
+      "frame": 277,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.22764,
+      "bbox_aspect": 1.1376,
+      "solidity": 0.9508,
+      "span_ratio": 0.5741,
+      "face_ratio": 3.292
+    },
+    {
+      "frame": 278,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.56637,
+      "bbox_aspect": 1.1739,
+      "solidity": 0.8696,
+      "span_ratio": 0.926,
+      "face_ratio": 3.2062
+    },
+    {
+      "frame": 279,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.86059,
+      "bbox_aspect": 0.7045,
+      "solidity": 0.6706,
+      "span_ratio": 0.6926,
+      "face_ratio": 1.4432
+    },
+    {
+      "frame": 280,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.23177,
+      "bbox_aspect": 1.0914,
+      "solidity": 0.8941,
+      "span_ratio": 0.7833,
+      "face_ratio": 0.8547
+    },
+    {
+      "frame": 281,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.50797,
+      "bbox_aspect": 1.3051,
+      "solidity": 0.6758,
+      "span_ratio": 0.8,
+      "face_ratio": 4.3243
+    },
+    {
+      "frame": 282,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.94624,
+      "bbox_aspect": 1.355,
+      "solidity": 0.8827,
+      "span_ratio": 1.0,
+      "face_ratio": 3.1646
+    },
+    {
+      "frame": 283,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.52079,
+      "bbox_aspect": 1.1706,
+      "solidity": 0.8663,
+      "span_ratio": 0.542,
+      "face_ratio": 1.4301
+    },
+    {
+      "frame": 284,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.78415,
+      "bbox_aspect": 0.9548,
+      "solidity": 0.7056,
+      "span_ratio": 0.571,
+      "face_ratio": 1.613
+    },
+    {
+      "frame": 285,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.18591,
+      "bbox_aspect": 1.1646,
+      "solidity": 0.5161,
+      "span_ratio": 1.0,
+      "face_ratio": 1.6341
+    },
+    {
+      "frame": 286,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.38673,
+      "bbox_aspect": 1.0921,
+      "solidity": 0.6015,
+      "span_ratio": 0.735,
+      "face_ratio": 2.2139
+    },
+    {
+      "frame": 287,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.8724,
+      "bbox_aspect": 2.1692,
+      "solidity": 0.7434,
+      "span_ratio": 1.0,
+      "face_ratio": 2.3981
+    },
+    {
+      "frame": 288,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.084,
+      "bbox_aspect": 2.3585,
+      "solidity": 0.7559,
+      "span_ratio": 1.0,
+      "face_ratio": 2.0619
+    },
+    {
+      "frame": 289,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.49881,
+      "bbox_aspect": 0.8085,
+      "solidity": 0.6818,
+      "span_ratio": 0.7539,
+      "face_ratio": 2.0425
+    },
+    {
+      "frame": 290,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.36076,
+      "bbox_aspect": 1.4856,
+      "solidity": 0.6933,
+      "span_ratio": 0.979,
+      "face_ratio": 2.3936
+    },
+    {
+      "frame": 291,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.26762,
+      "bbox_aspect": 1.0109,
+      "solidity": 0.5756,
+      "span_ratio": 0.93,
+      "face_ratio": 1.8093
+    },
+    {
+      "frame": 292,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.12356,
+      "bbox_aspect": 1.2488,
+      "solidity": 0.899,
+      "span_ratio": 0.7471,
+      "face_ratio": 2.2
+    },
+    {
+      "frame": 293,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.97547,
+      "bbox_aspect": 0.7491,
+      "solidity": 0.7081,
+      "span_ratio": 0.63,
+      "face_ratio": 0.9813
+    },
+    {
+      "frame": 294,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.38855,
+      "bbox_aspect": 1.0491,
+      "solidity": 0.7224,
+      "span_ratio": 0.7236,
+      "face_ratio": 1.8936
+    },
+    {
+      "frame": 295,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 0.72115,
+      "bbox_aspect": 2.1525,
+      "solidity": 0.7828,
+      "span_ratio": 0.889,
+      "face_ratio": 1.6711
+    },
+    {
+      "frame": 296,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.79667,
+      "bbox_aspect": 0.9023,
+      "solidity": 0.6091,
+      "span_ratio": 0.711,
+      "face_ratio": 1.2651
+    },
+    {
+      "frame": 297,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek",
+      "score": -0.69493,
+      "bbox_aspect": 1.04,
+      "solidity": 0.7518,
+      "span_ratio": 0.546,
+      "face_ratio": 1.7116
+    },
+    {
+      "frame": 298,
+      "tipe": "bergelombang",
+      "panjang_label": "pendek-menengah",
+      "score": -0.14344,
+      "bbox_aspect": 1.1321,
+      "solidity": 0.7546,
+      "span_ratio": 0.6793,
+      "face_ratio": 2.4219
+    },
+    {
+      "frame": 299,
+      "tipe": "bergelombang",
+      "panjang_label": "menengah",
+      "score": 0.04452,
+      "bbox_aspect": 1.1909,
+      "solidity": 0.6164,
+      "span_ratio": 0.942,
+      "face_ratio": 2.1264
+    },
+    {
+      "frame": 300,
+      "tipe": "bergelombang",
+      "panjang_label": "panjang",
+      "score": 1.4656,
+      "bbox_aspect": 2.1815,
+      "solidity": 0.9304,
+      "span_ratio": 0.7684,
+      "face_ratio": 4.1908
+    },
+    {
+      "frame": 301,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.95002,
+      "bbox_aspect": 1.5755,
+      "solidity": 0.9155,
+      "span_ratio": 0.9777,
+      "face_ratio": 2.6707
+    },
+    {
+      "frame": 302,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.35499,
+      "bbox_aspect": 1.2594,
+      "solidity": 0.8391,
+      "span_ratio": 0.8674,
+      "face_ratio": 2.7706
+    },
+    {
+      "frame": 303,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.92877,
+      "bbox_aspect": 1.4877,
+      "solidity": 0.8936,
+      "span_ratio": 1.0,
+      "face_ratio": 2.9036
+    },
+    {
+      "frame": 304,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.11934,
+      "bbox_aspect": 1.0966,
+      "solidity": 0.9247,
+      "span_ratio": 0.7719,
+      "face_ratio": null
+    },
+    {
+      "frame": 305,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.02157,
+      "bbox_aspect": 0.9559,
+      "solidity": 0.92,
+      "span_ratio": 0.7977,
+      "face_ratio": null
+    },
+    {
+      "frame": 306,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.48821,
+      "bbox_aspect": 0.9813,
+      "solidity": 0.9619,
+      "span_ratio": 0.9265,
+      "face_ratio": null
+    },
+    {
+      "frame": 307,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 1.38516,
+      "bbox_aspect": 1.9441,
+      "solidity": 0.8562,
+      "span_ratio": 1.0,
+      "face_ratio": 4.6879
+    },
+    {
+      "frame": 308,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.20391,
+      "bbox_aspect": 0.8818,
+      "solidity": 0.7504,
+      "span_ratio": 0.7802,
+      "face_ratio": 2.5867
+    },
+    {
+      "frame": 309,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.12759,
+      "bbox_aspect": 1.6816,
+      "solidity": 0.6598,
+      "span_ratio": 0.974,
+      "face_ratio": 3.3207
+    },
+    {
+      "frame": 310,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.21519,
+      "bbox_aspect": 1.1279,
+      "solidity": 0.9185,
+      "span_ratio": 0.7022,
+      "face_ratio": null
+    },
+    {
+      "frame": 311,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.78969,
+      "bbox_aspect": 2.2557,
+      "solidity": 0.9008,
+      "span_ratio": 0.9587,
+      "face_ratio": null
+    },
+    {
+      "frame": 312,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.5572,
+      "bbox_aspect": 1.0375,
+      "solidity": 0.5969,
+      "span_ratio": 0.885,
+      "face_ratio": 2.9016
+    },
+    {
+      "frame": 313,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.14564,
+      "bbox_aspect": 1.2259,
+      "solidity": 0.9158,
+      "span_ratio": 0.6772,
+      "face_ratio": 1.4484
+    },
+    {
+      "frame": 314,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 1.14784,
+      "bbox_aspect": 1.5437,
+      "solidity": 0.9261,
+      "span_ratio": 0.9316,
+      "face_ratio": 3.975
+    },
+    {
+      "frame": 315,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.4914,
+      "bbox_aspect": 0.721,
+      "solidity": 0.7569,
+      "span_ratio": 0.7754,
+      "face_ratio": 1.9821
+    },
+    {
+      "frame": 316,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 1.08398,
+      "bbox_aspect": 1.6123,
+      "solidity": 0.8545,
+      "span_ratio": 0.9924,
+      "face_ratio": 4.2951
+    },
+    {
+      "frame": 317,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.18801,
+      "bbox_aspect": 1.0407,
+      "solidity": 0.7702,
+      "span_ratio": 0.7787,
+      "face_ratio": 3.8299
+    },
+    {
+      "frame": 318,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.60187,
+      "bbox_aspect": 1.4048,
+      "solidity": 0.966,
+      "span_ratio": 0.9302,
+      "face_ratio": null
+    },
+    {
+      "frame": 319,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.95456,
+      "bbox_aspect": 1.5461,
+      "solidity": 0.923,
+      "span_ratio": 0.9784,
+      "face_ratio": 2.6185
+    },
+    {
+      "frame": 320,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.5131,
+      "bbox_aspect": 2.1492,
+      "solidity": 0.8741,
+      "span_ratio": 0.8646,
+      "face_ratio": null
+    },
+    {
+      "frame": 321,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.53987,
+      "bbox_aspect": 1.1537,
+      "solidity": 0.6504,
+      "span_ratio": 0.722,
+      "face_ratio": 2.6996
+    },
+    {
+      "frame": 322,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.85143,
+      "bbox_aspect": 1.8014,
+      "solidity": 0.9187,
+      "span_ratio": 0.9925,
+      "face_ratio": null
+    },
+    {
+      "frame": 323,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 1.18929,
+      "bbox_aspect": 1.8194,
+      "solidity": 0.9475,
+      "span_ratio": 0.9981,
+      "face_ratio": 3.1006
+    },
+    {
+      "frame": 324,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.31328,
+      "bbox_aspect": 0.7062,
+      "solidity": 0.7072,
+      "span_ratio": 0.8482,
+      "face_ratio": 3.1259
+    },
+    {
+      "frame": 325,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.83166,
+      "bbox_aspect": 1.0082,
+      "solidity": 0.7599,
+      "span_ratio": 0.5826,
+      "face_ratio": null
+    },
+    {
+      "frame": 326,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.69043,
+      "bbox_aspect": 1.4509,
+      "solidity": 0.951,
+      "span_ratio": 0.9366,
+      "face_ratio": null
+    },
+    {
+      "frame": 327,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.49487,
+      "bbox_aspect": 1.3158,
+      "solidity": 0.8348,
+      "span_ratio": 0.7374,
+      "face_ratio": 3.5
+    },
+    {
+      "frame": 328,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.42074,
+      "bbox_aspect": 1.5382,
+      "solidity": 0.9093,
+      "span_ratio": 0.8718,
+      "face_ratio": null
+    },
+    {
+      "frame": 329,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.37527,
+      "bbox_aspect": 1.0892,
+      "solidity": 0.9638,
+      "span_ratio": 0.596,
+      "face_ratio": 2.6029
+    },
+    {
+      "frame": 330,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.2707,
+      "bbox_aspect": 1.1872,
+      "solidity": 0.9121,
+      "span_ratio": 0.833,
+      "face_ratio": 2.3492
+    },
+    {
+      "frame": 331,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.20226,
+      "bbox_aspect": 1.5982,
+      "solidity": 0.6162,
+      "span_ratio": 0.879,
+      "face_ratio": 3.5587
+    },
+    {
+      "frame": 332,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.42043,
+      "bbox_aspect": 1.418,
+      "solidity": 0.9129,
+      "span_ratio": 0.8327,
+      "face_ratio": 1.7283
+    },
+    {
+      "frame": 333,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.60032,
+      "bbox_aspect": 1.769,
+      "solidity": 0.801,
+      "span_ratio": 0.8696,
+      "face_ratio": 4.1618
+    },
+    {
+      "frame": 334,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.10363,
+      "bbox_aspect": 1.4375,
+      "solidity": 0.9259,
+      "span_ratio": 0.8248,
+      "face_ratio": null
+    },
+    {
+      "frame": 335,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": -0.0455,
+      "bbox_aspect": 1.3867,
+      "solidity": 0.8566,
+      "span_ratio": 0.8376,
+      "face_ratio": null
+    },
+    {
+      "frame": 336,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 1.94623,
+      "bbox_aspect": 1.4579,
+      "solidity": 0.9506,
+      "span_ratio": 0.9908,
+      "face_ratio": 7.2167
+    },
+    {
+      "frame": 337,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.0736,
+      "bbox_aspect": 1.2992,
+      "solidity": 0.7979,
+      "span_ratio": 0.8924,
+      "face_ratio": 2.6958
+    },
+    {
+      "frame": 338,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 1.24859,
+      "bbox_aspect": 1.2803,
+      "solidity": 0.9712,
+      "span_ratio": 0.7972,
+      "face_ratio": 4.122
+    },
+    {
+      "frame": 339,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 1.07254,
+      "bbox_aspect": 1.8623,
+      "solidity": 0.9636,
+      "span_ratio": 0.9091,
+      "face_ratio": null
+    },
+    {
+      "frame": 340,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.58446,
+      "bbox_aspect": 1.8697,
+      "solidity": 0.8655,
+      "span_ratio": 0.9139,
+      "face_ratio": null
+    },
+    {
+      "frame": 341,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 1.33428,
+      "bbox_aspect": 1.8899,
+      "solidity": 0.9992,
+      "span_ratio": 0.9246,
+      "face_ratio": null
+    },
+    {
+      "frame": 342,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.87,
+      "bbox_aspect": 1.5519,
+      "solidity": 0.8573,
+      "span_ratio": 0.8971,
+      "face_ratio": 3.3742
+    },
+    {
+      "frame": 343,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.66594,
+      "bbox_aspect": 0.7994,
+      "solidity": 0.7732,
+      "span_ratio": 0.554,
+      "face_ratio": 1.6942
+    },
+    {
+      "frame": 344,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.20037,
+      "bbox_aspect": 1.3041,
+      "solidity": 0.6197,
+      "span_ratio": 0.9697,
+      "face_ratio": 2.9714
+    },
+    {
+      "frame": 345,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.5032,
+      "bbox_aspect": 0.7297,
+      "solidity": 0.9449,
+      "span_ratio": 0.6413,
+      "face_ratio": 3.375
+    },
+    {
+      "frame": 346,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.06561,
+      "bbox_aspect": 1.1398,
+      "solidity": 0.6897,
+      "span_ratio": 0.9709,
+      "face_ratio": 3.67
+    },
+    {
+      "frame": 347,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.54664,
+      "bbox_aspect": 1.1036,
+      "solidity": 0.9053,
+      "span_ratio": 0.7177,
+      "face_ratio": 3.94
+    },
+    {
+      "frame": 348,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.9374,
+      "bbox_aspect": 1.1603,
+      "solidity": 0.9306,
+      "span_ratio": 1.0,
+      "face_ratio": 2.0452
+    },
+    {
+      "frame": 349,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.31584,
+      "bbox_aspect": 0.625,
+      "solidity": 0.7133,
+      "span_ratio": 1.0,
+      "face_ratio": 1.6409
+    },
+    {
+      "frame": 350,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.07133,
+      "bbox_aspect": 1.1356,
+      "solidity": 0.9535,
+      "span_ratio": 0.6654,
+      "face_ratio": null
+    },
+    {
+      "frame": 351,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": -0.03891,
+      "bbox_aspect": 0.8521,
+      "solidity": 0.8671,
+      "span_ratio": 0.6811,
+      "face_ratio": 2.5385
+    },
+    {
+      "frame": 352,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.18442,
+      "bbox_aspect": 0.9077,
+      "solidity": 0.9339,
+      "span_ratio": 0.7242,
+      "face_ratio": 1.9006
+    },
+    {
+      "frame": 353,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.02432,
+      "bbox_aspect": 0.9675,
+      "solidity": 0.9272,
+      "span_ratio": 0.6527,
+      "face_ratio": 1.6761
+    },
+    {
+      "frame": 354,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.3211,
+      "bbox_aspect": 0.8966,
+      "solidity": 0.8917,
+      "span_ratio": 0.4688,
+      "face_ratio": 1.7333
+    },
+    {
+      "frame": 355,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.12246,
+      "bbox_aspect": 0.8798,
+      "solidity": 0.9049,
+      "span_ratio": 0.4931,
+      "face_ratio": 2.2676
+    },
+    {
+      "frame": 356,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": -0.05268,
+      "bbox_aspect": 0.8832,
+      "solidity": 0.8368,
+      "span_ratio": 0.867,
+      "face_ratio": 1.75
+    },
+    {
+      "frame": 357,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.05381,
+      "bbox_aspect": 1.0597,
+      "solidity": 0.9196,
+      "span_ratio": 0.6344,
+      "face_ratio": 1.8744
+    },
+    {
+      "frame": 358,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.60855,
+      "bbox_aspect": 0.8914,
+      "solidity": 0.8672,
+      "span_ratio": 0.5511,
+      "face_ratio": null
+    },
+    {
+      "frame": 359,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.55759,
+      "bbox_aspect": 1.0149,
+      "solidity": 0.8029,
+      "span_ratio": 0.5587,
+      "face_ratio": null
+    },
+    {
+      "frame": 360,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.05109,
+      "bbox_aspect": 1.0733,
+      "solidity": 0.8133,
+      "span_ratio": 0.8869,
+      "face_ratio": 1.9775
+    },
+    {
+      "frame": 361,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.60419,
+      "bbox_aspect": 1.1111,
+      "solidity": 0.9164,
+      "span_ratio": 0.785,
+      "face_ratio": 4.375
+    },
+    {
+      "frame": 362,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -1.13613,
+      "bbox_aspect": 0.7482,
+      "solidity": 0.6246,
+      "span_ratio": 0.621,
+      "face_ratio": 1.3893
+    },
+    {
+      "frame": 363,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.06029,
+      "bbox_aspect": 0.9507,
+      "solidity": 0.9584,
+      "span_ratio": 0.4971,
+      "face_ratio": 2.3133
+    },
+    {
+      "frame": 364,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.13748,
+      "bbox_aspect": 0.8677,
+      "solidity": 0.9191,
+      "span_ratio": 0.5458,
+      "face_ratio": 2.0695
+    },
+    {
+      "frame": 365,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.09491,
+      "bbox_aspect": 1.036,
+      "solidity": 0.9309,
+      "span_ratio": 0.513,
+      "face_ratio": 2.1744
+    },
+    {
+      "frame": 366,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.74803,
+      "bbox_aspect": 1.1437,
+      "solidity": 0.844,
+      "span_ratio": 1.0,
+      "face_ratio": 2.8592
+    },
+    {
+      "frame": 367,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.57654,
+      "bbox_aspect": 0.9436,
+      "solidity": 0.9681,
+      "span_ratio": 0.8958,
+      "face_ratio": 1.7006
+    },
+    {
+      "frame": 368,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.39998,
+      "bbox_aspect": 1.0185,
+      "solidity": 0.9345,
+      "span_ratio": 0.9457,
+      "face_ratio": null
+    },
+    {
+      "frame": 369,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.17933,
+      "bbox_aspect": 1.0028,
+      "solidity": 0.94,
+      "span_ratio": 0.6477,
+      "face_ratio": 1.4467
+    },
+    {
+      "frame": 370,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.4965,
+      "bbox_aspect": 1.1704,
+      "solidity": 0.9195,
+      "span_ratio": 0.8784,
+      "face_ratio": 2.6187
+    },
+    {
+      "frame": 371,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.03368,
+      "bbox_aspect": 0.9842,
+      "solidity": 0.8431,
+      "span_ratio": 0.7105,
+      "face_ratio": 2.7836
+    },
+    {
+      "frame": 372,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": -0.07231,
+      "bbox_aspect": 1.02,
+      "solidity": 0.8145,
+      "span_ratio": 0.8147,
+      "face_ratio": 1.9758
+    },
+    {
+      "frame": 373,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.14296,
+      "bbox_aspect": 0.8969,
+      "solidity": 0.952,
+      "span_ratio": 0.4901,
+      "face_ratio": 1.45
+    },
+    {
+      "frame": 374,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.07507,
+      "bbox_aspect": 1.0917,
+      "solidity": 0.9047,
+      "span_ratio": 0.6865,
+      "face_ratio": null
+    },
+    {
+      "frame": 375,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.7436,
+      "bbox_aspect": 0.7904,
+      "solidity": 0.6622,
+      "span_ratio": 0.787,
+      "face_ratio": 2.0291
+    },
+    {
+      "frame": 376,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.10877,
+      "bbox_aspect": 1.1561,
+      "solidity": 0.7442,
+      "span_ratio": 0.9258,
+      "face_ratio": 1.534
+    },
+    {
+      "frame": 377,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 1.37094,
+      "bbox_aspect": 1.2648,
+      "solidity": 0.8898,
+      "span_ratio": 0.976,
+      "face_ratio": 6.4444
+    },
+    {
+      "frame": 378,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.68473,
+      "bbox_aspect": 1.9481,
+      "solidity": 0.7698,
+      "span_ratio": 0.9562,
+      "face_ratio": 4.3073
+    },
+    {
+      "frame": 379,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.51033,
+      "bbox_aspect": 1.0702,
+      "solidity": 0.6479,
+      "span_ratio": 0.8921,
+      "face_ratio": 2.485
+    },
+    {
+      "frame": 380,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.22,
+      "bbox_aspect": 1.1878,
+      "solidity": 0.8348,
+      "span_ratio": 0.8504,
+      "face_ratio": 3.2774
+    },
+    {
+      "frame": 381,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.081,
+      "bbox_aspect": 1.3168,
+      "solidity": 0.8064,
+      "span_ratio": 0.7633,
+      "face_ratio": 2.6474
+    },
+    {
+      "frame": 382,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.0833,
+      "bbox_aspect": 1.7434,
+      "solidity": 0.6779,
+      "span_ratio": 0.992,
+      "face_ratio": 3.7719
+    },
+    {
+      "frame": 383,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.22982,
+      "bbox_aspect": 0.7619,
+      "solidity": 0.9255,
+      "span_ratio": 0.6056,
+      "face_ratio": 1.0447
+    },
+    {
+      "frame": 384,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": -0.03911,
+      "bbox_aspect": 1.0026,
+      "solidity": 0.9338,
+      "span_ratio": 0.615,
+      "face_ratio": 1.54
+    },
+    {
+      "frame": 385,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.42685,
+      "bbox_aspect": 1.5032,
+      "solidity": 0.8926,
+      "span_ratio": 0.8764,
+      "face_ratio": 3.0
+    },
+    {
+      "frame": 386,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.09101,
+      "bbox_aspect": 1.3222,
+      "solidity": 0.7679,
+      "span_ratio": 0.8128,
+      "face_ratio": 3.7739
+    },
+    {
+      "frame": 387,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.18293,
+      "bbox_aspect": 1.0904,
+      "solidity": 0.9236,
+      "span_ratio": 0.6582,
+      "face_ratio": 1.6455
+    },
+    {
+      "frame": 388,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.52542,
+      "bbox_aspect": 1.3621,
+      "solidity": 0.755,
+      "span_ratio": 0.8123,
+      "face_ratio": 4.4862
+    },
+    {
+      "frame": 389,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.04851,
+      "bbox_aspect": 1.0365,
+      "solidity": 0.9148,
+      "span_ratio": 0.5415,
+      "face_ratio": 2.5513
+    },
+    {
+      "frame": 390,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.6199,
+      "bbox_aspect": 1.3506,
+      "solidity": 0.7025,
+      "span_ratio": 0.5168,
+      "face_ratio": 1.4198
+    },
+    {
+      "frame": 391,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.0126,
+      "bbox_aspect": 1.385,
+      "solidity": 0.817,
+      "span_ratio": 0.746,
+      "face_ratio": 2.9951
+    },
+    {
+      "frame": 392,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.21508,
+      "bbox_aspect": 0.9529,
+      "solidity": 0.8988,
+      "span_ratio": 0.5377,
+      "face_ratio": 1.5714
+    },
+    {
+      "frame": 393,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": -0.07051,
+      "bbox_aspect": 1.0612,
+      "solidity": 0.9219,
+      "span_ratio": 0.5409,
+      "face_ratio": 1.5104
+    },
+    {
+      "frame": 394,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.42962,
+      "bbox_aspect": 1.0672,
+      "solidity": 0.8187,
+      "span_ratio": 0.6504,
+      "face_ratio": 1.7047
+    },
+    {
+      "frame": 395,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.13075,
+      "bbox_aspect": 0.9541,
+      "solidity": 0.9092,
+      "span_ratio": 0.6338,
+      "face_ratio": null
+    },
+    {
+      "frame": 396,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.52923,
+      "bbox_aspect": 1.275,
+      "solidity": 0.6834,
+      "span_ratio": 0.8382,
+      "face_ratio": 2.2862
+    },
+    {
+      "frame": 397,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.60661,
+      "bbox_aspect": 1.2328,
+      "solidity": 0.9143,
+      "span_ratio": 0.8785,
+      "face_ratio": 2.1486
+    },
+    {
+      "frame": 398,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.29386,
+      "bbox_aspect": 1.4971,
+      "solidity": 0.9209,
+      "span_ratio": 0.7486,
+      "face_ratio": 2.0394
+    },
+    {
+      "frame": 399,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.46042,
+      "bbox_aspect": 0.9241,
+      "solidity": 0.8249,
+      "span_ratio": 0.5389,
+      "face_ratio": 1.961
+    },
+    {
+      "frame": 400,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.65189,
+      "bbox_aspect": 0.7366,
+      "solidity": 0.6563,
+      "span_ratio": 0.8761,
+      "face_ratio": 2.0287
+    },
+    {
+      "frame": 401,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.9167,
+      "bbox_aspect": 0.9172,
+      "solidity": 0.6651,
+      "span_ratio": 0.6619,
+      "face_ratio": 1.3781
+    },
+    {
+      "frame": 402,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.95703,
+      "bbox_aspect": 0.8391,
+      "solidity": 0.7778,
+      "span_ratio": 0.511,
+      "face_ratio": 1.3136
+    },
+    {
+      "frame": 403,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.47421,
+      "bbox_aspect": 1.1044,
+      "solidity": 0.7077,
+      "span_ratio": 0.7207,
+      "face_ratio": 1.4144
+    },
+    {
+      "frame": 404,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.13307,
+      "bbox_aspect": 1.0307,
+      "solidity": 0.9235,
+      "span_ratio": 0.6297,
+      "face_ratio": 2.073
+    },
+    {
+      "frame": 405,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -1.08058,
+      "bbox_aspect": 0.8164,
+      "solidity": 0.6904,
+      "span_ratio": 0.467,
+      "face_ratio": 1.0566
+    },
+    {
+      "frame": 406,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.56884,
+      "bbox_aspect": 0.8384,
+      "solidity": 0.7946,
+      "span_ratio": 0.5621,
+      "face_ratio": 1.1341
+    },
+    {
+      "frame": 407,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.74385,
+      "bbox_aspect": 0.8873,
+      "solidity": 0.7085,
+      "span_ratio": 0.5931,
+      "face_ratio": 1.7832
+    },
+    {
+      "frame": 408,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.7606,
+      "bbox_aspect": 0.9407,
+      "solidity": 0.6795,
+      "span_ratio": 0.6898,
+      "face_ratio": 1.6171
+    },
+    {
+      "frame": 409,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.07218,
+      "bbox_aspect": 0.9902,
+      "solidity": 0.9202,
+      "span_ratio": 0.5621,
+      "face_ratio": 2.6169
+    },
+    {
+      "frame": 410,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.12876,
+      "bbox_aspect": 1.1151,
+      "solidity": 0.9169,
+      "span_ratio": 0.6899,
+      "face_ratio": null
+    },
+    {
+      "frame": 411,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.32708,
+      "bbox_aspect": 1.0,
+      "solidity": 0.906,
+      "span_ratio": 0.7143,
+      "face_ratio": 2.6033
+    },
+    {
+      "frame": 412,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.51245,
+      "bbox_aspect": 0.9832,
+      "solidity": 0.647,
+      "span_ratio": 0.941,
+      "face_ratio": 2.7857
+    },
+    {
+      "frame": 413,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.40698,
+      "bbox_aspect": 0.7747,
+      "solidity": 0.8843,
+      "span_ratio": 0.4665,
+      "face_ratio": 1.1333
+    },
+    {
+      "frame": 414,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.62049,
+      "bbox_aspect": 1.3406,
+      "solidity": 0.9385,
+      "span_ratio": 0.8605,
+      "face_ratio": null
+    },
+    {
+      "frame": 415,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.38188,
+      "bbox_aspect": 1.3117,
+      "solidity": 0.9506,
+      "span_ratio": 0.8228,
+      "face_ratio": null
+    },
+    {
+      "frame": 416,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.3688,
+      "bbox_aspect": 1.0,
+      "solidity": 0.9655,
+      "span_ratio": 0.5674,
+      "face_ratio": 2.3309
+    },
+    {
+      "frame": 417,
+      "tipe": "keriting",
+      "panjang_label": "panjang",
+      "score": 0.47111,
+      "bbox_aspect": 1.0367,
+      "solidity": 0.953,
+      "span_ratio": 0.6439,
+      "face_ratio": 3.1102
+    },
+    {
+      "frame": 418,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.78111,
+      "bbox_aspect": 0.8602,
+      "solidity": 0.7639,
+      "span_ratio": 0.5551,
+      "face_ratio": 1.4669
+    },
+    {
+      "frame": 419,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.7926,
+      "bbox_aspect": 0.9077,
+      "solidity": 0.6861,
+      "span_ratio": 0.5982,
+      "face_ratio": 1.9015
+    },
+    {
+      "frame": 420,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.84412,
+      "bbox_aspect": 0.9183,
+      "solidity": 0.7374,
+      "span_ratio": 0.5659,
+      "face_ratio": 1.4658
+    },
+    {
+      "frame": 421,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.75716,
+      "bbox_aspect": 0.9198,
+      "solidity": 0.6021,
+      "span_ratio": 0.906,
+      "face_ratio": 1.729
+    },
+    {
+      "frame": 422,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.51014,
+      "bbox_aspect": 0.9602,
+      "solidity": 0.7926,
+      "span_ratio": 0.7404,
+      "face_ratio": 1.5649
+    },
+    {
+      "frame": 423,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.56197,
+      "bbox_aspect": 0.9492,
+      "solidity": 0.7173,
+      "span_ratio": 0.784,
+      "face_ratio": 1.9406
+    },
+    {
+      "frame": 424,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -1.05062,
+      "bbox_aspect": 1.0321,
+      "solidity": 0.6001,
+      "span_ratio": 0.739,
+      "face_ratio": 1.5364
+    },
+    {
+      "frame": 425,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.97905,
+      "bbox_aspect": 0.9137,
+      "solidity": 0.6226,
+      "span_ratio": 0.625,
+      "face_ratio": 1.615
+    },
+    {
+      "frame": 426,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.42427,
+      "bbox_aspect": 1.1887,
+      "solidity": 0.6114,
+      "span_ratio": 0.8665,
+      "face_ratio": 2.9155
+    },
+    {
+      "frame": 427,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -1.21676,
+      "bbox_aspect": 1.0601,
+      "solidity": 0.5291,
+      "span_ratio": 0.741,
+      "face_ratio": 1.425
+    },
+    {
+      "frame": 428,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.61914,
+      "bbox_aspect": 0.9451,
+      "solidity": 0.8008,
+      "span_ratio": 0.549,
+      "face_ratio": 1.7708
+    },
+    {
+      "frame": 429,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.22711,
+      "bbox_aspect": 0.679,
+      "solidity": 0.8955,
+      "span_ratio": 0.3884,
+      "face_ratio": 1.3009
+    },
+    {
+      "frame": 430,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -1.15264,
+      "bbox_aspect": 0.9457,
+      "solidity": 0.649,
+      "span_ratio": 0.592,
+      "face_ratio": 1.5258
+    },
+    {
+      "frame": 431,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.92113,
+      "bbox_aspect": 0.799,
+      "solidity": 0.6697,
+      "span_ratio": 0.6936,
+      "face_ratio": 1.1107
+    },
+    {
+      "frame": 432,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.56598,
+      "bbox_aspect": 0.8265,
+      "solidity": 0.799,
+      "span_ratio": 0.5078,
+      "face_ratio": 1.4825
+    },
+    {
+      "frame": 433,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.4295,
+      "bbox_aspect": 0.9474,
+      "solidity": 0.7729,
+      "span_ratio": 0.8084,
+      "face_ratio": 1.677
+    },
+    {
+      "frame": 434,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -1.28564,
+      "bbox_aspect": 1.0104,
+      "solidity": 0.5196,
+      "span_ratio": 0.775,
+      "face_ratio": 1.7694
+    },
+    {
+      "frame": 435,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.02973,
+      "bbox_aspect": 1.9217,
+      "solidity": 0.7276,
+      "span_ratio": 0.761,
+      "face_ratio": 3.1317
+    },
+    {
+      "frame": 436,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.68792,
+      "bbox_aspect": 0.708,
+      "solidity": 0.8063,
+      "span_ratio": 0.5064,
+      "face_ratio": 1.5391
+    },
+    {
+      "frame": 437,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.73931,
+      "bbox_aspect": 0.9734,
+      "solidity": 0.6255,
+      "span_ratio": 0.696,
+      "face_ratio": 2.3514
+    },
+    {
+      "frame": 438,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": 0.20326,
+      "bbox_aspect": 1.9008,
+      "solidity": 0.6447,
+      "span_ratio": 0.977,
+      "face_ratio": 4.0372
+    },
+    {
+      "frame": 439,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.66651,
+      "bbox_aspect": 1.266,
+      "solidity": 0.5692,
+      "span_ratio": 0.971,
+      "face_ratio": 2.5155
+    },
+    {
+      "frame": 440,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.8631,
+      "bbox_aspect": 0.7934,
+      "solidity": 0.6888,
+      "span_ratio": 0.6677,
+      "face_ratio": 0.9751
+    },
+    {
+      "frame": 441,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.15378,
+      "bbox_aspect": 0.9904,
+      "solidity": 0.8407,
+      "span_ratio": 0.9007,
+      "face_ratio": 2.2274
+    },
+    {
+      "frame": 442,
+      "tipe": "keriting",
+      "panjang_label": "menengah",
+      "score": -0.01419,
+      "bbox_aspect": 0.8389,
+      "solidity": 0.7662,
+      "span_ratio": 1.0,
+      "face_ratio": 2.3099
+    },
+    {
+      "frame": 443,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.96305,
+      "bbox_aspect": 0.8694,
+      "solidity": 0.6378,
+      "span_ratio": 0.7395,
+      "face_ratio": 1.9404
+    },
+    {
+      "frame": 444,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.77619,
+      "bbox_aspect": 0.8492,
+      "solidity": 0.6092,
+      "span_ratio": 0.8761,
+      "face_ratio": 2.3295
+    },
+    {
+      "frame": 445,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -1.114,
+      "bbox_aspect": 0.8467,
+      "solidity": 0.6951,
+      "span_ratio": 0.5232,
+      "face_ratio": 1.6372
+    },
+    {
+      "frame": 446,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.63922,
+      "bbox_aspect": 0.8992,
+      "solidity": 0.6509,
+      "span_ratio": 0.7822,
+      "face_ratio": 1.6638
+    },
+    {
+      "frame": 447,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -1.09457,
+      "bbox_aspect": 1.0264,
+      "solidity": 0.5603,
+      "span_ratio": 0.699,
+      "face_ratio": 1.869
+    },
+    {
+      "frame": 448,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.63606,
+      "bbox_aspect": 1.3985,
+      "solidity": 0.604,
+      "span_ratio": 0.758,
+      "face_ratio": 2.669
+    },
+    {
+      "frame": 449,
+      "tipe": "keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.27257,
+      "bbox_aspect": 0.9003,
+      "solidity": 0.6583,
+      "span_ratio": 1.0,
+      "face_ratio": 2.8067
+    },
+    {
+      "frame": 450,
+      "tipe": "keriting",
+      "panjang_label": "pendek",
+      "score": -0.75024,
+      "bbox_aspect": 1.2208,
+      "solidity": 0.5937,
+      "span_ratio": 0.835,
+      "face_ratio": 1.5209
+    },
+    {
+      "frame": 451,
+      "tipe": "sangat-keriting",
+      "panjang_label": "panjang",
+      "score": 0.85018,
+      "bbox_aspect": 0.731,
+      "solidity": 0.9797,
+      "span_ratio": 0.9746,
+      "face_ratio": null
+    },
+    {
+      "frame": 452,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.3856,
+      "bbox_aspect": 0.7747,
+      "solidity": 0.7674,
+      "span_ratio": 0.7538,
+      "face_ratio": 2.0488
+    },
+    {
+      "frame": 453,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.56263,
+      "bbox_aspect": 0.9036,
+      "solidity": 0.7193,
+      "span_ratio": 0.8826,
+      "face_ratio": 2.2809
+    },
+    {
+      "frame": 454,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.24811,
+      "bbox_aspect": 1.0925,
+      "solidity": 0.95,
+      "span_ratio": 0.5728,
+      "face_ratio": null
+    },
+    {
+      "frame": 455,
+      "tipe": "sangat-keriting",
+      "panjang_label": "panjang",
+      "score": 1.24363,
+      "bbox_aspect": 0.6985,
+      "solidity": 0.9906,
+      "span_ratio": 1.0,
+      "face_ratio": null
+    },
+    {
+      "frame": 456,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.10828,
+      "bbox_aspect": 0.9544,
+      "solidity": 0.8208,
+      "span_ratio": 0.5812,
+      "face_ratio": 2.1256
+    },
+    {
+      "frame": 457,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.0932,
+      "bbox_aspect": 0.9301,
+      "solidity": 0.8526,
+      "span_ratio": 0.7196,
+      "face_ratio": 2.1407
+    },
+    {
+      "frame": 458,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.42965,
+      "bbox_aspect": 0.9913,
+      "solidity": 0.7265,
+      "span_ratio": 0.7085,
+      "face_ratio": 2.4568
+    },
+    {
+      "frame": 459,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.07952,
+      "bbox_aspect": 0.9837,
+      "solidity": 0.7072,
+      "span_ratio": 1.0,
+      "face_ratio": 2.2438
+    },
+    {
+      "frame": 460,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.36935,
+      "bbox_aspect": 0.8094,
+      "solidity": 0.8062,
+      "span_ratio": 0.6201,
+      "face_ratio": 1.4209
+    },
+    {
+      "frame": 461,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": -0.05586,
+      "bbox_aspect": 0.9306,
+      "solidity": 0.8435,
+      "span_ratio": 0.5231,
+      "face_ratio": 2.3506
+    },
+    {
+      "frame": 462,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.1477,
+      "bbox_aspect": 0.7399,
+      "solidity": 0.7659,
+      "span_ratio": 0.7552,
+      "face_ratio": 2.0258
+    },
+    {
+      "frame": 463,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.46302,
+      "bbox_aspect": 0.7449,
+      "solidity": 0.7336,
+      "span_ratio": 0.8971,
+      "face_ratio": 1.6404
+    },
+    {
+      "frame": 464,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.23894,
+      "bbox_aspect": 1.131,
+      "solidity": 0.9322,
+      "span_ratio": 0.6518,
+      "face_ratio": null
+    },
+    {
+      "frame": 465,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.01706,
+      "bbox_aspect": 0.726,
+      "solidity": 0.8322,
+      "span_ratio": 0.7183,
+      "face_ratio": 1.8053
+    },
+    {
+      "frame": 466,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.6388,
+      "bbox_aspect": 0.8923,
+      "solidity": 0.7137,
+      "span_ratio": 0.7352,
+      "face_ratio": 1.8797
+    },
+    {
+      "frame": 467,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": -0.05301,
+      "bbox_aspect": 0.9667,
+      "solidity": 0.8389,
+      "span_ratio": 0.8286,
+      "face_ratio": 1.9507
+    },
+    {
+      "frame": 468,
+      "tipe": "sangat-keriting",
+      "panjang_label": "panjang",
+      "score": 0.98393,
+      "bbox_aspect": 1.083,
+      "solidity": 0.9803,
+      "span_ratio": 0.7296,
+      "face_ratio": 1.5048
+    },
+    {
+      "frame": 469,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.37966,
+      "bbox_aspect": 0.8589,
+      "solidity": 0.5895,
+      "span_ratio": 0.688,
+      "face_ratio": 1.4215
+    },
+    {
+      "frame": 470,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.71651,
+      "bbox_aspect": 1.0093,
+      "solidity": 0.6653,
+      "span_ratio": 0.9046,
+      "face_ratio": 2.9727
+    },
+    {
+      "frame": 471,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.18619,
+      "bbox_aspect": 0.869,
+      "solidity": 0.7727,
+      "span_ratio": 0.7508,
+      "face_ratio": 1.9798
+    },
+    {
+      "frame": 472,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.53409,
+      "bbox_aspect": 0.6937,
+      "solidity": 0.7306,
+      "span_ratio": 0.6587,
+      "face_ratio": 2.592
+    },
+    {
+      "frame": 473,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.30958,
+      "bbox_aspect": 0.797,
+      "solidity": 0.8444,
+      "span_ratio": 0.5212,
+      "face_ratio": 1.2466
+    },
+    {
+      "frame": 474,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.64032,
+      "bbox_aspect": 0.9218,
+      "solidity": 0.6925,
+      "span_ratio": 0.9335,
+      "face_ratio": 2.1535
+    },
+    {
+      "frame": 475,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.22724,
+      "bbox_aspect": 0.7964,
+      "solidity": 0.8597,
+      "span_ratio": 0.8381,
+      "face_ratio": 2.6466
+    },
+    {
+      "frame": 476,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.09415,
+      "bbox_aspect": 0.9734,
+      "solidity": 0.8912,
+      "span_ratio": 0.8314,
+      "face_ratio": 2.3602
+    },
+    {
+      "frame": 477,
+      "tipe": "sangat-keriting",
+      "panjang_label": "panjang",
+      "score": 0.45597,
+      "bbox_aspect": 1.0939,
+      "solidity": 0.946,
+      "span_ratio": 0.7648,
+      "face_ratio": 1.4382
+    },
+    {
+      "frame": 478,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.6063,
+      "bbox_aspect": 1.0753,
+      "solidity": 0.6804,
+      "span_ratio": 0.9262,
+      "face_ratio": 2.2198
+    },
+    {
+      "frame": 479,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.20292,
+      "bbox_aspect": 0.967,
+      "solidity": 0.8056,
+      "span_ratio": 0.6004,
+      "face_ratio": 2.5702
+    },
+    {
+      "frame": 480,
+      "tipe": "sangat-keriting",
+      "panjang_label": "panjang",
+      "score": 0.60459,
+      "bbox_aspect": 1.2738,
+      "solidity": 0.8824,
+      "span_ratio": 0.9151,
+      "face_ratio": 2.6154
+    },
+    {
+      "frame": 481,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.67124,
+      "bbox_aspect": 0.8974,
+      "solidity": 0.715,
+      "span_ratio": 0.5972,
+      "face_ratio": 2.3348
+    },
+    {
+      "frame": 482,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.71852,
+      "bbox_aspect": 0.9787,
+      "solidity": 0.7042,
+      "span_ratio": 0.7413,
+      "face_ratio": 2.0252
+    },
+    {
+      "frame": 483,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.50041,
+      "bbox_aspect": 0.818,
+      "solidity": 0.7388,
+      "span_ratio": 0.6963,
+      "face_ratio": 1.3758
+    },
+    {
+      "frame": 484,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.73655,
+      "bbox_aspect": 0.9765,
+      "solidity": 0.6684,
+      "span_ratio": 0.819,
+      "face_ratio": 1.9792
+    },
+    {
+      "frame": 485,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.18858,
+      "bbox_aspect": 0.831,
+      "solidity": 0.831,
+      "span_ratio": 0.5826,
+      "face_ratio": 1.6942
+    },
+    {
+      "frame": 486,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.39211,
+      "bbox_aspect": 0.8108,
+      "solidity": 0.8092,
+      "span_ratio": 0.4462,
+      "face_ratio": 1.322
+    },
+    {
+      "frame": 487,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.28867,
+      "bbox_aspect": 1.1562,
+      "solidity": 0.804,
+      "span_ratio": 0.8538,
+      "face_ratio": 2.8462
+    },
+    {
+      "frame": 488,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": -0.01808,
+      "bbox_aspect": 1.1313,
+      "solidity": 0.8461,
+      "span_ratio": 0.8235,
+      "face_ratio": 2.3333
+    },
+    {
+      "frame": 489,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.23195,
+      "bbox_aspect": 0.8033,
+      "solidity": 0.7964,
+      "span_ratio": 0.8087,
+      "face_ratio": 1.1489
+    },
+    {
+      "frame": 490,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.31954,
+      "bbox_aspect": 0.9331,
+      "solidity": 0.7797,
+      "span_ratio": 0.642,
+      "face_ratio": 2.6098
+    },
+    {
+      "frame": 491,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.08248,
+      "bbox_aspect": 0.918,
+      "solidity": 0.6438,
+      "span_ratio": 0.7541,
+      "face_ratio": 1.7673
+    },
+    {
+      "frame": 492,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.21342,
+      "bbox_aspect": 1.0248,
+      "solidity": 0.7639,
+      "span_ratio": 0.6564,
+      "face_ratio": 2.5142
+    },
+    {
+      "frame": 493,
+      "tipe": "sangat-keriting",
+      "panjang_label": "panjang",
+      "score": 0.81433,
+      "bbox_aspect": 0.8796,
+      "solidity": 0.9666,
+      "span_ratio": 0.887,
+      "face_ratio": null
+    },
+    {
+      "frame": 494,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.86122,
+      "bbox_aspect": 0.9048,
+      "solidity": 0.6646,
+      "span_ratio": 0.808,
+      "face_ratio": 1.7916
+    },
+    {
+      "frame": 495,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.1145,
+      "bbox_aspect": 1.1397,
+      "solidity": 0.5988,
+      "span_ratio": 0.7702,
+      "face_ratio": 2.3027
+    },
+    {
+      "frame": 496,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.00135,
+      "bbox_aspect": 0.973,
+      "solidity": 0.7753,
+      "span_ratio": 0.8985,
+      "face_ratio": 1.6871
+    },
+    {
+      "frame": 497,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.30741,
+      "bbox_aspect": 0.9128,
+      "solidity": 0.776,
+      "span_ratio": 0.5965,
+      "face_ratio": 1.8802
+    },
+    {
+      "frame": 498,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.70517,
+      "bbox_aspect": 0.9806,
+      "solidity": 0.6718,
+      "span_ratio": 0.8579,
+      "face_ratio": 2.5308
+    },
+    {
+      "frame": 499,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.16905,
+      "bbox_aspect": 0.8622,
+      "solidity": 0.7632,
+      "span_ratio": 0.9439,
+      "face_ratio": 2.3911
+    },
+    {
+      "frame": 500,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.3271,
+      "bbox_aspect": 0.8913,
+      "solidity": 0.7524,
+      "span_ratio": 0.811,
+      "face_ratio": 2.1745
+    },
+    {
+      "frame": 501,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.54103,
+      "bbox_aspect": 0.8983,
+      "solidity": 0.814,
+      "span_ratio": 0.6304,
+      "face_ratio": 1.7609
+    },
+    {
+      "frame": 502,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.58624,
+      "bbox_aspect": 0.9232,
+      "solidity": 0.7729,
+      "span_ratio": 0.5889,
+      "face_ratio": 1.4601
+    },
+    {
+      "frame": 503,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.68477,
+      "bbox_aspect": 0.9606,
+      "solidity": 0.8287,
+      "span_ratio": 0.488,
+      "face_ratio": 1.3903
+    },
+    {
+      "frame": 504,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.79583,
+      "bbox_aspect": 0.7968,
+      "solidity": 0.7542,
+      "span_ratio": 0.443,
+      "face_ratio": 1.3185
+    },
+    {
+      "frame": 505,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.51926,
+      "bbox_aspect": 0.8624,
+      "solidity": 0.5822,
+      "span_ratio": 0.5907,
+      "face_ratio": 1.2813
+    },
+    {
+      "frame": 506,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.7279,
+      "bbox_aspect": 0.846,
+      "solidity": 0.7999,
+      "span_ratio": 0.5118,
+      "face_ratio": 1.1015
+    },
+    {
+      "frame": 507,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.16313,
+      "bbox_aspect": 0.8811,
+      "solidity": 0.8891,
+      "span_ratio": 0.4246,
+      "face_ratio": 1.452
+    },
+    {
+      "frame": 508,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.29979,
+      "bbox_aspect": 0.919,
+      "solidity": 0.843,
+      "span_ratio": 0.7949,
+      "face_ratio": 1.6489
+    },
+    {
+      "frame": 509,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.54121,
+      "bbox_aspect": 0.9507,
+      "solidity": 0.7767,
+      "span_ratio": 0.6585,
+      "face_ratio": 1.3242
+    },
+    {
+      "frame": 510,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.37445,
+      "bbox_aspect": 1.0,
+      "solidity": 0.8212,
+      "span_ratio": 0.6945,
+      "face_ratio": 1.3201
+    },
+    {
+      "frame": 511,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.08463,
+      "bbox_aspect": 0.888,
+      "solidity": 0.88,
+      "span_ratio": 0.4993,
+      "face_ratio": 1.0365
+    },
+    {
+      "frame": 512,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.13603,
+      "bbox_aspect": 1.0614,
+      "solidity": 0.879,
+      "span_ratio": 0.6307,
+      "face_ratio": 2.1282
+    },
+    {
+      "frame": 513,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.6676,
+      "bbox_aspect": 0.8598,
+      "solidity": 0.7951,
+      "span_ratio": 0.6062,
+      "face_ratio": 1.4075
+    },
+    {
+      "frame": 514,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.45741,
+      "bbox_aspect": 1.1146,
+      "solidity": 0.7769,
+      "span_ratio": 0.7535,
+      "face_ratio": 1.9633
+    },
+    {
+      "frame": 515,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.73923,
+      "bbox_aspect": 0.6909,
+      "solidity": 0.5447,
+      "span_ratio": 0.532,
+      "face_ratio": 0.7858
+    },
+    {
+      "frame": 516,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": -0.01924,
+      "bbox_aspect": 0.8371,
+      "solidity": 0.8673,
+      "span_ratio": 0.6818,
+      "face_ratio": 1.3158
+    },
+    {
+      "frame": 517,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.45374,
+      "bbox_aspect": 0.7585,
+      "solidity": 0.7842,
+      "span_ratio": 0.4612,
+      "face_ratio": 1.1209
+    },
+    {
+      "frame": 518,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.16932,
+      "bbox_aspect": 0.9293,
+      "solidity": 0.643,
+      "span_ratio": 0.7288,
+      "face_ratio": 1.5
+    },
+    {
+      "frame": 519,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.15505,
+      "bbox_aspect": 0.8253,
+      "solidity": 0.6837,
+      "span_ratio": 0.5471,
+      "face_ratio": 1.2899
+    },
+    {
+      "frame": 520,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.33849,
+      "bbox_aspect": 1.0577,
+      "solidity": 0.6168,
+      "span_ratio": 0.513,
+      "face_ratio": 1.1686
+    },
+    {
+      "frame": 521,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": -0.06301,
+      "bbox_aspect": 0.6617,
+      "solidity": 0.8495,
+      "span_ratio": 0.6588,
+      "face_ratio": 1.601
+    },
+    {
+      "frame": 522,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.4562,
+      "bbox_aspect": 1.0277,
+      "solidity": 0.8535,
+      "span_ratio": 0.478,
+      "face_ratio": 1.4638
+    },
+    {
+      "frame": 523,
+      "tipe": "sangat-keriting",
+      "panjang_label": "panjang",
+      "score": 0.66116,
+      "bbox_aspect": 1.0717,
+      "solidity": 0.9871,
+      "span_ratio": 0.8889,
+      "face_ratio": null
+    },
+    {
+      "frame": 524,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.05259,
+      "bbox_aspect": 1.0254,
+      "solidity": 0.8839,
+      "span_ratio": 0.7386,
+      "face_ratio": 1.8879
+    },
+    {
+      "frame": 525,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.78439,
+      "bbox_aspect": 0.8893,
+      "solidity": 0.729,
+      "span_ratio": 0.6547,
+      "face_ratio": 1.7174
+    },
+    {
+      "frame": 526,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.07721,
+      "bbox_aspect": 0.9592,
+      "solidity": 0.8975,
+      "span_ratio": 0.4982,
+      "face_ratio": 1.7625
+    },
+    {
+      "frame": 527,
+      "tipe": "sangat-keriting",
+      "panjang_label": "panjang",
+      "score": 0.53811,
+      "bbox_aspect": 0.8991,
+      "solidity": 0.9468,
+      "span_ratio": 0.5172,
+      "face_ratio": null
+    },
+    {
+      "frame": 528,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.21988,
+      "bbox_aspect": 1.1387,
+      "solidity": 0.851,
+      "span_ratio": 0.9016,
+      "face_ratio": 2.4402
+    },
+    {
+      "frame": 529,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.34367,
+      "bbox_aspect": 0.9775,
+      "solidity": 0.8298,
+      "span_ratio": 0.6677,
+      "face_ratio": 1.8952
+    },
+    {
+      "frame": 530,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.96358,
+      "bbox_aspect": 0.9704,
+      "solidity": 0.6584,
+      "span_ratio": 0.558,
+      "face_ratio": 1.7942
+    },
+    {
+      "frame": 531,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.20621,
+      "bbox_aspect": 1.0029,
+      "solidity": 0.8504,
+      "span_ratio": 0.7451,
+      "face_ratio": 1.5682
+    },
+    {
+      "frame": 532,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.18742,
+      "bbox_aspect": 0.5614,
+      "solidity": 0.8444,
+      "span_ratio": 0.4558,
+      "face_ratio": 1.4675
+    },
+    {
+      "frame": 533,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": -0.04124,
+      "bbox_aspect": 1.0981,
+      "solidity": 0.8555,
+      "span_ratio": 0.697,
+      "face_ratio": 2.0
+    },
+    {
+      "frame": 534,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": -0.00387,
+      "bbox_aspect": 1.0742,
+      "solidity": 0.7971,
+      "span_ratio": 0.7122,
+      "face_ratio": 1.8889
+    },
+    {
+      "frame": 535,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.30839,
+      "bbox_aspect": 0.8637,
+      "solidity": 0.6276,
+      "span_ratio": 0.4978,
+      "face_ratio": 1.4516
+    },
+    {
+      "frame": 536,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.29303,
+      "bbox_aspect": 0.965,
+      "solidity": 0.8382,
+      "span_ratio": 0.6082,
+      "face_ratio": 2.1399
+    },
+    {
+      "frame": 537,
+      "tipe": "sangat-keriting",
+      "panjang_label": "panjang",
+      "score": 0.6628,
+      "bbox_aspect": 1.1346,
+      "solidity": 0.9214,
+      "span_ratio": 0.6103,
+      "face_ratio": 2.4755
+    },
+    {
+      "frame": 538,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.20767,
+      "bbox_aspect": 1.2037,
+      "solidity": 0.8533,
+      "span_ratio": 0.6799,
+      "face_ratio": 1.6583
+    },
+    {
+      "frame": 539,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.14162,
+      "bbox_aspect": 0.928,
+      "solidity": 0.8438,
+      "span_ratio": 0.8095,
+      "face_ratio": 1.7981
+    },
+    {
+      "frame": 540,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.33915,
+      "bbox_aspect": 0.9789,
+      "solidity": 0.8558,
+      "span_ratio": 0.8315,
+      "face_ratio": 1.5623
+    },
+    {
+      "frame": 541,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.26422,
+      "bbox_aspect": 1.544,
+      "solidity": 0.9086,
+      "span_ratio": 0.678,
+      "face_ratio": 2.656
+    },
+    {
+      "frame": 542,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.6252,
+      "bbox_aspect": 1.0272,
+      "solidity": 0.7407,
+      "span_ratio": 0.7229,
+      "face_ratio": 2.1041
+    },
+    {
+      "frame": 543,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": -0.01776,
+      "bbox_aspect": 0.7775,
+      "solidity": 0.8693,
+      "span_ratio": 0.651,
+      "face_ratio": 1.53
+    },
+    {
+      "frame": 544,
+      "tipe": "sangat-keriting",
+      "panjang_label": "panjang",
+      "score": 0.64105,
+      "bbox_aspect": 1.1472,
+      "solidity": 0.9712,
+      "span_ratio": 0.7435,
+      "face_ratio": 1.5081
+    },
+    {
+      "frame": 545,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.68167,
+      "bbox_aspect": 0.5974,
+      "solidity": 0.7594,
+      "span_ratio": 0.9196,
+      "face_ratio": 2.1224
+    },
+    {
+      "frame": 546,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.24052,
+      "bbox_aspect": 0.7804,
+      "solidity": 0.8288,
+      "span_ratio": 0.6276,
+      "face_ratio": 1.3299
+    },
+    {
+      "frame": 547,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.60223,
+      "bbox_aspect": 1.0,
+      "solidity": 0.7658,
+      "span_ratio": 0.6272,
+      "face_ratio": 1.6245
+    },
+    {
+      "frame": 548,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.1404,
+      "bbox_aspect": 0.8684,
+      "solidity": 0.7893,
+      "span_ratio": 0.6874,
+      "face_ratio": 1.9184
+    },
+    {
+      "frame": 549,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.24591,
+      "bbox_aspect": 0.8789,
+      "solidity": 0.8564,
+      "span_ratio": 0.5049,
+      "face_ratio": 2.42
+    },
+    {
+      "frame": 550,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.39951,
+      "bbox_aspect": 1.5459,
+      "solidity": 0.8516,
+      "span_ratio": 0.9146,
+      "face_ratio": 2.5609
+    },
+    {
+      "frame": 551,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.00701,
+      "bbox_aspect": 0.9529,
+      "solidity": 0.6616,
+      "span_ratio": 0.648,
+      "face_ratio": 1.9003
+    },
+    {
+      "frame": 552,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.17845,
+      "bbox_aspect": 1.0447,
+      "solidity": 0.8975,
+      "span_ratio": 0.8618,
+      "face_ratio": null
+    },
+    {
+      "frame": 553,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.48303,
+      "bbox_aspect": 0.8757,
+      "solidity": 0.8543,
+      "span_ratio": 0.4537,
+      "face_ratio": 1.392
+    },
+    {
+      "frame": 554,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.10289,
+      "bbox_aspect": 0.9232,
+      "solidity": 0.8209,
+      "span_ratio": 0.7307,
+      "face_ratio": 2.6717
+    },
+    {
+      "frame": 555,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.54532,
+      "bbox_aspect": 0.7593,
+      "solidity": 0.8192,
+      "span_ratio": 0.488,
+      "face_ratio": 0.8694
+    },
+    {
+      "frame": 556,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.26616,
+      "bbox_aspect": 0.8035,
+      "solidity": 0.8745,
+      "span_ratio": 0.5269,
+      "face_ratio": 0.8815
+    },
+    {
+      "frame": 557,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.90794,
+      "bbox_aspect": 0.7657,
+      "solidity": 0.6851,
+      "span_ratio": 0.6737,
+      "face_ratio": 1.2222
+    },
+    {
+      "frame": 558,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.56507,
+      "bbox_aspect": 0.8264,
+      "solidity": 0.575,
+      "span_ratio": 0.671,
+      "face_ratio": 1.3722
+    },
+    {
+      "frame": 559,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.31479,
+      "bbox_aspect": 0.7034,
+      "solidity": 0.8977,
+      "span_ratio": 0.7739,
+      "face_ratio": 1.8142
+    },
+    {
+      "frame": 560,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.61947,
+      "bbox_aspect": 0.9292,
+      "solidity": 0.7171,
+      "span_ratio": 0.7288,
+      "face_ratio": 1.5833
+    },
+    {
+      "frame": 561,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.43398,
+      "bbox_aspect": 0.8882,
+      "solidity": 0.7836,
+      "span_ratio": 0.5601,
+      "face_ratio": 1.6949
+    },
+    {
+      "frame": 562,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.13655,
+      "bbox_aspect": 1.1429,
+      "solidity": 0.8373,
+      "span_ratio": 0.5576,
+      "face_ratio": 1.79
+    },
+    {
+      "frame": 563,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.89873,
+      "bbox_aspect": 0.8426,
+      "solidity": 0.7166,
+      "span_ratio": 0.6272,
+      "face_ratio": 1.2769
+    },
+    {
+      "frame": 564,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.18562,
+      "bbox_aspect": 1.069,
+      "solidity": 0.8639,
+      "span_ratio": 0.6407,
+      "face_ratio": 1.3213
+    },
+    {
+      "frame": 565,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.23361,
+      "bbox_aspect": 0.6055,
+      "solidity": 0.9453,
+      "span_ratio": 0.4689,
+      "face_ratio": 0.8656
+    },
+    {
+      "frame": 566,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.82072,
+      "bbox_aspect": 0.868,
+      "solidity": 0.6843,
+      "span_ratio": 0.684,
+      "face_ratio": 2.1509
+    },
+    {
+      "frame": 567,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.20641,
+      "bbox_aspect": 0.9093,
+      "solidity": 0.7801,
+      "span_ratio": 0.7303,
+      "face_ratio": 2.2982
+    },
+    {
+      "frame": 568,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.32274,
+      "bbox_aspect": 0.7766,
+      "solidity": 0.8868,
+      "span_ratio": 1.0,
+      "face_ratio": 1.3905
+    },
+    {
+      "frame": 569,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.79827,
+      "bbox_aspect": 0.6606,
+      "solidity": 0.6806,
+      "span_ratio": 0.783,
+      "face_ratio": 1.4431
+    },
+    {
+      "frame": 570,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.34186,
+      "bbox_aspect": 0.7018,
+      "solidity": 0.8653,
+      "span_ratio": 0.4889,
+      "face_ratio": 0.8152
+    },
+    {
+      "frame": 571,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": -0.0659,
+      "bbox_aspect": 0.8237,
+      "solidity": 0.8169,
+      "span_ratio": 0.8274,
+      "face_ratio": 1.9524
+    },
+    {
+      "frame": 572,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.02627,
+      "bbox_aspect": 0.8184,
+      "solidity": 0.8247,
+      "span_ratio": 0.8758,
+      "face_ratio": 2.0138
+    },
+    {
+      "frame": 573,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.63421,
+      "bbox_aspect": 0.9207,
+      "solidity": 0.7119,
+      "span_ratio": 0.755,
+      "face_ratio": 2.3817
+    },
+    {
+      "frame": 574,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.5837,
+      "bbox_aspect": 0.7586,
+      "solidity": 0.7165,
+      "span_ratio": 0.7481,
+      "face_ratio": 1.9161
+    },
+    {
+      "frame": 575,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.0011,
+      "bbox_aspect": 0.9734,
+      "solidity": 0.7765,
+      "span_ratio": 0.8979,
+      "face_ratio": 1.7086
+    },
+    {
+      "frame": 576,
+      "tipe": "sangat-keriting",
+      "panjang_label": "panjang",
+      "score": 0.52585,
+      "bbox_aspect": 0.6632,
+      "solidity": 0.9296,
+      "span_ratio": 0.8431,
+      "face_ratio": null
+    },
+    {
+      "frame": 577,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.98634,
+      "bbox_aspect": 1.3685,
+      "solidity": 0.6109,
+      "span_ratio": 0.921,
+      "face_ratio": 2.6618
+    },
+    {
+      "frame": 578,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.39459,
+      "bbox_aspect": 0.8885,
+      "solidity": 0.5874,
+      "span_ratio": 0.693,
+      "face_ratio": 1.423
+    },
+    {
+      "frame": 579,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.04029,
+      "bbox_aspect": 0.8651,
+      "solidity": 0.913,
+      "span_ratio": 0.6126,
+      "face_ratio": null
+    },
+    {
+      "frame": 580,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.08475,
+      "bbox_aspect": 0.957,
+      "solidity": 0.843,
+      "span_ratio": 0.8915,
+      "face_ratio": null
+    },
+    {
+      "frame": 581,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": -0.00507,
+      "bbox_aspect": 0.6021,
+      "solidity": 0.8788,
+      "span_ratio": 0.6368,
+      "face_ratio": 1.442
+    },
+    {
+      "frame": 582,
+      "tipe": "sangat-keriting",
+      "panjang_label": "panjang",
+      "score": 0.52957,
+      "bbox_aspect": 1.2237,
+      "solidity": 0.9655,
+      "span_ratio": 0.5188,
+      "face_ratio": 1.6034
+    },
+    {
+      "frame": 583,
+      "tipe": "sangat-keriting",
+      "panjang_label": "menengah",
+      "score": 0.37902,
+      "bbox_aspect": 0.9084,
+      "solidity": 0.9522,
+      "span_ratio": 0.5658,
+      "face_ratio": 1.8122
+    },
+    {
+      "frame": 584,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.71186,
+      "bbox_aspect": 0.8547,
+      "solidity": 0.7108,
+      "span_ratio": 0.681,
+      "face_ratio": 2.1127
+    },
+    {
+      "frame": 585,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.79736,
+      "bbox_aspect": 0.805,
+      "solidity": 0.6788,
+      "span_ratio": 0.7121,
+      "face_ratio": 1.4629
+    },
+    {
+      "frame": 586,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.11776,
+      "bbox_aspect": 1.1199,
+      "solidity": 0.5823,
+      "span_ratio": 0.859,
+      "face_ratio": 1.7785
+    },
+    {
+      "frame": 587,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.23748,
+      "bbox_aspect": 0.9394,
+      "solidity": 0.6276,
+      "span_ratio": 0.605,
+      "face_ratio": 1.5796
+    },
+    {
+      "frame": 588,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.2102,
+      "bbox_aspect": 1.0,
+      "solidity": 0.607,
+      "span_ratio": 0.67,
+      "face_ratio": 2.2259
+    },
+    {
+      "frame": 589,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.16363,
+      "bbox_aspect": 0.8445,
+      "solidity": 0.6886,
+      "span_ratio": 0.603,
+      "face_ratio": 0.9679
+    },
+    {
+      "frame": 590,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.88146,
+      "bbox_aspect": 1.1669,
+      "solidity": 0.7135,
+      "span_ratio": 0.762,
+      "face_ratio": 1.8057
+    },
+    {
+      "frame": 591,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.15699,
+      "bbox_aspect": 0.9504,
+      "solidity": 0.9025,
+      "span_ratio": 0.345,
+      "face_ratio": null
+    },
+    {
+      "frame": 592,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.07078,
+      "bbox_aspect": 1.2857,
+      "solidity": 0.6359,
+      "span_ratio": 0.927,
+      "face_ratio": 1.5222
+    },
+    {
+      "frame": 593,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.4973,
+      "bbox_aspect": 0.6531,
+      "solidity": 0.7517,
+      "span_ratio": 0.7254,
+      "face_ratio": 1.6389
+    },
+    {
+      "frame": 594,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.60712,
+      "bbox_aspect": 0.9142,
+      "solidity": 0.7315,
+      "span_ratio": 0.5624,
+      "face_ratio": 1.8344
+    },
+    {
+      "frame": 595,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.78481,
+      "bbox_aspect": 0.9535,
+      "solidity": 0.6962,
+      "span_ratio": 0.697,
+      "face_ratio": 1.8737
+    },
+    {
+      "frame": 596,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -1.23404,
+      "bbox_aspect": 1.044,
+      "solidity": 0.6298,
+      "span_ratio": 0.665,
+      "face_ratio": 2.3835
+    },
+    {
+      "frame": 597,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.85351,
+      "bbox_aspect": 0.8158,
+      "solidity": 0.7607,
+      "span_ratio": 0.465,
+      "face_ratio": 1.6971
+    },
+    {
+      "frame": 598,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.11693,
+      "bbox_aspect": 1.0157,
+      "solidity": 0.8549,
+      "span_ratio": 0.6541,
+      "face_ratio": 2.4043
+    },
+    {
+      "frame": 599,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek",
+      "score": -0.62659,
+      "bbox_aspect": 0.9904,
+      "solidity": 0.737,
+      "span_ratio": 0.62,
+      "face_ratio": 2.3396
+    },
+    {
+      "frame": 600,
+      "tipe": "sangat-keriting",
+      "panjang_label": "pendek-menengah",
+      "score": -0.46117,
+      "bbox_aspect": 1.0555,
+      "solidity": 0.713,
+      "span_ratio": 0.7656,
+      "face_ratio": 2.4628
+    }
+  ]
+}

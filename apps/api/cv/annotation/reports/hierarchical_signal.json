@@ -1,0 +1,126 @@
+{
+  "analysis": "hierarchical_signal",
+  "annotator": "A",
+  "n_gradable": 69,
+  "length_by_type": {
+    "n_total": 35,
+    "by_type": {
+      "straight": {
+        "long": 1,
+        "mid_back": 5,
+        "shoulder": 1,
+        "short": 10
+      },
+      "wavy": {
+        "shoulder": 4,
+        "mid_back": 5,
+        "short": 5,
+        "long": 2
+      }
+    },
+    "contingency_table": [
+      [
+        10,
+        1,
+        5,
+        1
+      ],
+      [
+        5,
+        4,
+        5,
+        2
+      ]
+    ],
+    "length_classes": [
+      "short",
+      "shoulder",
+      "mid_back",
+      "long"
+    ],
+    "types": [
+      "straight",
+      "wavy"
+    ],
+    "chi_square": {
+      "chi2": 3.7732,
+      "p_value": 0.28702333909192124,
+      "dof": 3
+    }
+  },
+  "volume_by_type": {
+    "provisional": true,
+    "n_total": 34,
+    "by_type": {
+      "curly": {
+        "medium": 6,
+        "high": 7,
+        "low": 2
+      },
+      "kinky": {
+        "medium": 8,
+        "high": 8,
+        "low": 3
+      }
+    },
+    "contingency_table": [
+      [
+        2,
+        6,
+        7
+      ],
+      [
+        3,
+        8,
+        8
+      ]
+    ],
+    "volume_classes": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "types": [
+      "curly",
+      "kinky"
+    ],
+    "chi_square": {
+      "chi2": 0.0829,
+      "p_value": 0.9593777876442546,
+      "dof": 2
+    }
+  },
+  "viewpoint_distribution": {
+    "by_type": {
+      "kinky": {
+        "front": 14,
+        "side": 5
+      },
+      "straight": {
+        "back_right": 4,
+        "front": 2,
+        "back": 10,
+        "back_left": 1
+      },
+      "wavy": {
+        "back": 14,
+        "back_right": 1,
+        "side": 1,
+        "front": 2
+      },
+      "curly": {
+        "side": 6,
+        "front": 3,
+        "back": 6
+      }
+    },
+    "overall": {
+      "front": 21,
+      "back_right": 5,
+      "back": 30,
+      "side": 12,
+      "back_left": 1
+    }
+  },
+  "note": "Cross-level analysis. Not model evaluation. Uses only human annotation."
+}

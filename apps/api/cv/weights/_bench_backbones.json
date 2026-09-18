@@ -1,0 +1,7 @@
+{
+  "mobilenet_v2": 0.7721,
+  "mobilenet_v3_large": 0.7748,
+  "efficientnet_b0": 0.8016,
+  "resnet50": 0.8043,
+  "convnext_tiny": 0.8097
+}

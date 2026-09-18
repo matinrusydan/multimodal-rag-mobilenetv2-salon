@@ -1,0 +1,130 @@
+{
+  "geometric": {
+    "accuracy": 0.5417,
+    "macro_f1": 0.5015,
+    "per_class": {
+      "pendek": {
+        "precision": 0.6897,
+        "recall": 0.625,
+        "f1": 0.6557,
+        "support": 32
+      },
+      "pendek-menengah": {
+        "precision": 0.4167,
+        "recall": 0.2,
+        "f1": 0.2703,
+        "support": 25
+      },
+      "menengah": {
+        "precision": 0.5,
+        "recall": 0.3871,
+        "f1": 0.4364,
+        "support": 31
+      },
+      "panjang": {
+        "precision": 0.5091,
+        "recall": 0.875,
+        "f1": 0.6437,
+        "support": 32
+      }
+    },
+    "confusion_matrix": [
+      [
+        20,
+        4,
+        4,
+        4
+      ],
+      [
+        8,
+        5,
+        4,
+        8
+      ],
+      [
+        1,
+        3,
+        12,
+        15
+      ],
+      [
+        0,
+        0,
+        4,
+        28
+      ]
+    ],
+    "n": 120,
+    "onnx": "C:\\laragon\\www\\RAG-salon\\apps\\api\\cv\\weights\\hair_length_geom.onnx",
+    "val_label_distribution": {
+      "pendek": 32,
+      "pendek-menengah": 25,
+      "menengah": 31,
+      "panjang": 32
+    }
+  },
+  "gemini": {
+    "accuracy": 0.7222,
+    "macro_f1": 0.4917,
+    "per_class": {
+      "pendek": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6667,
+        "support": 1
+      },
+      "pendek-menengah": {
+        "precision": 0.6667,
+        "recall": 0.4,
+        "f1": 0.5,
+        "support": 5
+      },
+      "menengah": {
+        "precision": 0.7692,
+        "recall": 0.8333,
+        "f1": 0.8,
+        "support": 12
+      },
+      "panjang": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      }
+    },
+    "confusion_matrix": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        3,
+        0
+      ],
+      [
+        1,
+        1,
+        10,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "n": 18,
+    "onnx": "C:\\laragon\\www\\RAG-salon\\apps\\api\\cv\\weights\\hair_length_gemini.onnx",
+    "val_label_distribution": {
+      "pendek": 1,
+      "pendek-menengah": 5,
+      "menengah": 12,
+      "panjang": 0
+    }
+  }
+}

@@ -1,0 +1,573 @@
+{
+  "schema_version": "pilot-v1",
+  "taxonomy_version": "pilot-v1",
+  "guideline_version": "pilot-v1",
+  "seed": 42,
+  "per_type": 20,
+  "total": 80,
+  "source": "figaro1k",
+  "description": "Pilot annotation sample. Stratified by hair type (20 each). Sampling is INDEPENDENT of Gemini/geometric/pseudo-labels. Only Figaro-1k real back-view photos (bald & Hairstyle40 sketches excluded).",
+  "created_at": "2026-09-17T16:15:10.659565+00:00",
+  "images": [
+    {
+      "image_id": "figaro1k/sangat-keriting/00509.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00509.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00519.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00519.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00029.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00029.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00397.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00397.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00372.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00372.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00469.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00469.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00593.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00593.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00569.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00569.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00130.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00130.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00534.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00534.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00548.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00548.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00177.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00177.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00442.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00442.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00531.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00531.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00190.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00190.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00007.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00007.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00174.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00174.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00507.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00507.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00218.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00218.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00036.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00036.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00237.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00237.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00222.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00222.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00144.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00144.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00448.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00448.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00492.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00492.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00191.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00191.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00265.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00265.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00238.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00238.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00060.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00060.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00057.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00057.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00206.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00206.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00239.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00239.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00182.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00182.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00465.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00465.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00242.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00242.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00393.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00393.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00312.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00312.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00553.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00553.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00342.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00342.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00321.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00321.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00350.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00350.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00376.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00376.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00268.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00268.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00063.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00063.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00505.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00505.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00360.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00360.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00008.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00008.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00467.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00467.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00051.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00051.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00394.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00394.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00288.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00288.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00504.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00504.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00359.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00359.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00023.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00023.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00248.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00248.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00398.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00398.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00175.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00175.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00009.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00009.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00027.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00027.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00109.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00109.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00259.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00259.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00587.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00587.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00326.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00326.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00056.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00056.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00140.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00140.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00152.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00152.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00375.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00375.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00520.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00520.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00459.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00459.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00417.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00417.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00513.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00513.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00071.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00071.jpg"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00494.jpg",
+      "source": "figaro1k",
+      "hair_type": "kinky",
+      "hair_type_id": "sangat-keriting",
+      "relpath": "dataset/figaro1k/sangat-keriting/00494.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00395.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00395.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00024.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00024.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00318.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00318.jpg"
+    },
+    {
+      "image_id": "figaro1k/keriting/00391.jpg",
+      "source": "figaro1k",
+      "hair_type": "curly",
+      "hair_type_id": "keriting",
+      "relpath": "dataset/figaro1k/keriting/00391.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00108.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00108.jpg"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00162.jpg",
+      "source": "figaro1k",
+      "hair_type": "wavy",
+      "hair_type_id": "bergelombang",
+      "relpath": "dataset/figaro1k/bergelombang/00162.jpg"
+    },
+    {
+      "image_id": "figaro1k/lurus/00058.jpg",
+      "source": "figaro1k",
+      "hair_type": "straight",
+      "hair_type_id": "lurus",
+      "relpath": "dataset/figaro1k/lurus/00058.jpg"
+    }
+  ]
+}

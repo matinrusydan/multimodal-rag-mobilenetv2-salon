@@ -1,0 +1,83 @@
+{
+  "accuracy": 0.15,
+  "macro_f1": 0.1486,
+  "weighted_f1": 0.1486,
+  "per_class": {
+    "0": {
+      "precision": 0.1379,
+      "recall": 0.1333,
+      "f1": 0.1356,
+      "support": 30
+    },
+    "1": {
+      "precision": 0.1667,
+      "recall": 0.0667,
+      "f1": 0.0952,
+      "support": 30
+    },
+    "2": {
+      "precision": 0.25,
+      "recall": 0.2,
+      "f1": 0.2222,
+      "support": 30
+    },
+    "3": {
+      "precision": 0.1091,
+      "recall": 0.2,
+      "f1": 0.1412,
+      "support": 30
+    }
+  },
+  "confusion_matrix": [
+    [
+      4,
+      2,
+      6,
+      18
+    ],
+    [
+      8,
+      2,
+      7,
+      13
+    ],
+    [
+      3,
+      3,
+      6,
+      18
+    ],
+    [
+      14,
+      5,
+      5,
+      6
+    ]
+  ],
+  "n_samples": 120,
+  "classes": [
+    "bergelombang",
+    "keriting",
+    "lurus",
+    "sangat-keriting"
+  ],
+  "model": "C:\\laragon\\www\\RAG-salon\\apps\\api\\cv\\weights\\hair_length_geom.onnx",
+  "split": "val",
+  "unreadable_tensors": 0,
+  "mean_confidence_per_class": {
+    "bergelombang": 0.9173,
+    "keriting": 0.8942,
+    "lurus": 0.8472,
+    "sangat-keriting": 0.9478
+  },
+  "labels_file": {
+    "classes": [
+      "pendek",
+      "pendek-menengah",
+      "menengah",
+      "panjang"
+    ],
+    "model": "mobilenet_v2",
+    "task": "hair_length"
+  }
+}

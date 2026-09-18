@@ -1,0 +1,108 @@
+{
+  "task": "hair_length",
+  "method": "gemini",
+  "tag": "gemini",
+  "backbone": "mobilenet_v2 (pretrained ImageNet)",
+  "classes": [
+    "pendek",
+    "pendek-menengah",
+    "menengah",
+    "panjang"
+  ],
+  "train_tensor": 174,
+  "val_tensor": 18,
+  "epochs": 12,
+  "batch": 32,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.8267,
+      "train_acc": 0.7529,
+      "val_loss": 0.9613,
+      "val_acc": 0.6667
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.1141,
+      "train_acc": 0.977,
+      "val_loss": 0.9463,
+      "val_acc": 0.7222
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.0228,
+      "train_acc": 1.0,
+      "val_loss": 1.1882,
+      "val_acc": 0.6667
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.0051,
+      "train_acc": 1.0,
+      "val_loss": 1.6997,
+      "val_acc": 0.6667
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.0022,
+      "train_acc": 1.0,
+      "val_loss": 2.0717,
+      "val_acc": 0.7222
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.002,
+      "train_acc": 1.0,
+      "val_loss": 2.0945,
+      "val_acc": 0.7222
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.0067,
+      "train_acc": 1.0,
+      "val_loss": 2.3105,
+      "val_acc": 0.6111
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.0244,
+      "train_acc": 0.9943,
+      "val_loss": 1.7404,
+      "val_acc": 0.6667
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.0186,
+      "train_acc": 0.9943,
+      "val_loss": 1.3739,
+      "val_acc": 0.6667
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.0083,
+      "train_acc": 1.0,
+      "val_loss": 1.174,
+      "val_acc": 0.6111
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.0148,
+      "train_acc": 0.9943,
+      "val_loss": 1.0635,
+      "val_acc": 0.6111
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.074,
+      "train_acc": 0.9828,
+      "val_loss": 1.4444,
+      "val_acc": 0.6667
+    }
+  ],
+  "best_val_acc": 0.7222,
+  "onnx": "C:\\laragon\\www\\RAG-salon\\apps\\api\\cv\\weights\\hair_length_gemini.onnx",
+  "opset": 17,
+  "duration_s": 130.4
+}

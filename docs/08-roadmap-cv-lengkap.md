@@ -9,6 +9,22 @@
 
 ---
 
+## ⚡ STATUS EKSEKUSI (diperbarui)
+
+| Item | Status | Temuan |
+|---|---|---|
+| **Fase 0** (gate MediaPipe back-view) | ⚠️ **KONDISIONAL — selesai dianalisis** | Pose terdeteksi 64% (back). Di antara yang terdeteksi, shoulder **96%** & head **100%** OK → masalah = pose detection rate, bukan pemilihan landmark. 16/44 `no_pose`. Model heavy tidak membantu (0.568 < 0.614). |
+| **TAHAP 1 (cleaning dataset)** | ✅ **Diimplementasikan** | 3 script: `viewpoint_gate.py` (prediksi paksa pilih 4 kelas), `verify_viewpoint.py` (verifikasi manusia/model pengukuran, koreksi opsional), `analyze_viewpoint_accuracy.py` (ukur akurasi as-is + confusion). Temuan: MediaPipe **berhalusinasi** visibility hidung di foto belakang → sinyal diganti geometris + Face Landmarker. Prediksi Figaro: depan 338 / samping 119 / belakang 143 (belum diverifikasi manusia). |
+| **Deployment runtime** | ✅ Sudah ConvNeXt-Tiny | `apps/ai/cv/weights/hair_length.onnx` = `hair_length_final.onnx` (md5 identik), ConvNeXt-Tiny 111MB. Metadata label sempat salah (`mobilenet_v2`) — **sudah diperbaiki**. |
+| **Backbone benchmark v2** | ✅ Selesai (15 backbone) | Juara awal: `efficientnet_v2_s` (84.18%). |
+| **Validasi backbone 3-seed** | ✅ Selesai | `efficientnet_v2_s` (0.8293±0.0086) > `convnext_tiny` (0.8177±0.0163). Menang + stabil + lebih kecil. |
+| **Fase 1–5** | ❌ Belum dieksekusi | — |
+
+**Keputusan backbone final:** `efficientnet_v2_s` (lihat `geometry/reports/backbone_decision.json`).
+**Keputusan Fase 0:** KONDISIONAL → wajib lanjut **Fase 1 data cleaning** (buang `no_pose`), lalu gate diharapkan lulus (conditional 96–100%). Lihat `geometry/reports/phase0_decision.json`.
+
+---
+
 ## Daftar Isi
 
 1. [Visi & Target Akhir](#1-visi--target-akhir)
@@ -88,7 +104,7 @@ STAGE 2: Atribut kondisional
                             ↓
 ┌─────────────────────────────────────────────────────────────┐
 │ STAGE 1 — HAIR TYPE CLASSIFIER (CNN)                         │
-│  • MobileNetV2 / ConvNeXt-Tiny → straight/wavy/curly/kinky   │
+│  • efficientnet_v2_s / ConvNeXt-Tiny → straight/wavy/curly/kinky │
 └───────────────────────────┬─────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────┐
@@ -197,11 +213,52 @@ apps/api/cv/
 
 **Output:** `geometry/reports/pose_feasibility.json` + visualisasi.
 
+### Hasil Aktual (selesai dieksekusi)
+
+| Metrik | Nilai (back-view) |
+|---|---|
+| Pose terdeteksi | **64%** (28/44) |
+| Shoulder OK | 61% (27/44) |
+| Head OK | 64% (28/44) |
+| **Conditional (pose terdeteksi)** | **shoulder 96%, head 100%** |
+
+**Keputusan: KONDISIONAL.** Akar masalah = **pose detection rate** (16 `no_pose`), BUKAN pemilihan landmark. Ketika pose terdeteksi, MediaPipe andal (96–100%).
+**Pivot yang diuji:** P1 (model heavy) **gagal** (0.568 < 0.614); P4 (acuan kepala) tidak menyelesaikan karena `no_pose` juga menghilangkan kepala.
+**Rekomendasi:** lanjut **Fase 1 data cleaning** (buang citra `no_pose`), lalu gate diharapkan lulus. Detail: `geometry/reports/phase0_decision.json`.
+
 ---
 
 ## 7. FASE 1 — Data Cleaning & Viewpoint Filter
 
 **Tujuan:** memastikan dataset training hanya berisi foto back-view valid.
+
+> **STATUS: TAHAP 1 DIIMPLEMENTASIKAN** (fokus: hapus foto depan/samping).
+> Lihat `apps/api/cv/geometry/README.md` untuk cara jalan.
+
+### 7.0 Alur Tahap 1 (implementasi aktual)
+
+```
+Dataset kotor
+    ↓
+[1] Model gate prediksi viewpoint (paksa pilih 4 kelas: depan/samping/belakang/belakang_nyerong)
+    → geometry/viewpoint_gate.py → reports/viewpoint_predictions.json
+    ↓
+[2] Verifikasi manusia (MODE PENGUKURAN, sampling cerdas, koreksi OPSIONAL)
+    → geometry/verify_viewpoint.py → ground_truth/viewpoint_verification_<id>.json
+    Anotator menjawab: "Benar? [Ya/Tidak/Ragu]"
+    ↓
+[3] Ukur akurasi model AS-IS (baseline jujur)
+    → geometry/analyze_viewpoint_accuracy.py → reports/viewpoint_accuracy.json
+    ↓
+Dataset bersih + laporan: berapa % tebakan model SALAH (tanpa bantuan)
+```
+
+**Prinsip:** "Don't fix what you haven't measured." Ukur kemampuan model apa adanya dulu,
+baru putuskan perlu koreksi atau tidak. Koreksi manusia = opsional.
+
+**Sinyal gate (v2):** Face Landmarker (fitur wajah asli) + geometri pose relatif + BlazeFace.
+Catatan kritis: MediaPipe Pose **berhalusinasi** visibility hidung tinggi di foto belakang
+(nose_vis 0.86 padahal tidak terlihat) → sinyal visibility mentah diganti geometri posisi.
 
 ### 7.1 Aktivitas
 
@@ -484,6 +541,23 @@ Proyek CV dinyatakan **selesai** bila:
 - Rasio head:shoulder informatif (Lucas & Henneberg 2017) `[V]`
 - MediaPipe akurasi **bergantung sudut** (Dill 2023) `[V]`
 - Golden ratio φ proporsi tubuh: **TIDAK terbukti** — jangan diklaim `[NS]`
+
+### Benchmark backbone (hasil aktual, `geometry/reports/`)
+
+**Benchmark v2 (15 backbone, 1 seed, hold-out fixed):**
+| Backbone | Acc |
+|---|---|
+| **efficientnet_v2_s** | **0.8418** |
+| convnext_small | 0.8204 |
+| efficientnet_b2 | 0.8177 |
+| convnext_base | 0.8150 |
+| convnext_tiny | 0.8070 |
+| mobilenet_v2 | 0.7614 |
+
+**Validasi 3-seed (final):** `efficientnet_v2_s` 0.8293±0.0086 > `convnext_tiny` 0.8177±0.0163.
+→ **Keputusan: efficientnet_v2_s** (menang + stabil + lebih kecil). Lihat `backbone_decision.json`.
+
+> **Catatan:** backbone lama di runtime (`hair_length.onnx`) = ConvNeXt-Tiny. Untuk switch ke `efficientnet_v2_s` perlu retrain penuh + export ONNX.
 
 ---
 

@@ -1,0 +1,250 @@
+{
+  "analysis": "backbone_final",
+  "timestamp": "2026-09-17T21:38:55.700293+00:00",
+  "device": "cuda",
+  "split": {
+    "val_ratio": 0.25,
+    "n_train": 1124,
+    "n_val": 373
+  },
+  "seeds": [
+    42,
+    7,
+    123
+  ],
+  "epochs": 18,
+  "results": {
+    "convnext_tiny": {
+      "backbone": "convnext_tiny",
+      "per_seed": [
+        {
+          "acc": 0.807,
+          "macro_f1": 0.7351,
+          "best_epoch": 8,
+          "params_m": 27.8,
+          "duration_s": 314,
+          "confusion_matrix": [
+            [
+              191,
+              12,
+              2,
+              4
+            ],
+            [
+              8,
+              47,
+              9,
+              3
+            ],
+            [
+              1,
+              5,
+              30,
+              1
+            ],
+            [
+              11,
+              9,
+              7,
+              33
+            ]
+          ],
+          "seed": 42,
+          "batch": 24
+        },
+        {
+          "acc": 0.8365,
+          "macro_f1": 0.7764,
+          "best_epoch": 16,
+          "params_m": 27.8,
+          "duration_s": 437,
+          "confusion_matrix": [
+            [
+              195,
+              4,
+              2,
+              8
+            ],
+            [
+              9,
+              46,
+              8,
+              4
+            ],
+            [
+              1,
+              4,
+              31,
+              1
+            ],
+            [
+              11,
+              3,
+              6,
+              40
+            ]
+          ],
+          "seed": 7,
+          "batch": 24
+        },
+        {
+          "acc": 0.8097,
+          "macro_f1": 0.7315,
+          "best_epoch": 17,
+          "params_m": 27.8,
+          "duration_s": 434,
+          "confusion_matrix": [
+            [
+              194,
+              8,
+              2,
+              5
+            ],
+            [
+              9,
+              40,
+              11,
+              7
+            ],
+            [
+              1,
+              5,
+              30,
+              1
+            ],
+            [
+              9,
+              5,
+              8,
+              38
+            ]
+          ],
+          "seed": 123,
+          "batch": 24
+        }
+      ],
+      "acc_mean": 0.8177,
+      "acc_std": 0.0163,
+      "f1_mean": 0.7477,
+      "f1_std": 0.0249,
+      "n_seeds": 3
+    },
+    "efficientnet_v2_s": {
+      "backbone": "efficientnet_v2_s",
+      "per_seed": [
+        {
+          "acc": 0.8231,
+          "macro_f1": 0.7514,
+          "best_epoch": 15,
+          "params_m": 20.2,
+          "duration_s": 502,
+          "confusion_matrix": [
+            [
+              195,
+              5,
+              0,
+              9
+            ],
+            [
+              9,
+              41,
+              13,
+              4
+            ],
+            [
+              1,
+              3,
+              31,
+              2
+            ],
+            [
+              9,
+              4,
+              7,
+              40
+            ]
+          ],
+          "seed": 42,
+          "batch": 20
+        },
+        {
+          "acc": 0.8391,
+          "macro_f1": 0.7671,
+          "best_epoch": 18,
+          "params_m": 20.2,
+          "duration_s": 562,
+          "confusion_matrix": [
+            [
+              202,
+              4,
+              0,
+              3
+            ],
+            [
+              12,
+              39,
+              10,
+              6
+            ],
+            [
+              1,
+              2,
+              33,
+              1
+            ],
+            [
+              9,
+              3,
+              9,
+              39
+            ]
+          ],
+          "seed": 7,
+          "batch": 20
+        },
+        {
+          "acc": 0.8257,
+          "macro_f1": 0.7554,
+          "best_epoch": 9,
+          "params_m": 20.2,
+          "duration_s": 231,
+          "confusion_matrix": [
+            [
+              195,
+              6,
+              1,
+              7
+            ],
+            [
+              9,
+              43,
+              9,
+              6
+            ],
+            [
+              1,
+              6,
+              29,
+              1
+            ],
+            [
+              8,
+              5,
+              6,
+              41
+            ]
+          ],
+          "seed": 123,
+          "batch": 20
+        }
+      ],
+      "acc_mean": 0.8293,
+      "acc_std": 0.0086,
+      "f1_mean": 0.758,
+      "f1_std": 0.0082,
+      "n_seeds": 3
+    }
+  },
+  "best_backbone": "efficientnet_v2_s",
+  "best_acc_mean": 0.8293
+}

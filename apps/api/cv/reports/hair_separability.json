@@ -1,0 +1,116 @@
+{
+  "n_total": 600,
+  "classes": [
+    "lurus",
+    "bergelombang",
+    "keriting",
+    "sangat-keriting"
+  ],
+  "features": {
+    "bbox_aspect": {
+      "F_statistic": 63.778,
+      "per_class_mean": {
+        "lurus": 1.4557,
+        "bergelombang": 1.2983,
+        "keriting": 1.1468,
+        "sangat-keriting": 0.9275
+      }
+    },
+    "solidity": {
+      "F_statistic": 17.996,
+      "per_class_mean": {
+        "lurus": 0.8704,
+        "bergelombang": 0.8566,
+        "keriting": 0.811,
+        "sangat-keriting": 0.7884
+      }
+    },
+    "fill_ratio": {
+      "F_statistic": 6.127,
+      "per_class_mean": {
+        "lurus": 0.6528,
+        "bergelombang": 0.645,
+        "keriting": 0.6221,
+        "sangat-keriting": 0.6077
+      }
+    },
+    "span_ratio": {
+      "F_statistic": 5.97,
+      "per_class_mean": {
+        "lurus": 0.7607,
+        "bergelombang": 0.7263,
+        "keriting": 0.7608,
+        "sangat-keriting": 0.695
+      }
+    },
+    "thickness_index": {
+      "F_statistic": 4.784,
+      "per_class_mean": {
+        "lurus": 0.445,
+        "bergelombang": 0.4669,
+        "keriting": 0.4983,
+        "sangat-keriting": 0.4718
+      }
+    },
+    "area_ratio": {
+      "F_statistic": 5.137,
+      "per_class_mean": {
+        "lurus": 0.3361,
+        "bergelombang": 0.3385,
+        "keriting": 0.3803,
+        "sangat-keriting": 0.3315
+      }
+    }
+  },
+  "feature_ranking": [
+    "bbox_aspect",
+    "solidity",
+    "fill_ratio",
+    "span_ratio",
+    "area_ratio",
+    "thickness_index"
+  ],
+  "keriting_vs_sangat_keriting": {
+    "bbox_aspect": {
+      "threshold": 0.9809,
+      "accuracy": 0.6733,
+      "direction": "b>=thr"
+    },
+    "solidity": {
+      "threshold": 0.8915,
+      "accuracy": 0.6333,
+      "direction": "b>=thr"
+    },
+    "fill_ratio": {
+      "threshold": 0.6998,
+      "accuracy": 0.59,
+      "direction": "b>=thr"
+    }
+  },
+  "class_positions": {
+    "bbox_aspect": {
+      "lurus": 1.4557,
+      "bergelombang": 1.2983,
+      "keriting": 1.1468,
+      "sangat-keriting": 0.9275
+    },
+    "solidity": {
+      "lurus": 0.8704,
+      "bergelombang": 0.8566,
+      "keriting": 0.811,
+      "sangat-keriting": 0.7884
+    }
+  },
+  "keriting_affinity": {
+    "bbox_aspect": {
+      "keriting_ke_sangat_keriting": 0.2193,
+      "keriting_ke_bergelombang": 0.1515,
+      "keriting_ke_lurus": 0.3089
+    },
+    "solidity": {
+      "keriting_ke_sangat_keriting": 0.0227,
+      "keriting_ke_bergelombang": 0.0456,
+      "keriting_ke_lurus": 0.0594
+    }
+  }
+}

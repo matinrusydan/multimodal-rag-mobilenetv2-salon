@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Validasi Label Panjang Rambut</title>
+    <style>
+      :root {
+        --bg: #0f1216; --panel: #171c22; --line: #263040;
+        --gold: #c9a96e; --ink: #e8eaed; --muted: #9aa4b2;
+        --ok: #2ecc71; --warn: #e67e22; --err: #e74c3c;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--ink); }
+      header { position: sticky; top: 0; z-index: 5; background: var(--panel); border-bottom: 1px solid var(--line); padding: 10px 16px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+      header h1 { font-size: 15px; margin: 0; color: var(--gold); }
+      .stat { font-size: 12px; color: var(--muted); }
+      .stat b { color: var(--ink); }
+      .spacer { flex: 1; }
+      label.toggle { font-size: 12px; color: var(--muted); display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+      main { display: grid; grid-template-columns: minmax(320px, 46%) 1fr; gap: 16px; padding: 16px; }
+      @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+      .viewer { position: relative; background: #000; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+      .viewer img { width: 100%; display: block; }
+      .viewer img.mask { position: absolute; inset: 0; mix-blend-mode: screen; opacity: 0.35; pointer-events: none; }
+      .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+      .row { display: flex; justify-content: space-between; font-size: 13px; padding: 6px 0; border-bottom: 1px dashed var(--line); }
+      .row:last-child { border-bottom: 0; }
+      .badge { padding: 2px 8px; border-radius: 999px; font-size: 12px; border: 1px solid var(--line); }
+      .badge.geo { color: var(--warn); border-color: rgba(230,126,34,.4); }
+      .badge.gem { color: var(--ok); border-color: rgba(46,204,113,.4); }
+      .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+      button { font: inherit; padding: 12px 8px; border-radius: 8px; border: 1px solid var(--line); background: #1d2530; color: var(--ink); cursor: pointer; transition: .12s; }
+      button:hover { border-color: var(--gold); }
+      button.active { background: var(--gold); color: #14181d; font-weight: 700; }
+      button.nav { background: #101820; }
+      .footer { display: flex; gap: 8px; margin-top: 10px; }
+      .kbd { font-size: 11px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+      .pos { font-size: 12px; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Validasi Label Panjang Rambut</h1>
+      <span class="stat">Terlabeli: <b id="cnt">0</b> / <span id="target">0</span></span>
+      <span class="stat" id="dist"></span>
+      <span class="spacer"></span>
+      <label class="toggle">Subset per tipe:
+        <select id="perType" style="background:#1d2530;color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:4px;">
+          <option value="20">20</option>
+          <option value="40" selected>40</option>
+          <option value="75">75</option>
+          <option value="0">Semua</option>
+        </select>
+      </label>
+      <label class="toggle"><input type="checkbox" id="onlyUnlabeled" /> hanya belum berlabel</label>
+      <button class="nav" id="prev">◀ Sebelumnya</button>
+      <button class="nav" id="next">Berikutnya ▶</button>
+    </header>
+
+    <main>
+      <div>
+        <div class="viewer">
+          <img id="img" alt="foto rambut" />
+          <img id="mask" class="mask" alt="" />
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="row"><span>Frame</span><b id="frame">-</b></div>
+        <div class="row"><span>Tipe asal (Figaro)</span><span class="badge" id="tipe">-</span></div>
+        <div class="row"><span>Label GEOMETRIS</span><span class="badge geo" id="geo">-</span></div>
+        <div class="row"><span>Label GEMINI</span><span class="badge gem" id="gem">-</span></div>
+        <div class="row"><span>Ground truth Anda</span><b id="gt">(belum)</b></div>
+
+        <div class="actions">
+          <button data-label="pendek">Pendek</button>
+          <button data-label="pendek-menengah">Pendek-Menengah</button>
+          <button data-label="menengah">Menengah</button>
+          <button data-label="panjang">Panjang</button>
+        </div>
+
+        <div class="footer">
+          <button class="nav" id="skip">Lewati ⟶</button>
+          <button class="nav" id="clear">Hapus label</button>
+        </div>
+
+        <div class="kbd">
+          Pintasan: <b>1</b>=Pendek · <b>2</b>=Pendek-Menengah · <b>3</b>=Menengah · <b>4</b>=Panjang · <b>←/→</b>=navigasi · <b>Backspace</b>=hapus
+        </div>
+        <div class="pos" id="pos"></div>
+      </div>
+    </main>
+
+    <script>
+      const state = { items: [], idx: 0, classes: [] };
+      const $ = (id) => document.getElementById(id);
+
+      async function load() {
+        const only = $("onlyUnlabeled").checked ? "&only_unlabeled=true" : "";
+        const perType = $("perType").value;
+        const r = await fetch(`/api/items?limit=0${only}&per_type=${perType}`);
+        const d = await r.json();
+        state.items = d.items;
+        state.classes = d.classes;
+        $("target").textContent = d.items.length;
+        state.idx = Math.min(state.idx, Math.max(0, d.items.length - 1));
+        render();
+        refreshStats();
+      }
+
+      async function refreshStats() {
+        const s = await (await fetch("/api/stats")).json();
+        $("cnt").textContent = s.total;
+        $("dist").innerHTML = Object.entries(s.distribution).map(([k, v]) => `${k}:<b>${v}</b>`).join(" · ");
+      }
+
+      function current() { return state.items[state.idx]; }
+
+      function render() {
+        const it = current();
+        if (!it) return;
+        $("img").src = `/api/image/${it.frame}`;
+        $("mask").src = `/api/mask/${it.frame}`;
+        $("frame").textContent = it.frame;
+        $("tipe").textContent = it.tipe_asal || "-";
+        $("geo").textContent = it.geometric || "-";
+        $("gem").textContent = it.gemini || "-";
+        $("gt").textContent = it.ground_truth || "(belum)";
+        $("pos").textContent = `Item ${state.idx + 1} dari ${state.items.length}`;
+        document.querySelectorAll(".actions button").forEach((b) =>
+          b.classList.toggle("active", b.dataset.label === it.ground_truth)
+        );
+      }
+
+      async function setLabel(label) {
+        const it = current();
+        if (!it) return;
+        const payload = { key: it.key, frame: it.frame, label, tipe_asal: it.tipe_asal, geometric: it.geometric, gemini: it.gemini };
+        const r = await fetch("/api/label", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(payload) });
+        const d = await r.json();
+        it.ground_truth = label;
+        $("cnt").textContent = d.total_labeled;
+        render();
+        refreshStats();
+        next();
+      }
+
+      async function clearLabel() {
+        const it = current();
+        if (!it) return;
+        await fetch("/api/clear", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ key: it.key }) });
+        it.ground_truth = null;
+        render();
+        refreshStats();
+      }
+
+      function next() {
+        if (state.idx < state.items.length - 1) { state.idx++; render(); }
+      }
+      function prev() {
+        if (state.idx > 0) { state.idx--; render(); }
+      }
+
+      document.querySelectorAll(".actions button").forEach((b) => b.addEventListener("click", () => setLabel(b.dataset.label)));
+      $("next").addEventListener("click", next);
+      $("prev").addEventListener("click", prev);
+      $("skip").addEventListener("click", next);
+      $("clear").addEventListener("click", clearLabel);
+      $("onlyUnlabeled").addEventListener("change", load);
+      $("perType").addEventListener("change", () => { state.idx = 0; load(); });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.target.tagName === "INPUT") return;
+        const map = { 1: "pendek", 2: "pendek-menengah", 3: "menengah", 4: "panjang" };
+        if (map[e.key]) { setLabel(map[e.key]); e.preventDefault(); }
+        else if (e.key === "ArrowRight") { next(); }
+        else if (e.key === "ArrowLeft") { prev(); }
+        else if (e.key === "Backspace") { clearLabel(); e.preventDefault(); }
+      });
+
+      load();
+    </script>
+  </body>
+</html>

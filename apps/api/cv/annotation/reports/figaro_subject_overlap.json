@@ -1,0 +1,278 @@
+{
+  "method": "dHash (64-bit perceptual hash)",
+  "warning": "dHash measures visual similarity, NOT subject identity. Manual review required.",
+  "thresholds": {
+    "likely_duplicate": 4,
+    "possible_same_subject": 10
+  },
+  "n_figaro1k_images": 600,
+  "n_extra_images": 750,
+  "n_total_pairs": 450000,
+  "n_likely_duplicate": 0,
+  "n_possible_same_subject": 52,
+  "n_no_evidence": 449948,
+  "likely_duplicates": [],
+  "possible_same_subjects": [
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00427.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00042.jpg",
+      "hamming_distance": 5
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00427.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00056.jpg",
+      "hamming_distance": 6
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00466.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00006.jpg",
+      "hamming_distance": 6
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00427.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00046.jpg",
+      "hamming_distance": 7
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\bergelombang\\00235.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_00993.jpg",
+      "hamming_distance": 8
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\bergelombang\\00296.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00145.jpg",
+      "hamming_distance": 8
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00319.jpg",
+      "extra_image": "dataset\\extra\\pendek-menengah\\figaro_braids_00625.jpg",
+      "hamming_distance": 8
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00427.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00093.jpg",
+      "hamming_distance": 8
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00427.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00269.jpg",
+      "hamming_distance": 8
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00483.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_00996.jpg",
+      "hamming_distance": 8
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00505.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00253.jpg",
+      "hamming_distance": 8
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00542.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_00933.jpg",
+      "hamming_distance": 8
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00593.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00208.jpg",
+      "hamming_distance": 8
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\bergelombang\\00158.jpg",
+      "extra_image": "dataset\\extra\\pendek-menengah\\figaro_dreadlocks_00845.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\bergelombang\\00296.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00093.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\bergelombang\\00296.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00253.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\bergelombang\\00299.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00213.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00319.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_00933.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00330.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_01041.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00426.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_00996.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00427.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00145.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00427.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00208.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\lurus\\00024.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00072.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\lurus\\00025.jpg",
+      "extra_image": "dataset\\extra\\pendek-menengah\\figaro_dreadlocks_00845.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00477.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_00918.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00490.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00006.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00567.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_00996.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00573.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_00984.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00593.jpg",
+      "extra_image": "dataset\\extra\\pendek-menengah\\figaro_braids_00622.jpg",
+      "hamming_distance": 9
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\bergelombang\\00160.jpg",
+      "extra_image": "dataset\\extra\\pendek-menengah\\figaro_dreadlocks_00893.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\bergelombang\\00219.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00240.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\bergelombang\\00219.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_00996.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\bergelombang\\00296.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00042.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\bergelombang\\00299.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00208.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00318.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_01041.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00319.jpg",
+      "extra_image": "dataset\\extra\\pendek-menengah\\figaro_dreadlocks_00851.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00332.jpg",
+      "extra_image": "dataset\\extra\\pendek-menengah\\figaro_dreadlocks_00813.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00342.jpg",
+      "extra_image": "dataset\\extra\\pendek-menengah\\figaro_dreadlocks_00787.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00344.jpg",
+      "extra_image": "dataset\\extra\\pendek-menengah\\figaro_dreadlocks_00795.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00408.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00287.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00424.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00191.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00427.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00034.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\keriting\\00427.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00080.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\lurus\\00001.jpg",
+      "extra_image": "dataset\\extra\\pendek-menengah\\figaro_dreadlocks_00820.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\lurus\\00010.jpg",
+      "extra_image": "dataset\\extra\\pendek-menengah\\figaro_braids_00649.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00451.jpg",
+      "extra_image": "dataset\\extra\\pendek-menengah\\figaro_braids_00713.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00466.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00292.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00477.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_00930.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00494.jpg",
+      "extra_image": "dataset\\extra\\pendek-menengah\\figaro_braids_00658.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00552.jpg",
+      "extra_image": "dataset\\extra\\pendek\\bald_00213.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00553.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_01041.jpg",
+      "hamming_distance": 10
+    },
+    {
+      "figaro_image": "dataset\\figaro1k\\sangat-keriting\\00573.jpg",
+      "extra_image": "dataset\\extra\\pendek\\figaro_short-men_00996.jpg",
+      "hamming_distance": 10
+    }
+  ],
+  "recommendation": "If likely_duplicates > 0: manually review each pair. If confirmed same subject: assign same group_id to prevent train/val/test leakage. Do NOT auto-delete or auto-merge."
+}

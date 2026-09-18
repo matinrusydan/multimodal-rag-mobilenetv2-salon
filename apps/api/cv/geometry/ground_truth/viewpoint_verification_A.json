@@ -1,0 +1,963 @@
+{
+  "annotator": "A",
+  "schema": "viewpoint_verification",
+  "mode": "pengukuran",
+  "updated_at": "2026-09-18T03:23:13.893826+00:00",
+  "n": 106,
+  "records": [
+    {
+      "image_id": "figaro1k/bergelombang/00264.jpg",
+      "model_prediction": "depan",
+      "model_confidence": 0.99,
+      "is_correct": "tidak",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:29:51.577494+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00410.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "tidak",
+      "correction": "belakang_nyerong",
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:30:03.981341+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00238.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:30:10.025432+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00088.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:41.641496+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00306.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:30:16.431358+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00014.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.7692,
+      "is_correct": "tidak",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:30:21.825296+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00006.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:20:44.623843+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00005.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:20:46.155555+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00249.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:30:27.059600+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00008.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:20:53.161816+00:00"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00579.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:30:30.744818+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00109.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:30:40.241589+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00244.jpg",
+      "model_prediction": "depan",
+      "model_confidence": 0.99,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:30:43.199506+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00382.jpg",
+      "model_prediction": "depan",
+      "model_confidence": 0.6111,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:30:54.313368+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00124.jpg",
+      "model_prediction": "depan",
+      "model_confidence": 0.5,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:30:56.097256+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00225.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.4286,
+      "is_correct": "tidak",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:30:59.507576+00:00"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00499.jpg",
+      "model_prediction": "depan",
+      "model_confidence": 0.99,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:31:03.123609+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00273.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:31:17.703420+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00340.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:31:19.859953+00:00"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00527.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:31:21.789501+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00037.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.4286,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:31:24.877497+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00326.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:31:27.265307+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00031.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.4286,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:31:29.267859+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00358.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:31:30.875841+00:00"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00580.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:31:33.495776+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00313.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.4286,
+      "is_correct": "ragu",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:32:04.643284+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00183.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:49.227654+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00004.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.4286,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:32:10.649392+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00325.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:32:12.485329+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00056.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.4286,
+      "is_correct": "ragu",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:32:16.491544+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00052.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": "belakang_nyerong",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:27.917896+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00250.jpg",
+      "model_prediction": "depan",
+      "model_confidence": 0.99,
+      "is_correct": "tidak",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:32:30.743271+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00429.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.7692,
+      "is_correct": "tidak",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:32:34.923333+00:00"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00558.jpg",
+      "model_prediction": "depan",
+      "model_confidence": 0.5,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:32:37.701185+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00386.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.4286,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:32:40.081323+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00040.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.7692,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:32:42.001460+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00240.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:32:43.649241+00:00"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00472.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.3,
+      "is_correct": "tidak",
+      "correction": "depan",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:57.897370+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00009.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:28.097966+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00208.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:32:59.429537+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00020.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.4286,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:33:04.247436+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00334.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ragu",
+      "correction": "belakang_nyerong",
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:33:10.917300+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00339.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:33:15.273228+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00039.jpg",
+      "model_prediction": "depan",
+      "model_confidence": 0.3333,
+      "is_correct": "tidak",
+      "correction": "samping",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:16.819608+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00304.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:33:20.351363+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00341.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:33:23.893245+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00010.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:45.189826+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00414.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:33:39.065135+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00044.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:20:30.831832+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00061.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.4286,
+      "is_correct": "tidak",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:33:51.071372+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00359.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:33:52.851331+00:00"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00469.jpg",
+      "model_prediction": "depan",
+      "model_confidence": 0.5,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:33:54.637876+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00007.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:59.733720+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00184.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:23:04.243412+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00257.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ragu",
+      "correction": "belakang_nyerong",
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:34:10.905472+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00065.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.4286,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:34:20.367076+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00114.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.4286,
+      "is_correct": "ragu",
+      "correction": "belakang_nyerong",
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:34:35.195739+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00179.jpg",
+      "model_prediction": "depan",
+      "model_confidence": 0.99,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:34:47.843421+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00328.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T02:34:50.019391+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00032.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "tidak",
+      "correction": "samping",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:20:39.385643+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00281.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.3,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:20:27.230047+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00096.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:20:29.367936+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00063.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:20:41.357974+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00013.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.3,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:20:43.188077+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00048.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "tidak",
+      "correction": "samping",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:20:51.433671+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00112.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "tidak",
+      "correction": "samping",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:20:58.227760+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00034.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:00.103678+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00263.jpg",
+      "model_prediction": "depan",
+      "model_confidence": 0.3333,
+      "is_correct": "tidak",
+      "correction": "depan",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:03.495822+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00387.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:06.237782+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00141.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.3,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:08.881729+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00246.jpg",
+      "model_prediction": "depan",
+      "model_confidence": 0.3333,
+      "is_correct": "tidak",
+      "correction": "depan",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:13.330427+00:00"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00502.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.3,
+      "is_correct": "tidak",
+      "correction": "depan",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:24.489988+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00083.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:29.391800+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00110.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "tidak",
+      "correction": "samping",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:33.367745+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00164.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:35.147809+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00069.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:38.381753+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00156.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:39.741711+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00113.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:43.569813+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00327.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.3,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:45.395711+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00041.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "tidak",
+      "correction": "samping",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:48.235815+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00119.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:50.499949+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00064.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:52.713647+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00176.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:54.297708+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00027.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:55.617771+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00268.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.3,
+      "is_correct": "tidak",
+      "correction": "depan",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:21:58.325735+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00432.jpg",
+      "model_prediction": "samping",
+      "model_confidence": 0.3,
+      "is_correct": "tidak",
+      "correction": "depan",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:04.819710+00:00"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00560.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.3,
+      "is_correct": "tidak",
+      "correction": "depan",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:09.753838+00:00"
+    },
+    {
+      "image_id": "figaro1k/keriting/00391.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.3,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:12.417703+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00045.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:18.963515+00:00"
+    },
+    {
+      "image_id": "figaro1k/sangat-keriting/00475.jpg",
+      "model_prediction": "depan",
+      "model_confidence": 0.3333,
+      "is_correct": "tidak",
+      "correction": "samping",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:26.157671+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00043.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:29.741479+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00125.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "tidak",
+      "correction": "depan",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:35.883351+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00079.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:37.800114+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00081.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:39.550401+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00166.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:40.765723+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00059.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:42.069687+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00087.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:43.925527+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00099.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:46.559681+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00017.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:47.855942+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00092.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:22:54.641569+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00206.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:23:01.173461+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00049.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:23:02.464080+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00131.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.3,
+      "is_correct": "tidak",
+      "correction": "depan",
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:23:07.423424+00:00"
+    },
+    {
+      "image_id": "figaro1k/bergelombang/00202.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.5455,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:23:10.025553+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00075.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:23:12.157586+00:00"
+    },
+    {
+      "image_id": "figaro1k/lurus/00016.jpg",
+      "model_prediction": "belakang",
+      "model_confidence": 0.1,
+      "is_correct": "ya",
+      "correction": null,
+      "annotator": "A",
+      "timestamp": "2026-09-18T03:23:13.893576+00:00"
+    }
+  ]
+}

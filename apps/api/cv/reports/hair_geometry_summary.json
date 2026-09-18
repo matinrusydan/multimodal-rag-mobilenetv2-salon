@@ -1,0 +1,210 @@
+{
+  "lurus": {
+    "n": 150,
+    "area_ratio": {
+      "mean": 0.3361,
+      "median": 0.3312,
+      "stdev": 0.121,
+      "min": 0.1073,
+      "max": 0.657
+    },
+    "bbox_aspect": {
+      "mean": 1.4557,
+      "median": 1.2873,
+      "stdev": 0.4796,
+      "min": 0.8497,
+      "max": 3.4599
+    },
+    "fill_ratio": {
+      "mean": 0.6528,
+      "median": 0.6813,
+      "stdev": 0.1101,
+      "min": 0.3257,
+      "max": 0.8598
+    },
+    "solidity": {
+      "mean": 0.8704,
+      "median": 0.9135,
+      "stdev": 0.1185,
+      "min": 0.4655,
+      "max": 0.9944
+    },
+    "span_ratio": {
+      "mean": 0.7607,
+      "median": 0.7537,
+      "stdev": 0.171,
+      "min": 0.4122,
+      "max": 1.0
+    },
+    "thickness_index": {
+      "mean": 0.445,
+      "median": 0.452,
+      "stdev": 0.1293,
+      "min": 0.1753,
+      "max": 0.7177
+    },
+    "face_ratio": {
+      "mean": 2.2755,
+      "median": 2.0876,
+      "stdev": 0.8651,
+      "min": 0.8172,
+      "max": 4.5592
+    }
+  },
+  "bergelombang": {
+    "n": 150,
+    "area_ratio": {
+      "mean": 0.3385,
+      "median": 0.3227,
+      "stdev": 0.1034,
+      "min": 0.11,
+      "max": 0.5966
+    },
+    "bbox_aspect": {
+      "mean": 1.2983,
+      "median": 1.2132,
+      "stdev": 0.3322,
+      "min": 0.7045,
+      "max": 2.3585
+    },
+    "fill_ratio": {
+      "mean": 0.645,
+      "median": 0.663,
+      "stdev": 0.0934,
+      "min": 0.3864,
+      "max": 0.8125
+    },
+    "solidity": {
+      "mean": 0.8566,
+      "median": 0.8848,
+      "stdev": 0.0977,
+      "min": 0.5161,
+      "max": 0.9721
+    },
+    "span_ratio": {
+      "mean": 0.7263,
+      "median": 0.7177,
+      "stdev": 0.1585,
+      "min": 0.352,
+      "max": 1.0
+    },
+    "thickness_index": {
+      "mean": 0.4669,
+      "median": 0.4838,
+      "stdev": 0.1009,
+      "min": 0.1781,
+      "max": 0.671
+    },
+    "face_ratio": {
+      "mean": 2.4243,
+      "median": 2.2389,
+      "stdev": 0.9225,
+      "min": 0.7826,
+      "max": 4.9781
+    }
+  },
+  "keriting": {
+    "n": 150,
+    "area_ratio": {
+      "mean": 0.3803,
+      "median": 0.3628,
+      "stdev": 0.1382,
+      "min": 0.144,
+      "max": 0.8796
+    },
+    "bbox_aspect": {
+      "mean": 1.1468,
+      "median": 1.0391,
+      "stdev": 0.3268,
+      "min": 0.625,
+      "max": 2.2557
+    },
+    "fill_ratio": {
+      "mean": 0.6221,
+      "median": 0.6213,
+      "stdev": 0.1147,
+      "min": 0.3653,
+      "max": 0.9513
+    },
+    "solidity": {
+      "mean": 0.811,
+      "median": 0.8379,
+      "stdev": 0.1223,
+      "min": 0.5196,
+      "max": 0.9992
+    },
+    "span_ratio": {
+      "mean": 0.7608,
+      "median": 0.7752,
+      "stdev": 0.159,
+      "min": 0.3884,
+      "max": 1.0
+    },
+    "thickness_index": {
+      "mean": 0.4983,
+      "median": 0.4907,
+      "stdev": 0.135,
+      "min": 0.214,
+      "max": 0.9513
+    },
+    "face_ratio": {
+      "mean": 2.4057,
+      "median": 2.1486,
+      "stdev": 1.0382,
+      "min": 0.9751,
+      "max": 7.2167
+    }
+  },
+  "sangat-keriting": {
+    "n": 150,
+    "area_ratio": {
+      "mean": 0.3315,
+      "median": 0.3071,
+      "stdev": 0.1235,
+      "min": 0.0876,
+      "max": 0.8738
+    },
+    "bbox_aspect": {
+      "mean": 0.9275,
+      "median": 0.9199,
+      "stdev": 0.1612,
+      "min": 0.5614,
+      "max": 1.5459
+    },
+    "fill_ratio": {
+      "mean": 0.6077,
+      "median": 0.6027,
+      "stdev": 0.089,
+      "min": 0.433,
+      "max": 0.9141
+    },
+    "solidity": {
+      "mean": 0.7884,
+      "median": 0.7968,
+      "stdev": 0.1017,
+      "min": 0.5447,
+      "max": 0.9906
+    },
+    "span_ratio": {
+      "mean": 0.695,
+      "median": 0.6877,
+      "stdev": 0.1424,
+      "min": 0.345,
+      "max": 1.0
+    },
+    "thickness_index": {
+      "mean": 0.4718,
+      "median": 0.4647,
+      "stdev": 0.1209,
+      "min": 0.2332,
+      "max": 0.8738
+    },
+    "face_ratio": {
+      "mean": 1.8165,
+      "median": 1.7929,
+      "stdev": 0.4779,
+      "min": 0.7858,
+      "max": 2.9727
+    }
+  }
+}
