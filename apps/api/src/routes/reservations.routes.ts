@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { cancel, create, detail, list, stats } from '../controllers/reservationController';
 import { validate } from '../middleware/requestValidator';
 import { requireAuth } from '../middleware/requireAuth';
+import { requireAuthOrInternal } from '../middleware/internalAuth';
 import { securityEnforce } from '../middleware/securityEnforce';
 import { createReservationSchema, reservationCodeSchema } from '../schemas/reservation.schema';
 
@@ -15,7 +16,13 @@ router.post(
   create,
 );
 router.get('/', requireAuth, securityEnforce('reservations.read', { own: true }), list);
-router.get('/stats', requireAuth, securityEnforce('reservations.read', { own: true }), stats);
+// Stats: admin ber-JWT ATAU brain engine (X-Internal-Token).
+router.get(
+  '/stats',
+  requireAuthOrInternal,
+  securityEnforce('reservations.read', { own: true }),
+  stats,
+);
 router.get(
   '/:code',
   requireAuth,

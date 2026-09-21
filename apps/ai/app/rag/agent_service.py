@@ -20,7 +20,8 @@ import logging
 from app.config import settings
 from app.rag.agent_tools import TOOL_DECLARATIONS, execute_tool
 from app.rag.embedding import embed
-from app.rag.retriever import retriever
+from app.rag.retriever import Retriever
+from app.rag.vector_store import AGENT_TOPICS
 
 logger = logging.getLogger(__name__)
 
@@ -45,11 +46,13 @@ def _format_rupiah(value: int | float | None) -> str:
 class AgentService:
     def __init__(self) -> None:
         self.top_k = settings.rag_top_k
+        # Agent memakai koleksi katalog + KB (AGENT_TOPICS), bukan retriever publik.
+        self.retriever = Retriever(topics=list(AGENT_TOPICS))
 
     async def _retrieve_context(self, query: str) -> list[str]:
         try:
             embedding = (await embed([query]))[0]
-            docs = await retriever.retrieve(embedding, top_k=self.top_k)
+            docs = await self.retriever.retrieve(embedding, top_k=self.top_k)
             return [d.snippet or "" for d in docs if d.snippet]
         except Exception as exc:
             logger.warning("retrieve katalog gagal: %s", exc)

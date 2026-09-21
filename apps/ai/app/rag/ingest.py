@@ -94,7 +94,6 @@ def plan_ingest(
         for topic in RAG_TOPICS:
             vector_store.clear(topic)
             logger.info("collection cleared: %s", topic)
-
     md_files = sorted(kb_path.glob("*.md"))
     if not md_files:
         logger.warning("Knowledge base kosong: %s", kb_path)

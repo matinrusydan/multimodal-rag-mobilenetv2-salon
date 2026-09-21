@@ -16,14 +16,17 @@ from app.config import settings
 
 logger = logging.getLogger(__name__)
 
+# Koleksi KB publik (chat pelanggan) — TANPA katalog admin.
 RAG_TOPICS = [
     "harga",
     "layanan",
     "gaya-rambut",
     "tips-perawatan",
     "booking-info",
-    "katalog",
 ]
+
+# Koleksi untuk agent admin (termasuk katalog hasil serialize DB).
+AGENT_TOPICS = [*RAG_TOPICS, "katalog"]
 
 
 def collection_name(topic: str) -> str:
