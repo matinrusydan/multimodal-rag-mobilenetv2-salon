@@ -27,6 +27,12 @@ export class MenuService {
     return rows.map(map);
   }
 
+  /** Menu untuk user yang sedang login (berdasarkan role). Super admin -> semua. */
+  async listForRoles(roles: string[], isSuperAdmin: boolean): Promise<MenuAdmin[]> {
+    const rows = isSuperAdmin ? await menuRepository.list() : await menuRepository.listByRoleCodes(roles);
+    return rows.map(map);
+  }
+
   async get(id: number): Promise<MenuAdmin> {
     const row = await menuRepository.findById(id);
     if (!row) throw new HttpError(404, 'Menu tidak ditemukan');

@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import { getResourceSpec } from '@/components/admin/specs';
 
 export type FieldType =
   | 'text'
@@ -79,18 +80,27 @@ function makeInitialForm(spec: ResourceSpec): Record<string, unknown> {
   return form;
 }
 
-export function ResourceManager({ spec }: { spec: ResourceSpec }) {
+export function ResourceManager({ resource }: { resource: string }) {
+  const spec = getResourceSpec(resource);
+
   const [rows, setRows] = useState<Record<string, unknown>[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [editingId, setEditingId] = useState<string | null>(null);
-  const [form, setForm] = useState<Record<string, unknown>>(makeInitialForm(spec));
+  const [form, setForm] = useState<Record<string, unknown>>(
+    spec ? makeInitialForm(spec) : {},
+  );
   const [saving, setSaving] = useState(false);
   const [optionMaps, setOptionMaps] = useState<Record<string, { value: string; label: string }[]>>(
     {},
   );
 
   const fetchList = useCallback(async () => {
+    if (!spec) {
+      setError('Resource tidak dikenal.');
+      setLoading(false);
+      return;
+    }
     try {
       const res = await fetch(`/api/admin/${spec.resource}`, { cache: 'no-store' });
       const body = (await res.json().catch(() => null)) as {
@@ -109,11 +119,11 @@ export function ResourceManager({ spec }: { spec: ResourceSpec }) {
     } finally {
       setLoading(false);
     }
-  }, [spec.resource]);
+  }, [spec]);
 
   useEffect(() => {
     void fetchList();
-    if (spec.optionSources) {
+    if (spec?.optionSources) {
       for (const source of spec.optionSources) {
         void fetch(source.url, { cache: 'no-store' })
           .then((res) => res.json())
@@ -130,18 +140,19 @@ export function ResourceManager({ spec }: { spec: ResourceSpec }) {
           .catch(() => undefined);
       }
     }
-  }, [fetchList, spec.optionSources]);
+  }, [fetchList, spec?.optionSources]);
 
   const setField = (key: string, value: unknown) => {
     setForm((current) => ({ ...current, [key]: value }));
   };
 
   const resetForm = () => {
-    setForm(makeInitialForm(spec));
+    setForm(spec ? makeInitialForm(spec) : {});
     setEditingId(null);
   };
 
   const startEdit = (row: Record<string, unknown>) => {
+    if (!spec) return;
     const next: Record<string, unknown> = {};
     for (const field of spec.fields) {
       next[field.key] = field.type === 'multiselect' ? [] : (row[field.key] ?? '');
@@ -151,6 +162,7 @@ export function ResourceManager({ spec }: { spec: ResourceSpec }) {
   };
 
   const handleSave = async () => {
+    if (!spec) return;
     setError('');
     setSaving(true);
     try {
@@ -193,7 +205,7 @@ export function ResourceManager({ spec }: { spec: ResourceSpec }) {
   };
 
   const handleDelete = async (id: string) => {
-    if (!window.confirm('Yakin ingin menghapus data ini?')) {
+    if (!spec || !window.confirm('Yakin ingin menghapus data ini?')) {
       return;
     }
     setError('');
@@ -212,6 +224,15 @@ export function ResourceManager({ spec }: { spec: ResourceSpec }) {
 
   if (loading) {
     return <LoadingSpinner label="Memuat data..." />;
+  }
+
+  if (!spec) {
+    return (
+      <section className="admin-panel">
+        <h1>Resource tidak dikenal</h1>
+        <p className="muted-text">Resource &quot;{resource}&quot; tidak tersedia.</p>
+      </section>
+    );
   }
 
   const optionsFor = (field: FieldSpec) => field.options ?? optionMaps[field.source ?? ''] ?? [];

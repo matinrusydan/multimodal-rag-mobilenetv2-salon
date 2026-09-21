@@ -1596,6 +1596,220 @@
     margin-bottom: 1.5rem;
   }
 
+  /* --- Admin shell: sidebar + main --- */
+  .admin-shell {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f7fa;
+  }
+
+  .admin-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    flex-shrink: 0;
+    padding: 1rem 0.75rem;
+    background: #fff;
+    color: var(--salon-muted);
+    border-right: 1px solid rgba(226, 232, 240, 0.9);
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    overflow-y: auto;
+    transition: width 0.2s ease;
+  }
+
+  .admin-sidebar--collapsed {
+    width: 4.5rem;
+  }
+
+  .admin-sidebar__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 0.5rem 1rem;
+    color: var(--salon-ink);
+  }
+
+  .admin-sidebar__logo {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.6rem;
+    background: var(--salon-magenta);
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .admin-sidebar__brand-text {
+    display: grid;
+    line-height: 1.15;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .admin-sidebar__brand-text strong {
+    font-size: 0.9rem;
+    font-weight: 900;
+  }
+
+  .admin-sidebar__brand-text small {
+    font-size: 0.68rem;
+    color: var(--salon-muted);
+  }
+
+  .admin-sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    flex: 1;
+  }
+
+  .admin-sidebar__link {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.6rem 0.7rem;
+    border-radius: 0.6rem;
+    color: var(--salon-muted);
+    font-weight: 600;
+    font-size: 0.88rem;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .admin-sidebar__link svg {
+    flex-shrink: 0;
+  }
+
+  .admin-sidebar__link:hover {
+    background: #f1f5f9;
+    color: var(--salon-ink);
+  }
+
+  .admin-sidebar__link--active {
+    background: var(--salon-magenta);
+    color: #fff;
+  }
+
+  .admin-sidebar--collapsed .admin-sidebar__brand-text,
+  .admin-sidebar--collapsed .admin-sidebar__link span,
+  .admin-sidebar--collapsed .admin-sidebar__collapse span {
+    display: none;
+  }
+
+  .admin-sidebar--collapsed .admin-sidebar__link {
+    justify-content: center;
+  }
+
+  .admin-sidebar__collapse {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.55rem 0.7rem;
+    border-radius: 0.6rem;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    background: transparent;
+    color: var(--salon-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .admin-sidebar__collapse:hover {
+    background: #f1f5f9;
+    color: var(--salon-ink);
+  }
+
+  .admin-sidebar--collapsed .admin-sidebar__collapse {
+    justify-content: center;
+  }
+
+  .admin-sidebar__user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.6rem 0.7rem;
+    border-top: 1px solid rgba(226, 232, 240, 0.9);
+  }
+
+  .admin-sidebar__user-info {
+    display: grid;
+    line-height: 1.15;
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .admin-sidebar__user-info strong {
+    font-size: 0.82rem;
+    color: var(--salon-ink);
+  }
+
+  .admin-sidebar__user-info small {
+    font-size: 0.68rem;
+    color: var(--salon-muted);
+  }
+
+  .admin-sidebar__logout {
+    display: grid;
+    place-items: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: #fef2f2;
+    color: #dc2626;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .admin-sidebar--collapsed .admin-sidebar__user {
+    justify-content: center;
+  }
+
+  .admin-sidebar--collapsed .admin-sidebar__user-info {
+    display: none;
+  }
+
+  .admin-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    padding: clamp(1.25rem, 3vw, 2rem) 0;
+  }
+
+  @media (max-width: 860px) {
+    .admin-shell {
+      flex-direction: column;
+    }
+
+    .admin-sidebar {
+      position: static;
+      height: auto;
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      overflow-x: auto;
+      padding: 0.6rem;
+    }
+
+    .admin-sidebar__brand,
+    .admin-sidebar__collapse {
+      display: none;
+    }
+
+    .admin-sidebar__nav {
+      flex-direction: row;
+    }
+  }
+
   .admin-nav__link {
     border-radius: var(--radius-pill);
     background: rgba(255, 255, 255, 0.8);
@@ -1608,11 +1822,16 @@
   .admin-panel {
     display: grid;
     gap: 1.5rem;
+    background: #fff;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+    padding: clamp(1.1rem, 3vw, 1.75rem);
   }
 
   .admin-panel h1 {
     color: var(--salon-ink);
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 900;
   }
 
@@ -1628,9 +1847,9 @@
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
     align-items: end;
-    border: 1px solid rgba(234, 212, 223, 0.9);
-    border-radius: var(--radius-lg);
-    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 0.85rem;
+    background: #f8fafc;
     padding: 1.25rem;
   }
 
@@ -1679,9 +1898,9 @@
 
   .admin-table {
     overflow-x: auto;
-    border: 1px solid rgba(234, 212, 223, 0.9);
-    border-radius: var(--radius-lg);
-    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 0.85rem;
+    background: #fff;
   }
 
   .admin-table table {
@@ -1693,15 +1912,15 @@
   .admin-table th,
   .admin-table td {
     padding: 0.7rem 0.9rem;
-    border-bottom: 1px solid rgba(234, 212, 223, 0.7);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
     font-size: 0.9rem;
     vertical-align: middle;
   }
 
   .admin-table th {
     color: var(--salon-muted);
-    background: var(--salon-pink-50);
-    font-size: 0.75rem;
+    background: #f8fafc;
+    font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -1743,6 +1962,154 @@
 
   .admin-dashboard-card p {
     color: var(--salon-muted);
+  }
+
+  .admin-panel__section-title {
+    color: var(--salon-ink);
+    font-size: 1.15rem;
+    font-weight: 900;
+    margin-top: 0.5rem;
+  }
+
+  /* --- Statistik dashboard --- */
+  .admin-stats {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .admin-stats__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .admin-stats__head h2 {
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: var(--salon-ink);
+  }
+
+  .admin-stats__link {
+    color: var(--salon-magenta);
+    font-weight: 800;
+    font-size: 0.85rem;
+  }
+
+  .admin-stats__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .admin-stat-card {
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    border: 1px solid rgba(234, 212, 223, 0.9);
+    border-radius: var(--radius-lg);
+    background: var(--salon-white);
+    padding: 1.1rem;
+    color: var(--salon-ink);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .admin-stat-card:hover {
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
+  }
+
+  .admin-stat-card__icon {
+    display: grid;
+    place-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: var(--radius-md);
+    background: var(--salon-pink-50);
+    color: var(--salon-magenta);
+    flex-shrink: 0;
+  }
+
+  .admin-stat-card__label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--salon-muted);
+    font-weight: 700;
+  }
+
+  .admin-stat-card__value {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--salon-ink);
+    line-height: 1.3;
+  }
+
+  .admin-stat-card__desc {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--salon-muted);
+  }
+
+  /* --- Laporan --- */
+  .admin-report-block {
+    display: grid;
+    gap: 0.85rem;
+    border: 1px solid rgba(234, 212, 223, 0.9);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.82);
+    padding: 1.25rem;
+  }
+
+  .admin-report-block h2 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--salon-ink);
+  }
+
+  .admin-report-kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.85rem;
+  }
+
+  .admin-report-kpis > div {
+    display: grid;
+    gap: 0.2rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: var(--radius-md);
+    background: var(--salon-pink-50);
+  }
+
+  .admin-report-kpis strong {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--salon-ink);
+  }
+
+  .admin-report-kpis span {
+    font-size: 0.78rem;
+    color: var(--salon-muted);
+  }
+
+  .admin-report-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .admin-report-table th,
+  .admin-report-table td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid rgba(234, 212, 223, 0.7);
+    font-size: 0.9rem;
+  }
+
+  .admin-report-table th {
+    color: var(--salon-muted);
+    background: var(--salon-pink-50);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .consult-chat {

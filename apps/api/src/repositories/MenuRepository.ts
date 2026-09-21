@@ -16,6 +16,17 @@ export class MenuRepository extends BaseRepository {
     return this.db<MenuRow>('menus').orderBy('sort_order');
   }
 
+  /** Menu yang boleh diakses role tertentu (join role_menus). */
+  listByRoleCodes(codes: string[]): Promise<MenuRow[]> {
+    if (codes.length === 0) return Promise.resolve([]);
+    return this.db<MenuRow>('menus')
+      .distinct('menus.*')
+      .join('role_menus', 'role_menus.menu_id', 'menus.id')
+      .join('roles', 'roles.id', 'role_menus.role_id')
+      .whereIn('roles.code', codes)
+      .orderBy('menus.sort_order');
+  }
+
   findById(id: number): Promise<MenuRow | undefined> {
     return this.db<MenuRow>('menus').where({ id }).first();
   }

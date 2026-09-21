@@ -6,6 +6,13 @@ export async function list(_req: Request, res: Response): Promise<void> {
   ok(res, await menuService.list());
 }
 
+/** Menu milik user yang login (sidebar dinamis). */
+export async function mine(req: Request, res: Response): Promise<void> {
+  const auth = req.auth;
+  const isSuper = auth.type === 0 || auth.roles.some((r) => r === 'SUPER_ADMIN' || r === 'SUPERADMIN');
+  ok(res, await menuService.listForRoles(auth.roles, isSuper));
+}
+
 export async function detail(req: Request, res: Response): Promise<void> {
   ok(res, await menuService.get(Number(req.params.id)));
 }

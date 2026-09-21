@@ -1,3 +1,5 @@
+'use client';
+
 import type { FieldSpec, ResourceSpec } from '@/components/admin/resource-manager';
 
 const roleTypeOptions = [
@@ -220,3 +222,21 @@ export const ALL_RESOURCES: ResourceSpec[] = [
   routeResource,
   menuResource,
 ];
+
+/**
+ * Registry spesifikasi per-resource.
+ * Dipakai oleh ResourceManager (client) agar fungsi (render/build*) TIDAK
+ * menyeberangi batas Server -> Client Component. Halaman cukup mengirim
+ * nama resource (string).
+ */
+export const RESOURCE_SPECS: Record<string, ResourceSpec> = {
+  users: userResource,
+  roles: roleResource,
+  permissions: permissionResource,
+  routes: routeResource,
+  menus: menuResource,
+};
+
+export function getResourceSpec(resource: string): ResourceSpec | undefined {
+  return RESOURCE_SPECS[resource];
+}

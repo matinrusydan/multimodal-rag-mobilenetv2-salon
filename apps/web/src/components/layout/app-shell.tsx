@@ -16,8 +16,9 @@ export function AppShell({ children }: AppShellProps) {
   const pathname = usePathname();
   const isSplash = pathname === '/';
   const isAuth = pathname.startsWith('/auth');
+  const isAdmin = pathname.startsWith('/admin');
 
-  if (isSplash || isAuth) {
+  if (isSplash || isAuth || isAdmin) {
     return (
       <LayoutGroup id="auth-flow">
         <AnimatePresence mode="popLayout" initial={false}>

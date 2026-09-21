@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { ALL_RESOURCES } from '@/components/admin/specs';
+import { AdminStats } from '@/components/admin/admin-stats';
+import { RESOURCE_META } from '@/components/admin/resource-meta';
 
 export const metadata: Metadata = {
   title: 'Dashboard Admin',
@@ -16,14 +17,18 @@ export default function AdminDashboardPage() {
         Kelola pengguna, role, permission, route, dan menu. Super admin: admin@rag-salon.id
         (Password123!).
       </p>
+
+      <AdminStats />
+
+      <h2 className="admin-panel__section-title">Kelola Data</h2>
       <div className="admin-dashboard-grid">
-        {ALL_RESOURCES.map((resource) => (
+        {RESOURCE_META.map((resource) => (
           <Link
             key={resource.resource}
             href={`/admin/${resource.resource}`}
             className="admin-dashboard-card"
           >
-            <h2>{resource.resource}</h2>
+            <h2>{resource.label}</h2>
             <p>Kelola data {resource.singular}</p>
           </Link>
         ))}
