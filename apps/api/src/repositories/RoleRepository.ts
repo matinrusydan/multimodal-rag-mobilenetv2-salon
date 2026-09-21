@@ -6,6 +6,7 @@ export interface RoleRow {
   code: string;
   parent_id: number | null;
   type: number;
+  status: string;
   description: string | null;
   created_at: string;
   updated_at: string;
@@ -29,6 +30,7 @@ export class RoleRepository extends BaseRepository {
     code: string;
     parent_id?: number | null;
     type?: number;
+    status?: string;
     description?: string | null;
   }): Promise<RoleRow> {
     const rows = await this.db<RoleRow>('roles').insert(input).returning('*');
@@ -37,7 +39,7 @@ export class RoleRepository extends BaseRepository {
 
   async update(
     id: number,
-    input: Partial<Pick<RoleRow, 'name' | 'code' | 'parent_id' | 'type' | 'description'>>,
+    input: Partial<Pick<RoleRow, 'name' | 'code' | 'parent_id' | 'type' | 'status' | 'description'>>,
   ): Promise<RoleRow | undefined> {
     await this.db<RoleRow>('roles')
       .where({ id })
@@ -63,6 +65,16 @@ export class RoleRepository extends BaseRepository {
     return rows.map((r) => r.permission_id as number);
   }
 
+  async findRouteIds(roleId: number): Promise<number[]> {
+    const rows = await this.db('role_routes').where({ role_id: roleId }).select('route_id');
+    return rows.map((r) => r.route_id as number);
+  }
+
+  async findMenuIds(roleId: number): Promise<number[]> {
+    const rows = await this.db('role_menus').where({ role_id: roleId }).select('menu_id');
+    return rows.map((r) => r.menu_id as number);
+  }
+
   async findPermissionNames(roleId: number): Promise<string[]> {
     const rows = await this.db('permissions')
       .join('role_permissions', 'permissions.id', 'role_permissions.permission_id')
@@ -79,6 +91,26 @@ export class RoleRepository extends BaseRepository {
         await trx('role_permissions').insert(
           permissionIds.map((permission_id) => ({ role_id: roleId, permission_id })),
         );
+      }
+    });
+  }
+
+  /** Assign akses MENU ke role (bukan permission). */
+  async assignMenus(roleId: number, menuIds: number[]): Promise<void> {
+    await this.db.transaction(async (trx) => {
+      await trx('role_menus').where({ role_id: roleId }).del();
+      if (menuIds.length > 0) {
+        await trx('role_menus').insert(menuIds.map((menu_id) => ({ role_id: roleId, menu_id })));
+      }
+    });
+  }
+
+  /** Set akses MENU untuk SEMUA role (dipakai halaman matrix menu x role). */
+  async setMenuRoles(menuId: number, roleIds: number[]): Promise<void> {
+    await this.db.transaction(async (trx) => {
+      await trx('role_menus').where({ menu_id: menuId }).del();
+      if (roleIds.length > 0) {
+        await trx('role_menus').insert(roleIds.map((role_id) => ({ role_id, menu_id: menuId })));
       }
     });
   }

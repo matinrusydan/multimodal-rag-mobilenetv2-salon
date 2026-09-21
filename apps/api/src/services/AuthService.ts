@@ -77,6 +77,15 @@ export class AuthService {
       throw new HttpError(401, 'Email atau password salah');
     }
 
+    // Enforce masa berlaku akun (valid_from / valid_to).
+    const today = new Date().toISOString().slice(0, 10);
+    if (user.valid_from && today < String(user.valid_from).slice(0, 10)) {
+      throw new HttpError(403, 'Akun belum aktif. Masa berlaku belum dimulai.');
+    }
+    if (user.valid_to && today > String(user.valid_to).slice(0, 10)) {
+      throw new HttpError(403, 'Akun sudah kedaluwarsa. Hubungi administrator.');
+    }
+
     await userRepository.touchLastLogin(user.id);
 
     const roles = await userRepository.findRoles(user.id);

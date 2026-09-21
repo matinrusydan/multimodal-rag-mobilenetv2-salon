@@ -3,10 +3,13 @@ import { BaseRepository } from './BaseRepository';
 export interface UserRow {
   id: number;
   name: string;
+  username: string | null;
   email: string;
   password_hash: string;
   type: number;
   status: string;
+  valid_from: string | null;
+  valid_to: string | null;
   last_login_at: string | null;
   created_at: string;
   updated_at: string;
@@ -27,15 +30,23 @@ export class UserRepository extends BaseRepository {
     return this.db<UserRow>('users').where({ email }).first();
   }
 
+  async findByUsername(username: string): Promise<UserRow | undefined> {
+    return this.db<UserRow>('users').where({ username }).first();
+  }
+
   list(): Promise<UserRow[]> {
     return this.db<UserRow>('users').orderBy('id');
   }
 
   async create(input: {
     name: string;
+    username?: string | null;
     email: string;
     password_hash: string;
     type?: number;
+    status?: string;
+    valid_from?: string | null;
+    valid_to?: string | null;
   }): Promise<UserRow> {
     const rows = await this.db<UserRow>('users').insert(input).returning('*');
     return rows[0];
@@ -43,7 +54,12 @@ export class UserRepository extends BaseRepository {
 
   async update(
     id: number,
-    input: Partial<Pick<UserRow, 'name' | 'email' | 'type' | 'status' | 'password_hash'>>,
+    input: Partial<
+      Pick<
+        UserRow,
+        'name' | 'username' | 'email' | 'type' | 'status' | 'password_hash' | 'valid_from' | 'valid_to'
+      >
+    >,
   ): Promise<UserRow | undefined> {
     await this.db<UserRow>('users')
       .where({ id })
@@ -62,6 +78,11 @@ export class UserRepository extends BaseRepository {
       .join('user_roles', 'roles.id', 'user_roles.role_id')
       .where('user_roles.user_id', userId)
       .select('roles.id', 'roles.code', 'roles.name');
+  }
+
+  async findRoleIds(userId: number): Promise<number[]> {
+    const rows = await this.db('user_roles').where({ user_id: userId }).select('role_id');
+    return rows.map((r) => r.role_id as number);
   }
 
   async findPermissions(userId: number): Promise<string[]> {

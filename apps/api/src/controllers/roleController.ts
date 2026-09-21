@@ -26,3 +26,11 @@ export async function remove(req: Request, res: Response): Promise<void> {
 export async function assignPermissions(req: Request, res: Response): Promise<void> {
   ok(res, await roleService.assignPermissions(Number(req.params.id), req.body.permissionIds));
 }
+
+export async function access(req: Request, res: Response): Promise<void> {
+  ok(res, await roleService.access(Number(req.params.id)));
+}
+
+export async function assignMenus(req: Request, res: Response): Promise<void> {
+  ok(res, await roleService.assignMenus(Number(req.params.id), req.body.menuIds));
+}

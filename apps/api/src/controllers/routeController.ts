@@ -22,3 +22,7 @@ export async function remove(req: Request, res: Response): Promise<void> {
   await routeService.remove(Number(req.params.id));
   ok(res, { status: 'deleted' });
 }
+
+export async function assignRoles(req: Request, res: Response): Promise<void> {
+  ok(res, await routeService.assignRoles(Number(req.params.id), req.body.roleIds));
+}

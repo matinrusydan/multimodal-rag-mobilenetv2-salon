@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
-import { ResourceManager } from '@/components/admin/resource-manager';
+import { UsersManager } from '@/components/admin/users-manager';
 
 export const metadata: Metadata = {
-  title: 'Kelola Users',
+  title: 'Kelola Pengguna',
 };
 
 export default function AdminUsersPage() {
-  return <ResourceManager resource="users" />;
+  return <UsersManager />;
 }

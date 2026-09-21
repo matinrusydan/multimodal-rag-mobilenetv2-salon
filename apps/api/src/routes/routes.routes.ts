@@ -1,9 +1,14 @@
 import { Router } from 'express';
-import { create, detail, list, remove, update } from '../controllers/routeController';
+import { assignRoles, create, detail, list, remove, update } from '../controllers/routeController';
 import { validate } from '../middleware/requestValidator';
 import { requireAuth } from '../middleware/requireAuth';
 import { securityEnforce } from '../middleware/securityEnforce';
-import { createRouteSchema, routeParamsSchema, updateRouteSchema } from '../schemas/route.schema';
+import {
+  assignRouteRolesSchema,
+  createRouteSchema,
+  routeParamsSchema,
+  updateRouteSchema,
+} from '../schemas/route.schema';
 
 const router = Router();
 
@@ -30,6 +35,14 @@ router.delete(
   securityEnforce('routes.delete'),
   validate(routeParamsSchema),
   remove,
+);
+router.put(
+  '/:id/roles',
+  requireAuth,
+  securityEnforce('routes.write'),
+  validate(routeParamsSchema),
+  validate(assignRouteRolesSchema),
+  assignRoles,
 );
 
 export default router;

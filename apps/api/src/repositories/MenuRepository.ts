@@ -7,6 +7,7 @@ export interface MenuRow {
   icon: string | null;
   parent_id: number | null;
   sort_order: number;
+  status: string;
   created_at: string;
   updated_at: string;
 }
@@ -37,6 +38,7 @@ export class MenuRepository extends BaseRepository {
     icon?: string | null;
     parent_id?: number | null;
     sort_order?: number;
+    status?: string;
   }): Promise<MenuRow> {
     const rows = await this.db<MenuRow>('menus').insert(input).returning('*');
     return rows[0];
@@ -44,7 +46,7 @@ export class MenuRepository extends BaseRepository {
 
   async update(
     id: number,
-    input: Partial<Pick<MenuRow, 'name' | 'path' | 'icon' | 'parent_id' | 'sort_order'>>,
+    input: Partial<Pick<MenuRow, 'name' | 'path' | 'icon' | 'parent_id' | 'sort_order' | 'status'>>,
   ): Promise<MenuRow | undefined> {
     await this.db<MenuRow>('menus')
       .where({ id })
@@ -57,6 +59,19 @@ export class MenuRepository extends BaseRepository {
     return (await this.db('menus').where({ id }).del()) > 0;
   }
 
+  /** Semua menu + daftar role_ids yang punya akses (untuk matrix & list). */
+  async listWithRoles(): Promise<Array<MenuRow & { role_ids: number[] }>> {
+    const menus = await this.list();
+    const links = await this.db('role_menus').select('menu_id', 'role_id');
+    const byMenu = new Map<number, number[]>();
+    for (const l of links) {
+      const arr = byMenu.get(l.menu_id as number) ?? [];
+      arr.push(l.role_id as number);
+      byMenu.set(l.menu_id as number, arr);
+    }
+    return menus.map((m) => ({ ...m, role_ids: byMenu.get(m.id) ?? [] }));
+  }
+
   async assignRoles(menuId: number, roleIds: number[]): Promise<void> {
     await this.db.transaction(async (trx) => {
       await trx('role_menus').where({ menu_id: menuId }).del();
@@ -64,6 +79,11 @@ export class MenuRepository extends BaseRepository {
         await trx('role_menus').insert(roleIds.map((role_id) => ({ role_id, menu_id: menuId })));
       }
     });
+  }
+
+  async findRoleIds(menuId: number): Promise<number[]> {
+    const rows = await this.db('role_menus').where({ menu_id: menuId }).select('role_id');
+    return rows.map((r) => r.role_id as number);
   }
 }
 

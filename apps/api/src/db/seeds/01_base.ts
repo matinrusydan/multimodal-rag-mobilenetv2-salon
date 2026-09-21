@@ -79,6 +79,7 @@ const MENUS = [
   { name: 'Permissions', path: '/admin/permissions', icon: 'key', sort_order: 12 },
   { name: 'Routes', path: '/admin/routes', icon: 'route', sort_order: 13 },
   { name: 'Menus', path: '/admin/menus', icon: 'list', sort_order: 14 },
+  { name: 'Akses Menu', path: '/admin/role-menus', icon: 'shield', sort_order: 15 },
 ];
 
 const SERVICES = [

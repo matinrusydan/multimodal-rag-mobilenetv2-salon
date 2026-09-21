@@ -11,6 +11,7 @@ const createRoleBodySchema = z.object({
     .regex(/^[A-Z0-9_]+$/, 'Kode role hanya huruf besar, angka, dan underscore'),
   parentId: z.coerce.number().int().positive().nullable().optional(),
   type: z.coerce.number().int().min(0).max(1).optional(),
+  status: z.enum(['active', 'inactive']).optional(),
   description: z.string().nullable().optional(),
 });
 
@@ -20,3 +21,6 @@ export const createRoleSchema = { body: createRoleBodySchema };
 export const updateRoleSchema = { body: updateRoleBodySchema };
 export const roleParamsSchema = { params: idParamSchema };
 export const assignRolePermissionsSchema = { body: AssignPermissionsRequestSchema };
+export const assignRoleMenusSchema = {
+  body: z.object({ menuIds: z.array(z.number().int().positive()) }),
+};

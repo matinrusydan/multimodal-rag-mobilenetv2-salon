@@ -1,5 +1,7 @@
 import { Router } from 'express';
 import {
+  access,
+  assignMenus,
   assignPermissions,
   create,
   detail,
@@ -11,6 +13,7 @@ import { validate } from '../middleware/requestValidator';
 import { requireAuth } from '../middleware/requireAuth';
 import { securityEnforce } from '../middleware/securityEnforce';
 import {
+  assignRoleMenusSchema,
   assignRolePermissionsSchema,
   createRoleSchema,
   roleParamsSchema,
@@ -20,6 +23,13 @@ import {
 const router = Router();
 
 router.get('/', requireAuth, securityEnforce('roles.read'), list);
+router.get(
+  '/:id/access',
+  requireAuth,
+  securityEnforce('roles.read'),
+  validate(roleParamsSchema),
+  access,
+);
 router.get('/:id', requireAuth, securityEnforce('roles.read'), validate(roleParamsSchema), detail);
 router.post('/', requireAuth, securityEnforce('roles.write'), validate(createRoleSchema), create);
 router.put(
@@ -44,6 +54,14 @@ router.put(
   validate(roleParamsSchema),
   validate(assignRolePermissionsSchema),
   assignPermissions,
+);
+router.put(
+  '/:id/menus',
+  requireAuth,
+  securityEnforce('roles.manage'),
+  validate(roleParamsSchema),
+  validate(assignRoleMenusSchema),
+  assignMenus,
 );
 
 export default router;

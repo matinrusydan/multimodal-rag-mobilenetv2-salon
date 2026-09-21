@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
-import { ResourceManager } from '@/components/admin/resource-manager';
+import { PermissionsManager } from '@/components/admin/permissions-manager';
 
 export const metadata: Metadata = {
   title: 'Kelola Permissions',
 };
 
 export default function AdminPermissionsPage() {
-  return <ResourceManager resource="permissions" />;
+  return <PermissionsManager />;
 }

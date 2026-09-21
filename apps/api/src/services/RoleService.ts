@@ -1,6 +1,5 @@
 import { type RoleRow, roleRepository } from '../repositories/RoleRepository';
 import { HttpError } from '../utils/problemDetails';
-import { permissionCache } from './PermissionCache';
 
 export interface RoleAdmin {
   id: number;
@@ -8,10 +7,18 @@ export interface RoleAdmin {
   code: string;
   parentId: number | null;
   type: number;
+  status: string;
   description: string | null;
   permissions: string[];
   createdAt: string;
   updatedAt: string;
+}
+
+export interface RoleAccess {
+  roleId: number;
+  routeIds: number[];
+  permissionIds: number[];
+  menuIds: number[];
 }
 
 function map(row: RoleRow, permissions: string[]): RoleAdmin {
@@ -21,6 +28,7 @@ function map(row: RoleRow, permissions: string[]): RoleAdmin {
     code: row.code,
     parentId: row.parent_id,
     type: row.type,
+    status: row.status,
     description: row.description,
     permissions,
     createdAt: row.created_at,
@@ -45,16 +53,36 @@ export class RoleService {
     return map(row, await this.dbPermissions(id));
   }
 
+  /** Akses lengkap role: route (akses halaman), permission (render), menu. */
+  async access(id: number): Promise<RoleAccess> {
+    const row = await roleRepository.findById(id);
+    if (!row) throw new HttpError(404, 'Role tidak ditemukan');
+    const [routeIds, permissionIds, menuIds] = await Promise.all([
+      roleRepository.findRouteIds(id),
+      roleRepository.findPermissionIds(id),
+      roleRepository.findMenuIds(id),
+    ]);
+    return { roleId: id, routeIds, permissionIds, menuIds };
+  }
+
   async create(input: {
     name: string;
     code: string;
     parentId?: number | null;
     type?: number;
+    status?: string;
     description?: string | null;
   }): Promise<RoleAdmin> {
     const existing = await roleRepository.findByCode(input.code);
     if (existing) throw new HttpError(409, 'Kode role sudah digunakan');
-    const row = await roleRepository.create(input);
+    const row = await roleRepository.create({
+      name: input.name,
+      code: input.code,
+      parent_id: input.parentId ?? null,
+      type: input.type,
+      status: input.status,
+      description: input.description,
+    });
     return this.get(row.id);
   }
 
@@ -65,12 +93,24 @@ export class RoleService {
       code?: string;
       parentId?: number | null;
       type?: number;
+      status?: string;
       description?: string | null;
     },
   ): Promise<RoleAdmin> {
     const current = await roleRepository.findById(id);
     if (!current) throw new HttpError(404, 'Role tidak ditemukan');
-    const row = await roleRepository.update(id, input);
+    if (input.code && input.code !== current.code) {
+      const clash = await roleRepository.findByCode(input.code);
+      if (clash) throw new HttpError(409, 'Kode role sudah digunakan');
+    }
+    const row = await roleRepository.update(id, {
+      name: input.name,
+      code: input.code,
+      parent_id: input.parentId,
+      type: input.type,
+      status: input.status,
+      description: input.description,
+    });
     if (!row) throw new HttpError(404, 'Role tidak ditemukan');
     return this.get(id);
   }
@@ -87,6 +127,13 @@ export class RoleService {
     if (!current) throw new HttpError(404, 'Role tidak ditemukan');
     await roleRepository.assignPermissions(id, permissionIds);
     return this.get(id);
+  }
+
+  async assignMenus(id: number, menuIds: number[]): Promise<RoleAccess> {
+    const current = await roleRepository.findById(id);
+    if (!current) throw new HttpError(404, 'Role tidak ditemukan');
+    await roleRepository.assignMenus(id, menuIds);
+    return this.access(id);
   }
 
   private async dbPermissions(roleId: number): Promise<string[]> {
