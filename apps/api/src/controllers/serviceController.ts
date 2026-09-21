@@ -10,3 +10,7 @@ export async function detail(req: Request, res: Response): Promise<void> {
   const { slug } = req.params;
   ok(res, await serviceService.detail(String(slug)));
 }
+
+export async function summary(_req: Request, res: Response): Promise<void> {
+  ok(res, await serviceService.summary());
+}

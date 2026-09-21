@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import type React from 'react';
 
+import { AdminAgentWidget } from '@/components/admin/admin-agent-widget';
 import { AdminNav } from '@/components/admin/admin-nav';
 import { getSession } from '@/lib/web-session';
 
@@ -26,6 +27,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <AdminNav />
         {children}
       </div>
+      <AdminAgentWidget />
     </main>
   );
 }

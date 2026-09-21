@@ -28,6 +28,41 @@ export class ServiceService {
     }
     return mapService(row);
   }
+
+  /** Ringkasan untuk agent admin / dashboard. */
+  async summary(): Promise<{
+    stats: { total: number; active: number; minPrice: number; maxPrice: number };
+    byCategory: Array<{
+      category: string | null;
+      count: number;
+      minPrice: number;
+      maxPrice: number;
+      avgDurationMin: number;
+    }>;
+    services: Service[];
+  }> {
+    const [stats, byCategory, services] = await Promise.all([
+      serviceRepository.publicStats(),
+      serviceRepository.categorySummary(),
+      this.list(),
+    ]);
+    return {
+      stats: {
+        total: stats.total,
+        active: stats.active,
+        minPrice: stats.min_price,
+        maxPrice: stats.max_price,
+      },
+      byCategory: byCategory.map((c) => ({
+        category: c.category,
+        count: c.count,
+        minPrice: c.min_price,
+        maxPrice: c.max_price,
+        avgDurationMin: Math.round(c.avg_duration),
+      })),
+      services,
+    };
+  }
 }
 
 export const serviceService = new ServiceService();

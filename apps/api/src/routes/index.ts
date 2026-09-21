@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import agentRoutes from './agent.routes';
 import analyzeRoutes from './analyze.routes';
 import authRoutes from './auth.routes';
 import chatRoutes from './chat.routes';
@@ -21,6 +22,7 @@ router.use('/api/reservations', reservationsRoutes);
 router.use('/api/payments', paymentsRoutes);
 router.use('/api/analyze', analyzeRoutes);
 router.use('/api/chat', chatRoutes);
+router.use('/api/admin/agent', agentRoutes);
 router.use('/api/users', usersRoutes);
 router.use('/api/roles', rolesRoutes);
 router.use('/api/permissions', permissionsRoutes);

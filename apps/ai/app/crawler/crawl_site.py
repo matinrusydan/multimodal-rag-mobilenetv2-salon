@@ -22,7 +22,7 @@ from app.crawler.topic_mapping import resolve_topic_from_url
 
 logger = logging.getLogger(__name__)
 
-OUTPUT_DIR = Path(__file__).resolve().parents[1] / "rag" / "knowledge"
+OUTPUT_DIR = settings.rag_knowledge_dir
 
 # Max pages safety limit.
 MAX_PAGES = int(200)
@@ -31,11 +31,15 @@ MAX_PAGES = int(200)
 async def _crawl_one_url(crawler, url: str) -> tuple[str, str] | None:
     """Fetch one URL, return (url, raw_markdown) or None."""
     try:
-        result = await crawler.arun(url=url, mode="markdown")
-        md = getattr(result, "raw_markdown", None) or getattr(result, "markdown_v2", None)
+        from app.crawler.stealth import make_run_config
+
+        result = await crawler.arun(url=url, config=make_run_config())
+        md = getattr(result, "markdown", None) or getattr(result, "raw_markdown", None)
+        if md and hasattr(md, "fit_markdown"):
+            md = md.fit_markdown or md.raw_markdown
         if not md:
             return None
-        return (url, md)
+        return (url, md if isinstance(md, str) else str(md))
     except Exception as exc:
         logger.warning("crawl gagal %s: %s", url, exc)
         return None

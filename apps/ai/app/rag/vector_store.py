@@ -22,6 +22,7 @@ RAG_TOPICS = [
     "gaya-rambut",
     "tips-perawatan",
     "booking-info",
+    "katalog",
 ]
 
 

@@ -64,6 +64,24 @@ class Settings:
         self.crawl_use_browser: bool = os.getenv("CRAWL_USE_BROWSER", "false").lower() == "true"
         self.crawl_delay_ms: int = int(os.getenv("CRAWL_DELAY_MS", "1500"))
         self.crawl_tips_url: str = os.getenv("CRAWL_TIPS_URL", "https://alodokter.com")
+        # Multi-sumber tips (koma-separated). Bila di-set, menimpa crawl_tips_url tunggal.
+        self.crawl_tips_urls: list[str] = [
+            u.strip()
+            for u in os.getenv(
+                "CRAWL_TIPS_URLS",
+                "https://www.alodokter.com,https://hellosehat.com/rambut/,"
+                "https://www.halodoc.com/artikel/tag/rambut,https://www.healthline.com/health/hair-loss",
+            ).split(",")
+            if u.strip()
+        ]
+
+        # --- Agent Admin (RAG + tool-call ke Express API) ---
+        # Base URL Express API untuk tool-call data live & serialisasi katalog.
+        self.api_base_url: str = os.getenv("API_BASE_URL", "http://127.0.0.1:4000")
+        # Token internal (shared secret) supaya apps/ai boleh memanggil API internal.
+        self.agent_internal_token: str | None = os.getenv("AI_INTERNAL_TOKEN") or None
+        # Nama koleksi ChromaDB untuk katalog (hasil serialize DB).
+        self.rag_catalog_topic: str = os.getenv("RAG_CATALOG_TOPIC", "katalog")
 
 
 settings = Settings()

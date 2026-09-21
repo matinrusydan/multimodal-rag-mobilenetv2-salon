@@ -11,7 +11,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
 from app.config import settings
-from app.routers import analyze, chat, health
+from app.routers import agent, analyze, chat, health
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 logger = logging.getLogger(__name__)
@@ -22,6 +22,7 @@ app = FastAPI(title="RAG-Salon Brain Engine", version="0.1.0")
 app.include_router(health.router, prefix="/ai")
 app.include_router(analyze.router, prefix="/ai")
 app.include_router(chat.router, prefix="/ai")
+app.include_router(agent.router, prefix="/ai")
 
 
 # --- Global error handler (Problem Details-like) ---

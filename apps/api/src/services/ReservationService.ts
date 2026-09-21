@@ -109,6 +109,20 @@ export class ReservationService {
     const items = (await reservationRepository.findById(row.id))?.items ?? [];
     return mapReservation({ reservation: updated, items });
   }
+
+  /** Statistik reservasi untuk agent admin / dashboard. */
+  async stats(days = 7): Promise<{
+    total: number;
+    byStatus: Array<{ status: string; count: number }>;
+    byDay: Array<{ date: string; count: number; total: number }>;
+  }> {
+    const s = await reservationRepository.stats(days);
+    return {
+      total: s.total,
+      byStatus: s.by_status.map((r) => ({ status: r.status, count: r.count })),
+      byDay: s.by_day.map((r) => ({ date: r.date, count: r.count, total: r.total })),
+    };
+  }
 }
 
 export const reservationService = new ReservationService();

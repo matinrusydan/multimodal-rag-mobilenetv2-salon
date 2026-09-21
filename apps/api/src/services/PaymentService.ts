@@ -72,6 +72,24 @@ export class PaymentService {
     }
     return { paymentId: payment.code, status: payment.status, amount: payment.amount };
   }
+
+  /** Ringkasan pemasukan untuk agent admin / dashboard. */
+  async summary(from?: string, to?: string): Promise<{
+    totalPaid: number;
+    countPaid: number;
+    pendingCount: number;
+    period: { from: string | null; to: string | null };
+    byMethod: Array<{ method: string; total: number; count: number }>;
+  }> {
+    const s = await paymentRepository.revenueSummary(from, to);
+    return {
+      totalPaid: s.total_paid,
+      countPaid: s.count_paid,
+      pendingCount: s.pending_count,
+      period: { from: from ?? null, to: to ?? null },
+      byMethod: s.by_method,
+    };
+  }
 }
 
 export const paymentService = new PaymentService();

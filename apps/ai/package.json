@@ -9,6 +9,7 @@
     "test": ".venv\\Scripts\\python.exe -m pytest tests -q",
     "crawl:site": ".venv\\Scripts\\python.exe -m app.crawler.crawl_site",
     "crawl:tips": ".venv\\Scripts\\python.exe -m app.crawler.crawl_tips",
-    "rag:ingest": ".venv\\Scripts\\python.exe -m app.rag.ingest"
+    "rag:ingest": ".venv\\Scripts\\python.exe -m app.rag.ingest",
+    "rag:sync-catalog": ".venv\\Scripts\\python.exe -m app.rag.sync_catalog"
   }
 }

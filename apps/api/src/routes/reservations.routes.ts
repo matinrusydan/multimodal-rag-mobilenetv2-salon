@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { cancel, create, detail, list } from '../controllers/reservationController';
+import { cancel, create, detail, list, stats } from '../controllers/reservationController';
 import { validate } from '../middleware/requestValidator';
 import { requireAuth } from '../middleware/requireAuth';
 import { securityEnforce } from '../middleware/securityEnforce';
@@ -15,6 +15,7 @@ router.post(
   create,
 );
 router.get('/', requireAuth, securityEnforce('reservations.read', { own: true }), list);
+router.get('/stats', requireAuth, securityEnforce('reservations.read', { own: true }), stats);
 router.get(
   '/:code',
   requireAuth,

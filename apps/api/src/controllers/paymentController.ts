@@ -11,3 +11,9 @@ export async function status(req: Request, res: Response): Promise<void> {
   const { id } = req.params;
   ok(res, await paymentService.status(String(id)));
 }
+
+export async function summary(req: Request, res: Response): Promise<void> {
+  const from = typeof req.query.from === 'string' ? req.query.from : undefined;
+  const to = typeof req.query.to === 'string' ? req.query.to : undefined;
+  ok(res, await paymentService.summary(from, to));
+}

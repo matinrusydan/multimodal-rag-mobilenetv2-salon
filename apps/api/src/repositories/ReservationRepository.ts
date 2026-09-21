@@ -107,6 +107,47 @@ export class ReservationRepository extends BaseRepository {
       .update({ status, updated_at: this.db.fn.now() });
     return this.db<ReservationRow>('reservations').where({ id }).first();
   }
+
+  /** Statistik reservasi: total, per-status, per-hari (N hari terakhir). */
+  async stats(days = 7): Promise<{
+    total: number;
+    by_status: Array<{ status: string; count: number }>;
+    by_day: Array<{ date: string; count: number; total: number }>;
+  }> {
+    const total = await this.db('reservations').count({ count: '*' }).first();
+    const byStatusRows = (await this.db('reservations')
+      .groupBy('status')
+      .select('status')
+      .count({ count: '*' })) as unknown as Array<{ status: string; count: number | string }>;
+
+    const since = new Date();
+    since.setDate(since.getDate() - days);
+    const sinceStr = since.toISOString().slice(0, 10);
+    const byDayRows = (await this.db('reservations')
+      .where('date', '>=', sinceStr)
+      .groupBy('date')
+      .orderBy('date', 'desc')
+      .select('date')
+      .count({ count: '*' })
+      .sum({ total: 'total' })) as unknown as Array<{
+      date: string;
+      count: number | string;
+      total: number | string | null;
+    }>;
+
+    return {
+      total: Number((total as { count?: string } | undefined)?.count ?? 0),
+      by_status: byStatusRows.map((r) => ({
+        status: String(r.status),
+        count: Number(r.count ?? 0),
+      })),
+      by_day: byDayRows.map((r) => ({
+        date: String(r.date),
+        count: Number(r.count ?? 0),
+        total: Number(r.total ?? 0),
+      })),
+    };
+  }
 }
 
 export const reservationRepository = new ReservationRepository();

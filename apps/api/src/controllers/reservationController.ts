@@ -20,3 +20,8 @@ export async function cancel(req: Request, res: Response): Promise<void> {
   const { code } = req.params;
   ok(res, await reservationService.cancel(req.auth, String(code)));
 }
+
+export async function stats(req: Request, res: Response): Promise<void> {
+  const days = Number(req.query.days ?? 7) || 7;
+  ok(res, await reservationService.stats(days));
+}

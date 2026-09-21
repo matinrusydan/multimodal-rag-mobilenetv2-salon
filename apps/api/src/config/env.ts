@@ -19,6 +19,7 @@ const EnvSchema = z.object({
     .transform((v) => v === 'true'),
   CORS_ORIGIN: z.string().default('http://localhost:3000'),
   AI_URL: z.string().default('http://127.0.0.1:5000'),
+  AI_INTERNAL_TOKEN: z.string().default('dev-internal-token-change-me'),
 });
 
 const parsed = EnvSchema.safeParse(process.env);

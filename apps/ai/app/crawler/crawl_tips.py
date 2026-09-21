@@ -21,18 +21,22 @@ from app.config import settings
 
 logger = logging.getLogger(__name__)
 
-OUTPUT_DIR = Path(__file__).resolve().parents[1] / "rag" / "knowledge"
+OUTPUT_DIR = settings.rag_knowledge_dir
 
 MAX_PAGES = int(100)
 
 
 async def _crawl_one_url(crawler, url: str) -> str | None:
     try:
-        result = await crawler.arun(url=url, mode="markdown")
-        md = getattr(result, "raw_markdown", None) or getattr(result, "markdown_v2", None)
+        from app.crawler.stealth import make_run_config
+
+        result = await crawler.arun(url=url, config=make_run_config())
+        md = getattr(result, "markdown", None) or getattr(result, "raw_markdown", None)
+        if md and hasattr(md, "fit_markdown"):
+            md = md.fit_markdown or md.raw_markdown
         if not md:
             return None
-        return md
+        return md if isinstance(md, str) else str(md)
     except Exception as exc:
         logger.warning("crawl tips gagal %s: %s", url, exc)
         return None
@@ -68,12 +72,19 @@ def _slugify(url: str) -> str:
 async def crawl_tips(base_url: str | None = None, use_stealth: bool | None = None) -> list[dict]:
     from crawl4ai import AsyncWebCrawler, BrowserConfig
 
-    base = (base_url or settings.crawl_tips_url).rstrip("/")
+    # Bila base_url eksplisit -> satu sumber; jika tidak -> pakai daftar multi-sumber.
+    if base_url:
+        sources = [base_url.rstrip("/")]
+    elif settings.crawl_tips_urls:
+        sources = [u.rstrip("/") for u in settings.crawl_tips_urls]
+    else:
+        sources = [settings.crawl_tips_url.rstrip("/")]
+
     delay = settings.crawl_delay_ms / 1000.0
     stealth = use_stealth if use_stealth is not None else False
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    summaries: list[dict] = []
+    all_summaries: list[dict] = []
 
     if stealth:
         from app.crawler.stealth import _make_strategy
@@ -87,41 +98,54 @@ async def crawl_tips(base_url: str | None = None, use_stealth: bool | None = Non
         crawl_fn = _crawl_one_url
 
     async with crawler_ctx as crawler:
-        visited: set[str] = set()
-        to_visit: list[str] = [base]
-        count = 0
+        for src in sources:
+            logger.info("[tips] sumber: %s", src)
+            visited: set[str] = set()
+            to_visit: list[str] = [src]
+            count = 0
+            src_parsed = urlparse(src)
+            src_domain = src_parsed.netloc
+            # Batasi BFS hanya pada prefix path sumber (mis. /rambut/) agar tidak
+            # menyerap seluruh domain (komunitas, seks, nutrisi, dsb).
+            src_prefix = src_parsed.path.rstrip("/") or "/"
+            src_slug = src_domain.replace(".", "-")
 
-        while to_visit and count < MAX_PAGES:
-            url = to_visit.pop(0)
-            if url in visited:
-                continue
-            visited.add(url)
-            count += 1
+            def _in_scope(u: str) -> bool:
+                p = urlparse(u)
+                if p.netloc != src_domain:
+                    return False
+                return p.path.startswith(src_prefix)
 
-            md = await crawl_fn(crawler, url)
-            if md is None:
-                continue
+            while to_visit and count < MAX_PAGES:
+                url = to_visit.pop(0)
+                if url in visited:
+                    continue
+                visited.add(url)
+                count += 1
 
-            slug = _slugify(url)
-            filename = f"crawled-tips-{slug}.md"
-            fm = f"---\ntopic: tips-perawatan\nsource: {url}\ntype: crawled\n---\n"
-            (OUTPUT_DIR / filename).write_text(fm + md, encoding="utf-8")
-            summaries.append({"url": url, "file": filename})
-            logger.info("crawl tips %s -> %s", url, filename)
+                md = await crawl_fn(crawler, url)
+                if md is None:
+                    continue
 
-            # Extract internal links (same domain).
-            links = re.findall(r"\[.*?\]\((.*?)\)", md)
-            for link in links:
-                full = urljoin(url, link)
-                parsed = urlparse(full)
-                if parsed.netloc == urlparse(base).netloc and full not in visited:
-                    to_visit.append(full)
+                slug = f"{src_slug}-{_slugify(url)}"
+                filename = f"crawled-tips-{slug}.md"
+                fm = f"---\ntopic: tips-perawatan\nsource: {url}\ntype: crawled\n---\n"
+                (OUTPUT_DIR / filename).write_text(fm + md, encoding="utf-8")
+                all_summaries.append({"url": url, "file": filename})
+                logger.info("crawl tips %s -> %s", url, filename)
 
-            if delay > 0:
-                await asyncio.sleep(delay)
+                # Extract internal links (same domain & same path scope).
+                links = re.findall(r"\[.*?\]\((.*?)\)", md)
+                for link in links:
+                    full = urljoin(url, link)
+                    if _in_scope(full) and full not in visited:
+                        to_visit.append(full)
 
-    print(f"\nSelesai. {len(summaries)} artikel tips di-crawl.")
-    return summaries
+                if delay > 0:
+                    await asyncio.sleep(delay)
+
+    print(f"\nSelesai. {len(all_summaries)} artikel tips di-crawl dari {len(sources)} sumber.")
+    return all_summaries
 
 
 def main():

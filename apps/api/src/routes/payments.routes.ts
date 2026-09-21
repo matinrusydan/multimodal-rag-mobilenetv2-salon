@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { simulate, status } from '../controllers/paymentController';
+import { simulate, status, summary } from '../controllers/paymentController';
 import { validate } from '../middleware/requestValidator';
 import { requireAuth } from '../middleware/requireAuth';
 import { securityEnforce } from '../middleware/securityEnforce';
@@ -14,6 +14,7 @@ router.post(
   validate(simulateSchema),
   simulate,
 );
+router.get('/summary', requireAuth, securityEnforce('payments.read'), summary);
 router.get(
   '/:id',
   requireAuth,

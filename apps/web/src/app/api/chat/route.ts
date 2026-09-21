@@ -7,6 +7,7 @@ export async function POST(request: NextRequest) {
     const body = (await request.json()) as {
       message?: string;
       hairContext?: unknown;
+      hairFeatures?: unknown;
       contextId?: string;
     };
     if (!body.message) {
@@ -17,6 +18,7 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         message: body.message,
         hairContext: body.hairContext,
+        hairFeatures: body.hairFeatures,
         contextId: body.contextId,
       }),
     });
