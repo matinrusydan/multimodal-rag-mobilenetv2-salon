@@ -87,7 +87,7 @@ export function MenusManager() {
   const openParent = () => {
     setMode('parent');
     setEditingId(null);
-    setForm({ ...EMPTY, sortOrder: parents.length + 1 });
+    setForm({ ...EMPTY, parentId: '__none__', sortOrder: parents.length + 1 });
     setOpen(true);
   };
 
@@ -105,7 +105,7 @@ export function MenusManager() {
       name: m.name,
       path: m.path,
       icon: m.icon ?? '',
-      parentId: m.parentId ? String(m.parentId) : '',
+      parentId: m.parentId ? String(m.parentId) : '__none__',
       sortOrder: m.sortOrder,
       status: m.status,
       roleIds: (m.roleIds ?? []).map(String),
@@ -117,12 +117,13 @@ export function MenusManager() {
     setSaving(true);
     setError('');
     try {
+      const hasParent = form.parentId && form.parentId !== '__none__';
       const payload: Record<string, unknown> = {
         name: form.name,
-        // parent tanpa page -> path '#'
-        path: mode === 'parent' && form.path === '' ? '#' : form.path || '#',
+        // menu tanpa parent (group) -> path '#'
+        path: hasParent ? form.path || '#' : '#',
         icon: form.icon || null,
-        parentId: form.parentId ? Number(form.parentId) : null,
+        parentId: hasParent ? Number(form.parentId) : null,
         sortOrder: form.sortOrder,
         status: form.status,
         roleIds: form.roleIds.map(Number),
@@ -306,17 +307,20 @@ export function MenusManager() {
         }
       >
         <div className="admin-form">
-          {mode === 'child' ? (
-            <div className="admin-form__field">
-              <span>Parent</span>
-              <Select
-                value={form.parentId}
-                onValueChange={(v) => setForm({ ...form, parentId: v })}
-                options={parentOptions}
-                placeholder="Pilih parent"
-              />
-            </div>
-          ) : null}
+          <div className="admin-form__field">
+            <span>Parent</span>
+            <Select
+              value={form.parentId}
+              onValueChange={(v) =>
+                setForm({ ...form, parentId: v, path: v ? form.path : form.path })
+              }
+              options={[
+                { value: '__none__', label: '(Tanpa Parent / menjadi Parent)' },
+                ...parentOptions.filter((o) => o.value !== String(editingId ?? '')),
+              ]}
+              placeholder="Pilih parent"
+            />
+          </div>
           <label className="admin-form__field">
             <span>Title</span>
             <input
@@ -334,7 +338,7 @@ export function MenusManager() {
               placeholder="Pilih icon"
             />
           </div>
-          {mode === 'child' || editingId !== null ? (
+          {form.parentId && form.parentId !== '__none__' ? (
             <div className="admin-form__field admin-form__field--full">
               <span>Route</span>
               <Select
