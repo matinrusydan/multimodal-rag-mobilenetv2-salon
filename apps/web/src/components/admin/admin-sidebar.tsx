@@ -130,12 +130,28 @@ export function AdminSidebar() {
       <nav className="admin-sidebar__nav">
         {roots.map((menu) => {
           const kids = (childrenOf.get(menu.id) ?? []).filter((k) => k.path !== '#');
-          const isGroup = kids.length > 0;
-          const Icon = getAdminIcon(menu.icon);
+          const isSubmenu = kids.length > 0;
+          const hasIcon = Boolean(menu.icon);
+          const isTitle = !isSubmenu && !hasIcon;
 
-          if (isGroup) {
+          // 1) Judul grup: root tanpa children & tanpa icon -> teks saja.
+          if (isTitle) {
+            return (
+              <div
+                key={menu.id}
+                className="admin-sidebar__group-title"
+                title={menu.name}
+              >
+                {menu.name}
+              </div>
+            );
+          }
+
+          // 2) Submenu: root punya children.
+          if (isSubmenu) {
             const open = openGroups.has(menu.id);
             const groupActive = kids.some((k) => isActive(pathname, k.path));
+            const Icon = getAdminIcon(menu.icon);
             return (
               <div key={menu.id} className="admin-sidebar__group">
                 <button
@@ -149,7 +165,9 @@ export function AdminSidebar() {
                 >
                   <Icon size={18} />
                   <span>{menu.name}</span>
-                  {!collapsed ? <ChevronDown size={14} className="admin-sidebar__caret" data-open={open} /> : null}
+                  {!collapsed ? (
+                    <ChevronDown size={14} className="admin-sidebar__caret" data-open={open} />
+                  ) : null}
                 </button>
                 {open && !collapsed ? (
                   <div className="admin-sidebar__children">
@@ -176,7 +194,9 @@ export function AdminSidebar() {
             );
           }
 
+          // 3) Item tunggal: root dengan path (icon opsional).
           const active = isActive(pathname, menu.path);
+          const Icon = hasIcon ? getAdminIcon(menu.icon) : null;
           return (
             <Link
               key={menu.id}
@@ -184,7 +204,7 @@ export function AdminSidebar() {
               className={cn('admin-sidebar__link', active && 'admin-sidebar__link--active')}
               title={collapsed ? menu.name : undefined}
             >
-              <Icon size={18} />
+              {Icon ? <Icon size={18} /> : null}
               <span>{menu.name}</span>
             </Link>
           );

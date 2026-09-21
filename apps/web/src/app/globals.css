@@ -1710,6 +1710,25 @@
     flex-direction: column;
   }
 
+  .admin-sidebar__group-title {
+    padding: 0.9rem 0.7rem 0.35rem;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .admin-sidebar--collapsed .admin-sidebar__group-title {
+    text-align: center;
+    font-size: 0.6rem;
+    letter-spacing: 0;
+  }
+
   .admin-sidebar__link--group {
     width: 100%;
     border: none;
