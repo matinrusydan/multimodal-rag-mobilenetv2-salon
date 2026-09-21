@@ -198,7 +198,7 @@ export function AdminSidebar() {
         aria-label={collapsed ? 'Perluas sidebar' : 'Ciutkan sidebar'}
       >
         {collapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
-        <span>Ciutkan</span>
+        <span>Tutup</span>
       </button>
 
       {user ? (
