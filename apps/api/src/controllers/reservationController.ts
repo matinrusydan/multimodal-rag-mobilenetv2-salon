@@ -25,3 +25,8 @@ export async function stats(req: Request, res: Response): Promise<void> {
   const days = Number(req.query.days ?? 7) || 7;
   ok(res, await reservationService.stats(days));
 }
+
+export async function updateStatus(req: Request, res: Response): Promise<void> {
+  const { code } = req.params;
+  ok(res, await reservationService.updateStatus(String(code), String(req.body.status)));
+}

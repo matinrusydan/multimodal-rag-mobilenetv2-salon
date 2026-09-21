@@ -110,6 +110,20 @@ export class ReservationService {
     return mapReservation({ reservation: updated, items });
   }
 
+  /** Admin: ubah status reservasi ke salah satu status valid. */
+  async updateStatus(code: string, status: string): Promise<Reservation> {
+    const allowed = ['pending', 'confirmed', 'completed', 'cancelled'];
+    if (!allowed.includes(status)) {
+      throw new HttpError(400, 'Status tidak valid');
+    }
+    const row = await reservationRepository.findByCode(code);
+    if (!row) throw new HttpError(404, 'Reservasi tidak ditemukan');
+    const updated = await reservationRepository.updateStatus(row.id, status);
+    if (!updated) throw new HttpError(404, 'Reservasi tidak ditemukan');
+    const items = (await reservationRepository.findById(row.id))?.items ?? [];
+    return mapReservation({ reservation: updated, items });
+  }
+
   /** Statistik reservasi untuk agent admin / dashboard. */
   async stats(days = 7): Promise<{
     total: number;

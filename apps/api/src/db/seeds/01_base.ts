@@ -38,6 +38,13 @@ const PERMISSIONS = [
   ['menus.write', 'menus'],
   ['menus.delete', 'menus'],
   ['menus.manage', 'menus'],
+  // settings
+  ['settings.read', 'settings'],
+  ['settings.write', 'settings'],
+  // knowledge (dokumen .md RAG)
+  ['knowledge.read', 'knowledge'],
+  ['knowledge.write', 'knowledge'],
+  ['knowledge.delete', 'knowledge'],
 ];
 
 const ROLE_PERMISSION_MAP: Record<string, string[]> = {

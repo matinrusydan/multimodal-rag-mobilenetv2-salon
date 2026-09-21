@@ -20,6 +20,7 @@ from app.rag.embedding import embed
 from app.rag.prompt_builder import build_prompt
 from app.rag.retriever import RetrievedDoc, retriever
 from app.rag.web_fallback import live_crawl_docs
+from app.settings_loader import gemini_api_key
 
 logger = logging.getLogger(__name__)
 
@@ -60,7 +61,7 @@ class RagService:
     async def _call_gemini(self, messages: list[dict]) -> str:
         from google import genai
 
-        client = genai.Client(api_key=settings.gemini_api_key)
+        client = genai.Client(api_key=gemini_api_key())
         system_prompt = next((m["content"] for m in messages if m["role"] == "system"), None)
         user_prompt = next((m["content"] for m in messages if m["role"] == "user"), "")
         contents = [user_prompt]
@@ -169,7 +170,7 @@ class RagService:
         doc_ids = [f"{d.file}#{d.section or ''}" for d in docs]
         context_id = self._ctx_hash(query, doc_ids, hair_context)
 
-        is_local = settings.ai_embedding_provider != "gemini" or not settings.gemini_api_key
+        is_local = settings.ai_embedding_provider != "gemini" or not gemini_api_key()
 
         # Bangun sources untuk API: web sources (unik per URL) + KB sources.
         kb_sources = [{"file": d.file, "snippet": d.snippet} for d in docs if not d.file.startswith("web:")]

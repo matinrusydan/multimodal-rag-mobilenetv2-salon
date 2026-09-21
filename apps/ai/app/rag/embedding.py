@@ -12,6 +12,7 @@ import math
 import re
 
 from app.config import settings
+from app.settings_loader import gemini_api_key
 
 logger = logging.getLogger(__name__)
 
@@ -55,9 +56,9 @@ def _gemini_client():
         from google import genai
     except ImportError:
         raise RuntimeError("google-genai tidak terpasang (pip install -r requirements.txt)")
-    if not settings.gemini_api_key:
+    if not gemini_api_key():
         raise RuntimeError("GEMINI_API_KEY belum diisi")
-    return genai.Client(api_key=settings.gemini_api_key)
+    return genai.Client(api_key=gemini_api_key())
 
 
 async def embed(texts: list[str]) -> list[list[float]]:
@@ -67,7 +68,7 @@ async def embed(texts: list[str]) -> list[list[float]]:
     - provider=local  -> deterministic feature-hash (offline/test).
     Falls back to local automatically if Gemini is unavailable (no key / error).
     """
-    if settings.ai_embedding_provider != "gemini" or not settings.gemini_api_key:
+    if settings.ai_embedding_provider != "gemini" or not gemini_api_key():
         logger.info("embedding lokal (offline, 768d)")
         return embed_local(texts)
 
@@ -86,7 +87,7 @@ async def embed(texts: list[str]) -> list[list[float]]:
 
 def embed_sync(texts: list[str]) -> list[list[float]]:
     """Sync wrapper for ingest CLI. Calls Gemini when key is available, local otherwise."""
-    if settings.ai_embedding_provider != "gemini" or not settings.gemini_api_key:
+    if settings.ai_embedding_provider != "gemini" or not gemini_api_key():
         return embed_local(texts)
     try:
         import asyncio

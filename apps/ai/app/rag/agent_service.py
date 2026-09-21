@@ -22,6 +22,7 @@ from app.rag.agent_tools import TOOL_DECLARATIONS, execute_tool
 from app.rag.embedding import embed
 from app.rag.retriever import Retriever
 from app.rag.vector_store import AGENT_TOPICS
+from app.settings_loader import gemini_api_key
 
 logger = logging.getLogger(__name__)
 
@@ -65,7 +66,7 @@ class AgentService:
         from google import genai
         from google.genai import types
 
-        client = genai.Client(api_key=settings.gemini_api_key)
+        client = genai.Client(api_key=gemini_api_key())
 
         ctx_block = "\n\n".join(f"- {c}" for c in context) if context else "(tidak ada konteks katalog)"
         system_instruction = f"{SYSTEM_INSTRUCTION}\n\nKONTEKS KATALOG:\n{ctx_block}"
@@ -132,7 +133,7 @@ class AgentService:
         history = history or []
         context = await self._retrieve_context(query)
 
-        is_local = settings.ai_llm_provider != "gemini" or not settings.gemini_api_key
+        is_local = settings.ai_llm_provider != "gemini" or not gemini_api_key()
         tool_trace: list[dict] = []
 
         if is_local:

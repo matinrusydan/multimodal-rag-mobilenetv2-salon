@@ -14,6 +14,10 @@ const ADMIN_MENUS: Array<{ name: string; path: string; icon: string; sort_order:
   { name: 'Routes', path: '/admin/routes', icon: 'route', sort_order: 5 },
   { name: 'Menus', path: '/admin/menus', icon: 'list', sort_order: 6 },
   { name: 'Akses Menu', path: '/admin/role-menus', icon: 'shield', sort_order: 7 },
+  { name: 'Layanan & Harga', path: '/admin/services', icon: 'scissors', sort_order: 8 },
+  { name: 'Reservasi', path: '/admin/reservations', icon: 'calendar', sort_order: 9 },
+  { name: 'Info Salon', path: '/admin/settings', icon: 'settings', sort_order: 10 },
+  { name: 'Dokumen RAG', path: '/admin/knowledge', icon: 'file', sort_order: 11 },
 ];
 
 export async function seed(knex: Knex): Promise<void> {

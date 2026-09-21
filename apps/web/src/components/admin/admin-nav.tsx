@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const LINKS = [
-  { href: '/admin', label: 'Ringkasan' },
+  { href: '/admin', label: 'Dashboard' },
   { href: '/admin/users', label: 'Users' },
   { href: '/admin/roles', label: 'Roles' },
   { href: '/admin/permissions', label: 'Permissions' },

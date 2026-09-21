@@ -1823,14 +1823,15 @@
     flex-direction: column;
     flex: 1;
     min-width: 0;
-    padding: 0.75rem 0;
+    padding: 1rem;
   }
 
-  /* Konten admin: margin kecil (override site-container). */
+  /* Konten admin: margin seragam 16px, tanpa batasi lebar site-container. */
   .admin-main .site-container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    width: 100%;
     max-width: 100%;
+    margin-inline: 0;
+    padding: 0;
   }
 
   /* ---------- Admin: modal, select, multiselect, switch, tag ---------- */
@@ -2421,6 +2422,129 @@
     font-size: 0.82rem;
     font-weight: 700;
     color: #15803d;
+  }
+
+  .admin-inline-select {
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 0.5rem;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.82rem;
+    color: var(--salon-ink);
+    background: #fff;
+    cursor: pointer;
+  }
+
+  .admin-kb {
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    gap: 1rem;
+    min-height: 26rem;
+  }
+
+  .admin-kb__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 0.85rem;
+    background: #fff;
+    padding: 0.5rem;
+  }
+
+  .admin-kb__item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.6rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: var(--salon-muted);
+    font-size: 0.85rem;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .admin-kb__item span {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .admin-kb__item:hover {
+    background: #f8fafc;
+    color: var(--salon-ink);
+  }
+
+  .admin-kb__item--active {
+    background: var(--salon-pink-50);
+    color: var(--salon-magenta);
+    font-weight: 700;
+  }
+
+  .admin-kb__del {
+    display: grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: none;
+    border-radius: 0.4rem;
+    background: transparent;
+    color: #cbd5e1;
+    cursor: pointer;
+  }
+
+  .admin-kb__del:hover {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+
+  .admin-kb__editor {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    border-radius: 0.85rem;
+    background: #fff;
+    padding: 0.85rem;
+  }
+
+  .admin-kb__editor-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .admin-kb__textarea {
+    flex: 1;
+    width: 100%;
+    min-height: 22rem;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 0.6rem;
+    padding: 0.8rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--salon-ink);
+    resize: vertical;
+  }
+
+  .admin-kb__preview {
+    flex: 1;
+    min-height: 22rem;
+    border: 1px dashed rgba(226, 232, 240, 0.95);
+    border-radius: 0.6rem;
+    padding: 0.8rem 1rem;
+    overflow-y: auto;
+    color: var(--salon-ink);
+  }
+
+  @media (max-width: 860px) {
+    .admin-kb {
+      grid-template-columns: 1fr;
+    }
   }
 
   .admin-form__field textarea {

@@ -14,3 +14,20 @@ export async function detail(req: Request, res: Response): Promise<void> {
 export async function summary(_req: Request, res: Response): Promise<void> {
   ok(res, await serviceService.summary());
 }
+
+export async function listAdmin(_req: Request, res: Response): Promise<void> {
+  ok(res, await serviceService.listAdmin());
+}
+
+export async function create(req: Request, res: Response): Promise<void> {
+  ok(res, await serviceService.create(req.body), 201);
+}
+
+export async function update(req: Request, res: Response): Promise<void> {
+  ok(res, await serviceService.update(Number(req.params.id), req.body));
+}
+
+export async function remove(req: Request, res: Response): Promise<void> {
+  await serviceService.remove(Number(req.params.id));
+  ok(res, { status: 'deleted' });
+}

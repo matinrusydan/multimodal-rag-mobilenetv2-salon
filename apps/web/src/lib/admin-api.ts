@@ -48,6 +48,30 @@ export interface PermissionItem {
   description?: string;
 }
 
+export interface ServiceItem {
+  id: number;
+  name: string;
+  slug: string;
+  price: number;
+  durationMin: number;
+  description: string;
+  category?: string;
+  image?: string;
+  isActive: boolean;
+}
+
+export interface ReservationItem {
+  id: string;
+  userId: number;
+  items: Array<{ serviceId: number; serviceName: string; price: number }>;
+  total: number;
+  date: string;
+  time: string;
+  notes?: string;
+  status: string;
+  createdAt?: string;
+}
+
 async function adminRequest<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`/api/admin/${path}`, {
     cache: 'no-store',

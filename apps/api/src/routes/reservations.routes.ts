@@ -1,5 +1,12 @@
 import { Router } from 'express';
-import { cancel, create, detail, list, stats } from '../controllers/reservationController';
+import {
+  cancel,
+  create,
+  detail,
+  list,
+  stats,
+  updateStatus,
+} from '../controllers/reservationController';
 import { validate } from '../middleware/requestValidator';
 import { requireAuth } from '../middleware/requireAuth';
 import { requireAuthOrInternal } from '../middleware/internalAuth';
@@ -36,6 +43,13 @@ router.put(
   securityEnforce('reservations.write'),
   validate(reservationCodeSchema),
   cancel,
+);
+router.put(
+  '/:code/status',
+  requireAuth,
+  securityEnforce('reservations.write'),
+  validate(reservationCodeSchema),
+  updateStatus,
 );
 
 export default router;

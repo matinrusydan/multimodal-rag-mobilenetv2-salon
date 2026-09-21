@@ -31,6 +31,43 @@ export class ServiceRepository extends BaseRepository {
     return this.db<ServiceRow>('services').whereIn('id', ids).where({ is_active: true });
   }
 
+  findById(id: number): Promise<ServiceRow | undefined> {
+    return this.db<ServiceRow>('services').where({ id }).first();
+  }
+
+  async create(input: {
+    name: string;
+    slug: string;
+    price: number;
+    duration_min: number;
+    description?: string | null;
+    category?: string | null;
+    image?: string | null;
+    is_active?: boolean;
+  }): Promise<ServiceRow> {
+    const rows = await this.db<ServiceRow>('services').insert(input).returning('*');
+    return rows[0];
+  }
+
+  async update(
+    id: number,
+    input: Partial<
+      Pick<
+        ServiceRow,
+        'name' | 'slug' | 'price' | 'duration_min' | 'description' | 'category' | 'image' | 'is_active'
+      >
+    >,
+  ): Promise<ServiceRow | undefined> {
+    await this.db<ServiceRow>('services')
+      .where({ id })
+      .update({ ...input, updated_at: this.db.fn.now() });
+    return this.findById(id);
+  }
+
+  async remove(id: number): Promise<boolean> {
+    return (await this.db('services').where({ id }).del()) > 0;
+  }
+
   /** Ringkasan per-kategori: jumlah, harga min/max, rata-rata durasi. */
   async categorySummary(): Promise<
     Array<{ category: string | null; count: number; min_price: number; max_price: number; avg_duration: number }>
