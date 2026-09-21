@@ -91,6 +91,22 @@ def main():
             continue
         records.append({"image_id": iid, "relpath": rel, "label": rec["label"], "source": rec["source"]})
 
+    # tambahan: hasil cleaning harvest (back_view_clean) -> label "belakang"
+    apps_dir = CV_DIR.parents[1]  # apps/
+    clean_dir = apps_dir / "ai" / "app" / "crawler" / "harvest" / "back_view_clean"
+    n_clean = 0
+    if clean_dir.exists():
+        for f in sorted(clean_dir.glob("*.jpg")):
+            rel = str(f.relative_to(apps_dir)).replace("\\", "/")
+            records.append({
+                "image_id": f"harvest_clean/{f.name}",
+                "relpath": rel,
+                "label": "belakang",
+                "source": "harvest_clean",
+            })
+            n_clean += 1
+    print(f"  + harvest_clean: {n_clean} gambar (label belakang)")
+
     dist = Counter(r["label"] for r in records)
     save_json(args.out, {
         "schema_version": "viewpoint_dataset_v1",

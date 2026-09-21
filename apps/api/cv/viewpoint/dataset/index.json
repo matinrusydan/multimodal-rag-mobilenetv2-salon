@@ -1,20 +1,21 @@
 {
   "schema_version": "viewpoint_dataset_v1",
-  "created_at": "2026-09-18T07:07:14.920948+00:00",
+  "created_at": "2026-09-18T10:02:24.263316+00:00",
   "classes": [
     "depan",
     "samping",
     "belakang"
   ],
-  "n_total": 350,
+  "n_total": 396,
   "distribution": {
     "depan": 45,
     "samping": 31,
-    "belakang": 274
+    "belakang": 320
   },
   "source_distribution": {
     "pilot_manual": 169,
-    "verification_human": 181
+    "verification_human": 181,
+    "harvest_clean": 46
   },
   "records": [
     {
@@ -2116,6 +2117,282 @@
       "relpath": "dataset/figaro1k/bergelombang/00269.jpg",
       "label": "depan",
       "source": "verification_human"
+    },
+    {
+      "image_id": "harvest_clean/openverse_01379eaddc.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_01379eaddc.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_063503f600.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_063503f600.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_0f736875e2.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_0f736875e2.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_1bc66bd65f.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_1bc66bd65f.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_1bfffa5d42.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_1bfffa5d42.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_1fc654c96b.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_1fc654c96b.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_2af7864516.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_2af7864516.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_2cdfca20ee.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_2cdfca20ee.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_4230874994.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_4230874994.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_4bab312f14.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_4bab312f14.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_4d0d48d1ad.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_4d0d48d1ad.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_547b80e635.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_547b80e635.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_59eedd0b3c.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_59eedd0b3c.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_5d35745f1b.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_5d35745f1b.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_7dc14175a7.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_7dc14175a7.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_81899aa2e7.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_81899aa2e7.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_9a00708aae.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_9a00708aae.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_9ab1455515.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_9ab1455515.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_9f499cfa13.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_9f499cfa13.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_a9356c39bf.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_a9356c39bf.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_ac98d5035c.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_ac98d5035c.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_b523ab3768.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_b523ab3768.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_b7fde6e300.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_b7fde6e300.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_c003382d4f.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_c003382d4f.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_c5019730a1.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_c5019730a1.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_c50fac54d7.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_c50fac54d7.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_c525fb6fd0.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_c525fb6fd0.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_caa03b2613.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_caa03b2613.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_d45250e5e5.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_d45250e5e5.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_d50e151a6b.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_d50e151a6b.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_d8b66e756e.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_d8b66e756e.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_d9c36b8346.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_d9c36b8346.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_e196a44b36.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_e196a44b36.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_ea4707c59f.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_ea4707c59f.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_f76a8b9db4.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_f76a8b9db4.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/openverse_fc74875d2f.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/openverse_fc74875d2f.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/wikimedia_0da952617a.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/wikimedia_0da952617a.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/wikimedia_2c1bca56c4.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/wikimedia_2c1bca56c4.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/wikimedia_5b154644d4.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/wikimedia_5b154644d4.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/wikimedia_a6d839c3ea.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/wikimedia_a6d839c3ea.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/wikimedia_b51da76628.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/wikimedia_b51da76628.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/wikimedia_cdd57a55c4.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/wikimedia_cdd57a55c4.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/wikimedia_d837d51a91.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/wikimedia_d837d51a91.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/wikimedia_da19051d13.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/wikimedia_da19051d13.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/wikimedia_db7c14eb43.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/wikimedia_db7c14eb43.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
+    },
+    {
+      "image_id": "harvest_clean/wikimedia_f5556420c9.jpg",
+      "relpath": "ai/app/crawler/harvest/back_view_clean/wikimedia_f5556420c9.jpg",
+      "label": "belakang",
+      "source": "harvest_clean"
     }
   ]
 }

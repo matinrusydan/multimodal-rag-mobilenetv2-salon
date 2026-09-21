@@ -1,0 +1,46 @@
+{
+  "analisis": "kualitas_dataset_adalah_akar_masalah",
+  "tanggal": "September 2026",
+  "hipotesis": "CNN viewpoint akurasi rendah karena KUALITAS DATASET kurang (bukan arsitektur).",
+  "bukti_eksperimen": {
+    "eksperimen_1_semua_data": {
+      "dataset": "396 (semua: verifikasi 181 + pilot 169 + harvest_clean 46)",
+      "distribusi": {"belakang": 320, "depan": 45, "samping": 31},
+      "imbalance": "belakang 81% (parah)",
+      "noise": "harvest_clean 46 dilabeli GATE (bukan manusia) -> circular",
+      "best_val_acc": 0.7755,
+      "macro_f1": 0.4865,
+      "held_out_acc": 0.6977
+    },
+    "eksperimen_2_hanya_verifikasi_manusia": {
+      "dataset": "181 (HANYA verifikasi manusia - label akurat)",
+      "distribusi": {"belakang": 117, "depan": 38, "samping": 26},
+      "imbalance": "belakang 65% (lebih seimbang)",
+      "noise": "tidak ada auto-label",
+      "best_val_acc": 0.8409,
+      "macro_f1": 0.7992,
+      "held_out_acc": 0.841
+    },
+    "delta": {
+      "val_acc": "+6.5 poin (77.55 -> 84.09)",
+      "macro_f1": "+0.31 (0.487 -> 0.799)",
+      "held_out": "+14.3 poin (69.8 -> 84.1)"
+    }
+  },
+  "kesimpulan": {
+    "terbukti": "KUALITAS DATASET = akar masalah utama, bukan arsitektur.",
+    "cnn_veronly_vs_heuristik": "CNN (verifikasi manusia) 84.1% > heuristik 79.1% pada held-out.",
+    "kunci_sukses": [
+      "Label dari VERIFIKASI MANUSIA (bukan auto-gate).",
+      "Distribusi lebih berimbang (65/21/14 vs 81/11/8).",
+      "Tanpa noise auto-label."
+    ],
+    "implikasi": "Untuk CNN viewpoint menang: WAJIB label berkualitas (manusia) + berimbang. Data banyak tapi kotor justru MERUSAK performa."
+  },
+  "rekomendasi": [
+    "Gunakan CNN(veronly) sebagai basis - sudah mengalahkan heuristik.",
+    "Perluas verifikasi manusia (target 300+) untuk data lebih banyak & berimbang.",
+    "JANGAN pakai auto-label gate untuk training (circular & noisy).",
+    "Tool clean_annotation.py (KEEP/BUANG) penting untuk menjaga kualitas."
+  ]
+}

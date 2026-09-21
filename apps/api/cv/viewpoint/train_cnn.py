@@ -50,7 +50,12 @@ SPLIT_SEED = 42
 def load_tensor(relpath: str):
     from PIL import Image
     import torch
-    im = Image.open(CV_DIR / relpath).convert("RGB")
+    apps_dir = CV_DIR.parents[1]
+    # cek dua format: relatif CV_DIR, atau relatif apps/
+    p = CV_DIR / relpath
+    if not p.exists():
+        p = apps_dir / relpath
+    im = Image.open(p).convert("RGB")
     im = im.resize((INPUT_SIZE, INPUT_SIZE), Image.Resampling.BILINEAR)
     f = np.asarray(im, dtype=np.float32) / 255.0
     mean = np.array(IMAGENET_MEAN, dtype=np.float32)
@@ -64,6 +69,8 @@ def main():
     ap.add_argument("--epochs", type=int, default=EPOCHS)
     ap.add_argument("--seed", type=int, default=SPLIT_SEED)
     ap.add_argument("--backbone", default="efficientnet_v2_s")
+    ap.add_argument("--index", default=str(INDEX), help="Path index dataset (default: dataset/index.json)")
+    ap.add_argument("--tag", default="", help="Tag nama output model (mis. veronly)")
     args = ap.parse_args()
 
     import torch
@@ -74,8 +81,9 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"device={device}")
 
-    data = json.loads(INDEX.read_text(encoding="utf-8"))
+    data = json.loads(Path(args.index).read_text(encoding="utf-8"))
     records = data["records"]
+    print(f"index: {args.index} | n={len(records)}")
     ci = {c: i for i, c in enumerate(VIEWPOINT_CLASSES)}
 
     # split stratified (hold-out tetap)
@@ -128,7 +136,8 @@ def main():
     opt = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=LR_HEAD, weight_decay=WD)
 
     WEIGHTS_DIR.mkdir(parents=True, exist_ok=True)
-    pth = WEIGHTS_DIR / "viewpoint_cnn.pth"
+    _tag = f"_{args.tag}" if args.tag else ""
+    pth = WEIGHTS_DIR / f"viewpoint_cnn{_tag}.pth"
     best, noimp = 0.0, 0
 
     def evaluate():
@@ -181,7 +190,7 @@ def main():
         "best_val_acc": round(best, 4), "best_macro_f1": round(best_f1, 4), "best_epoch": bep,
         "confusion_matrix": best_cm,
     }
-    (REPORTS / "viewpoint_cnn_train.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    (REPORTS / f"viewpoint_cnn_train{_tag}.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\nbest acc={best:.4f} macroF1={best_f1:.4f} @ep{bep}")
     print(f"model -> {pth}")
 

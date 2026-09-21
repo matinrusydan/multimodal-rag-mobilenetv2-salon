@@ -1,0 +1,38 @@
+{
+  "analysis": "viewpoint_cnn_vs_heuristic_JUJUR",
+  "tanggal": "September 2026",
+  "metode": "evaluasi held-out anti-leakage (split sama dengan training)",
+  "hasil_jujur_held_out": {
+    "n_eval": 35,
+    "heuristic_accuracy": 0.7714,
+    "cnn_accuracy": 0.6571,
+    "catatan": "CNN LEBIH BURUK dari heuristik pada data yang belum pernah dilihat"
+  },
+  "kesalahan_metodologis_yang_diperbaiki": {
+    "masalah": "Evaluasi awal (92.27%) TERCEMAR LEAKAGE: 189 dari 193 verifikasi ada di training set CNN.",
+    "perbaikan": "Evaluasi ulang hanya pada 35 sampel held-out (benar-benar di luar training)."
+  },
+  "data_training": {
+    "total": 350,
+    "distribusi": {"belakang": 274, "depan": 45, "samping": 31},
+    "imbalance": "ekstrem (belakang 274 vs samping 31)",
+    "train_split": 264,
+    "val_split": 86
+  },
+  "diagnosis": [
+    "Data terlalu sedikit (264 train) -> CNN overfit, tidak generalisasi ke held-out.",
+    "Imbalance ekstrem -> CNN bias ke kelas mayoritas (belakang).",
+    "Val split kecil & timpang (samping hanya 7) -> akurasi validasi tidak stabil.",
+    "CNN salah dominan: belakang->samping (6), samping->depan (3)."
+  ],
+  "kesimpulan": {
+    "status": "CNN BELUM LAYAK untuk viewpoint (data tidak cukup)",
+    "perbandingan_jujur": "heuristik 77.1% > CNN 65.7% pada held-out",
+    "rekomendasi": [
+      "Pertahankan HEURISTIK untuk sekarang (lebih baik & tanpa training).",
+      "Untuk CNN yang lebih baik: kumpulkan dataset viewpoint JAUH lebih banyak & BERIMBANG (target >= 600, tiap kelas >= 150).",
+      "Setelah data cukup, latih ulang CNN dan bandingkan lagi.",
+      "PENTING: selalu evaluasi pada held-out bersih (anti-leakage)."
+    ]
+  }
+}

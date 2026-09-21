@@ -1,0 +1,58 @@
+{
+  "laporan": "harvest_cleaning_retrain_otonom",
+  "tanggal": "September 2026",
+  "status": "SELESAI",
+  "ringkasan": "Harvest multi-sumber + cleaning 4 lapis + retrain CNN dijalankan otonom.",
+  "1_harvest": {
+    "sumber": {
+      "wikimedia_commons": 245,
+      "openverse_api": 733,
+      "huggingface": 74
+    },
+    "total_mentah": 1052,
+    "catatan": "Kaggle dilewati (tak ada kredensial). figaro parquet gagal baca (pyarrow baru diinstall)."
+  },
+  "2_cleaning_4_lapis": {
+    "input": 1052,
+    "L1_buang_judul": 94,
+    "L2_buang_non_manusia": 152,
+    "L3_buang_non_rambut": 0,
+    "L4_buang_bukan_belakang": 760,
+    "lolos": 46,
+    "conf_threshold": 0.5,
+    "temuan": "Gate heuristik menolak 531 sebagai 'depan' — kemungkinan over-predict depan (masalah gate). 165 'belakang' tertahan karena conf < 0.99.",
+    "output": "apps/ai/app/crawler/harvest/back_view_clean/ (46 gambar)"
+  },
+  "3_dataset_gabungan": {
+    "total": 396,
+    "distribusi": {"belakang": 320, "depan": 45, "samping": 31},
+    "catatan": "Masih timpang (belakang dominan)."
+  },
+  "4_retrain_cnn": {
+    "backbone": "efficientnet_v2_s",
+    "best_val_acc": 0.7755,
+    "sebelumnya": 0.6512,
+    "peningkatan": "+12.4 poin val (dari data lebih banyak)"
+  },
+  "5_evaluasi_jujur_held_out": {
+    "n": 43,
+    "heuristik_acc": 0.7907,
+    "cnn_acc": 0.6977,
+    "kesimpulan": "CNN MASIH KALAH dari heuristik pada held-out (69.8% vs 79.1%)."
+  },
+  "kesimpulan_jujur": {
+    "gate_viewpoint": "Heuristik tetap LEBIH BAIK (79%) daripada CNN (70%) pada data belum dilihat.",
+    "penyebab": [
+      "Data masih timpang (belakang 320 vs depan 45 vs samping 31).",
+      "Held-out kecil (43) -> estimasi tidak stabil.",
+      "Cleaner gate menolak banyak 'depan' (over-predict) -> data depan terbatas.",
+      "CNN butuh data BERIMBANG >600 per perbaikan sebelumnya."
+    ],
+    "rekomendasi": [
+      "Pertahankan HEURISTIK untuk gate produksi (lebih baik & tanpa training).",
+      "Untuk CNN menang: kumpulkan kelas depan/samping jauh lebih banyak & berimbang.",
+      "Perbaiki gate heuristik (over-predict depan) agar cleaning tidak buang data valid.",
+      "Perbesar held-out (>150) untuk estimasi akurasi stabil."
+    ]
+  }
+}

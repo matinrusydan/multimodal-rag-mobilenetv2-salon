@@ -64,6 +64,22 @@ data/val/
 data/test/
 apps/api/cv/dataset/extra/
 apps/api/cv/dataset/*.zip
+apps/api/cv/dataset/figaro1k/
+
+# Gambar hasil crawling / harvest (JANGAN di-commit; bisa di-harvest ulang)
+apps/ai/app/crawler/harvest/
+apps/ai/app/crawler/**/harvest/
+apps/ai/rag/knowledge/crawled-*.md
+
+# Model weights tambahan (safetensors)
+apps/api/cv/viewpoint/weights/
+apps/api/cv/viewpoint/*.pth
+apps/api/cv/viewpoint/*.pt
+*.safetensors
+*.pth
+
+# Log/err sementara di reports
+apps/api/cv/viewpoint/reports/*.err
 
 # Artefak riset sementara (figur & log; metrik JSON tetap di-commit)
 apps/api/cv/reports/*.png

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-09-18T10:06:58.582476+00:00",
+  "n_eval": 43,
+  "held_out_only": true,
+  "heuristic_accuracy": 0.7907,
+  "cnn_accuracy": 0.6977,
+  "cnn_n_eval": 43,
+  "cnn_confusion": {
+    "belakang": {
+      "depan": 6,
+      "samping": 4
+    },
+    "depan": {
+      "samping": 1,
+      "belakang": 1
+    },
+    "samping": {
+      "belakang": 1
+    }
+  }
+}

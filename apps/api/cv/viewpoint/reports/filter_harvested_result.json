@@ -1,0 +1,325 @@
+{
+  "analysis": "filter_harvested_4layer",
+  "timestamp": "2026-09-18T09:59:49.059258+00:00",
+  "total_input": 1052,
+  "conf_threshold": 0.5,
+  "stats": {
+    "reject_L2_no_human": 152,
+    "reject_L4_viewpoint": 760,
+    "reject_L1_title": 94,
+    "passed": 46
+  },
+  "reject_reasons": {
+    "L2:non_human": 152,
+    "L4:depan@<0.5": 531,
+    "L4:samping@<0.5": 72,
+    "L1:comb": 26,
+    "L1:terrace": 2,
+    "L1:graphic": 4,
+    "L1:geograph": 2,
+    "L4:belakang@<0.5": 157,
+    "L1:food": 1,
+    "L1:armchair": 6,
+    "L1:tattoo": 6,
+    "L1:technique": 1,
+    "L1:wig": 3,
+    "L1:painting": 1,
+    "L1:nut": 2,
+    "L1:bread": 1,
+    "L1:balcony": 1,
+    "L1:horse": 4,
+    "L1:logo": 1,
+    "L1:stepbystep": 1,
+    "L1:cat": 4,
+    "L1:spider": 10,
+    "L1:bee": 2,
+    "L1:house": 3,
+    "L1:building": 1,
+    "L1:fly": 4,
+    "L1:chair": 1,
+    "L1:drawing": 1,
+    "L1:cartoon": 2,
+    "L1:sculpture": 2,
+    "L1:bird": 1,
+    "L1:icon": 1
+  },
+  "n_passed": 46,
+  "passed": [
+    {
+      "file": "wikimedia_0da952617a.jpg",
+      "source": "back_view",
+      "key": "File:Münchhausen-AWille.jpg",
+      "conf": 0.99
+    },
+    {
+      "file": "wikimedia_2c1bca56c4.jpg",
+      "source": "back_view",
+      "key": "File:Ponytail.jpg",
+      "conf": 0.5
+    },
+    {
+      "file": "wikimedia_5b154644d4.jpg",
+      "source": "back_view",
+      "key": "File:Running female with long hair.jpg",
+      "conf": 0.99
+    },
+    {
+      "file": "wikimedia_a6d839c3ea.jpg",
+      "source": "back_view",
+      "key": "File:USMC-110430-M-KW153-085.jpg",
+      "conf": 0.99
+    },
+    {
+      "file": "wikimedia_b51da76628.jpg",
+      "source": "back_view",
+      "key": "File:Women's day 10.jpg",
+      "conf": 0.99
+    },
+    {
+      "file": "wikimedia_cdd57a55c4.jpg",
+      "source": "back_view",
+      "key": "File:Two females braides hair long.JPG",
+      "conf": 0.99
+    },
+    {
+      "file": "wikimedia_d837d51a91.jpg",
+      "source": "back_view",
+      "key": "File:Barbing Hair to Back Carving Design.jpg",
+      "conf": 0.99
+    },
+    {
+      "file": "wikimedia_da19051d13.jpg",
+      "source": "back_view",
+      "key": "File:The Duke & Duchess of Cambridge visit the National Stadium Belfast, home of the Irish Football Association. (33403658818).jpg",
+      "conf": 0.99
+    },
+    {
+      "file": "wikimedia_db7c14eb43.jpg",
+      "source": "back_view",
+      "key": "File:HK WTS 新蒲崗 San Po Kong 景福街 King Fuk Street 譽港灣 Mikiki mall December 2020 SS2 08.jpg",
+      "conf": 0.99
+    },
+    {
+      "file": "wikimedia_f5556420c9.jpg",
+      "source": "back_view",
+      "key": "File:Young man with short hair from behind.jpg",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_01379eaddc.jpg",
+      "source": "openverse",
+      "key": "This picture does not fully convey the epic size of that woman's hair.",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_063503f600.jpg",
+      "source": "openverse",
+      "key": "Barber Shop",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_0f736875e2.jpg",
+      "source": "openverse",
+      "key": "DSC02101, Limon, Costa Rica",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_1bc66bd65f.jpg",
+      "source": "openverse",
+      "key": "DSC02112, Limon, Costa Rica",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_1bfffa5d42.jpg",
+      "source": "openverse",
+      "key": "DSC02106, Limon, Costa Rica",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_1fc654c96b.jpg",
+      "source": "openverse",
+      "key": "The three of us at the Dome",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_2af7864516.jpg",
+      "source": "openverse",
+      "key": "It is much easier to keep up with Sarah when she is barefoot. Athletic shoes give her too much speed... Or maybe the sports bra gives her a cornering advantage she doesn't normally have...",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_2cdfca20ee.jpg",
+      "source": "openverse",
+      "key": "York City Centre - July 2013 - Exposed Zip Candid",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_4230874994.jpg",
+      "source": "openverse",
+      "key": "DSC02109, Limon, Costa Rica",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_4bab312f14.jpg",
+      "source": "openverse",
+      "key": "Woman's hair covers her face",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_4d0d48d1ad.jpg",
+      "source": "openverse",
+      "key": "The wavy-haired brigade on tour.",
+      "conf": 0.5
+    },
+    {
+      "file": "openverse_547b80e635.jpg",
+      "source": "openverse",
+      "key": "Julio-Claudians’ Parade – XIX: The Founder",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_59eedd0b3c.jpg",
+      "source": "openverse",
+      "key": "Girl Down The Mall",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_5d35745f1b.jpg",
+      "source": "openverse",
+      "key": "Pacman takes a bite out of the head",
+      "conf": 0.5
+    },
+    {
+      "file": "openverse_7dc14175a7.jpg",
+      "source": "openverse",
+      "key": "PSY COLORS",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_81899aa2e7.jpg",
+      "source": "openverse",
+      "key": "#selfie #selfienation #selfies #TagsForLikes.COM #TFLers @TagsForLikes #me #love #pretty #handsome #instagood #instaselfie #selfietime #face #shamelessselefie #life #hair #portrait #igers #fun #followme #instalove #smile #igdaily #eyes #follow",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_9a00708aae.jpg",
+      "source": "openverse",
+      "key": "17.52 Kiss me, love me, and rewind",
+      "conf": 0.5
+    },
+    {
+      "file": "openverse_9ab1455515.jpg",
+      "source": "openverse",
+      "key": "DSC02110, Limon, Costa Rica",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_9f499cfa13.jpg",
+      "source": "openverse",
+      "key": "African Hair Braiding",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_a9356c39bf.jpg",
+      "source": "openverse",
+      "key": "Young Dancer",
+      "conf": 0.5
+    },
+    {
+      "file": "openverse_ac98d5035c.jpg",
+      "source": "openverse",
+      "key": "Candice with straight hair",
+      "conf": 0.6
+    },
+    {
+      "file": "openverse_b523ab3768.jpg",
+      "source": "openverse",
+      "key": "Hair Braids 9026",
+      "conf": 0.5
+    },
+    {
+      "file": "openverse_b7fde6e300.jpg",
+      "source": "openverse",
+      "key": "Against Theocracy and Terror",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_c003382d4f.jpg",
+      "source": "openverse",
+      "key": "Target Ayatollah Ali Khamenei",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_c5019730a1.jpg",
+      "source": "openverse",
+      "key": "openverse_c5019730a1.jpg",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_c50fac54d7.jpg",
+      "source": "openverse",
+      "key": "1950 Kasama landing: CAA Vickers Viking (possibly VP-YIE)",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_c525fb6fd0.jpg",
+      "source": "openverse",
+      "key": "DSC02108, Limon, Costa Rica",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_caa03b2613.jpg",
+      "source": "openverse",
+      "key": "Falling For Your Hairdo",
+      "conf": 0.5
+    },
+    {
+      "file": "openverse_d45250e5e5.jpg",
+      "source": "openverse",
+      "key": "Back 2 Basics 56 16-19",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_d50e151a6b.jpg",
+      "source": "openverse",
+      "key": "Long hair, from behind",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_d8b66e756e.jpg",
+      "source": "openverse",
+      "key": "DSC02111, Limon, Costa Rica",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_d9c36b8346.jpg",
+      "source": "openverse",
+      "key": "Iranian Lives Matter",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_e196a44b36.jpg",
+      "source": "openverse",
+      "key": "Toy Saab is back!",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_ea4707c59f.jpg",
+      "source": "openverse",
+      "key": "Clearly the woman in blue has never seen a hippie/fairy/Transformer in person before. At least not one going barefoot with her hair braided talking on a Texas Aggie cell phone.",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_f76a8b9db4.jpg",
+      "source": "openverse",
+      "key": "African Hair Braiding",
+      "conf": 0.99
+    },
+    {
+      "file": "openverse_fc74875d2f.jpg",
+      "source": "openverse",
+      "key": "A #stranger kind of #pattern created by the repetition of two ponytails in dark blond straight hair, and two dyed redheads with long wavy hair. #feb4 #day4 #febphotoskill #febphotoaday",
+      "conf": 0.99
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "analysis": "gate_filter_layerC",
+  "timestamp": "2026-09-21T14:49:23.917007+00:00",
+  "src": "clip_ab",
+  "out": "final_clean",
+  "n_total": 76,
+  "n_keep": 20,
+  "viewpoint_distribution": {
+    "depan": 50,
+    "belakang": 20,
+    "samping": 6
+  },
+  "all_viewpoints": false,
+  "records": [
+    {
+      "file": "bing_3d46bbca4c.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "bing_5ae73c1a5f.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "bing_7ad7ca82cc.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "bing_89f26dd22f.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "bing_c7f590beae.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "bing_f912f6fec1.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "hf_male-asian-hairstyles_resized_imgs_medium_hairstyles_hairstyle7_jpg.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "hf_male-asian-hairstyles_resized_imgs_short_hairstyles_hairstyle12_jpg.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "hf_male-asian-hairstyles_resized_imgs_short_hairstyles_hairstyle2_jpg.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "hf_male-black-hairstyles_14_png.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "hf_male-black-hairstyles_15_png.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "hf_male-black-hairstyles_16_png.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "hf_male-black-hairstyles_4_png.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "hf_male-black-hairstyles_8_png.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "openverse_004600d59d.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_0326b91851.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_058d00afa6.jpg",
+      "viewpoint": "samping",
+      "confidence": 0.3,
+      "keep": false
+    },
+    {
+      "file": "openverse_0d4b067948.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_0d9dc659d9.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "openverse_11c414af12.jpg",
+      "viewpoint": "samping",
+      "confidence": 0.3,
+      "keep": false
+    },
+    {
+      "file": "openverse_1e775318a3.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_2b94c868e1.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "openverse_3e3d29d9ab.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_4b9a141acb.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "openverse_4cf1958578.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_5861b8725a.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "openverse_586b012344.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_5e74c1a57e.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_6b260645a5.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_6b8d40f28a.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_6d147da6df.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "openverse_7055be4879.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.99,
+      "keep": true
+    },
+    {
+      "file": "openverse_7be4aff47b.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.3,
+      "keep": true
+    },
+    {
+      "file": "openverse_840f099477.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "openverse_8610eb90b0.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "openverse_8a72ee5a1c.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.3,
+      "keep": true
+    },
+    {
+      "file": "openverse_8ad01a8475.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "openverse_8d0a8c0d13.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "openverse_98ac4ea6e2.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "openverse_9a764b5770.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_9da77605eb.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_afd4474e4d.jpg",
+      "viewpoint": "samping",
+      "confidence": 0.3,
+      "keep": false
+    },
+    {
+      "file": "openverse_b3bd0d0121.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "openverse_b915508a77.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_bac3f1681f.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "openverse_bee95e1953.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_c0d2cfcd36.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "openverse_c49e16722d.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_c5dd0d4364.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "openverse_c92203ec72.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_e0b077986e.jpg",
+      "viewpoint": "samping",
+      "confidence": 0.3,
+      "keep": false
+    },
+    {
+      "file": "openverse_e57c73753c.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_ea6b1d607f.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "openverse_ec341e731b.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "openverse_ef3ccbad9f.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "openverse_f5d7254044.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.3,
+      "keep": true
+    },
+    {
+      "file": "openverse_f768f67409.jpg",
+      "viewpoint": "samping",
+      "confidence": 0.3,
+      "keep": false
+    },
+    {
+      "file": "openverse_fd48208e24.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "wikimedia_001fe60602.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "wikimedia_003fcf9b2b.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "wikimedia_0683b59f9b.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "wikimedia_0aa64b05ed.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "wikimedia_16db2886c4.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.3,
+      "keep": true
+    },
+    {
+      "file": "wikimedia_234f235f6e.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "wikimedia_32fda05439.jpg",
+      "viewpoint": "samping",
+      "confidence": 0.3,
+      "keep": false
+    },
+    {
+      "file": "wikimedia_423c5e4a01.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "wikimedia_a090bb6ba6.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "wikimedia_a551a3b500.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "wikimedia_aed5a6a450.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "wikimedia_b3f14abe9e.jpg",
+      "viewpoint": "belakang",
+      "confidence": 0.1,
+      "keep": true
+    },
+    {
+      "file": "wikimedia_d07eb4fd46.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "wikimedia_d3da65c6e1.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "wikimedia_d3fa037b96.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "wikimedia_def374ddf7.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    },
+    {
+      "file": "wikimedia_e31de2671f.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.99,
+      "keep": false
+    },
+    {
+      "file": "wikimedia_e917a4b81c.jpg",
+      "viewpoint": "depan",
+      "confidence": 0.5,
+      "keep": false
+    }
+  ]
+}
