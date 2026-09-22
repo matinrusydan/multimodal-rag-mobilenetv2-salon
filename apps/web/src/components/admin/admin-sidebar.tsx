@@ -130,54 +130,11 @@ export function AdminSidebar() {
       <nav className="admin-sidebar__nav">
         {roots.map((menu) => {
           const kids = (childrenOf.get(menu.id) ?? []).filter((k) => k.path !== '#');
-          const isSubmenu = kids.length > 0;
+          const hasKids = kids.length > 0;
           const hasIcon = Boolean(menu.icon);
 
-          // 1) Grup berjudul (root tanpa icon, punya children) -> judul + children flat.
-          if (isSubmenu && !hasIcon) {
-            return (
-              <div key={menu.id} className="admin-sidebar__section">
-                {!collapsed ? (
-                  <div className="admin-sidebar__group-title" title={menu.name}>
-                    {menu.name}
-                  </div>
-                ) : null}
-                <div className="admin-sidebar__children admin-sidebar__children--flat">
-                  {kids.map((k) => {
-                    const KIcon = getAdminIcon(k.icon);
-                    const active = isActive(pathname, k.path);
-                    return (
-                      <Link
-                        key={k.id}
-                        href={k.path}
-                        className={cn(
-                          'admin-sidebar__link admin-sidebar__link--child',
-                          active && 'admin-sidebar__link--active',
-                        )}
-                        title={collapsed ? k.name : undefined}
-                      >
-                        <KIcon size={16} />
-                        <span>{k.name}</span>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          }
-
-          // 2) Judul grup murni (root tanpa children & tanpa icon).
-          if (!isSubmenu && !hasIcon) {
-            if (collapsed) return null;
-            return (
-              <div key={menu.id} className="admin-sidebar__group-title" title={menu.name}>
-                {menu.name}
-              </div>
-            );
-          }
-
-          // 3) Submenu (root dengan icon & children) -> accordion.
-          if (isSubmenu) {
+          // A) Parent DENGAN icon (dan punya children) -> dropdown/accordion.
+          if (hasKids && hasIcon) {
             const open = openGroups.has(menu.id);
             const groupActive = kids.some((k) => isActive(pathname, k.path));
             const Icon = getAdminIcon(menu.icon);
@@ -223,7 +180,50 @@ export function AdminSidebar() {
             );
           }
 
-          // 4) Item tunggal (root dengan path/icon, tanpa children).
+          // B) Parent TANPA icon -> judul grup (teks) + children flat.
+          if (hasKids && !hasIcon) {
+            return (
+              <div key={menu.id} className="admin-sidebar__section">
+                {!collapsed ? (
+                  <div className="admin-sidebar__group-title" title={menu.name}>
+                    {menu.name}
+                  </div>
+                ) : null}
+                <div className="admin-sidebar__children admin-sidebar__children--flat">
+                  {kids.map((k) => {
+                    const KIcon = getAdminIcon(k.icon);
+                    const active = isActive(pathname, k.path);
+                    return (
+                      <Link
+                        key={k.id}
+                        href={k.path}
+                        className={cn(
+                          'admin-sidebar__link admin-sidebar__link--child',
+                          active && 'admin-sidebar__link--active',
+                        )}
+                        title={collapsed ? k.name : undefined}
+                      >
+                        <KIcon size={16} />
+                        <span>{k.name}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          }
+
+          // C) Judul grup murni (tanpa children & tanpa icon).
+          if (!hasKids && !hasIcon) {
+            if (collapsed) return null;
+            return (
+              <div key={menu.id} className="admin-sidebar__group-title" title={menu.name}>
+                {menu.name}
+              </div>
+            );
+          }
+
+          // D) Item tunggal (dengan icon/path, tanpa children).
           const active = isActive(pathname, menu.path);
           const Icon = getAdminIcon(menu.icon);
           return (

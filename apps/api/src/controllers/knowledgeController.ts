@@ -7,15 +7,21 @@ import { ok } from '../utils/response';
 const AI_BASE_URL = env.AI_URL;
 
 async function proxy(path: string, method: string, body?: unknown): Promise<object> {
-  const res = await fetch(`${AI_BASE_URL}/ai${path}`, {
-    method,
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Internal-Token': env.AI_INTERNAL_TOKEN,
-    },
-    body: body !== undefined ? JSON.stringify(body) : undefined,
-    signal: AbortSignal.timeout(60_000),
-  });
+  let res: Awaited<ReturnType<typeof fetch>>;
+  try {
+    res = await fetch(`${AI_BASE_URL}/ai${path}`, {
+      method,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Internal-Token': env.AI_INTERNAL_TOKEN,
+      },
+      body: body !== undefined ? JSON.stringify(body) : undefined,
+      signal: AbortSignal.timeout(60_000),
+    });
+  } catch {
+    logger.warn({ path }, 'knowledge proxy: brain engine tidak dapat dihubungi');
+    throw new HttpError(502, 'Brain engine (apps/ai) tidak dapat dihubungi. Jalankan pnpm ai.');
+  }
   const json = (await res.json().catch(() => null)) as { data?: object; detail?: string } | null;
   if (!res.ok) {
     logger.warn({ status: res.status, path }, 'knowledge proxy error');
