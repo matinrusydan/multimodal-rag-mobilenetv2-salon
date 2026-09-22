@@ -44,7 +44,6 @@ export function MenusManager() {
   const [expanded, setExpanded] = useState<Set<number>>(new Set());
 
   const [open, setOpen] = useState(false);
-  const [mode, setMode] = useState<'parent' | 'child'>('parent');
   const [editingId, setEditingId] = useState<number | null>(null);
   const [form, setForm] = useState<FormState>(EMPTY);
   const [saving, setSaving] = useState(false);
@@ -84,22 +83,20 @@ export function MenusManager() {
   }));
   const parentOptions = parents.map((p) => ({ value: String(p.id), label: p.name }));
 
-  const openParent = () => {
-    setMode('parent');
+  const openAddGroup = () => {
     setEditingId(null);
     setForm({ ...EMPTY, parentId: '__none__', sortOrder: parents.length + 1 });
     setOpen(true);
   };
 
-  const openChild = (parent: MenuItem) => {
-    setMode('child');
+  // Tambah item di bawah parent tertentu (grup=level0, atau parent menu=level1).
+  const openAddUnder = (parent: MenuItem) => {
     setEditingId(null);
-    setForm({ ...EMPTY, parentId: String(parent.id), sortOrder: 1 });
+    setForm({ ...EMPTY, parentId: String(parent.id), sortOrder: childrenOf(parent.id).length + 1 });
     setOpen(true);
   };
 
   const openEdit = (m: MenuItem) => {
-    setMode(m.parentId ? 'child' : 'parent');
     setEditingId(m.id);
     setForm({
       name: m.name,
@@ -163,31 +160,39 @@ export function MenusManager() {
 
   if (loading) return <LoadingSpinner label="Memuat data..." />;
 
-  const renderRow = (m: MenuItem, level: 0 | 1): React.ReactNode => {
-    const kids = level === 0 ? childrenOf(m.id) : [];
+  // level: 0=Grup (judul), 1=Item/Parent, 2=Children (leaf).
+  const renderRow = (m: MenuItem, level: number): React.ReactNode => {
+    const kids = childrenOf(m.id);
     const hasKids = kids.length > 0;
     const isOpen = expanded.has(m.id);
+    const isGroup = level === 0;
+    const canAddChild = level < 2;
+
     return (
       <Fragment key={m.id}>
-        <tr>
+        <tr className={isGroup ? 'admin-tree-group-row' : undefined}>
           <td>
-            <span style={{ paddingLeft: level === 1 ? '1.5rem' : 0 }}>
-              {level === 0 ? (
-                hasKids ? (
-                  <button
-                    type="button"
-                    className="admin-tree-toggle"
-                    onClick={() => toggleExpand(m.id)}
-                    aria-label={isOpen ? 'Tutup' : 'Buka'}
-                  >
-                    {isOpen ? '−' : '+'}
-                  </button>
-                ) : (
-                  <span className="admin-tree-toggle" style={{ visibility: 'hidden' }} />
-                )
-              ) : null}
-              <Folder size={15} style={{ display: 'inline', verticalAlign: 'middle' }} />{' '}
-              {m.name}
+            <span style={{ paddingLeft: `${level * 1.5}rem` }}>
+              {canAddChild && hasKids ? (
+                <button
+                  type="button"
+                  className="admin-tree-toggle"
+                  onClick={() => toggleExpand(m.id)}
+                  aria-label={isOpen ? 'Tutup' : 'Buka'}
+                >
+                  {isOpen ? '−' : '+'}
+                </button>
+              ) : (
+                <span className="admin-tree-toggle" style={{ visibility: 'hidden' }} />
+              )}
+              {isGroup ? (
+                <span className="admin-tree-group-name">{m.name}</span>
+              ) : (
+                <>
+                  <Folder size={15} style={{ display: 'inline', verticalAlign: 'middle' }} />{' '}
+                  {m.name}
+                </>
+              )}
             </span>
           </td>
           <td>
@@ -213,13 +218,13 @@ export function MenusManager() {
           </td>
           <td>
             <div className="admin-table__actions">
-              {level === 0 ? (
+              {canAddChild ? (
                 <button
                   type="button"
                   className="admin-icon-btn admin-icon-btn--primary"
-                  onClick={() => openChild(m)}
-                  title="Tambah anak menu"
-                  aria-label="Tambah anak menu"
+                  onClick={() => openAddUnder(m)}
+                  title={isGroup ? 'Tambah item ke grup' : 'Tambah sub-menu'}
+                  aria-label="Tambah"
                 >
                   <Plus size={14} />
                 </button>
@@ -243,20 +248,25 @@ export function MenusManager() {
             </div>
           </td>
         </tr>
-        {level === 0 && hasKids && isOpen
-          ? kids.map((k) => renderRow(k, 1))
-          : null}
+        {canAddChild && hasKids && isOpen ? kids.map((k) => renderRow(k, level + 1)) : null}
       </Fragment>
     );
   };
+
+  const modalTitle =
+    editingId !== null
+      ? 'Edit Menu'
+      : form.parentId && form.parentId !== '__none__'
+        ? 'Tambah Menu'
+        : 'Tambah Grup';
 
   return (
     <section className="admin-panel">
       <div className="admin-panel__toolbar">
         <h1>Menus</h1>
         <div className="admin-panel__toolbar-actions">
-          <Button size="sm" onClick={openParent}>
-            <Plus size={16} /> Tambah Parent
+          <Button size="sm" onClick={openAddGroup}>
+            <Plus size={16} /> Tambah Grup
           </Button>
         </div>
       </div>
@@ -288,13 +298,7 @@ export function MenusManager() {
       <Modal
         open={open}
         onOpenChange={setOpen}
-        title={
-          editingId === null
-            ? mode === 'parent'
-              ? 'Tambah Parent Menu'
-              : 'Tambah Menu'
-            : 'Edit Menu'
-        }
+        title={modalTitle}
         footer={
           <>
             <Button variant="outline" size="sm" onClick={() => setOpen(false)}>

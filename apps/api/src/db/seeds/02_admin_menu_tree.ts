@@ -1,106 +1,139 @@
 import type { Knex } from 'knex';
 
 /**
- * Struktur menu admin modular: beberapa grup (judul teks) + item di dalamnya.
- * Grup = parent dengan icon null & path '#' -> dirender sebagai judul grup.
- * Idempotent: upsert berdasarkan path.
+ * Struktur menu admin bertingkat (mendukung 3 level).
+ *
+ * Aturan render sidebar:
+ *  - parent BER-ICON + children  -> dropdown/accordion
+ *  - parent TANPA icon + children -> judul teks + isi flat
+ *  - tanpa children + icon/path   -> item tunggal (link)
+ *  - tanpa children + tanpa icon  -> judul teks murni
+ *
+ * Idempotent: cari node by path (leaf) / by name (grup), upsert.
  */
 
-interface MenuDef {
+interface MenuNode {
   name: string;
-  path: string;
+  path: string; // leaf punya path nyata; grup/judul '#'
   icon: string | null;
-  sort_order: number;
+  children?: MenuNode[];
 }
 
-/** Grup (judul) + item-itemnya. */
-const GROUPS: Array<{ group: MenuDef; items: MenuDef[] }> = [
+const MENUS: MenuNode[] = [
+  { name: 'Dashboard', path: '/admin', icon: 'dashboard' },
   {
-    group: { name: 'Dashboard', path: '#', icon: null, sort_order: 1 },
-    items: [{ name: 'Dashboard', path: '/admin', icon: 'dashboard', sort_order: 1 }],
-  },
-  {
-    group: { name: 'Manajemen Salon', path: '#', icon: null, sort_order: 2 },
-    items: [
-      { name: 'Layanan & Harga', path: '/admin/services', icon: 'scissors', sort_order: 1 },
-      { name: 'Reservasi', path: '/admin/reservations', icon: 'calendar', sort_order: 2 },
+    name: 'Manajemen Salon',
+    path: '#',
+    icon: 'scissors',
+    children: [
+      { name: 'Layanan & Harga', path: '/admin/services', icon: 'scissors' },
     ],
   },
   {
-    group: { name: 'Konten & Info', path: '#', icon: null, sort_order: 3 },
-    items: [
-      { name: 'Info Salon', path: '/admin/settings', icon: 'settings', sort_order: 1 },
-      { name: 'Dokumen RAG', path: '/admin/knowledge', icon: 'file', sort_order: 2 },
+    name: 'Transaksi',
+    path: '#',
+    icon: 'wallet',
+    children: [
+      { name: 'Reservasi', path: '/admin/reservations', icon: 'calendar' },
+      { name: 'Pembayaran', path: '/payment', icon: 'wallet' },
     ],
   },
   {
-    group: { name: 'Akses & Keamanan', path: '#', icon: null, sort_order: 4 },
-    items: [
-      { name: 'Pengguna', path: '/admin/users', icon: 'users', sort_order: 1 },
-      { name: 'Role', path: '/admin/roles', icon: 'shield', sort_order: 2 },
-      { name: 'Permissions', path: '/admin/permissions', icon: 'key', sort_order: 3 },
-      { name: 'Routes', path: '/admin/routes', icon: 'route', sort_order: 4 },
-      { name: 'Menus', path: '/admin/menus', icon: 'list', sort_order: 5 },
-      { name: 'Akses Menu', path: '/admin/role-menus', icon: 'shield', sort_order: 6 },
+    name: 'Konten & Info',
+    path: '#',
+    icon: 'settings',
+    children: [
+      { name: 'Info Salon', path: '/admin/settings', icon: 'settings' },
+      { name: 'Dokumen RAG', path: '/admin/knowledge', icon: 'file' },
+    ],
+  },
+  {
+    name: 'Akses & Keamanan',
+    path: '#',
+    icon: null,
+    children: [
+      {
+        name: 'Manajemen Admin',
+        path: '#',
+        icon: 'shield',
+        children: [
+          { name: 'Pengguna', path: '/admin/users', icon: 'users' },
+          { name: 'Role', path: '/admin/roles', icon: 'shield' },
+          { name: 'Permissions', path: '/admin/permissions', icon: 'key' },
+          { name: 'Routes', path: '/admin/routes', icon: 'route' },
+          { name: 'Menus', path: '/admin/menus', icon: 'list' },
+          { name: 'Akses Menu', path: '/admin/role-menus', icon: 'shield' },
+        ],
+      },
     ],
   },
 ];
 
 export async function seed(knex: Knex): Promise<void> {
   await knex.transaction(async (trx) => {
-    const allMenuIds: number[] = [];
-    const groupNames = GROUPS.map((g) => g.group.name);
+    const managedIds: number[] = [];
 
-    // Bersihkan grup lama: non-aktifkan path '#' yang namanya bukan grup baru.
-    await trx('menus')
-      .where({ path: '#' })
-      .whereNotIn('name', groupNames)
-      .update({ status: 'inactive', parent_id: null });
+    // Cari node: leaf by path, grup by name (path '#').
+    async function upsertNode(node: MenuNode, parentId: number | null, sortOrder: number): Promise<number> {
+      const isGroup = node.path === '#' || (node.children && node.children.length > 0);
+      let row = isGroup
+        ? await trx('menus').where({ name: node.name, path: '#' }).first()
+        : await trx('menus').where({ path: node.path }).first();
 
-    for (const { group, items } of GROUPS) {
-      // Grup: cari berdasarkan nama, else buat baru (jangan reuse path '#' milik grup lain).
-      let groupRow = await trx('menus').where({ name: group.name, path: '#' }).first();
-      if (!groupRow) {
-        const [inserted] = await trx('menus')
-          .insert({ ...group, parent_id: null, status: 'active' })
-          .returning('*');
-        groupRow = inserted;
-      } else {
-        await trx('menus').where({ id: groupRow.id }).update({
-          icon: group.icon,
-          sort_order: group.sort_order,
-          parent_id: null,
+      if (row) {
+        await trx('menus').where({ id: row.id }).update({
+          name: node.name,
+          icon: node.icon,
+          sort_order: sortOrder,
+          parent_id: parentId,
           status: 'active',
         });
-      }
-      const groupId = groupRow.id as number;
-      allMenuIds.push(groupId);
-
-      for (const item of items) {
-        const existing = await trx('menus').where({ path: item.path }).first();
-        if (existing) {
-          await trx('menus').where({ id: existing.id }).update({
-            name: item.name,
-            icon: item.icon,
-            sort_order: item.sort_order,
-            parent_id: groupId,
+      } else {
+        const [inserted] = await trx('menus')
+          .insert({
+            name: node.name,
+            path: isGroup ? '#' : node.path,
+            icon: node.icon,
+            parent_id: parentId,
+            sort_order: sortOrder,
             status: 'active',
-          });
-          allMenuIds.push(existing.id as number);
-        } else {
-          const [inserted] = await trx('menus')
-            .insert({ ...item, parent_id: groupId, status: 'active' })
-            .returning('*');
-          allMenuIds.push(inserted.id as number);
+          })
+          .returning('*');
+        row = inserted;
+      }
+      const id = row.id as number;
+      managedIds.push(id);
+
+      if (node.children) {
+        let order = 1;
+        for (const child of node.children) {
+          const childId = await upsertNode(child, id, order);
+          managedIds.push(childId);
+          order += 1;
         }
       }
+      return id;
     }
 
-    // Assign grup + item ke role ADMIN & SUPER_ADMIN.
+    let topOrder = 1;
+    for (const node of MENUS) {
+      await upsertNode(node, null, topOrder);
+      topOrder += 1;
+    }
+
+    // Non-aktifkan grup lama yang tidak lagi dikelola (path '#'): mis. sisa
+    // "Menu Admin", "Akses & Keamanan" versi lama, atau grup duplikat.
+    const managedNames = ['Dashboard', 'Manajemen Salon', 'Transaksi', 'Konten & Info', 'Akses & Keamanan', 'Manajemen Admin'];
+    await trx('menus')
+      .where({ path: '#' })
+      .whereNotIn('name', managedNames)
+      .update({ status: 'inactive', parent_id: null });
+
+    // Assign menu yang dikelola ke role ADMIN & SUPER_ADMIN.
     const adminRoles = await trx('roles').whereIn('code', ['ADMIN', 'SUPER_ADMIN']).select('id');
     const links: Array<{ role_id: number; menu_id: number }> = [];
     for (const r of adminRoles) {
-      for (const menuId of allMenuIds) {
+      for (const menuId of managedIds) {
         links.push({ role_id: r.id, menu_id: menuId });
       }
     }

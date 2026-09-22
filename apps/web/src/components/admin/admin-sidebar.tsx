@@ -3,6 +3,7 @@
 import { ChevronLeft, ChevronRight, ChevronDown, LogOut, Scissors } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import type React from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
 import { getAdminIcon } from '@/lib/admin-icons';
@@ -80,16 +81,8 @@ export function AdminSidebar() {
     return { roots: roots.sort((a, b) => a.sortOrder - b.sortOrder), childrenOf: map };
   }, [menus]);
 
-  // Buka grup yang berisi path aktif.
-  useEffect(() => {
-    const open = new Set<number>();
-    for (const r of roots) {
-      const kids = childrenOf.get(r.id) ?? [];
-      if (kids.some((k) => isActive(pathname, k.path))) open.add(r.id);
-    }
-    setOpenGroups(open);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname, menus]);
+  // Initial state: semua dropdown tertutup (children muncul setelah diklik).
+  // Tidak auto-open walau halaman aktif.
 
   const toggleCollapsed = () => {
     setCollapsed((prev) => {
@@ -112,6 +105,97 @@ export function AdminSidebar() {
     });
   };
 
+  // Render node secara rekursif (mendukung 3+ level).
+  const renderNode = (menu: MenuItem, level: number): React.ReactNode => {
+    const kids = (childrenOf.get(menu.id) ?? []).filter((k) => k.path !== '#');
+    const hasKids = kids.length > 0;
+    const hasIcon = Boolean(menu.icon);
+    const indent = level > 0;
+
+    // Leaf: link.
+    if (!hasKids) {
+      // Tanpa children & tanpa icon & path '#' -> judul teks murni.
+      if (!hasIcon && (!menu.path || menu.path === '#')) {
+        if (collapsed) return null;
+        return (
+          <div key={menu.id} className="admin-sidebar__group-title" title={menu.name}>
+            {menu.name}
+          </div>
+        );
+      }
+      const Icon = getAdminIcon(menu.icon);
+      const active = isActive(pathname, menu.path);
+      return (
+        <Link
+          key={menu.id}
+          href={menu.path}
+          className={cn(
+            'admin-sidebar__link',
+            indent && 'admin-sidebar__link--child',
+            active && 'admin-sidebar__link--active',
+          )}
+          title={collapsed ? menu.name : undefined}
+        >
+          <Icon size={indent ? 16 : 18} />
+          <span>{menu.name}</span>
+        </Link>
+      );
+    }
+
+    // Punya children.
+    const Icon = menu.icon ? getAdminIcon(menu.icon) : null;
+
+    // Judul grup statis: HANYA level-0 tanpa icon (mis. "Akses & Keamanan").
+    // Isi langsung terlihat (bukan dropdown).
+    if (!hasIcon && level === 0) {
+      return (
+        <div key={menu.id} className="admin-sidebar__section">
+          {!collapsed ? (
+            <div className="admin-sidebar__group-title" title={menu.name}>
+              {menu.name}
+            </div>
+          ) : null}
+          <div className="admin-sidebar__children admin-sidebar__children--flat">
+            {kids.map((k) => renderNode(k, level + 1))}
+          </div>
+        </div>
+      );
+    }
+
+    // Parent menu (ber-icon ATAU tanpa icon pada level > 0) -> dropdown/accordion.
+    const open = openGroups.has(menu.id);
+    const groupActive = subtreeHasActive(menu.id);
+    return (
+      <div key={menu.id} className="admin-sidebar__group">
+        <button
+          type="button"
+          className={cn(
+            'admin-sidebar__link admin-sidebar__link--group',
+            indent && 'admin-sidebar__link--child',
+            groupActive && 'admin-sidebar__link--group-active',
+          )}
+          onClick={() => toggleGroup(menu.id)}
+          title={collapsed ? menu.name : undefined}
+        >
+          {Icon ? <Icon size={indent ? 16 : 18} /> : null}
+          <span>{menu.name}</span>
+          {!collapsed ? (
+            <ChevronDown size={14} className="admin-sidebar__caret" data-open={open} />
+          ) : null}
+        </button>
+        {open && !collapsed ? (
+          <div className="admin-sidebar__children">{kids.map((k) => renderNode(k, level + 1))}</div>
+        ) : null}
+      </div>
+    );
+  };
+
+  function subtreeHasActive(id: number): boolean {
+    const node = menus.find((m) => m.id === id);
+    if (node && isActive(pathname, node.path)) return true;
+    return (childrenOf.get(id) ?? []).some((k) => subtreeHasActive(k.id));
+  }
+
   return (
     <aside
       className={cn('admin-sidebar', collapsed && 'admin-sidebar--collapsed')}
@@ -128,116 +212,7 @@ export function AdminSidebar() {
       </div>
 
       <nav className="admin-sidebar__nav">
-        {roots.map((menu) => {
-          const kids = (childrenOf.get(menu.id) ?? []).filter((k) => k.path !== '#');
-          const hasKids = kids.length > 0;
-          const hasIcon = Boolean(menu.icon);
-
-          // A) Parent DENGAN icon (dan punya children) -> dropdown/accordion.
-          if (hasKids && hasIcon) {
-            const open = openGroups.has(menu.id);
-            const groupActive = kids.some((k) => isActive(pathname, k.path));
-            const Icon = getAdminIcon(menu.icon);
-            return (
-              <div key={menu.id} className="admin-sidebar__group">
-                <button
-                  type="button"
-                  className={cn(
-                    'admin-sidebar__link admin-sidebar__link--group',
-                    groupActive && 'admin-sidebar__link--group-active',
-                  )}
-                  onClick={() => toggleGroup(menu.id)}
-                  title={collapsed ? menu.name : undefined}
-                >
-                  <Icon size={18} />
-                  <span>{menu.name}</span>
-                  {!collapsed ? (
-                    <ChevronDown size={14} className="admin-sidebar__caret" data-open={open} />
-                  ) : null}
-                </button>
-                {open && !collapsed ? (
-                  <div className="admin-sidebar__children">
-                    {kids.map((k) => {
-                      const KIcon = getAdminIcon(k.icon);
-                      const active = isActive(pathname, k.path);
-                      return (
-                        <Link
-                          key={k.id}
-                          href={k.path}
-                          className={cn(
-                            'admin-sidebar__link admin-sidebar__link--child',
-                            active && 'admin-sidebar__link--active',
-                          )}
-                        >
-                          <KIcon size={16} />
-                          <span>{k.name}</span>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                ) : null}
-              </div>
-            );
-          }
-
-          // B) Parent TANPA icon -> judul grup (teks) + children flat.
-          if (hasKids && !hasIcon) {
-            return (
-              <div key={menu.id} className="admin-sidebar__section">
-                {!collapsed ? (
-                  <div className="admin-sidebar__group-title" title={menu.name}>
-                    {menu.name}
-                  </div>
-                ) : null}
-                <div className="admin-sidebar__children admin-sidebar__children--flat">
-                  {kids.map((k) => {
-                    const KIcon = getAdminIcon(k.icon);
-                    const active = isActive(pathname, k.path);
-                    return (
-                      <Link
-                        key={k.id}
-                        href={k.path}
-                        className={cn(
-                          'admin-sidebar__link admin-sidebar__link--child',
-                          active && 'admin-sidebar__link--active',
-                        )}
-                        title={collapsed ? k.name : undefined}
-                      >
-                        <KIcon size={16} />
-                        <span>{k.name}</span>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          }
-
-          // C) Judul grup murni (tanpa children & tanpa icon).
-          if (!hasKids && !hasIcon) {
-            if (collapsed) return null;
-            return (
-              <div key={menu.id} className="admin-sidebar__group-title" title={menu.name}>
-                {menu.name}
-              </div>
-            );
-          }
-
-          // D) Item tunggal (dengan icon/path, tanpa children).
-          const active = isActive(pathname, menu.path);
-          const Icon = getAdminIcon(menu.icon);
-          return (
-            <Link
-              key={menu.id}
-              href={menu.path}
-              className={cn('admin-sidebar__link', active && 'admin-sidebar__link--active')}
-              title={collapsed ? menu.name : undefined}
-            >
-              <Icon size={18} />
-              <span>{menu.name}</span>
-            </Link>
-          );
-        })}
+        {roots.map((menu) => renderNode(menu, 0))}
       </nav>
 
       <button

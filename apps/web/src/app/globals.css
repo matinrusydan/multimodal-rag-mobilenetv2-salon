@@ -2338,6 +2338,18 @@
     color: var(--salon-muted);
   }
 
+  .admin-tree-group-row {
+    background: #f8fafc;
+  }
+
+  .admin-tree-group-name {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+
   .admin-matrix {
     overflow-x: auto;
     border: 1px solid rgba(226, 232, 240, 0.9);
