@@ -53,15 +53,15 @@ const MENUS: MenuNode[] = [
     icon: null,
     children: [
       {
-        name: 'Manajemen Admin',
+        name: 'Manajemen Menu',
         path: '#',
         icon: 'shield',
         children: [
           { name: 'Pengguna', path: '/admin/users', icon: 'users' },
           { name: 'Role', path: '/admin/roles', icon: 'shield' },
-          { name: 'Permissions', path: '/admin/permissions', icon: 'key' },
+          { name: 'Permission', path: '/admin/permissions', icon: 'key' },
           { name: 'Routes', path: '/admin/routes', icon: 'route' },
-          { name: 'Menus', path: '/admin/menus', icon: 'list' },
+          { name: 'Menu', path: '/admin/menus', icon: 'list' },
           { name: 'Akses Menu', path: '/admin/role-menus', icon: 'shield' },
         ],
       },
@@ -74,11 +74,32 @@ export async function seed(knex: Knex): Promise<void> {
     const managedIds: number[] = [];
 
     // Cari node: leaf by path, grup by name (path '#').
+    // Bila grup by name tidak ada, coba pakai grup '#' yatim (mis. hasil rename
+    // "Manajemen Admin" -> "Manajemen Menu") agar tidak membuat duplikat.
+    const knownGroupNames = new Set<string>();
+    const collectGroupNames = (nodes: MenuNode[]) => {
+      for (const n of nodes) {
+        if (n.path === '#' || (n.children && n.children.length > 0)) knownGroupNames.add(n.name);
+        if (n.children) collectGroupNames(n.children);
+      }
+    };
+    collectGroupNames(MENUS);
+
     async function upsertNode(node: MenuNode, parentId: number | null, sortOrder: number): Promise<number> {
       const isGroup = node.path === '#' || (node.children && node.children.length > 0);
-      let row = isGroup
-        ? await trx('menus').where({ name: node.name, path: '#' }).first()
-        : await trx('menus').where({ path: node.path }).first();
+      let row: Record<string, unknown> | undefined;
+      if (isGroup) {
+        row = await trx('menus').where({ name: node.name, path: '#' }).first();
+        if (!row) {
+          // Reuse grup '#' yatim (nama tidak dikenal) sebagai hasil rename.
+          row = await trx('menus')
+            .where({ path: '#' })
+            .whereNotIn('name', [...knownGroupNames])
+            .first();
+        }
+      } else {
+        row = await trx('menus').where({ path: node.path }).first();
+      }
 
       if (row) {
         await trx('menus').where({ id: row.id }).update({
@@ -101,7 +122,7 @@ export async function seed(knex: Knex): Promise<void> {
           .returning('*');
         row = inserted;
       }
-      const id = row.id as number;
+      const id = (row as { id: number }).id;
       managedIds.push(id);
 
       if (node.children) {
@@ -123,7 +144,7 @@ export async function seed(knex: Knex): Promise<void> {
 
     // Non-aktifkan grup lama yang tidak lagi dikelola (path '#'): mis. sisa
     // "Menu Admin", "Akses & Keamanan" versi lama, atau grup duplikat.
-    const managedNames = ['Dashboard', 'Manajemen Salon', 'Transaksi', 'Konten & Info', 'Akses & Keamanan', 'Manajemen Admin'];
+    const managedNames = ['Dashboard', 'Manajemen Salon', 'Transaksi', 'Konten & Info', 'Akses & Keamanan', 'Manajemen Menu'];
     await trx('menus')
       .where({ path: '#' })
       .whereNotIn('name', managedNames)
