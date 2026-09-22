@@ -1710,6 +1710,23 @@
     flex-direction: column;
   }
 
+  .admin-sidebar__section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .admin-sidebar__children--flat {
+    margin: 0 0 0.35rem 0;
+    padding-left: 0;
+    border-left: none;
+    gap: 0.1rem;
+  }
+
+  .admin-sidebar__children--flat .admin-sidebar__link--child {
+    padding-left: 1.1rem;
+  }
+
   .admin-sidebar__group-title {
     padding: 0.9rem 0.7rem 0.35rem;
     font-size: 0.68rem;
