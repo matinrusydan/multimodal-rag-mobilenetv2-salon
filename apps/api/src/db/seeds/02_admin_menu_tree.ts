@@ -29,15 +29,16 @@ const MENUS: MenuNode[] = [
   {
     name: 'Manajemen Salon',
     path: '#',
-    icon: 'scissors',
+    icon: null,
     children: [
       { name: 'Layanan & Harga', path: '/admin/services', icon: 'scissors' },
+      { name: 'Laporan', path: '/admin/reports', icon: 'chart' },
     ],
   },
   {
     name: 'Transaksi',
     path: '#',
-    icon: 'wallet',
+    icon: null,
     children: [
       { name: 'Reservasi', path: '/admin/reservations', icon: 'calendar' },
       { name: 'Pembayaran', path: '/payment', icon: 'wallet' },
@@ -46,7 +47,7 @@ const MENUS: MenuNode[] = [
   {
     name: 'Konten & Info',
     path: '#',
-    icon: 'settings',
+    icon: null,
     children: [
       { name: 'Info Salon', path: '/admin/settings', icon: 'settings' },
       { name: 'Dokumen RAG', path: '/admin/knowledge', icon: 'file' },
