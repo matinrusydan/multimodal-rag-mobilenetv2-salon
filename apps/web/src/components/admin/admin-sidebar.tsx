@@ -107,7 +107,7 @@ export function AdminSidebar() {
 
   // Render node secara rekursif (mendukung 3+ level).
   const renderNode = (menu: MenuItem, level: number): React.ReactNode => {
-    const kids = (childrenOf.get(menu.id) ?? []).filter((k) => k.path !== '#');
+    const kids = childrenOf.get(menu.id) ?? [];
     const hasKids = kids.length > 0;
     const hasIcon = Boolean(menu.icon);
     const indent = level > 0;

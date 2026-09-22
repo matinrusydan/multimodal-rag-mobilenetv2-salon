@@ -20,7 +20,12 @@ interface MenuNode {
 }
 
 const MENUS: MenuNode[] = [
-  { name: 'Dashboard', path: '/admin', icon: 'dashboard' },
+  {
+    name: 'Dashboard',
+    path: '#',
+    icon: null,
+    children: [{ name: 'Dashboard', path: '/admin', icon: 'dashboard' }],
+  },
   {
     name: 'Manajemen Salon',
     path: '#',
