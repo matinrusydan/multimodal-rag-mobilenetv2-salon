@@ -11,6 +11,12 @@
 
 ![Arsitektur Sistem](diagrams/system_architecture.png)
 
+![Flowchart RAG](diagrams/rag_flowchart.png)
+
+![Sequence Chat RAG](diagrams/sequence_chat_rag.png)
+
+![Sequence Analisis Foto CV](diagrams/sequence_analyze_cv.png)
+
 ---
 
 ## A. RINGKASAN EKSEKUTIF
