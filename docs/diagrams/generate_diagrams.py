@@ -28,10 +28,13 @@ OUT = Path(__file__).resolve().parent
 
 
 def _render(g: Digraph, name: str) -> None:
-    for fmt in ("png", "svg"):
-        g.format = fmt
-        g.render(filename=name, directory=str(OUT), cleanup=True)
-    print(f"  ok: {name}.png / {name}.svg")
+    # PNG resolusi tinggi (300 dpi) agar tidak buram.
+    g.attr(dpi="300")
+    g.format = "png"
+    g.render(filename=name, directory=str(OUT), cleanup=True)
+    g.format = "svg"
+    g.render(filename=name, directory=str(OUT), cleanup=True)
+    print(f"  ok: {name}.png (300dpi) / {name}.svg")
 
 
 def cv_pipeline_flowchart() -> None:
