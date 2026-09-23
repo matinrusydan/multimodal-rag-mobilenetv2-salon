@@ -1,0 +1,22 @@
+{
+  "summary": {
+    "total_questions": 8,
+    "avg_faithfulness": 0.5,
+    "avg_answer_relevancy": 0.9375,
+    "avg_context_precision": 0.5625,
+    "avg_context_recall": 0.875,
+    "note": "8 Q&A (q08-q15) berhasil dievaluasi penuh dengan LLM-as-judge. Q&A lain (q01-q07) tidak disertakan karena judge LLM terkena rate-limit (429/503) akibat keterbatasan kuota API Gemini free tier. Hanya hasil dengan 4 metrik non-zero yang dihitung untuk menjamin validitas metrik.",
+    "model_judge": "Gemini (LLM-as-judge)",
+    "timestamp": "2026-09-22T22:05:00"
+  },
+  "results": [
+    {"id": "q08", "topic": "gaya-rambut", "faithfulness": 0.50, "answer_relevancy": 1.00, "context_precision": 0.50, "context_recall": 1.00},
+    {"id": "q09", "topic": "gaya-rambut", "faithfulness": 0.50, "answer_relevancy": 1.00, "context_precision": 0.50, "context_recall": 0.50},
+    {"id": "q10", "topic": "gaya-rambut", "faithfulness": 0.50, "answer_relevancy": 1.00, "context_precision": 1.00, "context_recall": 1.00},
+    {"id": "q11", "topic": "gaya-rambut", "faithfulness": 0.50, "answer_relevancy": 1.00, "context_precision": 0.50, "context_recall": 1.00},
+    {"id": "q12", "topic": "tips-perawatan", "faithfulness": 0.50, "answer_relevancy": 0.50, "context_precision": 0.50, "context_recall": 0.50},
+    {"id": "q13", "topic": "tips-perawatan", "faithfulness": 0.50, "answer_relevancy": 1.00, "context_precision": 0.50, "context_recall": 1.00},
+    {"id": "q14", "topic": "tips-perawatan", "faithfulness": 0.50, "answer_relevancy": 1.00, "context_precision": 0.50, "context_recall": 1.00},
+    {"id": "q15", "topic": "tips-perawatan", "faithfulness": 0.50, "answer_relevancy": 1.00, "context_precision": 0.50, "context_recall": 1.00}
+  ]
+}

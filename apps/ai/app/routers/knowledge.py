@@ -84,3 +84,33 @@ async def reingest(x_internal_token: str | None = Header(default=None)) -> dict:
 
     summaries = plan_ingest(settings.rag_knowledge_dir, force=False)
     return {"data": {"files": len(summaries), "summaries": summaries}}
+
+
+class CrawlRequest(BaseModel):
+    targets: list[str] = Field(default_factory=list)
+    reingest: bool = True
+
+
+@router.post("/crawl")
+async def crawl(req: CrawlRequest, x_internal_token: str | None = Header(default=None)) -> dict:
+    """Jalankan crawl tips dari target URL (default dari setting DB)."""
+    _check_token(x_internal_token)
+    from app.crawler.crawl_tips import crawl_tips
+
+    targets = [t for t in req.targets if t.strip()]
+    summaries = await crawl_tips(targets=targets or None, use_stealth=True)
+
+    ingested = 0
+    if req.reingest:
+        from app.rag.ingest import plan_ingest
+
+        plan = plan_ingest(settings.rag_knowledge_dir, force=False)
+        ingested = sum(s.get("inserted", 0) for s in plan)
+
+    return {
+        "data": {
+            "crawled": len(summaries),
+            "ingested": ingested,
+            "files": [s.get("file") for s in summaries],
+        }
+    }

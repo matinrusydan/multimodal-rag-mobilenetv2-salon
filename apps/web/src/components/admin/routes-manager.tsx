@@ -4,6 +4,7 @@ import { Pencil, Plus, Trash2 } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { DataTable } from '@/components/ui/data-table';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { Modal } from '@/components/ui/modal';
 import { MultiSelect } from '@/components/ui/multiselect';
@@ -38,29 +39,36 @@ export function RoutesManager() {
   const [editingId, setEditingId] = useState<number | null>(null);
   const [form, setForm] = useState<FormState>(EMPTY);
   const [saving, setSaving] = useState(false);
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(25);
+  const [total, setTotal] = useState(0);
+  const [allRoutes, setAllRoutes] = useState<RouteItem[]>([]);
 
   const load = useCallback(async () => {
     try {
-      const [routeList, roleList] = await Promise.all([
-        adminApi.list<RouteItem>('routes'),
-        adminApi.list<RoleItem>('roles'),
+      const [pagedRoutes, roleList, routesAll] = await Promise.all([
+        adminApi.listPaged<RouteItem>('routes', page, pageSize),
+        adminApi.listAll<RoleItem>('roles'),
+        adminApi.listAll<RouteItem>('routes'),
       ]);
-      setRows(routeList);
+      setRows(pagedRoutes?.items ?? []);
+      setTotal(pagedRoutes?.total ?? 0);
       setRoles(roleList);
+      setAllRoutes(routesAll);
       setError('');
     } catch (e) {
       setError((e as Error).message);
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [page, pageSize]);
 
   useEffect(() => {
     void load();
   }, [load]);
 
   const roleOptions = roles.map((r) => ({ value: String(r.id), label: `${r.name} (${r.code})` }));
-  const parentOptions = rows.map((r) => ({ value: String(r.id), label: r.title || r.path }));
+  const parentOptions = allRoutes.map((r) => ({ value: String(r.id), label: r.title || r.path }));
 
   const openCreate = () => {
     setEditingId(null);
@@ -137,74 +145,67 @@ export function RoutesManager() {
         </div>
       </div>
       {error ? <p className="text-red-500 text-sm font-semibold">{error}</p> : null}
-      <div className="admin-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Nama</th>
-              <th>Path</th>
-              <th>Title</th>
-              <th>Status</th>
-              <th>Akses Role</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r) => (
-              <tr key={r.id}>
-                <td>{r.name}</td>
-                <td>
-                  <code>{r.path}</code>
-                </td>
-                <td>{r.title ?? '-'}</td>
-                <td>
-                  <Tag tone={r.status === 'active' ? 'green' : 'red'}>
-                    {r.status === 'active' ? 'Aktif' : 'Nonaktif'}
-                  </Tag>
-                </td>
-                <td>
-                  {(r.roleIds ?? []).length
-                    ? (r.roleIds ?? [])
-                        .map((id) => roles.find((ro) => ro.id === id)?.code ?? `#${id}`)
-                        .map((c) => (
-                          <Tag key={c} tone="cyan">
-                            {c}
-                          </Tag>
-                        ))
-                    : '-'}
-                </td>
-                <td>
-                  <div className="admin-table__actions">
-                    <button
-                      type="button"
-                      className="admin-icon-btn"
-                      onClick={() => openEdit(r)}
-                      aria-label="Edit"
-                    >
-                      <Pencil size={14} />
-                    </button>
-                    <button
-                      type="button"
-                      className="admin-icon-btn admin-icon-btn--danger"
-                      onClick={() => void handleDelete(r)}
-                      aria-label="Hapus"
-                    >
-                      <Trash2 size={14} />
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-            {rows.length === 0 ? (
-              <tr>
-                <td colSpan={6} className="admin-table__empty">
-                  Belum ada route.
-                </td>
-              </tr>
-            ) : null}
-          </tbody>
-        </table>
-      </div>
+      <DataTable<RouteItem>
+        rows={rows}
+        rowKey={(r) => r.id}
+        loading={loading}
+        emptyText="Belum ada route."
+        pagination={{
+          page,
+          pageSize,
+          total,
+          onPageChange: setPage,
+          onPageSizeChange: (s) => {
+            setPageSize(s);
+            setPage(1);
+          },
+        }}
+        columns={[
+          { key: 'name', label: 'Nama' },
+          { key: 'path', label: 'Path', render: (r) => <code>{r.path}</code> },
+          { key: 'title', label: 'Title', render: (r) => r.title ?? '-' },
+          {
+            key: 'status',
+            label: 'Status',
+            render: (r) => (
+              <Tag tone={r.status === 'active' ? 'green' : 'red'}>
+                {r.status === 'active' ? 'Aktif' : 'Nonaktif'}
+              </Tag>
+            ),
+          },
+          {
+            key: 'roles',
+            label: 'Akses Role',
+            render: (r) =>
+              (r.roleIds ?? []).length ? (
+                <span>
+                  {(r.roleIds ?? []).map((id) => (
+                    <Tag key={id} tone="cyan">
+                      {roles.find((ro) => ro.id === id)?.code ?? `#${id}`}
+                    </Tag>
+                  ))}
+                </span>
+              ) : (
+                '-'
+              ),
+          },
+        ]}
+        renderRowActions={(r) => (
+          <div className="admin-table__actions">
+            <button type="button" className="admin-icon-btn" onClick={() => openEdit(r)} aria-label="Edit">
+              <Pencil size={14} />
+            </button>
+            <button
+              type="button"
+              className="admin-icon-btn admin-icon-btn--danger"
+              onClick={() => void handleDelete(r)}
+              aria-label="Hapus"
+            >
+              <Trash2 size={14} />
+            </button>
+          </div>
+        )}
+      />
 
       <Modal
         open={open}

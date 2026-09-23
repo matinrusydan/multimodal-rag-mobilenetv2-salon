@@ -11,6 +11,7 @@
     "test": "vitest run",
     "lint": "biome check src tests",
     "migrate": "tsx src/db/migrate.ts latest",
+    "db:repair": "tsx src/db/repair.ts",
     "seed": "tsx src/db/seed.ts",
     "rag:ingest": "tsx src/rag/ingest.ts"
   },

@@ -19,8 +19,8 @@ export function RoleMenusMatrix() {
     setLoading(true);
     try {
       const [menuList, roleList] = await Promise.all([
-        adminApi.list<MenuItem>('menus'),
-        adminApi.list<RoleItem>('roles'),
+        adminApi.listAll<MenuItem>('menus'),
+        adminApi.listAll<RoleItem>('roles'),
       ]);
       setMenus(menuList);
       setRoles(roleList);

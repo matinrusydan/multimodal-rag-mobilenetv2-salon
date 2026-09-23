@@ -31,6 +31,11 @@ export class SettingsService {
     return typeof v === 'string' && v.length > 0 ? v : null;
   }
 
+  /** Nilai mentah setting apapun (internal / apps/ai). */
+  async rawGet(key: string): Promise<unknown> {
+    return settingsRepository.get(key);
+  }
+
   async update(entries: Array<{ key: string; value: unknown }>): Promise<void> {
     for (const e of entries) {
       // Jangan timpa key bila nilainya masih masked (tidak diubah).

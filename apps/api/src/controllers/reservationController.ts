@@ -1,5 +1,6 @@
 import type { Request, Response } from 'express';
 import { reservationService } from '../services/ReservationService';
+import { pagedOrArray } from '../utils/pagination';
 import { ok } from '../utils/response';
 
 export async function create(req: Request, res: Response): Promise<void> {
@@ -8,7 +9,8 @@ export async function create(req: Request, res: Response): Promise<void> {
 }
 
 export async function list(req: Request, res: Response): Promise<void> {
-  ok(res, await reservationService.list(req.auth));
+  const all = await reservationService.list(req.auth);
+  ok(res, pagedOrArray(req, all));
 }
 
 export async function detail(req: Request, res: Response): Promise<void> {
@@ -30,3 +32,4 @@ export async function updateStatus(req: Request, res: Response): Promise<void> {
   const { code } = req.params;
   ok(res, await reservationService.updateStatus(String(code), String(req.body.status)));
 }
+

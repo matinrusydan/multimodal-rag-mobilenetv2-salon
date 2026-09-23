@@ -2350,6 +2350,48 @@
     color: #64748b;
   }
 
+  .admin-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0.6rem 0.2rem 0;
+  }
+
+  .admin-pagination__size {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--salon-muted);
+  }
+
+  .admin-pagination__info {
+    font-size: 0.82rem;
+    color: var(--salon-muted);
+  }
+
+  .admin-pagination__nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .admin-pagination__page {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--salon-ink);
+    min-width: 3.5rem;
+    text-align: center;
+  }
+
+  .admin-icon-btn.is-disabled,
+  .admin-icon-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
   .admin-matrix {
     overflow-x: auto;
     border: 1px solid rgba(226, 232, 240, 0.9);

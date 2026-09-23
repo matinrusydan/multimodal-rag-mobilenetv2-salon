@@ -1,9 +1,11 @@
 import type { Request, Response } from 'express';
 import { userService } from '../services/UserService';
+import { pagedOrArray } from '../utils/pagination';
 import { ok } from '../utils/response';
 
-export async function list(_req: Request, res: Response): Promise<void> {
-  ok(res, await userService.list());
+export async function list(req: Request, res: Response): Promise<void> {
+  const all = await userService.list();
+  ok(res, pagedOrArray(req, all));
 }
 
 export async function detail(req: Request, res: Response): Promise<void> {

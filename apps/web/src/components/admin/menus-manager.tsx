@@ -51,9 +51,9 @@ export function MenusManager() {
   const load = useCallback(async () => {
     try {
       const [menuList, routeList, roleList] = await Promise.all([
-        adminApi.list<MenuItem>('menus'),
-        adminApi.list<RouteItem>('routes'),
-        adminApi.list<RoleItem>('roles'),
+        adminApi.listAll<MenuItem>('menus'),
+        adminApi.listAll<RouteItem>('routes'),
+        adminApi.listAll<RoleItem>('roles'),
       ]);
       setRows(menuList);
       setRoutes(routeList);

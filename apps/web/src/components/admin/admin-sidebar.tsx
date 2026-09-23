@@ -30,6 +30,9 @@ const FALLBACK: MenuItem[] = [
 
 const STORAGE_KEY = 'adminSidebarCollapsed';
 
+// Cache modul agar menu tidak di-fetch ulang saat navigasi antar halaman admin.
+let menusCache: MenuItem[] | null = null;
+
 function isActive(pathname: string, path: string): boolean {
   if (path === '/admin') return pathname === '/admin';
   if (!path || path === '#') return false;
@@ -52,6 +55,11 @@ export function AdminSidebar() {
   }, []);
 
   useEffect(() => {
+    // Pakai cache bila sudah ada -> tidak fetch ulang saat navigasi.
+    if (menusCache) {
+      setMenus(menusCache);
+      return;
+    }
     let cancelled = false;
     fetch('/api/admin/menus/me', { cache: 'no-store' })
       .then((res) => res.json())
@@ -59,7 +67,9 @@ export function AdminSidebar() {
         if (cancelled) return;
         const all = body.data ?? [];
         const adminMenus = all.filter((m) => m.path.startsWith('/admin') || m.path === '#');
-        setMenus(adminMenus.length > 0 ? adminMenus : FALLBACK);
+        const finalMenus = adminMenus.length > 0 ? adminMenus : FALLBACK;
+        menusCache = finalMenus;
+        setMenus(finalMenus);
       })
       .catch(() => setMenus(FALLBACK));
     return () => {

@@ -4,6 +4,7 @@ import { Pencil, Plus, Trash2 } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { DataTable } from '@/components/ui/data-table';
 import { InputNumber } from '@/components/ui/input-number';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { Modal } from '@/components/ui/modal';
@@ -50,17 +51,22 @@ export function ServicesManager() {
   const [editingId, setEditingId] = useState<number | null>(null);
   const [form, setForm] = useState<FormState>(EMPTY);
   const [saving, setSaving] = useState(false);
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(25);
+  const [total, setTotal] = useState(0);
 
   const load = useCallback(async () => {
     try {
-      setRows(await adminApi.list<ServiceItem>('services/admin/all'));
+      const p = await adminApi.listPaged<ServiceItem>('services/admin/all', page, pageSize);
+      setRows(p.items);
+      setTotal(p.total);
       setError('');
     } catch (e) {
       setError((e as Error).message);
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [page, pageSize]);
 
   useEffect(() => {
     void load();
@@ -142,66 +148,51 @@ export function ServicesManager() {
         </div>
       </div>
       {error ? <p className="text-red-500 text-sm font-semibold">{error}</p> : null}
-      <div className="admin-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Nama</th>
-              <th>Slug</th>
-              <th>Kategori</th>
-              <th>Harga</th>
-              <th>Durasi</th>
-              <th>Status</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((s) => (
-              <tr key={s.id}>
-                <td>{s.name}</td>
-                <td>
-                  <code>{s.slug}</code>
-                </td>
-                <td>{s.category ?? '-'}</td>
-                <td>{formatRupiah(s.price)}</td>
-                <td>{s.durationMin} mnt</td>
-                <td>
-                  <Tag tone={s.isActive ? 'green' : 'red'}>
-                    {s.isActive ? 'Aktif' : 'Nonaktif'}
-                  </Tag>
-                </td>
-                <td>
-                  <div className="admin-table__actions">
-                    <button
-                      type="button"
-                      className="admin-icon-btn"
-                      onClick={() => openEdit(s)}
-                      aria-label="Edit"
-                    >
-                      <Pencil size={14} />
-                    </button>
-                    <button
-                      type="button"
-                      className="admin-icon-btn admin-icon-btn--danger"
-                      onClick={() => void handleDelete(s)}
-                      aria-label="Hapus"
-                    >
-                      <Trash2 size={14} />
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-            {rows.length === 0 ? (
-              <tr>
-                <td colSpan={7} className="admin-table__empty">
-                  Belum ada layanan.
-                </td>
-              </tr>
-            ) : null}
-          </tbody>
-        </table>
-      </div>
+      <DataTable<ServiceItem>
+        rows={rows}
+        rowKey={(s) => s.id}
+        loading={loading}
+        emptyText="Belum ada layanan."
+        pagination={{
+          page,
+          pageSize,
+          total,
+          onPageChange: setPage,
+          onPageSizeChange: (sz) => {
+            setPageSize(sz);
+            setPage(1);
+          },
+        }}
+        columns={[
+          { key: 'name', label: 'Nama' },
+          { key: 'slug', label: 'Slug', render: (s) => <code>{s.slug}</code> },
+          { key: 'category', label: 'Kategori', render: (s) => s.category ?? '-' },
+          { key: 'price', label: 'Harga', render: (s) => formatRupiah(s.price) },
+          { key: 'durationMin', label: 'Durasi', render: (s) => `${s.durationMin} mnt` },
+          {
+            key: 'isActive',
+            label: 'Status',
+            render: (s) => (
+              <Tag tone={s.isActive ? 'green' : 'red'}>{s.isActive ? 'Aktif' : 'Nonaktif'}</Tag>
+            ),
+          },
+        ]}
+        renderRowActions={(s) => (
+          <div className="admin-table__actions">
+            <button type="button" className="admin-icon-btn" onClick={() => openEdit(s)} aria-label="Edit">
+              <Pencil size={14} />
+            </button>
+            <button
+              type="button"
+              className="admin-icon-btn admin-icon-btn--danger"
+              onClick={() => void handleDelete(s)}
+              aria-label="Hapus"
+            >
+              <Trash2 size={14} />
+            </button>
+          </div>
+        )}
+      />
 
       <Modal
         open={open}

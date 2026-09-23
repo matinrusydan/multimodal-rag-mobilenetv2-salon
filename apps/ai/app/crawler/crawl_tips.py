@@ -69,16 +69,23 @@ def _slugify(url: str) -> str:
     return slug[:80] or "index"
 
 
-async def crawl_tips(base_url: str | None = None, use_stealth: bool | None = None) -> list[dict]:
+async def crawl_tips(
+    base_url: str | None = None,
+    use_stealth: bool | None = None,
+    targets: list[str] | None = None,
+) -> list[dict]:
     from crawl4ai import AsyncWebCrawler, BrowserConfig
 
-    # Bila base_url eksplisit -> satu sumber; jika tidak -> pakai daftar multi-sumber.
-    if base_url:
+    # Prioritas sumber: targets eksplisit > base_url > setting runtime (DB) > env.
+    if targets:
+        sources = [t.rstrip("/") for t in targets if t.strip()]
+    elif base_url:
         sources = [base_url.rstrip("/")]
-    elif settings.crawl_tips_urls:
-        sources = [u.rstrip("/") for u in settings.crawl_tips_urls]
     else:
-        sources = [settings.crawl_tips_url.rstrip("/")]
+        from app.settings_loader import crawl_targets
+
+        dynamic = crawl_targets()
+        sources = [u.rstrip("/") for u in (dynamic or [settings.crawl_tips_url]) if u.strip()]
 
     delay = settings.crawl_delay_ms / 1000.0
     stealth = use_stealth if use_stealth is not None else False

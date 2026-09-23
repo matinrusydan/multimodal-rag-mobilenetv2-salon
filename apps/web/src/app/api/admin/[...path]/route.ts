@@ -15,7 +15,8 @@ async function forward(request: NextRequest, path: string[], method: string) {
     return routeError(problem(401, 'Tidak terautentikasi', 'Silakan masuk terlebih dahulu.'));
   }
 
-  const target = `${BACKEND_URL}/api/${path.join('/')}`;
+  const search = request.nextUrl.search ?? '';
+  const target = `${BACKEND_URL}/api/${path.join('/')}${search}`;
   const headers: HeadersInit = {
     accept: 'application/json',
     authorization: `Bearer ${session.token}`,

@@ -92,8 +92,19 @@ async function adminRequest<T>(path: string, init?: RequestInit): Promise<T> {
   return body?.data as T;
 }
 
+export interface Paged<T> {
+  items: T[];
+  total: number;
+  page: number;
+  limit: number;
+}
+
 export const adminApi = {
   list: <T>(resource: string) => adminRequest<T[]>(resource),
+  /** List semua (untuk dropdown) — bypass pagination via ?all=1. */
+  listAll: <T>(resource: string) => adminRequest<Paged<T>>(`${resource}?all=1`).then((p) => p.items),
+  listPaged: <T>(resource: string, page: number, limit: number) =>
+    adminRequest<Paged<T>>(`${resource}?page=${page}&limit=${limit}`),
   create: <T>(resource: string, data: unknown) =>
     adminRequest<T>(resource, { method: 'POST', body: JSON.stringify(data) }),
   update: <T>(resource: string, id: number, data: unknown) =>

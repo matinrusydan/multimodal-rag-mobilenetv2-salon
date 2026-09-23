@@ -1,9 +1,11 @@
 import type { Request, Response } from 'express';
 import { roleService } from '../services/RoleService';
+import { pagedOrArray } from '../utils/pagination';
 import { ok } from '../utils/response';
 
-export async function list(_req: Request, res: Response): Promise<void> {
-  ok(res, await roleService.list());
+export async function list(req: Request, res: Response): Promise<void> {
+  const all = await roleService.list();
+  ok(res, pagedOrArray(req, all));
 }
 
 export async function detail(req: Request, res: Response): Promise<void> {
@@ -34,3 +36,4 @@ export async function access(req: Request, res: Response): Promise<void> {
 export async function assignMenus(req: Request, res: Response): Promise<void> {
   ok(res, await roleService.assignMenus(Number(req.params.id), req.body.menuIds));
 }
+

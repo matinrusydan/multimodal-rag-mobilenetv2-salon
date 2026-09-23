@@ -4,6 +4,7 @@ import { Pencil, Plus, Trash2 } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { DataTable } from '@/components/ui/data-table';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { Modal } from '@/components/ui/modal';
 import { MultiSelect } from '@/components/ui/multiselect';
@@ -44,14 +45,18 @@ export function UsersManager() {
   const [editingId, setEditingId] = useState<number | null>(null);
   const [form, setForm] = useState<FormState>(EMPTY);
   const [saving, setSaving] = useState(false);
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(25);
+  const [total, setTotal] = useState(0);
 
   const load = useCallback(async () => {
     try {
-      const [users, roleList] = await Promise.all([
-        adminApi.list<UserItem>('users'),
+      const [pagedUsers, roleList] = await Promise.all([
+        adminApi.listPaged<UserItem>('users', page, pageSize),
         adminApi.list<RoleItem>('roles'),
       ]);
-      setRows(users);
+      setRows(pagedUsers.items);
+      setTotal(pagedUsers.total);
       setRoles(roleList);
       setError('');
     } catch (e) {
@@ -59,7 +64,7 @@ export function UsersManager() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [page, pageSize]);
 
   useEffect(() => {
     void load();
@@ -146,70 +151,73 @@ export function UsersManager() {
         </div>
       </div>
       {error ? <p className="text-red-500 text-sm font-semibold">{error}</p> : null}
-      <div className="admin-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Nama</th>
-              <th>Username</th>
-              <th>Email</th>
-              <th>Roles</th>
-              <th>Status</th>
-              <th>Berlaku</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((u) => (
-              <tr key={u.id}>
-                <td>{u.name}</td>
-                <td>{u.username ?? '-'}</td>
-                <td>{u.email}</td>
-                <td>
-                  {u.roles?.length ? u.roles.map((r) => <Tag key={r} tone="cyan">{r}</Tag>) : '-'}
-                </td>
-                <td>
-                  <Tag tone={u.status === 'active' ? 'green' : 'red'}>
-                    {u.status === 'active' ? 'Aktif' : 'Nonaktif'}
-                  </Tag>
-                </td>
-                <td>
-                  {u.validFrom || u.validTo
-                    ? `${u.validFrom ?? '…'} → ${u.validTo ?? '…'}`
-                    : '-'}
-                </td>
-                <td>
-                  <div className="admin-table__actions">
-                    <button
-                      type="button"
-                      className="admin-icon-btn"
-                      onClick={() => openEdit(u)}
-                      aria-label="Edit"
-                    >
-                      <Pencil size={14} />
-                    </button>
-                    <button
-                      type="button"
-                      className="admin-icon-btn admin-icon-btn--danger"
-                      onClick={() => void handleDelete(u.id)}
-                      aria-label="Hapus"
-                    >
-                      <Trash2 size={14} />
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-            {rows.length === 0 ? (
-              <tr>
-                <td colSpan={7} className="admin-table__empty">
-                  Belum ada pengguna.
-                </td>
-              </tr>
-            ) : null}
-          </tbody>
-        </table>
-      </div>
+      <DataTable<UserItem>
+        rows={rows}
+        rowKey={(u) => u.id}
+        loading={loading}
+        emptyText="Belum ada pengguna."
+        pagination={{
+          page,
+          pageSize,
+          total,
+          onPageChange: setPage,
+          onPageSizeChange: (s) => {
+            setPageSize(s);
+            setPage(1);
+          },
+        }}
+        columns={[
+          { key: 'name', label: 'Nama' },
+          { key: 'username', label: 'Username', render: (u) => u.username ?? '-' },
+          { key: 'email', label: 'Email' },
+          {
+            key: 'roles',
+            label: 'Roles',
+            render: (u) =>
+              u.roles?.length ? (
+                <span>
+                  {u.roles.map((r) => (
+                    <Tag key={r} tone="cyan">
+                      {r}
+                    </Tag>
+                  ))}
+                </span>
+              ) : (
+                '-'
+              ),
+          },
+          {
+            key: 'status',
+            label: 'Status',
+            render: (u) => (
+              <Tag tone={u.status === 'active' ? 'green' : 'red'}>
+                {u.status === 'active' ? 'Aktif' : 'Nonaktif'}
+              </Tag>
+            ),
+          },
+          {
+            key: 'valid',
+            label: 'Berlaku',
+            render: (u) =>
+              u.validFrom || u.validTo ? `${u.validFrom ?? '…'} → ${u.validTo ?? '…'}` : '-',
+          },
+        ]}
+        renderRowActions={(u) => (
+          <div className="admin-table__actions">
+            <button type="button" className="admin-icon-btn" onClick={() => openEdit(u)} aria-label="Edit">
+              <Pencil size={14} />
+            </button>
+            <button
+              type="button"
+              className="admin-icon-btn admin-icon-btn--danger"
+              onClick={() => void handleDelete(u.id)}
+              aria-label="Hapus"
+            >
+              <Trash2 size={14} />
+            </button>
+          </div>
+        )}
+      />
 
       <Modal
         open={open}

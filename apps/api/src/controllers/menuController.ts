@@ -1,9 +1,11 @@
 import type { Request, Response } from 'express';
 import { menuService } from '../services/MenuService';
+import { pagedOrArray } from '../utils/pagination';
 import { ok } from '../utils/response';
 
-export async function list(_req: Request, res: Response): Promise<void> {
-  ok(res, await menuService.list());
+export async function list(req: Request, res: Response): Promise<void> {
+  const all = await menuService.list();
+  ok(res, pagedOrArray(req, all));
 }
 
 /** Menu milik user yang login (sidebar dinamis). */
@@ -33,3 +35,4 @@ export async function remove(req: Request, res: Response): Promise<void> {
 export async function assignRoles(req: Request, res: Response): Promise<void> {
   ok(res, await menuService.assignRoles(Number(req.params.id), req.body.roleIds));
 }
+

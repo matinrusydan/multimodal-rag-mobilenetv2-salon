@@ -4,6 +4,7 @@ import { Pencil, Plus, ShieldCheck, Trash2 } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { DataTable } from '@/components/ui/data-table';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { Modal } from '@/components/ui/modal';
 import { Select } from '@/components/ui/select';
@@ -52,14 +53,18 @@ export function RolesManager() {
   const [permRole, setPermRole] = useState<RoleItem | null>(null);
   const [selectedPerms, setSelectedPerms] = useState<number[]>([]);
   const [savingPerms, setSavingPerms] = useState(false);
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(25);
+  const [total, setTotal] = useState(0);
 
   const load = useCallback(async () => {
     try {
-      const [roleList, permList] = await Promise.all([
-        adminApi.list<RoleItem>('roles'),
-        adminApi.list<PermissionItem>('permissions'),
+      const [pagedRoles, permList] = await Promise.all([
+        adminApi.listPaged<RoleItem>('roles', page, pageSize),
+        adminApi.listAll<PermissionItem>('permissions'),
       ]);
-      setRows(roleList);
+      setRows(pagedRoles?.items ?? []);
+      setTotal(pagedRoles?.total ?? 0);
       setPermissions(permList);
       setError('');
     } catch (e) {
@@ -67,7 +72,7 @@ export function RolesManager() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [page, pageSize]);
 
   useEffect(() => {
     void load();
@@ -179,73 +184,61 @@ export function RolesManager() {
         </div>
       </div>
       {error ? <p className="text-red-500 text-sm font-semibold">{error}</p> : null}
-      <div className="admin-table">
-        <table>
-          <thead>
-            <tr>
-              <th>Nama</th>
-              <th>Kode</th>
-              <th>Deskripsi</th>
-              <th>Status</th>
-              <th>Permissions</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r) => (
-              <tr key={r.id}>
-                <td>{r.name}</td>
-                <td>
-                  <Tag tone="blue">{r.code}</Tag>
-                </td>
-                <td>{r.description ?? '-'}</td>
-                <td>
-                  <Tag tone={r.status === 'active' ? 'green' : 'red'}>
-                    {r.status === 'active' ? 'Aktif' : 'Nonaktif'}
-                  </Tag>
-                </td>
-                <td>{r.permissions.length}</td>
-                <td>
-                  <div className="admin-table__actions">
-                    <button
-                      type="button"
-                      className="admin-icon-btn"
-                      title="Atur Permission"
-                      onClick={() => openPermissions(r)}
-                      aria-label="Atur permission"
-                    >
-                      <ShieldCheck size={14} />
-                    </button>
-                    <button
-                      type="button"
-                      className="admin-icon-btn"
-                      onClick={() => openEdit(r)}
-                      aria-label="Edit"
-                    >
-                      <Pencil size={14} />
-                    </button>
-                    <button
-                      type="button"
-                      className="admin-icon-btn admin-icon-btn--danger"
-                      onClick={() => void handleDelete(r)}
-                      aria-label="Hapus"
-                    >
-                      <Trash2 size={14} />
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-            {rows.length === 0 ? (
-              <tr>
-                <td colSpan={6} className="admin-table__empty">
-                  Belum ada role.
-                </td>
-              </tr>
-            ) : null}
-          </tbody>
-        </table>
-      </div>
+      <DataTable<RoleItem>
+        rows={rows}
+        rowKey={(r) => r.id}
+        loading={loading}
+        emptyText="Belum ada role."
+        pagination={{
+          page,
+          pageSize,
+          total,
+          onPageChange: setPage,
+          onPageSizeChange: (s) => {
+            setPageSize(s);
+            setPage(1);
+          },
+        }}
+        columns={[
+          { key: 'name', label: 'Nama' },
+          { key: 'code', label: 'Kode', render: (r) => <Tag tone="blue">{r.code}</Tag> },
+          { key: 'description', label: 'Deskripsi', render: (r) => r.description ?? '-' },
+          {
+            key: 'status',
+            label: 'Status',
+            render: (r) => (
+              <Tag tone={r.status === 'active' ? 'green' : 'red'}>
+                {r.status === 'active' ? 'Aktif' : 'Nonaktif'}
+              </Tag>
+            ),
+          },
+          { key: 'permissions', label: 'Permissions', render: (r) => r.permissions.length },
+        ]}
+        renderRowActions={(r) => (
+          <div className="admin-table__actions">
+            <button
+              type="button"
+              className="admin-icon-btn"
+              title="Atur Permission"
+              onClick={() => openPermissions(r)}
+              aria-label="Atur permission"
+            >
+              <ShieldCheck size={14} />
+            </button>
+            <button type="button" className="admin-icon-btn" onClick={() => openEdit(r)} aria-label="Edit">
+              <Pencil size={14} />
+            </button>
+            <button
+              type="button"
+              className="admin-icon-btn admin-icon-btn--danger"
+              onClick={() => void handleDelete(r)}
+              aria-label="Hapus"
+            >
+              <Trash2 size={14} />
+            </button>
+          </div>
+        )}
+      />
 
       <Modal
         open={open}

@@ -54,3 +54,13 @@ export async function remove(req: Request, res: Response): Promise<void> {
 export async function reingest(_req: Request, res: Response): Promise<void> {
   ok(res, await proxy('/rag/reingest', 'POST'));
 }
+
+export async function crawl(req: Request, res: Response): Promise<void> {
+  ok(
+    res,
+    await proxy('/crawl', 'POST', {
+      targets: Array.isArray(req.body?.targets) ? req.body.targets : [],
+      reingest: req.body?.reingest !== false,
+    }),
+  );
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "q01",
+    "topic": "harga",
+    "question": "Berapa harga Signature Hair Spa di TIEN SALON?",
+    "ground_truth": "Signature Hair Spa berharga Rp 325.000 (promo Rp 285.000) dengan durasi 90 menit.",
+    "expected_context_keywords": ["325.000", "285.000", "90 menit", "Signature Hair Spa"]
+  },
+  {
+    "id": "q02",
+    "topic": "harga",
+    "question": "Apa saja layanan yang harganya di atas Rp 500.000?",
+    "ground_truth": "Keratin Smooth Treatment (Rp 780.000, promo Rp 690.000) dan Color Gloss Refresh (Rp 620.000) berharga di atas Rp 500.000.",
+    "expected_context_keywords": ["780.000", "690.000", "620.000", "Keratin", "Color Gloss"]
+  },
+  {
+    "id": "q03",
+    "topic": "harga",
+    "question": "Berapa biaya Precision Haircut?",
+    "ground_truth": "Precision Haircut berharga Rp 220.000 dengan durasi 60 menit.",
+    "expected_context_keywords": ["220.000", "60 menit", "Precision Haircut"]
+  },
+  {
+    "id": "q04",
+    "topic": "layanan",
+    "question": "Layanan apa saja yang tersedia di TIEN SALON?",
+    "ground_truth": "TIEN SALON menyediakan layanan haircut, hair treatment, hair smoothing, hair coloring, scalp care, dan hair styling.",
+    "expected_context_keywords": ["haircut", "hair treatment", "smoothing", "coloring", "scalp", "styling"]
+  },
+  {
+    "id": "q05",
+    "topic": "layanan",
+    "question": "Apa manfaat Scalp Detox Therapy?",
+    "ground_truth": "Scalp Detox Therapy membersihkan buildup, membuat kulit kepala terasa segar, memberikan massage relaksasi, dan cocok dilakukan sebelum hair treatment. Durasi 75 menit.",
+    "expected_context_keywords": ["buildup", "segar", "massage", "75 menit", "Scalp Detox"]
+  },
+  {
+    "id": "q06",
+    "topic": "layanan",
+    "question": "Berapa lama durasi Keratin Smooth Treatment?",
+    "ground_truth": "Keratin Smooth Treatment berdurasi 150 menit dan berfungsi mengurangi frizz serta membuat rambut lebih halus.",
+    "expected_context_keywords": ["150 menit", "Keratin Smooth", "frizz", "halus"]
+  },
+  {
+    "id": "q07",
+    "topic": "layanan",
+    "question": "Apa itu Color Gloss Refresh?",
+    "ground_truth": "Color Gloss Refresh adalah layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup. Durasi 130 menit, tersedia konsultasi shade sebelum treatment.",
+    "expected_context_keywords": ["Color Gloss", "tone", "kilau", "130 menit", "konsultasi shade"]
+  },
+  {
+    "id": "q08",
+    "topic": "gaya-rambut",
+    "question": "Apa saja kategori panjang rambut menurut TIEN SALON?",
+    "ground_truth": "TIEN SALON mengklasifikasikan panjang rambut menjadi empat kategori: pendek, pendek-menengah, menengah, dan panjang.",
+    "expected_context_keywords": ["pendek", "pendek-menengah", "menengah", "panjang", "empat kategori"]
+  },
+  {
+    "id": "q09",
+    "topic": "gaya-rambut",
+    "question": "Apa rekomendasi gaya untuk rambut bergelombang?",
+    "ground_truth": "Untuk rambut bergelombang, direkomendasikan layer wajah, potongan berbentuk O/S, dan styling yang mempertegas gelombang.",
+    "expected_context_keywords": ["bergelombang", "layer wajah", "O/S", "gelombang"]
+  },
+  {
+    "id": "q10",
+    "topic": "gaya-rambut",
+    "question": "Bagaimana karakteristik rambut keriting?",
+    "ground_truth": "Rambut keriting memiliki spiral atau ikal yang jelas, cenderung kering dan kusut, sehingga perawatan harus fokus pada kelembapan dan definisi ikal, serta hindari menyisir dalam keadaan kering.",
+    "expected_context_keywords": ["spiral", "ikal", "kering", "kusut", "kelembapan", "definisi ikal"]
+  },
+  {
+    "id": "q11",
+    "topic": "gaya-rambut",
+    "question": "Apa ciri rambut lurus dan perawatannya?",
+    "ground_truth": "Rambut lurus tidak memiliki gelombang mencolok, cenderung mudah berminyak di kulit kepala, dan perlu volume styling. Cocok untuk potongan presisi dan smoothing.",
+    "expected_context_keywords": ["lurus", "berminyak", "volume styling", "presisi", "smoothing"]
+  },
+  {
+    "id": "q12",
+    "topic": "tips-perawatan",
+    "question": "Bagaimana cara merawat rambut keriting di rumah?",
+    "ground_truth": "Untuk rambut keriting, utamakan kelembapan, gunakan conditioner tanpa bilas, dan jangan menyisir rambut dalam keadaan kering.",
+    "expected_context_keywords": ["kelembapan", "conditioner tanpa bilas", "jangan menyisir", "kering"]
+  },
+  {
+    "id": "q13",
+    "topic": "tips-perawatan",
+    "question": "Apa perawatan setelah smoothing atau keratin treatment?",
+    "ground_truth": "Untuk smoothing atau keratin, hindari air dan ikat rambut pada 48 jam pertama.",
+    "expected_context_keywords": ["smoothing", "keratin", "48 jam", "hindari air", "ikat"]
+  },
+  {
+    "id": "q14",
+    "topic": "tips-perawatan",
+    "question": "Kapan rambut perlu perhatian profesional?",
+    "ground_truth": "Rambut perlu perhatian profesional jika terasa sangat kering, kusut berlebihan, banyak bercabang, kulit kepala gatal/berketombe/perih, atau rambut rontok tidak wajar.",
+    "expected_context_keywords": ["kering", "kusut", "bercabang", "gatal", "berketombe", "rontok"]
+  },
+  {
+    "id": "q15",
+    "topic": "tips-perawatan",
+    "question": "Apa tips perawatan dasar rambut?",
+    "ground_truth": "Cuci rambut sesuai kebutuhan, gunakan sampo yang sesuai, kondisioner dari tengah ke ujung, keringkan dengan handuk lembut, dan batasi alat panas.",
+    "expected_context_keywords": ["cuci", "sampo", "kondisioner", "handuk", "alat panas"]
+  },
+  {
+    "id": "q16",
+    "topic": "booking-info",
+    "question": "Bagaimana cara melakukan reservasi di TIEN SALON?",
+    "ground_truth": "Reservasi dilakukan dengan mengunjungi halaman Layanan di website, memilih layanan, klik tombol reservasi, mengisi formulir (nama, tanggal, jam, layanan), melakukan pembayaran, dan menerima invoice.",
+    "expected_context_keywords": ["halaman Layanan", "reservasi", "formulir", "pembayaran", "invoice"]
+  },
+  {
+    "id": "q17",
+    "topic": "booking-info",
+    "question": "Apa yang harus dilakukan setelah reservasi dikonfirmasi?",
+    "ground_truth": "Setelah reservasi dikonfirmasi, Anda menerima invoice, disarankan datang tepat waktu, dan untuk perubahan/pembatalan hubungi pihak salon.",
+    "expected_context_keywords": ["invoice", "tepat waktu", "pembatalan", "hubungi"]
+  },
+  {
+    "id": "q18",
+    "topic": "booking-info",
+    "question": "Apa persiapan sebelum datang ke salon?",
+    "ground_truth": "Pastikan rambut dalam kondisi wajar, sampaikan kondisi rambut dan ekspektasi gaya kepada stylist, dan beri tahu riwayat perawatan rambut jika akan melakukan pewarnaan atau treatment kimia.",
+    "expected_context_keywords": ["kondisi wajar", "ekspektasi", "riwayat", "pewarnaan", "treatment kimia"]
+  },
+  {
+    "id": "q19",
+    "topic": "harga",
+    "question": "Berapa harga Volume Blowout Styling?",
+    "ground_truth": "Volume Blowout Styling berharga Rp 280.000 dengan durasi 55 menit, memberikan volume natural dan finishing lembut.",
+    "expected_context_keywords": ["280.000", "55 menit", "Volume Blowout", "volume natural"]
+  },
+  {
+    "id": "q20",
+    "topic": "layanan",
+    "question": "Apa manfaat Signature Hair Spa?",
+    "ground_truth": "Signature Hair Spa melembapkan rambut kering, mengurangi rambut kusut, memberikan relaksasi kulit kepala, dan finishing blow natural. Durasi 90 menit.",
+    "expected_context_keywords": ["melembapkan", "kusut", "relaksasi", "blow natural", "90 menit"]
+  }
+]

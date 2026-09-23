@@ -20,3 +20,9 @@ export async function geminiKey(req: Request, res: Response): Promise<void> {
   // Dipakai apps/ai (internal). Return nilai mentah.
   ok(res, { key: await settingsService.geminiKey() });
 }
+
+export async function internalGet(req: Request, res: Response): Promise<void> {
+  // Nilai mentah setting apapun (untuk apps/ai).
+  const key = String(req.params.key);
+  ok(res, { value: await settingsService.rawGet(key) });
+}

@@ -1,6 +1,6 @@
 'use client';
 
-import { Save } from 'lucide-react';
+import { Plus, RefreshCw, Save, Trash2 } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -36,6 +36,9 @@ export function SettingsManager() {
   const [site, setSite] = useState<SiteInfo>(EMPTY_SITE);
   const [geminiMasked, setGeminiMasked] = useState('');
   const [geminiInput, setGeminiInput] = useState('');
+  const [crawlTargets, setCrawlTargets] = useState<string[]>([]);
+  const [newTarget, setNewTarget] = useState('');
+  const [crawling, setCrawling] = useState(false);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
@@ -48,6 +51,8 @@ export function SettingsManager() {
       if (siteRow?.value) setSite({ ...EMPTY_SITE, ...(siteRow.value as SiteInfo) });
       const gem = rows.find((r) => r.key === 'gemini_api_key');
       setGeminiMasked(typeof gem?.value === 'string' ? gem.value : '');
+      const ct = rows.find((r) => r.key === 'crawl_targets');
+      setCrawlTargets(Array.isArray(ct?.value) ? (ct?.value as string[]) : []);
       setError('');
     } catch (e) {
       setError((e as Error).message);
@@ -64,7 +69,10 @@ export function SettingsManager() {
     setSaving(true);
     setError('');
     try {
-      const entries: Array<{ key: string; value: unknown }> = [{ key: 'site', value: site }];
+      const entries: Array<{ key: string; value: unknown }> = [
+        { key: 'site', value: site },
+        { key: 'crawl_targets', value: crawlTargets },
+      ];
       if (geminiInput.trim()) {
         entries.push({ key: 'gemini_api_key', value: geminiInput.trim() });
       }
@@ -85,6 +93,38 @@ export function SettingsManager() {
       setError((e as Error).message);
     } finally {
       setSaving(false);
+    }
+  };
+
+  const addTarget = () => {
+    const v = newTarget.trim();
+    if (!v) return;
+    setCrawlTargets((cur) => [...new Set([...cur, v])]);
+    setNewTarget('');
+  };
+
+  const runCrawl = async () => {
+    setCrawling(true);
+    setError('');
+    setNote('');
+    try {
+      const res = await fetch('/api/admin/knowledge/crawl', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ targets: crawlTargets, reingest: true }),
+      });
+      const b = (await res.json().catch(() => null)) as {
+        data?: { crawled: number; ingested: number };
+        detail?: string;
+        title?: string;
+      } | null;
+      if (!res.ok) throw new Error(b?.detail ?? b?.title ?? 'Crawl gagal.');
+      setNote(`Crawl selesai: ${b?.data?.crawled ?? 0} halaman, ${b?.data?.ingested ?? 0} chunk di-index.`);
+      setTimeout(() => setNote(''), 4000);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setCrawling(false);
     }
   };
 
@@ -141,6 +181,61 @@ export function SettingsManager() {
             onChange={(e) => setSite({ ...site, mapEmbedUrl: e.target.value })}
           />
         </label>
+      </div>
+
+      <h2 className="admin-panel__section-title">Target Crawler (RAG)</h2>
+      <p className="muted-text">
+        Daftar URL sumber yang di-crawl untuk knowledge base. Tekan &quot;Crawl Sekarang&quot; untuk
+        menjalankan crawl + re-index.
+      </p>
+      <div className="admin-kb">
+        <div className="admin-kb__editor" style={{ gridColumn: '1 / -1' }}>
+          <div className="admin-form">
+            <div className="admin-form__field admin-form__field--full">
+              <span>Tambah URL target</span>
+              <div style={{ display: 'flex', gap: '0.5rem' }}>
+                <input
+                  type="text"
+                  value={newTarget}
+                  onChange={(e) => setNewTarget(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault();
+                      addTarget();
+                    }
+                  }}
+                  placeholder="https://contoh.com/rambut/"
+                />
+                <Button variant="outline" size="sm" onClick={addTarget}>
+                  <Plus size={16} /> Tambah
+                </Button>
+              </div>
+            </div>
+          </div>
+          <div className="admin-kb__list" style={{ maxHeight: '12rem' }}>
+            {crawlTargets.map((t) => (
+              <div key={t} className="admin-kb__item">
+                <span>{t}</span>
+                <button
+                  type="button"
+                  className="admin-kb__del"
+                  aria-label="Hapus"
+                  onClick={() => setCrawlTargets((cur) => cur.filter((x) => x !== t))}
+                >
+                  <Trash2 size={13} />
+                </button>
+              </div>
+            ))}
+            {crawlTargets.length === 0 ? (
+              <span className="muted-text">Belum ada target. Pakai default (alodokter).</span>
+            ) : null}
+          </div>
+          <div className="admin-panel__toolbar-actions" style={{ justifyContent: 'flex-end' }}>
+            <Button size="sm" onClick={() => void runCrawl()} disabled={crawling}>
+              <RefreshCw size={16} /> {crawling ? 'Mencrawl...' : 'Crawl Sekarang'}
+            </Button>
+          </div>
+        </div>
       </div>
 
       <h2 className="admin-panel__section-title">Gemini API Key</h2>
