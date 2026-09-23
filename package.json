@@ -23,7 +23,8 @@
     "test:api": "turbo run test --filter=api",
     "test:web": "turbo run test --filter=web",
     "migrate": "turbo run migrate --filter=api",
-    "seed": "turbo run seed --filter=api"
+    "seed": "turbo run seed --filter=api",
+    "db:repair": "turbo run db:repair --filter=api"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
