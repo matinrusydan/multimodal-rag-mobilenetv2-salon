@@ -51,6 +51,10 @@ pnpm dev          # = pnpm local
 pnpm ai
 ```
 
+> `pnpm ai` (dan `pnpm dev`) otomatis **membebaskan port** yang dipakai sebelum start
+> (via `scripts/freeport.mjs`), jadi tidak lagi error `WinError 10048` kalau ada instance
+> lama yang masih jalan.
+
 Kalau ingin terpisah (disarankan saat debug):
 
 ```bash
