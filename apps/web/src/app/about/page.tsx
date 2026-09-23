@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { Section } from '@/components/ui/section';
 import { StatCard } from '@/components/ui/stat-card';
-import { salonInfo } from '@/data/salon-info';
+import { getSalonInfo } from '@/lib/salon-info';
 import { Gem, HeartHandshake, Sparkles } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -32,7 +32,8 @@ const values = [
   },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const salonInfo = await getSalonInfo();
   return (
     <>
       <Section

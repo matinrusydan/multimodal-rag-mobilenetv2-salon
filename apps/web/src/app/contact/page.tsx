@@ -3,14 +3,15 @@ import type { Metadata } from 'next';
 
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
-import { salonInfo } from '@/data/salon-info';
+import { getSalonInfo } from '@/lib/salon-info';
 
 export const metadata: Metadata = {
   title: 'Kontak',
   description: 'Informasi kontak, jam operasional, map preview, dan CTA reservasi TIEN SALON.',
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const salonInfo = await getSalonInfo();
   return (
     <Section
       eyebrow="Kontak"

@@ -5,6 +5,7 @@ import { FeaturedServices } from '@/components/sections/featured-services';
 import { Hero } from '@/components/sections/hero';
 import { Testimonials } from '@/components/sections/testimonials';
 import { WhyChooseUs } from '@/components/sections/why-choose-us';
+import { getSalonInfo } from '@/lib/salon-info';
 
 export const metadata: Metadata = {
   title: 'Beranda',
@@ -26,10 +27,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const salonInfo = await getSalonInfo();
   return (
     <>
-      <Hero />
+      <Hero tagline={salonInfo.tagline} />
       <FeaturedServices />
       <WhyChooseUs />
       <Testimonials />

@@ -1,10 +1,12 @@
+'use client';
+
 import { AtSign, MessageCircle, Music2 } from 'lucide-react';
 import Link from 'next/link';
 
 import { BrandLogo } from '@/components/brand/brand-logo';
 import { Button } from '@/components/ui/button';
-import { salonInfo } from '@/data/salon-info';
 import { services } from '@/data/services';
+import { useSalonInfo } from '@/lib/use-salon-info';
 import { cn } from '@/lib/utils';
 
 type FooterLink = {
@@ -29,6 +31,7 @@ const socialIcons = {
 };
 
 export function SiteFooter({ className }: SiteFooterProps) {
+  const salonInfo = useSalonInfo();
   const serviceLinks = services.slice(0, 4);
 
   return (

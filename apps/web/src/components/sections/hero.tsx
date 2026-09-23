@@ -1,8 +1,9 @@
 import { HairScissorsHeroVisual } from '@/components/sections/hair-scissors-hero-visual';
 import { Button } from '@/components/ui/button';
-import { salonInfo } from '@/data/salon-info';
+import { salonInfo as fallback } from '@/data/salon-info';
 
-export function Hero() {
+export function Hero({ tagline }: { tagline?: string }) {
+  const text = tagline || fallback.tagline;
   return (
     <section className="hero-section">
       <div className="site-container hero-section__grid">
@@ -12,8 +13,8 @@ export function Hero() {
             Tampil cantik dan percaya diri bersama <span>TIEN SALON</span>
           </h1>
           <p>
-            {salonInfo.tagline} Jelajahi layanan, pilih jadwal, dan coba alur reservasi portfolio
-            secara statis.
+            {text} Jelajahi layanan, pilih jadwal, dan coba alur reservasi portfolio secara
+            statis.
           </p>
           <div className="hero-section__actions">
             <Button href="/reservation" size="lg">
