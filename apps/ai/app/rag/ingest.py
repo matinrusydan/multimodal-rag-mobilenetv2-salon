@@ -111,6 +111,7 @@ def plan_ingest(
             "minTokens": min_tokens or settings.rag_min_chunk_tokens,
             "maxTokens": max_tokens or settings.rag_max_chunk_tokens,
             "overlapTokens": overlap or settings.rag_chunk_overlap,
+            "mergeSections": settings.rag_merge_sections,
         })
         if not chunks:
             logger.info("skip (no chunks): %s", md_file.name)

@@ -61,6 +61,12 @@ def _gemini_client():
     return genai.Client(api_key=gemini_api_key())
 
 
+def _l2_normalize(vec: list[float]) -> list[float]:
+    """L2-normalize a vector so cosine similarity == dot product (stabil untuk cosine space)."""
+    norm = math.sqrt(sum(v * v for v in vec)) or 1.0
+    return [v / norm for v in vec]
+
+
 async def embed(texts: list[str]) -> list[list[float]]:
     """Embed a list of texts.
 
@@ -79,7 +85,8 @@ async def embed(texts: list[str]) -> list[list[float]]:
             contents=texts,
             config={"outputDimensionality": settings.embedding_dim},
         )
-        return [list(e.values) for e in response.embeddings]
+        # Normalisasi L2 agar konsisten dengan ruang cosine (urutan ranking stabil).
+        return [_l2_normalize(list(e.values)) for e in response.embeddings]
     except Exception as exc:  # no key / quota / network
         logger.warning("Gemini embedding gagal (%s); fallback lokal", exc)
         return embed_local(texts)

@@ -48,6 +48,9 @@ class Settings:
         self.rag_min_chunk_tokens: int = int(os.getenv("RAG_MIN_CHUNK_TOKENS", "500"))
         self.rag_max_chunk_tokens: int = int(os.getenv("RAG_MAX_CHUNK_TOKENS", "1000"))
         self.rag_chunk_overlap: int = int(os.getenv("RAG_CHUNK_OVERLAP", "100"))
+        # Gabungkan section kecil menjadi chunk besar (~min..max token) sesuai
+        # praktik umum RAG (chunk 500-1000 token).
+        self.rag_merge_sections: bool = os.getenv("RAG_MERGE_SECTIONS", "false").lower() == "true"
         self.rag_knowledge_dir: Path = Path(os.getenv("RAG_KNOWLEDGE_DIR", str(BASE_DIR / "rag" / "knowledge")))
 
         # Live web fallback (crawl alodokter saat KB lokal tak menjawab)

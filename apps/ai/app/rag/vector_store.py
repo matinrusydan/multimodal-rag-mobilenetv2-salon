@@ -51,7 +51,11 @@ class VectorStore:
     def _collection(self, topic: str) -> Collection:
         col = self._collections.get(topic)
         if col is None:
-            col = self._get_client().get_or_create_collection(name=collection_name(topic))
+            # Gunakan cosine similarity secara eksplisit (default ChromaDB adalah L2).
+            col = self._get_client().get_or_create_collection(
+                name=collection_name(topic),
+                metadata={"hnsw:space": "cosine"},
+            )
             self._collections[topic] = col
         return col
 

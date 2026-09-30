@@ -11,7 +11,7 @@ import re
 from dataclasses import dataclass
 from typing import Optional
 
-DEFAULT_OPTIONS = {"maxTokens": 1000, "overlapTokens": 100, "minTokens": 500}
+DEFAULT_OPTIONS = {"maxTokens": 1000, "overlapTokens": 100, "minTokens": 500, "mergeSections": False}
 
 
 @dataclass
@@ -55,6 +55,7 @@ def chunk_markdown(markdown: str, options: Optional[dict] = None) -> list[RAGChu
     max_tokens = opts["maxTokens"]
     overlap_tokens = opts["overlapTokens"]
     min_tokens = opts["minTokens"]
+    merge_sections = bool(opts.get("mergeSections", False))
     chunks: list[RAGChunk] = []
 
     def flush_body(
@@ -106,8 +107,15 @@ def chunk_markdown(markdown: str, options: Optional[dict] = None) -> list[RAGChu
                 emitted, overlap_parts = flush_body(header, current, overlap_parts)
                 chunks.extend(emitted)
                 current = []
-        emitted, _ = flush_body(header, current, overlap_parts)
-        chunks.extend(emitted)
+        # Bila merge_sections aktif dan isi section ini masih kecil, gabungkan ke
+        # chunk terakhir agar ukuran chunk mendekati minTokens (dokumen KB kecil).
+        section_text = " ".join(current)
+        if merge_sections and current and estimate_tokens(section_text) < min_tokens and chunks:
+            chunks[-1].text = chunks[-1].text + "\n\n" + section_text
+            chunks[-1].section = chunks[-1].section  # pertahankan header chunk pertama
+        else:
+            emitted, _ = flush_body(header, current, overlap_parts)
+            chunks.extend(emitted)
 
     # Fallback for markdown without any ## section.
     if not chunks:

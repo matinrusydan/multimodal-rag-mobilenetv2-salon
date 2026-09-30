@@ -50,6 +50,25 @@ REPORT_MD = EVAL_DIR / "ragas_report.md"
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Rate limiter sederhana (free tier: 20 request/menit per model)
+# ─────────────────────────────────────────────────────────────────────────────
+_RATE_LOCK = asyncio.Lock()
+_LAST_CALL = 0.0
+_MIN_INTERVAL = float(os.getenv("EVAL_MIN_INTERVAL_SECONDS", "3.5"))  # ~17 req/menit
+
+
+async def _throttle():
+    """Batasi laju panggilan Gemini agar tidak melebihi kuota free tier."""
+    global _LAST_CALL
+    async with _RATE_LOCK:
+        now = time.monotonic()
+        wait = _MIN_INTERVAL - (now - _LAST_CALL)
+        if wait > 0:
+            await asyncio.sleep(wait)
+        _LAST_CALL = time.monotonic()
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # 1) Load test set
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -74,9 +93,8 @@ async def run_rag_pipeline(question: str) -> dict:
 
     # 1. Embed query
     query_embedding = (await embed([question]))[0]
-
-    # 2. Retrieve documents (cosine-similarity via ChromaDB)
-    docs = await retriever.retrieve(query_embedding, top_k=5)
+    # 2. Retrieve documents (cosine-similarity via ChromaDB + query routing)
+    docs = await retriever.retrieve(query_embedding, top_k=5, query=question)
     contexts = [d.snippet for d in docs if d.snippet]
     retrieved_docs = [
         {"file": d.file, "section": d.section, "snippet": d.snippet, "distance": d.distance}
@@ -107,33 +125,67 @@ async def run_rag_pipeline(question: str) -> dict:
 # 3) LLM-as-judge: evaluasi metrik
 # ─────────────────────────────────────────────────────────────────────────────
 
-async def llm_judge(prompt: str, model: str = None, max_tokens: int = 100) -> str:
-    """Panggil Gemini sebagai judge LLM. Pakai model dari config (fallback chain)."""
+# ── Round-robin model pool (tersebar beban agar tidak kena limit per model) ──
+_MODEL_POOL = [
+    "gemini-3.6-flash",
+    "gemini-flash-latest",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "gemini-3.1-flash-lite",
+    "gemini-flash-lite-latest",
+]
+_RR_INDEX = 0
+
+
+def _next_model_order(base_first: str | None = None) -> list[str]:
+    """Urutkan model round-robin: mulai dari indeks bergilir, lalu sisanya."""
+    global _RR_INDEX
+    pool = list(_MODEL_POOL)
+    if base_first and base_first not in pool:
+        pool = [base_first, *pool]
+    if not pool:
+        return []
+    start = _RR_INDEX % len(pool)
+    _RR_INDEX += 1
+    return pool[start:] + pool[:start]
+
+
+async def llm_judge(prompt: str, model: str = None, max_tokens: int = 150) -> str:
+    """Panggil Gemini sebagai judge LLM dengan round-robin model pool.
+
+    Model dirotasi setiap panggilan agar beban tersebar (free tier ~20 req/menit
+    per model). Untuk tiap model: coba dengan thinking_budget=0 lalu tanpa
+    thinking_config, dengan sedikit retry pada 429/503.
+    """
+    import asyncio as _asyncio
     from google import genai
-    from app.config import settings
     from app.settings_loader import gemini_api_key
+    from app.rag.rag_service import extract_text, build_config
 
     client = genai.Client(api_key=gemini_api_key())
+    order = _next_model_order(model)
 
-    # Pakai model dari config, bukan hard-coded
-    all_models = [settings.llm_model, *settings.llm_fallback_models]
-    if model:
-        all_models = [model, *all_models]
-
-    for mdl in all_models:
-        try:
-            response = await client.aio.models.generate_content(
-                model=mdl,
-                contents=[prompt],
-                config={"temperature": 0.0, "max_output_tokens": max_tokens},
-            )
-            text = (response.text or "").strip()
-            if text:
-                return text
-            logger.warning("LLM judge %s: respons kosong", mdl)
-        except Exception as exc:
-            logger.warning("LLM judge %s error: %s", mdl, str(exc)[:80])
-            continue
+    for attempt in range(2):  # 2 putaran mencoba seluruh pool
+        for mdl in order:
+            for use_thinking in (True, False):
+                try:
+                    await _throttle()
+                    if use_thinking:
+                        cfg = build_config(temperature=0.0, max_output_tokens=max_tokens)
+                    else:
+                        cfg = genai.types.GenerateContentConfig(temperature=0.0, max_output_tokens=max_tokens)
+                    response = await client.aio.models.generate_content(
+                        model=mdl, contents=[prompt], config=cfg,
+                    )
+                    text = extract_text(response)
+                    if text:
+                        return text
+                    logger.warning("LLM judge %s: respons kosong", mdl)
+                except Exception as exc:
+                    logger.warning("LLM judge %s (think=%s): %s", mdl, use_thinking, str(exc)[:70])
+                await _asyncio.sleep(0.5)
+        # jeda sebelum putaran kedua (kuota per-menit mungkin pulih)
+        await _asyncio.sleep(5)
 
     return ""
 

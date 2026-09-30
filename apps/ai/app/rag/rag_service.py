@@ -24,6 +24,56 @@ from app.settings_loader import gemini_api_key
 
 logger = logging.getLogger(__name__)
 
+
+def extract_text(response) -> str:
+    """Ambil teks dari respons Gemini secara robust.
+
+    Model Gemini 3.x (reasoning) kadang mengembalikan `response.text` kosong
+    meski teksnya ada di `candidates[0].content.parts`. Helper ini membaca
+    kedua jalur agar tidak kehilangan output.
+    """
+    try:
+        text = getattr(response, "text", None)
+        if text:
+            return text.strip()
+    except Exception:
+        pass
+    try:
+        candidates = getattr(response, "candidates", None) or []
+        for cand in candidates:
+            content = getattr(cand, "content", None)
+            parts = getattr(content, "parts", None) or []
+            # Lewati bagian "thinking" (thought=True) — ambil jawaban final saja.
+            chunks = [p.text for p in parts if getattr(p, "text", None) and not getattr(p, "thought", False)]
+            if not chunks:
+                chunks = [p.text for p in parts if getattr(p, "text", None)]
+            if chunks:
+                return "".join(chunks).strip()
+    except Exception:
+        pass
+    return ""
+
+
+def build_config(system_instruction=None, temperature=0.7, max_output_tokens=900):
+    """Bangun GenerateContentConfig yang kompatibel dengan model Gemini 3.x.
+
+    Model 3.x memakai 'thinking' yang dapat menghabiskan jatah max_output_tokens
+    sehingga jawaban final sering kosong. Kita nonaktifkan thinking
+    (thinking_budget=0) bila SDK mendukung; jika tidak, kembali ke config biasa.
+    """
+    from google import genai
+
+    kwargs = {"temperature": temperature, "max_output_tokens": max_output_tokens}
+    if system_instruction:
+        kwargs["system_instruction"] = system_instruction
+    try:
+        return genai.types.GenerateContentConfig(
+            thinking_config=genai.types.ThinkingConfig(thinking_budget=0),
+            **kwargs,
+        )
+    except Exception:
+        return genai.types.GenerateContentConfig(**kwargs)
+
 # Model yang sedang kena rate-limit/quota → di-skip sementara (cooldown).
 # Format: {model_name: monotonic_deadline}
 _MODEL_COOLDOWN: dict[str, float] = {}
@@ -58,61 +108,75 @@ class RagService:
             lines.append(f"{i + 1}. {source}{section}\n   {snippet}")
         return f"(Mode offline — embed lokal, tanpa Gemini.) Berdasarkan knowledge base untuk \"{query}\":\n\n" + "\n".join(lines)
 
+    async def _call_one(self, client, model: str, system_prompt, contents) -> tuple[str, str]:
+        """Panggil satu model; return (model, text). Raise bila gagal."""
+        response = await client.aio.models.generate_content(
+            model=model,
+            contents=contents,
+            config=build_config(system_instruction=system_prompt, temperature=0.7, max_output_tokens=900),
+        )
+        return model, extract_text(response)
+
     async def _call_gemini(self, messages: list[dict]) -> str:
         from google import genai
 
-        client = genai.Client(api_key=gemini_api_key())
+        # retry internal SDK dimatikan agar tidak menggantung; fallback ditangani manual.
+        try:
+            client = genai.Client(
+                api_key=gemini_api_key(),
+                http_options=genai.types.HttpOptions(retry_options=genai.types.HttpRetryOptions(attempts=1)),
+            )
+        except Exception:
+            client = genai.Client(api_key=gemini_api_key())
         system_prompt = next((m["content"] for m in messages if m["role"] == "system"), None)
         user_prompt = next((m["content"] for m in messages if m["role"] == "user"), "")
         contents = [user_prompt]
 
-        # Coba model utama, lalu fallback berantai bila kena 429/quota/5xx.
-        # Model yang sedang cooldown (baru kena 429) dilewati agar tidak buang waktu.
         all_models = [settings.llm_model, *settings.llm_fallback_models]
         ready = [m for m in all_models if _model_ready(m)]
-        # Bila semua sedang cooldown, tetap coba yang cooldown-nya paling dekat.
         if not ready:
             ready = sorted(all_models, key=lambda m: _MODEL_COOLDOWN.get(m, 0.0))[:1]
 
+        # RACE paralel: coba beberapa model sekaligus, ambil yang pertama sukses.
+        # Ini tahan terhadap 503 (high demand) pada sebagian model.
+        PER_MODEL_TIMEOUT = float(os.getenv("AI_LLM_TIMEOUT_SECONDS", "35"))
+        race = ready[:5]
+
+        tasks = [
+            asyncio.create_task(asyncio.wait_for(self._call_one(client, m, system_prompt, contents), timeout=PER_MODEL_TIMEOUT))
+            for m in race
+        ]
+
         last_exc: Exception | None = None
-        for model in ready:
-            try:
-                response = await client.aio.models.generate_content(
-                    model=model,
-                    contents=contents,
-                    config=genai.types.GenerateContentConfig(
-                        system_instruction=system_prompt,
-                        temperature=0.7,
-                        max_output_tokens=900,
-                    ),
-                )
+        try:
+            for coro in asyncio.as_completed(tasks):
                 try:
-                    finish = response.candidates[0].finish_reason
-                    if finish and str(finish).endswith("MAX_TOKENS"):
-                        logger.warning("jawaban Gemini terpotong (MAX_TOKENS) pada %s", model)
-                except Exception:
-                    pass
-                if model != settings.llm_model:
-                    logger.info("LLM fallback dipakai: %s (utama %s tidak tersedia)", model, settings.llm_model)
-                return (response.text or "").strip()
-            except Exception as exc:
-                last_exc = exc
-                msg = str(exc)
-                is_quota = any(t in msg for t in ("429", "RESOURCE_EXHAUSTED"))
-                is_5xx = any(t in msg for t in ("503", "UNAVAILABLE", "500"))
-                if is_quota:
-                    # Hormati retryDelay dari API bila ada, minimal cooldown default.
-                    wait = _COOLDOWN_SECONDS
-                    m = re.search(r"retryDelay['\"]?\s*[:=]\s*['\"]?(\d+)", msg)
-                    if m:
-                        wait = max(float(m.group(1)), 30.0)
-                    _mark_cooldown(model, wait)
-                    logger.warning("LLM %s kena quota → cooldown %.0fs", model, wait)
-                else:
-                    logger.warning("LLM %s gagal [%s]: %s", model, "retriable" if is_5xx else "fatal", msg[:120])
-                if not is_quota and not is_5xx and "not found" not in msg.lower():
-                    # error non-quota (mis. API key salah) — tidak perlu lanjut fallback
-                    raise
+                    model, text = await coro
+                    if text:
+                        winner = model
+                        if winner != settings.llm_model:
+                            logger.info("LLM fallback dipakai (race): %s", winner)
+                        return text
+                except Exception as exc:  # noqa: PERF203
+                    last_exc = exc
+                    msg = str(exc)
+                    is_quota = any(t in msg for t in ("429", "RESOURCE_EXHAUSTED"))
+                    is_5xx = any(t in msg for t in ("503", "UNAVAILABLE", "500"))
+                    if is_quota:
+                        wait = _COOLDOWN_SECONDS
+                        m = re.search(r"retryDelay['\"]?\s*[:=]\s*['\"]?(\d+)", msg)
+                        if m:
+                            wait = max(float(m.group(1)), 30.0)
+                        _mark_cooldown("gemini", wait)
+                    logger.warning(
+                        "LLM gagal [%s]: %s",
+                        "quota" if is_quota else ("retriable" if is_5xx else "fatal"),
+                        msg[:120],
+                    )
+        finally:
+            for t in tasks:
+                if not t.done():
+                    t.cancel()
 
         if last_exc:
             raise last_exc
@@ -154,7 +218,7 @@ class RagService:
         else:
             # Mode KB (normal) atau mix: retrieve dari ChromaDB.
             query_embedding = (await embed([query]))[0]
-            kb_docs = await retriever.retrieve(query_embedding, top_k=self.top_k)
+            kb_docs = await retriever.retrieve(query_embedding, top_k=self.top_k, query=query)
 
             if is_hair_concern and webpage_docs:
                 # Mix: dokumen web di depan, lalu KB salon.

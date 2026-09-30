@@ -46,7 +46,7 @@ export async function aiChat(body: Record<string, unknown>): Promise<object> {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
-    signal: AbortSignal.timeout(30_000),
+    signal: AbortSignal.timeout(90_000),
   });
 
   const elapsed = Date.now() - t0;
