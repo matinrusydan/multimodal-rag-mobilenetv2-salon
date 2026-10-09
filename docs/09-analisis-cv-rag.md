@@ -24,15 +24,22 @@
 | Komponen | Status | Metrik utama |
 |---|---|---|
 | **Viewpoint gate** (depan/samping/belakang, mediapipe) | Aktif, heuristik | Akurasi **80.3%** (n=193; 83.8% di luar ragu) |
-| **Hair type** (lurus/bergelombang/keriting/sangat-keriting, CNN) | Terlatih | Akurasi **85.8%**, macro-F1 **0.85** |
+| **Hair type** (lurus/bergelombang/keriting/sangat-keriting, CNN) | Terlatih | Akurasi **92.3%** (puncak hold-out), macro-F1 **0.61** ⚠️ |
 | **Hair length** (geometris) | Terlatih | Akurasi **54.2%**, macro-F1 **0.50** |
-| **Hair length** (CNN/ensemble, label berbeda) | Terlatih | Akurasi **82.4%** (val 250, 3-seed) |
+| **Hair length** (CNN/EfficientNetV2-S, hold-out asli) | Terlatih | Akurasi **85.5%**, macro-F1 **0.80** |
 | **RAG** (ChromaDB + Gemini) | Aktif | Faithfulness 0.50, Context Recall 1.0 (n=1, pilot) |
+
+> ⚠️ **Update (retrain dataset 252 terkurasi).** Hair type dilatih ulang pada dataset Figaro-1k
+> hasil kurasi manual (**252 gambar**; 600→252 setelah pembersihan) dan dievaluasi pada **hold-out
+> asli** `preprocessed/val/` (n=52). Akurasi global **naik** (84.2% → **92.3%**), membuktikan
+> *data bersih > data banyak*. **Namun** kelas `sangat-keriting` tersisa hanya **5 gambar**
+> (val=1) sehingga tidak terwakili → **macro-F1 turun 0.77 → 0.61**. Lihat §B.5 dan §B.8.
 
 **Kendala utama (untuk konsul dosen):**
 1. **Kualitas & keseimbangan dataset** — bukan arsitektur (terbukti: backbone benchmark 15 model
    hanya beda tipis; data bersih mengalahkan data banyak).
-2. **Kelas ambigu** — `bergelombang` vs `keriting` vs `sangat-keriting` tumpang tindih.
+2. **Kelas ambigu & kelas minoritas** — `bergelombang` vs `keriting` vs `sangat-keriting` tumpang
+   tindih; setelah kurasi, `sangat-keriting` hanya 5 gambar → kelas praktis hilang.
 3. **Viewpoint / pose detection** — MediaPipe gagal deteksi pose pada 36% foto back-view → gate
    Fase 0 **kondisional**.
 
@@ -75,15 +82,20 @@ Lokasi: `apps/api/cv/dataset/`.
 
 | Folder | Kelas | Jumlah gambar | Sumber / catatan |
 |---|---|---|---|
-| `figaro1k/` | lurus | 150 | Figaro-1k (partisi salon, 4 kelas seimbang) |
-| | bergelombang | 150 | |
-| | keriting | 150 | |
-| | sangat-keriting | 150 | |
-| `extra/` | pendek | 990 | data tambahan (timpang) |
+| `figaro1k/` | lurus | 89 | Figaro-1k, **hasil kurasi manual** (back-view), 252 gambar total |
+| | bergelombang | 86 | |
+| | keriting | 72 | |
+| | sangat-keriting | **5** ⚠️ | sangat sedikit (kelas praktis hilang) |
+| `extra/` | pendek | 990 | data tambahan (timpang), hanya untuk hair_length |
 | | pendek-menengah | 570 | |
 | | menengah | 150 | |
 | | panjang | 240 | |
 | `hair_length_geometris/` | (label geometris) | — | hasil labeling geometris |
+
+> **Catatan penting (dataset Figaro):** dataset semula 600 gambar (150/kelas). Pada kurasi manual
+> (back-view) disisakan **252 gambar** (89/86/72/**5**); 348 sisanya dibuang karena bukan back-view
+> / tidak layak. Konsekuensi: kelas `sangat-keriting` menjadi minoritas ekstrem.
+> Tensor `preprocessed/` dibangun ulang dari 252 gambar (**652 tensor**: 600 train + 52 val).
 
 - **Viewpoint**: sebagian foto Figaro sudah dianotasi manual (ground truth `viewpoint_verification_A.json`, n=193) untuk mengukur akurasi gate.
 - **Preprocessing tensors**: `preprocessed/`, `preprocessed_length/`, `preprocessed_length_merged/` (`.pt` NCHW).
@@ -114,7 +126,32 @@ Split: **20% val per kelas**, `seed=42`.
 
 ### B.5 METRIK UJI (angka eksplisit)
 
-**Hair type** — `reports/eval_hair_type.json` (val 120, MobileNetV2):
+**Hair type (FINAL — hold-out asli, notebook `main.ipynb`, dataset 252 terkurasi):**
+`preprocessed/val/` (n=52, MobileNetV2, 12 epoch):
+
+| Kelas | Precision | Recall | F1 | Support |
+|---|---|---|---|---|
+| lurus | 0.783 | 1.000 | 0.878 | 18 |
+| **bergelombang** | 0.800 | 0.667 | 0.727 | 18 |
+| keriting | 0.857 | 0.800 | 0.828 | 15 |
+| **sangat-keriting** | **0.000** ⚠️ | **0.000** | **0.000** | **1** |
+
+- **Akurasi puncak 0.9231** (@ep3), akurasi akhir 0.8077, **macro-F1 0.6082**.
+- **Gap overfitting akhir +0.189** (train_acc 0.997 vs val_acc 0.808); ECE **0.145** (overconfident).
+- **Kelas bermasalah: `sangat-keriting`** (val hanya 1 gambar → F1 0). Kelas terlemah berikutnya
+  `bergelombang` (recall 0.667).
+
+> **Perbandingan sebelum/sesudah kurasi** (hold-out):
+> | Metrik | Sebelum (600 img) | Sesudah (252 img) |
+> |---|---|---|
+> | val_acc puncak | 0.8417 | **0.9231** ▲ |
+> | macro-F1 | 0.7705 | **0.6082** ▼ |
+> | ECE | 0.151 | 0.145 ▲ |
+>
+> Kesimpulan: **data bersih menaikkan akurasi**, tetapi **jumlah gambar kelas minoritas harus
+> dijaga** agar macro-F1 tidak runtuh.
+
+**Hair type (historis)** — `reports/eval_hair_type.json` (val 120, dataset 600):
 
 | Kelas | Precision | Recall | F1 | Support |
 |---|---|---|---|---|
@@ -152,9 +189,11 @@ Split: **20% val per kelas**, `seed=42`.
 1. **Dataset quality > quantity.**
    Uji: model dilatih pada data manual-verified (bersih) mengalahkan model pada data besar
    namun noisy. Backbone benchmark (15 model) hanya beda tipis → **bottleneck = data**, bukan arsitektur.
-2. **Kelas ambigu secara visual.**
+   *Konfirmasi terbaru:* kurasi 600→252 menaikkan akurasi hair_type 84%→92%.
+2. **Kelas ambigu & minoritas.**
    `bergelombang↔keriting↔sangat-keriting` (F1 bergelombang 0.72; separability ~0.63–0.67);
-   `pendek-menengah` (F1 0.27) — batas panjang sulit.
+   `pendek-menengah` (F1 0.27) — batas panjang sulit. Setelah kurasi, **`sangat-keriting` hanya
+   5 gambar** → **F1 0** (macro-F1 turun ke 0.61) — bukti keseimbangan kelas wajib dijaga.
 3. **Gate viewpoint / pose.**
    Fase 0 **KONDISIONAL**: pose terdeteksi hanya **64%** pada back-view; 16/44 `no_pose`.
    Di antara yang terdeteksi, landmark andal (shoulder 96%, head 100%). Model heavy tidak membantu.
@@ -173,6 +212,24 @@ Split: **20% val per kelas**, `seed=42`.
   **kalibrasi** (ECE) untuk keandalan.
 - **Viewpoint**: gate hybrid (heuristik + CNN kecil) atau perbaiki anotasi viewpoint.
 - **Kontribusi**: bangun **dataset back-view salon** (aset orisinal) sebagai nilai jual skripsi.
+
+### B.8 TEMUAN RETRAIN DATASET TERKURASI (252 gambar)
+
+Retrain terakhir (`main.ipynb`, hold-out asli) memperlihatkan **dua temuan penting**:
+
+1. **Data bersih menaikkan akurasi.** Setelah kurasi manual 600→252 (hanya back-view layak),
+   akurasi hair_type **naik 84.2% → 92.3%** dan macro-F1 hair_length stabil/naik (0.76→0.80).
+   Ini bukti kuat untuk argumen **"Quality > Quantity"**.
+
+2. **Tetapi keseimbangan kelas tetap krusial.** Kelas `sangat-keriting` tinggal **5 gambar**
+   (val=1) → **F1 = 0** dan **macro-F1 turun 0.77 → 0.61**. Overfitting makin terlihat
+   (gap +0.19, akurasi puncak hanya di epoch 3 lalu menurun).
+
+**Implikasi untuk TA:**
+- Angka yang **layak dilaporkan**: akurasi global **~92%** (hair type) & **~85%** (hair length),
+  dengan **catatan jujur** bahwa macro-F1 turun karena kelas minoritas.
+- **Rekomendasi langsung**: tambah data `sangat-keriting` (minimal ~30–50 gambar) atau gabungkan
+  kelas ini, agar 4 kelas tetap valid; pertimbangkan **class-weight** & **stratified hold-out**.
 
 ---
 
