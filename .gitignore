@@ -57,6 +57,8 @@ backend/cv/weights/*.pt
 apps/api/cv/preprocessed/
 apps/api/cv/preprocessed_length/
 apps/api/cv/preprocessed_length_merged/
+# Backup dataset tensor lama (600 gambar) sebelum rebuild ke 252 — artefak, jangan di-commit
+apps/api/cv/preprocessed_600_backup/
 
 # Dataset (large files, simpan terpisah)
 data/train/
@@ -64,7 +66,7 @@ data/val/
 data/test/
 apps/api/cv/dataset/extra/
 apps/api/cv/dataset/*.zip
-apps/api/cv/dataset/figaro1k/
+# CATATAN: apps/api/cv/dataset/figaro1k/ = dataset FINAL terkurasi -> SENGAJA di-track (jangan di-ignore)
 
 # Gambar hasil crawling / harvest (JANGAN di-commit; bisa di-harvest ulang)
 apps/ai/app/crawler/harvest/
