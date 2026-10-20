@@ -1,0 +1,24 @@
+{
+  "status": "llm_success",
+  "timestamp": "2026-10-20T17:52:47.040944+07:00",
+  "question": "Berapa harga reguler dan durasi Volume Blowout Styling yang tercatat pada snapshot penelitian?",
+  "reply": "• **Harga reguler Volume Blowout Styling:** Rp280.000.\n• **Durasi:** 55 menit.\n\nData tersebut tercatat pada snapshot penelitian, bukan konfirmasi harga terkini.",
+  "model": "gpt-6.1-sol",
+  "provider": "chatgpt",
+  "retrieval_provider": "bm25_source_balanced",
+  "elapsed_seconds": 3.88,
+  "evidence_ids": [
+    "db:services:6",
+    "db:services:2",
+    "care:S02:leave-in-placement:v1",
+    "care:S03:curly-detangling:v1",
+    "care:S01:heat-care:v1"
+  ],
+  "price_is_snapshot_not_live": true,
+  "judge_run": false,
+  "basic_expected_fact_check": {
+    "price_280000_present": true,
+    "duration_55_present": true
+  },
+  "check_limit": "Literal presence only, not a full semantic accuracy or faithfulness evaluation."
+}

@@ -1,0 +1,95 @@
+{
+  "schema_version": "rag-salon.curated-development.v2",
+  "prepared_date": "2026-10-20",
+  "status": "scope_and_label_repair_development_only",
+  "corpus_size": 13,
+  "question_count": 24,
+  "retrieval_scoreable": 20,
+  "question_changed_ids": [
+    "r07",
+    "r10"
+  ],
+  "categories": {
+    "database": 6,
+    "document": 5,
+    "source_gap": 1,
+    "mixed": 3,
+    "business_and_policy": 1,
+    "business_and_source_gap": 1,
+    "business_and_clarification": 1,
+    "difficult": 4,
+    "clarification": 1,
+    "policy_boundary": 1
+  },
+  "reviewer": "Matin provided previous narrative annotations; new mappings not yet approved",
+  "production_ingested": false,
+  "api_calls": 0,
+  "metric_results": null,
+  "constraints": [
+    "This small corpus was curated from the same development error analysis; it is not a held-out benchmark.",
+    "Policy behavior, abstention, catalog lookup and supported evidence coverage must be evaluated separately.",
+    "Do not compare scores against old pilot as if only the algorithm had changed.",
+    "No neural dense retrieval or generation run in this build."
+  ],
+  "changes": [
+    {
+      "id": "r10",
+      "reason": "Pertanyaan lama tentang penanganan rambut rusak/bercabang tidak didukung langsung oleh sumber umum. Diganti secara eksplisit dengan pertanyaan pencegahan yang memang didukung; kasus lama tetap ada di v1.",
+      "previous": [
+        [
+          "care:S01:conditioner-by-hair-type:v1"
+        ],
+        [
+          "care:S01:heat-care:v1"
+        ]
+      ],
+      "current": [
+        [
+          "care:S01:heat-care:v1"
+        ]
+      ]
+    },
+    {
+      "id": "r11",
+      "reason": "Pisahkan inti jawaban kondisioner dari saran tambahan pembatasan panas; bukan mewajibkan semua saran dalam referensi lama.",
+      "previous": [
+        [
+          "care:S01:conditioner-by-hair-type:v1"
+        ],
+        [
+          "care:S01:heat-care:v1"
+        ]
+      ],
+      "current": [
+        [
+          "care:S01:conditioner-by-hair-type:v1"
+        ]
+      ]
+    },
+    {
+      "id": "r18",
+      "reason": "Pisahkan inti jawaban kondisioner dari saran tambahan pembatasan panas; bukan mewajibkan semua saran dalam referensi lama.",
+      "previous": [
+        [
+          "db:services:6"
+        ],
+        [
+          "care:S01:conditioner-by-hair-type:v1"
+        ],
+        [
+          "care:S01:heat-care:v1"
+        ]
+      ],
+      "current": [
+        [
+          "db:services:6"
+        ],
+        [
+          "care:S01:conditioner-by-hair-type:v1"
+        ]
+      ]
+    }
+  ],
+  "corpus_unchanged_from_v1": true,
+  "score_comparison_warning": "Changes in results versus v1 are dataset/label effects, not algorithm improvement."
+}

@@ -122,8 +122,11 @@ def plan_ingest(
 
         existing_ids = set(vector_store.existing_ids(topic))
         to_insert = [j for j, cid in enumerate(ids) if cid not in existing_ids]
-        to_delete = [cid for cid in existing_ids if cid not in ids]
+        # A topic can contain many files. Only replace this file's old chunks.
+        to_delete = [cid for cid in existing_ids if cid.startswith(f"{md_file.name}#") and cid not in ids]
 
+        front_matter, _ = _parse_front_matter(content)
+        provenance = {key: front_matter[key] for key in ("source", "type", "title", "retrieved_at", "published_at") if front_matter.get(key)}
         if to_insert:
             texts = [chunks[j].text for j in to_insert]
             embeddings = embed_sync(texts)
@@ -133,7 +136,7 @@ def plan_ingest(
                 texts=texts,
                 embeddings=embeddings,
                 metadatas=[
-                    {"file": md_file.name, "section": chunks[j].section, "topic": topic, "hash": content_hash}
+                    {**provenance, "file": md_file.name, "section": chunks[j].section, "topic": topic, "hash": content_hash}
                     for j in to_insert
                 ],
             )

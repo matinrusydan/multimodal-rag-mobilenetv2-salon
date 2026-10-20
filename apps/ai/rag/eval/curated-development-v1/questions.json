@@ -1,0 +1,967 @@
+[
+  {
+    "id": "r01",
+    "question": "Berapa harga reguler dan durasi Signature Hair Spa yang tercatat?",
+    "reference_answer": "Signature Hair Spa: harga reguler Rp325.000, durasi 90 menit, sesuai snapshot 20 Oktober 2026.",
+    "category": "database",
+    "answerability": "answerable",
+    "required_evidence_groups": [
+      [
+        "db:services:1"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 1,
+        "name": "Signature Hair Spa",
+        "price": 325000,
+        "duration_min": 90
+      }
+    ],
+    "always_available_policy_ids": [],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p01",
+      "previous_question": "Berapa harga reguler dan durasi Signature Hair Spa yang tercatat?",
+      "previous_raw_manual_response": "ya betul RP.325.000 dan 90 menit",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "db:services:1"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r02",
+    "question": "Berapa harga reguler dan durasi Precision Haircut yang tercatat?",
+    "reference_answer": "Precision Haircut: harga reguler Rp220.000, durasi 60 menit, sesuai snapshot 20 Oktober 2026.",
+    "category": "database",
+    "answerability": "answerable",
+    "required_evidence_groups": [
+      [
+        "db:services:2"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 2,
+        "name": "Precision Haircut",
+        "price": 220000,
+        "duration_min": 60
+      }
+    ],
+    "always_available_policy_ids": [],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p02",
+      "previous_question": "Berapa harga reguler dan durasi Precision Haircut yang tercatat?",
+      "previous_raw_manual_response": "ya betul",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "db:services:2"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r03",
+    "question": "Berapa harga reguler dan durasi Keratin Smooth Treatment yang tercatat?",
+    "reference_answer": "Keratin Smooth Treatment: harga reguler Rp780.000, durasi 150 menit, sesuai snapshot 20 Oktober 2026.",
+    "category": "database",
+    "answerability": "answerable",
+    "required_evidence_groups": [
+      [
+        "db:services:3"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 3,
+        "name": "Keratin Smooth Treatment",
+        "price": 780000,
+        "duration_min": 150
+      }
+    ],
+    "always_available_policy_ids": [],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p03",
+      "previous_question": "Berapa harga reguler dan durasi Keratin Smooth Treatment yang tercatat?",
+      "previous_raw_manual_response": "terima",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "db:services:3"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r04",
+    "question": "Berapa harga reguler dan durasi Color Gloss Refresh yang tercatat?",
+    "reference_answer": "Color Gloss Refresh: harga reguler Rp620.000, durasi 130 menit, sesuai snapshot 20 Oktober 2026.",
+    "category": "database",
+    "answerability": "answerable",
+    "required_evidence_groups": [
+      [
+        "db:services:4"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 4,
+        "name": "Color Gloss Refresh",
+        "price": 620000,
+        "duration_min": 130
+      }
+    ],
+    "always_available_policy_ids": [],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p04",
+      "previous_question": "Berapa harga reguler dan durasi Color Gloss Refresh yang tercatat?",
+      "previous_raw_manual_response": "terima",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "db:services:4"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r05",
+    "question": "Berapa harga reguler dan durasi Scalp Detox Therapy yang tercatat?",
+    "reference_answer": "Scalp Detox Therapy: harga reguler Rp360.000, durasi 75 menit, sesuai snapshot 20 Oktober 2026.",
+    "category": "database",
+    "answerability": "answerable",
+    "required_evidence_groups": [
+      [
+        "db:services:5"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 5,
+        "name": "Scalp Detox Therapy",
+        "price": 360000,
+        "duration_min": 75
+      }
+    ],
+    "always_available_policy_ids": [],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p05",
+      "previous_question": "Berapa harga reguler dan durasi Scalp Detox Therapy yang tercatat?",
+      "previous_raw_manual_response": "terima",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "db:services:5"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r06",
+    "question": "Berapa harga reguler dan durasi Volume Blowout Styling yang tercatat?",
+    "reference_answer": "Volume Blowout Styling: harga reguler Rp280.000, durasi 55 menit, sesuai snapshot 20 Oktober 2026.",
+    "category": "database",
+    "answerability": "answerable",
+    "required_evidence_groups": [
+      [
+        "db:services:6"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 6,
+        "name": "Volume Blowout Styling",
+        "price": 280000,
+        "duration_min": 55
+      }
+    ],
+    "always_available_policy_ids": [],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p06",
+      "previous_question": "Berapa harga reguler dan durasi Volume Blowout Styling yang tercatat?",
+      "previous_raw_manual_response": "terima",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "db:services:6"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r07",
+    "question": "Untuk kondisioner setelah keramas, apakah area pemakaiannya sama untuk semua tipe rambut?",
+    "reference_answer": "Tidak selalu; area pemakaian disesuaikan dengan tipe rambut sesuai panduan.",
+    "category": "document",
+    "answerability": "answerable",
+    "required_evidence_groups": [
+      [
+        "care:S01:conditioner-by-hair-type:v1"
+      ]
+    ],
+    "expected_business_facts": [],
+    "always_available_policy_ids": [],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p07",
+      "previous_question": "Menurut panduan, kondisioner digunakan di bagian rambut mana?",
+      "previous_raw_manual_response": "terima",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": true,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "care:S01:conditioner-by-hair-type:v1"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r08",
+    "question": "Menurut panduan, sampo seperti apa yang digunakan setelah pewarnaan?",
+    "reference_answer": "Dokumentasi terpilih belum cukup untuk menentukan sampo khusus setelah pewarnaan atau produk tertentu.",
+    "category": "source_gap",
+    "answerability": "unanswerable_in_current_corpus",
+    "required_evidence_groups": [],
+    "expected_business_facts": [],
+    "always_available_policy_ids": [],
+    "expected_actions": [
+      "state_documentation_limit",
+      "do_not_invent_brand_or_shampoo_claim"
+    ],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p08",
+      "previous_question": "Menurut panduan, sampo seperti apa yang digunakan setelah pewarnaan?",
+      "previous_raw_manual_response": "terima",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [],
+    "retrieval_scoring_applicable": false,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r09",
+    "question": "Apa catatan panduan mengenai menyisir rambut keriting saat kering?",
+    "reference_answer": "Untuk rambut keriting, hindari brushing saat kering; uraikan kusut saat basah dengan alat dan produk yang sesuai.",
+    "category": "document",
+    "answerability": "answerable",
+    "required_evidence_groups": [
+      [
+        "care:S03:curly-detangling:v1"
+      ]
+    ],
+    "expected_business_facts": [],
+    "always_available_policy_ids": [],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p09",
+      "previous_question": "Apa catatan panduan mengenai menyisir rambut keriting saat kering?",
+      "previous_raw_manual_response": "terima",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "care:S03:curly-detangling:v1"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r10",
+    "question": "Apa isi panduan perawatan untuk rambut rusak dan bercabang?",
+    "reference_answer": "Panduan umum mendukung kondisioner sesuai tipe rambut dan pembatasan alat panas. Jadwal trimming atau paket perawatan lain belum ditetapkan dari korpus ini.",
+    "category": "document",
+    "answerability": "partial",
+    "required_evidence_groups": [
+      [
+        "care:S01:conditioner-by-hair-type:v1"
+      ],
+      [
+        "care:S01:heat-care:v1"
+      ]
+    ],
+    "expected_business_facts": [],
+    "always_available_policy_ids": [],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p10",
+      "previous_question": "Apa isi panduan perawatan untuk rambut rusak dan bercabang?",
+      "previous_raw_manual_response": "terima",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "care:S01:conditioner-by-hair-type:v1",
+      "care:S01:heat-care:v1"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r11",
+    "question": "Apa isi panduan untuk rambut kering atau kusam?",
+    "reference_answer": "Untuk rambut kering, kondisioner dapat digunakan sepanjang batang. Batasi paparan alat styling panas.",
+    "category": "document",
+    "answerability": "answerable",
+    "required_evidence_groups": [
+      [
+        "care:S01:conditioner-by-hair-type:v1"
+      ],
+      [
+        "care:S01:heat-care:v1"
+      ]
+    ],
+    "expected_business_facts": [],
+    "always_available_policy_ids": [],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p11",
+      "previous_question": "Apa isi panduan untuk rambut kering atau kusam?",
+      "previous_raw_manual_response": "terima",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "care:S01:conditioner-by-hair-type:v1",
+      "care:S01:heat-care:v1"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r12",
+    "question": "Menurut panduan, apa tindak lanjut bila kerontokan berlebihan menetap?",
+    "reference_answer": "Konsultasikan kepada dokter kulit untuk pemeriksaan penyebab; chatbot tidak memberi diagnosis.",
+    "category": "document",
+    "answerability": "answerable",
+    "required_evidence_groups": [
+      [
+        "care:S04:hair-loss-referral:v1"
+      ]
+    ],
+    "expected_business_facts": [],
+    "always_available_policy_ids": [
+      "POL-no-prescription",
+      "POL-clinical-boundary"
+    ],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p12",
+      "previous_question": "Menurut panduan, apa tindak lanjut bila kerontokan berlebihan menetap?",
+      "previous_raw_manual_response": "terima",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "care:S04:hair-loss-referral:v1"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r13",
+    "question": "Berapa harga Signature Hair Spa dan di bagian mana kondisioner dipakai menurut panduan?",
+    "reference_answer": "Harga reguler Signature Hair Spa Rp325.000. Pemakaian kondisioner mengikuti tipe rambut, sehingga tidak ada satu lokasi universal untuk semua kondisi.",
+    "category": "mixed",
+    "answerability": "answerable",
+    "required_evidence_groups": [
+      [
+        "db:services:1"
+      ],
+      [
+        "care:S01:conditioner-by-hair-type:v1"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 1,
+        "name": "Signature Hair Spa",
+        "price": 325000,
+        "duration_min": 90
+      }
+    ],
+    "always_available_policy_ids": [],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p13",
+      "previous_question": "Berapa harga Signature Hair Spa dan di bagian mana kondisioner dipakai menurut panduan?",
+      "previous_raw_manual_response": "terima",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "care:S01:conditioner-by-hair-type:v1",
+      "db:services:1"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r14",
+    "question": "Berapa harga reguler Keratin Smooth Treatment dan siapa yang memberi instruksi perawatan setelahnya?",
+    "reference_answer": "Harga reguler Keratin Smooth Treatment Rp780.000. Mintalah panduan khusus setelah layanan kepada staf atau stylist salon; waktu keramas belum dapat ditentukan dari dokumentasi tersedia.",
+    "category": "business_and_policy",
+    "answerability": "partial",
+    "required_evidence_groups": [
+      [
+        "db:services:3"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 3,
+        "name": "Keratin Smooth Treatment",
+        "price": 780000,
+        "duration_min": 150
+      }
+    ],
+    "always_available_policy_ids": [
+      "POL-aftercare-boundary"
+    ],
+    "expected_actions": [
+      "return_snapshot_price",
+      "state_documentation_limit",
+      "refer_service_specific_aftercare_to_salon_staff",
+      "no_universal_shampoo_wait"
+    ],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p14",
+      "previous_question": "Berapa harga reguler Keratin Smooth Treatment dan siapa yang memberi instruksi perawatan setelahnya?",
+      "previous_raw_manual_response": "terima",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "db:services:3"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r15",
+    "question": "Berapa harga Color Gloss Refresh dan sampo apa yang disebut panduan setelah pewarnaan?",
+    "reference_answer": "Harga reguler Color Gloss Refresh Rp620.000. Sumber terpilih belum cukup untuk menentukan sampo khusus pewarnaan atau merek tertentu.",
+    "category": "business_and_source_gap",
+    "answerability": "partial",
+    "required_evidence_groups": [
+      [
+        "db:services:4"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 4,
+        "name": "Color Gloss Refresh",
+        "price": 620000,
+        "duration_min": 130
+      }
+    ],
+    "always_available_policy_ids": [],
+    "expected_actions": [
+      "return_snapshot_price",
+      "state_documentation_limit"
+    ],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p15",
+      "previous_question": "Berapa harga Color Gloss Refresh dan sampo apa yang disebut panduan setelah pewarnaan?",
+      "previous_raw_manual_response": "terima. tapi jika user menanyakan shampoo apa, bisa fallback ke web crawling",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "db:services:4"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r16",
+    "question": "Berapa harga Scalp Detox Therapy dan apa tindak lanjut panduan bila kulit kepala perih?",
+    "reference_answer": "Harga reguler Scalp Detox Therapy Rp360.000. Tanyakan konteks keluhan dan arahkan pemeriksaan medis tanpa menetapkan penyebab. Informasi reaksi pewarna hanya digunakan jika konteksnya sesuai.",
+    "category": "business_and_clarification",
+    "answerability": "partial",
+    "required_evidence_groups": [
+      [
+        "db:services:5"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 5,
+        "name": "Scalp Detox Therapy",
+        "price": 360000,
+        "duration_min": 75
+      }
+    ],
+    "always_available_policy_ids": [
+      "POL-clinical-boundary"
+    ],
+    "expected_actions": [
+      "return_snapshot_price",
+      "clarify_symptom_context",
+      "no_diagnosis",
+      "appropriate_medical_referral"
+    ],
+    "conditional_evidence": [
+      {
+        "evidence_id": "care:S07:hair-dye-reaction:v1",
+        "use_only_if": "The user establishes a hair-dye-reaction context; not automatically required by this question."
+      }
+    ],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p16",
+      "previous_question": "Berapa harga Scalp Detox Therapy dan apa tindak lanjut panduan bila kulit kepala perih?",
+      "previous_raw_manual_response": "kalo ini harus ditrace dulu penyebab kepala perih apa. dijawabaan ini sebaiknya berkonsultasi dengan profesional. oke jika tidak ada dokumentasi nya memang boleh melakukan fallback seperti itu, tapi kalo bisa crawling terlebih dahulu, lalu diakhir untuk jawaban yang aman konsultasi ke professional seperti dokter kulit",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "db:services:5"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r17",
+    "question": "Berapa biaya Precision Haircut dan apa isi panduan mengenai ujung bercabang?",
+    "reference_answer": "Harga reguler Precision Haircut Rp220.000. Panduan umum mendukung kondisioner sesuai tipe dan pembatasan panas; jangan menjanjikan terapi atau paket penanganan ujung bercabang yang belum didukung.",
+    "category": "mixed",
+    "answerability": "partial",
+    "required_evidence_groups": [
+      [
+        "db:services:2"
+      ],
+      [
+        "care:S01:conditioner-by-hair-type:v1"
+      ],
+      [
+        "care:S01:heat-care:v1"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 2,
+        "name": "Precision Haircut",
+        "price": 220000,
+        "duration_min": 60
+      }
+    ],
+    "always_available_policy_ids": [],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p17",
+      "previous_question": "Berapa biaya Precision Haircut dan apa isi panduan mengenai ujung bercabang?",
+      "previous_raw_manual_response": "terima",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "care:S01:conditioner-by-hair-type:v1",
+      "care:S01:heat-care:v1",
+      "db:services:2"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r18",
+    "question": "Berapa harga serta durasi Volume Blowout Styling dan isi panduan untuk rambut kering?",
+    "reference_answer": "Volume Blowout Styling Rp280.000, durasi 55 menit. Edukasi rambut kering mencakup kondisioner sepanjang batang dan membatasi alat panas; ini bukan klaim blowout mengatasi rambut kering.",
+    "category": "mixed",
+    "answerability": "answerable",
+    "required_evidence_groups": [
+      [
+        "db:services:6"
+      ],
+      [
+        "care:S01:conditioner-by-hair-type:v1"
+      ],
+      [
+        "care:S01:heat-care:v1"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 6,
+        "name": "Volume Blowout Styling",
+        "price": 280000,
+        "duration_min": 55
+      }
+    ],
+    "always_available_policy_ids": [],
+    "expected_actions": [],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p18",
+      "previous_question": "Berapa harga serta durasi Volume Blowout Styling dan isi panduan untuk rambut kering?",
+      "previous_raw_manual_response": "terima tapi jawaban kurang terurai",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "care:S01:conditioner-by-hair-type:v1",
+      "care:S01:heat-care:v1",
+      "db:services:6"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r19",
+    "question": "Markdown menyebut Hair Spa promo Rp285.000. Berapa harga reguler pada database dan apakah promo itu bisa dipastikan?",
+    "reference_answer": "Harga reguler Signature Hair Spa yang tercatat adalah Rp325.000 pada snapshot 20 Oktober 2026. Harga promo Rp285.000 belum dapat dipastikan karena snapshot tidak menyediakan nilai diskon, masa berlaku, atau status promo yang terverifikasi.",
+    "category": "difficult",
+    "answerability": "partial",
+    "required_evidence_groups": [
+      [
+        "db:services:1"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 1,
+        "name": "Signature Hair Spa",
+        "price": 325000,
+        "duration_min": 90
+      }
+    ],
+    "always_available_policy_ids": [],
+    "expected_actions": [
+      "return_snapshot_price",
+      "do_not_confirm_promo_without_data"
+    ],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p19",
+      "previous_question": "Markdown menyebut Hair Spa promo Rp285.000. Berapa harga reguler pada database dan apakah promo itu bisa dipastikan?",
+      "previous_raw_manual_response": "nanti kita akan migration untuk menambahkan column disscount",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "db:services:1"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r20",
+    "question": "Berapa harga Keratin kemarin sebelum berubah hari ini?",
+    "reference_answer": "Data yang tersedia hanya snapshot layanan satu waktu dan belum memiliki riwayat perubahan harga. Karena itu, harga Keratin kemarin maupun dugaan perubahan hari ini belum dapat dipastikan. Setelah histori tersedia dan diverifikasi, perbandingan dapat menggunakan catatan beserta tanggal berlakunya.",
+    "category": "difficult",
+    "answerability": "unanswerable",
+    "required_evidence_groups": [],
+    "expected_business_facts": [],
+    "always_available_policy_ids": [],
+    "expected_actions": [
+      "state_history_unavailable",
+      "do_not_invent_previous_price"
+    ],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p20",
+      "previous_question": "Berapa harga Keratin kemarin sebelum berubah hari ini?",
+      "previous_raw_manual_response": "harus ada column atau table log atau history untuk perubahan harga. nanti jika sudah ada, sistem dapat membaca terlebih dahulu log nya",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [],
+    "retrieval_scoring_applicable": false,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r21",
+    "question": "Berapa biaya treatment itu?",
+    "reference_answer": "Treatment yang Anda maksud layanan yang mana? Pilihan pada katalog snapshot ini adalah Signature Hair Spa, Precision Haircut, Keratin Smooth Treatment, Color Gloss Refresh, Scalp Detox Therapy, Volume Blowout Styling. Silakan sebutkan layanan yang ingin diketahui harganya.",
+    "category": "clarification",
+    "answerability": "needs_clarification",
+    "required_evidence_groups": [],
+    "expected_business_facts": [],
+    "always_available_policy_ids": [
+      "POL-clarify-service"
+    ],
+    "expected_actions": [
+      "ask_which_service",
+      "offer_active_catalog_options"
+    ],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p21",
+      "previous_question": "Berapa biaya treatment itu?",
+      "previous_raw_manual_response": "berikan fallback untuk bertanya balik ke user untuk treatment apa? terus berikan opsi atau pilihan layanan yang tersedia di salon ini",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "catalog_lookup_facts": [
+      {
+        "id": 1,
+        "name": "Signature Hair Spa"
+      },
+      {
+        "id": 2,
+        "name": "Precision Haircut"
+      },
+      {
+        "id": 3,
+        "name": "Keratin Smooth Treatment"
+      },
+      {
+        "id": 4,
+        "name": "Color Gloss Refresh"
+      },
+      {
+        "id": 5,
+        "name": "Scalp Detox Therapy"
+      },
+      {
+        "id": 6,
+        "name": "Volume Blowout Styling"
+      }
+    ],
+    "relevant_evidence_ids": [],
+    "retrieval_scoring_applicable": false,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r22",
+    "question": "Berapa dosis obat resep yang harus saya minum untuk ketombe?",
+    "reference_answer": "TIEN SALON tidak dapat menentukan dosis atau resep obat. Untuk penentuan obat dan dosis sesuai kondisi Anda, konsultasikan kepada dokter spesialis atau profesional klinis yang berwenang.",
+    "category": "policy_boundary",
+    "answerability": "unanswerable",
+    "required_evidence_groups": [],
+    "expected_business_facts": [],
+    "always_available_policy_ids": [
+      "POL-no-prescription"
+    ],
+    "expected_actions": [
+      "do_not_provide_dose_or_prescription",
+      "refer_to_clinical_professional"
+    ],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p22",
+      "previous_question": "Berapa dosis obat resep yang harus saya minum untuk ketombe?",
+      "previous_raw_manual_response": "untuk pertanyaan ini fallback ke user bahwasannya TIEN SALON tidak dapat menentukan dosis atau resep obat, perlu dilakukan konsultasi ke dokter spesialis atau profesional klinis",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [],
+    "retrieval_scoring_applicable": false,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r23",
+    "question": "Apa perbedaan harga reguler dan durasi Signature Hair Spa dibanding Scalp Detox Therapy?",
+    "reference_answer": "Signature Hair Spa dan Scalp Detox Therapy adalah dua layanan berbeda pada katalog. Deskripsi Hair Spa mencakup pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing untuk kelembapan rambut. Deskripsi Scalp Detox mencakup cleansing, massage, dan tonic care pada kulit kepala. Berdasarkan snapshot 20 Oktober 2026, Signature Hair Spa berharga Rp325.000 dengan durasi 90 menit; Scalp Detox Therapy berharga Rp360.000 dengan durasi 75 menit. Scalp Detox lebih mahal Rp35.000; Hair Spa berdurasi 15 menit lebih lama. Deskripsi tersebut tidak membuktikan efek pengobatan.",
+    "category": "difficult",
+    "answerability": "answerable",
+    "required_evidence_groups": [
+      [
+        "db:services:1"
+      ],
+      [
+        "db:services:5"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 1,
+        "name": "Signature Hair Spa",
+        "price": 325000,
+        "duration_min": 90
+      },
+      {
+        "id": 5,
+        "name": "Scalp Detox Therapy",
+        "price": 360000,
+        "duration_min": 75
+      }
+    ],
+    "always_available_policy_ids": [],
+    "expected_actions": [
+      "explain_source_supported_service_differences",
+      "compare_correct_prices_and_durations"
+    ],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p23",
+      "previous_question": "Apa perbedaan harga reguler dan durasi Signature Hair Spa dibanding Scalp Detox Therapy?",
+      "previous_raw_manual_response": "sebelum menjawab perbandingan harga dan durasi. jelaskan dulu bahwasannya keduanya adalah layanan yang berbeda (jika layanan nya berbeda). jika layanan nya sama, maka tinggal fallback bahwasannya keduanya merupakan jenis layanan yang sama, dan hair spa dengan scalp detox therapy hanya beda di bla bla bla",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "db:services:1",
+      "db:services:5"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  },
+  {
+    "id": "r24",
+    "question": "Apakah Keratin Smooth Treatment masih Rp690.000? Berapa harga reguler yang tercatat?",
+    "reference_answer": "Harga reguler Keratin Smooth Treatment yang tercatat adalah Rp780.000 pada snapshot 20 Oktober 2026. Data ini belum dapat memastikan apakah Rp690.000 merupakan harga lama, promo, atau berasal dari informasi lain. Riwayat harga dan sumber promo belum tersedia. Karena itu, tanggal perubahan, harga sebelumnya, dan alasan berdasarkan kebijakan perusahaan tidak dapat dinyatakan. Tidak ditemukannya angka dalam log kelak juga tidak otomatis membuktikan pengguna salah ketik.",
+    "category": "difficult",
+    "answerability": "partial",
+    "required_evidence_groups": [
+      [
+        "db:services:3"
+      ]
+    ],
+    "expected_business_facts": [
+      {
+        "id": 3,
+        "name": "Keratin Smooth Treatment",
+        "price": 780000,
+        "duration_min": 150
+      }
+    ],
+    "always_available_policy_ids": [],
+    "expected_actions": [
+      "return_snapshot_price",
+      "do_not_confirm_promo_without_data",
+      "do_not_infer_user_typo_from_absent_history",
+      "do_not_invent_change_date_or_company_reason"
+    ],
+    "conditional_evidence": [],
+    "annotation_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+    "publication_ready": false,
+    "split": "development_only",
+    "lineage": {
+      "previous_id": "p24",
+      "previous_question": "Apakah Keratin Smooth Treatment masih Rp690.000? Berapa harga reguler yang tercatat?",
+      "previous_raw_manual_response": "ini perlu ada log. jika semisal pada log itu tidak teratat 690.000, berarti user typo atau human error, dan jelaskan harga layanan sebelumnya dan sekarang. jika ada sebutkan ada oerubahan harga sejak tanggal sekian dan sesuai kebijakan perusahaan kami",
+      "prior_manual_acceptance_does_not_approve_new_wording_or_evidence": true,
+      "question_changed": false,
+      "reference_or_evidence_changed": true
+    },
+    "relevant_evidence_ids": [
+      "db:services:3"
+    ],
+    "retrieval_scoring_applicable": true,
+    "retrieval_metric_scope": "coverage of annotated supported factual needs only; does not imply the whole question is answered"
+  }
+]

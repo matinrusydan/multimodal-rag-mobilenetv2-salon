@@ -1,6 +1,7 @@
 """Embedding provider: Gemini gemini-embedding-001 (768d via outputDimensionality)
-with local deterministic fallback (offline/dev/tests, same dimension 768 so the
-collection stays compatible).
+with local deterministic fallback for development. Equal vector dimensions do
+not imply compatible embedding spaces. Research calls must use strict=True and
+must also verify the model used to build the queried index.
 
 Port of `apps/api/src/rag/embedding.ts` concepts, but provider Gemini + dim 768.
 """
@@ -67,7 +68,7 @@ def _l2_normalize(vec: list[float]) -> list[float]:
     return [v / norm for v in vec]
 
 
-async def embed(texts: list[str]) -> list[list[float]]:
+async def embed(texts: list[str], *, strict: bool = False) -> list[list[float]]:
     """Embed a list of texts.
 
     - provider=gemini -> gemini-embedding-001 (768d via outputDimensionality), batched API call.
@@ -75,6 +76,8 @@ async def embed(texts: list[str]) -> list[list[float]]:
     Falls back to local automatically if Gemini is unavailable (no key / error).
     """
     if settings.ai_embedding_provider != "gemini" or not gemini_api_key():
+        if strict:
+            raise RuntimeError("Strict embedding requires a configured Gemini provider and key")
         logger.info("embedding lokal (offline, 768d)")
         return embed_local(texts)
 
@@ -88,6 +91,8 @@ async def embed(texts: list[str]) -> list[list[float]]:
         # Normalisasi L2 agar konsisten dengan ruang cosine (urutan ranking stabil).
         return [_l2_normalize(list(e.values)) for e in response.embeddings]
     except Exception as exc:  # no key / quota / network
+        if strict:
+            raise RuntimeError("Gemini embedding failed; strict mode forbids mixing embedding spaces") from exc
         logger.warning("Gemini embedding gagal (%s); fallback lokal", exc)
         return embed_local(texts)
 

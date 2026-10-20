@@ -1,0 +1,1771 @@
+{
+  "protocol": "curated_development_diagnosis_only",
+  "method": "bm25",
+  "top_k": 5,
+  "bm25_k1": 1.5,
+  "bm25_b": 0.75,
+  "snippet_char_limit": 400,
+  "corpus_size": 13,
+  "question_count": 24,
+  "summary": {
+    "all": {
+      "total": 24,
+      "scored": 20,
+      "excluded": 4,
+      "precision": 0.24,
+      "recall": 0.9083333333333334,
+      "f1": 0.3672619047619048,
+      "complete_evidence": 0.85
+    },
+    "business_and_clarification": {
+      "total": 1,
+      "scored": 1,
+      "excluded": 0,
+      "precision": 0.2,
+      "recall": 1.0,
+      "f1": 0.33333333333333337,
+      "complete_evidence": 1.0
+    },
+    "business_and_policy": {
+      "total": 1,
+      "scored": 1,
+      "excluded": 0,
+      "precision": 0.2,
+      "recall": 1.0,
+      "f1": 0.33333333333333337,
+      "complete_evidence": 1.0
+    },
+    "business_and_source_gap": {
+      "total": 1,
+      "scored": 1,
+      "excluded": 0,
+      "precision": 0.2,
+      "recall": 1.0,
+      "f1": 0.33333333333333337,
+      "complete_evidence": 1.0
+    },
+    "clarification": {
+      "total": 1,
+      "scored": 0,
+      "excluded": 1,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "complete_evidence": null
+    },
+    "database": {
+      "total": 6,
+      "scored": 6,
+      "excluded": 0,
+      "precision": 0.20000000000000004,
+      "recall": 1.0,
+      "f1": 0.3333333333333333,
+      "complete_evidence": 1.0
+    },
+    "difficult": {
+      "total": 4,
+      "scored": 3,
+      "excluded": 1,
+      "precision": 0.26666666666666666,
+      "recall": 1.0,
+      "f1": 0.41269841269841273,
+      "complete_evidence": 1.0
+    },
+    "document": {
+      "total": 5,
+      "scored": 5,
+      "excluded": 0,
+      "precision": 0.16,
+      "recall": 0.7,
+      "f1": 0.2571428571428572,
+      "complete_evidence": 0.6
+    },
+    "mixed": {
+      "total": 3,
+      "scored": 3,
+      "excluded": 0,
+      "precision": 0.4666666666666666,
+      "recall": 0.8888888888888888,
+      "f1": 0.6071428571428571,
+      "complete_evidence": 0.6666666666666666
+    },
+    "policy_boundary": {
+      "total": 1,
+      "scored": 0,
+      "excluded": 1,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "complete_evidence": null
+    },
+    "source_gap": {
+      "total": 1,
+      "scored": 0,
+      "excluded": 1,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "complete_evidence": null
+    }
+  },
+  "results": [
+    {
+      "id": "r01",
+      "question": "Berapa harga reguler dan durasi Signature Hair Spa yang tercatat?",
+      "category": "database",
+      "answerability": "answerable",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:1",
+          "section": "Signature Hair Spa",
+          "source_type": "db",
+          "score": 12.260542700215904,
+          "snippet": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 3.7748238481804863,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 2.581365520244449,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 2.422417908664693,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "db:services:5",
+          "section": "Scalp Detox Therapy",
+          "source_type": "db",
+          "score": 2.422417908664693,
+          "snippet": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:1"
+        ]
+      ],
+      "gold_ranks": {
+        "db:services:1": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r02",
+      "question": "Berapa harga reguler dan durasi Precision Haircut yang tercatat?",
+      "category": "database",
+      "answerability": "answerable",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 9.27108047176754,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 3.7748238481804863,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 2.422417908664693,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "db:services:5",
+          "section": "Scalp Detox Therapy",
+          "source_type": "db",
+          "score": 2.422417908664693,
+          "snippet": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+        },
+        {
+          "id": "db:services:4",
+          "section": "Color Gloss Refresh",
+          "source_type": "db",
+          "score": 2.3872973516245724,
+          "snippet": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:2"
+        ]
+      ],
+      "gold_ranks": {
+        "db:services:2": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r03",
+      "question": "Berapa harga reguler dan durasi Keratin Smooth Treatment yang tercatat?",
+      "category": "database",
+      "answerability": "answerable",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 12.089870664505915,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 3.7748238481804863,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 2.581365520244449,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "db:services:5",
+          "section": "Scalp Detox Therapy",
+          "source_type": "db",
+          "score": 2.422417908664693,
+          "snippet": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+        },
+        {
+          "id": "db:services:4",
+          "section": "Color Gloss Refresh",
+          "source_type": "db",
+          "score": 2.3872973516245724,
+          "snippet": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:3"
+        ]
+      ],
+      "gold_ranks": {
+        "db:services:3": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r04",
+      "question": "Berapa harga reguler dan durasi Color Gloss Refresh yang tercatat?",
+      "category": "database",
+      "answerability": "answerable",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:4",
+          "section": "Color Gloss Refresh",
+          "source_type": "db",
+          "score": 11.413873195194796,
+          "snippet": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 3.7748238481804863,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 2.581365520244449,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 2.422417908664693,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "db:services:5",
+          "section": "Scalp Detox Therapy",
+          "source_type": "db",
+          "score": 2.422417908664693,
+          "snippet": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:4"
+        ]
+      ],
+      "gold_ranks": {
+        "db:services:4": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r05",
+      "question": "Berapa harga reguler dan durasi Scalp Detox Therapy yang tercatat?",
+      "category": "database",
+      "answerability": "answerable",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:5",
+          "section": "Scalp Detox Therapy",
+          "source_type": "db",
+          "score": 12.089870664505915,
+          "snippet": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 3.7748238481804863,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 2.581365520244449,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 2.422417908664693,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "db:services:4",
+          "section": "Color Gloss Refresh",
+          "source_type": "db",
+          "score": 2.3872973516245724,
+          "snippet": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:5"
+        ]
+      ],
+      "gold_ranks": {
+        "db:services:5": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r06",
+      "question": "Berapa harga reguler dan durasi Volume Blowout Styling yang tercatat?",
+      "category": "database",
+      "answerability": "answerable",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 13.250429223018942,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 3.8976021265144833,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "care:S01:heat-care:v1",
+          "section": "Membatasi panas saat styling",
+          "source_type": "official_professional_guidance",
+          "score": 2.5523895206011344,
+          "snippet": "Batasi blow-drying dan alat styling panas. Gunakan pengaturan panas rendah atau sedang dan pelindung panas sesuai petunjuk produk."
+        },
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 2.422417908664693,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "db:services:5",
+          "section": "Scalp Detox Therapy",
+          "source_type": "db",
+          "score": 2.422417908664693,
+          "snippet": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:6"
+        ]
+      ],
+      "gold_ranks": {
+        "db:services:6": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r07",
+      "question": "Untuk kondisioner setelah keramas, apakah area pemakaiannya sama untuk semua tipe rambut?",
+      "category": "document",
+      "answerability": "answerable",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "care:S01:conditioner-by-hair-type:v1",
+          "section": "Kondisioner sesuai tipe rambut",
+          "source_type": "official_professional_guidance",
+          "score": 10.960357517547482,
+          "snippet": "Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut."
+        },
+        {
+          "id": "care:S04:hair-loss-referral:v1",
+          "section": "Rujukan untuk kerontokan",
+          "source_type": "official_professional_guidance",
+          "score": 1.0388608634235066,
+          "snippet": "Menentukan penyebab kerontokan memerlukan pemeriksaan. Dokter kulit memiliki kompetensi untuk diagnosis dan penanganannya."
+        },
+        {
+          "id": "care:S03:curly-detangling:v1",
+          "section": "Mengurai kusut pada rambut keriting",
+          "source_type": "official_professional_guidance",
+          "score": 0.9598761920720695,
+          "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+        },
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 0.8517179464440914,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "db:services:4",
+          "section": "Color Gloss Refresh",
+          "source_type": "db",
+          "score": 0.8404157593401566,
+          "snippet": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "care:S01:conditioner-by-hair-type:v1"
+        ]
+      ],
+      "gold_ranks": {
+        "care:S01:conditioner-by-hair-type:v1": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r08",
+      "question": "Menurut panduan, sampo seperti apa yang digunakan setelah pewarnaan?",
+      "category": "source_gap",
+      "answerability": "unanswerable_in_current_corpus",
+      "scoring_applicable": false,
+      "metrics": null,
+      "retrieved": [
+        {
+          "id": "care:S02:leave-in-placement:v1",
+          "section": "Pemakaian leave-in conditioner",
+          "source_type": "official_professional_guidance",
+          "score": 3.542746142428936,
+          "snippet": "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan."
+        },
+        {
+          "id": "care:S08:chemical-damage-background:v1",
+          "section": "Konteks risiko pewarnaan dan pengeritingan",
+          "source_type": "published_journal_review",
+          "score": 2.724783904590521,
+          "snippet": "Review jurnal membahas kerusakan batang rambut dan reaksi kulit kepala akibat pewarnaan atau pengeritingan kimia."
+        },
+        {
+          "id": "care:S01:conditioner-by-hair-type:v1",
+          "section": "Kondisioner sesuai tipe rambut",
+          "source_type": "official_professional_guidance",
+          "score": 2.4083950910163456,
+          "snippet": "Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut."
+        },
+        {
+          "id": "db:services:4",
+          "section": "Color Gloss Refresh",
+          "source_type": "db",
+          "score": 1.588275525054995,
+          "snippet": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+        },
+        {
+          "id": "care:S03:curly-detangling:v1",
+          "section": "Mengurai kusut pada rambut keriting",
+          "source_type": "official_professional_guidance",
+          "score": 1.399841211554287,
+          "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+        }
+      ],
+      "required_evidence_groups": [],
+      "gold_ranks": {},
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r09",
+      "question": "Apa catatan panduan mengenai menyisir rambut keriting saat kering?",
+      "category": "document",
+      "answerability": "answerable",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "care:S03:curly-detangling:v1",
+          "section": "Mengurai kusut pada rambut keriting",
+          "source_type": "official_professional_guidance",
+          "score": 7.0256755702096445,
+          "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+        },
+        {
+          "id": "care:S01:conditioner-by-hair-type:v1",
+          "section": "Kondisioner sesuai tipe rambut",
+          "source_type": "official_professional_guidance",
+          "score": 4.085040730719996,
+          "snippet": "Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut."
+        },
+        {
+          "id": "care:S01:heat-care:v1",
+          "section": "Membatasi panas saat styling",
+          "source_type": "official_professional_guidance",
+          "score": 1.8896334199017855,
+          "snippet": "Batasi blow-drying dan alat styling panas. Gunakan pengaturan panas rendah atau sedang dan pelindung panas sesuai petunjuk produk."
+        },
+        {
+          "id": "care:S02:leave-in-placement:v1",
+          "section": "Pemakaian leave-in conditioner",
+          "source_type": "official_professional_guidance",
+          "score": 0.2767110208339278,
+          "snippet": "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan."
+        },
+        {
+          "id": "care:S07:hair-dye-reaction:v1",
+          "section": "Batas edukasi reaksi pewarna rambut",
+          "source_type": "official_health_service_guidance",
+          "score": 0.2736838876466843,
+          "snippet": "Pada reaksi pewarna rambut, rasa terbakar atau perih dapat menjadi gejala. Keluhan memburuk perlu pemeriksaan medis. Pembengkakan mulut atau tenggorokan maupun kesulitan bernapas memerlukan bantuan darurat."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "care:S03:curly-detangling:v1"
+        ]
+      ],
+      "gold_ranks": {
+        "care:S03:curly-detangling:v1": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r10",
+      "question": "Apa isi panduan perawatan untuk rambut rusak dan bercabang?",
+      "category": "document",
+      "answerability": "partial",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "complete_evidence": 0.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 3.2103600622562425,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "care:S04:hair-loss-referral:v1",
+          "section": "Rujukan untuk kerontokan",
+          "source_type": "official_professional_guidance",
+          "score": 1.3977399075283439,
+          "snippet": "Menentukan penyebab kerontokan memerlukan pemeriksaan. Dokter kulit memiliki kompetensi untuk diagnosis dan penanganannya."
+        },
+        {
+          "id": "care:S03:curly-detangling:v1",
+          "section": "Mengurai kusut pada rambut keriting",
+          "source_type": "official_professional_guidance",
+          "score": 1.2503694899875486,
+          "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+        },
+        {
+          "id": "db:services:4",
+          "section": "Color Gloss Refresh",
+          "source_type": "db",
+          "score": 1.1056393800391962,
+          "snippet": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+        },
+        {
+          "id": "db:services:1",
+          "section": "Signature Hair Spa",
+          "source_type": "db",
+          "score": 1.0764534073903778,
+          "snippet": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "care:S01:conditioner-by-hair-type:v1"
+        ],
+        [
+          "care:S01:heat-care:v1"
+        ]
+      ],
+      "gold_ranks": {
+        "care:S01:conditioner-by-hair-type:v1": 11,
+        "care:S01:heat-care:v1": 10
+      },
+      "missing_groups": [
+        [
+          "care:S01:conditioner-by-hair-type:v1"
+        ],
+        [
+          "care:S01:heat-care:v1"
+        ]
+      ],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r11",
+      "question": "Apa isi panduan untuk rambut kering atau kusam?",
+      "category": "document",
+      "answerability": "answerable",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 0.5,
+        "f1": 0.28571428571428575,
+        "complete_evidence": 0.0
+      },
+      "retrieved": [
+        {
+          "id": "care:S03:curly-detangling:v1",
+          "section": "Mengurai kusut pada rambut keriting",
+          "source_type": "official_professional_guidance",
+          "score": 3.8031857508718327,
+          "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+        },
+        {
+          "id": "care:S01:conditioner-by-hair-type:v1",
+          "section": "Kondisioner sesuai tipe rambut",
+          "source_type": "official_professional_guidance",
+          "score": 3.3834591146208237,
+          "snippet": "Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut."
+        },
+        {
+          "id": "care:S07:hair-dye-reaction:v1",
+          "section": "Batas edukasi reaksi pewarna rambut",
+          "source_type": "official_health_service_guidance",
+          "score": 1.3411693175091777,
+          "snippet": "Pada reaksi pewarna rambut, rasa terbakar atau perih dapat menjadi gejala. Keluhan memburuk perlu pemeriksaan medis. Pembengkakan mulut atau tenggorokan maupun kesulitan bernapas memerlukan bantuan darurat."
+        },
+        {
+          "id": "care:S08:chemical-damage-background:v1",
+          "section": "Konteks risiko pewarnaan dan pengeritingan",
+          "source_type": "published_journal_review",
+          "score": 1.1150346587966928,
+          "snippet": "Review jurnal membahas kerusakan batang rambut dan reaksi kulit kepala akibat pewarnaan atau pengeritingan kimia."
+        },
+        {
+          "id": "care:S04:hair-loss-referral:v1",
+          "section": "Rujukan untuk kerontokan",
+          "source_type": "official_professional_guidance",
+          "score": 1.0388608634235066,
+          "snippet": "Menentukan penyebab kerontokan memerlukan pemeriksaan. Dokter kulit memiliki kompetensi untuk diagnosis dan penanganannya."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "care:S01:conditioner-by-hair-type:v1"
+        ],
+        [
+          "care:S01:heat-care:v1"
+        ]
+      ],
+      "gold_ranks": {
+        "care:S01:conditioner-by-hair-type:v1": 2,
+        "care:S01:heat-care:v1": 8
+      },
+      "missing_groups": [
+        [
+          "care:S01:heat-care:v1"
+        ]
+      ],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r12",
+      "question": "Menurut panduan, apa tindak lanjut bila kerontokan berlebihan menetap?",
+      "category": "document",
+      "answerability": "answerable",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "care:S04:hair-loss-referral:v1",
+          "section": "Rujukan untuk kerontokan",
+          "source_type": "official_professional_guidance",
+          "score": 3.717656851904426,
+          "snippet": "Menentukan penyebab kerontokan memerlukan pemeriksaan. Dokter kulit memiliki kompetensi untuk diagnosis dan penanganannya."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 2.120715432365082,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "care:S01:conditioner-by-hair-type:v1",
+          "section": "Kondisioner sesuai tipe rambut",
+          "source_type": "official_professional_guidance",
+          "score": 0.0,
+          "snippet": "Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut."
+        },
+        {
+          "id": "care:S01:heat-care:v1",
+          "section": "Membatasi panas saat styling",
+          "source_type": "official_professional_guidance",
+          "score": 0.0,
+          "snippet": "Batasi blow-drying dan alat styling panas. Gunakan pengaturan panas rendah atau sedang dan pelindung panas sesuai petunjuk produk."
+        },
+        {
+          "id": "care:S02:leave-in-placement:v1",
+          "section": "Pemakaian leave-in conditioner",
+          "source_type": "official_professional_guidance",
+          "score": 0.0,
+          "snippet": "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "care:S04:hair-loss-referral:v1"
+        ]
+      ],
+      "gold_ranks": {
+        "care:S04:hair-loss-referral:v1": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r13",
+      "question": "Berapa harga Signature Hair Spa dan di bagian mana kondisioner dipakai menurut panduan?",
+      "category": "mixed",
+      "answerability": "answerable",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.4,
+        "recall": 1.0,
+        "f1": 0.5714285714285715,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:1",
+          "section": "Signature Hair Spa",
+          "source_type": "db",
+          "score": 10.885692426567136,
+          "snippet": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+        },
+        {
+          "id": "care:S01:conditioner-by-hair-type:v1",
+          "section": "Kondisioner sesuai tipe rambut",
+          "source_type": "official_professional_guidance",
+          "score": 3.3653151332549176,
+          "snippet": "Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut."
+        },
+        {
+          "id": "care:S02:leave-in-placement:v1",
+          "section": "Pemakaian leave-in conditioner",
+          "source_type": "official_professional_guidance",
+          "score": 2.1859939658001557,
+          "snippet": "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan."
+        },
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 1.1244032088126767,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 1.0016249304786797,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:1"
+        ],
+        [
+          "care:S01:conditioner-by-hair-type:v1"
+        ]
+      ],
+      "gold_ranks": {
+        "care:S01:conditioner-by-hair-type:v1": 2,
+        "db:services:1": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r14",
+      "question": "Berapa harga reguler Keratin Smooth Treatment dan siapa yang memberi instruksi perawatan setelahnya?",
+      "category": "business_and_policy",
+      "answerability": "partial",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 13.461623184538997,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 5.167058124829682,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 1.8528843645285629,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "db:services:5",
+          "section": "Scalp Detox Therapy",
+          "source_type": "db",
+          "score": 1.704653752221881,
+          "snippet": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+        },
+        {
+          "id": "care:S03:curly-detangling:v1",
+          "section": "Mengurai kusut pada rambut keriting",
+          "source_type": "official_professional_guidance",
+          "score": 1.6903345094697662,
+          "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:3"
+        ]
+      ],
+      "gold_ranks": {
+        "db:services:3": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r15",
+      "question": "Berapa harga Color Gloss Refresh dan sampo apa yang disebut panduan setelah pewarnaan?",
+      "category": "business_and_source_gap",
+      "answerability": "partial",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:4",
+          "section": "Color Gloss Refresh",
+          "source_type": "db",
+          "score": 11.58743289963277,
+          "snippet": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+        },
+        {
+          "id": "care:S08:chemical-damage-background:v1",
+          "section": "Konteks risiko pewarnaan dan pengeritingan",
+          "source_type": "published_journal_review",
+          "score": 3.1797912640805825,
+          "snippet": "Review jurnal membahas kerusakan batang rambut dan reaksi kulit kepala akibat pewarnaan atau pengeritingan kimia."
+        },
+        {
+          "id": "care:S01:conditioner-by-hair-type:v1",
+          "section": "Kondisioner sesuai tipe rambut",
+          "source_type": "official_professional_guidance",
+          "score": 2.4083950910163456,
+          "snippet": "Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 2.3178615367487136,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "care:S03:curly-detangling:v1",
+          "section": "Mengurai kusut pada rambut keriting",
+          "source_type": "official_professional_guidance",
+          "score": 1.6903345094697662,
+          "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:4"
+        ]
+      ],
+      "gold_ranks": {
+        "db:services:4": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r16",
+      "question": "Berapa harga Scalp Detox Therapy dan apa tindak lanjut panduan bila kulit kepala perih?",
+      "category": "business_and_clarification",
+      "answerability": "partial",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:5",
+          "section": "Scalp Detox Therapy",
+          "source_type": "db",
+          "score": 12.590154174379714,
+          "snippet": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+        },
+        {
+          "id": "care:S08:chemical-damage-background:v1",
+          "section": "Konteks risiko pewarnaan dan pengeritingan",
+          "source_type": "published_journal_review",
+          "score": 2.8485881160829853,
+          "snippet": "Review jurnal membahas kerusakan batang rambut dan reaksi kulit kepala akibat pewarnaan atau pengeritingan kimia."
+        },
+        {
+          "id": "db:services:1",
+          "section": "Signature Hair Spa",
+          "source_type": "db",
+          "score": 2.799162377364718,
+          "snippet": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+        },
+        {
+          "id": "care:S07:hair-dye-reaction:v1",
+          "section": "Batas edukasi reaksi pewarna rambut",
+          "source_type": "official_health_service_guidance",
+          "score": 2.1528599725369584,
+          "snippet": "Pada reaksi pewarna rambut, rasa terbakar atau perih dapat menjadi gejala. Keluhan memburuk perlu pemeriksaan medis. Pembengkakan mulut atau tenggorokan maupun kesulitan bernapas memerlukan bantuan darurat."
+        },
+        {
+          "id": "care:S02:leave-in-placement:v1",
+          "section": "Pemakaian leave-in conditioner",
+          "source_type": "official_professional_guidance",
+          "score": 2.025192242358022,
+          "snippet": "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:5"
+        ]
+      ],
+      "gold_ranks": {
+        "db:services:5": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r17",
+      "question": "Berapa biaya Precision Haircut dan apa isi panduan mengenai ujung bercabang?",
+      "category": "mixed",
+      "answerability": "partial",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.7499999999999999,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 7.08563700461988,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "care:S01:conditioner-by-hair-type:v1",
+          "section": "Kondisioner sesuai tipe rambut",
+          "source_type": "official_professional_guidance",
+          "score": 1.8575918097382336,
+          "snippet": "Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut."
+        },
+        {
+          "id": "care:S02:leave-in-placement:v1",
+          "section": "Pemakaian leave-in conditioner",
+          "source_type": "official_professional_guidance",
+          "score": 1.6860541288073942,
+          "snippet": "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan."
+        },
+        {
+          "id": "care:S08:chemical-damage-background:v1",
+          "section": "Konteks risiko pewarnaan dan pengeritingan",
+          "source_type": "published_journal_review",
+          "score": 0.45500735949006155,
+          "snippet": "Review jurnal membahas kerusakan batang rambut dan reaksi kulit kepala akibat pewarnaan atau pengeritingan kimia."
+        },
+        {
+          "id": "care:S01:heat-care:v1",
+          "section": "Membatasi panas saat styling",
+          "source_type": "official_professional_guidance",
+          "score": 0.43864220084870365,
+          "snippet": "Batasi blow-drying dan alat styling panas. Gunakan pengaturan panas rendah atau sedang dan pelindung panas sesuai petunjuk produk."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:2"
+        ],
+        [
+          "care:S01:conditioner-by-hair-type:v1"
+        ],
+        [
+          "care:S01:heat-care:v1"
+        ]
+      ],
+      "gold_ranks": {
+        "care:S01:conditioner-by-hair-type:v1": 2,
+        "care:S01:heat-care:v1": 5,
+        "db:services:2": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r18",
+      "question": "Berapa harga serta durasi Volume Blowout Styling dan isi panduan untuk rambut kering?",
+      "category": "mixed",
+      "answerability": "answerable",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.4,
+        "recall": 0.6666666666666666,
+        "f1": 0.5,
+        "complete_evidence": 0.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 11.985092860815275,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 3.35589031602456,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "care:S03:curly-detangling:v1",
+          "section": "Mengurai kusut pada rambut keriting",
+          "source_type": "official_professional_guidance",
+          "score": 2.989970940475308,
+          "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+        },
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 2.5563716986659726,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "care:S01:heat-care:v1",
+          "section": "Membatasi panas saat styling",
+          "source_type": "official_professional_guidance",
+          "score": 2.5523895206011344,
+          "snippet": "Batasi blow-drying dan alat styling panas. Gunakan pengaturan panas rendah atau sedang dan pelindung panas sesuai petunjuk produk."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:6"
+        ],
+        [
+          "care:S01:conditioner-by-hair-type:v1"
+        ],
+        [
+          "care:S01:heat-care:v1"
+        ]
+      ],
+      "gold_ranks": {
+        "care:S01:conditioner-by-hair-type:v1": 9,
+        "care:S01:heat-care:v1": 5,
+        "db:services:6": 1
+      },
+      "missing_groups": [
+        [
+          "care:S01:conditioner-by-hair-type:v1"
+        ]
+      ],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r19",
+      "question": "Markdown menyebut Hair Spa promo Rp285.000. Berapa harga reguler pada database dan apakah promo itu bisa dipastikan?",
+      "category": "difficult",
+      "answerability": "partial",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:1",
+          "section": "Signature Hair Spa",
+          "source_type": "db",
+          "score": 9.314101897376757,
+          "snippet": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+        },
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 2.581365520244449,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 2.458587241910452,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 2.422417908664693,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "db:services:5",
+          "section": "Scalp Detox Therapy",
+          "source_type": "db",
+          "score": 2.422417908664693,
+          "snippet": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:1"
+        ]
+      ],
+      "gold_ranks": {
+        "db:services:1": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r20",
+      "question": "Berapa harga Keratin kemarin sebelum berubah hari ini?",
+      "category": "difficult",
+      "answerability": "unanswerable",
+      "scoring_applicable": false,
+      "metrics": null,
+      "retrieved": [
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 4.3030772369202195,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 0.7284811557158862,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 0.7284811557158862,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "db:services:5",
+          "section": "Scalp Detox Therapy",
+          "source_type": "db",
+          "score": 0.7177641564428121,
+          "snippet": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+        },
+        {
+          "id": "db:services:4",
+          "section": "Color Gloss Refresh",
+          "source_type": "db",
+          "score": 0.7073579103085109,
+          "snippet": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+        }
+      ],
+      "required_evidence_groups": [],
+      "gold_ranks": {},
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r21",
+      "question": "Berapa biaya treatment itu?",
+      "category": "clarification",
+      "answerability": "needs_clarification",
+      "scoring_applicable": false,
+      "metrics": null,
+      "retrieved": [
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 3.0410698376819076,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "care:S01:conditioner-by-hair-type:v1",
+          "section": "Kondisioner sesuai tipe rambut",
+          "source_type": "official_professional_guidance",
+          "score": 0.0,
+          "snippet": "Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut."
+        },
+        {
+          "id": "care:S01:heat-care:v1",
+          "section": "Membatasi panas saat styling",
+          "source_type": "official_professional_guidance",
+          "score": 0.0,
+          "snippet": "Batasi blow-drying dan alat styling panas. Gunakan pengaturan panas rendah atau sedang dan pelindung panas sesuai petunjuk produk."
+        },
+        {
+          "id": "care:S02:leave-in-placement:v1",
+          "section": "Pemakaian leave-in conditioner",
+          "source_type": "official_professional_guidance",
+          "score": 0.0,
+          "snippet": "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan."
+        },
+        {
+          "id": "care:S03:curly-detangling:v1",
+          "section": "Mengurai kusut pada rambut keriting",
+          "source_type": "official_professional_guidance",
+          "score": 0.0,
+          "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+        }
+      ],
+      "required_evidence_groups": [],
+      "gold_ranks": {},
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r22",
+      "question": "Berapa dosis obat resep yang harus saya minum untuk ketombe?",
+      "category": "policy_boundary",
+      "answerability": "unanswerable",
+      "scoring_applicable": false,
+      "metrics": null,
+      "retrieved": [
+        {
+          "id": "care:S03:curly-detangling:v1",
+          "section": "Mengurai kusut pada rambut keriting",
+          "source_type": "official_professional_guidance",
+          "score": 2.0300947484032386,
+          "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 1.9088486608263224,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "care:S02:leave-in-placement:v1",
+          "section": "Pemakaian leave-in conditioner",
+          "source_type": "official_professional_guidance",
+          "score": 1.3567521766287802,
+          "snippet": "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan."
+        },
+        {
+          "id": "care:S04:hair-loss-referral:v1",
+          "section": "Rujukan untuk kerontokan",
+          "source_type": "official_professional_guidance",
+          "score": 1.0388608634235066,
+          "snippet": "Menentukan penyebab kerontokan memerlukan pemeriksaan. Dokter kulit memiliki kompetensi untuk diagnosis dan penanganannya."
+        },
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 0.5838938840064221,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        }
+      ],
+      "required_evidence_groups": [],
+      "gold_ranks": {},
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r23",
+      "question": "Apa perbedaan harga reguler dan durasi Signature Hair Spa dibanding Scalp Detox Therapy?",
+      "category": "difficult",
+      "answerability": "answerable",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.4,
+        "recall": 1.0,
+        "f1": 0.5714285714285715,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:1",
+          "section": "Signature Hair Spa",
+          "source_type": "db",
+          "score": 12.260542700215904,
+          "snippet": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+        },
+        {
+          "id": "db:services:5",
+          "section": "Scalp Detox Therapy",
+          "source_type": "db",
+          "score": 12.089870664505915,
+          "snippet": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+        },
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 2.581365520244449,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 2.458587241910452,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 2.422417908664693,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:1"
+        ],
+        [
+          "db:services:5"
+        ]
+      ],
+      "gold_ranks": {
+        "db:services:1": 1,
+        "db:services:5": 2
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    },
+    {
+      "id": "r24",
+      "question": "Apakah Keratin Smooth Treatment masih Rp690.000? Berapa harga reguler yang tercatat?",
+      "category": "difficult",
+      "answerability": "partial",
+      "scoring_applicable": true,
+      "metrics": {
+        "precision": 0.2,
+        "recall": 1.0,
+        "f1": 0.33333333333333337,
+        "complete_evidence": 1.0
+      },
+      "retrieved": [
+        {
+          "id": "db:services:3",
+          "section": "Keratin Smooth Treatment",
+          "source_type": "db",
+          "score": 11.820745225169658,
+          "snippet": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+        },
+        {
+          "id": "db:services:6",
+          "section": "Volume Blowout Styling",
+          "source_type": "db",
+          "score": 3.501680073417693,
+          "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+        },
+        {
+          "id": "db:services:2",
+          "section": "Precision Haircut",
+          "source_type": "db",
+          "score": 2.1854434671476586,
+          "snippet": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+        },
+        {
+          "id": "db:services:5",
+          "section": "Scalp Detox Therapy",
+          "source_type": "db",
+          "score": 2.153292469328436,
+          "snippet": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+        },
+        {
+          "id": "db:services:4",
+          "section": "Color Gloss Refresh",
+          "source_type": "db",
+          "score": 2.122073730925533,
+          "snippet": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+        }
+      ],
+      "required_evidence_groups": [
+        [
+          "db:services:3"
+        ]
+      ],
+      "gold_ranks": {
+        "db:services:3": 1
+      },
+      "missing_groups": [],
+      "generation_status": "not_run",
+      "behavior_status": "not_evaluated",
+      "answer": null
+    }
+  ],
+  "limitations": [
+    "Labels and revised wording remain researcher-review candidates, not final gold.",
+    "Only annotated supported factual needs are measured; partial answers can have perfect retrieval.",
+    "No score is assigned to questions without gold; behavior and generation are not run.",
+    "Recall uses union of relevant IDs; groups are also reported for coverage. Current groups are singletons.",
+    "Evidence ID hits do not establish claim support after snippet truncation.",
+    "Small selected development corpus; no held-out evaluation or algorithm improvement claim.",
+    "Not comparable to old pilot scores as an isolated algorithm change."
+  ],
+  "input_sha256": {
+    "corpus.json": "30019771903906f9fcc533ad9f5253d9369959ce4264301a5703d7560e946992",
+    "questions.json": "137d3c12a71c5de0d30c12a8c6e1b0d6a7ba1e65e00f4c3a76a86edcb8d75924",
+    "source-register.json": "2edf314953b8147490c4cb22d97c4a1c9e17525524dbc6d0197c1c441bfb76e9",
+    "evaluation-context.json": "7ccbe3e30d979960a1fbf85c8c2311e2dad28271c0ecafec66b6cf6a676e224a",
+    "protocol.json": "a5b0975a7f1cabc5b9d38f56713312ea4ef4b2915245b4d23f6f46e10d742f3c"
+  },
+  "reference_checks": {
+    "structural_checks": [
+      {
+        "id": "r01",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r02",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r03",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r04",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r05",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r06",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r07",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r08",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r09",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r10",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r11",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r12",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r13",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r14",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r15",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r16",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r17",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r18",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r19",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r20",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r21",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r22",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r23",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      },
+      {
+        "id": "r24",
+        "evidence_and_policy_ids_resolve": true,
+        "new_manual_validation_recorded": false,
+        "note": "Prior narrative retained as lineage; no new approval inferred."
+      }
+    ],
+    "semantic_claim_support": "source audit available; not independently re-annotated in this run",
+    "policy_context": "prepared for equal use across configurations; no generation run",
+    "expected_business_facts_note": "Do not demand every stored field in every answer; judge only the facts requested by the question."
+  }
+}

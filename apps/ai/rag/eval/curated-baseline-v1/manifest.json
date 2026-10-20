@@ -1,0 +1,8 @@
+{
+  "output_sha256": {
+    "report.json": "ee519132ed26a6b559cf8aecedfcc172c637f1c4d904269a2537d7770b69df84",
+    "report.md": "6cd552865705553fd38dbd47e6a6bbecb66b2c427ea45f830a26f2e688f190fe",
+    "catatan-error-dan-label.md": "68313d1c4480dac5894d7ea730488fd7035d1cc5a5ff924d7b6d29c3c07062dc"
+  },
+  "checks": "frozen development inputs and upstream inputs unchanged; 55 related tests passed"
+}

@@ -52,6 +52,9 @@ class AgentService:
 
     async def _retrieve_context(self, query: str) -> list[str]:
         try:
+            if settings.rag_retrieval_provider in {'bm25','bm25_source_balanced'}:
+                from app.rag.bm25_retrieval import retrieve
+                return [d.snippet or '' for d in retrieve(query, self.top_k)]
             embedding = (await embed([query]))[0]
             docs = await self.retriever.retrieve(embedding, top_k=self.top_k)
             return [d.snippet or "" for d in docs if d.snippet]
@@ -115,13 +118,36 @@ class AgentService:
 
         return {"reply": "(agent berhenti: terlalu banyak langkah tool)", "tool_trace": tool_trace}
 
+    async def _call_chatgpt_with_tools(self, query, context, history):
+        from app.rag import chatgpt_plan
+        inputs=[{'role':'system','content':SYSTEM_INSTRUCTION+'\nKONTEKS KATALOG (dapat berupa snapshot; angka live harus memakai tool):\n'+'\n'.join(context)}]
+        inputs += [{'role':'user' if h.get('role')=='user' else 'assistant','content':str(h.get('content',''))} for h in history[-8:]]
+        inputs.append({'role':'user','content':query})
+        tools=[{'type':'function',**declaration,'strict':False} for declaration in TOOL_DECLARATIONS]
+        trace=[]
+        for _ in range(5):
+            response=await chatgpt_plan.response(inputs,tools=tools,max_tokens=1000)
+            calls=[item for item in response.get('output',[]) if item.get('type')=='function_call']
+            if not calls:
+                reply=chatgpt_plan.output_text(response)
+                if not reply:raise RuntimeError('ChatGPT agent returned no answer')
+                return {'reply':reply,'tool_trace':trace}
+            inputs.extend(response['output'])
+            for call in calls:
+                args=json.loads(call['arguments'])
+                if not isinstance(args,dict):raise ValueError('Tool arguments must be an object')
+                result=await execute_tool(call['name'],args)
+                trace.append({'tool':call['name'],'args':args,'result':result})
+                inputs.append({'type':'function_call_output','call_id':call['call_id'],'output':json.dumps(result,ensure_ascii=False)})
+        raise RuntimeError('ChatGPT agent exceeded tool-call limit')
+
     def _offline_reply(self, query: str, context: list[str]) -> str:
         if context:
             return (
-                "(Mode offline — tanpa Gemini.) Berikut konteks katalog yang relevan:\n\n"
+                "(Mode offline — tanpa generasi LLM.) Berikut konteks katalog yang relevan:\n\n"
                 + "\n".join(f"- {c}" for c in context[:5])
             )
-        return "(Mode offline — tanpa Gemini.) Tidak ada konteks katalog tersedia."
+        return "(Mode offline — tanpa generasi LLM.) Tidak ada konteks katalog tersedia."
 
     async def answer(
         self,
@@ -133,18 +159,22 @@ class AgentService:
         history = history or []
         context = await self._retrieve_context(query)
 
-        is_local = settings.ai_llm_provider != "gemini" or not gemini_api_key()
+        if settings.ai_llm_provider == 'chatgpt':
+            from app.rag import chatgpt_plan
+            is_local = not chatgpt_plan.available()
+        else:
+            is_local = settings.ai_llm_provider != "gemini" or not gemini_api_key()
         tool_trace: list[dict] = []
 
         if is_local:
             reply = self._offline_reply(query, context)
         else:
             try:
-                out = await self._call_gemini_with_tools(query, context, history)
+                out = await self._call_chatgpt_with_tools(query, context, history) if settings.ai_llm_provider == 'chatgpt' else await self._call_gemini_with_tools(query, context, history)
                 reply = out["reply"]
                 tool_trace = out.get("tool_trace", [])
             except Exception as exc:
-                logger.warning("Gemini agent gagal (%s); fallback offline", exc)
+                logger.warning("LLM agent gagal (%s); fallback offline", type(exc).__name__)
                 reply = self._offline_reply(query, context)
 
         sources = [{"file": "katalog", "snippet": c} for c in context[:5]]

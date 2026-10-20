@@ -1,0 +1,33 @@
+{
+  "schema_version": "rag-salon.curated-development.v1",
+  "prepared_date": "2026-10-20",
+  "status": "candidate_corpus_and_reference_set_not_final_gold",
+  "corpus_size": 13,
+  "question_count": 24,
+  "retrieval_scoreable": 20,
+  "question_changed_ids": [
+    "r07"
+  ],
+  "categories": {
+    "database": 6,
+    "document": 5,
+    "source_gap": 1,
+    "mixed": 3,
+    "business_and_policy": 1,
+    "business_and_source_gap": 1,
+    "business_and_clarification": 1,
+    "difficult": 4,
+    "clarification": 1,
+    "policy_boundary": 1
+  },
+  "reviewer": "Matin provided previous narrative annotations; new mappings not yet approved",
+  "production_ingested": false,
+  "api_calls": 0,
+  "metric_results": null,
+  "constraints": [
+    "This small corpus was curated from the same development error analysis; it is not a held-out benchmark.",
+    "Policy behavior, abstention, catalog lookup and supported evidence coverage must be evaluated separately.",
+    "Do not compare scores against old pilot as if only the algorithm had changed.",
+    "No neural dense retrieval or generation run in this build."
+  ]
+}

@@ -23,6 +23,8 @@ class RetrievedDoc:
     section: Optional[str] = None
     snippet: Optional[str] = None
     distance: Optional[float] = None
+    id: Optional[str] = None
+    metadata: dict = field(default_factory=dict)
 
 
 # ── Query routing (keyword/intent-based) ────────────────────────────────────
@@ -156,6 +158,8 @@ class Retriever:
             file = meta.get("file") or str(h.get("id", "")).split("#")[0] or "rag"
             docs.append(
                 RetrievedDoc(
+                    id=str(h.get("id", "")),
+                    metadata=dict(meta),
                     file=str(file),
                     section=meta.get("section") if isinstance(meta.get("section"), str) else None,
                     snippet=h.get("text"),

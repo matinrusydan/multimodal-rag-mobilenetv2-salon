@@ -20,7 +20,8 @@
     },
     "ai#dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "passThroughEnv": ["LOCALAPPDATA", "APPDATA", "USERPROFILE"]
     },
     "crawl:site": {
       "cache": false

@@ -18,7 +18,7 @@ type Message = {
   id: number;
   role: 'user' | 'assistant';
   content: string;
-  sources?: Array<{ file: string; snippet?: string; url?: string }>;
+  sources?: ChatResponse['sources'];
 };
 
 const WELCOME: Message = {
@@ -204,23 +204,17 @@ export function ConsultChat() {
                       (isWeb
                         ? `https://www.alodokter.com/${source.file.replace(/^web:/, '')}`
                         : undefined);
-                    const label = isWeb ? 'Alodokter' : source.file.replace(/\.md$/, '');
+                    const title = source.title || source.section || (isWeb ? 'Artikel web' : source.file.replace(/\.md$/, ''));
+                    const label = source.citation_number ? `[${source.citation_number}] ${title}` : title;
                     return (
                       <li key={`${source.file}-${idx}`}>
-                        {isWeb && href ? (
+                        {href && /^https?:\/\//i.test(href) ? (
                           <a
                             href={href}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="consult-chat__source-link"
                           >
-                            <img
-                              src="https://www.google.com/s2/favicons?domain=alodokter.com&sz=32"
-                              alt=""
-                              width={14}
-                              height={14}
-                              className="consult-chat__favicon"
-                            />
                             {label}
                           </a>
                         ) : (

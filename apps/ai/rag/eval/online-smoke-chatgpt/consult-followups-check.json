@@ -1,0 +1,49 @@
+{
+  "status": "four_http_cases_checked",
+  "citation_entailment_independently_verified": false,
+  "results": [
+    {
+      "question": "Berapa harga dan durasi Volume Blowout Styling?",
+      "reply": "• **Volume Blowout Styling:** harga reguler **Rp280.000** dengan durasi **55 menit**. [1]\n\n• Informasi ini berasal dari **snapshot data 20 Oktober 2026**, bukan konfirmasi harga terkini. Untuk memastikan harga saat booking, perlu konfirmasi langsung ke salon.",
+      "sources": [
+        {
+          "id": "db:services:6",
+          "title": "Data layanan: Volume Blowout Styling (snapshot penelitian)",
+          "citation_number": 1
+        }
+      ]
+    },
+    {
+      "question": "Berapa harga Signature Hair Spa dan bagaimana memakai kondisioner untuk rambut kering?",
+      "reply": "• **Harga Signature Hair Spa:** Rp325.000 dengan durasi 90 menit, berdasarkan data snapshot layanan. Harga terkini perlu dikonfirmasi langsung ke salon. [1]\n\n• **Kondisioner untuk rambut kering:** gunakan setelah keramas, lalu aplikasikan sepanjang batang rambut. [2]",
+      "sources": [
+        {
+          "id": "db:services:1",
+          "title": "Data layanan: Signature Hair Spa (snapshot penelitian)",
+          "citation_number": 1
+        },
+        {
+          "id": "care:S01:conditioner-by-hair-type:v1",
+          "title": "Kondisioner sesuai tipe rambut",
+          "citation_number": 2
+        }
+      ]
+    },
+    {
+      "question": "Berapa biaya treatment itu?",
+      "reply": "Treatment atau layanan yang Anda maksud yang mana? Pilihan pada katalog penelitian ini:\n\n- Signature Hair Spa\n- Precision Haircut\n- Keratin Smooth Treatment\n- Color Gloss Refresh\n- Scalp Detox Therapy\n- Volume Blowout Styling\n\nSilakan pilih atau sebutkan nama layanannya agar saya dapat memberikan harga yang tepat.",
+      "sources": [
+        {
+          "id": "snapshot:service-options",
+          "title": "Pilihan layanan — katalog snapshot penelitian",
+          "citation_number": null
+        }
+      ]
+    },
+    {
+      "question": "Setelah keratin boleh keramas kapan?",
+      "reply": "Waktu keramas setelah keratin perlu mengikuti instruksi staf salon yang menangani, karena petunjuk khusus setelah layanan TIEN belum tersedia dalam dokumen. Jadi, saya belum bisa memastikan harus menunggu berapa jam.\n\n• Jika baru selesai treatment, konfirmasikan langsung ke staf salon sebelum keramas.\n• Perawatan keratinnya dilakukan kapan, dan apakah staf sudah memberikan instruksi setelah layanan?",
+      "sources": []
+    }
+  ]
+}

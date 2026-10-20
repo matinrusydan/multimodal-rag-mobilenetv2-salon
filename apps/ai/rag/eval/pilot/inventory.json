@@ -1,0 +1,62 @@
+[
+  {
+    "path": "apps/ai/rag/knowledge/booking-info.md",
+    "sha256": "faf22ce31d6e1f2bdc5c296f714d5f1644432600923f974abbaafdfeb2dd6f9f",
+    "topic": "booking-info",
+    "source_type": "manual_legacy",
+    "external_source": null,
+    "chunks": 4,
+    "review_status": "unverified; engineering-only; not clinical gold",
+    "robots_status": "not_applicable_local_file"
+  },
+  {
+    "path": "apps/ai/rag/knowledge/gaya-rambut.md",
+    "sha256": "3cc1ffe4d25c6d06186c0dd789ee0170e5ffad3cd49d997a6a2d245b7a528154",
+    "topic": "gaya-rambut",
+    "source_type": "manual_legacy",
+    "external_source": null,
+    "chunks": 12,
+    "review_status": "unverified; engineering-only; not clinical gold",
+    "robots_status": "not_applicable_local_file"
+  },
+  {
+    "path": "apps/ai/rag/knowledge/harga.md",
+    "sha256": "02623ca3e2629665640d1da50b269c70ed47c97d134f6ab87e04257e59edceb6",
+    "topic": "harga",
+    "source_type": "manual_legacy",
+    "external_source": null,
+    "chunks": 7,
+    "review_status": "unverified; engineering-only; not clinical gold",
+    "robots_status": "not_applicable_local_file"
+  },
+  {
+    "path": "apps/ai/rag/knowledge/layanan.md",
+    "sha256": "13ffc82ad11b8776e67f6e3427bad746901439bc3bef5d87e28fdcaf19fcdb36",
+    "topic": "layanan",
+    "source_type": "manual_legacy",
+    "external_source": null,
+    "chunks": 7,
+    "review_status": "unverified; engineering-only; not clinical gold",
+    "robots_status": "not_applicable_local_file"
+  },
+  {
+    "path": "apps/ai/rag/knowledge/panduan-layanan.md",
+    "sha256": "58aa4b98724d7199bd2a8d42a48f020fb708bf2127943b366bca7d5196372423",
+    "topic": "layanan",
+    "source_type": "manual_legacy",
+    "external_source": null,
+    "chunks": 8,
+    "review_status": "unverified; engineering-only; not clinical gold",
+    "robots_status": "not_applicable_local_file"
+  },
+  {
+    "path": "apps/ai/rag/knowledge/tips-perawatan.md",
+    "sha256": "a54925e92feb6be89b33a13ab2e68d3de2ac7e4a576d4d08f9e4984c5dea0ad6",
+    "topic": "tips-perawatan",
+    "source_type": "manual_legacy",
+    "external_source": null,
+    "chunks": 7,
+    "review_status": "unverified; engineering-only; not clinical gold",
+    "robots_status": "not_applicable_local_file"
+  }
+]

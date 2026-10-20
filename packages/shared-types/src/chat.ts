@@ -13,6 +13,11 @@ export const ChatSourceSchema = z.object({
   file: z.string(),
   snippet: z.string().optional(),
   url: z.string().optional(),
+  id: z.string().optional(),
+  section: z.string().optional(),
+  title: z.string().optional(),
+  citation_number: z.number().int().positive().optional(),
+  usage: z.string().optional(),
 });
 export type ChatSource = z.infer<typeof ChatSourceSchema>;
 

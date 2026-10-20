@@ -1,0 +1,10 @@
+{
+  "input_sha256": {
+    "apps\\ai\\rag\\eval\\dataset-revisi-v1\\dataset.json": "2ca578c398b8573f54671416a4ef4fdbb3502909532236ed1d0bcfb5e63a2fe3"
+  },
+  "output_sha256": {
+    "audit.json": "f918471d2198d0e5eafce13121dddf772f4d760f1b5caa96f49540975cf47795",
+    "audit-sumber-perawatan.md": "eff007086500d65f8fef2f8d988e74fbb0f7649a7480c06e71a9e52e192cf636"
+  },
+  "validation": "12 expected item IDs; all claim/source IDs resolve; original dataset unchanged; no fabricated raw-page hashes"
+}

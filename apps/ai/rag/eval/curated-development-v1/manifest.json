@@ -1,0 +1,27 @@
+{
+  "input_sha256": {
+    "apps\\ai\\rag\\eval\\source-audit-v1\\audit.json": "f918471d2198d0e5eafce13121dddf772f4d760f1b5caa96f49540975cf47795",
+    "apps\\ai\\rag\\eval\\source-audit-v1\\kebijakan-kerahasiaan-produk.json": "4d0bd2c9644c933e7f1f9ce41ca61037b86964c131f496376bbeea1e2f38ae20",
+    "apps\\ai\\rag\\eval\\dataset-revisi-v1\\dataset.json": "2ca578c398b8573f54671416a4ef4fdbb3502909532236ed1d0bcfb5e63a2fe3",
+    "apps\\ai\\rag\\eval\\pilot\\corpus.json": "0092b35bf9fb5daa6b6d1991913e7978dca50c2af8427e08c0871989ef8d31e7",
+    "apps\\ai\\rag\\eval\\pilot\\questions.json": "bd88cd8fd6d685becc9f8201bd7b5d3863730ac393e2415ee5599ebc1aafc850",
+    "apps\\ai\\rag\\eval\\pilot\\manual-review-2026-10-20\\annotations-matin-2026-10-20.json": "59dc72df4b0f01fc6b34712245df93bba816a646035ee2cbd03ea8e1e53d193f"
+  },
+  "output_sha256": {
+    "acuan-evaluasi.md": "56616a7bd0b4d46ecd47fa7bf99a947dab5b88ee2ba0cea2f1d2ae8f4d452f58",
+    "corpus.json": "30019771903906f9fcc533ad9f5253d9369959ce4264301a5703d7560e946992",
+    "education/chemical-damage-background.md": "cd614566a18a96e4abc67e8350c1e2c34f8d5b8a419f458a2fa0360ee6b3e206",
+    "education/conditioner-by-hair-type.md": "b37f3d1bd74ff73b5a128dfb970ce2687c2652aa28884448574194fb201ea38b",
+    "education/curly-detangling.md": "a46778383aa091b0771b3a31d688736cfc53449eb70aeb1eebc9360585eb51e9",
+    "education/hair-dye-reaction.md": "6733abc8d0576f8d96ac58bc3b9908dcf6012051fab4f7d15d1099a114f0145a",
+    "education/hair-loss-referral.md": "0f1c47b0061ca0cde81e1e0d73da323c053322d939236592bb23a56b6d591c45",
+    "education/heat-care.md": "8b0dc92f5dbb028404c2c94770c5db9abc2d327f56da69321fa5d692b9ac9374",
+    "education/leave-in-placement.md": "75bacf79dc96ec11491605f91fd075f56b45299fd1503a8185780ab58aa412bf",
+    "evaluation-context.json": "7ccbe3e30d979960a1fbf85c8c2311e2dad28271c0ecafec66b6cf6a676e224a",
+    "protocol.json": "a5b0975a7f1cabc5b9d38f56713312ea4ef4b2915245b4d23f6f46e10d742f3c",
+    "questions.json": "137d3c12a71c5de0d30c12a8c6e1b0d6a7ba1e65e00f4c3a76a86edcb8d75924",
+    "README.md": "aeea2997ae01f552835cc817b1963f1a9397399f6f549c8ecdcb3c650ba88c67",
+    "source-register.json": "2edf314953b8147490c4cb22d97c4a1c9e17525524dbc6d0197c1c441bfb76e9"
+  },
+  "checks": "24 unique question IDs; 13 unique corpus IDs; all required evidence and policy IDs resolve; snapshot facts preserved; original inputs unchanged"
+}

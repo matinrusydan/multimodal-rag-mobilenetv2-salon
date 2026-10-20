@@ -1,0 +1,57 @@
+{
+  "schema_version": "rag-salon.evaluation-context.v1",
+  "business_snapshot_date": "2026-10-20",
+  "business_scope": "Prices are snapshot values, not guaranteed live prices.",
+  "available_service_fields": [
+    "category",
+    "description",
+    "duration_min",
+    "id",
+    "name",
+    "price",
+    "slug",
+    "updated_at"
+  ],
+  "missing_information": [
+    "verified promo/discount data and validity",
+    "historical prices",
+    "TIEN-specific aftercare instructions"
+  ],
+  "policy_instructions": [
+    {
+      "id": "POL-privacy",
+      "origin": "direct_user_statement",
+      "source_file": "apps\\ai\\rag\\eval\\source-audit-v1\\kebijakan-kerahasiaan-produk.json",
+      "text": "Identitas merek/produk internal tidak dipublikasikan. Edukasi umum tidak boleh dinyatakan sebagai petunjuk produk internal TIEN yang terverifikasi."
+    },
+    {
+      "id": "POL-no-prescription",
+      "origin": "direct_user_statement",
+      "source_item": "p22",
+      "source_file": "apps\\ai\\rag\\eval\\pilot\\manual-review-2026-10-20\\annotations-matin-2026-10-20.json",
+      "text": "TIEN SALON tidak menentukan dosis atau resep; arahkan konsultasi ke dokter atau profesional klinis."
+    },
+    {
+      "id": "POL-clarify-service",
+      "origin": "direct_user_statement",
+      "source_item": "p21",
+      "source_file": "apps\\ai\\rag\\eval\\pilot\\manual-review-2026-10-20\\annotations-matin-2026-10-20.json",
+      "text": "Jika layanan belum jelas, tanyakan kembali dan tawarkan pilihan dari katalog aktif."
+    },
+    {
+      "id": "POL-aftercare-boundary",
+      "origin": "assistant-derived application of user privacy policy and observed documentation gap",
+      "source_file": "apps\\ai\\rag\\eval\\source-audit-v1\\kebijakan-kerahasiaan-produk.json",
+      "text": "Jika instruksi khusus setelah layanan tidak tersedia, jelaskan batas dokumentasi dan arahkan ke staf salon. Jangan menetapkan 48/72 jam atau mengarang SOP."
+    },
+    {
+      "id": "POL-clinical-boundary",
+      "origin": "direct_user_narrative plus source-qualified referral design",
+      "source_item": "p16",
+      "source_file": "apps\\ai\\rag\\eval\\pilot\\manual-review-2026-10-20\\annotations-matin-2026-10-20.json",
+      "text": "Klarifikasi konteks keluhan tanpa menetapkan diagnosis. Edukasi hanya sesuai sumber. Rujukan medis atau darurat tidak boleh ditunda demi crawling."
+    }
+  ],
+  "how_to_apply": "Provide identical policy/context instructions to every evaluated configuration; do not count them as retrieved scientific evidence.",
+  "not_yet_implemented_in_runtime": true
+}

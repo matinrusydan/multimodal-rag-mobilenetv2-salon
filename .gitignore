@@ -14,6 +14,8 @@ out/
 coverage/
 
 # Python
+.pytest_cache/
+.ruff_cache/
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -93,6 +95,17 @@ apps/api/cv/geometry/reports/*.log.err
 
 # Secrets / lokal-only
 .envrc
+*.credentials
+
+# Local investigation and generated test fixtures
+/tmp/
+
+# LaTeX build intermediates
+/output/**/*.aux
+/output/**/*.out
+/output/**/*.fls
+/output/**/*.fdb_latexmk
+/output/**/*.synctex.gz
 
 # Agent docs (lokal saja, jangan commit)
 AGENTS.md
@@ -100,4 +113,9 @@ PRD.md
 
 # CV outputs - visualization outputs
 apps/api/cv/outputs/
+
+# BEGIN oh-my-opencode-slim worktrees
+.slim/worktrees/
+.slim/worktrees.json
+# END oh-my-opencode-slim worktrees
 

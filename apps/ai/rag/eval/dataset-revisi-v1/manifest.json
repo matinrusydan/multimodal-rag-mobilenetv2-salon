@@ -1,0 +1,13 @@
+{
+  "input_sha256": {
+    "apps\\ai\\rag\\eval\\pilot\\questions.json": "bd88cd8fd6d685becc9f8201bd7b5d3863730ac393e2415ee5599ebc1aafc850",
+    "apps\\ai\\rag\\eval\\pilot\\corpus.json": "0092b35bf9fb5daa6b6d1991913e7978dca50c2af8427e08c0871989ef8d31e7",
+    "apps\\ai\\rag\\eval\\pilot\\services.snapshot.json": "20ec61bf597a03d117370eeb8ea1499ca8c5d6378e0be9dd0bd146ce94753fa9",
+    "apps\\ai\\rag\\eval\\pilot\\manual-review-2026-10-20\\annotations-matin-2026-10-20.json": "59dc72df4b0f01fc6b34712245df93bba816a646035ee2cbd03ea8e1e53d193f"
+  },
+  "output_sha256": {
+    "dataset.json": "2ca578c398b8573f54671416a4ef4fdbb3502909532236ed1d0bcfb5e63a2fe3",
+    "mapping-anotasi-dan-acuan-revisi.md": "ac2639acf0a827a1249ee21de8ea4e34f2ad2b170e2c68873668da983002316a"
+  },
+  "validation": "24 unique IDs; raw responses preserved; no inferred rubric scores; evidence IDs resolve; business facts match snapshot; original inputs unchanged"
+}

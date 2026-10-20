@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "status": "captured",
+  "source": "postgresql.services",
+  "transaction": "repeatable_read_read_only",
+  "captured_at": "2026-10-20T07:51:39.271Z",
+  "records_sha256": "228719c5239668fe9c7b42dc2ee6b71b83a0954e9034038757100a22dff370ad",
+  "records": [
+    {
+      "id": 1,
+      "name": "Signature Hair Spa",
+      "slug": "signature-hair-spa",
+      "price": 325000,
+      "duration_min": 90,
+      "description": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+      "category": "Hair Treatment",
+      "is_active": true,
+      "updated_at": "2026-09-23T01:27:10.301Z"
+    },
+    {
+      "id": 2,
+      "name": "Precision Haircut",
+      "slug": "precision-haircut",
+      "price": 220000,
+      "duration_min": 60,
+      "description": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.",
+      "category": "Haircut",
+      "is_active": true,
+      "updated_at": "2026-09-23T01:27:10.301Z"
+    },
+    {
+      "id": 3,
+      "name": "Keratin Smooth Treatment",
+      "slug": "keratin-smooth-treatment",
+      "price": 780000,
+      "duration_min": 150,
+      "description": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.",
+      "category": "Smoothing",
+      "is_active": true,
+      "updated_at": "2026-09-23T01:27:10.301Z"
+    },
+    {
+      "id": 4,
+      "name": "Color Gloss Refresh",
+      "slug": "color-gloss-refresh",
+      "price": 620000,
+      "duration_min": 130,
+      "description": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.",
+      "category": "Hair Coloring",
+      "is_active": true,
+      "updated_at": "2026-09-23T01:27:10.301Z"
+    },
+    {
+      "id": 5,
+      "name": "Scalp Detox Therapy",
+      "slug": "scalp-detox-therapy",
+      "price": 360000,
+      "duration_min": 75,
+      "description": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.",
+      "category": "Scalp Care",
+      "is_active": true,
+      "updated_at": "2026-09-23T01:27:10.301Z"
+    },
+    {
+      "id": 6,
+      "name": "Volume Blowout Styling",
+      "slug": "volume-blowout-styling",
+      "price": 280000,
+      "duration_min": 55,
+      "description": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.",
+      "category": "Hair Styling",
+      "is_active": true,
+      "updated_at": "2026-09-23T01:27:10.301Z"
+    }
+  ]
+}

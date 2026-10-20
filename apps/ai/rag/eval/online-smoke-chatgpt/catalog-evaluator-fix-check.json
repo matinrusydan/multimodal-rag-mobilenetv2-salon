@@ -1,0 +1,166 @@
+{
+  "status": "catalog_http_and_evaluator_regressions_checked",
+  "execution": "fresh Python process, in-process HTTP route; restart the running app to load changes",
+  "real_catalog_reads": true,
+  "database_writes": false,
+  "model_api_calls": 0,
+  "active_service_count": 6,
+  "results": [
+    {
+      "question": "Apa saja layanan dengan harga di bawah Rp300.000?",
+      "reply": "Ditemukan **2 layanan** dengan harga reguler kurang dari Rp300.000 berdasarkan database aktif yang dibaca pada permintaan ini. [1]\n\n- **Precision Haircut** — harga reguler Rp220.000; durasi 60 menit. [2]\n- **Volume Blowout Styling** — harga reguler Rp280.000; durasi 55 menit. [3]",
+      "sources": [
+        {
+          "id": "live:catalog-query",
+          "file": "services.live.json",
+          "title": "Hasil penelusuran katalog aktif",
+          "snippet": "{\"operation\": {\"kind\": \"list\", \"filters\": [[\"lt\", 300000]], \"order\": \"id\", \"extreme\": null}, \"scanned_ids\": [\"live:services:1\", \"live:services:2\", \"live:services:3\", \"live:services:4\", \"live:services:5\", \"live:services:6\"], \"matched_ids\": [\"live:services:2\", \"live:services:6\"], \"matched_count\": 2}",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 1
+        },
+        {
+          "id": "live:services:2",
+          "file": "services.live.json",
+          "section": "Precision Haircut",
+          "title": "Data layanan: Precision Haircut (database aktif)",
+          "snippet": "Layanan aktif: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.\nSumber: database aktif melalui API, dibaca 2026-10-20T12:16:28.580945+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 2
+        },
+        {
+          "id": "live:services:6",
+          "file": "services.live.json",
+          "section": "Volume Blowout Styling",
+          "title": "Data layanan: Volume Blowout Styling (database aktif)",
+          "snippet": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T12:16:28.580945+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 3
+        }
+      ],
+      "contextId": "ctx-98659615f5889e40"
+    },
+    {
+      "question": "Sebutkan semua layanan yang tersedia di salon.",
+      "reply": "Ditemukan **6 layanan** berdasarkan database aktif yang dibaca pada permintaan ini. [1]\n\n- **Signature Hair Spa** — harga reguler Rp325.000; durasi 90 menit. [2]\n- **Precision Haircut** — harga reguler Rp220.000; durasi 60 menit. [3]\n- **Keratin Smooth Treatment** — harga reguler Rp780.000; durasi 150 menit. [4]\n- **Color Gloss Refresh** — harga reguler Rp620.000; durasi 130 menit. [5]\n- **Scalp Detox Therapy** — harga reguler Rp360.000; durasi 75 menit. [6]\n- **Volume Blowout Styling** — harga reguler Rp280.000; durasi 55 menit. [7]",
+      "sources": [
+        {
+          "id": "live:catalog-query",
+          "file": "services.live.json",
+          "title": "Hasil penelusuran katalog aktif",
+          "snippet": "{\"operation\": {\"kind\": \"list\", \"filters\": [], \"order\": \"id\", \"extreme\": null}, \"scanned_ids\": [\"live:services:1\", \"live:services:2\", \"live:services:3\", \"live:services:4\", \"live:services:5\", \"live:services:6\"], \"matched_ids\": [\"live:services:1\", \"live:services:2\", \"live:services:3\", \"live:services:4\", \"live:services:5\", \"live:services:6\"], \"matched_count\": 6}",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 1
+        },
+        {
+          "id": "live:services:1",
+          "file": "services.live.json",
+          "section": "Signature Hair Spa",
+          "title": "Data layanan: Signature Hair Spa (database aktif)",
+          "snippet": "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T12:16:28.836164+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 2
+        },
+        {
+          "id": "live:services:2",
+          "file": "services.live.json",
+          "section": "Precision Haircut",
+          "title": "Data layanan: Precision Haircut (database aktif)",
+          "snippet": "Layanan aktif: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.\nSumber: database aktif melalui API, dibaca 2026-10-20T12:16:28.836164+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 3
+        },
+        {
+          "id": "live:services:3",
+          "file": "services.live.json",
+          "section": "Keratin Smooth Treatment",
+          "title": "Data layanan: Keratin Smooth Treatment (database aktif)",
+          "snippet": "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T12:16:28.836164+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 4
+        },
+        {
+          "id": "live:services:4",
+          "file": "services.live.json",
+          "section": "Color Gloss Refresh",
+          "title": "Data layanan: Color Gloss Refresh (database aktif)",
+          "snippet": "Layanan aktif: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.\nSumber: database aktif melalui API, dibaca 2026-10-20T12:16:28.836164+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 5
+        },
+        {
+          "id": "live:services:5",
+          "file": "services.live.json",
+          "section": "Scalp Detox Therapy",
+          "title": "Data layanan: Scalp Detox Therapy (database aktif)",
+          "snippet": "Layanan aktif: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.\nSumber: database aktif melalui API, dibaca 2026-10-20T12:16:28.836164+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 6
+        },
+        {
+          "id": "live:services:6",
+          "file": "services.live.json",
+          "section": "Volume Blowout Styling",
+          "title": "Data layanan: Volume Blowout Styling (database aktif)",
+          "snippet": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T12:16:28.836164+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 7
+        }
+      ],
+      "contextId": "ctx-22a30ec4309895f4"
+    },
+    {
+      "question": "Berapa jumlah layanan dengan harga di bawah Rp300.000?",
+      "reply": "Ditemukan **2 layanan** dengan harga reguler kurang dari Rp300.000 berdasarkan database aktif yang dibaca pada permintaan ini. [1]",
+      "sources": [
+        {
+          "id": "live:catalog-query",
+          "file": "services.live.json",
+          "title": "Hasil penelusuran katalog aktif",
+          "snippet": "{\"operation\": {\"kind\": \"count\", \"filters\": [[\"lt\", 300000]], \"order\": \"id\", \"extreme\": null}, \"scanned_ids\": [\"live:services:1\", \"live:services:2\", \"live:services:3\", \"live:services:4\", \"live:services:5\", \"live:services:6\"], \"matched_ids\": [\"live:services:2\", \"live:services:6\"], \"matched_count\": 2}",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 1
+        }
+      ],
+      "contextId": "ctx-224cfa8a3b389273"
+    }
+  ],
+  "reference_package": {
+    "directory": "C:\\laragon\\www\\RAG-salon\\apps\\ai\\rag\\eval\\curated-development-v2",
+    "question_file": "questions.json",
+    "dataset_version": "curated-development-v2",
+    "input_sha256": {
+      "acuan-evaluasi.md": "625a83be1f01b749c3cc8259b35169d039ea9a3d61e27d79e86b3ac4c3e18af4",
+      "corpus.json": "30019771903906f9fcc533ad9f5253d9369959ce4264301a5703d7560e946992",
+      "evaluation-context.json": "7ccbe3e30d979960a1fbf85c8c2311e2dad28271c0ecafec66b6cf6a676e224a",
+      "protocol.json": "4b521bbd54a0fd238015d468b69476cc883582be9b6b9ca4de52282a0b30f6f6",
+      "questions.json": "2bd9b40ee6c03626478566901fe7d49bf2add6858ca4b7321e459e98e810ec74",
+      "source-register.json": "2edf314953b8147490c4cb22d97c4a1c9e17525524dbc6d0197c1c441bfb76e9",
+      "education/chemical-damage-background.md": "cd614566a18a96e4abc67e8350c1e2c34f8d5b8a419f458a2fa0360ee6b3e206",
+      "education/conditioner-by-hair-type.md": "b37f3d1bd74ff73b5a128dfb970ce2687c2652aa28884448574194fb201ea38b",
+      "education/curly-detangling.md": "a46778383aa091b0771b3a31d688736cfc53449eb70aeb1eebc9360585eb51e9",
+      "education/hair-dye-reaction.md": "6733abc8d0576f8d96ac58bc3b9908dcf6012051fab4f7d15d1099a114f0145a",
+      "education/hair-loss-referral.md": "0f1c47b0061ca0cde81e1e0d73da323c053322d939236592bb23a56b6d591c45",
+      "education/heat-care.md": "8b0dc92f5dbb028404c2c94770c5db9abc2d327f56da69321fa5d692b9ac9374",
+      "education/leave-in-placement.md": "75bacf79dc96ec11491605f91fd075f56b45299fd1503a8185780ab58aa412bf",
+      "manifest.json": "dfd3e880204b8b1dbfaf19324a615071ba0d46c37e00e177799132475eafc149"
+    },
+    "status": "scope_and_label_repair_development_only",
+    "annotation_counts": {
+      "new_reference_and_evidence_mapping_pending_researcher_review": 21,
+      "assistant_repaired_scope_and_labels_at_user_request; no new researcher/expert review inferred": 3
+    },
+    "publication_ready": false
+  },
+  "policy_check": {
+    "status": "ok",
+    "response_type": "policy_clarification",
+    "metric_applicability": {
+      "faithfulness": false,
+      "answer_relevancy": true,
+      "context_precision": false,
+      "context_recall": false
+    },
+    "judge_mocked": true,
+    "note": "No real quality score asserted; route match does not prove semantic correctness."
+  }
+}

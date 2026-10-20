@@ -1,0 +1,500 @@
+{
+  "schema_version": "rag-salon.care-source-audit.v1",
+  "date": "2026-10-20",
+  "scope": "claim-to-first-party-source matching; no new manual reviewer decisions",
+  "input_dataset_path": "apps\\ai\\rag\\eval\\dataset-revisi-v1\\dataset.json",
+  "input_sha256": "2ca578c398b8573f54671416a4ef4fdbb3502909532236ed1d0bcfb5e63a2fe3",
+  "acquisition_limits": "Sources inspected with web search/open. No whole-page snapshots saved; page hashes absent intentionally. Inspection notes can be hashed, but are not raw-page hashes.",
+  "source_classification": "Official first-party guidance differs from original empirical research. Journal articles here are published reviews, not original experiments.",
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Tips for healthy hair",
+      "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/healthy-hair-tips",
+      "source_type": "official_professional_guidance",
+      "document_date": "2024-08-12",
+      "date_kind": "last_updated_or_reviewed",
+      "inspected_on": "2026-10-20",
+      "content_locator": "Items 4–6; Last updated 8/12/24",
+      "robots_origin": "https://www.aad.org/robots.txt",
+      "status": "content_inspected",
+      "doi": null,
+      "year_filter_2021_2026": "date_verified_in_range",
+      "acquisition": "manual_inspection_via_web_tool; not a bulk crawl",
+      "full_page_downloaded": false,
+      "raw_page_sha256": null,
+      "expert_validation": "not_performed",
+      "production_ingested": false
+    },
+    {
+      "id": "S02",
+      "title": "Dermatologists’ top tips for using leave-in conditioner",
+      "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/leave-in-conditioner-tips/",
+      "source_type": "official_professional_guidance",
+      "document_date": "2024-03-26",
+      "date_kind": "last_updated_or_reviewed",
+      "inspected_on": "2026-10-20",
+      "content_locator": "What tips do dermatologists give… steps 2–3; Last updated 3/26/24",
+      "robots_origin": "https://www.aad.org/robots.txt",
+      "status": "content_inspected",
+      "doi": null,
+      "year_filter_2021_2026": "date_verified_in_range",
+      "acquisition": "manual_inspection_via_web_tool; not a bulk crawl",
+      "full_page_downloaded": false,
+      "raw_page_sha256": null,
+      "expert_validation": "not_performed",
+      "production_ingested": false
+    },
+    {
+      "id": "S03",
+      "title": "6 curly hair care tips from dermatologists",
+      "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/curly-hair-care",
+      "source_type": "official_professional_guidance",
+      "document_date": "2022-06-29",
+      "date_kind": "last_updated_or_reviewed",
+      "inspected_on": "2026-10-20",
+      "content_locator": "Detangle your hair; Last updated 6/29/22",
+      "robots_origin": "https://www.aad.org/robots.txt",
+      "status": "content_inspected",
+      "doi": null,
+      "year_filter_2021_2026": "date_verified_in_range",
+      "acquisition": "manual_inspection_via_web_tool; not a bulk crawl",
+      "full_page_downloaded": false,
+      "raw_page_sha256": null,
+      "expert_validation": "not_performed",
+      "production_ingested": false
+    },
+    {
+      "id": "S04",
+      "title": "Hair loss: Diagnosis and treatment",
+      "url": "https://www.aad.org/public/diseases/hair-loss/treatment/diagnosis-treat/",
+      "source_type": "official_professional_guidance",
+      "document_date": "2022-12-13",
+      "date_kind": "last_updated_or_reviewed",
+      "inspected_on": "2026-10-20",
+      "content_locator": "Opening: effective treatment begins with finding the cause; Last updated 12/13/22",
+      "robots_origin": "https://www.aad.org/robots.txt",
+      "status": "content_inspected",
+      "doi": null,
+      "year_filter_2021_2026": "date_verified_in_range",
+      "acquisition": "manual_inspection_via_web_tool; not a bulk crawl",
+      "full_page_downloaded": false,
+      "raw_page_sha256": null,
+      "expert_validation": "not_performed",
+      "production_ingested": false
+    },
+    {
+      "id": "S05",
+      "title": "How to stop damaging your hair",
+      "url": "https://www.aad.org/public/diseases/hair-loss/insider/stop-damage",
+      "source_type": "official_professional_guidance",
+      "document_date": null,
+      "date_kind": "last_updated_or_reviewed",
+      "inspected_on": "2026-10-20",
+      "content_locator": "10 hair-care habits; habits 2, 5, 9; visible page has no verified update date",
+      "robots_origin": "https://www.aad.org/robots.txt",
+      "status": "content_inspected",
+      "doi": null,
+      "year_filter_2021_2026": "pending_date_verification",
+      "acquisition": "manual_inspection_via_web_tool; not a bulk crawl",
+      "full_page_downloaded": false,
+      "raw_page_sha256": null,
+      "expert_validation": "not_performed",
+      "production_ingested": false
+    },
+    {
+      "id": "S06",
+      "title": "Coloring and perming tips for healthier-looking hair",
+      "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/coloring-perming-tips",
+      "source_type": "official_professional_guidance",
+      "document_date": null,
+      "date_kind": "last_updated_or_reviewed",
+      "inspected_on": "2026-10-20",
+      "content_locator": "Items 2 and 4, manufacturer/package instructions; date not established",
+      "robots_origin": "https://www.aad.org/robots.txt",
+      "status": "content_inspected",
+      "doi": null,
+      "year_filter_2021_2026": "pending_date_verification",
+      "acquisition": "manual_inspection_via_web_tool; not a bulk crawl",
+      "full_page_downloaded": false,
+      "raw_page_sha256": null,
+      "expert_validation": "not_performed",
+      "production_ingested": false
+    },
+    {
+      "id": "S07",
+      "title": "Hair dye reactions",
+      "url": "https://www.nhs.uk/conditions/hair-dye-reactions/",
+      "source_type": "official_health_service_guidance",
+      "document_date": "2025-12-29",
+      "date_kind": "last_updated_or_reviewed",
+      "inspected_on": "2026-10-20",
+      "content_locator": "Symptoms; See a GP if; emergency advice; Page last reviewed 29 December 2025",
+      "robots_origin": "https://www.nhs.uk/robots.txt",
+      "status": "content_inspected",
+      "doi": null,
+      "year_filter_2021_2026": "date_verified_in_range",
+      "acquisition": "manual_inspection_via_web_tool; not a bulk crawl",
+      "full_page_downloaded": false,
+      "raw_page_sha256": null,
+      "expert_validation": "not_performed",
+      "production_ingested": false
+    },
+    {
+      "id": "S08",
+      "title": "Mechanisms of impairment in hair and scalp induced by hair dyeing and perming and potential interventions",
+      "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2023.1139607/full",
+      "source_type": "published_journal_review",
+      "document_date": "2023-05-18",
+      "date_kind": "publication_date",
+      "inspected_on": "2026-10-20",
+      "content_locator": "Abstract and section Damage to the hair and scalp caused by dyeing or perming hair",
+      "robots_origin": "https://www.frontiersin.org/robots.txt",
+      "status": "content_inspected",
+      "doi": "10.3389/fmed.2023.1139607",
+      "year_filter_2021_2026": "date_verified_in_range",
+      "acquisition": "manual_inspection_via_web_tool; not a bulk crawl",
+      "full_page_downloaded": false,
+      "raw_page_sha256": null,
+      "expert_validation": "not_performed",
+      "production_ingested": false
+    },
+    {
+      "id": "S09",
+      "title": "On Hair Care Physicochemistry: From Structure and Degradation to Novel Biobased Conditioning Agents",
+      "url": "https://www.mdpi.com/2073-4360/15/3/608",
+      "source_type": "published_journal_review",
+      "document_date": "2023-01-24",
+      "date_kind": "publication_date",
+      "inspected_on": "2026-10-20",
+      "content_locator": "Publisher search result: abstract, Introduction, section 2.1; not selected as corpus evidence",
+      "robots_origin": "https://www.mdpi.com/robots.txt",
+      "status": "candidate_only_search_result; robots_fetch_429; automated_acquisition_deferred",
+      "doi": "10.3390/polym15030608",
+      "year_filter_2021_2026": "date_verified_in_range",
+      "acquisition": "manual_inspection_via_web_tool; not a bulk crawl",
+      "full_page_downloaded": false,
+      "raw_page_sha256": null,
+      "expert_validation": "not_performed",
+      "production_ingested": false
+    }
+  ],
+  "robots_observations": [
+    {
+      "url": "https://www.aad.org/robots.txt",
+      "inspection_date": "2026-10-20",
+      "status": "readable",
+      "rule_scope": "User-agent: *",
+      "interpretation": "The selected /public/ paths do not match the listed Disallow prefixes.",
+      "restrictions": [
+        "/admin/",
+        "/commonlogin/",
+        "/marketieradmin/",
+        "/commerceadmin/",
+        "/analyzeradmin/",
+        "/webservice/",
+        "/product-type/",
+        "/view_cart/",
+        "/checkout/",
+        "/my_account/",
+        "/payment/",
+        "/order/",
+        "/marketiercampaign/"
+      ],
+      "note": "This is a selected-path policy observation, not a complete saved robots file. Copyright/terms are separate; only concise original summaries and links are saved."
+    },
+    {
+      "url": "https://www.nhs.uk/robots.txt",
+      "inspection_date": "2026-10-20",
+      "status": "readable",
+      "rule_scope": "User-agent: *",
+      "interpretation": "Selected lowercase /conditions/hair-dye-reactions/ is not the disallowed uppercase /Conditions/ prefix; URL path matching is case-sensitive.",
+      "note": "Additional named user-agent groups exist; crawler identity must be evaluated again before any future automated crawling."
+    },
+    {
+      "url": "https://www.frontiersin.org/robots.txt",
+      "inspection_date": "2026-10-20",
+      "status": "readable",
+      "rule_scope": "User-agent: *",
+      "interpretation": "Allow /; selected /journals/medicine/articles/ path is not among the blocked administration/image/review/production paths."
+    },
+    {
+      "url": "https://www.mdpi.com/robots.txt",
+      "inspection_date": "2026-10-20",
+      "status": "fetch_failed_http_429",
+      "rule_scope": null,
+      "interpretation": "No automated download/ingest attempted from this origin in this audit; use the already visible publisher search result as candidate metadata only."
+    }
+  ],
+  "claims": [
+    {
+      "id": "C01",
+      "text": "Lokasi kondisioner bergantung tipe rambut: ujung untuk rambut halus/lurus; sepanjang batang untuk rambut kering/keriting.",
+      "sources": [
+        "S01"
+      ],
+      "finding": "supported_with_scope",
+      "limit": "Tidak membuktikan aturan tengah–ujung untuk semua kondisioner dan semua rambut."
+    },
+    {
+      "id": "C02",
+      "text": "Leave-in tidak diaplikasikan pada kulit kepala; bentuk spray diarahkan dari tengah batang ke ujung. Bentuk krim/lotion digunakan pada bagian yang memerlukan.",
+      "sources": [
+        "S02"
+      ],
+      "finding": "supported_with_scope",
+      "limit": "Khusus leave-in dan bentuk produknya; jangan disamakan dengan seluruh kondisioner bilas."
+    },
+    {
+      "id": "C03",
+      "text": "Untuk rambut keriting/coily, uraikan kusut saat basah dengan leave-in dan alat yang sesuai; hindari brushing saat kering.",
+      "sources": [
+        "S03"
+      ],
+      "finding": "supported_with_scope",
+      "limit": "Khusus keriting/coily, bukan semua rambut kering tanpa informasi tipe rambut."
+    },
+    {
+      "id": "C04",
+      "text": "Batasi alat panas, gunakan pengaturan rendah/sedang, dan kondisioner sesuai tipe rambut untuk mengurangi kerusakan dari perawatan sehari-hari.",
+      "sources": [
+        "S01"
+      ],
+      "finding": "supported_with_scope",
+      "limit": "Tidak membuktikan layanan tertentu menyembuhkan rambut rusak atau menghilangkan ujung bercabang."
+    },
+    {
+      "id": "C05",
+      "text": "Paket lama deep conditioning rutin, trimming berkala, menunda bleaching sampai pulih, hair mask, dan larangan air panas belum seluruhnya memiliki dukungan langsung dari sumber yang diseleksi.",
+      "sources": [
+        "S01",
+        "S05",
+        "S08"
+      ],
+      "finding": "partial_support",
+      "limit": "Batasi ke klaim yang didukung; jangan memberi jadwal atau menganggap seluruh paket sudah tervalidasi. S05 belum lolos pemeriksaan tanggal."
+    },
+    {
+      "id": "C06",
+      "text": "Penentuan penyebab kerontokan memerlukan pemeriksaan; dokter kulit memiliki kompetensi untuk diagnosis dan penanganannya.",
+      "sources": [
+        "S04"
+      ],
+      "finding": "supported_for_referral",
+      "limit": "Dipakai untuk rujukan, bukan memasukkan resep/prosedur medis sebagai layanan chatbot."
+    },
+    {
+      "id": "C07",
+      "text": "Sampo khusus warna atau merek tertentu belum terverifikasi langsung untuk produk pewarnaan TIEN pada sumber terpilih.",
+      "sources": [],
+      "finding": "unresolved",
+      "limit": "Panduan umum atau label warna aman tidak membuktikan kecocokan setiap merek atau efektivitas pada pelanggan tertentu."
+    },
+    {
+      "id": "C08",
+      "text": "Aturan menunggu 48 jam atau tiga hari setelah keratin TIEN belum dapat ditetapkan.",
+      "sources": [
+        "S06"
+      ],
+      "finding": "product_protocol_missing",
+      "limit": "S06 hanya konteks umum mengikuti petunjuk produsen pada pewarnaan/perming; bukan bukti protokol keratin TIEN. Perlu identitas produk dan instruksi resminya."
+    },
+    {
+      "id": "C09",
+      "text": "Pada konteks reaksi pewarna rambut, rasa terbakar/perih dapat menjadi gejala reaksi; keluhan memburuk memerlukan pemeriksaan. Pembengkakan mulut/tenggorokan atau sulit bernapas memerlukan bantuan darurat.",
+      "sources": [
+        "S07"
+      ],
+      "finding": "supported_only_in_hair_dye_context",
+      "limit": "Tidak menetapkan bahwa semua kulit kepala perih disebabkan pewarna; gunakan layanan darurat setempat, bukan nomor UK. Crawling tidak boleh menunda rujukan darurat."
+    },
+    {
+      "id": "C10",
+      "text": "Review jurnal membahas kerusakan batang rambut dan reaksi kulit kepala akibat pewarnaan/perming.",
+      "sources": [
+        "S08"
+      ],
+      "finding": "background_only",
+      "limit": "Ini artikel review, bukan uji klinis original dan bukan bukti manfaat layanan Hair Spa/Scalp Detox TIEN."
+    }
+  ],
+  "item_audits": [
+    {
+      "id": "p07",
+      "question": "Menurut panduan, kondisioner digunakan di bagian rambut mana?",
+      "claim_ids": [
+        "C01",
+        "C02"
+      ],
+      "audit_status": "revise_scope",
+      "proposed_action": "Tentukan apakah yang ditanyakan kondisioner bilas atau leave-in, serta tipe rambut; jangan pertahankan larangan akar universal sebagai satu-satunya gold.",
+      "manual_response_preserved": true,
+      "approved_by_researcher": false,
+      "final_gold_ready": false
+    },
+    {
+      "id": "p08",
+      "question": "Menurut panduan, sampo seperti apa yang digunakan setelah pewarnaan?",
+      "claim_ids": [
+        "C07"
+      ],
+      "audit_status": "hold_direct_claim",
+      "proposed_action": "Cari petunjuk produk pewarna/sampo yang digunakan. Istilah sampo khusus warna dalam Markdown belum cukup sebagai bukti. Jangan mengganti dengan merek hasil pencarian tanpa seleksi.",
+      "manual_response_preserved": true,
+      "approved_by_researcher": false,
+      "final_gold_ready": false
+    },
+    {
+      "id": "p09",
+      "question": "Apa catatan panduan mengenai menyisir rambut keriting saat kering?",
+      "claim_ids": [
+        "C03"
+      ],
+      "audit_status": "supported_with_scope",
+      "proposed_action": "Pertahankan konteks keriting; perjelas perbedaan brushing kering dan detangling lembap/basah. Siapkan passage baru dari ringkasan bersumber, lalu tinjau label.",
+      "manual_response_preserved": true,
+      "approved_by_researcher": false,
+      "final_gold_ready": false
+    },
+    {
+      "id": "p10",
+      "question": "Apa isi panduan perawatan untuk rambut rusak dan bercabang?",
+      "claim_ids": [
+        "C04",
+        "C05",
+        "C10"
+      ],
+      "audit_status": "narrow_answer",
+      "proposed_action": "Batasi sementara ke kondisioner sesuai tipe dan pembatasan panas; komponen trimming/deep conditioning/jeda bleaching perlu bukti langsung tersendiri.",
+      "manual_response_preserved": true,
+      "approved_by_researcher": false,
+      "final_gold_ready": false
+    },
+    {
+      "id": "p11",
+      "question": "Apa isi panduan untuk rambut kering atau kusam?",
+      "claim_ids": [
+        "C01",
+        "C04",
+        "C05"
+      ],
+      "audit_status": "narrow_answer",
+      "proposed_action": "Kondisioner dan pengurangan panas dapat dirujuk. Hair mask serta aturan suhu air jangan dianggap terverifikasi hanya dari panduan umum tersebut.",
+      "manual_response_preserved": true,
+      "approved_by_researcher": false,
+      "final_gold_ready": false
+    },
+    {
+      "id": "p12",
+      "question": "Menurut panduan, apa tindak lanjut bila kerontokan berlebihan menetap?",
+      "claim_ids": [
+        "C06"
+      ],
+      "audit_status": "supported_for_referral",
+      "proposed_action": "Rujukan dokter kulit memiliki dasar; larangan diagnosis oleh chatbot tetap kebijakan proyek yang dicatat terpisah.",
+      "manual_response_preserved": true,
+      "approved_by_researcher": false,
+      "final_gold_ready": false
+    },
+    {
+      "id": "p13",
+      "question": "Berapa harga Signature Hair Spa dan di bagian mana kondisioner dipakai menurut panduan?",
+      "claim_ids": [
+        "C01",
+        "C02"
+      ],
+      "audit_status": "revise_scope",
+      "proposed_action": "Harga tetap snapshot DB. Bagian kondisioner perlu konteks jenis produk/tipe rambut seperti p07.",
+      "manual_response_preserved": true,
+      "approved_by_researcher": false,
+      "final_gold_ready": false
+    },
+    {
+      "id": "p14",
+      "question": "Berapa harga reguler Keratin Smooth Treatment dan siapa yang memberi instruksi perawatan setelahnya?",
+      "claim_ids": [
+        "C08"
+      ],
+      "audit_status": "product_protocol_missing",
+      "proposed_action": "Harga tetap DB. Instruksi stylist merupakan kebijakan konsultasi; protokol produk keratin dan batas keramas belum tersedia.",
+      "manual_response_preserved": true,
+      "approved_by_researcher": false,
+      "final_gold_ready": false
+    },
+    {
+      "id": "p15",
+      "question": "Berapa harga Color Gloss Refresh dan sampo apa yang disebut panduan setelah pewarnaan?",
+      "claim_ids": [
+        "C07"
+      ],
+      "audit_status": "hold_direct_claim",
+      "proposed_action": "Harga tetap DB. Pencarian sumber dapat menjadi fallback terkontrol, tetapi belum ada rekomendasi merek yang sah atau klaim sampo warna yang lengkap untuk gold.",
+      "manual_response_preserved": true,
+      "approved_by_researcher": false,
+      "final_gold_ready": false
+    },
+    {
+      "id": "p16",
+      "question": "Berapa harga Scalp Detox Therapy dan apa tindak lanjut panduan bila kulit kepala perih?",
+      "claim_ids": [
+        "C09",
+        "C10"
+      ],
+      "audit_status": "conditional_referral_only",
+      "proposed_action": "Harga tetap DB. Klarifikasi konteks tanpa mendiagnosis; bedakan edukasi reaksi pewarna dari keluhan umum. Tidak menjadikan konsultasi salon pengganti dokter.",
+      "manual_response_preserved": true,
+      "approved_by_researcher": false,
+      "final_gold_ready": false
+    },
+    {
+      "id": "p17",
+      "question": "Berapa biaya Precision Haircut dan apa isi panduan mengenai ujung bercabang?",
+      "claim_ids": [
+        "C04",
+        "C05"
+      ],
+      "audit_status": "narrow_answer",
+      "proposed_action": "Harga tetap DB. Sumber terpilih belum membuktikan seluruh paket perawatan ujung bercabang atau manfaat terapeutik haircut.",
+      "manual_response_preserved": true,
+      "approved_by_researcher": false,
+      "final_gold_ready": false
+    },
+    {
+      "id": "p18",
+      "question": "Berapa harga serta durasi Volume Blowout Styling dan isi panduan untuk rambut kering?",
+      "claim_ids": [
+        "C01",
+        "C03",
+        "C04",
+        "C05"
+      ],
+      "audit_status": "narrow_answer_and_review_alternative",
+      "proposed_action": "Harga/durasi tetap DB. Ringkasan tentang rambut kering jangan otomatis menggunakan passage khusus keriting. Status alternatif belum diputuskan pengguna; label tidak diubah diam-diam.",
+      "manual_response_preserved": true,
+      "approved_by_researcher": false,
+      "final_gold_ready": false
+    }
+  ],
+  "summary": {
+    "items_audited": 12,
+    "sources_registered": 9,
+    "content_inspected_sources": 8,
+    "inspected_sources_with_verified_date_2021_2026": 6,
+    "audit_status_counts": {
+      "revise_scope": 2,
+      "hold_direct_claim": 2,
+      "supported_with_scope": 1,
+      "narrow_answer": 3,
+      "supported_for_referral": 1,
+      "product_protocol_missing": 1,
+      "conditional_referral_only": 1,
+      "narrow_answer_and_review_alternative": 1
+    },
+    "final_gold_ready_items": 0
+  },
+  "production_modified": false,
+  "pilot_modified": false,
+  "dataset_v1_modified": false,
+  "new_retrieval_metrics_computed": false,
+  "medical_expert_validation": false
+}

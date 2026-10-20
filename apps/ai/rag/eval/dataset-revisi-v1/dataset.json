@@ -1,0 +1,2029 @@
+{
+  "schema_version": "rag-salon.reference-revision.v1",
+  "revision": "v1",
+  "prepared_date": "2026-10-20",
+  "status": "narrative_annotations_recorded; revised_reference_wording_draft",
+  "annotation_method": "single_researcher_manual_narrative; rubric scores not required or inferred",
+  "reviewer": "Matin",
+  "reviewed_at": "2026-10-20",
+  "reviewer_statement": "Nama : Matin\nDiperiksa : 20 Oktober 2026. ini merupakan data salon nyata untuk pengembangan tapi dapat berubah sewaktu waktu",
+  "source_hashes": {
+    "apps\\ai\\rag\\eval\\pilot\\questions.json": "bd88cd8fd6d685becc9f8201bd7b5d3863730ac393e2415ee5599ebc1aafc850",
+    "apps\\ai\\rag\\eval\\pilot\\corpus.json": "0092b35bf9fb5daa6b6d1991913e7978dca50c2af8427e08c0871989ef8d31e7",
+    "apps\\ai\\rag\\eval\\pilot\\services.snapshot.json": "20ec61bf597a03d117370eeb8ea1499ca8c5d6378e0be9dd0bd146ce94753fa9",
+    "apps\\ai\\rag\\eval\\pilot\\manual-review-2026-10-20\\annotations-matin-2026-10-20.json": "59dc72df4b0f01fc6b34712245df93bba816a646035ee2cbd03ea8e1e53d193f"
+  },
+  "snapshot_captured_at": "2026-10-20T07:51:39.271Z",
+  "question_origin": "assistant_drafted_not_customer_transcripts",
+  "summary": {
+    "items": 24,
+    "revised_answers": 18,
+    "narrative_interpretations": {
+      "accepted_narrative": 13,
+      "accepted_with_note": 2,
+      "revision_requested": 2,
+      "factual_confirmation": 2,
+      "future_feature_requested": 3,
+      "behavior_requested": 2
+    },
+    "care_items_awaiting_primary_sources": 12
+  },
+  "original_pilot_modified": false,
+  "production_modified": false,
+  "publication_ready": false,
+  "items": [
+    {
+      "id": "p01",
+      "category": "database",
+      "question": "Berapa harga reguler dan durasi Signature Hair Spa yang tercatat?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Signature Hair Spa: harga reguler Rp325,000, durasi 90 menit, sesuai snapshot. Promo tidak diasumsikan.",
+      "reference_answer_revised": "Signature Hair Spa: harga reguler Rp325.000, durasi 90 menit, sesuai snapshot 20 Oktober 2026.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "ya betul RP.325.000 dan 90 menit",
+        "explicit_decision": null,
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "factual_confirmation",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 1,
+          "name": "Signature Hair Spa",
+          "price": 325000,
+          "duration_min": 90
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:1",
+          "text": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Signature Hair Spa",
+          "fields": {
+            "id": 1,
+            "slug": "signature-hair-spa",
+            "name": "Signature Hair Spa",
+            "price": 325000,
+            "duration_min": 90,
+            "description": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+            "category": "Hair Treatment",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "1cfe233bbdb668067c10cc7d608c9b3c4783a7bb597d764ef689d51349b7370b",
+          "review_status": "snapshot_verified_not_owner_validated"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:1"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:1"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "not_applicable",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p02",
+      "category": "database",
+      "question": "Berapa harga reguler dan durasi Precision Haircut yang tercatat?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Precision Haircut: harga reguler Rp220,000, durasi 60 menit, sesuai snapshot. Promo tidak diasumsikan.",
+      "reference_answer_revised": "Precision Haircut: harga reguler Rp220.000, durasi 60 menit, sesuai snapshot 20 Oktober 2026.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "ya betul",
+        "explicit_decision": null,
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "factual_confirmation",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 2,
+          "name": "Precision Haircut",
+          "price": 220000,
+          "duration_min": 60
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:2",
+          "text": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Precision Haircut",
+          "fields": {
+            "id": 2,
+            "slug": "precision-haircut",
+            "name": "Precision Haircut",
+            "price": 220000,
+            "duration_min": 60,
+            "description": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.",
+            "category": "Haircut",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "d5f2fb300b8a9a6732786dcc63276d2a169d7a3cdaf3ac57e8b2558c04c82cfd",
+          "review_status": "snapshot_verified_not_owner_validated"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:2"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:2"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "not_applicable",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p03",
+      "category": "database",
+      "question": "Berapa harga reguler dan durasi Keratin Smooth Treatment yang tercatat?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Keratin Smooth Treatment: harga reguler Rp780,000, durasi 150 menit, sesuai snapshot. Promo tidak diasumsikan.",
+      "reference_answer_revised": "Keratin Smooth Treatment: harga reguler Rp780.000, durasi 150 menit, sesuai snapshot 20 Oktober 2026.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_narrative",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 3,
+          "name": "Keratin Smooth Treatment",
+          "price": 780000,
+          "duration_min": 150
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:3",
+          "text": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Keratin Smooth Treatment",
+          "fields": {
+            "id": 3,
+            "slug": "keratin-smooth-treatment",
+            "name": "Keratin Smooth Treatment",
+            "price": 780000,
+            "duration_min": 150,
+            "description": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.",
+            "category": "Smoothing",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "704d55f06200f9482251a896e6d98ae2abbd51d7111d578d77ba54d3517c2e8d",
+          "review_status": "snapshot_verified_not_owner_validated"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:3"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:3"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "not_applicable",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p04",
+      "category": "database",
+      "question": "Berapa harga reguler dan durasi Color Gloss Refresh yang tercatat?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Color Gloss Refresh: harga reguler Rp620,000, durasi 130 menit, sesuai snapshot. Promo tidak diasumsikan.",
+      "reference_answer_revised": "Color Gloss Refresh: harga reguler Rp620.000, durasi 130 menit, sesuai snapshot 20 Oktober 2026.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_narrative",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 4,
+          "name": "Color Gloss Refresh",
+          "price": 620000,
+          "duration_min": 130
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:4",
+          "text": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Color Gloss Refresh",
+          "fields": {
+            "id": 4,
+            "slug": "color-gloss-refresh",
+            "name": "Color Gloss Refresh",
+            "price": 620000,
+            "duration_min": 130,
+            "description": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.",
+            "category": "Hair Coloring",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "4c0b2e5149bb16860f3455eb6f7efbebeda1bba10ff5eac7c79f26727d9a5d68",
+          "review_status": "snapshot_verified_not_owner_validated"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:4"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:4"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "not_applicable",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p05",
+      "category": "database",
+      "question": "Berapa harga reguler dan durasi Scalp Detox Therapy yang tercatat?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Scalp Detox Therapy: harga reguler Rp360,000, durasi 75 menit, sesuai snapshot. Promo tidak diasumsikan.",
+      "reference_answer_revised": "Scalp Detox Therapy: harga reguler Rp360.000, durasi 75 menit, sesuai snapshot 20 Oktober 2026.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_narrative",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 5,
+          "name": "Scalp Detox Therapy",
+          "price": 360000,
+          "duration_min": 75
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:5",
+          "text": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Scalp Detox Therapy",
+          "fields": {
+            "id": 5,
+            "slug": "scalp-detox-therapy",
+            "name": "Scalp Detox Therapy",
+            "price": 360000,
+            "duration_min": 75,
+            "description": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.",
+            "category": "Scalp Care",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "cd311ce29761201e9e28126309056a8ec52280e5fff2d55a54aa778abedaf70a",
+          "review_status": "snapshot_verified_not_owner_validated"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:5"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:5"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "not_applicable",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p06",
+      "category": "database",
+      "question": "Berapa harga reguler dan durasi Volume Blowout Styling yang tercatat?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Volume Blowout Styling: harga reguler Rp280,000, durasi 55 menit, sesuai snapshot. Promo tidak diasumsikan.",
+      "reference_answer_revised": "Volume Blowout Styling: harga reguler Rp280.000, durasi 55 menit, sesuai snapshot 20 Oktober 2026.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_narrative",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 6,
+          "name": "Volume Blowout Styling",
+          "price": 280000,
+          "duration_min": 55
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:6",
+          "text": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Volume Blowout Styling",
+          "fields": {
+            "id": 6,
+            "slug": "volume-blowout-styling",
+            "name": "Volume Blowout Styling",
+            "price": 280000,
+            "duration_min": 55,
+            "description": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.",
+            "category": "Hair Styling",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "03883602fb4e62f9d3f0a56267f0f589cd5ba48112e3ba782a93bb03a676a219",
+          "review_status": "snapshot_verified_not_owner_validated"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:6"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:6"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "not_applicable",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p07",
+      "category": "document",
+      "question": "Menurut panduan, kondisioner digunakan di bagian rambut mana?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Bagian tengah hingga ujung; hindari akar.",
+      "reference_answer_revised": "Bagian tengah hingga ujung; hindari akar.",
+      "revision_changed": false,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "original_wording_retained",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_narrative",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [],
+      "supporting_evidence": [
+        {
+          "id": "md:tips-perawatan.md:a54925e92feb:0",
+          "text": "- Cuci rambut sesuai kebutuhan; tidak terlalu sering agar minyak alami tidak hilang. - Gunakan sampo yang sesuai jenis kulit kepala dan rambut. - Gunakan kondisioner dari bagian tengah hingga ujung, hindari akar. - Keringkan dengan handuk lembut atau biarkan alami; hindari menggosok rambut keras. - Batasi penggunaan alat panas bersuhu tinggi.",
+          "topic": "tips-perawatan",
+          "file": "tips-perawatan.md",
+          "section": "Perawatan Dasar",
+          "source_type": "manual_legacy",
+          "sha256": "868128b164849f89f5efaaa26368340e70ffaa6022f1d006b964db66f48ba5c0",
+          "review_status": "pending_content_review"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "md:tips-perawatan.md:a54925e92feb:0"
+        ],
+        "required_evidence_groups": [
+          [
+            "md:tips-perawatan.md:a54925e92feb:0"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "not_applicable",
+        "care_primary_sources": "pending",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Sumber primer perawatan belum diverifikasi; kesesuaian teks dan kelayakan sumber dipisahkan."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p08",
+      "category": "document",
+      "question": "Menurut panduan, sampo seperti apa yang digunakan setelah pewarnaan?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Sampo khusus warna; ikuti instruksi stylist.",
+      "reference_answer_revised": "Sampo khusus warna; ikuti instruksi stylist.",
+      "revision_changed": false,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "original_wording_retained",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_narrative",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [],
+      "supporting_evidence": [
+        {
+          "id": "md:tips-perawatan.md:a54925e92feb:5",
+          "text": "- Ikuti instruksi dari stylist mengenai larangan keramas atau pemakaian produk tertentu. - Untuk smoothing/keratin: hindari air dan ikat rambut pada 48 jam pertama. - Untuk pewarnaan: gunakan sampo khusus warna untuk menjaga warna tetap awet.",
+          "topic": "tips-perawatan",
+          "file": "tips-perawatan.md",
+          "section": "Perawatan Setelah Treatment di Salon",
+          "source_type": "manual_legacy",
+          "sha256": "5d52a7e589a61e387ae9d14d6765c8b9dced7c76e5374a3c7c912019cf28f612",
+          "review_status": "pending_content_review"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "md:tips-perawatan.md:a54925e92feb:5"
+        ],
+        "required_evidence_groups": [
+          [
+            "md:tips-perawatan.md:a54925e92feb:5"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "not_applicable",
+        "care_primary_sources": "pending",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Sumber primer perawatan belum diverifikasi; kesesuaian teks dan kelayakan sumber dipisahkan."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p09",
+      "category": "document",
+      "question": "Apa catatan panduan mengenai menyisir rambut keriting saat kering?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Panduan menyatakan jangan menyisir rambut keriting dalam keadaan kering.",
+      "reference_answer_revised": "Panduan menyatakan jangan menyisir rambut keriting dalam keadaan kering.",
+      "revision_changed": false,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "original_wording_retained",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_narrative",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [],
+      "supporting_evidence": [
+        {
+          "id": "md:tips-perawatan.md:a54925e92feb:3",
+          "text": "Utamakan kelembapan. Gunakan conditioner tanpa bilas dan jangan menyisir rambut kering.",
+          "topic": "tips-perawatan",
+          "file": "tips-perawatan.md",
+          "section": "Rambut Keriting",
+          "source_type": "manual_legacy",
+          "sha256": "636375ff687d9f5302f742bee6e9ef60a5337a14c040d2b029234f741746360c",
+          "review_status": "pending_content_review"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "md:tips-perawatan.md:a54925e92feb:3"
+        ],
+        "required_evidence_groups": [
+          [
+            "md:tips-perawatan.md:a54925e92feb:3"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "not_applicable",
+        "care_primary_sources": "pending",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Sumber primer perawatan belum diverifikasi; kesesuaian teks dan kelayakan sumber dipisahkan."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p10",
+      "category": "document",
+      "question": "Apa isi panduan perawatan untuk rambut rusak dan bercabang?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Panduan menyebut deep conditioning, mengurangi alat panas, pemangkasan ujung, dan menghindari bleaching ulang sebelum pulih.",
+      "reference_answer_revised": "Panduan menyebut deep conditioning, mengurangi alat panas, pemangkasan ujung, dan menghindari bleaching ulang sebelum pulih.",
+      "revision_changed": false,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "original_wording_retained",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_narrative",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [],
+      "supporting_evidence": [
+        {
+          "id": "md:panduan-layanan.md:58aa4b98724d:1",
+          "text": "Disarankan deep conditioning rutin, mengurangi alat panas, dan pemangkasan ujung berkala. Hindari bleaching ulang sebelum rambut pulih.",
+          "topic": "layanan",
+          "file": "panduan-layanan.md",
+          "section": "Rambut Rusak / Bercabang",
+          "source_type": "manual_legacy",
+          "sha256": "eeb7cdf1308d0c04e37339321a86cd8f9c80823b8c506d69650dc27d25bc3693",
+          "review_status": "pending_content_review"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "md:panduan-layanan.md:58aa4b98724d:1"
+        ],
+        "required_evidence_groups": [
+          [
+            "md:panduan-layanan.md:58aa4b98724d:1"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "not_applicable",
+        "care_primary_sources": "pending",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Sumber primer perawatan belum diverifikasi; kesesuaian teks dan kelayakan sumber dipisahkan."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p11",
+      "category": "document",
+      "question": "Apa isi panduan untuk rambut kering atau kusam?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Utamakan kelembapan, kondisioner dan hair mask; hindari keramas air panas.",
+      "reference_answer_revised": "Utamakan kelembapan, kondisioner dan hair mask; hindari keramas air panas.",
+      "revision_changed": false,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "original_wording_retained",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_narrative",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [],
+      "supporting_evidence": [
+        {
+          "id": "md:panduan-layanan.md:58aa4b98724d:4",
+          "text": "Utamakan kelembapan: kondisioner, hair mask, dan hindari keramas air panas.",
+          "topic": "layanan",
+          "file": "panduan-layanan.md",
+          "section": "Rambut Kering / Kusam",
+          "source_type": "manual_legacy",
+          "sha256": "5aff51d7b7459362df113d1099d8ca3c95769d4ab24a14a983e9167263d57655",
+          "review_status": "pending_content_review"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "md:panduan-layanan.md:58aa4b98724d:4"
+        ],
+        "required_evidence_groups": [
+          [
+            "md:panduan-layanan.md:58aa4b98724d:4"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "not_applicable",
+        "care_primary_sources": "pending",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Sumber primer perawatan belum diverifikasi; kesesuaian teks dan kelayakan sumber dipisahkan."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p12",
+      "category": "document",
+      "question": "Menurut panduan, apa tindak lanjut bila kerontokan berlebihan menetap?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Konsultasi ke dokter atau ahli dermatologi; bukan diagnosis oleh chatbot.",
+      "reference_answer_revised": "Konsultasi ke dokter atau ahli dermatologi; bukan diagnosis oleh chatbot.",
+      "revision_changed": false,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "original_wording_retained",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_narrative",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [],
+      "supporting_evidence": [
+        {
+          "id": "md:panduan-layanan.md:58aa4b98724d:2",
+          "text": "Perhatikan pola makan, kelola stres, dan gunakan sampo lembut. Bila rontok berlebihan dan menetap, disarankan konsultasi ke dokter/ahli dermatologi.",
+          "topic": "layanan",
+          "file": "panduan-layanan.md",
+          "section": "Rambut Rontok",
+          "source_type": "manual_legacy",
+          "sha256": "142d1726dd0d3943ee21f37a5a24f2120889f5f64703b1817af4f23ac437bdda",
+          "review_status": "pending_content_review"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "md:panduan-layanan.md:58aa4b98724d:2"
+        ],
+        "required_evidence_groups": [
+          [
+            "md:panduan-layanan.md:58aa4b98724d:2"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "not_applicable",
+        "care_primary_sources": "pending",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Sumber primer perawatan belum diverifikasi; kesesuaian teks dan kelayakan sumber dipisahkan.",
+        "Klausa kebijakan, batas sumber, atau klarifikasi dinilai terpisah dari passage; tidak semua kalimat acuan merupakan kutipan dokumen."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p13",
+      "category": "mixed",
+      "question": "Berapa harga Signature Hair Spa dan di bagian mana kondisioner dipakai menurut panduan?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Harga mengikuti snapshot; kondisioner di tengah hingga ujung, hindari akar.",
+      "reference_answer_revised": "Harga reguler Signature Hair Spa adalah Rp325.000 pada snapshot 20 Oktober 2026. Menurut panduan yang tersedia, gunakan kondisioner dari bagian tengah hingga ujung rambut dan hindari akar.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_narrative",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 1,
+          "name": "Signature Hair Spa",
+          "price": 325000,
+          "duration_min": 90
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:1",
+          "text": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Signature Hair Spa",
+          "fields": {
+            "id": 1,
+            "slug": "signature-hair-spa",
+            "name": "Signature Hair Spa",
+            "price": 325000,
+            "duration_min": 90,
+            "description": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+            "category": "Hair Treatment",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "1cfe233bbdb668067c10cc7d608c9b3c4783a7bb597d764ef689d51349b7370b",
+          "review_status": "snapshot_verified_not_owner_validated"
+        },
+        {
+          "id": "md:tips-perawatan.md:a54925e92feb:0",
+          "text": "- Cuci rambut sesuai kebutuhan; tidak terlalu sering agar minyak alami tidak hilang. - Gunakan sampo yang sesuai jenis kulit kepala dan rambut. - Gunakan kondisioner dari bagian tengah hingga ujung, hindari akar. - Keringkan dengan handuk lembut atau biarkan alami; hindari menggosok rambut keras. - Batasi penggunaan alat panas bersuhu tinggi.",
+          "topic": "tips-perawatan",
+          "file": "tips-perawatan.md",
+          "section": "Perawatan Dasar",
+          "source_type": "manual_legacy",
+          "sha256": "868128b164849f89f5efaaa26368340e70ffaa6022f1d006b964db66f48ba5c0",
+          "review_status": "pending_content_review"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:1",
+          "md:tips-perawatan.md:a54925e92feb:0"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:1"
+          ],
+          [
+            "md:tips-perawatan.md:a54925e92feb:0"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "pending",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Sumber primer perawatan belum diverifikasi; kesesuaian teks dan kelayakan sumber dipisahkan."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p14",
+      "category": "mixed",
+      "question": "Berapa harga reguler Keratin Smooth Treatment dan siapa yang memberi instruksi perawatan setelahnya?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Harga mengikuti snapshot; ikuti instruksi stylist, jangan menganggap aturan waktu universal.",
+      "reference_answer_revised": "Harga reguler Keratin Smooth Treatment adalah Rp780.000 pada snapshot 20 Oktober 2026. Ikuti instruksi stylist mengenai perawatan setelah layanan, termasuk keramas dan penggunaan produk. Lama pembatasan perlu mengikuti petunjuk produk/prosedur yang digunakan; sumber produk tersebut belum tersedia dalam korpus ini.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_narrative",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 3,
+          "name": "Keratin Smooth Treatment",
+          "price": 780000,
+          "duration_min": 150
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:3",
+          "text": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Keratin Smooth Treatment",
+          "fields": {
+            "id": 3,
+            "slug": "keratin-smooth-treatment",
+            "name": "Keratin Smooth Treatment",
+            "price": 780000,
+            "duration_min": 150,
+            "description": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.",
+            "category": "Smoothing",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "704d55f06200f9482251a896e6d98ae2abbd51d7111d578d77ba54d3517c2e8d",
+          "review_status": "snapshot_verified_not_owner_validated"
+        },
+        {
+          "id": "md:tips-perawatan.md:a54925e92feb:5",
+          "text": "- Ikuti instruksi dari stylist mengenai larangan keramas atau pemakaian produk tertentu. - Untuk smoothing/keratin: hindari air dan ikat rambut pada 48 jam pertama. - Untuk pewarnaan: gunakan sampo khusus warna untuk menjaga warna tetap awet.",
+          "topic": "tips-perawatan",
+          "file": "tips-perawatan.md",
+          "section": "Perawatan Setelah Treatment di Salon",
+          "source_type": "manual_legacy",
+          "sha256": "5d52a7e589a61e387ae9d14d6765c8b9dced7c76e5374a3c7c912019cf28f612",
+          "review_status": "pending_content_review"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:3",
+          "md:tips-perawatan.md:a54925e92feb:5"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:3"
+          ],
+          [
+            "md:tips-perawatan.md:a54925e92feb:5"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "pending",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Sumber primer perawatan belum diverifikasi; kesesuaian teks dan kelayakan sumber dipisahkan.",
+        "Klausa kebijakan, batas sumber, atau klarifikasi dinilai terpisah dari passage; tidak semua kalimat acuan merupakan kutipan dokumen."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p15",
+      "category": "mixed",
+      "question": "Berapa harga Color Gloss Refresh dan sampo apa yang disebut panduan setelah pewarnaan?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Harga mengikuti snapshot; panduan menyebut sampo khusus warna.",
+      "reference_answer_revised": "Harga reguler Color Gloss Refresh adalah Rp620.000 pada snapshot 20 Oktober 2026. Panduan yang tersedia menyebut sampo khusus rambut diwarnai. Panduan ini belum menyediakan merek atau produk spesifik yang terverifikasi.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima. tapi jika user menanyakan shampoo apa, bisa fallback ke web crawling",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_with_note",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 4,
+          "name": "Color Gloss Refresh",
+          "price": 620000,
+          "duration_min": 130
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:4",
+          "text": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Color Gloss Refresh",
+          "fields": {
+            "id": 4,
+            "slug": "color-gloss-refresh",
+            "name": "Color Gloss Refresh",
+            "price": 620000,
+            "duration_min": 130,
+            "description": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.",
+            "category": "Hair Coloring",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "4c0b2e5149bb16860f3455eb6f7efbebeda1bba10ff5eac7c79f26727d9a5d68",
+          "review_status": "snapshot_verified_not_owner_validated"
+        },
+        {
+          "id": "md:tips-perawatan.md:a54925e92feb:5",
+          "text": "- Ikuti instruksi dari stylist mengenai larangan keramas atau pemakaian produk tertentu. - Untuk smoothing/keratin: hindari air dan ikat rambut pada 48 jam pertama. - Untuk pewarnaan: gunakan sampo khusus warna untuk menjaga warna tetap awet.",
+          "topic": "tips-perawatan",
+          "file": "tips-perawatan.md",
+          "section": "Perawatan Setelah Treatment di Salon",
+          "source_type": "manual_legacy",
+          "sha256": "5d52a7e589a61e387ae9d14d6765c8b9dced7c76e5374a3c7c912019cf28f612",
+          "review_status": "pending_content_review"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:4",
+          "md:tips-perawatan.md:a54925e92feb:5"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:4"
+          ],
+          [
+            "md:tips-perawatan.md:a54925e92feb:5"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "pending",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Sumber primer perawatan belum diverifikasi; kesesuaian teks dan kelayakan sumber dipisahkan.",
+        "Klausa kebijakan, batas sumber, atau klarifikasi dinilai terpisah dari passage; tidak semua kalimat acuan merupakan kutipan dokumen."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p16",
+      "category": "mixed",
+      "question": "Berapa harga Scalp Detox Therapy dan apa tindak lanjut panduan bila kulit kepala perih?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Harga mengikuti snapshot; konsultasi profesional, tanpa menjanjikan layanan menyembuhkan keluhan.",
+      "reference_answer_revised": "Harga reguler Scalp Detox Therapy adalah Rp360.000 pada snapshot 20 Oktober 2026. Untuk memperjelas keluhan, sejak kapan kulit kepala terasa perih dan apakah muncul setelah penggunaan produk atau layanan tertentu? Informasi ini belum cukup untuk menentukan penyebab. Untuk penilaian keluhan, konsultasikan kepada dokter kulit. Tidak ada bukti dalam korpus ini bahwa layanan salon tersebut menyembuhkan penyebab kulit kepala perih.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "kalo ini harus ditrace dulu penyebab kepala perih apa. dijawabaan ini sebaiknya berkonsultasi dengan profesional. oke jika tidak ada dokumentasi nya memang boleh melakukan fallback seperti itu, tapi kalo bisa crawling terlebih dahulu, lalu diakhir untuk jawaban yang aman konsultasi ke professional seperti dokter kulit",
+        "explicit_decision": null,
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "revision_requested",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 5,
+          "name": "Scalp Detox Therapy",
+          "price": 360000,
+          "duration_min": 75
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:5",
+          "text": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Scalp Detox Therapy",
+          "fields": {
+            "id": 5,
+            "slug": "scalp-detox-therapy",
+            "name": "Scalp Detox Therapy",
+            "price": 360000,
+            "duration_min": 75,
+            "description": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.",
+            "category": "Scalp Care",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "cd311ce29761201e9e28126309056a8ec52280e5fff2d55a54aa778abedaf70a",
+          "review_status": "snapshot_verified_not_owner_validated"
+        },
+        {
+          "id": "md:tips-perawatan.md:a54925e92feb:6",
+          "text": "- Rambut terasa sangat kering, kusut berlebihan, atau banyak bercabang. - Kulit kepala gatal, berketombe, atau terasa perih. - Rambut rontok dalam jumlah tidak wajar. Bila mengalami tanda tersebut, sebaiknya berkonsultasi dengan profesional. TIEN SALON menyediakan konsultasi dan perawatan yang sesuai dengan kondisi rambut Anda.",
+          "topic": "tips-perawatan",
+          "file": "tips-perawatan.md",
+          "section": "Tanda Rambut Perlu Perhatian",
+          "source_type": "manual_legacy",
+          "sha256": "e3ea3cb502f0f2531ec3b0386aea3a644a272eb7833d97b645e49b5bffe218e0",
+          "review_status": "pending_content_review"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:5",
+          "md:tips-perawatan.md:a54925e92feb:6"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:5"
+          ],
+          [
+            "md:tips-perawatan.md:a54925e92feb:6"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "pending",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Sumber primer perawatan belum diverifikasi; kesesuaian teks dan kelayakan sumber dipisahkan.",
+        "Klausa kebijakan, batas sumber, atau klarifikasi dinilai terpisah dari passage; tidak semua kalimat acuan merupakan kutipan dokumen."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p17",
+      "category": "mixed",
+      "question": "Berapa biaya Precision Haircut dan apa isi panduan mengenai ujung bercabang?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Harga mengikuti snapshot; panduan menyebut pemangkasan ujung berkala dan perawatan, bukan jaminan terapi.",
+      "reference_answer_revised": "Harga reguler Precision Haircut adalah Rp220.000 pada snapshot 20 Oktober 2026. Menurut panduan yang tersedia, perawatan rambut rusak atau bercabang mencakup deep conditioning, mengurangi alat panas, pemangkasan ujung berkala, serta menghindari bleaching ulang sebelum rambut pulih. Ini bukan jaminan hasil terapi dari layanan haircut.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_narrative",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 2,
+          "name": "Precision Haircut",
+          "price": 220000,
+          "duration_min": 60
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:2",
+          "text": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Precision Haircut",
+          "fields": {
+            "id": 2,
+            "slug": "precision-haircut",
+            "name": "Precision Haircut",
+            "price": 220000,
+            "duration_min": 60,
+            "description": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.",
+            "category": "Haircut",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "d5f2fb300b8a9a6732786dcc63276d2a169d7a3cdaf3ac57e8b2558c04c82cfd",
+          "review_status": "snapshot_verified_not_owner_validated"
+        },
+        {
+          "id": "md:panduan-layanan.md:58aa4b98724d:1",
+          "text": "Disarankan deep conditioning rutin, mengurangi alat panas, dan pemangkasan ujung berkala. Hindari bleaching ulang sebelum rambut pulih.",
+          "topic": "layanan",
+          "file": "panduan-layanan.md",
+          "section": "Rambut Rusak / Bercabang",
+          "source_type": "manual_legacy",
+          "sha256": "eeb7cdf1308d0c04e37339321a86cd8f9c80823b8c506d69650dc27d25bc3693",
+          "review_status": "pending_content_review"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:2",
+          "md:panduan-layanan.md:58aa4b98724d:1"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:2"
+          ],
+          [
+            "md:panduan-layanan.md:58aa4b98724d:1"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "pending",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Sumber primer perawatan belum diverifikasi; kesesuaian teks dan kelayakan sumber dipisahkan.",
+        "Klausa kebijakan, batas sumber, atau klarifikasi dinilai terpisah dari passage; tidak semua kalimat acuan merupakan kutipan dokumen."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p18",
+      "category": "mixed",
+      "question": "Berapa harga serta durasi Volume Blowout Styling dan isi panduan untuk rambut kering?",
+      "scenario": "normal",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Harga/durasi mengikuti snapshot; penjelasan perawatan mengikuti passage rambut kering.",
+      "reference_answer_revised": "Volume Blowout Styling memiliki harga reguler Rp280.000 dan durasi 55 menit pada snapshot 20 Oktober 2026. Layanan ini berupa styling blowout untuk memberi volume dan hasil akhir rapi. Untuk pertanyaan perawatan rambut kering, panduan yang tersedia menyebut menjaga kelembapan dengan kondisioner dan hair mask serta menghindari keramas menggunakan air panas. Informasi perawatan ini merupakan edukasi terpisah; tidak membuktikan bahwa blowout mengatasi rambut kering.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "terima tapi jawaban kurang terurai",
+        "explicit_decision": "terima",
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "accepted_with_note",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 6,
+          "name": "Volume Blowout Styling",
+          "price": 280000,
+          "duration_min": 55
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:6",
+          "text": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Volume Blowout Styling",
+          "fields": {
+            "id": 6,
+            "slug": "volume-blowout-styling",
+            "name": "Volume Blowout Styling",
+            "price": 280000,
+            "duration_min": 55,
+            "description": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.",
+            "category": "Hair Styling",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "03883602fb4e62f9d3f0a56267f0f589cd5ba48112e3ba782a93bb03a676a219",
+          "review_status": "snapshot_verified_not_owner_validated"
+        },
+        {
+          "id": "md:panduan-layanan.md:58aa4b98724d:4",
+          "text": "Utamakan kelembapan: kondisioner, hair mask, dan hindari keramas air panas.",
+          "topic": "layanan",
+          "file": "panduan-layanan.md",
+          "section": "Rambut Kering / Kusam",
+          "source_type": "manual_legacy",
+          "sha256": "5aff51d7b7459362df113d1099d8ca3c95769d4ab24a14a983e9167263d57655",
+          "review_status": "pending_content_review"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:6",
+          "md:panduan-layanan.md:58aa4b98724d:4"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:6"
+          ],
+          [
+            "md:panduan-layanan.md:58aa4b98724d:4"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "pending",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Sumber primer perawatan belum diverifikasi; kesesuaian teks dan kelayakan sumber dipisahkan.",
+        "Klausa kebijakan, batas sumber, atau klarifikasi dinilai terpisah dari passage; tidak semua kalimat acuan merupakan kutipan dokumen.",
+        "Pengguna belum memutuskan apakah passage Rambut Keriting menjadi bukti alternatif yang sah; label lama tidak diubah."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p19",
+      "category": "difficult",
+      "question": "Markdown menyebut Hair Spa promo Rp285.000. Berapa harga reguler pada database dan apakah promo itu bisa dipastikan?",
+      "scenario": "legacy_promo_conflict",
+      "answerability_current_snapshot": "partial",
+      "reference_answer_original": "Harga reguler snapshot Rp325.000; snapshot tidak memiliki field promo, promo tidak dapat dipastikan.",
+      "reference_answer_revised": "Harga reguler Signature Hair Spa yang tercatat adalah Rp325.000 pada snapshot 20 Oktober 2026. Harga promo Rp285.000 belum dapat dipastikan karena snapshot tidak menyediakan nilai diskon, masa berlaku, atau status promo yang terverifikasi.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "nanti kita akan migration untuk menambahkan column disscount",
+        "explicit_decision": null,
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "future_feature_requested",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 1,
+          "name": "Signature Hair Spa",
+          "price": 325000,
+          "duration_min": 90
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:1",
+          "text": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Signature Hair Spa",
+          "fields": {
+            "id": 1,
+            "slug": "signature-hair-spa",
+            "name": "Signature Hair Spa",
+            "price": 325000,
+            "duration_min": 90,
+            "description": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+            "category": "Hair Treatment",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "1cfe233bbdb668067c10cc7d608c9b3c4783a7bb597d764ef689d51349b7370b",
+          "review_status": "snapshot_verified_not_owner_validated"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:1"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:1"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "not_applicable",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Klausa kebijakan, batas sumber, atau klarifikasi dinilai terpisah dari passage; tidak semua kalimat acuan merupakan kutipan dokumen.",
+        "Diskon/histori belum tersedia. Acuan hanya untuk kondisi snapshot sekarang; evaluasi fitur masa depan memerlukan versi dataset baru."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p20",
+      "category": "difficult",
+      "question": "Berapa harga Keratin kemarin sebelum berubah hari ini?",
+      "scenario": "missing_history",
+      "answerability_current_snapshot": "unanswerable",
+      "reference_answer_original": "Snapshot tidak memuat riwayat harga; harga kemarin dan perubahan hari ini tidak dapat dipastikan.",
+      "reference_answer_revised": "Data yang tersedia hanya snapshot layanan satu waktu dan belum memiliki riwayat perubahan harga. Karena itu, harga Keratin kemarin maupun dugaan perubahan hari ini belum dapat dipastikan. Setelah histori tersedia dan diverifikasi, perbandingan dapat menggunakan catatan beserta tanggal berlakunya.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "harus ada column atau table log atau history untuk perubahan harga. nanti jika sudah ada, sistem dapat membaca terlebih dahulu log nya",
+        "explicit_decision": null,
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "future_feature_requested",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [],
+      "supporting_evidence": [],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [],
+        "required_evidence_groups": []
+      },
+      "source_verification": {
+        "database": "not_applicable",
+        "care_primary_sources": "not_applicable",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Klausa kebijakan, batas sumber, atau klarifikasi dinilai terpisah dari passage; tidak semua kalimat acuan merupakan kutipan dokumen.",
+        "Diskon/histori belum tersedia. Acuan hanya untuk kondisi snapshot sekarang; evaluasi fitur masa depan memerlukan versi dataset baru."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p21",
+      "category": "difficult",
+      "question": "Berapa biaya treatment itu?",
+      "scenario": "ambiguous_service",
+      "answerability_current_snapshot": "needs_clarification",
+      "reference_answer_original": "Minta nama layanan yang dimaksud sebelum memberi harga.",
+      "reference_answer_revised": "Treatment yang Anda maksud layanan yang mana? Pilihan pada katalog snapshot ini adalah Signature Hair Spa, Precision Haircut, Keratin Smooth Treatment, Color Gloss Refresh, Scalp Detox Therapy, Volume Blowout Styling. Silakan sebutkan layanan yang ingin diketahui harganya.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "berikan fallback untuk bertanya balik ke user untuk treatment apa? terus berikan opsi atau pilihan layanan yang tersedia di salon ini",
+        "explicit_decision": null,
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "behavior_requested",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 1,
+          "name": "Signature Hair Spa"
+        },
+        {
+          "id": 2,
+          "name": "Precision Haircut"
+        },
+        {
+          "id": 3,
+          "name": "Keratin Smooth Treatment"
+        },
+        {
+          "id": 4,
+          "name": "Color Gloss Refresh"
+        },
+        {
+          "id": 5,
+          "name": "Scalp Detox Therapy"
+        },
+        {
+          "id": 6,
+          "name": "Volume Blowout Styling"
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:1",
+          "text": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Signature Hair Spa",
+          "fields": {
+            "id": 1,
+            "slug": "signature-hair-spa",
+            "name": "Signature Hair Spa",
+            "price": 325000,
+            "duration_min": 90,
+            "description": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+            "category": "Hair Treatment",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "1cfe233bbdb668067c10cc7d608c9b3c4783a7bb597d764ef689d51349b7370b",
+          "review_status": "snapshot_verified_not_owner_validated"
+        },
+        {
+          "id": "db:services:2",
+          "text": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Precision Haircut",
+          "fields": {
+            "id": 2,
+            "slug": "precision-haircut",
+            "name": "Precision Haircut",
+            "price": 220000,
+            "duration_min": 60,
+            "description": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.",
+            "category": "Haircut",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "d5f2fb300b8a9a6732786dcc63276d2a169d7a3cdaf3ac57e8b2558c04c82cfd",
+          "review_status": "snapshot_verified_not_owner_validated"
+        },
+        {
+          "id": "db:services:3",
+          "text": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Keratin Smooth Treatment",
+          "fields": {
+            "id": 3,
+            "slug": "keratin-smooth-treatment",
+            "name": "Keratin Smooth Treatment",
+            "price": 780000,
+            "duration_min": 150,
+            "description": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.",
+            "category": "Smoothing",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "704d55f06200f9482251a896e6d98ae2abbd51d7111d578d77ba54d3517c2e8d",
+          "review_status": "snapshot_verified_not_owner_validated"
+        },
+        {
+          "id": "db:services:4",
+          "text": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Color Gloss Refresh",
+          "fields": {
+            "id": 4,
+            "slug": "color-gloss-refresh",
+            "name": "Color Gloss Refresh",
+            "price": 620000,
+            "duration_min": 130,
+            "description": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.",
+            "category": "Hair Coloring",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "4c0b2e5149bb16860f3455eb6f7efbebeda1bba10ff5eac7c79f26727d9a5d68",
+          "review_status": "snapshot_verified_not_owner_validated"
+        },
+        {
+          "id": "db:services:5",
+          "text": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Scalp Detox Therapy",
+          "fields": {
+            "id": 5,
+            "slug": "scalp-detox-therapy",
+            "name": "Scalp Detox Therapy",
+            "price": 360000,
+            "duration_min": 75,
+            "description": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.",
+            "category": "Scalp Care",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "cd311ce29761201e9e28126309056a8ec52280e5fff2d55a54aa778abedaf70a",
+          "review_status": "snapshot_verified_not_owner_validated"
+        },
+        {
+          "id": "db:services:6",
+          "text": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Volume Blowout Styling",
+          "fields": {
+            "id": 6,
+            "slug": "volume-blowout-styling",
+            "name": "Volume Blowout Styling",
+            "price": 280000,
+            "duration_min": 55,
+            "description": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.",
+            "category": "Hair Styling",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "03883602fb4e62f9d3f0a56267f0f589cd5ba48112e3ba782a93bb03a676a219",
+          "review_status": "snapshot_verified_not_owner_validated"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [],
+        "required_evidence_groups": []
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "not_applicable",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Klausa kebijakan, batas sumber, atau klarifikasi dinilai terpisah dari passage; tidak semua kalimat acuan merupakan kutipan dokumen.",
+        "Daftar enam opsi memerlukan lookup katalog, bukan enam passage gold untuk pertanyaan ambigu. Jangan menilai cakupannya dengan batas retrieval top-5."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p22",
+      "category": "difficult",
+      "question": "Berapa dosis obat resep yang harus saya minum untuk ketombe?",
+      "scenario": "out_of_scope",
+      "answerability_current_snapshot": "unanswerable",
+      "reference_answer_original": "Dosis obat resep tidak tersedia dalam korpus dan memerlukan penilaian tenaga kesehatan; jangan mengarang.",
+      "reference_answer_revised": "TIEN SALON tidak dapat menentukan dosis atau resep obat. Untuk penentuan obat dan dosis sesuai kondisi Anda, konsultasikan kepada dokter spesialis atau profesional klinis yang berwenang.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "untuk pertanyaan ini fallback ke user bahwasannya TIEN SALON tidak dapat menentukan dosis atau resep obat, perlu dilakukan konsultasi ke dokter spesialis atau profesional klinis",
+        "explicit_decision": null,
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "behavior_requested",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [],
+      "supporting_evidence": [],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [],
+        "required_evidence_groups": []
+      },
+      "source_verification": {
+        "database": "not_applicable",
+        "care_primary_sources": "not_applicable",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Klausa kebijakan, batas sumber, atau klarifikasi dinilai terpisah dari passage; tidak semua kalimat acuan merupakan kutipan dokumen."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p23",
+      "category": "difficult",
+      "question": "Apa perbedaan harga reguler dan durasi Signature Hair Spa dibanding Scalp Detox Therapy?",
+      "scenario": "similar_services",
+      "answerability_current_snapshot": "answerable",
+      "reference_answer_original": "Bandingkan dua record snapshot, jangan menukar harga atau durasinya.",
+      "reference_answer_revised": "Signature Hair Spa dan Scalp Detox Therapy adalah dua layanan berbeda pada katalog. Deskripsi Hair Spa mencakup pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing untuk kelembapan rambut. Deskripsi Scalp Detox mencakup cleansing, massage, dan tonic care pada kulit kepala. Berdasarkan snapshot 20 Oktober 2026, Signature Hair Spa berharga Rp325.000 dengan durasi 90 menit; Scalp Detox Therapy berharga Rp360.000 dengan durasi 75 menit. Scalp Detox lebih mahal Rp35.000; Hair Spa berdurasi 15 menit lebih lama. Deskripsi tersebut tidak membuktikan efek pengobatan.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "sebelum menjawab perbandingan harga dan durasi. jelaskan dulu bahwasannya keduanya adalah layanan yang berbeda (jika layanan nya berbeda). jika layanan nya sama, maka tinggal fallback bahwasannya keduanya merupakan jenis layanan yang sama, dan hair spa dengan scalp detox therapy hanya beda di bla bla bla",
+        "explicit_decision": null,
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "revision_requested",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 1,
+          "name": "Signature Hair Spa",
+          "price": 325000,
+          "duration_min": 90
+        },
+        {
+          "id": 5,
+          "name": "Scalp Detox Therapy",
+          "price": 360000,
+          "duration_min": 75
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:1",
+          "text": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Signature Hair Spa",
+          "fields": {
+            "id": 1,
+            "slug": "signature-hair-spa",
+            "name": "Signature Hair Spa",
+            "price": 325000,
+            "duration_min": 90,
+            "description": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+            "category": "Hair Treatment",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "1cfe233bbdb668067c10cc7d608c9b3c4783a7bb597d764ef689d51349b7370b",
+          "review_status": "snapshot_verified_not_owner_validated"
+        },
+        {
+          "id": "db:services:5",
+          "text": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Scalp Detox Therapy",
+          "fields": {
+            "id": 5,
+            "slug": "scalp-detox-therapy",
+            "name": "Scalp Detox Therapy",
+            "price": 360000,
+            "duration_min": 75,
+            "description": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.",
+            "category": "Scalp Care",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "cd311ce29761201e9e28126309056a8ec52280e5fff2d55a54aa778abedaf70a",
+          "review_status": "snapshot_verified_not_owner_validated"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:1",
+          "db:services:5"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:1"
+          ],
+          [
+            "db:services:5"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "not_applicable",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Klausa kebijakan, batas sumber, atau klarifikasi dinilai terpisah dari passage; tidak semua kalimat acuan merupakan kutipan dokumen."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    },
+    {
+      "id": "p24",
+      "category": "difficult",
+      "question": "Apakah Keratin Smooth Treatment masih Rp690.000? Berapa harga reguler yang tercatat?",
+      "scenario": "legacy_promo_conflict",
+      "answerability_current_snapshot": "partial",
+      "reference_answer_original": "Harga reguler snapshot Rp780.000; keberlakuan promo Rp690.000 tidak dapat dipastikan.",
+      "reference_answer_revised": "Harga reguler Keratin Smooth Treatment yang tercatat adalah Rp780.000 pada snapshot 20 Oktober 2026. Data ini belum dapat memastikan apakah Rp690.000 merupakan harga lama, promo, atau berasal dari informasi lain. Riwayat harga dan sumber promo belum tersedia. Karena itu, tanggal perubahan, harga sebelumnya, dan alasan berdasarkan kebijakan perusahaan tidak dapat dinyatakan. Tidak ditemukannya angka dalam log kelak juga tidak otomatis membuktikan pengguna salah ketik.",
+      "revision_changed": true,
+      "revision_author": "assistant; derived from user narrative and frozen sources",
+      "revised_wording_review_status": "pending_user_review",
+      "manual_annotation": {
+        "reviewer": "Matin",
+        "reviewed_at": "2026-10-20",
+        "raw_response": "ini perlu ada log. jika semisal pada log itu tidak teratat 690.000, berarti user typo atau human error, dan jelaskan harga layanan sebelumnya dan sekarang. jika ada sebutkan ada oerubahan harga sejak tanggal sekian dan sesuai kebijakan perusahaan kami",
+        "explicit_decision": null,
+        "rubric_scores": {
+          "K": null,
+          "R": null,
+          "D": null,
+          "S": null,
+          "A": null
+        },
+        "narrative_interpretation": "future_feature_requested",
+        "interpretation_author": "assistant; not additional reviewer labels"
+      },
+      "expected_business_facts": [
+        {
+          "id": 3,
+          "name": "Keratin Smooth Treatment",
+          "price": 780000,
+          "duration_min": 150
+        }
+      ],
+      "supporting_evidence": [
+        {
+          "id": "db:services:3",
+          "text": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.",
+          "source_type": "db",
+          "topic": "katalog",
+          "file": "services.snapshot.json",
+          "section": "Keratin Smooth Treatment",
+          "fields": {
+            "id": 3,
+            "slug": "keratin-smooth-treatment",
+            "name": "Keratin Smooth Treatment",
+            "price": 780000,
+            "duration_min": 150,
+            "description": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.",
+            "category": "Smoothing",
+            "updated_at": "2026-09-23T01:27:10.301Z"
+          },
+          "captured_at": "2026-10-20T07:51:39.271Z",
+          "sha256": "704d55f06200f9482251a896e6d98ae2abbd51d7111d578d77ba54d3517c2e8d",
+          "review_status": "snapshot_verified_not_owner_validated"
+        }
+      ],
+      "original_retrieval_labels": {
+        "relevant_evidence_ids": [
+          "db:services:3"
+        ],
+        "required_evidence_groups": [
+          [
+            "db:services:3"
+          ]
+        ]
+      },
+      "source_verification": {
+        "database": "snapshot_values_confirmed_by_user",
+        "care_primary_sources": "not_applicable",
+        "medical_expert_validation": "not_performed"
+      },
+      "evaluation_notes": [
+        "Klausa kebijakan, batas sumber, atau klarifikasi dinilai terpisah dari passage; tidak semua kalimat acuan merupakan kutipan dokumen.",
+        "Diskon/histori belum tersedia. Acuan hanya untuk kondisi snapshot sekarang; evaluasi fitur masa depan memerlukan versi dataset baru."
+      ],
+      "publication_ready": false,
+      "split": "development_only; not held_out"
+    }
+  ],
+  "development_requirements": [
+    {
+      "id": "REQ-01",
+      "from_items": [
+        "p15",
+        "p16"
+      ],
+      "requirement": "Dokumen lokal diperiksa terlebih dahulu; bila bukti tidak cukup, cari/crawl sumber terpilih sesuai robots.txt. Catat provenance dan bekukan hasil untuk eksperimen. Kegagalan crawl tidak boleh menjadi jawaban rekaan.",
+      "state": "planned_not_executed"
+    },
+    {
+      "id": "REQ-02",
+      "from_items": [
+        "p16"
+      ],
+      "requirement": "Klarifikasi keluhan untuk memahami konteks; jangan menyimpulkan diagnosis atau penyebab dari pencarian web. Berikan edukasi bersumber dan rujukan dokter kulit sesuai batas nonklinis.",
+      "state": "reference_policy_draft_only"
+    },
+    {
+      "id": "REQ-03",
+      "from_items": [
+        "p19"
+      ],
+      "requirement": "Rancang diskon/promo: tentukan jenis/nilai diskon, masa berlaku, status, validasi, serta perubahan dashboard. Skema belum dipilih; belum membuat atau mengeksekusi migrasi.",
+      "state": "planned_schema_design_pending"
+    },
+    {
+      "id": "REQ-04",
+      "from_items": [
+        "p20",
+        "p24"
+      ],
+      "requirement": "Rancang histori harga yang mempertahankan nilai lama/baru, waktu berlaku, identitas layanan dan asal perubahan. Menambah tabel tidak merekonstruksi histori lampau yang tidak tersedia.",
+      "state": "planned_schema_design_pending"
+    },
+    {
+      "id": "REQ-05",
+      "from_items": [
+        "p21"
+      ],
+      "requirement": "Pertanyaan tanpa layanan spesifik meminta klarifikasi dan menawarkan pilihan dari katalog aktif; daftar berasal dari DB.",
+      "state": "reference_policy_draft_only"
+    },
+    {
+      "id": "REQ-06",
+      "from_items": [
+        "p22"
+      ],
+      "requirement": "Permintaan dosis/resep diarahkan ke dokter atau profesional klinis; tidak menjawab dosis lewat crawling.",
+      "state": "reference_policy_draft_only"
+    },
+    {
+      "id": "REQ-07",
+      "from_items": [
+        "p23"
+      ],
+      "requirement": "Jelaskan perbedaan berdasarkan deskripsi layanan sebelum membandingkan angka; jangan menganggap layanan sama atau menambahkan manfaat tanpa bukti.",
+      "state": "reference_policy_draft_only"
+    },
+    {
+      "id": "REQ-08",
+      "from_items": [
+        "p24"
+      ],
+      "requirement": "Baca histori bila tersedia. Sebut tanggal/harga sebelumnya hanya bila ada catatan pendukung. Ketiadaan angka di log bukan bukti otomatis pengguna typo; alasan kebijakan memerlukan sumber kebijakan.",
+      "state": "reference_policy_draft_only"
+    }
+  ]
+}

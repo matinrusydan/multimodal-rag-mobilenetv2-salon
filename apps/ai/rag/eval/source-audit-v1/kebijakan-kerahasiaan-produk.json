@@ -1,0 +1,44 @@
+{
+  "schema_version": "rag-salon.research-policy.v1",
+  "recorded_date": "2026-10-20",
+  "source": "direct_user_statement",
+  "statement_verification": "reported_by_researcher; no separate corporate policy document supplied",
+  "raw_user_statement": "untuk produk yang digunakan oleh TIEN SALON, kebijakan perusahaan tidak akan mempublish merk atau produk apa yang akan dipakai",
+  "constraint": "Do not require or disclose the brand, variant, or identity of products used by TIEN SALON in public research artifacts or chatbot responses.",
+  "affected_items": ["p08", "p14", "p15"],
+  "research_decisions": [
+    "Brand disclosure is not a prerequisite for general nonclinical care education or the source-selection experiment.",
+    "Keep operational facts such as service names, prices and durations separate from general care documentation.",
+    "Published external product research does not establish which products TIEN SALON uses or validate a TIEN-specific aftercare protocol.",
+    "Do not infer a universal 48-hour or 72-hour shampoo restriction from the keratin service name.",
+    "If service-specific aftercare is requested and no customer-facing instruction is available, explain that the available documentation cannot establish the exact instruction and refer the customer to salon staff.",
+    "Future customer-facing aftercare instructions may omit product identity, but must have an authorized source, applicable service/procedure, date or version, and scope. Do not fabricate such instructions.",
+    "Generic education can use first-party professional guidance and suitable published literature, with its context and limits preserved. Avoid presenting it as the undisclosed TIEN product's verified instructions."
+  ],
+  "item_dispositions": [
+    {
+      "id": "p08",
+      "action": "Retain as a source-gap development case, or propose a new question about general color-treated hair care backed by a selected source. Do not silently change the question or assert a verified brand recommendation.",
+      "source_gap_resolved": false
+    },
+    {
+      "id": "p14",
+      "action": "Price remains grounded in the database snapshot. Use the user-approved policy of consulting salon staff for specific aftercare; exact shampoo timing remains unverified. Product identity need not be disclosed.",
+      "source_gap_resolved": false
+    },
+    {
+      "id": "p15",
+      "action": "Keep database price distinct from general shampoo education. If evidence is insufficient, retrieve selected public sources or state the limit. Do not imply that a publicly found product is used or endorsed by TIEN.",
+      "source_gap_resolved": false
+    }
+  ],
+  "evaluation_implications": [
+    "Do not include confidential product identity as a required answer or gold field.",
+    "Separate generic education, unavailable service-specific instructions, and policy-compliant refusal to disclose internal information.",
+    "Correctly stating a documentation limit is a distinct evaluation target; it is not automatically a retrieval success or failure.",
+    "Record proposed wording and new test cases separately from the frozen 24-query pilot."
+  ],
+  "runtime_policy_implemented": false,
+  "production_modified": false,
+  "old_dataset_or_audit_modified": false
+}

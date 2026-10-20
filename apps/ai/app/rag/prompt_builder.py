@@ -9,14 +9,17 @@ from typing import Optional
 from app.rag.retriever import RetrievedDoc
 
 
+def context_snippets(docs: list[RetrievedDoc]) -> list[str]:
+    """Return exactly the evidence text included in the generation prompt."""
+    return [(d.snippet or "")[:1100 if d.file.startswith("web:") else 400] for d in docs]
+
+
 def _format_docs(docs: list[RetrievedDoc]) -> str:
     parts: list[str] = []
-    for i, d in enumerate(docs, start=1):
+    for i, (d, snippet) in enumerate(zip(docs, context_snippets(docs)), start=1):
         is_web = d.file.startswith("web:")
         src = "Alodokter (web)" if is_web else (f"{d.file}#{d.section}" if d.section else d.file)
         # Konten web berisi artikel panjang → beri ruang lebih besar.
-        limit = 1100 if is_web else 400
-        snippet = (d.snippet or "")[:limit]
         parts.append(f"[{i}] {src}\n{snippet}".strip())
     return "\n\n---\n\n".join(parts)
 
@@ -36,10 +39,16 @@ def build_prompt(
         "Pisahkan paragraf dengan baris kosong agar mudah dibaca. "
         "\n\nATURAN ANTI-HALUSINASI (SANGAT PENTING):\n"
         "- JANGAN mengklaim kondisi rambut pelanggan (mis. rambut kering, rusak, bleaching, berminyak) "
-        "KECUALI data tersebut diberikan eksplisit di bagian 'KONTEKS RAMBUT' atau 'FITUR RAMBUT' di bawah.\n"
-        "- Jika bagian KONTEKS/FITUR RAMBUT tidak ada, JANGAN membahas kondisi rambut pelanggan sama sekali. "
+        "KECUALI data tersebut dinyatakan eksplisit oleh pengguna dalam pertanyaan, atau diberikan di bagian 'KONTEKS RAMBUT' atau 'FITUR RAMBUT' di bawah.\n"
+        "- Jika KONTEKS/FITUR RAMBUT tidak ada dan pengguna tidak menyebutkan kondisinya, jangan mengasumsikan kondisi pelanggan. "
         "Jangan mengarang 'analisis kesehatan rambut' atau seolah-olah ada hasil pemeriksaan/analisis foto.\n"
-        "- JANGAN menambahkan diagnosis atau istilah medis yang tidak ada di dokumen yang diberikan.\n"
+        "- Jangan menetapkan diagnosis atau dosis/resep obat; arahkan kebutuhan klinis ke tenaga kesehatan.\n"
+        "- Jangan mengungkap atau menebak merek/produk internal TIEN. Jangan mengarang aturan keramas 48/72 jam, promo, histori harga, atau alasan kebijakan.\n"
+        "- Pertahankan konteks tipe rambut dan jenis kondisioner pada sumber; jangan menyamakan semua rambut kering dengan keriting.\n"
+        "- Jika layanan belum disebutkan dengan jelas, tanyakan layanan yang dimaksud dan tawarkan pilihan katalog. Jangan memilih Keratin atau menyebut harga layanan tebakan.\n"
+        "- Setelah pernyataan faktual yang memakai dokumen, cantumkan nomor dokumen tepat seperti [1] atau [2]. Gunakan [1] [2] jika dua sumber; jangan mengutip sumber yang tidak mendukung klaim.\n"
+        "- Nomor sitasi hanya dari dokumen yang tersedia. Jawaban berupa batas informasi atau kebijakan tidak perlu dipaksakan memiliki sitasi dokumen.\n"
+        "- Jika data layanan berasal dari snapshot penelitian, jelaskan itu data snapshot dan bukan konfirmasi harga terkini.\n"
         "- JANGAN mengasumsikan pelanggan melakukan bleaching/pewarnaan tertentu bila tidak disebutkan.\n"
         "- Sebutkan sumber hanya untuk informasi yang benar-benar diambil dari dokumen "
         "(mis. 'menurut Alodokter, ...' bila isinya memang dari konten Alodokter).\n\n"

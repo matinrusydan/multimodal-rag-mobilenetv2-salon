@@ -25,6 +25,11 @@ class Settings:
         self.gemini_api_key: str | None = os.getenv("GEMINI_API_KEY") or None
         self.ai_embedding_provider: str = os.getenv("AI_EMBEDDING_PROVIDER", "gemini")
         self.ai_llm_provider: str = os.getenv("AI_LLM_PROVIDER", "gemini")
+        # ChatGPT-plan OAuth is separate from both Gemini keys and paid API keys.
+        self.chatgpt_model: str = os.getenv("AI_CHATGPT_MODEL", "").strip()
+        self.rag_retrieval_provider: str = os.getenv("RAG_RETRIEVAL_PROVIDER", "chroma")
+        self.rag_live_services: bool = os.getenv("RAG_LIVE_SERVICES", "false").lower() == "true"
+        self.rag_corpus_file: Path = Path(os.getenv("RAG_CORPUS_FILE", str(BASE_DIR / "rag/eval/curated-development-v2/corpus.json")))
         self.embedding_model: str = os.getenv("AI_EMBEDDING_MODEL", "gemini-embedding-001")
         self.llm_model: str = os.getenv("AI_LLM_MODEL", "gemini-3.6-flash")
         # Daftar model fallback bila model utama kena rate-limit/quota (429) atau 5xx.

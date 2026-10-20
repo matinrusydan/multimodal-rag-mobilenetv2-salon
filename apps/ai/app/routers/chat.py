@@ -6,6 +6,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
 from app.rag.rag_service import rag_service
+from app.config import settings
 
 router = APIRouter()
 
@@ -26,6 +27,7 @@ async def chat(req: ChatRequest) -> dict:
         query=req.message.strip(),
         hair_context=req.hairContext,
         hair_features=req.hairFeatures,
+        live_services=settings.rag_live_services,
     )
 
     return {

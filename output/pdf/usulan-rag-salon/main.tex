@@ -1,0 +1,182 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[margin=2.35cm]{geometry}
+\usepackage{array,tabularx,longtable,lscape,amsmath,enumitem}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\definecolor{grid}{gray}{0.78}
+\definecolor{headfill}{gray}{0.93}
+\newcommand{\rowcolor}[1]{}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.22}
+\setlist[itemize]{leftmargin=1.3em,itemsep=3pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=4pt,topsep=4pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\hypersetup{pdftitle={Usulan Penelitian RAG Salon dan Matriks RP RQ RO},pdfauthor={Matin Rusydan}}
+\newcommand{\heading}[1]{\vspace{5pt}{\large\bfseries #1}\par\vspace{1pt}}
+\newcommand{\subheading}[1]{\vspace{3pt}\textbf{#1}\par}
+
+\begin{document}
+\begin{center}
+{\Large\bfseries REKOMENDASI USULAN PENELITIAN}\par
+\vspace{4pt}
+{\normalsize Matin Rusydan \quad | \quad 20 Oktober 2026}
+\end{center}
+
+\heading{Rencana Judul}
+\textbf{Perutean Sumber Berbasis Jenis Fakta untuk Konsultasi Salon\\dengan \mbox{Retrieval-Augmented Generation}}
+
+\textbf{Topik:} Retrieval-Augmented Generation, perutean sumber, pencarian informasi heterogen, evaluasi jawaban konsultasi.
+
+\heading{Masalah Utama}
+Konsultasi layanan salon dapat membutuhkan dua jenis informasi dalam satu pertanyaan: fakta operasional yang berubah, seperti layanan dan harga, serta pengetahuan perawatan yang dijelaskan dalam dokumen. Penelitian pada pelanggan salon menempatkan layanan dan harga sebagai variabel yang berkaitan dengan kepuasan \cite{rachmawati}. Namun, temuan tersebut belum membuktikan adanya kesalahan informasi pada TIEN Salon. Masalah lokal perlu ditunjukkan melalui inventaris sumber, pertanyaan pengguna, dan pengujian awal sistem.
+
+Retrieval-Augmented Generation (RAG) menyediakan konteks eksternal untuk membantu pembentukan jawaban. Akses database operasional melalui chatbot sudah diteliti oleh Burbano dkk. \cite{burbano}, sedangkan integrasi dokumen dan relasi pengetahuan pada layanan pelanggan dibahas oleh Hsueh dan Lin \cite{hsueh}. Karena itu, penggabungan database dan dokumen maupun penggunaan RAG pada aplikasi salon saja belum cukup menjadi kontribusi metode. Persoalan yang lebih spesifik adalah bagaimana memilih sumber yang berwenang untuk setiap fakta, sekaligus menjaga kelengkapan bukti pada pertanyaan campuran.
+
+Sebagai contoh, pertanyaan ``Layanan untuk rambut kering yang tersedia apa, berapa harganya sekarang, dan bagaimana penjelasan perawatannya?'' memerlukan bukti dari database dan dokumen. Passage yang mirip secara semantik belum tentu memuat harga yang berlaku atau menjawab semua bagian pertanyaan. Penelitian layanan pelanggan mencatat kasus ketika sumber terstruktur yang lebih lama mengalahkan informasi terbaru \cite{hsueh}. Kajian evaluasi juga membedakan relevansi konteks, dukungan klaim, kebenaran jawaban, dan kualitas sitasi \cite{knollmeyer,gao}.
+
+Penelitian ini mengusulkan \textbf{perutean sumber berdasarkan jenis fakta dan penyusunan konteks dengan prioritas sumber}: fakta operasional ditelusuri ke database yang berlaku, penjelasan perawatan ditelusuri ke dokumen terkurasi, dan pertanyaan campuran menggunakan keduanya. Pengaruhnya diuji terhadap baseline dense dan hybrid pada data yang setara. BM25, dense retrieval, dan RRF diposisikan sebagai komponen pembanding yang sudah ada \cite{salman}, bukan kebaruan yang diklaim ulang.
+
+\textbf{Status usulan.} Rumusan ini merupakan arah eksperimen dari mapping 25 paper. Keberadaan kegagalan pada TIEN dan kebaruan spesifik mekanisme perutean masih harus dikonfirmasi melalui pilot dan penelusuran terarah. Tidak ada hasil peningkatan atau target skor minimal yang diklaim sebelum pengujian.
+
+\clearpage
+\begin{landscape}
+\pdfpageattr{/Rotate 90}
+\heading{Matriks Research Problems Research Questions dan Research Objectives}
+Setiap baris menghubungkan satu masalah dengan pertanyaan yang dapat dijawab melalui eksperimen dan tujuan yang terukur. RQ1 berfokus pada fakta operasional, RQ2 pada kelengkapan bukti campuran, dan RQ3 pada kualitas keluaran serta biaya waktunya.
+
+\vspace{5pt}
+\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\rowcolor{headfill}\textbf{Research Problems (RP)} & \textbf{Research Questions (RQ)} & \textbf{Research Objectives (RO)}\\\hline
+\textbf{RP1 -- Ketepatan sumber fakta operasional.}
+Pencarian berdasarkan kemiripan teks dapat mengembalikan informasi layanan atau harga dari dokumen yang tidak berwenang atau tidak mutakhir. Integrasi database dengan RAG sudah tersedia dalam literatur, tetapi belum dengan sendirinya menjamin pemilihan sumber fakta yang benar pada kasus salon \cite{burbano,hsueh}. Kejadian dan besarnya kesalahan ini pada sistem lokal perlu diukur.
+&
+\textbf{RQ1.} Bagaimana perbedaan akurasi fakta layanan dan harga antara RAG dengan perutean sumber berbasis jenis fakta dan baseline dense serta hybrid retrieval pada snapshot data yang sama, termasuk pada skenario perubahan harga?
+&
+\textbf{RO1.} Mengembangkan perutean fakta operasional ke database dan fakta perawatan ke dokumen, kemudian mengevaluasi akurasi serta kelengkapan field layanan/harga dibanding baseline dense dan hybrid, dengan snapshot dan protokol pembaruan yang setara.
+\\\hline
+\textbf{RP2 -- Kelengkapan bukti pertanyaan campuran.}
+Satu pertanyaan dapat membutuhkan record layanan dan passage penjelasan perawatan sekaligus. Relevansi item individual atau ditemukannya dokumen asal belum menjamin seluruh kebutuhan jawaban mempunyai bukti. Evaluasi berbasis dokumen dapat melebihkan keberhasilan pencarian bukti \cite{topic,gao}.
+&
+\textbf{RQ2.} Bagaimana perbedaan cakupan bukti lengkap dan recall evidence pada pertanyaan campuran antara sistem usulan dan baseline, serta bagaimana perubahan hasil ketika pengambilan salah satu jenis sumber dinonaktifkan?
+&
+\textbf{RO2.} Menyusun konteks dari sumber yang diperlukan setiap pertanyaan dan mengukur cakupan bukti lengkap, Recall@k serta F1 retrieval. Melakukan ablation akses database dan dokumen untuk menguji kontribusi kedua sumber pada pertanyaan campuran.
+\\\hline
+\textbf{RP3 -- Kualitas jawaban tidak terwakili oleh satu skor.}
+Jawaban yang relevan belum tentu benar terhadap database atau didukung sitasi. Peningkatan metrik retrieval juga tidak selalu sejalan dengan faithfulness \cite{salman,es}. Evaluasi yang hanya melaporkan satu rata-rata dapat menutupi jawaban tidak lengkap, kesalahan sitasi, dan tambahan latensi \cite{knollmeyer,gao}.
+&
+\textbf{RQ3.} Bagaimana perubahan dukungan klaim, kebenaran dan kelengkapan jawaban, dukungan sitasi dokumen, serta latensi end-to-end pada sistem usulan dibanding baseline dalam setiap kategori pertanyaan?
+&
+\textbf{RO3.} Mengevaluasi keluaran dengan rubrik manual berbasis bukti, ukuran dukungan klaim dan sitasi, serta pencatatan latensi. Menganalisis trade-off dan kategori kegagalan secara berpasangan pada pertanyaan yang sama, tanpa mensyaratkan semua metrik meningkat bersamaan.
+\\\hline
+\end{tabularx}
+
+\vspace{6pt}
+\textbf{Batas klaim:} rumusan masalah menyatakan risiko yang didukung literatur dan perlu diverifikasi pada objek lokal. Ketiadaan suatu fitur pada satu paper tidak digunakan untuk menyatakan bahwa metode tersebut belum pernah diteliti secara global. Ablation bukan baseline utama karena akses informasinya sengaja dikurangi.
+\end{landscape}
+\pdfpageattr{/Rotate 0}
+
+\clearpage
+\heading{Rancangan Metode dan Batas Penelitian}
+\subheading{Sumber pengetahuan dan otoritas fakta}
+\begin{itemize}
+\item \textbf{Database salon:} layanan, harga, satuan, durasi dan syarat hanya jika field tersebut tersedia. Setiap evidence menyimpan ID record, nama field, versi snapshot dan waktu pembaruan.
+\item \textbf{Dokumen perawatan:} dokumen yang telah ditelaah kesesuaian isi dan batas klaimnya. Simpan judul, sumber, tahun/tanggal pembaruan, halaman, bagian dan ID passage. Literatur algoritma RAG berfungsi sebagai referensi metode, bukan otomatis sebagai pengetahuan pelanggan.
+\item \textbf{Web:} bila dibutuhkan, akuisisi mengikuti robots.txt dan aturan akses; log URL, waktu akses, cakupan dan kegagalan crawl. Konten tidak langsung dianggap benar hanya karena berhasil diambil.
+\end{itemize}
+
+\subheading{Alur sistem yang diusulkan}
+Pertanyaan diidentifikasi kebutuhan faktanya sebagai operasional, dokumenter atau campuran. Sistem mengambil record database dan/atau passage dokumen sesuai kebutuhan, lalu membentuk konteks dengan identitas sumber. Fakta bisnis mengikuti database yang berlaku. Penjelasan perawatan harus ditautkan pada evidence dokumen. Jika bukti tidak tersedia atau pertanyaan ambigu, sistem menyatakan keterbatasan atau meminta klarifikasi berdasarkan aturan yang dicatat.
+
+Perutean dimulai dengan aturan yang transparan dan dapat diaudit. Pilihan classifier, query decomposition berbasis model, atau komponen tambahan ditetapkan hanya jika pilot menunjukkan kebutuhan dan manfaatnya. Penelitian ini tidak memerlukan pelatihan model generatif baru.
+
+\subheading{Pembanding dan pengujian komponen}
+\begin{enumerate}
+\item \textbf{B1 Dense RAG:} pencarian semantik atas dokumen dan serialisasi snapshot database yang sama.
+\item \textbf{B2 Hybrid RAG:} BM25 dan dense digabung dengan RRF pada sumber yang sama, dengan parameter dipilih pada development set.
+\item \textbf{P Sistem usulan:} perutean berdasarkan jenis fakta, akses database untuk fakta bisnis, dan penyusunan konteks gabungan dengan prioritas sumber yang eksplisit.
+\item \textbf{Ablation:} sistem P tanpa akses database dan sistem P tanpa akses dokumen, khusus untuk menilai kontribusi sumber. Tambahkan ablation prioritas sumber hanya bila implementasinya dapat dipisahkan tanpa mengubah komponen lain.
+\end{enumerate}
+
+Semua pembanding utama menggunakan query, korpus, fakta, generator dan batas konteks yang setara sejauh arsitekturnya memungkinkan. Versi embedding query/index harus sesuai. Pada uji harga berubah, tetapkan waktu perubahan, waktu sinkronisasi/reindex, dan saat query dijalankan untuk setiap sistem. Informasi lama tidak sengaja diberikan hanya kepada satu baseline.
+
+\subheading{Batas objek dan kontribusi}
+Fokus kontribusi adalah ketepatan fakta, kelengkapan bukti, dan keterlacakan jawaban konsultasi. Penilaian diagnosis medis, dampak kepuasan pelanggan, serta akurasi klasifikasi citra tidak termasuk variabel penelitian ini. Kontribusi ilmiah ditentukan oleh perbedaan terukur terhadap baseline dan analisis kegagalan, bukan sekadar keberhasilan membuat website.
+
+\clearpage
+\heading{Definisi Parameter Uji}
+Gold evidence ditetapkan pada tingkat record/field dan passage pendukung. Nomor dokumen saja tidak cukup untuk menyatakan bukti jawaban ditemukan. Untuk query campuran, daftar bukti dan fakta wajib dikelompokkan menurut subkebutuhan pertanyaan.
+
+{\small
+\begin{tabularx}{\linewidth}{|L{2.7cm}|X|L{4.0cm}|}
+\hline
+\rowcolor{headfill}\textbf{Ukuran} & \textbf{Objek dan cara penilaian} & \textbf{Hubungan dengan RQ}\\\hline
+Akurasi fakta bisnis & Kecocokan layanan, harga, satuan dan syarat yang dinyatakan terhadap snapshot DB. Laporkan juga proporsi field wajib yang benar dan terisi agar penolakan tidak menaikkan skor secara semu. & Utama RQ1; pisahkan harga dari field lain.\\\hline
+Precision@k, Recall@k, F1 retrieval & Relevansi item evidence yang diambil terhadap gold record/passage. TP, FP, FN dihitung pada unit yang sama. & RQ2; melaporkan mutu dan cakupan hasil pencarian.\\\hline
+Cakupan bukti lengkap & Proporsi query campuran yang seluruh subkebutuhannya mempunyai bukti pendukung dalam konteks akhir. & Ukuran utama RQ2; definisi operasional proyek, bukan klaim metrik baru.\\\hline
+Dukungan klaim & Klaim faktual pada jawaban yang didukung konteks yang benar-benar dipakai, dibagi klaim yang dinilai. & RQ3; faithfulness tidak sama dengan kebenaran harga terkini.\\\hline
+Kebenaran dan kelengkapan & Rubrik manual untuk fakta wajib, ketepatan makna, dan informasi penting yang hilang terhadap gold answer bersumber. & RQ3; dibedakan dari relevansi jawaban.\\\hline
+Dukungan sitasi & Kecocokan klaim dokumenter dengan passage yang dikutip serta cakupan klaim yang membutuhkan sitasi. Asal record DB dilaporkan terpisah. & RQ3; tautan sumber yang ada belum berarti mendukung klaim.\\\hline
+Abstention dan coverage & Penolakan/klarifikasi yang benar dan keliru terhadap label answerability; proporsi pertanyaan yang dijawab. & Penjaga interpretasi RQ1--RQ3; cegah skor tinggi karena menolak semua query.\\\hline
+Latensi end-to-end & Waktu sejak query masuk hingga jawaban selesai; catat retrieval dan generation secara terpisah. & RQ3; median dan p95 bila ukuran sampel memadai.\\\hline
+\end{tabularx}}
+
+\vspace{6pt}
+Untuk query $q$, dengan $E_q$ himpunan gold evidence dan $R_q^{(k)}$ hasil retrieval:
+\[
+ P_q@k=\frac{|R_q^{(k)}\cap E_q|}{|R_q^{(k)}|},\quad
+ R_q@k=\frac{|R_q^{(k)}\cap E_q|}{|E_q|},\quad
+ F1_q=\frac{2P_qR_q}{P_q+R_q}.
+\]
+Jika $P_q+R_q=0$, F1 ditetapkan 0. Jika hasil kosong, Precision dan F1 diberi 0 untuk query answerable; jika $E_q$ kosong, metrik retrieval tidak diterapkan dan perilaku abstention dievaluasi tersendiri. Definisi precision di sini menggunakan jumlah hasil aktual (paling banyak $k$); jumlah hasil wajib dicatat. Skor agregat utama adalah macro-average per query.
+
+\textbf{F1 yang dimaksud di RQ2 adalah F1 retrieval}, bukan F1 klasifikasi citra, token-level answer F1, atau BERTScore-F1. Evaluasi manual digunakan agar tidak bergantung pada API judge berbayar. Jika RAGAS ditambahkan, versi, fungsi metrik dan model evaluator harus tercatat \cite{es}; rubrik buatan sendiri tidak diberi label implementasi RAGAS.
+
+\clearpage
+\heading{Tugas Berikutnya Setelah Mapping}
+\textbf{Tahap terdekat adalah validasi masalah dan pilot, kemudian penetapan metode.} Pengembangan program difokuskan pada komponen yang dibutuhkan untuk menghasilkan perbandingan yang adil.
+
+\begin{enumerate}
+\item \textbf{Konfirmasi celah spesifik.} Telusuri studi yang paling dekat tentang perutean sumber, structured--unstructured retrieval, source authority dan temporal consistency. Buat matriks pembeda: jenis sumber, mekanisme routing, konflik informasi, kategori query dan evaluasi. Integrasi database/dokumen tidak diklaim baru.
+\item \textbf{Buktikan masalah lokal.} Inventaris field layanan, asal pengetahuan dan jalur jawaban sistem. Kumpulkan contoh pertanyaan operasional, dokumenter dan campuran. Pisahkan pertanyaan pelanggan nyata dari pertanyaan yang disusun peneliti.
+\item \textbf{Bangun pilot berlabel.} Rancangan awal: 24 query, masing-masing enam query fakta DB, dokumen, campuran, dan kasus sulit. Kasus sulit mencakup sumber konflik, perubahan harga, ambigu atau tidak terjawab. Jumlah ini untuk diagnosis awal, bukan kecukupan statistik penelitian final.
+\item \textbf{Uji baseline dan analisis error.} Jalankan dense/hybrid, simpan evidence aktual, jawaban, versi konfigurasi, status error dan waktu. Temukan apakah kegagalan dominan berasal dari routing, retrieval, data, atau generation. Pastikan evaluator tidak melakukan retrieval ulang yang berbeda dari konteks generasi.
+\item \textbf{Kunci intervensi dan data final.} Jika pilot menunjukkan masalah relevan, tetapkan mekanisme perutean serta prioritas sumber. Susun development set terpisah dan test set yang dikunci; tentukan jumlah dan strata final berdasarkan keragaman kasus serta ketidakpastian yang ingin diukur.
+\item \textbf{Lakukan eksperimen berpasangan.} Bandingkan baseline, sistem usulan dan ablation pada query sama. Laporkan hasil per kategori, trade-off, contoh kegagalan, dan ketidakpastian sesuai data. Finalisasi judul, abstrak dan simpulan setelah hasil tersedia.
+\end{enumerate}
+
+\subheading{Artefak yang perlu tersedia sebelum implementasi penuh}
+Inventaris sumber beserta otoritas field; snapshot database; korpus dokumen terkurasi; 24 query pilot dengan gold answer dan evidence; rubrik anotasi; baseline yang dapat direproduksi; dan laporan error pilot. Itulah dasar untuk memutuskan apakah metode usulan layak diteruskan atau perlu disederhanakan.
+
+\subheading{Aturan validitas evaluasi}
+Skor nol yang sah tetap dihitung. Error API/parsing dicatat terpisah dengan denominator transparan; laporkan tingkat keberhasilan eksekusi dan hasil end-to-end. Jangan memilih hanya pertanyaan dengan seluruh metrik non-zero. Anotasi satu orang dinyatakan sebagai keterbatasan; jika pemeriksa kedua tersedia, lakukan verifikasi sebagian dengan protokol yang dicatat. Hindari klaim inter-annotator agreement bila tidak ada dua annotator.
+
+\subheading{Gate keputusan pilot}
+Jika baseline sudah benar dan lengkap pada sebagian besar kasus yang relevan, periksa apakah dataset terlalu mudah atau masalah yang diusulkan tidak cukup penting. Jika perbaikan tidak terbukti, laporkan hasil tersebut dan ubah fokus berdasarkan error yang nyata. Jangan memaksakan target akurasi tertentu atau mengubah test set agar metode tampak unggul.
+
+\clearpage
+\renewcommand{\refname}{Referensi Utama}
+\begin{thebibliography}{9}
+\setlength{\itemsep}{8pt}
+\bibitem{rachmawati} I. Rachmawati dkk. ``Pengaruh kualitas layanan, kualitas produk dan harga terhadap kepuasan pelanggan salon di Tanjung Tabalong Kalimantan Selatan.'' \textit{Jurnal Akuntansi, Ekonomi dan Manajemen Bisnis}, 5(3), 588--597, 2025. DOI: \href{https://doi.org/10.55606/jaemb.v5i3.7103}{10.55606/jaemb.v5i3.7103}. Mapping P20.
+\bibitem{burbano} J. Burbano, P. Landeta-L\'opez, C. Guevara-Vega, dan A. Qui\~na-Mera. ``Design and Evaluation of a Retrieval-Augmented Generation LLM Chatbot with Structured Database Access.'' \textit{Applied Sciences}, 16, 3147, 2026. DOI: \href{https://doi.org/10.3390/app16073147}{10.3390/app16073147}. Mapping P01. Lihat catatan kritis statistik/waktu pada mapping; angka peningkatannya tidak digunakan sebagai target usulan.
+\bibitem{hsueh} N.-L. Hsueh dan W.-C. Lin. ``Design of a RAG-Based Customer Service Chatbot Enhanced with Knowledge Graph and GPT Evaluation: A Case Study in the Import Trade Industry.'' \textit{Software}, 5, 15, 2026. DOI: \href{https://doi.org/10.3390/software5020015}{10.3390/software5020015}. Mapping P02.
+\bibitem{knollmeyer} S. Knollmeyer dkk. ``Evaluating Retrieval Augmented Generation: A Comprehensive Review of Evaluation Dimensions, Question Types, and Application.'' \textit{SN Computer Science}, 7, 576, 2026. DOI: \href{https://doi.org/10.1007/s42979-026-05134-x}{10.1007/s42979-026-05134-x}. Mapping P09.
+\bibitem{gao} T. Gao, H. Yen, J. Yu, dan D. Chen. ``Enabling Large Language Models to Generate Text with Citations.'' \textit{Proceedings of EMNLP}, 6465--6488, 2023. \url{https://aclanthology.org/2023.emnlp-main.398/}. Mapping P11; prosiding terbit.
+\bibitem{salman} M. D. Salman, Rahmaddeni, T. Nasution, dan Susanti. ``Implementation of Retrieval-Augmented Generation Method on Large Language Model for Development of Campus Service and Information Chatbot.'' \textit{INOVTEK Polbeng -- Seri Informatika}, 11(1), 298--309, 2026. DOI: \href{https://doi.org/10.35314/3y9hy151}{10.35314/3y9hy151}. Mapping P05.
+\bibitem{topic} K. Topi\'c, M. Bagi\'c Babac, dan V. Mornar. ``Evaluating LLM-Based Retrieval-Augmented Generation for Soil Science Question Answering.'' \textit{Information}, 17, 859, 2026. DOI: \href{https://doi.org/10.3390/info17090859}{10.3390/info17090859}. Mapping P07.
+\bibitem{es} S. Es, J. James, L. Espinosa-Anke, dan S. Schockaert. ``RAGAS: Automated Evaluation of Retrieval Augmented Generation.'' \textit{Proceedings of EACL: System Demonstrations}, 150--158, 2024. \url{https://aclanthology.org/2024.eacl-demo.16/}. Mapping P10; prosiding terbit.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,145 @@
+{
+  "status": "live_catalog_read_and_one_generation_checked",
+  "checked_at": "2026-10-20T11:41:49.851415+00:00",
+  "environment": "fresh Python process and in-process HTTP route; running port 5000 may need restart",
+  "active_service_count": 6,
+  "question": "Berapa harga dan durasi Volume Blowout Styling?",
+  "reference_read": {
+    "id": 6,
+    "name": "Volume Blowout Styling",
+    "slug": "volume-blowout-styling",
+    "price": 280000,
+    "duration_min": 55,
+    "description": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.",
+    "category": "Hair Styling"
+  },
+  "reply": "• **Harga reguler Volume Blowout Styling:** Rp280.000. [1]\n• **Durasi:** 55 menit. [1]",
+  "sources": [
+    {
+      "id": "live:services:6",
+      "file": "services.live.json",
+      "section": "Volume Blowout Styling",
+      "title": "Data layanan: Volume Blowout Styling (database aktif)",
+      "snippet": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T11:41:40.760752+00:00.",
+      "usage": "model_cited_not_independently_verified",
+      "citation_number": 1
+    }
+  ],
+  "business_source_mode": "live",
+  "retrieved_evidence": [
+    {
+      "id": "live:services:6",
+      "file": "services.live.json",
+      "section": "Volume Blowout Styling",
+      "snippet": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T11:41:40.760752+00:00.",
+      "distance": null,
+      "metadata": {
+        "id": "live:services:6",
+        "source_type": "db",
+        "file": "services.live.json",
+        "section": "Volume Blowout Styling",
+        "business_mode": "live",
+        "fetched_at": "2026-10-20T11:41:40.760752+00:00",
+        "content_sha256": "806169ebf5502fbe95aac249f4dd2df1bdb0c2d7e2f2a8227079a0d1f7bac98b",
+        "retrieval_provider": "bm25_source_balanced",
+        "bm25_score": 10.619153112441685
+      }
+    },
+    {
+      "id": "live:services:2",
+      "file": "services.live.json",
+      "section": "Precision Haircut",
+      "snippet": "Layanan aktif: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.\nSumber: database aktif melalui API, dibaca 2026-10-20T11:41:40.760752+00:00.",
+      "distance": null,
+      "metadata": {
+        "id": "live:services:2",
+        "source_type": "db",
+        "file": "services.live.json",
+        "section": "Precision Haircut",
+        "business_mode": "live",
+        "fetched_at": "2026-10-20T11:41:40.760752+00:00",
+        "content_sha256": "e5eb6822587d4d80048a1793f1fb0e0349d0ddb8e903d451c87ab3628887b9b1",
+        "retrieval_provider": "bm25_source_balanced",
+        "bm25_score": 2.923004480329135
+      }
+    },
+    {
+      "id": "care:S01:heat-care:v1",
+      "file": "education/heat-care.md",
+      "section": "Membatasi panas saat styling",
+      "snippet": "Batasi blow-drying dan alat styling panas. Gunakan pengaturan panas rendah atau sedang dan pelindung panas sesuai petunjuk produk.",
+      "distance": null,
+      "metadata": {
+        "id": "care:S01:heat-care:v1",
+        "section": "Membatasi panas saat styling",
+        "source_type": "official_professional_guidance",
+        "topic": "tips-perawatan",
+        "file": "education/heat-care.md",
+        "source_id": "S01",
+        "source_url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/healthy-hair-tips",
+        "source_date": "2024-08-12",
+        "source_date_kind": "last_updated_or_reviewed",
+        "source_locator": "Items 4–6; Last updated 8/12/24",
+        "content_origin": "assistant-authored Indonesian paraphrase of inspected first-party source",
+        "scope_limit": "Edukasi umum, bukan bukti bahwa layanan blowout mengatasi rambut kering.",
+        "review_status": "candidate_pending_researcher_review",
+        "medical_expert_validated": false,
+        "sha256": "4cb4047a2b807e2c8d7dadba1ab99da999246ec58794a7a818cd47597a8e5a2f",
+        "retrieval_provider": "bm25_source_balanced",
+        "bm25_score": 2.697278271201019
+      }
+    },
+    {
+      "id": "live:services:3",
+      "file": "services.live.json",
+      "section": "Keratin Smooth Treatment",
+      "snippet": "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T11:41:40.760752+00:00.",
+      "distance": null,
+      "metadata": {
+        "id": "live:services:3",
+        "source_type": "db",
+        "file": "services.live.json",
+        "section": "Keratin Smooth Treatment",
+        "business_mode": "live",
+        "fetched_at": "2026-10-20T11:41:40.760752+00:00",
+        "content_sha256": "58a9770179eeaf014da3c45614a2e0efe3792a1250f84b2f851688b2e6a53e07",
+        "retrieval_provider": "bm25_source_balanced",
+        "bm25_score": 1.5738509601423654
+      }
+    },
+    {
+      "id": "live:services:5",
+      "file": "services.live.json",
+      "section": "Scalp Detox Therapy",
+      "snippet": "Layanan aktif: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.\nSumber: database aktif melalui API, dibaca 2026-10-20T11:41:40.760752+00:00.",
+      "distance": null,
+      "metadata": {
+        "id": "live:services:5",
+        "source_type": "db",
+        "file": "services.live.json",
+        "section": "Scalp Detox Therapy",
+        "business_mode": "live",
+        "fetched_at": "2026-10-20T11:41:40.760752+00:00",
+        "content_sha256": "8b269a7a1a06844f0534acb28149fbdc827400bd70eadcf28a400a5b00a1d3a5",
+        "retrieval_provider": "bm25_source_balanced",
+        "bm25_score": 1.5738509601423654
+      }
+    }
+  ],
+  "clarification": {
+    "reply": "Treatment atau layanan yang Anda maksud yang mana? Pilihan pada katalog aktif salon:\n\n- Signature Hair Spa\n- Precision Haircut\n- Keratin Smooth Treatment\n- Color Gloss Refresh\n- Scalp Detox Therapy\n- Volume Blowout Styling\n\nSilakan pilih atau sebutkan nama layanannya agar saya dapat memberikan harga yang tepat.",
+    "sources": [
+      {
+        "id": "live:service-options",
+        "file": "services.live.json",
+        "title": "Pilihan layanan — katalog aktif salon",
+        "snippet": "Signature Hair Spa; Precision Haircut; Keratin Smooth Treatment; Color Gloss Refresh; Scalp Detox Therapy; Volume Blowout Styling",
+        "usage": "catalog_options"
+      }
+    ],
+    "contextId": "ctx-ba9b7fec2d285914"
+  },
+  "price_or_active_flag_changed_in_real_database": false,
+  "freshness_on_mutation_verified_with_mock_api_only": true,
+  "citation_entailment_independently_verified": false
+}

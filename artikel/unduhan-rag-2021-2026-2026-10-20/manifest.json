@@ -1,0 +1,774 @@
+[
+  {
+    "number": 1,
+    "year": 2026,
+    "title": "Design and Evaluation of a Retrieval-Augmented Generation LLM Chatbot with Structured Database Access",
+    "source_url": "https://www.mdpi.com/2076-3417/16/7/3147",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "01_2026_Design-and-Evaluation-of-a-Retrieval-Augmented-Generation-LLM-Chatbot-with-Structured-Database-Access.pdf",
+    "pdf_url": "https://mdpi-res.com/d_attachment/applsci/applsci-16-03147/article_deploy/applsci-16-03147.pdf",
+    "pages": 20,
+    "sha256": "f138fd91e7b7a9ce8382b87e906b4b829e32a2e53372d6d2329a64157fb2b168",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://mdpi-res.com/d_attachment/applsci/applsci-16-03147/article_deploy/applsci-16-03147.pdf",
+        "http_status": 200
+      }
+    ],
+    "first_page_excerpt": "Academic Editors: Francisco De\nArriba-Pérez and Silvia\nGarcía-Méndez\nReceived: 30 January 2026\nRevised: 27 February 2026\nAccepted: 4 March 2026\nPublished: 25 March 2026\nCopyright: © 2026 by the authors.\nLicensee MDPI, Basel, Switzerland.\nThis article is an open access article\ndistributed under the terms and\nconditions of the Creative Commons\nAttribution (CC BY) license.\nArticle\nDesign and Evaluation of a Retrieval-Augmented Generation\nLLM Chatbot with Structured Database Access\nJuan Burbano 1\n, Pablo Landeta-López 1,2,*\n, Cathy Guevara-Vega 1,3\nand Antonio Quiña-Mera 1,3\n1\nFICA, Universidad Técnica del Norte, Ibarra 100105, Ecuador; jgburbanob@utn.edu.ec (J.B.);\ncguevara@utn.edu.ec (C.G.-V.); aquina@utn.edu.ec (A.Q.-M.)\n2\nEIDUS, Universidad de Sevilla, 41013 Seville, Spain\n3\neCIER Research Group UTN, Ibarra 100105, Ecuador\n*\nCorrespondence: palandeta@utn.edu.ec\nAbstract\nContext. The grocery sector is undergoing a massive shift in consumer behavior, with\nglobal chatbot usage projected to reach 8.4 billion units by 2024—surpassing the total\nhuman population—and online grocery revenue per shopper expected to hit USD 449.00\nby 2023. In this competitive landscape, small grocery stores must adopt AI-driven tools\nto modernize their operations. However, these businesses often face significant inefficien-\ncies in manual inventory management, resulting in errors and reduced competitiveness.\nObjective. This research aims to develop and validate a chatbot application using Large\nLanguage Models and Retrieval-Augmented Generation (RAG) for operational manage-\nment of grocery stores. Method. The method employed a quantitative experimental\napproach with a five-component system architecture: a web interface, a FastAPI API, a\nMistral-7B-Instruct-v0.2 model, a dynamic SQL generator, and ",
+    "validation": {
+      "pages_read": 20,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.3390/app16073147"
+  },
+  {
+    "number": 2,
+    "year": 2024,
+    "title": "Design and Implementation of an Interactive Question-Answering System with Retrieval-Augmented Generation for Personalized Databases",
+    "source_url": "https://www.mdpi.com/2076-3417/14/17/7995",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "02_2024_Design-and-Implementation-of-an-Interactive-Question-Answering-System-with-Retrieval-Augmented-Generation-for-Personalized-Da.pdf",
+    "pdf_url": "https://mdpi-res.com/d_attachment/applsci/applsci-14-07995/article_deploy/applsci-14-07995.pdf",
+    "pages": 23,
+    "sha256": "10462ba2007ffffe4660b1af77a1178493b3210e78060ab89dcae25789f47243",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://mdpi-res.com/d_attachment/applsci/applsci-14-07995/article_deploy/applsci-14-07995.pdf",
+        "http_status": 200
+      }
+    ],
+    "first_page_excerpt": " \n \n \n \nAppl. Sci. 2024, 14, 7995. https://doi.org/10.3390/app14177995 \nwww.mdpi.com/journal/applsci \nArticle \nDesign and Implementation of an Interactive  \nQuestion-Answering System with Retrieval-Augmented  \nGeneration for Personalized Databases \nJaeyeon Byun 1, Bokyeong Kim 1, Kyung-Ae Cha 1,* and Eunhyung Lee 2 \n1 Department of Artiﬁcial Intelligence, Daegu University, Gyeongsan 38453, Republic of Korea; \n9722jayon@gmail.com (J.B.); qhrud418@gmail.com (B.K.) \n2 Textway Inc., A02 Unicorn Lab., 5th ﬂ, 111, Oksan-ro, Buk-gu, Daegu 41593, Republic of Korea; \neh.lee@textway.net \n* Correspondence: chaka@daegu.ac.kr; Tel.: +82-53-850-6641 \nAbstract: This study introduces a novel approach to personalized information retrieval by integrat-\ning retrieval augmentation generation (RAG) with a personalized database system. Recent advance-\nments in large language models (LLMs) have shown impressive text generation capabilities but face \nlimitations in knowledge accuracy and hallucinations. Our research addresses these challenges by \ncombining LLMs with structured, personalized data to enhance search precision and relevance. By \ntagging keywords within personal documents and organizing information into context-based cate-\ngories, users can conduct eﬃcient searches within their data repositories. We conducted experi-\nments using the GPT-3.5 and text-embedding-ada-002 models and evaluated the RAG assessment \nframework with ﬁve diﬀerent language models and two embedding models. Our results indicate \nthat the combination of GPT-3.5 and text-embedding-ada-002 is eﬀective for a personalized database \nquestion-answering system, with potential for various language models depending on the applica-\ntion. Our approach oﬀers improved accuracy, real-time data updates, and enhanced user experi-",
+    "validation": {
+      "pages_read": 23,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.3390/app14177995"
+  },
+  {
+    "number": 3,
+    "year": 2026,
+    "title": "Dual-Source Retrieval-Augmented Generation Chatbot for Women s Health HerCare Design and Multimethod Evaluation Study",
+    "source_url": "https://formative.jmir.org/2026/1/e88549",
+    "kind": "journal",
+    "status": "blocked_download",
+    "filename": "",
+    "pdf_url": "",
+    "pages": 0,
+    "sha256": "",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://formative.jmir.org/2026/1/e88549/PDF?download=1",
+        "http_status": 202
+      },
+      {
+        "url": "https://formative.jmir.org/2026/1/e88549",
+        "http_status": 202
+      },
+      {
+        "url": "https://formative.jmir.org/2026/1/e88549/PDF",
+        "http_status": 202
+      }
+    ],
+    "publisher_publication_dates": [],
+    "reason": "Publisher access returned no readable PDF (HTTP denial, automated-client challenge, empty response, or timeout). Paywall status not established."
+  },
+  {
+    "number": 4,
+    "year": 2025,
+    "title": "Lisa a touristic chatbot for Lisbon",
+    "source_url": "https://link.springer.com/article/10.1007/s40558-025-00339-x",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "04_2025_Lisa-a-touristic-chatbot-for-Lisbon.pdf",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s40558-025-00339-x.pdf?download=1",
+    "pages": 31,
+    "sha256": "939bce8a51dbec761a88f207cf61e1bff05ee90366b1c08bf60d917d80a12a45",
+    "publisher_title": "Client Challenge",
+    "attempts": [
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s40558-025-00339-x.pdf?download=1",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/article/10.1007/s40558-025-00339-x",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s40558-025-00339-x.pdf?download=1",
+        "http_status": 200,
+        "client": "requests default"
+      }
+    ],
+    "publisher_publication_dates": [],
+    "first_page_excerpt": "RESEARCH\nInformation Technology & Tourism (2025) 27:1153–1183\nhttps://doi.org/10.1007/s40558-025-00339-x\nAbstract\nAs cities continue to attract a growing number of visitors, the development of a \ntailored chatbot catering to the tourists’ unique needs becomes increasingly valu­\nable. In this paper, we propose a new methodology for developing generative imple­\nmentations of touristic chatbots and demonstrate its application through a prototype \ncreated specifically for Lisbon. Utilizing a web-scraped knowledge base with over \n2000 website pages, the chatbot offers recommendations for tourist routes, events \nand places to visit, provides general information about Lisbon (including transpor­\ntation) and engages with visitors. The initial evaluation was conducted using syn­\nthetic datasets—one for question-answering and another for recommendations—to \nguide experiments in data preprocessing, exploration of different ChatGPT models \nand improvements to the Retrieval-Augmented Generation pipeline. A subsequent \nevaluation was performed with experts, including professionals from Turismo de \nPortugal, focusing on three major areas (recommendation, information and engage­\nment), and the chatbot achieved very strong results on all use cases. This paper \ncontributes to the literature on chatbot development, emphasizing the benefits of \nadvanced machine learning models in the tourism industry and highlighting the \npotential of iterative optimization and evaluation based on both synthetic and hu­\nman survey data for downstream tasks. Likewise, the proposed approach can sig­\nnificantly enhance the tourism experience by offering personalized, engaging and \nefficient digital interactions, thereby improving overall visitor satisfaction and sup­\nporting sustainable destination management",
+    "validation": {
+      "pages_read": 31,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.1007/s40558-025-00339-x"
+  },
+  {
+    "number": 5,
+    "year": 2025,
+    "title": "RAGVA Engineering retrieval augmented generation-based virtual assistants in practice",
+    "source_url": "https://doi.org/10.1016/j.jss.2025.112436",
+    "kind": "journal",
+    "status": "blocked_download",
+    "filename": "",
+    "pdf_url": "",
+    "pages": 0,
+    "sha256": "",
+    "publisher_title": "Redirecting",
+    "attempts": [
+      {
+        "url": "https://doi.org/10.1016/j.jss.2025.112436",
+        "http_status": 200
+      }
+    ],
+    "publisher_publication_dates": [],
+    "reason": "Publisher access returned no readable PDF (HTTP denial, automated-client challenge, empty response, or timeout). Paywall status not established."
+  },
+  {
+    "number": 6,
+    "year": 2026,
+    "title": "Design of a RAG-Based Customer Service Chatbot Enhanced with Knowledge Graph and GPT Evaluation",
+    "source_url": "https://www.mdpi.com/2674-113X/5/2/15",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "06_2026_Design-of-a-RAG-Based-Customer-Service-Chatbot-Enhanced-with-Knowledge-Graph-and-GPT-Evaluation.pdf",
+    "pdf_url": "https://mdpi-res.com/d_attachment/software/software-05-00015/article_deploy/software-05-00015.pdf",
+    "pages": 26,
+    "sha256": "50c8339e5f6d0901a521d3540bd6eaada3be03be5c42063e9069331c0068f386",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://mdpi-res.com/d_attachment/software/software-05-00015/article_deploy/software-05-00015.pdf",
+        "http_status": 200
+      }
+    ],
+    "first_page_excerpt": "Academic Editor: Haipeng Cai\nReceived: 9 February 2026\nRevised: 18 March 2026\nAccepted: 25 March 2026\nPublished: 2 April 2026\nCopyright: © 2026 by the authors.\nLicensee MDPI, Basel, Switzerland.\nThis article is an open access article\ndistributed under the terms and\nconditions of the Creative Commons\nAttribution (CC BY) license.\nArticle\nDesign of a RAG-Based Customer Service Chatbot Enhanced\nwith Knowledge Graph and GPT Evaluation: A Case Study in\nthe Import Trade Industry\nNien-Lin Hsueh * and Wei-Che Lin\nDepartment of Information Engineering and Computer Science, Feng Chia University, Taichung 407, Taiwan;\nm1263610@o365.fcu.edu.tw\n* Correspondence: nlhsueh@fcu.edu.tw; Tel.: +886-4-2451-7250\nAbstract\nAmid the wave of digital transformation and customer service automation, traditional\nchatbots are increasingly challenged by their inability to handle unstructured data and\ncomplex queries. This issue is particularly critical in the import trade industry, where cus-\ntomer service representatives must respond promptly to diverse inquiries involving quality\nanomalies, order tracking, and product substitution. Existing rule-based or keyword-\ndriven chatbots often fail to provide accurate responses, resulting in reduced customer\nsatisfaction and increased operational burdens. This study proposes and implements a\n“Retrieval-Augmented Generation (RAG)-based Customer Service Chatbot,” integrating\nthe RAG framework with a Neo4j-based knowledge graph, specifically tailored for the\nimport trade domain. The system constructs a dedicated QA dataset, knowledge graph,\nand dynamic learning mechanism. It semantically vectorizes internal documents, meeting\nrecords, quality assurance procedures, and historical dialogues, establishing interrelated\nknowledge nodes to enhance the chatbot’s compr",
+    "validation": {
+      "pages_read": 26,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.3390/software5020015"
+  },
+  {
+    "number": 7,
+    "year": 2025,
+    "title": "Design and Performance Evaluation of LLM-Based RAG Pipelines for Chatbot Services in International Student Admissions",
+    "source_url": "https://www.mdpi.com/2079-9292/14/15/3095",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "07_2025_Design-and-Performance-Evaluation-of-LLM-Based-RAG-Pipelines-for-Chatbot-Services-in-International-Student-Admissions.pdf",
+    "pdf_url": "https://mdpi-res.com/d_attachment/electronics/electronics-14-03095/article_deploy/electronics-14-03095.pdf",
+    "pages": 22,
+    "sha256": "cff435ae9697649fd4204b9c58825f8d87a3d1adb668fb1acc44f024ddb866a6",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://mdpi-res.com/d_attachment/electronics/electronics-14-03095/article_deploy/electronics-14-03095.pdf",
+        "http_status": 200
+      }
+    ],
+    "first_page_excerpt": "Academic Editors: Marian-Pompiliu\nCristescu, Claudiu Brandas and\nDumitru Alexandru Mara\nReceived: 8 July 2025\nRevised: 28 July 2025\nAccepted: 31 July 2025\nPublished: 2 August 2025\nCitation:\nKhasanova Zafar kizi, M.;\nSuh, Y. Design and Performance\nEvaluation of LLM-Based RAG\nPipelines for Chatbot Services in\nInternational Student Admissions.\nElectronics 2025, 14, 3095.\nhttps://doi.org/10.3390/\nelectronics14153095\nCopyright: © 2025 by the authors.\nLicensee MDPI, Basel, Switzerland.\nThis article is an open access article\ndistributed under the terms and\nconditions of the Creative Commons\nAttribution (CC BY) license\n(https://creativecommons.org/\nlicenses/by/4.0/).\nArticle\nDesign and Performance Evaluation of LLM-Based RAG\nPipelines for Chatbot Services in International\nStudent Admissions\nMaksuda Khasanova Zafar kizi and Youngjung Suh *\nDepartment of Computer Science and Engineering, Kongju National University,\nCheonan 31080, Republic of Korea; cherryn2999@gmail.com\n* Correspondence: youngjung.suh@kongju.ac.kr\nAbstract\nRecent advancements in large language models (LLMs) have signiﬁcantly enhanced the\neffectiveness of Retrieval-Augmented Generation (RAG) systems. This study focuses on\nthe development and evaluation of a domain-speciﬁc AI chatbot designed to support\ninternational student admissions by leveraging LLM-based RAG pipelines. We implement\nand compare multiple pipeline conﬁgurations, combining retrieval methods (e.g., Dense,\nMMR, Hybrid), chunking strategies (e.g., Semantic, Recursive), and both open-source and\ncommercial LLMs. Dual evaluation datasets of LLM-generated and human-tagged QA sets\nare used to measure answer relevancy, faithfulness, context precision, and recall, alongside\nheuristic NLP metrics. Furthermore, latency analysis across different RAG stages is ",
+    "validation": {
+      "pages_read": 22,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.3390/electronics14153095"
+  },
+  {
+    "number": 8,
+    "year": 2026,
+    "title": "Implementation of Retrieval-Augmented Generation Method on Large Language Model for Development of Campus Service and Information Chatbot",
+    "source_url": "https://jurnal.polbeng.ac.id/index.php/ISI/article/view/1484",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "08_2026_Implementation-of-Retrieval-Augmented-Generation-Method-on-Large-Language-Model-for-Development-of-Campus-Service-and-Informa.pdf",
+    "pdf_url": "https://jurnal.polbeng.ac.id/index.php/ISI/article/download/1484/655",
+    "pages": 12,
+    "sha256": "aabfb9fdbd7ce1c53ee179dfb03c0fa82321d834d89a1e91657ecd8ede44f3c7",
+    "publisher_title": "Implementation of Retrieval-Augmented Generation  Method on Large Language Model for Development of Campus Service and Information Chatbot\n\t\t\t\t\t\t\t| INOVTEK Polbeng - Seri Informatika",
+    "attempts": [
+      {
+        "url": "https://jurnal.polbeng.ac.id/index.php/ISI/article/view/1484",
+        "http_status": 200
+      },
+      {
+        "url": "https://jurnal.polbeng.ac.id/index.php/ISI/article/download/1484/655",
+        "http_status": 200
+      }
+    ],
+    "publisher_publication_dates": [
+      "2026-02-28",
+      "2026/02/26"
+    ],
+    "first_page_excerpt": "INOVTEK Polbeng - Seri Informatika, Volume 11, Issue 1, February 2026 \n                 ISSN: 2527-9866◼\n \n  \n       ISSN: 1978-1520 \n \n298 \n \nAbstract: Large Language Models have the potential to improve the quality of information services \nin higher education environments through responsive and natural interactions. However, LLMs are \nprone to generating answers that are not supported by valid knowledge sources due to knowledge \ncut-off limitations. This study implements Retrieval-Augmented Generation on LLMs to build an \ninformation service chatbot for the Indonesian University of Science and Technology (USTI). RAG \nis built using a hybrid retrieval mechanism that combines dense retrieval and sparse retrieval \n(BM25) through Reciprocal Rank Fusion, and is equipped with cross-encoder reranking. The \nknowledge base is compiled from official and public documents obtained through the USTI website. \nThe evaluation was conducted using 13 test queries by comparing several configurations to analyze \nthe contribution of each component. The evaluation results show that the hybrid retrieval \nconfiguration produces the best retrieval performance with Precision@3 of 71.7%, Recall@3 of \n87.5%, and NDCG@3 of 96.3%. In addition, the application of RAG improved the quality of answers \ncompared to LLM without retrieval, as shown by an increase in BERTScore-F1 from 84.8% to 89.4% \nand a faithfulness score of 88.8%. These findings indicate that RAG integration improves the \nrelevance of LLM answers to source documents, with the hybrid configuration providing an optimal \nbalance between retrieval quality and faithfulness. \n  \nKeywords: Retrieval-Augmented Generation, Large Language Model, hybrid retrieval, chatbot \n \n \nVolume 11 Issue 1 Year 2026 | 298-309 ISSN: 2527-9866        \nReceive",
+    "validation": {
+      "pages_read": 12,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": ""
+  },
+  {
+    "number": 9,
+    "year": 2026,
+    "title": "Citation Graph-Based Multi-Hop Retrieval Optimization Using Hybrid RRF in a RAG System for Indonesian ITE Law Documents",
+    "source_url": "https://jurnal.polibatam.ac.id/index.php/JAIC/article/view/14131",
+    "kind": "journal",
+    "status": "blocked_download",
+    "filename": "",
+    "pdf_url": "",
+    "pages": 0,
+    "sha256": "",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://jurnal.polibatam.ac.id/index.php/JAIC/article/view/14131",
+        "http_status": 403
+      }
+    ],
+    "reason": "Publisher access returned no readable PDF (HTTP denial, automated-client challenge, empty response, or timeout). Paywall status not established."
+  },
+  {
+    "number": 10,
+    "year": 2026,
+    "title": "SES-RAG An Adaptive Framework with ModernBERT Segmentation and Generative-Alignment Expansion",
+    "source_url": "https://www.mdpi.com/2076-3417/16/10/4849",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "10_2026_SES-RAG-An-Adaptive-Framework-with-ModernBERT-Segmentation-and-Generative-Alignment-Expansion.pdf",
+    "pdf_url": "https://mdpi-res.com/d_attachment/applsci/applsci-16-04849/article_deploy/applsci-16-04849.pdf",
+    "pages": 18,
+    "sha256": "6ddfa6bc0303f7c7aa88f1a91f33948c454464d3b6991ca766d96e41d176b14e",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://mdpi-res.com/d_attachment/applsci/applsci-16-04849/article_deploy/applsci-16-04849.pdf",
+        "http_status": 200
+      }
+    ],
+    "first_page_excerpt": "Academic Editor: George Drosatos\nReceived: 17 February 2026\nRevised: 17 April 2026\nAccepted: 22 April 2026\nPublished: 13 May 2026\nCopyright: © 2026 by the authors.\nLicensee MDPI, Basel, Switzerland.\nThis article is an open access article\ndistributed under the terms and\nconditions of the Creative Commons\nAttribution (CC BY) license.\nArticle\nSES-RAG: An Adaptive Framework with ModernBERT\nSegmentation and Generative-Alignment Expansion\nChaobang Gao, Hao He and Qiang Zhang *\nSchool of Computer Science, Chengdu University, Chengdu 610106, China; hehao@cdu.edu.cn (H.H.)\n* Correspondence: cduzhangqiang@163.com\nAbstract\nRetrieval-augmented generation (RAG) is promising for long-document question answer-\ning, but its performance is often limited by fixed-window chunking, query-document\nmismatch, and static context truncation. This study proposes SES-RAG, a lightweight\nframework that jointly improves semantic segmentation, retrieval alignment, and context\nselection in long-document RAG. Specifically, SES-RAG includes a ModernBERT-based\nsemantic segmenter for constructing semantically coherent chunks, Generative-Alignment\nQuery Expansion (GAQE) for enhancing query-document alignment through residual\nfusion with a hypothetical document, and Information Density Truncation (IDT) for adap-\ntively selecting retrieved contexts. We evaluate SES-RAG on three long-document QA\nbenchmarks, namely NarrativeQA, QuALITY, and QASPER, against Naive RAG, HyDE-\nRAG, Hybrid-RAG, and CRAG. SES-RAG achieves the best overall performance on all\nthree datasets, reaching 15.71 ROUGE, 9.61 BLEU-1, 6.16 BLEU-4, and 18.71 METEOR on\nNarrativeQA, 74.33 accuracy on QuALITY, and 41.06 F1-Match on QASPER. Compared\nwith Naive RAG, SES-RAG improves ROUGE by 5.10 points on NarrativeQA, Accuracy by\n3.66 points on QuA",
+    "validation": {
+      "pages_read": 18,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.3390/app16104849"
+  },
+  {
+    "number": 11,
+    "year": 2026,
+    "title": "TechDocRAG Relation-Preserving Retrieval-Augmented Generation for Technical Documents",
+    "source_url": "https://www.mdpi.com/2673-2688/7/5/161",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "11_2026_TechDocRAG-Relation-Preserving-Retrieval-Augmented-Generation-for-Technical-Documents.pdf",
+    "pdf_url": "https://mdpi-res.com/d_attachment/ai/ai-07-00161/article_deploy/ai-07-00161.pdf",
+    "pages": 16,
+    "sha256": "5bbae7984faf894888fb89017a109ad72935207423ec13ebff49213ed780293e",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://mdpi-res.com/d_attachment/ai/ai-07-00161/article_deploy/ai-07-00161.pdf",
+        "http_status": 200
+      }
+    ],
+    "first_page_excerpt": "Academic Editor: Giovanni Diraco\nReceived: 15 March 2026\nRevised: 21 April 2026\nAccepted: 27 April 2026\nPublished: 6 May 2026\nCopyright: © 2026 by the authors.\nLicensee MDPI, Basel, Switzerland.\nThis article is an open access article\ndistributed under the terms and\nconditions of the Creative Commons\nAttribution (CC BY) license.\nAI\nArticle\nTechDocRAG: Relation-Preserving Retrieval-Augmented\nGeneration (RAG) for Technical Documents\nSeungjoon Lee 1 and Myungryul Choi 2,*\n1\nDepartment of EECI Engineering, Hanyang University, Seoul 04763, Republic of Korea;\nlee30806@hanyang.ac.kr\n2\nDivision of Electrical Engineering, Hanyang University, Seoul 04763, Republic of Korea\n*\nCorrespondence: choimy@hanyang.ac.kr\nAbstract\nTechnical documents differ from general text corpora in ways that complicate retrieval-\naugmented generation (RAG). Evidence for a single answer is often distributed across\nnumbered clauses, tables, figures, captions, and ordered procedures rather than expressed\nin one passage. Standard RAG pipelines typically flatten these elements into independent\nchunks. This can break the document relations needed for exact evidence tracing. We\nintroduce TechDocRAG, a relation-preserving framework for technical document question\nanswering. The framework represents each document as a heterogeneous element graph\nand aligns three retrieval views for each element: technical identifiers, semantic sum-\nmaries, and raw evidence. At query time, retrieval proceeds from identifier-aware recall\nto summary-level reranking and raw evidence bundling. We evaluate TechDocRAG on\nfour benchmarks with more than 7500 evaluated question–answer pairs covering product\nmanuals, engineering documents, and long multimodal PDFs. Across the suite, Tech-\nDocRAG improves the mean end-to-end score by 20.3 po",
+    "validation": {
+      "pages_read": 16,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.3390/ai7050161"
+  },
+  {
+    "number": 12,
+    "year": 2026,
+    "title": "Evaluating LLM-Based Retrieval-Augmented Generation for Soil Science Question Answering",
+    "source_url": "https://www.mdpi.com/2078-2489/17/9/859",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "12_2026_Evaluating-LLM-Based-Retrieval-Augmented-Generation-for-Soil-Science-Question-Answering.pdf",
+    "pdf_url": "https://mdpi-res.com/d_attachment/information/information-17-00859/article_deploy/information-17-00859.pdf",
+    "pages": 44,
+    "sha256": "ffb3aa00f06145cae6965960564c1792ee4542a28a9237956f6953403aa70e12",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://mdpi-res.com/d_attachment/information/information-17-00859/article_deploy/information-17-00859.pdf",
+        "http_status": 200
+      }
+    ],
+    "first_page_excerpt": "Academic Editor: Katsuhide Fujita\nReceived: 7 August 2026\nRevised: 30 August 2026\nAccepted: 31 August 2026\nPublished: 4 September 2026\nCopyright: © 2026 by the authors.\nLicensee MDPI, Basel, Switzerland.\nThis article is an open access article\ndistributed under the terms and\nconditions of the Creative Commons\nAttribution (CC BY) license.\nArticle\nEvaluating LLM-Based Retrieval-Augmented Generation for Soil\nScience Question Answering\nKarla Topi´c 1, Marina Bagi´c Babac 1,*\nand Vedran Mornar 2\n1\nDepartment of Applied Computing, Faculty of Electrical Engineering and Computing, University of Zagreb,\nUnska 3, HR-10000 Zagreb, Croatia; karla.topic@fer.hr\n2\nVERN’ University, Palmoti´ceva 82/1, HR-10000 Zagreb, Croatia; vedran.mornar@vern.hr\n*\nCorrespondence: marina.bagic@fer.hr\nAbstract\nRetrieval-augmented generation (RAG) systems for scientific literature require evidence-\nbased choices of document segmentation, representation, retrieval, and generation compo-\nnents, particularly when the source collection varies in topical specificity and document\nstructure. This study addresses the lack of an end-to-end, component-level comparison of\nthese choices for soil science question answering. A three-stage evaluation was conducted\nacross general, domain-specific, and geospatial soil science corpora. The corpus combines\nfoundational soil science books, peer-reviewed research articles, European soil monitoring\nmaterial, and geospatial mapping publications, thereby covering both broad disciplinary\nconcepts and specialized scientific evidence. The study compares four chunking strategies,\nthree embedding models, five retrieval methods, and five large language models. In Experi-\nment 1, semantic chunking with text-embedding-3-large achieved the highest aggregate\nretrieval scores (recall@1 =",
+    "validation": {
+      "pages_read": 44,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.3390/info17090859"
+  },
+  {
+    "number": 13,
+    "year": 2026,
+    "title": "Efficacy Evaluation and Optimization of RAG Knowledge Bases in the Oil and Gas Industry Using an LLM-as-a-Judge Mechanism",
+    "source_url": "https://www.mdpi.com/1996-1073/19/17/4207",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "13_2026_Efficacy-Evaluation-and-Optimization-of-RAG-Knowledge-Bases-in-the-Oil-and-Gas-Industry-Using-an-LLM-as-a-Judge-Mechanism.pdf",
+    "pdf_url": "https://mdpi-res.com/d_attachment/energies/energies-19-04207/article_deploy/energies-19-04207.pdf",
+    "pages": 21,
+    "sha256": "ce51f0e613c858aeacc974dc82f3fd4ed7019f4292736dc62943868e5f8c9e17",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://mdpi-res.com/d_attachment/energies/energies-19-04207/article_deploy/energies-19-04207.pdf",
+        "http_status": 200
+      }
+    ],
+    "first_page_excerpt": "Academic Editor: Joao Ferreira\nReceived: 13 July 2026\nRevised: 26 August 2026\nAccepted: 1 September 2026\nPublished: 5 September 2026\nCopyright: © 2026 by the authors.\nLicensee MDPI, Basel, Switzerland.\nThis article is an open access article\ndistributed under the terms and\nconditions of the Creative Commons\nAttribution (CC BY) license.\nArticle\nEfficacy Evaluation and Optimization of RAG Knowledge Bases\nin the Oil and Gas Industry Using an LLM-as-a-Judge Mechanism\nTianxiang Yang 1, Yu Cao 2,3,*, Yingkai Ma 1, Yuan Liang 2,3,4,*\n, Tangqi Liu 2,3, Chi Qin 2,3 and Xionghao Liao 2,3\n1\nNatural Gas Economic and Technology Center, PetroChina Southwest Oil & Gasfield Company,\nChengdu 610051, China; yangtx@petrochina.com.cn (T.Y.); mayinkai@petrochina.com.cn (Y.M.)\n2\nSchool of Mathematical Sciences, Chengdu University of Technology, Chengdu 610059, China;\nliutangqi@stu.cdut.edu.cn (T.L.); qinchi@stu.cdut.edu.cn (C.Q.); liaoxionghao@stu.cdut.edu.cn (X.L.)\n3\nGeomathematics Key Laboratory of Sichuan Province, Chengdu University of Technology,\nChengdu 610059, China\n4\nCollege of Management Science, Chengdu University of Technology, Chengdu 610059, China\n*\nCorrespondence: caoyu@stu.cdut.edu.cn (Y.C.); liangyuan13@cdut.edu.cn (Y.L.)\nAbstract\nThe increasing adoption of Retrieval-Augmented Generation (RAG) in the oil and gas in-\ndustry has created a growing need for systematic evaluation of domain-specific knowledge\nbases, particularly with respect to retrieval failures, numerical and entity inconsisten-\ncies, knowledge timeliness, and unsupported generation. This study presents a domain-\nadapted evaluation and optimization framework for industrial RAG knowledge bases\nbased on an LLM-as-a-Judge paradigm. The framework organizes evaluation into four\ndimensions—Data, Retrieval, Generation, a",
+    "validation": {
+      "pages_read": 21,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.3390/en19174207"
+  },
+  {
+    "number": 14,
+    "year": 2026,
+    "title": "Dual index retrieval augmented generation for pedagogically aligned mathematics problem solving support",
+    "source_url": "https://link.springer.com/article/10.1007/s10791-026-10432-2",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "14_2026_Dual-index-retrieval-augmented-generation-for-pedagogically-aligned-mathematics-problem-solving-support.pdf",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10791-026-10432-2.pdf?download=1",
+    "pages": 12,
+    "sha256": "09bea875b51d4f3af6cc710e96badf3e7c827e98d663d117af2820594f5d7a1f",
+    "publisher_title": "Client Challenge",
+    "attempts": [
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s10791-026-10432-2.pdf?download=1",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/article/10.1007/s10791-026-10432-2",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s10791-026-10432-2.pdf?download=1",
+        "http_status": 200,
+        "client": "requests default"
+      }
+    ],
+    "publisher_publication_dates": [],
+    "first_page_excerpt": "RESEARCH\nOpen Access\nDiscover Computing\nJiang et al. Discover Computing          (2026) 29:521 \nhttps://doi.org/10.1007/s10791-026-10432-2\nDual index retrieval augmented generation \nfor pedagogically aligned mathematics \nproblem solving support in mathematics \neducation\nHaozhe Jiang1, Yonghao Deng1 and Zhaochun Wang2*\n*Correspondence:\nZhaochun Wang\n18708886762@163.com\n1College of Education, Zhejiang \nUniversity, Hangzhou, Zhejiang, \nChina\n2School of Educational Science, \nLijiang Normal College, Lijiang, \nYunnan, China\n© The Author(s) 2026. Open Access  This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, \nsharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the \nsource, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article \nare included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the \narticle’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to \nobtain permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by/4.0/.\nAbstract\nThe use of large language models (LLMs) in mathematics education remains \nconstrained by hallucinations and by weak alignment with classroom solution \nnorms. Retrieval-augmented generation (RAG) can improve factual grounding, but \nstandard retrieval pipelines often miss curriculum structure and may pass misleading \nnear-neighbor examples to the generator. This study examines a dual-ind",
+    "validation": {
+      "pages_read": 12,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.1007/s10791-026-10432-2"
+  },
+  {
+    "number": 15,
+    "year": 2024,
+    "title": "BiomedRAG A retrieval augmented large language model for biomedicine",
+    "source_url": "https://www.sciencedirect.com/science/article/pii/S1532046424001874",
+    "kind": "journal",
+    "status": "blocked_download",
+    "filename": "",
+    "pdf_url": "",
+    "pages": 0,
+    "sha256": "",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://www.sciencedirect.com/science/article/pii/S1532046424001874",
+        "http_status": 403
+      }
+    ],
+    "reason": "Publisher access returned no readable PDF (HTTP denial, automated-client challenge, empty response, or timeout). Paywall status not established."
+  },
+  {
+    "number": 16,
+    "year": 2025,
+    "title": "Retrieval-Augmented Generation Chatbot for Handling Customer Complaints in the Energy Sector",
+    "source_url": "https://e-jurnal.pnl.ac.id/infomedia/article/view/7169",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "16_2025_Retrieval-Augmented-Generation-Chatbot-for-Handling-Customer-Complaints-in-the-Energy-Sector.pdf",
+    "pdf_url": "https://e-jurnal.pnl.ac.id/infomedia/article/download/7169/5038",
+    "pages": 7,
+    "sha256": "61f2016d5f221f1d505eaea836f5d6146bb4370368185fdfe856a6c443c223df",
+    "publisher_title": "Retrieval-Augmented Generation (RAG) Chatbot for Handling Customer Complaints in the Energy Sector | Haryono Putro | Jurnal Infomedia: Teknik Informatika, Multimedia, dan Jaringan",
+    "attempts": [
+      {
+        "url": "https://e-jurnal.pnl.ac.id/infomedia/article/view/7169",
+        "http_status": 200
+      },
+      {
+        "url": "https://e-jurnal.pnl.ac.id/infomedia/article/download/7169/5038",
+        "http_status": 200
+      }
+    ],
+    "publisher_publication_dates": [
+      "2025-11-08",
+      "2025/11/08"
+    ],
+    "first_page_excerpt": " \n105 \n \n \n \n \n \n \nRetrieval-Augmented Generation (RAG) Chatbot for Handling Customer \nComplaints in the Energy Sector \n \n         \nIbnu Prastowo Haryono Putro 1*,2 , Jefry Antoni 1,2 , Maulana Krisna Adhitya 1,2 , Neng Ayu Herawati 1,3 ,  \nAyu Purwarianti 1,3 , Nugraha Priya Utama 1,3  \n1 School of Electrical Engineering and Informatics, Bandung Institute of Technology (ITB), Indonesia \n2 PT PLN (Persero), Indonesia \n3 Center of Excellence for AI: Computer Vision, NLP, and Big Data Analytics, Bandung Institute of Technology,Indonesia \n*Corresponding Author: 23524030@mahasiswa.itb.ac.id \n \nAbstract \nFast and accurate customer service is critical in the energy sector, especially for large-scale utilities like PLN. This \nstudy introduces a novel Retrieval-Augmented Generation (RAG)-based chatbot tailored for PLN’s internal \noperational context to automate customer complaint resolution in Bahasa Indonesia. In contrast to previous \napproaches that utilize only fine-tuned LLMs or retrieval-based question answering, our system uniquely integrates \ninternal complaint records stored in internal database with a local Indonesian-optimized LLM through LangChain \norchestration. The proposed architecture features temporal and linguistic preprocessing, vector embedding using \nFAISS, and a dynamic clarification-fallback mechanism, ensuring context-aware and grounded responses. This work \ncontributes a scalable framework for deploying generative AI in high-stakes public utility settings, emphasizing data \nprivacy, language fidelity, and real-time applicability. Evaluation results both simulated and human-reviewed \ndemonstrate the chatbot’s effectiveness, achieving BLEU-4 of 46.5 and ROUGE-L of 0.63, with 92% of answers rated \nhelpful. These findings underscore the model's potential to ",
+    "validation": {
+      "pages_read": 7,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": ""
+  },
+  {
+    "number": 17,
+    "year": 2026,
+    "title": "Implementation of Retrieval-Augmented Generation Based Chatbot for Export Company Customer Service Automation",
+    "source_url": "https://ejournal.kresnamediapublisher.com/index.php/jri/article/view/590",
+    "kind": "journal",
+    "status": "blocked_download",
+    "filename": "",
+    "pdf_url": "",
+    "pages": 0,
+    "sha256": "",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://ejournal.kresnamediapublisher.com/index.php/jri/article/download/590/432",
+        "http_status": 403
+      },
+      {
+        "url": "https://ejournal.kresnamediapublisher.com/index.php/jri/article/view/590",
+        "http_status": 403
+      }
+    ],
+    "reason": "Publisher access returned no readable PDF (HTTP denial, automated-client challenge, empty response, or timeout). Paywall status not established."
+  },
+  {
+    "number": 18,
+    "year": 2025,
+    "title": "Development and Evaluation of a Retrieval-Augmented Generation Chatbot for Orthopedic and Trauma Surgery Patient Education",
+    "source_url": "https://ai.jmir.org/2025/1/e75262",
+    "kind": "journal",
+    "status": "blocked_download",
+    "filename": "",
+    "pdf_url": "",
+    "pages": 0,
+    "sha256": "",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://ai.jmir.org/2025/1/e75262/PDF?download=1",
+        "http_status": 202
+      },
+      {
+        "url": "https://ai.jmir.org/2025/1/e75262",
+        "http_status": 202
+      },
+      {
+        "url": "https://ai.jmir.org/2025/1/e75262/PDF",
+        "http_status": 202
+      }
+    ],
+    "publisher_publication_dates": [],
+    "reason": "Publisher access returned no readable PDF (HTTP denial, automated-client challenge, empty response, or timeout). Paywall status not established."
+  },
+  {
+    "number": 19,
+    "year": 2026,
+    "title": "Evaluating Retrieval Augmented Generation A Comprehensive Review of Evaluation Dimensions Question Types and Application",
+    "source_url": "https://link.springer.com/article/10.1007/s42979-026-05134-x",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "19_2026_Evaluating-Retrieval-Augmented-Generation-A-Comprehensive-Review-of-Evaluation-Dimensions-Question-Types-and-Application.pdf",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s42979-026-05134-x.pdf?download=1",
+    "pages": 16,
+    "sha256": "0b6500406aba8064ef55acc27a6fcf474321cde7490c6923a18ef9e637a91a39",
+    "publisher_title": "Client Challenge",
+    "attempts": [
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s42979-026-05134-x.pdf?download=1",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/article/10.1007/s42979-026-05134-x",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s42979-026-05134-x.pdf?download=1",
+        "http_status": 200,
+        "client": "requests default"
+      }
+    ],
+    "publisher_publication_dates": [],
+    "first_page_excerpt": "SURVEY ARTICLE\nSN Computer Science\nSN Computer Science           (2026) 7:576 \nhttps://doi.org/10.1007/s42979-026-05134-x\n Simon Knollmeyer and Oğuz Caymazer have contributed equally to \nthis work.\n\t\n Simon Knollmeyer\nSimon.Knollmeyer@thi.de\nOğuz Caymazer\no_caym01@uni-muenster.de\nLeonid Koval\nLeonid.Koval@thi.de\nMuhammad Uzair Akmal\nMuhammadUzair.Akmal@thi.de\nSaara Asif\nSaara.Asif@thi.de\nSelvine G. Mathias\nSelvineGeorge.Mathias@thi.de\nDaniel Großmann\nDaniel.Grossmann@thi.de\n1\t\nTechnische Hochschule Ingolstadt, AImotion Bavaria, \nApplication Cluster “Digital Production”, Esplanade 10, \n85049 Ingolstadt, Bavaria, Germany\n2\t\nDepartment of Information Systems, University of Münster, \nSchlossplatz 2, 48149 Münster, North Rhine-Westphalia, \nGermany\nAbstract\nThis study addresses limitations of traditional benchmarking methods for Retrieval-Augmented Generation (RAG) systems \nby proposing an evaluation framework for RAG-enhanced Large Language Models (LLMs). The framework structures \nevaluation dimensions and metrics, identifies suitable datasets and question types, and provides guidance for applying the \nframework in practice. A systematic literature review (SLR) was conducted, synthesizing evidence from 12 studies focused \non the evaluation of RAG systems. The review employs a concept matrix to classify evaluative approaches and maps met­\nrics to dimensions, evaluator types, and pipeline stages. In addition, we systematize dataset and question-type requirements \nthat enable the proposed measurements and derive implementable evaluation guidance. The findings reveal substantial \nvariation in evaluation practices and underscore the need for a multidimensional view. The framework integrates context \nrelevance, faithfulness, answer relevance, correctness, and citation quality with",
+    "validation": {
+      "pages_read": 16,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.1007/s42979-026-05134-x"
+  },
+  {
+    "number": 20,
+    "year": 2026,
+    "title": "Retrieval-augmented generation for natural language processing a survey",
+    "source_url": "https://link.springer.com/article/10.1007/s10462-026-11605-7",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "20_2026_Retrieval-augmented-generation-for-natural-language-processing-a-survey.pdf",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10462-026-11605-7.pdf?download=1",
+    "pages": 53,
+    "sha256": "438fac13d6b2d1c565127e1d86f78e88b9050524c17c2ce0d114245566af8c46",
+    "publisher_title": "Client Challenge",
+    "attempts": [
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s10462-026-11605-7.pdf?download=1",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/article/10.1007/s10462-026-11605-7",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s10462-026-11605-7.pdf?download=1",
+        "http_status": 200,
+        "client": "requests default"
+      }
+    ],
+    "publisher_publication_dates": [],
+    "first_page_excerpt": "Artificial Intelligence Review (2026) 59:192\nhttps://doi.org/10.1007/s10462-026-11605-7\nRetrieval-augmented generation for natural language \nprocessing: a survey\nShangyu Wu1,2 · Ying Xiong2 · Yufei Cui3 · Haolun Wu3 · Can Chen3 · Ye Yuan3 · \nLianming Huang1 · Xue Liu2 · Tei-Wei Kuo4 · Nan Guan1 · Chun Jason Xue2\nReceived: 23 June 2025 / Accepted: 19 May 2026 / Published online: 1 June 2026\n© The Author(s) 2026\nAbstract\nLarge language models (LLMs) have achieved strong empirical performance in various \nfields, benefiting from their huge amount of parameters that store knowledge. However, \nLLMs still suffer from several key issues, such as hallucination problems, knowledge up­\ndate issues, and lacking domain-specific expertise. The appearance of retrieval-augmented \ngeneration (RAG), which leverages an external knowledge base to augment LLMs, miti­\ngates these limitations. This paper presents a systematic review of RAG techniques for \nnatural language processing (NLP), with a focus on retrievers and retrieval fusions. We \nintroduce a novel taxonomy of retrieval fusions, such as query-based, logits-based, latent, \nand parametric fusion, and provide structured comparisons across accessibility, efficiency, \nand use cases. The paper further examines RAG applications across diverse NLP tasks, \ndiscusses evaluation methodologies and benchmark limitations, and analyzes training \nparadigms with and without knowledge base updates. Finally, we explore industrial de­\nployment considerations and identify emerging challenges and future directions, including \nsecurity, efficiency, and graph-based retrieval.\nKeywords  Retrieval-augmented generation · Natural language processing · Vector \ndatabase · Large language model\n1  Introduction\nLarge language models (LLMs) (Touvron et al. 2023a; ",
+    "validation": {
+      "pages_read": 53,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.1007/s10462-026-11605-7"
+  },
+  {
+    "number": 21,
+    "year": 2025,
+    "title": "A Systematic Literature Review of Retrieval-Augmented Generation Techniques Metrics and Challenges",
+    "source_url": "https://www.mdpi.com/2504-2289/9/12/320",
+    "kind": "journal",
+    "status": "blocked_download",
+    "filename": "",
+    "pdf_url": "",
+    "pages": 0,
+    "sha256": "",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://mdpi-res.com/d_attachment/bdcc/bdcc-09-00320/article_deploy/bdcc-09-00320.pdf",
+        "http_status": 404
+      },
+      {
+        "url": "https://www.mdpi.com/2504-2289/9/12/320",
+        "http_status": 403
+      },
+      {
+        "url": "https://www.mdpi.com/2504-2289/9/12/320/pdf",
+        "http_status": 403
+      }
+    ],
+    "reason": "Publisher access returned no readable PDF (HTTP denial, automated-client challenge, empty response, or timeout). Paywall status not established."
+  },
+  {
+    "number": 22,
+    "year": 2026,
+    "title": "A Survey of conversational AI from rule based to generative and retrieval augmented generation chatbots",
+    "source_url": "https://link.springer.com/article/10.1007/s44163-026-02373-y",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "22_2026_A-Survey-of-conversational-AI-from-rule-based-to-generative-and-retrieval-augmented-generation-chatbots.pdf",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s44163-026-02373-y.pdf?download=1",
+    "pages": 42,
+    "sha256": "6f4e35b286b496dddff292f042b05bab1ff0edf72f89dcc2dc535fd8279ae3ac",
+    "publisher_title": "Client Challenge",
+    "attempts": [
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s44163-026-02373-y.pdf?download=1",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/article/10.1007/s44163-026-02373-y",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s44163-026-02373-y.pdf?download=1",
+        "http_status": 200,
+        "client": "requests default"
+      }
+    ],
+    "publisher_publication_dates": [],
+    "first_page_excerpt": "Discover Artificial Intelligence\nGhaywat et al. Discover Artificial Intelligence          (2026) 6:1292 \nhttps://doi.org/10.1007/s44163-026-02373-y\nREVIEW\nOpen Access\nA Survey of conversational AI from rule \nbased to generative and retrieval augmented \ngeneration chatbots\nVaishnavi Ghaywat1, Abhyuday Singh1, Aniket K. Shahade1,2*\n, Wasim Khan1 and Priyanka V. Deshmukh1\n​*​C​o​r​r​e​s​p​o​n​d​e​n​c​e​:​\nAniket K. Shahade\naniket.shahade@sitpune.edu.in\n1Symbiosis Institute of Technology, \nPune Campus, Symbiosis \nInternational (Deemed University), \nPune, India\n2Symbiosis Centre for Applied \nArtificial Intelligence, Symbiosis \nInternational (Deemed University), \nPune, India\n© The Author(s) 2026. Open Access  This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International \nLicense, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate \ncredit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. \nYou do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party \nmaterial in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material \nis not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted \nuse, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit ​h​t​t​p​:​/​/​c​r​e​a​t​i​v​e​c​o​m​m​o​n​s​.​o​r​g​/​l​i​c​e​n​s​\ne​s​/​b​y​-​n​c​-​n​d​/​4​.​0​/​.​\nAbstract\nRetrieval",
+    "validation": {
+      "pages_read": 42,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.1007/s44163-026-02373-y"
+  },
+  {
+    "number": 23,
+    "year": 2025,
+    "title": "A survey on retrieval-augmentation generation models for healthcare applications",
+    "source_url": "https://link.springer.com/article/10.1007/s00521-025-11666-9",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "23_2025_A-survey-on-retrieval-augmentation-generation-models-for-healthcare-applications.pdf",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s00521-025-11666-9.pdf?download=1",
+    "pages": 77,
+    "sha256": "afabb5cb8d2784de1ba2d4749defb2c7833644b0b4247512a4118b4ede9ce77d",
+    "publisher_title": "Client Challenge",
+    "attempts": [
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s00521-025-11666-9.pdf?download=1",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/article/10.1007/s00521-025-11666-9",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s00521-025-11666-9.pdf?download=1",
+        "http_status": 200,
+        "client": "requests default"
+      }
+    ],
+    "publisher_publication_dates": [],
+    "first_page_excerpt": "ORIGINAL ARTICLE\nA survey on retrieval-augmentation generation (RAG)\nmodels for healthcare applications\nMohamed Abo El-Enen1\n• Sally Saad1 • Taymoor Nazmy1\nReceived: 16 November 2024 / Accepted: 9 September 2025 / Published online: 16 October 2025\n\u0002 The Author(s) 2025\nAbstract\nRetrieval-augmented generation (RAG) models have become crucial in healthcare applications, signiﬁcantly\nenhancing the relevance and reliability of AI-driven insights by combining the generative capabilities of large\nlanguage models (LLMs) with retrieval-based methods. As healthcare data demand precision and accountability,\nRAG models address critical limitations of LLMs, such as the tendency to ‘‘hallucinate’’ or produce inaccurate\ninformation—by incorporating real-time retrieval from trusted medical knowledge bases and clinical literature.\nThis dual process of retrieving and generating ensures that responses are both contextually accurate and aligned\nwith the latest clinical evidence, making RAG models especially valuable for medical question answering,\ndiagnostics, and treatment planning. This paper presents an in-depth exploration of RAG models and LLMs,\nspeciﬁcally within healthcare contexts, to meet the unique demands of medical data processing and decision\nsupport. It reviews various RAG architectures, including Naive, Advanced, and Modular RAG approaches,\ndiscussing how each framework optimizes retrieval depth, response quality, and computational efﬁciency. By\nreducing errors in patient-care recommendations, RAG models play an essential role in scenarios that require high\nprecision and accountability. Additionally, this survey addresses the ethical considerations and transparency\nrequirements for deploying RAG models in healthcare, identifying current challenges and future directions, such",
+    "validation": {
+      "pages_read": 77,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.1007/s00521-025-11666-9"
+  },
+  {
+    "number": 24,
+    "year": 2025,
+    "title": "Retrieval-augmented generation for educational application A systematic survey",
+    "source_url": "https://doi.org/10.1016/j.caeai.2025.100417",
+    "kind": "journal",
+    "status": "blocked_download",
+    "filename": "",
+    "pdf_url": "",
+    "pages": 0,
+    "sha256": "",
+    "publisher_title": "Redirecting",
+    "attempts": [
+      {
+        "url": "https://doi.org/10.1016/j.caeai.2025.100417",
+        "http_status": 200
+      }
+    ],
+    "publisher_publication_dates": [],
+    "reason": "Publisher access returned no readable PDF (HTTP denial, automated-client challenge, empty response, or timeout). Paywall status not established."
+  },
+  {
+    "number": 25,
+    "year": 2025,
+    "title": "Retrieval-Augmented Generation",
+    "source_url": "https://link.springer.com/article/10.1007/s12599-025-00945-3",
+    "kind": "journal",
+    "status": "downloaded",
+    "filename": "25_2025_Retrieval-Augmented-Generation.pdf",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s12599-025-00945-3.pdf?download=1",
+    "pages": 11,
+    "sha256": "b7b37f4cd2a5748b923a189079a6f7191ee9e1086e54c90cb2cd2784218a9ed7",
+    "publisher_title": "Client Challenge",
+    "attempts": [
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s12599-025-00945-3.pdf?download=1",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/article/10.1007/s12599-025-00945-3",
+        "http_status": 200
+      },
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s12599-025-00945-3.pdf?download=1",
+        "http_status": 200,
+        "client": "requests default"
+      }
+    ],
+    "publisher_publication_dates": [],
+    "first_page_excerpt": "CATCHWORD\nRetrieval-Augmented Generation (RAG)\nMichael Klesel • H. Felix Wittmann\nReceived: 22 July 2024 / Accepted: 7 April 2025 / Published online: 1 June 2025\n\u0002 The Author(s) 2025\nKeywords Retrieval-augmented generation \u0002 Artiﬁcial\nintelligence \u0002 Large language models \u0002 Information\nretrieval\n1 Introduction\nThe necessity for information is a fundamental aspect of\nhuman nature, and as such, there are ongoing efforts to\nenhance information retrieval with information systems\n(Alavi and Leidner 2001; Alavi et al. 2024). Companies\nare particularly affected by this, as they have extensive data\nat their disposal, and employees need to access it. Unfor-\ntunately, current systems are not able to adequately meet\nemployees’ expectations. In fact, studies have shown that\n79% of employees are dissatisﬁed with the user interfaces\nof enterprise search systems (Cleverley and Burnett 2019).\nThis has led to a need for new approaches that can better\naddress the information needs of organizations.\nConversational agents (CAs) powered by Artiﬁcial\nIntelligence (AI) and transformer-based large language\nmodels (LLMs) in particular (Vaswani et al. 2017) have\nrevolutionized the way information can be accessed today.\nWhen compared to traditional enterprise systems, CAs\noffer two key beneﬁts: Firstly, they enable users to pose\nquestions in a natural and intuitive manner using natural\nlanguage, receiving responses that are similarly conversa-\ntional. Secondly, they are increasingly capable of tackling\ncomplex search tasks, facilitating problem-solving and\ndecision-making in various domains (White 2024). For\ninstance, individuals can use CAs to access recipe infor-\nmation for cooking (Jaber et al. 2024) and to obtain\nassistance with complex chemistry-related tasks (Bran\net al. 2024) and geometric ",
+    "validation": {
+      "pages_read": 11,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": "10.1007/s12599-025-00945-3"
+  },
+  {
+    "number": 26,
+    "year": 2024,
+    "title": "RAGAs Automated Evaluation of Retrieval Augmented Generation",
+    "source_url": "https://aclanthology.org/2024.eacl-demo.16/",
+    "kind": "conference",
+    "status": "downloaded",
+    "filename": "26_2024_RAGAs-Automated-Evaluation-of-Retrieval-Augmented-Generation.pdf",
+    "pdf_url": "https://aclanthology.org/2024.eacl-demo.16.pdf",
+    "pages": 9,
+    "sha256": "e2038b8cff7574bf5302e1ceb6bfbac6d2471c352073b27f21460910936febce",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://aclanthology.org/2024.eacl-demo.16.pdf",
+        "http_status": 200
+      }
+    ],
+    "first_page_excerpt": "Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics\nSystem Demonstrations, pages 150–158\nMarch 17-22, 2024 c⃝2024 Association for Computational Linguistics\nRAGAS: Automated Evaluation of Retrieval Augmented Generation\nShahul Es†, Jithin James†, Luis Espinosa-Anke∗♢, Steven Schockaert∗\n†Exploding Gradients\n∗CardiffNLP, Cardiff University, United Kingdom\n♢AMPLYFI, United Kingdom\n{shahules786,jamesjithin97}@gmail.com\n{espinosa-ankel,schockaerts1}@cardiff.ac.uk\nAbstract\nWe introduce RAGAS1 (Retrieval Augmented\nGeneration Assessment), a framework for\nreference-free evaluation of Retrieval Aug-\nmented Generation (RAG) pipelines. RAG sys-\ntems are composed of a retrieval module and an\nLLM based generation module. They provide\nLLMs with knowledge from a reference corpus,\nwhich can help to keep LLM based systems\nup-to-date and can reduce the risk of halluci-\nnations, among others. However, evaluating\nRAG architectures is challenging because there\nare several dimensions to consider: the abil-\nity of the retrieval system to identify relevant\nand focused context passages, the ability of the\nLLM to exploit such passages in a faithful way,\nand the quality of the generation itself. With\nRAGAS, we put forward a suite of metrics\nwhich can be used to evaluate these different\ndimensions without having to rely on ground\ntruth human annotations. We posit that such\na framework can crucially contribute to faster\nevaluation cycles of RAG architectures, which\nis especially important given the fast adoption\nof LLMs.\n1\nIntroduction\nLanguage Models (LMs) capture a vast amount\nof knowledge about the world, which allows them\nto answer questions without accessing any exter-\nnal sources. This idea of LMs as repositories of\nknowledge emerged short",
+    "validation": {
+      "pages_read": 9,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": ""
+  },
+  {
+    "number": 27,
+    "year": 2023,
+    "title": "Enabling Large Language Models to Generate Text with Citations",
+    "source_url": "https://aclanthology.org/2023.emnlp-main.398/",
+    "kind": "conference",
+    "status": "downloaded",
+    "filename": "27_2023_Enabling-Large-Language-Models-to-Generate-Text-with-Citations.pdf",
+    "pdf_url": "https://aclanthology.org/2023.emnlp-main.398.pdf",
+    "pages": 24,
+    "sha256": "ae9868f07f0f7ffaae5346778f79b7827d9ec6b13b1e6aae4dff6b2ffc37a2e1",
+    "publisher_title": "",
+    "attempts": [
+      {
+        "url": "https://aclanthology.org/2023.emnlp-main.398.pdf",
+        "http_status": 200
+      }
+    ],
+    "first_page_excerpt": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing, pages 6465–6488\nDecember 6-10, 2023 ©2023 Association for Computational Linguistics\nEnabling Large Language Models to Generate Text with Citations\nTianyu Gao\nHoward Yen\nJiatong Yu\nDanqi Chen\nDepartment of Computer Science & Princeton Language and Intelligence\nPrinceton University\n{tianyug,hyen,jiatongy,danqic}@cs.princeton.edu\nAbstract\nLarge language models (LLMs) have emerged\nas a widely-used tool for information seeking,\nbut their generated outputs are prone to halluci-\nnation. In this work, our aim is to allow LLMs\nto generate text with citations, improving their\nfactual correctness and verifiability. Existing\nwork mainly relies on commercial search en-\ngines and human evaluation, making it chal-\nlenging to reproduce and compare different\nmodeling approaches. We propose ALCE, the\nfirst benchmark for Automatic LLMs’ Citation\nEvaluation. ALCE collects a diverse set of\nquestions and retrieval corpora and requires\nbuilding end-to-end systems to retrieve sup-\nporting evidence and generate answers with\ncitations. We develop automatic metrics along\nthree dimensions—fluency, correctness, and ci-\ntation quality—and demonstrate their strong\ncorrelation with human judgements. Our exper-\niments with state-of-the-art LLMs and novel\nprompting strategies show that current systems\nhave considerable room for improvement—For\nexample, on the ELI5 dataset, even the best\nmodels lack complete citation support 50% of\nthe time. Our analyses further highlight promis-\ning future directions, including developing bet-\nter retrievers, advancing long-context LLMs,\nand improving the ability to synthesize infor-\nmation from multiple sources.1\n1\nIntroduction\nLarge language models (LLMs; Brown et al., 2020;\nOpenAI",
+    "validation": {
+      "pages_read": 24,
+      "title_token_coverage": 1.0,
+      "sha256_verified": true
+    },
+    "doi_from_pdf": ""
+  }
+]
