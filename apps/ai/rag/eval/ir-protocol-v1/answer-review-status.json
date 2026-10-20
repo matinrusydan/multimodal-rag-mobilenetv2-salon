@@ -1,0 +1,127 @@
+{
+  "protocol": "manual_answer_audit_v1",
+  "total": 24,
+  "scored": 0,
+  "results": [
+    {
+      "id": "r01",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r02",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r03",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r04",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r05",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r06",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r07",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r08",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r09",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r10",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r11",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r12",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r13",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r14",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r15",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r16",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r17",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r18",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r19",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r20",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r21",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r22",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r23",
+      "status": "pending_manual_review",
+      "metrics": null
+    },
+    {
+      "id": "r24",
+      "status": "pending_manual_review",
+      "metrics": null
+    }
+  ]
+}

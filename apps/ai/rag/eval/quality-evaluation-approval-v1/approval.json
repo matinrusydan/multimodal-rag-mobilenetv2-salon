@@ -1,0 +1,14 @@
+{
+  "approved_at_utc_recorded": "2026-10-20T16:31:43.702571+00:00",
+  "source": "explicit_user_answer_in_this_chat",
+  "answer": "Izinkan evaluasi batch melalui ChatGPT",
+  "scope": "24 synthetic evaluation questions, provisional references, source excerpts and model answers; up to 24 pipeline calls and 6 AI judge batches",
+  "excluded": [
+    "credentials",
+    "customer identities/conversations",
+    "internal product brands",
+    "reservations",
+    "payments"
+  ],
+  "not_human_annotation_approval": true
+}

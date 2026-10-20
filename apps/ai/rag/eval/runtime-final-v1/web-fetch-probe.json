@@ -1,0 +1,12 @@
+{
+  "status": "fetched",
+  "characters": 7139,
+  "url": "https://www.alodokter.com/ketombe",
+  "fetched_at": "2026-10-20T15:53:36.432772+00:00",
+  "robots_url": "https://www.alodokter.com/robots.txt",
+  "robots_sha256": "1717ef900bd4c859e7900322a50609cd10c8142f07bea6d72471c3c9974e3e1f",
+  "content_sha256": "7f2d07421df86b5fcde1c9898a7d11234e7592b9b3802a395afe6a7f540303b0",
+  "fetch_method": "http_robots_checked",
+  "review_status": "external_unreviewed",
+  "promoted_to_curated_corpus": false
+}

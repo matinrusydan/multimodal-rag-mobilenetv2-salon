@@ -6,6 +6,7 @@ from decimal import Decimal
 
 from app.rag.answer_policy import source_payload
 from app.rag.retriever import RetrievedDoc
+from app.rag.service_matching import match_services
 
 MONEY = r'(?:rp\.?\s*)?(\d+(?:[.,]\d+)*)(?:\s*(ribu|rb|k|juta|jt)\b)?'
 CARE = re.compile(r'bagaimana|mengapa|kenapa|cara\b|kondisioner|conditioner|sampo|shampoo|keramas|kering|rusak|rontok|ketombe|perih|resep|obat')
@@ -85,9 +86,44 @@ def parse_catalog_query(query):
 
 def catalog_answer(query, corpus, *, mode='snapshot'):
     plan = parse_catalog_query(query)
+    records = [d for d in corpus if d['source_type']=='db']
+    named=match_services(query,records)
+    text=query.casefold()
+    history=bool(re.search(r'histori|riwayat|kemarin|sebelumnya|sebelum berubah|bulan lalu|minggu lalu|harga lama',text))
+    promotion=bool(re.search(r'\b(promo|diskon)\b',text))
+    quote=bool(named and re.search(r'\bmasih\b',text) and re.search(r'\d',text))
+    if not CARE.search(text) and (promotion or quote or (history and re.search(r'harga|biaya|tarif',text))):
+        docs=[RetrievedDoc(id=d['id'],file=d['file'],section=d['section'],snippet=d['text'],
+                           metadata={k:v for k,v in d.items() if k not in {'text','fields'}}) for d in named]
+        lines=[]
+        if mode!='unavailable':
+            for i,d in enumerate(named,1):
+                lines.append(f"- Harga reguler **{d['fields']['name']}** yang tercatat: **{rupiah(d['fields']['price'])}**. [{i}]")
+        if history or quote:lines.append('Riwayat perubahan harga belum tersedia pada sumber chatbot. Saya tidak dapat memastikan harga sebelumnya, tanggal perubahan, atau alasan perubahannya dari data saat ini.')
+        if promotion or quote:lines.append('Informasi promo, diskon, dan masa berlakunya belum tersedia pada sumber chatbot. Angka yang disebut dalam pertanyaan belum cukup untuk memastikan promo aktif atau menyimpulkan ada kesalahan pengguna.')
+        lines.append('Silakan konfirmasikan informasi tersebut kepada staf salon.')
+        if mode=='snapshot':lines.append('Harga yang ditampilkan berasal dari snapshot penelitian, bukan konfirmasi harga terkini.')
+        if mode=='unavailable':lines.insert(0,'Katalog aktif belum dapat diakses; harga reguler saat ini juga belum dapat dipastikan.')
+        return dict(plan={'kind':'unavailable_business_information'},catalog_ids=[d['id'] for d in named],
+                    fingerprint=hashlib.sha256(json.dumps(records,sort_keys=True).encode()).hexdigest(),
+                    status='policy_unavailable',docs=docs if mode!='unavailable' else [],
+                    sources=[source_payload(d,i,'deterministic_catalog_lookup') for i,d in enumerate(docs,1)] if mode!='unavailable' else [],
+                    reply='\n\n'.join(lines))
+    if plan is None and not CARE.search(text) and not re.search(r'promo|diskon|kemarin|histori|sebelum|dulu|bulan lalu|minggu lalu',text):
+        requested=[]
+        if re.search(r'\b(harga|biaya|tarif)\b',text):requested.append('price')
+        if re.search(r'\b(durasi|lama|menit)\b',text):requested.append('duration_min')
+        residual=text
+        for item in named:
+            residual=residual.replace(item['fields']['name'].casefold(),' ')
+        from app.rag.service_matching import ALIASES
+        for alias in ALIASES:residual=re.sub(r'(?<!\w)'+re.escape(alias)+r'(?!\w)',' ',residual)
+        allowed=set('berapa berapakah harga biaya tarif dan serta durasi lama menit reguler layanan treatment perawatan apa yang tercatat sekarang saat ini tolong sebutkan jelaskan perbedaan beda selisih dibanding dibandingkan bandingkan dengan antara itu nya salon di tien untuk'.split())
+        simple=all(word in allowed for word in re.findall(r'\w+',residual))
+        if requested and (mode=='unavailable' or not records or (named and simple)):
+            plan=dict(kind='named',filters=[],order='id',extreme=None,fields=requested)
     if plan is None:
         return None
-    records = [d for d in corpus if d['source_type']=='db']
     fingerprint = hashlib.sha256(json.dumps(records,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
     base = dict(plan=plan,catalog_ids=[d['id'] for d in records],fingerprint=fingerprint)
     if plan['kind']=='clarify_filter':
@@ -96,6 +132,27 @@ def catalog_answer(query, corpus, *, mode='snapshot'):
     if mode=='unavailable':
         return dict(base,status='policy_unavailable',sources=[],docs=[],
                     reply='Katalog layanan aktif belum dapat diakses. Daftar, harga, durasi, dan jumlah layanan belum dapat dipastikan. Silakan coba lagi atau konfirmasikan ke staf salon.')
+    if plan['kind']=='named':
+        if not named:
+            return dict(base,status='policy_unavailable',sources=[],docs=[],
+                        reply='Pada katalog yang terbaca belum ada layanan yang dapat dicocokkan. Harga dan durasi layanan tersebut belum dapat dipastikan. Silakan konfirmasikan kepada staf salon.')
+        docs=[RetrievedDoc(id=d['id'],file=d['file'],section=d['section'],snippet=d['text'],
+                           metadata={k:v for k,v in d.items() if k not in {'text','fields'}}) for d in named]
+        lines=[]
+        if len(named)>1:
+            lines.append('Berikut layanan berbeda yang tercantum pada katalog beserta informasi yang diminta:\n')
+        for number,d in enumerate(named,1):
+            fields=d['fields'];values=[]
+            if 'price' in plan['fields']:values.append('harga reguler **'+rupiah(fields['price'])+'**')
+            if 'duration_min' in plan['fields']:values.append('durasi **'+str(fields['duration_min'])+' menit**')
+            lines.append(f"- **{fields['name']}**: "+'; '.join(values)+f'. [{number}]')
+        if len(named)==2 and re.search(r'beda|banding|selisih',text):
+            a,b=[d['fields'] for d in named]
+            if 'price' in plan['fields']:lines.append('Selisih harga reguler: '+rupiah(abs(a['price']-b['price']))+'.')
+            if 'duration_min' in plan['fields']:lines.append('Selisih durasi: '+str(abs(a['duration_min']-b['duration_min']))+' menit.')
+        lines.append('\nData berasal dari '+('database aktif yang dibaca pada permintaan ini; harga saat reservasi mengikuti konfirmasi salon.' if mode=='live' else 'snapshot penelitian 20 Oktober 2026; bukan konfirmasi harga terkini.'))
+        return dict(base,status='catalog_lookup',sources=[source_payload(d,i,'deterministic_catalog_lookup') for i,d in enumerate(docs,1)],
+                    docs=docs,reply='\n'.join(lines))
     selected = records
     for op, value in plan['filters']:
         compare = {'lt':lambda p:p<value,'le':lambda p:p<=value,'gt':lambda p:p>value,'ge':lambda p:p>=value}[op]

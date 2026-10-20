@@ -1,0 +1,418 @@
+{
+  "protocol": "AI_authored_development_probes_v1",
+  "executed_at_utc": "2026-10-20T18:20:21.322561+00:00",
+  "corpus_sha256": "30019771903906f9fcc533ad9f5253d9369959ce4264301a5703d7560e946992",
+  "questions": 12,
+  "match_invariants_passed": 12,
+  "model_calls": 0,
+  "independent_test": false,
+  "semantic_answer_quality_scored": false,
+  "publication_ready": false,
+  "results": [
+    {
+      "family": "alias",
+      "question": "Berapa tarif hair spa?",
+      "matched_service_ids": [
+        "db:services:1"
+      ],
+      "expected_match_ids": [
+        "db:services:1"
+      ],
+      "match_invariant_passed": true,
+      "candidate_ids": [
+        "db:services:1",
+        "care:S01:conditioner-by-hair-type:v1",
+        "care:S01:heat-care:v1",
+        "care:S02:leave-in-placement:v1",
+        "care:S03:curly-detangling:v1"
+      ],
+      "selected_ids": [
+        "db:services:1"
+      ],
+      "selection": {
+        "strategy": "source_scoped_v2",
+        "input_count": 5,
+        "output_count": 1,
+        "reasons": [],
+        "selection_uses_gold": false
+      },
+      "catalog_route": "catalog_lookup",
+      "deterministic_reply": "- **Signature Hair Spa**: harga reguler **Rp325.000**. [1]\n\nData berasal dari snapshot penelitian 20 Oktober 2026; bukan konfirmasi harga terkini.",
+      "human_review_status": "pending",
+      "relevant_evidence_ids": null,
+      "reference_answer": null
+    },
+    {
+      "family": "case_spacing",
+      "question": "BERAPA harga   Signature Hair Spa?",
+      "matched_service_ids": [
+        "db:services:1"
+      ],
+      "expected_match_ids": [
+        "db:services:1"
+      ],
+      "match_invariant_passed": true,
+      "candidate_ids": [
+        "db:services:1",
+        "db:services:2",
+        "db:services:6",
+        "db:services:3",
+        "db:services:5"
+      ],
+      "selected_ids": [
+        "db:services:1"
+      ],
+      "selection": {
+        "strategy": "source_scoped_v2",
+        "input_count": 5,
+        "output_count": 1,
+        "reasons": [],
+        "selection_uses_gold": false
+      },
+      "catalog_route": "catalog_lookup",
+      "deterministic_reply": "- **Signature Hair Spa**: harga reguler **Rp325.000**. [1]\n\nData berasal dari snapshot penelitian 20 Oktober 2026; bukan konfirmasi harga terkini.",
+      "human_review_status": "pending",
+      "relevant_evidence_ids": null,
+      "reference_answer": null
+    },
+    {
+      "family": "mixed_english",
+      "question": "Harga Signature Hair Spa dan cara memakai conditioner?",
+      "matched_service_ids": [
+        "db:services:1"
+      ],
+      "expected_match_ids": [
+        "db:services:1"
+      ],
+      "match_invariant_passed": true,
+      "candidate_ids": [
+        "db:services:1",
+        "care:S02:leave-in-placement:v1",
+        "db:services:2",
+        "db:services:6",
+        "db:services:3"
+      ],
+      "selected_ids": [
+        "db:services:1",
+        "care:S02:leave-in-placement:v1"
+      ],
+      "selection": {
+        "strategy": "source_scoped_v2",
+        "input_count": 5,
+        "output_count": 2,
+        "reasons": [],
+        "selection_uses_gold": false
+      },
+      "catalog_route": null,
+      "deterministic_reply": null,
+      "human_review_status": "pending",
+      "relevant_evidence_ids": null,
+      "reference_answer": null
+    },
+    {
+      "family": "mixed_heat",
+      "question": "Tarif Precision Haircut dan tips membatasi panas styling?",
+      "matched_service_ids": [
+        "db:services:2"
+      ],
+      "expected_match_ids": [
+        "db:services:2"
+      ],
+      "match_invariant_passed": true,
+      "candidate_ids": [
+        "care:S01:heat-care:v1",
+        "db:services:2",
+        "db:services:6",
+        "care:S08:chemical-damage-background:v1",
+        "care:S04:hair-loss-referral:v1"
+      ],
+      "selected_ids": [
+        "care:S01:heat-care:v1",
+        "db:services:2"
+      ],
+      "selection": {
+        "strategy": "source_scoped_v2",
+        "input_count": 5,
+        "output_count": 2,
+        "reasons": [
+          "unique_ordered_phrase_match"
+        ],
+        "selection_uses_gold": false
+      },
+      "catalog_route": null,
+      "deterministic_reply": null,
+      "human_review_status": "pending",
+      "relevant_evidence_ids": null,
+      "reference_answer": null
+    },
+    {
+      "family": "two_services",
+      "question": "Bandingkan harga hair spa dengan scalp detox.",
+      "matched_service_ids": [
+        "db:services:1",
+        "db:services:5"
+      ],
+      "expected_match_ids": [
+        "db:services:1",
+        "db:services:5"
+      ],
+      "match_invariant_passed": true,
+      "candidate_ids": [
+        "db:services:1",
+        "db:services:5",
+        "db:services:2",
+        "db:services:6",
+        "db:services:4"
+      ],
+      "selected_ids": [
+        "db:services:1",
+        "db:services:5"
+      ],
+      "selection": {
+        "strategy": "source_scoped_v2",
+        "input_count": 5,
+        "output_count": 2,
+        "reasons": [],
+        "selection_uses_gold": false
+      },
+      "catalog_route": "catalog_lookup",
+      "deterministic_reply": "Berikut layanan berbeda yang tercantum pada katalog beserta informasi yang diminta:\n\n- **Signature Hair Spa**: harga reguler **Rp325.000**. [1]\n- **Scalp Detox Therapy**: harga reguler **Rp360.000**. [2]\nSelisih harga reguler: Rp35.000.\n\nData berasal dari snapshot penelitian 20 Oktober 2026; bukan konfirmasi harga terkini.",
+      "human_review_status": "pending",
+      "relevant_evidence_ids": null,
+      "reference_answer": null
+    },
+    {
+      "family": "mixed_two_needs",
+      "question": "Harga Signature Hair Spa dan cara memakai kondisioner serta menyisir rambut keriting?",
+      "matched_service_ids": [
+        "db:services:1"
+      ],
+      "expected_match_ids": [
+        "db:services:1"
+      ],
+      "match_invariant_passed": true,
+      "candidate_ids": [
+        "db:services:1",
+        "care:S01:conditioner-by-hair-type:v1",
+        "care:S03:curly-detangling:v1",
+        "db:services:2",
+        "db:services:3"
+      ],
+      "selected_ids": [
+        "db:services:1",
+        "care:S01:conditioner-by-hair-type:v1",
+        "care:S03:curly-detangling:v1"
+      ],
+      "selection": {
+        "strategy": "source_scoped_v2",
+        "input_count": 5,
+        "output_count": 3,
+        "reasons": [],
+        "selection_uses_gold": false
+      },
+      "catalog_route": null,
+      "deterministic_reply": null,
+      "human_review_status": "pending",
+      "relevant_evidence_ids": null,
+      "reference_answer": null
+    },
+    {
+      "family": "unknown",
+      "question": "Berapa harga Diamond Hair Therapy?",
+      "matched_service_ids": [],
+      "expected_match_ids": [],
+      "match_invariant_passed": true,
+      "candidate_ids": [
+        "db:services:1",
+        "db:services:5",
+        "db:services:2",
+        "db:services:6",
+        "db:services:3"
+      ],
+      "selected_ids": [
+        "db:services:1",
+        "db:services:5",
+        "db:services:2",
+        "db:services:6",
+        "db:services:3"
+      ],
+      "selection": {
+        "strategy": "source_scoped_v2",
+        "input_count": 5,
+        "output_count": 5,
+        "reasons": [],
+        "selection_uses_gold": false
+      },
+      "catalog_route": null,
+      "deterministic_reply": null,
+      "human_review_status": "pending",
+      "relevant_evidence_ids": null,
+      "reference_answer": null
+    },
+    {
+      "family": "typo",
+      "question": "Berapa harga Signatur Hair Spaa?",
+      "matched_service_ids": [],
+      "expected_match_ids": [],
+      "match_invariant_passed": true,
+      "candidate_ids": [
+        "db:services:1",
+        "db:services:2",
+        "db:services:6",
+        "db:services:3",
+        "db:services:5"
+      ],
+      "selected_ids": [
+        "db:services:1",
+        "db:services:2",
+        "db:services:6",
+        "db:services:3",
+        "db:services:5"
+      ],
+      "selection": {
+        "strategy": "source_scoped_v2",
+        "input_count": 5,
+        "output_count": 5,
+        "reasons": [],
+        "selection_uses_gold": false
+      },
+      "catalog_route": null,
+      "deterministic_reply": null,
+      "human_review_status": "pending",
+      "relevant_evidence_ids": null,
+      "reference_answer": null
+    },
+    {
+      "family": "name_substring",
+      "question": "Berapa harga superkeratin?",
+      "matched_service_ids": [],
+      "expected_match_ids": [],
+      "match_invariant_passed": true,
+      "candidate_ids": [
+        "db:services:2",
+        "db:services:6",
+        "db:services:3",
+        "db:services:5",
+        "db:services:4"
+      ],
+      "selected_ids": [
+        "db:services:2",
+        "db:services:6",
+        "db:services:3",
+        "db:services:5",
+        "db:services:4"
+      ],
+      "selection": {
+        "strategy": "source_scoped_v2",
+        "input_count": 5,
+        "output_count": 5,
+        "reasons": [],
+        "selection_uses_gold": false
+      },
+      "catalog_route": null,
+      "deterministic_reply": null,
+      "human_review_status": "pending",
+      "relevant_evidence_ids": null,
+      "reference_answer": null
+    },
+    {
+      "family": "unsupported_history",
+      "question": "Berapa harga keratin bulan lalu?",
+      "matched_service_ids": [
+        "db:services:3"
+      ],
+      "expected_match_ids": [
+        "db:services:3"
+      ],
+      "match_invariant_passed": true,
+      "candidate_ids": [
+        "db:services:3",
+        "db:services:2",
+        "db:services:6",
+        "db:services:5",
+        "db:services:4"
+      ],
+      "selected_ids": [
+        "db:services:3"
+      ],
+      "selection": {
+        "strategy": "source_scoped_v2",
+        "input_count": 5,
+        "output_count": 1,
+        "reasons": [],
+        "selection_uses_gold": false
+      },
+      "catalog_route": "policy_unavailable",
+      "deterministic_reply": "- Harga reguler **Keratin Smooth Treatment** yang tercatat: **Rp780.000**. [1]\n\nRiwayat perubahan harga belum tersedia pada sumber chatbot. Saya tidak dapat memastikan harga sebelumnya, tanggal perubahan, atau alasan perubahannya dari data saat ini.\n\nSilakan konfirmasikan informasi tersebut kepada staf salon.\n\nHarga yang ditampilkan berasal dari snapshot penelitian, bukan konfirmasi harga terkini.",
+      "human_review_status": "pending",
+      "relevant_evidence_ids": null,
+      "reference_answer": null
+    },
+    {
+      "family": "unknown_promo",
+      "question": "Apakah hair spa diskon hari ini?",
+      "matched_service_ids": [
+        "db:services:1"
+      ],
+      "expected_match_ids": [
+        "db:services:1"
+      ],
+      "match_invariant_passed": true,
+      "candidate_ids": [
+        "db:services:1",
+        "care:S01:conditioner-by-hair-type:v1",
+        "care:S01:heat-care:v1",
+        "care:S02:leave-in-placement:v1",
+        "care:S03:curly-detangling:v1"
+      ],
+      "selected_ids": [
+        "db:services:1"
+      ],
+      "selection": {
+        "strategy": "source_scoped_v2",
+        "input_count": 5,
+        "output_count": 1,
+        "reasons": [],
+        "selection_uses_gold": false
+      },
+      "catalog_route": "policy_unavailable",
+      "deterministic_reply": "- Harga reguler **Signature Hair Spa** yang tercatat: **Rp325.000**. [1]\n\nInformasi promo, diskon, dan masa berlakunya belum tersedia pada sumber chatbot. Angka yang disebut dalam pertanyaan belum cukup untuk memastikan promo aktif atau menyimpulkan ada kesalahan pengguna.\n\nSilakan konfirmasikan informasi tersebut kepada staf salon.\n\nHarga yang ditampilkan berasal dari snapshot penelitian, bukan konfirmasi harga terkini.",
+      "human_review_status": "pending",
+      "relevant_evidence_ids": null,
+      "reference_answer": null
+    },
+    {
+      "family": "service_name_styling",
+      "question": "Berapa tarif Volume Blowout Styling?",
+      "matched_service_ids": [
+        "db:services:6"
+      ],
+      "expected_match_ids": [
+        "db:services:6"
+      ],
+      "match_invariant_passed": true,
+      "candidate_ids": [
+        "db:services:6",
+        "care:S01:heat-care:v1",
+        "db:services:2",
+        "care:S01:conditioner-by-hair-type:v1",
+        "care:S02:leave-in-placement:v1"
+      ],
+      "selected_ids": [
+        "db:services:6"
+      ],
+      "selection": {
+        "strategy": "source_scoped_v2",
+        "input_count": 5,
+        "output_count": 1,
+        "reasons": [],
+        "selection_uses_gold": false
+      },
+      "catalog_route": "catalog_lookup",
+      "deterministic_reply": "- **Volume Blowout Styling**: harga reguler **Rp280.000**. [1]\n\nData berasal dari snapshot penelitian 20 Oktober 2026; bukan konfirmasi harga terkini.",
+      "human_review_status": "pending",
+      "relevant_evidence_ids": null,
+      "reference_answer": null
+    }
+  ]
+}

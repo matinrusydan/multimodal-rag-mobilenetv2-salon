@@ -1,0 +1,53 @@
+{
+  "executed_at_utc": "2026-10-20T15:58:50.973883+00:00",
+  "status": "configuration_ready",
+  "checks": [
+    {
+      "name": "retrieval_provider",
+      "ok": true,
+      "value": "bm25_source_balanced"
+    },
+    {
+      "name": "top_k",
+      "ok": true,
+      "value": 5
+    },
+    {
+      "name": "context_strategy",
+      "ok": true,
+      "value": "head"
+    },
+    {
+      "name": "generation_deadline",
+      "ok": true,
+      "value_seconds": 50.0
+    },
+    {
+      "name": "live_catalog_enabled",
+      "ok": true
+    },
+    {
+      "name": "runtime_corpus",
+      "ok": true,
+      "evidence_count": 7,
+      "business_snapshot_records": 0
+    },
+    {
+      "name": "generation_configuration",
+      "ok": true,
+      "provider": "chatgpt",
+      "model": "gpt-6.1-sol",
+      "application_session_available": true,
+      "inference_status": "not_tested_no_model_call"
+    },
+    {
+      "name": "catalog_api",
+      "ok": true,
+      "active_services": 6
+    }
+  ],
+  "limitations": [
+    "Application session presence is not an inference success.",
+    "No claim about publication readiness, cloud deployment or independent answer accuracy."
+  ]
+}

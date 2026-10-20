@@ -2,7 +2,7 @@
 
 Dokumen ini menjelaskan arsitektur keseluruhan RAG-salon: **website salon** (layanan, reservasi, pembayaran) yang digabung dengan **chatbot konsultasi rambut berbasis Multimodal RAG** (Computer Vision + LLM).
 
-> Status: **Sebagian dibangun** — `apps/api` + `apps/web` ada; `apps/ai` (FastAPI brain engine) masih rencana. Definisi label & kebutuhan produk diambil dari `PRD.md`.
+> Status 20 Oktober 2026: ketiga aplikasi sudah diimplementasikan. Profil RAG saat ini memakai BM25, katalog API aktif dan ChatGPT dengan izin aplikasi sendiri. Bagian Chroma/Gemini di bawah menjelaskan arsitektur awal/opsional. Lihat `docs/19-finalisasi-rag-dan-operasional.md` untuk konfigurasi operasional terbaru. Definisi label produk tetap mengikuti `PRD.md`.
 
 ---
 

@@ -8,13 +8,35 @@ import httpx
 
 from app.config import settings
 
+_catalog_client = None
+
+
+async def start_catalog_client():
+    global _catalog_client
+    if _catalog_client is None or _catalog_client.is_closed:
+        _catalog_client=httpx.AsyncClient(timeout=8,follow_redirects=False)
+
+
+async def close_catalog_client():
+    global _catalog_client
+    client=_catalog_client
+    _catalog_client=None
+    if client is not None:await client.aclose()
+
+
+async def _read_payload(client,url):
+    response=await client.get(url,headers={'Accept':'application/json'})
+    response.raise_for_status()
+    return response.json()
+
 
 async def load_services():
     url = settings.api_base_url.rstrip('/') + '/api/services'
-    async with httpx.AsyncClient(timeout=8, follow_redirects=False) as client:
-        response = await client.get(url, headers={'Accept': 'application/json'})
-        response.raise_for_status()
-        payload = response.json()
+    if _catalog_client is not None:
+        payload=await _read_payload(_catalog_client,url)
+    else:
+        async with httpx.AsyncClient(timeout=8, follow_redirects=False) as client:
+            payload=await _read_payload(client,url)
     rows = payload.get('data') if isinstance(payload, dict) else None
     if not isinstance(rows, list):
         raise ValueError('Invalid service catalog envelope')

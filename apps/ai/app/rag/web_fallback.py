@@ -1,188 +1,67 @@
-"""Live web fallback for the RAG pipeline.
-
-Saat query bertopik kesehatan rambut (rambut rontok, kebotakan, ketombe, dll.)
-dan knowledge base lokal tidak menjawab, sistem melakukan live-crawl
-alodokter.com via Crawl4AI (stealth mode) lalu menjawab dari konten hasil crawl.
-"""
-
-from __future__ import annotations
-
+"""Optional bounded HTTP fallback with robots checks and source provenance."""
 import asyncio
+from collections import OrderedDict
+import hashlib
 import logging
-import os
 import re
 import time
-from typing import Optional
+from urllib.parse import urlsplit
 
-from app.config import settings
-from app.crawler.stealth import crawl_url_sync, resolve_alodokter_slug
+import httpx
+
+from app.crawler.stealth import ALODOKTER_SLUG_MAP
 from app.rag.retriever import RetrievedDoc
+from app.rag.web_fetch import fetch_article
 
-logger = logging.getLogger(__name__)
-
-ALODOKTER_BASE = "https://www.alodokter.com"
-
-# Cache hasil crawl per-URL (TTL detik) — hindari buka browser berulang.
-_CRAWL_CACHE: dict[str, tuple[float, str]] = {}
-_CACHE_TTL = float(os.getenv("WEB_CACHE_TTL_SECONDS", "3600"))  # 1 jam
+logger=logging.getLogger(__name__)
+_CRAWL_CACHE=OrderedDict()
 
 
-def _crawl_target(query: str) -> str:
-    """Pilih URL artikel alodokter berdasar query."""
-    slug = resolve_alodokter_slug(query)
-    return f"{ALODOKTER_BASE}/{slug}"
+def needs_web_fallback(query,docs):
+    """A lexical coverage heuristic, not a semantic answerability judgment."""
+    terms=set(re.findall(r'ketombe|rontok|perih|gatal|luntur|kering|kusam|bercabang|patah|botak|alopecia|berminyak',query.casefold()))
+    local=' '.join(d.snippet or '' for d in docs if (d.metadata or {}).get('source_type')!='db').casefold()
+    return bool(terms) and not all(term in local for term in terms)
 
 
-def _cache_get(url: str) -> Optional[str]:
-    entry = _CRAWL_CACHE.get(url)
-    if entry is None:
-        return None
-    expires_at, md = entry
-    if time.monotonic() >= expires_at:
-        _CRAWL_CACHE.pop(url, None)
-        return None
-    return md
+def _crawl_target(query):
+    text=query.casefold()
+    for keyword,slug in sorted(ALODOKTER_SLUG_MAP.items(),key=lambda item:-len(item[0])):
+        if keyword in text:return 'https://www.alodokter.com/'+slug
+    return None
 
 
-def _cache_put(url: str, md: str) -> None:
-    _CRAWL_CACHE[url] = (time.monotonic() + _CACHE_TTL, md)
+def _chunk_text(text,max_chars=2500):
+    if max_chars<=100:raise ValueError('Chunk must exceed overlap')
+    return [text[i:i+max_chars] for i in range(0,len(text),max_chars-100)]
 
 
-def slug_of(url: str) -> str:
-    from urllib.parse import urlparse
-
-    return urlparse(url).path.strip("/") or "alodokter"
-
-
-def _clean_markdown(raw: str) -> str:
-    """Bersihkan markdown hasil crawl agar siap dipakai LLM & ditampilkan.
-
-    - Hapus baris navigasi/link menu berlebih ([ Pengertian ](...), ![...](...))
-    - Hapus URL mentah di markdown link, sisakan teks
-    - Rapikan whitespace
-    """
-    # Hapus image markdown ![alt](url)
-    raw = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", raw)
-    # Ubah [text](url) -> text
-    raw = re.sub(r"\[([^\]]+)\]\([^)]*\)", r"\1", raw)
-    # Hapus baris yang hanya berisi kata menu navigasi (Pengertian, Penyebab, dll.)
-    nav_words = r"(?:Pengertian|Penyebab|Gejala|Pengobatan|Komplikasi|Pencegahan|Diagnosis)"
-    raw = re.sub(rf"(?m)^\s*{nav_words}(?:\s+{nav_words})*\s*$", "", raw)
-    # Hapus baris "Artikel Terkait" / "Dokter Terkait" dan setelahnya
-    raw = re.sub(r"(?ms)^Artikel Terkait.*$", "", raw)
-    raw = re.sub(r"(?ms)^## Dokter Terkait.*$", "", raw)
-    # Hapus baris "Terakhir diperbarui: ..."
-    raw = re.sub(r"(?m)^Terakhir diperbarui:.*$", "", raw)
-    # Hapus baris "Chat Bersama Dokter" promo
-    raw = re.sub(r"(?m)^.*Chat Bersama Dokter.*$", "", raw)
-    # Hapus baris "Booking" promo link
-    raw = re.sub(r"(?m)^.*booking.*$", "", raw, flags=re.IGNORECASE)
-    # Rapikan whitespace
-    raw = re.sub(r"\n{3,}", "\n\n", raw).strip()
-    return raw
-
-
-def _short_summary(md: str, max_chars: int = 200) -> str:
-    """Ambil kalimat pertama yang substantif sebagai ringkasan singkat."""
-    lines = md.split("\n")
-    for line in lines:
-        stripped = line.strip()
-        if not stripped or stripped.startswith("#"):
-            continue
-        if len(stripped) < 40:
-            continue
-        clean = " ".join(stripped.split())
-        return clean[:max_chars] + ("…" if len(clean) > max_chars else "")
-    return " ".join(md.split())[:max_chars] + "…"
-
-
-def _chunk_text(text: str, max_chars: int = 3000) -> list[str]:
-    """Potong teks panjang jadi beberapa chunk ~max_chars (overlap kecil)."""
-    chunks: list[str] = []
-    step = max_chars
-    i = 0
-    while i < len(text):
-        chunks.append(text[i : i + step])
-        i += step - 100  # overlap 100
-    return chunks or [text]
-
-
-async def live_crawl_docs(
-    query: str,
-    *,
-    max_pages: int = 3,
-    delay: float = 0.5,
-) -> tuple[list[RetrievedDoc], list[dict]]:
-    """Crawl halaman alodokter relevan dan kembalikan dokumen + sources.
-
-    Hasil crawl di-cache per-URL (TTL) agar request berikutnya instan.
-
-    Returns:
-        (docs, sources) — docs untuk prompt Gemini (panjang), sources ringkas
-        untuk API ({"file", "url", "snippet"} unik per URL).
-    """
-    target = _crawl_target(query)
-    slug = slug_of(target)
-
-    md = _cache_get(target)
-    if md is not None:
-        logger.info("live web fallback: CACHE HIT %s (query=%r)", target, query)
+async def live_crawl_docs(query,*,max_pages=2,delay=1.5):
+    target=_crawl_target(query)
+    if target is None or max_pages<1:return [],[]
+    entry=_CRAWL_CACHE.get(target)
+    if entry and entry[0]>time.monotonic():
+        article=entry[1];_CRAWL_CACHE.move_to_end(target)
     else:
-        logger.info("live web fallback: crawl %s (query=%r)", target, query)
-        # Run in a worker thread so a fresh Proactor loop spawns the browser.
-        md, err = await asyncio.to_thread(crawl_url_sync, target, delay=delay)
-        if md is None:
-            logger.warning("live crawl gagal %s: %s", target, err)
-            return [], []
-        _cache_put(target, md)
-
-    # Bersihkan markdown untuk prompt (full konten) dan untuk ringkasan source.
-    clean_md = _clean_markdown(md)
-
-    docs: list[RetrievedDoc] = []
-    # Batasi jumlah chunk yang dipakai (prompt lebih kecil → LLM lebih cepat).
-    max_chunks = max(1, max_pages)
-    for chunk in _chunk_text(clean_md, max_chars=2500)[:max_chunks]:
-        docs.append(
-            RetrievedDoc(
-                file=f"web:{slug}",
-                section="web",
-                snippet=chunk,
-                distance=None,
-            )
-        )
-
-    # SATU source unik per URL — file tetap "web:{slug}" tapi frontend pakai
-    # key kombinasi file+index agar tidak ganda.
-    sources = [
-        {
-            "file": f"web:{slug}",
-            "url": target,
-            "snippet": _short_summary(clean_md, max_chars=180),
-        }
-    ]
-    return docs, sources
-
-
-async def answer_from_web(
-    query: str,
-    top_k: int = 2,
-) -> tuple[str, list[dict]]:
-    """Jawaban cepat dari hasil crawl web (tanpa ChromaDB)."""
-    docs, sources = await live_crawl_docs(query)
-    if not docs:
-        return (
-            "Maaf, kami tidak dapat mengambil informasi dari sumber web saat ini. "
-            "Silakan konsultasi langsung ke salon TIEN SALON.",
-            [],
-        )
-
-    lines = []
-    for i, d in enumerate(docs[:top_k], start=1):
-        snippet = " ".join((d.snippet or "").split())[:260]
-        lines.append(f"{i}. {snippet}")
-    reply = (
-        "Berdasarkan artikel kesehatan yang kami ambil langsung dari Alodokter"
-        " (alodokter.com), berikut informasinya:\n\n" + "\n".join(lines)
-    )
-    return reply, sources
+        _CRAWL_CACHE.pop(target,None)
+        try:
+            article=await fetch_article(target)
+        except (httpx.HTTPError,ValueError,asyncio.TimeoutError) as exc:
+            logger.info('Web fallback unavailable (%s); no browser retry',type(exc).__name__)
+            return [],[]
+        _CRAWL_CACHE[target]=(time.monotonic()+3600,article)
+        while len(_CRAWL_CACHE)>32:_CRAWL_CACHE.popitem(last=False)
+    # Rank all chunks; no assumption that evidence is at the article beginning.
+    from app.rag.lexical_index import BM25Index
+    chunks=_chunk_text(article['text'])
+    scores=BM25Index(chunks).scores(query)
+    order=sorted(range(len(chunks)),key=lambda i:(-scores[i],i))[:min(max_pages,2)]
+    digest=hashlib.sha256(article['url'].encode()).hexdigest()[:16]
+    docs=[]
+    for index in order:
+        docs.append(RetrievedDoc(id=f'web:{digest}:{index}',file='web:'+urlsplit(article['url']).path.strip('/'),
+            section='Artikel '+urlsplit(article['url']).hostname,snippet=chunks[index],
+            metadata={**{k:v for k,v in article.items() if k!='text'},'source_url':article['url'],
+                      'source_type':'web','chunk_index':index,'bm25_score':scores[index]}))
+    sources=[dict(file=d.file,url=article['url'],snippet=(d.snippet or '')[:180]) for d in docs[:1]]
+    return docs,sources

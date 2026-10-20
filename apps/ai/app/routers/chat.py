@@ -7,6 +7,7 @@ from pydantic import BaseModel, Field
 
 from app.rag.rag_service import rag_service
 from app.config import settings
+from app.rag.corpus_loader import CorpusError
 
 router = APIRouter()
 
@@ -23,12 +24,15 @@ async def chat(req: ChatRequest) -> dict:
     if not req.message.strip():
         raise HTTPException(status_code=400, detail="Pesan tidak boleh kosong")
 
-    result = await rag_service.answer(
-        query=req.message.strip(),
-        hair_context=req.hairContext,
-        hair_features=req.hairFeatures,
-        live_services=settings.rag_live_services,
-    )
+    try:
+        result = await rag_service.answer(
+            query=req.message.strip(),
+            hair_context=req.hairContext,
+            hair_features=req.hairFeatures,
+            live_services=settings.rag_live_services,
+        )
+    except CorpusError:
+        raise HTTPException(status_code=503,detail='Dokumen pengetahuan belum dapat dimuat. Silakan coba lagi atau hubungi staf salon.') from None
 
     return {
         "data": {

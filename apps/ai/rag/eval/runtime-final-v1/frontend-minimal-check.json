@@ -1,0 +1,37 @@
+{
+  "consult_page_status": 200,
+  "frontend_proxy_status": 200,
+  "frontend_response": {
+    "reply": "- **Volume Blowout Styling**: harga reguler **Rp280.000**; durasi **55 menit**. [1]\n\nData berasal dari database aktif yang dibaca pada permintaan ini; harga saat reservasi mengikuti konfirmasi salon.",
+    "sources": [
+      {
+        "id": "live:services:6",
+        "file": "services.live.json",
+        "section": "Volume Blowout Styling",
+        "title": "Data layanan: Volume Blowout Styling (database aktif)",
+        "snippet": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:58:41.367860+00:00.",
+        "usage": "deterministic_catalog_lookup",
+        "citation_number": 1
+      }
+    ],
+    "contextId": "ctx-bb29257f8c2d534b"
+  },
+  "passed": true,
+  "heavy_packages_installed": {
+    "chromadb": false,
+    "playwright": false,
+    "crawl4ai": false,
+    "onnxruntime": false,
+    "numpy": false
+  },
+  "python": "3.13.3",
+  "runtime_dependencies": {
+    "fastapi": "0.141.1",
+    "uvicorn": "0.53.0",
+    "pydantic": "2.13.5",
+    "python-dotenv": "1.2.3",
+    "httpx": "0.28.1",
+    "cryptography": "50.0.1"
+  },
+  "note": "Frontend to Express to RAG to live catalog; deterministic response, no model call."
+}

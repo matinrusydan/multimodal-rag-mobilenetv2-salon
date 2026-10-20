@@ -1,0 +1,87 @@
+{
+  "scope": "local deterministic chat paths through Express, no model calls",
+  "results": [
+    {
+      "concurrency": 1,
+      "requests": 6,
+      "successes": 6,
+      "median_seconds": 0.3145766500092577,
+      "p95_interpolated_seconds": 0.6756521749994135,
+      "rows": [
+        {
+          "question": "Berapa harga dan durasi Volume Blowout Styling?",
+          "status": 200,
+          "seconds": 0.36861570001929067
+        },
+        {
+          "question": "Berapa biaya treatment itu?",
+          "status": 200,
+          "seconds": 0.26053759999922477
+        },
+        {
+          "question": "Berapa dosis obat resep untuk ketombe?",
+          "status": 200,
+          "seconds": 0.00559310000971891
+        },
+        {
+          "question": "Berapa harga dan durasi Volume Blowout Styling?",
+          "status": 200,
+          "seconds": 0.608139799995115
+        },
+        {
+          "question": "Berapa biaya treatment itu?",
+          "status": 200,
+          "seconds": 0.6981563000008464
+        },
+        {
+          "question": "Berapa dosis obat resep untuk ketombe?",
+          "status": 200,
+          "seconds": 0.00659319999977015
+        }
+      ]
+    },
+    {
+      "concurrency": 3,
+      "requests": 6,
+      "successes": 6,
+      "median_seconds": 0.8279275999957463,
+      "p95_interpolated_seconds": 1.2875846999886562,
+      "rows": [
+        {
+          "question": "Berapa harga dan durasi Volume Blowout Styling?",
+          "status": 200,
+          "seconds": 0.9329690999875311
+        },
+        {
+          "question": "Berapa biaya treatment itu?",
+          "status": 200,
+          "seconds": 1.4057898999890313
+        },
+        {
+          "question": "Berapa dosis obat resep untuk ketombe?",
+          "status": 200,
+          "seconds": 0.922934800008079
+        },
+        {
+          "question": "Berapa harga dan durasi Volume Blowout Styling?",
+          "status": 200,
+          "seconds": 0.7329203999834135
+        },
+        {
+          "question": "Berapa biaya treatment itu?",
+          "status": 200,
+          "seconds": 0.7216171000036411
+        },
+        {
+          "question": "Berapa dosis obat resep untuk ketombe?",
+          "status": 200,
+          "seconds": 0.24120950000360608
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Six samples per level only; exploratory p95, not capacity certification.",
+    "No generative concurrency or cloud cold-start measurement."
+  ]
+}

@@ -50,7 +50,10 @@ async def test_new_price_and_inactive_service_follow_next_request(monkeypatch, r
     second = await ask()
     assert '300,000' in second['_trace']['contexts'][0]
     assert first['contextId'] != second['contextId']
-    assert 'not_live_database' not in second['_trace']['prompt_messages'][0]['content']
+    assert second['_trace']['prompt_messages'] is None
+    assert second['_trace']['generation_status']=='catalog_lookup'
+    assert 'Rp300.000' in second['reply']
+    runtime.assert_not_awaited()
     state['inactive'] = True
     third = await ask()
     assert not any(d['metadata']['source_type']=='db' for d in third['_trace']['retrieved_docs'])
@@ -66,7 +69,10 @@ async def test_bad_catalog_never_restores_snapshot_prices(monkeypatch, runtime, 
     trace=result['_trace']
     assert trace['business_source_mode']=='unavailable'
     assert not any(d['metadata']['source_type']=='db' for d in trace['retrieved_docs'])
-    assert 'API katalog gagal' in trace['prompt_messages'][0]['content']
+    assert trace['generation_status']=='policy_unavailable'
+    assert trace['prompt_messages'] is None
+    assert 'belum dapat diakses' in result['reply']
+    runtime.assert_not_awaited()
     assert '325,000' not in json.dumps(trace['contexts'])
 
 
@@ -99,3 +105,22 @@ async def test_router_enables_configured_live_catalog(monkeypatch):
     monkeypatch.setattr(rag_service.rag_service,'answer',answer)
     await chat(ChatRequest(message='test'))
     assert answer.call_args.kwargs['live_services'] is True
+
+
+@pytest.mark.asyncio
+async def test_connection_reuse_still_reads_changed_prices_and_closes_cleanly(monkeypatch):
+    state={'price':280000,'calls':0}
+    def handler(request):
+        state['calls']+=1
+        return httpx.Response(200,json={'data':[row(price=state['price'])]})
+    client=httpx.AsyncClient(transport=httpx.MockTransport(handler))
+    monkeypatch.setattr(live_services,'_catalog_client',client)
+    try:
+        first=await live_services.load_services()
+        state['price']=310000
+        second=await live_services.load_services()
+        assert first[0]['fields']['price']==280000 and second[0]['fields']['price']==310000
+        assert state['calls']==2 and not client.is_closed
+    finally:
+        await live_services.close_catalog_client()
+    assert client.is_closed and live_services._catalog_client is None

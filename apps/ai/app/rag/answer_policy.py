@@ -11,20 +11,21 @@ def service_clarification(query: str, corpus_file: Path, *, corpus=None, live=Fa
     if parse_catalog_query(query) is not None:
         return None  # Explicit catalog operations are handled before clarification.
     text=' '.join(query.casefold().split())
-    if not re.search(r'\b(harga|biaya|tarif|price|cost)\b',text):return None
-    if not re.search(r'\b(treatment|perawatan|layanan|itu|tersebut|tadi)\b',text):return None
+    if not re.search(r'\b(harga|biaya|tarif|price|cost|durasi)\b',text):return None
+    if not re.search(r'\b(harga|biaya|tarif|price|cost)\b',text) and re.search(r'kondisioner|conditioner|leave[ -]?in|sampo|shampoo',text):
+        return None  # Product dwell time is not a request for a salon service.
+    if re.search(r'promo|diskon|histori|kemarin|dulu|sebelum|bulan lalu|minggu lalu',text):return None
     if corpus is None:corpus=json.loads(corpus_file.read_text(encoding='utf-8'))
     services=[d for d in corpus if d['source_type']=='db']
     if not services:return None
-    aliases=['hair spa','haircut','keratin','smoothing','scalp detox','color gloss','blowout']
     names=[d['fields']['name'] for d in services]
-    if any(name.casefold() in text for name in names):return None
-    if any(re.search(r'\b'+re.escape(alias)+r'\b',text) and any(alias in n.casefold() for n in names) for alias in aliases):return None
+    from app.rag.service_matching import match_services
+    if match_services(query,services):return None
     reply='Treatment atau layanan yang Anda maksud yang mana? Pilihan pada '+('katalog aktif salon' if live else 'katalog penelitian ini')+':\n\n'
-    reply+='\n'.join('- '+name for name in names)
+    reply+='\n'.join('- '+name+' [1]' for name in names)
     reply+='\n\nSilakan pilih atau sebutkan nama layanannya agar saya dapat memberikan harga yang tepat.'
     return {'reply':reply,'sources':[{'id':'live:service-options' if live else 'snapshot:service-options','file':'services.live.json' if live else 'services.snapshot.json',
-             'title':'Pilihan layanan — katalog aktif salon' if live else 'Pilihan layanan — katalog snapshot penelitian','snippet':'; '.join(names),'usage':'catalog_options'}],
+             'title':'Pilihan layanan — katalog aktif salon' if live else 'Pilihan layanan — katalog snapshot penelitian','snippet':'; '.join(names),'usage':'catalog_options','citation_number':1}],
             'catalog_ids':[d['id'] for d in services]}
 
 

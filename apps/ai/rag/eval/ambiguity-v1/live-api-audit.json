@@ -1,0 +1,830 @@
+{
+  "executed_at_utc": "2026-10-20T19:02:39.481016+00:00",
+  "protocol": "ambiguity_development_route_audit_v1",
+  "model_calls": 0,
+  "checks": 20,
+  "passed": 20,
+  "independent_test": false,
+  "human_semantic_approval": false,
+  "answer_generation_quality_scored": false,
+  "limitations": [
+    "Finite development cases; natural-language ambiguity cannot be exhaustively eliminated.",
+    "Explicit-type paths use offline extracts; generated answer meaning is not measured.",
+    "HTTP checks use current live catalog; snapshot price checks assume the listed service price has not changed."
+  ],
+  "implementation_sha256": {
+    "agent_service.py": "794a87b9b18872a56099a6b64498f232d133ce142430029f9f128a50f5e67f1b",
+    "agent_tools.py": "05071fa3c4457f5447fbc0d038e876d5f57a17d68bb4b542f39b10e490f422c9",
+    "algorithm_trial.py": "4ae398ea765f57255e6cef6ae26e7afeeb1e82fd7e40082a81a5f24ffb4fc7d4",
+    "ambiguity_audit.py": "ced5b458599c5d6614c955f816530c8dae08439c9285d82eb2addfa7bf91985e",
+    "answer_audit.py": "5ecf2f68b73c6e963c64191ff11a68ca8dceadfc10d635f66a12fb13161126b0",
+    "answer_policy.py": "cb1d6db78fb3454a4b6eb0b0c5b7236f6935df21d747b7be47c3169b50450688",
+    "api_client.py": "fae35502203f51ee176954354b5e27825f763159bbfb7c0ecf43bfef1130bfd0",
+    "bm25_retrieval.py": "f32891451c441e078d70a19864ddd87141bf88aa9c5350c18078d9dec42743af",
+    "build_runtime_corpus.py": "706fd57b776d9214e85c4d930c7b337f4a9921ee87c6fc6ac87c4529eef91da4",
+    "care_intent.py": "f87333266ae1564686b17fea2e2186b797366e1b67fdba28a90dda77373e1b24",
+    "catalog_operations.py": "c1a539977ab89a869231fe3066c3b62ffb1494d8f83f6efc7c87d58f30620cc2",
+    "chatgpt_plan.py": "b6efc8e343ba17a443979f3cb5c99094418cf34028d376f36858b776f0c87ee4",
+    "chunker.py": "a2b4bb505826153cb456f520092733f78383b372e5df0cfec673ca71d7c5b713",
+    "context_selection.py": "eed5b9bb452ad5b710af4df191adf449d7843953b11edd585e493f068c446aeb",
+    "corpus_loader.py": "4d2d0ba1fdf3faac87de4c5605c2fedb7fb9c320c6b5094c15aa0db73802ca85",
+    "curated_baseline.py": "792262246df524b44283ca1a4a09eb56dc19a033d40930fc36a0e02acd0caf7c",
+    "db_serializer.py": "ae8c221aee1a9691436e28ea88070d0957d6cab2ccd8222716b5edcc05c839e5",
+    "embedding.py": "05e6e37a21b8ffacbadcbadce9193baedc92e49627e7799321b2979d7bddffcb",
+    "eval_rag.py": "5290c83687d97b39297ad1e779c3fcbe81e5697cd6f8f11ea01a55f9881ae88e",
+    "evidence_selection.py": "924ca68dab6a99c1fc4853805932b9eedb1ed0645577b844fdc937d156f4c500",
+    "experiment_ir.py": "8e8be07decbbbd7e45c8fed8efebb71b1a5dd40a096b59db8ed769a4785b1434",
+    "ingest.py": "523fc9f0c31644e2e55d925465eec206fa2cf83baab0d51518d590442ae9c355",
+    "ir_metrics.py": "091b12e84e3d71908831a9663a502030f9180a8951508728a8d06ab02d1d0f6d",
+    "lexical_index.py": "1349b01be9bffaeb9c0ece1867ff564fea7ab4e2f8b475a308922b00dc159ea1",
+    "live_services.py": "4d6541241af769f43d395aa5bf3b0df051f46cc56ec5517f79eeff1393b37eae",
+    "pilot.py": "71a426649854588e4c0a78c6219392e2b97eb463dbd6eebedf8f24c6c8be9b12",
+    "preflight.py": "515edd5d1fbe89bbcdac19866e3debe03d50fa442c3a50e24aba708f8a3d573f",
+    "prompt_builder.py": "49162b7cac994c9467e56bfd6e41af0a9abe6cfecf724257fd53bcc32925a424",
+    "quality_study.py": "65ae5fbc668650e6d4c6fde0a65d9cb6275db154c0eb6f84af0a4da247bb9ad7",
+    "query_planning.py": "a0efa435471acea343e149f274331eba31a7e9a8efb938d5c034a25cabf35fc0",
+    "rag_service.py": "d6a52548e9045fd3b8a501b96ac54716b259088e008f1527e7dd17787d3251c8",
+    "resume_quality.py": "e3a784f218271a3705b89030a17e25536f741190a5576edd8d7d6487ef177710",
+    "retriever.py": "dadf93a0c52ba3340577c1036ebac56b364dad47db8ac0b640bbb05b775028cf",
+    "robustness_probe.py": "4608e5ba3855fd68ca0e1f15582deac74e01d66769486355d605b69ac0785762",
+    "scope_policy.py": "7bd90f39e841c9074a34d2cfd1bf5ea8e0aa7498d7a7ee54dfe1d7b92c899675",
+    "service_matching.py": "ca5b0eb88095b6b6819f07c0d26c7fc8a028a639e41608f454515864f3a8a852",
+    "smoke_runtime.py": "fcd24053f99723907267f8bcf6c3c24275ed994238820c0dd811756a6fb6fec3",
+    "split_guard.py": "727dde7bc2c1bec052b2110ec381e2d164c9fda2762ec85046ba737200d01e8f",
+    "sync_catalog.py": "86e6c7b927e0bb2876591ef112986644cbab1010fd2d117c220fde8a30f4630c",
+    "vector_store.py": "3b0966a0af21477039e92abb11c10997fb954780b31be83e6272967ae4ef293f",
+    "web_fallback.py": "13f40cffee4ecfa794eca2cf9852888f6365e3834bf69c31ea0d034b50f5ee7c",
+    "web_fetch.py": "a1a41d769f6818b546dbe126bb2d73b11f2372a83ff866252a27e4e4bd0f84d9",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "offline_results": [
+    {
+      "id": "generic",
+      "question": "Bagaimana memakai conditioner?",
+      "expected_route": "policy_clarification",
+      "passed": true,
+      "response": {
+        "reply": "Kondisioner yang Anda maksud **kondisioner bilas** atau **leave-in/tanpa bilas**? Petunjuk pemakaiannya perlu dibedakan. Tulis jenisnya dalam pertanyaan berikutnya, misalnya “Bagaimana memakai kondisioner bilas untuk rambut kering?” atau “Bagaimana memakai leave-in untuk rambut keriting?”.",
+        "sources": [],
+        "contextId": "ctx-ce142e8dd25f460c",
+        "_trace": {
+          "generation_status": "policy_clarification",
+          "generation_provider": "deterministic_policy",
+          "policy_rule": "conditioner_type_unspecified",
+          "actual_generation_model": null,
+          "retrieved_docs": [],
+          "contexts": [],
+          "prompt_messages": null,
+          "business_source_mode": "snapshot",
+          "retrieval_provider": "explicit_product_clarification"
+        }
+      }
+    },
+    {
+      "id": "dry",
+      "question": "Bagaimana memakai kondisioner untuk rambut kering?",
+      "expected_route": "policy_clarification",
+      "passed": true,
+      "response": {
+        "reply": "Kondisioner yang Anda maksud **kondisioner bilas** atau **leave-in/tanpa bilas**? Petunjuk pemakaiannya perlu dibedakan. Tulis jenisnya dalam pertanyaan berikutnya, misalnya “Bagaimana memakai kondisioner bilas untuk rambut kering?” atau “Bagaimana memakai leave-in untuk rambut keriting?”.",
+        "sources": [],
+        "contextId": "ctx-f5003f3f018f139e",
+        "_trace": {
+          "generation_status": "policy_clarification",
+          "generation_provider": "deterministic_policy",
+          "policy_rule": "conditioner_type_unspecified",
+          "actual_generation_model": null,
+          "retrieved_docs": [],
+          "contexts": [],
+          "prompt_messages": null,
+          "business_source_mode": "snapshot",
+          "retrieval_provider": "explicit_product_clarification"
+        }
+      }
+    },
+    {
+      "id": "rinse_question",
+      "question": "Apakah conditioner tidak perlu dibilas?",
+      "expected_route": "policy_clarification",
+      "passed": true,
+      "response": {
+        "reply": "Kondisioner yang Anda maksud **kondisioner bilas** atau **leave-in/tanpa bilas**? Petunjuk pemakaiannya perlu dibedakan. Tulis jenisnya dalam pertanyaan berikutnya, misalnya “Bagaimana memakai kondisioner bilas untuk rambut kering?” atau “Bagaimana memakai leave-in untuk rambut keriting?”.",
+        "sources": [],
+        "contextId": "ctx-5a593d8fcedc93fa",
+        "_trace": {
+          "generation_status": "policy_clarification",
+          "generation_provider": "deterministic_policy",
+          "policy_rule": "conditioner_type_unspecified",
+          "actual_generation_model": null,
+          "retrieved_docs": [],
+          "contexts": [],
+          "prompt_messages": null,
+          "business_source_mode": "snapshot",
+          "retrieval_provider": "explicit_product_clarification"
+        }
+      }
+    },
+    {
+      "id": "mixed",
+      "question": "Berapa harga Signature Hair Spa dan cara memakai conditioner?",
+      "expected_route": "policy_clarification",
+      "passed": true,
+      "response": {
+        "reply": "- **Signature Hair Spa**: harga reguler **Rp325.000**. [1]\n\nData berasal dari snapshot penelitian 20 Oktober 2026; bukan konfirmasi harga terkini.\n\nKondisioner yang Anda maksud **kondisioner bilas** atau **leave-in/tanpa bilas**? Petunjuk pemakaiannya perlu dibedakan. Tulis jenisnya dalam pertanyaan berikutnya, misalnya “Bagaimana memakai kondisioner bilas untuk rambut kering?” atau “Bagaimana memakai leave-in untuk rambut keriting?”.",
+        "sources": [
+          {
+            "id": "db:services:1",
+            "file": "services.snapshot.json",
+            "section": "Signature Hair Spa",
+            "title": "Data layanan: Signature Hair Spa (snapshot penelitian)",
+            "snippet": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+            "usage": "deterministic_catalog_lookup",
+            "citation_number": 1
+          }
+        ],
+        "contextId": "ctx-5c75e1e24c253799",
+        "_trace": {
+          "generation_status": "policy_clarification",
+          "generation_provider": "deterministic_policy",
+          "policy_rule": "conditioner_type_unspecified",
+          "actual_generation_model": null,
+          "retrieved_docs": [
+            {
+              "id": "db:services:1",
+              "file": "services.snapshot.json",
+              "section": "Signature Hair Spa",
+              "snippet": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+              "metadata": {
+                "id": "db:services:1",
+                "source_type": "db",
+                "topic": "katalog",
+                "file": "services.snapshot.json",
+                "section": "Signature Hair Spa",
+                "captured_at": "2026-10-20T07:51:39.271Z",
+                "sha256": "1cfe233bbdb668067c10cc7d608c9b3c4783a7bb597d764ef689d51349b7370b",
+                "review_status": "snapshot_verified_not_owner_validated"
+              }
+            }
+          ],
+          "contexts": [
+            "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+          ],
+          "prompt_messages": null,
+          "business_source_mode": "snapshot",
+          "retrieval_provider": "explicit_product_clarification"
+        }
+      }
+    },
+    {
+      "id": "unknown_service",
+      "question": "Berapa harga Diamond Hair Therapy dan cara memakai kondisioner?",
+      "expected_route": "policy_clarification",
+      "passed": true,
+      "response": {
+        "reply": "Treatment atau layanan yang Anda maksud yang mana? Pilihan pada katalog penelitian ini:\n\n- Signature Hair Spa [1]\n- Precision Haircut [1]\n- Keratin Smooth Treatment [1]\n- Color Gloss Refresh [1]\n- Scalp Detox Therapy [1]\n- Volume Blowout Styling [1]\n\nSilakan pilih atau sebutkan nama layanannya agar saya dapat memberikan harga yang tepat.",
+        "sources": [
+          {
+            "id": "snapshot:service-options",
+            "file": "services.snapshot.json",
+            "title": "Pilihan layanan — katalog snapshot penelitian",
+            "snippet": "Signature Hair Spa; Precision Haircut; Keratin Smooth Treatment; Color Gloss Refresh; Scalp Detox Therapy; Volume Blowout Styling",
+            "usage": "catalog_options",
+            "citation_number": 1
+          }
+        ],
+        "contextId": "ctx-5e4976cd7ec6ffdd",
+        "_trace": {
+          "generation_status": "policy_clarification",
+          "generation_provider": "local",
+          "actual_generation_model": null,
+          "retrieved_docs": [],
+          "contexts": [],
+          "prompt_messages": null,
+          "catalog_evidence_ids": [
+            "db:services:1",
+            "db:services:2",
+            "db:services:3",
+            "db:services:4",
+            "db:services:5",
+            "db:services:6"
+          ],
+          "business_source_mode": "snapshot",
+          "retrieval_provider": "bm25_source_balanced"
+        }
+      }
+    },
+    {
+      "id": "pronoun_product",
+      "question": "Produk ini boleh dipakai setiap hari?",
+      "expected_route": "policy_clarification",
+      "passed": true,
+      "response": {
+        "reply": "Produk yang Anda maksud yang mana? Sebutkan jenis produk dan petunjuk pemakaian pada kemasannya yang ingin ditanyakan. Saya belum dapat memastikan cara pakai atau kecocokannya hanya dari sebutan “produk ini/itu”. Anda tidak perlu menyebut merek produk internal TIEN SALON.",
+        "sources": [],
+        "contextId": "ctx-a9e56a863268fc1b",
+        "_trace": {
+          "generation_status": "policy_clarification",
+          "generation_provider": "deterministic_policy",
+          "policy_rule": "product_reference_unspecified",
+          "actual_generation_model": null,
+          "retrieved_docs": [],
+          "contexts": [],
+          "prompt_messages": null,
+          "business_source_mode": "snapshot",
+          "retrieval_provider": "explicit_product_clarification"
+        }
+      }
+    },
+    {
+      "id": "pronoun_treatment",
+      "question": "Setelah treatment itu kapan boleh keramas?",
+      "expected_route": "policy_clarification",
+      "passed": true,
+      "response": {
+        "reply": "Layanan atau treatment yang Anda maksud yang mana? Sebutkan nama layanan dalam pertanyaan agar petunjuknya tidak tertukar. Untuk instruksi setelah treatment, konfirmasikan kepada staf yang menangani.",
+        "sources": [],
+        "contextId": "ctx-7601ae08a9266ce2",
+        "_trace": {
+          "generation_status": "policy_clarification",
+          "generation_provider": "deterministic_policy",
+          "policy_rule": "service_reference_unspecified",
+          "actual_generation_model": null,
+          "retrieved_docs": [],
+          "contexts": [],
+          "prompt_messages": null,
+          "business_source_mode": "snapshot",
+          "retrieval_provider": "explicit_product_clarification"
+        }
+      }
+    },
+    {
+      "id": "rinse_explicit",
+      "question": "Bagaimana memakai conditioner bilas untuk rambut kering?",
+      "expected_route": "offline_extracts",
+      "passed": true,
+      "response": {
+        "reply": "Penyusunan jawaban otomatis sedang tidak tersedia. Berikut kutipan sumber yang berhasil ditemukan untuk \"Bagaimana memakai conditioner bilas untuk rambut kering?\":\n\n1. education/conditioner-by-hair-type — Kondisioner sesuai tipe rambut\n   Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut.\n2. education/curly-detangling — Mengurai kusut pada rambut keriting\n   Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering.",
+        "sources": [
+          {
+            "id": "care:S01:conditioner-by-hair-type:v1",
+            "file": "education/conditioner-by-hair-type.md",
+            "section": "Kondisioner sesuai tipe rambut",
+            "title": "Kondisioner sesuai tipe rambut",
+            "snippet": "Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut.",
+            "usage": "retrieved_excerpt",
+            "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/healthy-hair-tips"
+          },
+          {
+            "id": "care:S03:curly-detangling:v1",
+            "file": "education/curly-detangling.md",
+            "section": "Mengurai kusut pada rambut keriting",
+            "title": "Mengurai kusut pada rambut keriting",
+            "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering.",
+            "usage": "retrieved_excerpt",
+            "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/curly-hair-care"
+          }
+        ],
+        "contextId": "ctx-6b49ac6db338aefe",
+        "_trace": {
+          "retrieved_docs": [
+            {
+              "id": "care:S01:conditioner-by-hair-type:v1",
+              "file": "education/conditioner-by-hair-type.md",
+              "section": "Kondisioner sesuai tipe rambut",
+              "snippet": "Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut.",
+              "distance": null,
+              "metadata": {
+                "id": "care:S01:conditioner-by-hair-type:v1",
+                "section": "Kondisioner sesuai tipe rambut",
+                "source_type": "official_professional_guidance",
+                "topic": "tips-perawatan",
+                "file": "education/conditioner-by-hair-type.md",
+                "source_id": "S01",
+                "source_url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/healthy-hair-tips",
+                "source_date": "2024-08-12",
+                "source_date_kind": "last_updated_or_reviewed",
+                "source_locator": "Items 4–6; Last updated 8/12/24",
+                "content_origin": "assistant-authored Indonesian paraphrase of inspected first-party source",
+                "scope_limit": "Konteks tipe rambut harus dipertahankan; bukan aturan semua produk selalu dari tengah ke ujung.",
+                "review_status": "candidate_pending_researcher_review",
+                "medical_expert_validated": false,
+                "sha256": "08b90466e70b007a24db45c7de046cd264ca8515aa0c1cd03db29a3ba2bfcfa6",
+                "retrieval_provider": "bm25_source_balanced",
+                "bm25_score": 5.4259533143868275,
+                "context_selection": {
+                  "strategy": "source_scoped_v2",
+                  "input_count": 5,
+                  "output_count": 2,
+                  "reasons": [
+                    "unique_ordered_phrase_match",
+                    "distinct_caveat_retained"
+                  ],
+                  "selection_uses_gold": false
+                },
+                "ranking_query": "Bagaimana memakai kondisioner bilas untuk rambut kering?"
+              }
+            },
+            {
+              "id": "care:S03:curly-detangling:v1",
+              "file": "education/curly-detangling.md",
+              "section": "Mengurai kusut pada rambut keriting",
+              "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering.",
+              "distance": null,
+              "metadata": {
+                "id": "care:S03:curly-detangling:v1",
+                "section": "Mengurai kusut pada rambut keriting",
+                "source_type": "official_professional_guidance",
+                "topic": "tips-perawatan",
+                "file": "education/curly-detangling.md",
+                "source_id": "S03",
+                "source_url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/curly-hair-care",
+                "source_date": "2022-06-29",
+                "source_date_kind": "last_updated_or_reviewed",
+                "source_locator": "Detangle your hair; Last updated 6/29/22",
+                "content_origin": "assistant-authored Indonesian paraphrase of inspected first-party source",
+                "scope_limit": "Jangan menerapkan konteks keriting pada semua rambut kering yang tipenya belum diketahui.",
+                "review_status": "candidate_pending_researcher_review",
+                "medical_expert_validated": false,
+                "sha256": "dd4735eb0ccc2e023ab2a1527c73235be4cf6c63ae58bd077273e64eefcd6059",
+                "retrieval_provider": "bm25_source_balanced",
+                "bm25_score": 2.5737262140773307,
+                "context_selection": {
+                  "strategy": "source_scoped_v2",
+                  "input_count": 5,
+                  "output_count": 2,
+                  "reasons": [
+                    "unique_ordered_phrase_match",
+                    "distinct_caveat_retained"
+                  ],
+                  "selection_uses_gold": false
+                },
+                "ranking_query": "Bagaimana memakai kondisioner bilas untuk rambut kering?"
+              }
+            }
+          ],
+          "contexts": [
+            "Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut.",
+            "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+          ],
+          "context_spans": null,
+          "prompt_messages": null,
+          "generation_status": "offline_extracts",
+          "source_mode": "kb",
+          "actual_generation_model": null,
+          "generation_provider": "local",
+          "retrieval_provider": "bm25_source_balanced",
+          "business_source_mode": "snapshot",
+          "citations": null,
+          "model_policy": "runtime_race; actual model not retained"
+        }
+      }
+    },
+    {
+      "id": "leave_in_explicit",
+      "question": "Bagaimana memakai kondisioner tanpa bilas?",
+      "expected_route": "offline_extracts",
+      "passed": true,
+      "response": {
+        "reply": "Penyusunan jawaban otomatis sedang tidak tersedia. Berikut kutipan sumber yang berhasil ditemukan untuk \"Bagaimana memakai kondisioner tanpa bilas?\":\n\n1. education/leave-in-placement — Pemakaian leave-in conditioner\n   Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan.\n2. education/curly-detangling — Mengurai kusut pada rambut keriting\n   Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering.",
+        "sources": [
+          {
+            "id": "care:S02:leave-in-placement:v1",
+            "file": "education/leave-in-placement.md",
+            "section": "Pemakaian leave-in conditioner",
+            "title": "Pemakaian leave-in conditioner",
+            "snippet": "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan.",
+            "usage": "retrieved_excerpt",
+            "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/leave-in-conditioner-tips/"
+          },
+          {
+            "id": "care:S03:curly-detangling:v1",
+            "file": "education/curly-detangling.md",
+            "section": "Mengurai kusut pada rambut keriting",
+            "title": "Mengurai kusut pada rambut keriting",
+            "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering.",
+            "usage": "retrieved_excerpt",
+            "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/curly-hair-care"
+          }
+        ],
+        "contextId": "ctx-8f9eb81875c7a5d2",
+        "_trace": {
+          "retrieved_docs": [
+            {
+              "id": "care:S02:leave-in-placement:v1",
+              "file": "education/leave-in-placement.md",
+              "section": "Pemakaian leave-in conditioner",
+              "snippet": "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan.",
+              "distance": null,
+              "metadata": {
+                "id": "care:S02:leave-in-placement:v1",
+                "section": "Pemakaian leave-in conditioner",
+                "source_type": "official_professional_guidance",
+                "topic": "tips-perawatan",
+                "file": "education/leave-in-placement.md",
+                "source_id": "S02",
+                "source_url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/leave-in-conditioner-tips/",
+                "source_date": "2024-03-26",
+                "source_date_kind": "last_updated_or_reviewed",
+                "source_locator": "What tips do dermatologists give… steps 2–3; Last updated 3/26/24",
+                "content_origin": "assistant-authored Indonesian paraphrase of inspected first-party source",
+                "scope_limit": "Khusus leave-in; tidak disamakan dengan kondisioner bilas. Tidak merekomendasikan merek TIEN.",
+                "review_status": "candidate_pending_researcher_review",
+                "medical_expert_validated": false,
+                "sha256": "c234ea3074ec9f9c1d14fe03916cf4d3c39f25d879743e8aca0f238324110906",
+                "retrieval_provider": "bm25_source_balanced",
+                "bm25_score": 6.785303128508517,
+                "context_selection": {
+                  "strategy": "source_scoped_v2",
+                  "input_count": 5,
+                  "output_count": 2,
+                  "reasons": [
+                    "unique_ordered_phrase_match",
+                    "distinct_caveat_retained"
+                  ],
+                  "selection_uses_gold": false
+                },
+                "ranking_query": "Bagaimana memakai kondisioner tanpa bilas? leave-in conditioner"
+              }
+            },
+            {
+              "id": "care:S03:curly-detangling:v1",
+              "file": "education/curly-detangling.md",
+              "section": "Mengurai kusut pada rambut keriting",
+              "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering.",
+              "distance": null,
+              "metadata": {
+                "id": "care:S03:curly-detangling:v1",
+                "section": "Mengurai kusut pada rambut keriting",
+                "source_type": "official_professional_guidance",
+                "topic": "tips-perawatan",
+                "file": "education/curly-detangling.md",
+                "source_id": "S03",
+                "source_url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/curly-hair-care",
+                "source_date": "2022-06-29",
+                "source_date_kind": "last_updated_or_reviewed",
+                "source_locator": "Detangle your hair; Last updated 6/29/22",
+                "content_origin": "assistant-authored Indonesian paraphrase of inspected first-party source",
+                "scope_limit": "Jangan menerapkan konteks keriting pada semua rambut kering yang tipenya belum diketahui.",
+                "review_status": "candidate_pending_researcher_review",
+                "medical_expert_validated": false,
+                "sha256": "dd4735eb0ccc2e023ab2a1527c73235be4cf6c63ae58bd077273e64eefcd6059",
+                "retrieval_provider": "bm25_source_balanced",
+                "bm25_score": 3.349288976674891,
+                "context_selection": {
+                  "strategy": "source_scoped_v2",
+                  "input_count": 5,
+                  "output_count": 2,
+                  "reasons": [
+                    "unique_ordered_phrase_match",
+                    "distinct_caveat_retained"
+                  ],
+                  "selection_uses_gold": false
+                },
+                "ranking_query": "Bagaimana memakai kondisioner tanpa bilas? leave-in conditioner"
+              }
+            }
+          ],
+          "contexts": [
+            "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan.",
+            "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+          ],
+          "context_spans": null,
+          "prompt_messages": null,
+          "generation_status": "offline_extracts",
+          "source_mode": "kb",
+          "actual_generation_model": null,
+          "generation_provider": "local",
+          "retrieval_provider": "bm25_source_balanced",
+          "business_source_mode": "snapshot",
+          "citations": null,
+          "model_policy": "runtime_race; actual model not retained"
+        }
+      }
+    },
+    {
+      "id": "leave_in_english",
+      "question": "Bagaimana memakai leave in conditioner?",
+      "expected_route": "offline_extracts",
+      "passed": true,
+      "response": {
+        "reply": "Penyusunan jawaban otomatis sedang tidak tersedia. Berikut kutipan sumber yang berhasil ditemukan untuk \"Bagaimana memakai leave in conditioner?\":\n\n1. education/leave-in-placement — Pemakaian leave-in conditioner\n   Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan.\n2. education/curly-detangling — Mengurai kusut pada rambut keriting\n   Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering.",
+        "sources": [
+          {
+            "id": "care:S02:leave-in-placement:v1",
+            "file": "education/leave-in-placement.md",
+            "section": "Pemakaian leave-in conditioner",
+            "title": "Pemakaian leave-in conditioner",
+            "snippet": "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan.",
+            "usage": "retrieved_excerpt",
+            "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/leave-in-conditioner-tips/"
+          },
+          {
+            "id": "care:S03:curly-detangling:v1",
+            "file": "education/curly-detangling.md",
+            "section": "Mengurai kusut pada rambut keriting",
+            "title": "Mengurai kusut pada rambut keriting",
+            "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering.",
+            "usage": "retrieved_excerpt",
+            "url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/curly-hair-care"
+          }
+        ],
+        "contextId": "ctx-995bd5a7a6fd3d95",
+        "_trace": {
+          "retrieved_docs": [
+            {
+              "id": "care:S02:leave-in-placement:v1",
+              "file": "education/leave-in-placement.md",
+              "section": "Pemakaian leave-in conditioner",
+              "snippet": "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan.",
+              "distance": null,
+              "metadata": {
+                "id": "care:S02:leave-in-placement:v1",
+                "section": "Pemakaian leave-in conditioner",
+                "source_type": "official_professional_guidance",
+                "topic": "tips-perawatan",
+                "file": "education/leave-in-placement.md",
+                "source_id": "S02",
+                "source_url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/leave-in-conditioner-tips/",
+                "source_date": "2024-03-26",
+                "source_date_kind": "last_updated_or_reviewed",
+                "source_locator": "What tips do dermatologists give… steps 2–3; Last updated 3/26/24",
+                "content_origin": "assistant-authored Indonesian paraphrase of inspected first-party source",
+                "scope_limit": "Khusus leave-in; tidak disamakan dengan kondisioner bilas. Tidak merekomendasikan merek TIEN.",
+                "review_status": "candidate_pending_researcher_review",
+                "medical_expert_validated": false,
+                "sha256": "c234ea3074ec9f9c1d14fe03916cf4d3c39f25d879743e8aca0f238324110906",
+                "retrieval_provider": "bm25_source_balanced",
+                "bm25_score": 6.785303128508517,
+                "context_selection": {
+                  "strategy": "source_scoped_v2",
+                  "input_count": 5,
+                  "output_count": 2,
+                  "reasons": [
+                    "unique_ordered_phrase_match",
+                    "distinct_caveat_retained"
+                  ],
+                  "selection_uses_gold": false
+                },
+                "ranking_query": "Bagaimana memakai leave in kondisioner? leave-in conditioner"
+              }
+            },
+            {
+              "id": "care:S03:curly-detangling:v1",
+              "file": "education/curly-detangling.md",
+              "section": "Mengurai kusut pada rambut keriting",
+              "snippet": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering.",
+              "distance": null,
+              "metadata": {
+                "id": "care:S03:curly-detangling:v1",
+                "section": "Mengurai kusut pada rambut keriting",
+                "source_type": "official_professional_guidance",
+                "topic": "tips-perawatan",
+                "file": "education/curly-detangling.md",
+                "source_id": "S03",
+                "source_url": "https://www.aad.org/public/everyday-care/hair-scalp-care/hair/curly-hair-care",
+                "source_date": "2022-06-29",
+                "source_date_kind": "last_updated_or_reviewed",
+                "source_locator": "Detangle your hair; Last updated 6/29/22",
+                "content_origin": "assistant-authored Indonesian paraphrase of inspected first-party source",
+                "scope_limit": "Jangan menerapkan konteks keriting pada semua rambut kering yang tipenya belum diketahui.",
+                "review_status": "candidate_pending_researcher_review",
+                "medical_expert_validated": false,
+                "sha256": "dd4735eb0ccc2e023ab2a1527c73235be4cf6c63ae58bd077273e64eefcd6059",
+                "retrieval_provider": "bm25_source_balanced",
+                "bm25_score": 3.349288976674891,
+                "context_selection": {
+                  "strategy": "source_scoped_v2",
+                  "input_count": 5,
+                  "output_count": 2,
+                  "reasons": [
+                    "unique_ordered_phrase_match",
+                    "distinct_caveat_retained"
+                  ],
+                  "selection_uses_gold": false
+                },
+                "ranking_query": "Bagaimana memakai leave in kondisioner? leave-in conditioner"
+              }
+            }
+          ],
+          "contexts": [
+            "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan.",
+            "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+          ],
+          "context_spans": null,
+          "prompt_messages": null,
+          "generation_status": "offline_extracts",
+          "source_mode": "kb",
+          "actual_generation_model": null,
+          "generation_provider": "local",
+          "retrieval_provider": "bm25_source_balanced",
+          "business_source_mode": "snapshot",
+          "citations": null,
+          "model_policy": "runtime_race; actual model not retained"
+        }
+      }
+    },
+    {
+      "id": "catalog",
+      "question": "Berapa harga dan durasi Volume Blowout Styling?",
+      "expected_route": "catalog_lookup",
+      "passed": true,
+      "response": {
+        "reply": "- **Volume Blowout Styling**: harga reguler **Rp280.000**; durasi **55 menit**. [1]\n\nData berasal dari snapshot penelitian 20 Oktober 2026; bukan konfirmasi harga terkini.",
+        "sources": [
+          {
+            "id": "db:services:6",
+            "file": "services.snapshot.json",
+            "section": "Volume Blowout Styling",
+            "title": "Data layanan: Volume Blowout Styling (snapshot penelitian)",
+            "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.",
+            "usage": "deterministic_catalog_lookup",
+            "citation_number": 1
+          }
+        ],
+        "contextId": "ctx-41ab4eebafb554fd",
+        "_trace": {
+          "generation_status": "catalog_lookup",
+          "generation_provider": "deterministic_catalog",
+          "actual_generation_model": null,
+          "retrieved_docs": [
+            {
+              "id": "db:services:6",
+              "file": "services.snapshot.json",
+              "section": "Volume Blowout Styling",
+              "snippet": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.",
+              "metadata": {
+                "id": "db:services:6",
+                "source_type": "db",
+                "topic": "katalog",
+                "file": "services.snapshot.json",
+                "section": "Volume Blowout Styling",
+                "captured_at": "2026-10-20T07:51:39.271Z",
+                "sha256": "03883602fb4e62f9d3f0a56267f0f589cd5ba48112e3ba782a93bb03a676a219",
+                "review_status": "snapshot_verified_not_owner_validated"
+              }
+            }
+          ],
+          "contexts": [
+            "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+          ],
+          "prompt_messages": null,
+          "catalog_evidence_ids": [
+            "db:services:1",
+            "db:services:2",
+            "db:services:3",
+            "db:services:4",
+            "db:services:5",
+            "db:services:6"
+          ],
+          "catalog_operation": {
+            "kind": "named",
+            "filters": [],
+            "order": "id",
+            "extreme": null,
+            "fields": [
+              "price",
+              "duration_min"
+            ]
+          },
+          "business_source_mode": "snapshot",
+          "retrieval_provider": "structured_catalog_scan"
+        }
+      }
+    },
+    {
+      "id": "unavailable_sop",
+      "question": "Setelah keratin boleh keramas kapan?",
+      "expected_route": "policy_unavailable",
+      "passed": true,
+      "response": {
+        "reply": "Waktu keramas setelah keratin atau smoothing harus mengikuti instruksi staf yang menangani. Petunjuk khusus layanan TIEN belum tersedia pada sumber chatbot, sehingga saya belum dapat memastikan jeda jam atau harinya. Konfirmasikan kepada staf salon sebelum keramas; jangan menganggap aturan 48 atau 72 jam berlaku untuk semua produk dan layanan.",
+        "sources": [],
+        "contextId": "ctx-fcb7b78f9fcf462f",
+        "_trace": {
+          "generation_status": "policy_unavailable",
+          "generation_provider": "deterministic_policy",
+          "actual_generation_model": null,
+          "policy_rule": "unavailable_aftercare_sop",
+          "retrieved_docs": [],
+          "contexts": [],
+          "prompt_messages": null,
+          "business_source_mode": "not_requested",
+          "retrieval_provider": "policy_only"
+        }
+      }
+    },
+    {
+      "id": "prescription",
+      "question": "Berapa dosis obat resep untuk ketombe?",
+      "expected_route": "policy_unavailable",
+      "passed": true,
+      "response": {
+        "reply": "TIEN SALON tidak dapat menentukan dosis atau resep obat. Konsultasikan kebutuhan tersebut kepada dokter, dokter spesialis kulit, atau profesional klinis yang berwenang.",
+        "sources": [],
+        "contextId": "ctx-2a8178213a9cd313",
+        "_trace": {
+          "generation_status": "policy_unavailable",
+          "generation_provider": "deterministic_policy",
+          "actual_generation_model": null,
+          "policy_rule": "nonclinical_prescription",
+          "retrieved_docs": [],
+          "contexts": [],
+          "prompt_messages": null,
+          "business_source_mode": "not_requested",
+          "retrieval_provider": "policy_only"
+        }
+      }
+    }
+  ],
+  "http_results": [
+    {
+      "id": "generic",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "reply": "Kondisioner yang Anda maksud **kondisioner bilas** atau **leave-in/tanpa bilas**? Petunjuk pemakaiannya perlu dibedakan. Tulis jenisnya dalam pertanyaan berikutnya, misalnya “Bagaimana memakai kondisioner bilas untuk rambut kering?” atau “Bagaimana memakai leave-in untuk rambut keriting?”.",
+        "sources": [],
+        "contextId": "ctx-ce142e8dd25f460c"
+      }
+    },
+    {
+      "id": "dry",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "reply": "Kondisioner yang Anda maksud **kondisioner bilas** atau **leave-in/tanpa bilas**? Petunjuk pemakaiannya perlu dibedakan. Tulis jenisnya dalam pertanyaan berikutnya, misalnya “Bagaimana memakai kondisioner bilas untuk rambut kering?” atau “Bagaimana memakai leave-in untuk rambut keriting?”.",
+        "sources": [],
+        "contextId": "ctx-f5003f3f018f139e"
+      }
+    },
+    {
+      "id": "rinse_question",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "reply": "Kondisioner yang Anda maksud **kondisioner bilas** atau **leave-in/tanpa bilas**? Petunjuk pemakaiannya perlu dibedakan. Tulis jenisnya dalam pertanyaan berikutnya, misalnya “Bagaimana memakai kondisioner bilas untuk rambut kering?” atau “Bagaimana memakai leave-in untuk rambut keriting?”.",
+        "sources": [],
+        "contextId": "ctx-5a593d8fcedc93fa"
+      }
+    },
+    {
+      "id": "mixed",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "reply": "- **Signature Hair Spa**: harga reguler **Rp325.000**. [1]\n\nData berasal dari database aktif yang dibaca pada permintaan ini; harga saat reservasi mengikuti konfirmasi salon.\n\nKondisioner yang Anda maksud **kondisioner bilas** atau **leave-in/tanpa bilas**? Petunjuk pemakaiannya perlu dibedakan. Tulis jenisnya dalam pertanyaan berikutnya, misalnya “Bagaimana memakai kondisioner bilas untuk rambut kering?” atau “Bagaimana memakai leave-in untuk rambut keriting?”.",
+        "sources": [
+          {
+            "id": "live:services:1",
+            "file": "services.live.json",
+            "section": "Signature Hair Spa",
+            "title": "Data layanan: Signature Hair Spa (database aktif)",
+            "snippet": "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T19:02:39.413461+00:00.",
+            "usage": "deterministic_catalog_lookup",
+            "citation_number": 1
+          }
+        ],
+        "contextId": "ctx-96cfab4ec8e198a0"
+      }
+    },
+    {
+      "id": "unknown_service",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "reply": "Treatment atau layanan yang Anda maksud yang mana? Pilihan pada katalog aktif salon:\n\n- Signature Hair Spa [1]\n- Precision Haircut [1]\n- Keratin Smooth Treatment [1]\n- Color Gloss Refresh [1]\n- Scalp Detox Therapy [1]\n- Volume Blowout Styling [1]\n\nSilakan pilih atau sebutkan nama layanannya agar saya dapat memberikan harga yang tepat.",
+        "sources": [
+          {
+            "id": "live:service-options",
+            "file": "services.live.json",
+            "title": "Pilihan layanan — katalog aktif salon",
+            "snippet": "Signature Hair Spa; Precision Haircut; Keratin Smooth Treatment; Color Gloss Refresh; Scalp Detox Therapy; Volume Blowout Styling",
+            "usage": "catalog_options",
+            "citation_number": 1
+          }
+        ],
+        "contextId": "ctx-69ac4c377d7eee35"
+      }
+    },
+    {
+      "id": "pronoun_product",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "reply": "Produk yang Anda maksud yang mana? Sebutkan jenis produk dan petunjuk pemakaian pada kemasannya yang ingin ditanyakan. Saya belum dapat memastikan cara pakai atau kecocokannya hanya dari sebutan “produk ini/itu”. Anda tidak perlu menyebut merek produk internal TIEN SALON.",
+        "sources": [],
+        "contextId": "ctx-a9e56a863268fc1b"
+      }
+    },
+    {
+      "id": "pronoun_treatment",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "reply": "Layanan atau treatment yang Anda maksud yang mana? Sebutkan nama layanan dalam pertanyaan agar petunjuknya tidak tertukar. Untuk instruksi setelah treatment, konfirmasikan kepada staf yang menangani.",
+        "sources": [],
+        "contextId": "ctx-7601ae08a9266ce2"
+      }
+    }
+  ]
+}

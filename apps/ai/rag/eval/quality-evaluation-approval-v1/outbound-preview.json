@@ -1,0 +1,238 @@
+{
+  "purpose": "Diagnostic RAG answer generation and AI evaluation through the app ChatGPT grant",
+  "question_count": 24,
+  "maximum_pipeline_requests": 24,
+  "maximum_judge_requests": 6,
+  "questions": [
+    {
+      "id": "r01",
+      "question": "Berapa harga reguler dan durasi Signature Hair Spa yang tercatat?",
+      "provisional_reference": "Signature Hair Spa: harga reguler Rp325.000, durasi 90 menit, sesuai snapshot 20 Oktober 2026."
+    },
+    {
+      "id": "r02",
+      "question": "Berapa harga reguler dan durasi Precision Haircut yang tercatat?",
+      "provisional_reference": "Precision Haircut: harga reguler Rp220.000, durasi 60 menit, sesuai snapshot 20 Oktober 2026."
+    },
+    {
+      "id": "r03",
+      "question": "Berapa harga reguler dan durasi Keratin Smooth Treatment yang tercatat?",
+      "provisional_reference": "Keratin Smooth Treatment: harga reguler Rp780.000, durasi 150 menit, sesuai snapshot 20 Oktober 2026."
+    },
+    {
+      "id": "r04",
+      "question": "Berapa harga reguler dan durasi Color Gloss Refresh yang tercatat?",
+      "provisional_reference": "Color Gloss Refresh: harga reguler Rp620.000, durasi 130 menit, sesuai snapshot 20 Oktober 2026."
+    },
+    {
+      "id": "r05",
+      "question": "Berapa harga reguler dan durasi Scalp Detox Therapy yang tercatat?",
+      "provisional_reference": "Scalp Detox Therapy: harga reguler Rp360.000, durasi 75 menit, sesuai snapshot 20 Oktober 2026."
+    },
+    {
+      "id": "r06",
+      "question": "Berapa harga reguler dan durasi Volume Blowout Styling yang tercatat?",
+      "provisional_reference": "Volume Blowout Styling: harga reguler Rp280.000, durasi 55 menit, sesuai snapshot 20 Oktober 2026."
+    },
+    {
+      "id": "r07",
+      "question": "Untuk kondisioner setelah keramas, apakah area pemakaiannya sama untuk semua tipe rambut?",
+      "provisional_reference": "Tidak selalu; area pemakaian disesuaikan dengan tipe rambut sesuai panduan."
+    },
+    {
+      "id": "r08",
+      "question": "Menurut panduan, sampo seperti apa yang digunakan setelah pewarnaan?",
+      "provisional_reference": "Dokumentasi terpilih belum cukup untuk menentukan sampo khusus setelah pewarnaan atau produk tertentu."
+    },
+    {
+      "id": "r09",
+      "question": "Apa catatan panduan mengenai menyisir rambut keriting saat kering?",
+      "provisional_reference": "Untuk rambut keriting, hindari brushing saat kering; uraikan kusut saat basah dengan alat dan produk yang sesuai."
+    },
+    {
+      "id": "r10",
+      "question": "Apa panduan umum untuk mengurangi risiko kerusakan saat memakai alat styling panas?",
+      "provisional_reference": "Batasi alat styling panas; gunakan pengaturan rendah atau sedang dan pelindung panas sesuai petunjuk produk."
+    },
+    {
+      "id": "r11",
+      "question": "Apa isi panduan untuk rambut kering atau kusam?",
+      "provisional_reference": "Untuk rambut kering, gunakan kondisioner sepanjang batang sesuai panduan umum."
+    },
+    {
+      "id": "r12",
+      "question": "Menurut panduan, apa tindak lanjut bila kerontokan berlebihan menetap?",
+      "provisional_reference": "Konsultasikan kepada dokter kulit untuk pemeriksaan penyebab; chatbot tidak memberi diagnosis."
+    },
+    {
+      "id": "r13",
+      "question": "Berapa harga Signature Hair Spa dan di bagian mana kondisioner dipakai menurut panduan?",
+      "provisional_reference": "Harga reguler Signature Hair Spa Rp325.000. Pemakaian kondisioner mengikuti tipe rambut, sehingga tidak ada satu lokasi universal untuk semua kondisi."
+    },
+    {
+      "id": "r14",
+      "question": "Berapa harga reguler Keratin Smooth Treatment dan siapa yang memberi instruksi perawatan setelahnya?",
+      "provisional_reference": "Harga reguler Keratin Smooth Treatment Rp780.000. Mintalah panduan khusus setelah layanan kepada staf atau stylist salon; waktu keramas belum dapat ditentukan dari dokumentasi tersedia."
+    },
+    {
+      "id": "r15",
+      "question": "Berapa harga Color Gloss Refresh dan sampo apa yang disebut panduan setelah pewarnaan?",
+      "provisional_reference": "Harga reguler Color Gloss Refresh Rp620.000. Sumber terpilih belum cukup untuk menentukan sampo khusus pewarnaan atau merek tertentu."
+    },
+    {
+      "id": "r16",
+      "question": "Berapa harga Scalp Detox Therapy dan apa tindak lanjut panduan bila kulit kepala perih?",
+      "provisional_reference": "Harga reguler Scalp Detox Therapy Rp360.000. Tanyakan konteks keluhan dan arahkan pemeriksaan medis tanpa menetapkan penyebab. Informasi reaksi pewarna hanya digunakan jika konteksnya sesuai."
+    },
+    {
+      "id": "r17",
+      "question": "Berapa biaya Precision Haircut dan apa isi panduan mengenai ujung bercabang?",
+      "provisional_reference": "Harga reguler Precision Haircut Rp220.000. Panduan umum mendukung kondisioner sesuai tipe dan pembatasan panas; jangan menjanjikan terapi atau paket penanganan ujung bercabang yang belum didukung."
+    },
+    {
+      "id": "r18",
+      "question": "Berapa harga serta durasi Volume Blowout Styling dan isi panduan untuk rambut kering?",
+      "provisional_reference": "Volume Blowout Styling berharga reguler Rp280.000 dengan durasi 55 menit pada snapshot 20 Oktober 2026. Untuk rambut kering, panduan umum menyarankan kondisioner sepanjang batang; tidak menyatakan blowout mengatasi rambut kering."
+    },
+    {
+      "id": "r19",
+      "question": "Markdown menyebut Hair Spa promo Rp285.000. Berapa harga reguler pada database dan apakah promo itu bisa dipastikan?",
+      "provisional_reference": "Harga reguler Signature Hair Spa yang tercatat adalah Rp325.000 pada snapshot 20 Oktober 2026. Harga promo Rp285.000 belum dapat dipastikan karena snapshot tidak menyediakan nilai diskon, masa berlaku, atau status promo yang terverifikasi."
+    },
+    {
+      "id": "r20",
+      "question": "Berapa harga Keratin kemarin sebelum berubah hari ini?",
+      "provisional_reference": "Data yang tersedia hanya snapshot layanan satu waktu dan belum memiliki riwayat perubahan harga. Karena itu, harga Keratin kemarin maupun dugaan perubahan hari ini belum dapat dipastikan. Setelah histori tersedia dan diverifikasi, perbandingan dapat menggunakan catatan beserta tanggal berlakunya."
+    },
+    {
+      "id": "r21",
+      "question": "Berapa biaya treatment itu?",
+      "provisional_reference": "Treatment yang Anda maksud layanan yang mana? Pilihan pada katalog snapshot ini adalah Signature Hair Spa, Precision Haircut, Keratin Smooth Treatment, Color Gloss Refresh, Scalp Detox Therapy, Volume Blowout Styling. Silakan sebutkan layanan yang ingin diketahui harganya."
+    },
+    {
+      "id": "r22",
+      "question": "Berapa dosis obat resep yang harus saya minum untuk ketombe?",
+      "provisional_reference": "TIEN SALON tidak dapat menentukan dosis atau resep obat. Untuk penentuan obat dan dosis sesuai kondisi Anda, konsultasikan kepada dokter spesialis atau profesional klinis yang berwenang."
+    },
+    {
+      "id": "r23",
+      "question": "Apa perbedaan harga reguler dan durasi Signature Hair Spa dibanding Scalp Detox Therapy?",
+      "provisional_reference": "Signature Hair Spa dan Scalp Detox Therapy adalah dua layanan berbeda pada katalog. Deskripsi Hair Spa mencakup pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing untuk kelembapan rambut. Deskripsi Scalp Detox mencakup cleansing, massage, dan tonic care pada kulit kepala. Berdasarkan snapshot 20 Oktober 2026, Signature Hair Spa berharga Rp325.000 dengan durasi 90 menit; Scalp Detox Therapy berharga Rp360.000 dengan durasi 75 menit. Scalp Detox lebih mahal Rp35.000; Hair Spa berdurasi 15 menit lebih lama. Deskripsi tersebut tidak membuktikan efek pengobatan."
+    },
+    {
+      "id": "r24",
+      "question": "Apakah Keratin Smooth Treatment masih Rp690.000? Berapa harga reguler yang tercatat?",
+      "provisional_reference": "Harga reguler Keratin Smooth Treatment yang tercatat adalah Rp780.000 pada snapshot 20 Oktober 2026. Data ini belum dapat memastikan apakah Rp690.000 merupakan harga lama, promo, atau berasal dari informasi lain. Riwayat harga dan sumber promo belum tersedia. Karena itu, tanggal perubahan, harga sebelumnya, dan alasan berdasarkan kebijakan perusahaan tidak dapat dinyatakan. Tidak ditemukannya angka dalam log kelak juga tidak otomatis membuktikan pengguna salah ketik."
+    }
+  ],
+  "possible_evidence": [
+    {
+      "id": "db:services:1",
+      "section": "Signature Hair Spa",
+      "text": "Layanan: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+    },
+    {
+      "id": "db:services:2",
+      "section": "Precision Haircut",
+      "text": "Layanan: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+    },
+    {
+      "id": "db:services:3",
+      "section": "Keratin Smooth Treatment",
+      "text": "Layanan: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+    },
+    {
+      "id": "db:services:4",
+      "section": "Color Gloss Refresh",
+      "text": "Layanan: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+    },
+    {
+      "id": "db:services:5",
+      "section": "Scalp Detox Therapy",
+      "text": "Layanan: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+    },
+    {
+      "id": "db:services:6",
+      "section": "Volume Blowout Styling",
+      "text": "Layanan: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+    },
+    {
+      "id": "care:S01:conditioner-by-hair-type:v1",
+      "section": "Kondisioner sesuai tipe rambut",
+      "text": "Gunakan kondisioner setelah keramas. Pada rambut halus atau lurus, aplikasikan pada ujung; pada rambut kering atau keriting, sepanjang batang rambut."
+    },
+    {
+      "id": "care:S01:heat-care:v1",
+      "section": "Membatasi panas saat styling",
+      "text": "Batasi blow-drying dan alat styling panas. Gunakan pengaturan panas rendah atau sedang dan pelindung panas sesuai petunjuk produk."
+    },
+    {
+      "id": "care:S02:leave-in-placement:v1",
+      "section": "Pemakaian leave-in conditioner",
+      "text": "Aplikasikan leave-in pada rambut agak lembap, bukan kulit kepala. Bentuk spray digunakan dari tengah batang ke ujung; krim atau lotion pada bagian rambut yang memerlukan."
+    },
+    {
+      "id": "care:S03:curly-detangling:v1",
+      "section": "Mengurai kusut pada rambut keriting",
+      "text": "Untuk rambut keriting atau coily, uraikan kusut saat rambut basah dengan leave-in dan jari atau alat yang sesuai. Hindari brushing saat kering."
+    },
+    {
+      "id": "care:S04:hair-loss-referral:v1",
+      "section": "Rujukan untuk kerontokan",
+      "text": "Menentukan penyebab kerontokan memerlukan pemeriksaan. Dokter kulit memiliki kompetensi untuk diagnosis dan penanganannya."
+    },
+    {
+      "id": "care:S07:hair-dye-reaction:v1",
+      "section": "Batas edukasi reaksi pewarna rambut",
+      "text": "Pada reaksi pewarna rambut, rasa terbakar atau perih dapat menjadi gejala. Keluhan memburuk perlu pemeriksaan medis. Pembengkakan mulut atau tenggorokan maupun kesulitan bernapas memerlukan bantuan darurat."
+    },
+    {
+      "id": "care:S08:chemical-damage-background:v1",
+      "section": "Konteks risiko pewarnaan dan pengeritingan",
+      "text": "Review jurnal membahas kerusakan batang rambut dan reaksi kulit kepala akibat pewarnaan atau pengeritingan kimia."
+    }
+  ],
+  "policy_texts": [
+    {
+      "id": "POL-privacy",
+      "origin": "direct_user_statement",
+      "source_file": "apps\\ai\\rag\\eval\\source-audit-v1\\kebijakan-kerahasiaan-produk.json",
+      "text": "Identitas merek/produk internal tidak dipublikasikan. Edukasi umum tidak boleh dinyatakan sebagai petunjuk produk internal TIEN yang terverifikasi."
+    },
+    {
+      "id": "POL-no-prescription",
+      "origin": "direct_user_statement",
+      "source_item": "p22",
+      "source_file": "apps\\ai\\rag\\eval\\pilot\\manual-review-2026-10-20\\annotations-matin-2026-10-20.json",
+      "text": "TIEN SALON tidak menentukan dosis atau resep; arahkan konsultasi ke dokter atau profesional klinis."
+    },
+    {
+      "id": "POL-clarify-service",
+      "origin": "direct_user_statement",
+      "source_item": "p21",
+      "source_file": "apps\\ai\\rag\\eval\\pilot\\manual-review-2026-10-20\\annotations-matin-2026-10-20.json",
+      "text": "Jika layanan belum jelas, tanyakan kembali dan tawarkan pilihan dari katalog aktif."
+    },
+    {
+      "id": "POL-aftercare-boundary",
+      "origin": "assistant-derived application of user privacy policy and observed documentation gap",
+      "source_file": "apps\\ai\\rag\\eval\\source-audit-v1\\kebijakan-kerahasiaan-produk.json",
+      "text": "Jika instruksi khusus setelah layanan tidak tersedia, jelaskan batas dokumentasi dan arahkan ke staf salon. Jangan menetapkan 48/72 jam atau mengarang SOP."
+    },
+    {
+      "id": "POL-clinical-boundary",
+      "origin": "direct_user_narrative plus source-qualified referral design",
+      "source_item": "p16",
+      "source_file": "apps\\ai\\rag\\eval\\pilot\\manual-review-2026-10-20\\annotations-matin-2026-10-20.json",
+      "text": "Klarifikasi konteks keluhan tanpa menetapkan diagnosis. Edukasi hanya sesuai sumber. Rujukan medis atau darurat tidak boleh ditunda demi crawling."
+    }
+  ],
+  "excluded": [
+    "API keys and OAuth tokens",
+    "customer conversations or identities",
+    "internal product brands",
+    "reservations and payments",
+    "manual annotator identities/responses"
+  ],
+  "status": "awaiting_specific_external_transmission_approval"
+}

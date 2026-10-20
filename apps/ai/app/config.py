@@ -29,7 +29,12 @@ class Settings:
         self.chatgpt_model: str = os.getenv("AI_CHATGPT_MODEL", "").strip()
         self.rag_retrieval_provider: str = os.getenv("RAG_RETRIEVAL_PROVIDER", "chroma")
         self.rag_live_services: bool = os.getenv("RAG_LIVE_SERVICES", "false").lower() == "true"
+        self.rag_context_strategy: str = os.getenv("RAG_CONTEXT_STRATEGY", "head")
+        self.rag_context_selection: str = os.getenv('RAG_CONTEXT_SELECTION','all')
+        self.rag_generation_timeout_seconds: float = float(os.getenv('RAG_GENERATION_TIMEOUT_SECONDS','50'))
         self.rag_corpus_file: Path = Path(os.getenv("RAG_CORPUS_FILE", str(BASE_DIR / "rag/eval/curated-development-v2/corpus.json")))
+        runtime_path=os.getenv('RAG_RUNTIME_CORPUS_FILE','').strip()
+        self.rag_runtime_corpus_file: Path | None = ((Path(runtime_path) if Path(runtime_path).is_absolute() else BASE_DIR/runtime_path) if runtime_path else None)
         self.embedding_model: str = os.getenv("AI_EMBEDDING_MODEL", "gemini-embedding-001")
         self.llm_model: str = os.getenv("AI_LLM_MODEL", "gemini-3.6-flash")
         # Daftar model fallback bila model utama kena rate-limit/quota (429) atau 5xx.

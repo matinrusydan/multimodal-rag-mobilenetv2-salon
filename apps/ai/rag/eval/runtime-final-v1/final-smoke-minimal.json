@@ -1,0 +1,1219 @@
+{
+  "executed_at_utc": "2026-10-20T15:57:22.755377+00:00",
+  "status": "checks_passed",
+  "tests": 17,
+  "passed": 17,
+  "model_calls_requested": 0,
+  "llm_successes": 0,
+  "business_source": "live API; database not modified",
+  "initial_catalog": [
+    {
+      "id": "live:services:1",
+      "source_type": "db",
+      "file": "services.live.json",
+      "section": "Signature Hair Spa",
+      "fields": {
+        "id": 1,
+        "name": "Signature Hair Spa",
+        "slug": "signature-hair-spa",
+        "price": 325000,
+        "duration_min": 90,
+        "description": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.",
+        "category": "Hair Treatment"
+      },
+      "business_mode": "live",
+      "fetched_at": "2026-10-20T15:57:18.634407+00:00",
+      "content_sha256": "04e742988eda61b07fa5242f1364a28aa69a94250c4ae04806e052f490d2b3a7",
+      "text": "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:18.634407+00:00."
+    },
+    {
+      "id": "live:services:2",
+      "source_type": "db",
+      "file": "services.live.json",
+      "section": "Precision Haircut",
+      "fields": {
+        "id": 2,
+        "name": "Precision Haircut",
+        "slug": "precision-haircut",
+        "price": 220000,
+        "duration_min": 60,
+        "description": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.",
+        "category": "Haircut"
+      },
+      "business_mode": "live",
+      "fetched_at": "2026-10-20T15:57:18.634407+00:00",
+      "content_sha256": "e5eb6822587d4d80048a1793f1fb0e0349d0ddb8e903d451c87ab3628887b9b1",
+      "text": "Layanan aktif: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:18.634407+00:00."
+    },
+    {
+      "id": "live:services:3",
+      "source_type": "db",
+      "file": "services.live.json",
+      "section": "Keratin Smooth Treatment",
+      "fields": {
+        "id": 3,
+        "name": "Keratin Smooth Treatment",
+        "slug": "keratin-smooth-treatment",
+        "price": 780000,
+        "duration_min": 150,
+        "description": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.",
+        "category": "Smoothing"
+      },
+      "business_mode": "live",
+      "fetched_at": "2026-10-20T15:57:18.634407+00:00",
+      "content_sha256": "58a9770179eeaf014da3c45614a2e0efe3792a1250f84b2f851688b2e6a53e07",
+      "text": "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:18.634407+00:00."
+    },
+    {
+      "id": "live:services:4",
+      "source_type": "db",
+      "file": "services.live.json",
+      "section": "Color Gloss Refresh",
+      "fields": {
+        "id": 4,
+        "name": "Color Gloss Refresh",
+        "slug": "color-gloss-refresh",
+        "price": 620000,
+        "duration_min": 130,
+        "description": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.",
+        "category": "Hair Coloring"
+      },
+      "business_mode": "live",
+      "fetched_at": "2026-10-20T15:57:18.634407+00:00",
+      "content_sha256": "d537097c2c5a6baf8e352fd415a6d4dd0ec82acdcd4644c6187d434bf36af9a0",
+      "text": "Layanan aktif: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:18.634407+00:00."
+    },
+    {
+      "id": "live:services:5",
+      "source_type": "db",
+      "file": "services.live.json",
+      "section": "Scalp Detox Therapy",
+      "fields": {
+        "id": 5,
+        "name": "Scalp Detox Therapy",
+        "slug": "scalp-detox-therapy",
+        "price": 360000,
+        "duration_min": 75,
+        "description": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.",
+        "category": "Scalp Care"
+      },
+      "business_mode": "live",
+      "fetched_at": "2026-10-20T15:57:18.634407+00:00",
+      "content_sha256": "8b269a7a1a06844f0534acb28149fbdc827400bd70eadcf28a400a5b00a1d3a5",
+      "text": "Layanan aktif: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:18.634407+00:00."
+    },
+    {
+      "id": "live:services:6",
+      "source_type": "db",
+      "file": "services.live.json",
+      "section": "Volume Blowout Styling",
+      "fields": {
+        "id": 6,
+        "name": "Volume Blowout Styling",
+        "slug": "volume-blowout-styling",
+        "price": 280000,
+        "duration_min": 55,
+        "description": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.",
+        "category": "Hair Styling"
+      },
+      "business_mode": "live",
+      "fetched_at": "2026-10-20T15:57:18.634407+00:00",
+      "content_sha256": "806169ebf5502fbe95aac249f4dd2df1bdb0c2d7e2f2a8227079a0d1f7bac98b",
+      "text": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:18.634407+00:00."
+    }
+  ],
+  "process_rss_after_checks_bytes": 43814912,
+  "results": [
+    {
+      "id": "single",
+      "question": "Berapa harga dan durasi Volume Blowout Styling?",
+      "passed": true,
+      "checks": {
+        "execution_route": true,
+        "required_literal_facts": true
+      },
+      "elapsed_seconds": 0.35805740000796504,
+      "reply": "- **Volume Blowout Styling**: harga reguler **Rp280.000**; durasi **55 menit**. [1]\n\nData berasal dari database aktif yang dibaca pada permintaan ini; harga saat reservasi mengikuti konfirmasi salon.",
+      "sources": [
+        {
+          "id": "live:services:6",
+          "file": "services.live.json",
+          "section": "Volume Blowout Styling",
+          "title": "Data layanan: Volume Blowout Styling (database aktif)",
+          "snippet": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:18.985783+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 1
+        }
+      ],
+      "contextId": "ctx-afc548683bd891fa",
+      "_trace": {
+        "generation_status": "catalog_lookup",
+        "generation_provider": "deterministic_catalog",
+        "actual_generation_model": null,
+        "retrieved_docs": [
+          {
+            "id": "live:services:6",
+            "file": "services.live.json",
+            "section": "Volume Blowout Styling",
+            "snippet": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:18.985783+00:00.",
+            "metadata": {
+              "id": "live:services:6",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Volume Blowout Styling",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:18.985783+00:00",
+              "content_sha256": "806169ebf5502fbe95aac249f4dd2df1bdb0c2d7e2f2a8227079a0d1f7bac98b"
+            }
+          }
+        ],
+        "contexts": [
+          "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:18.985783+00:00."
+        ],
+        "prompt_messages": null,
+        "catalog_evidence_ids": [
+          "live:services:1",
+          "live:services:2",
+          "live:services:3",
+          "live:services:4",
+          "live:services:5",
+          "live:services:6"
+        ],
+        "catalog_operation": {
+          "kind": "named",
+          "filters": [],
+          "order": "id",
+          "extreme": null,
+          "fields": [
+            "price",
+            "duration_min"
+          ]
+        },
+        "business_source_mode": "live",
+        "retrieval_provider": "structured_catalog_scan"
+      }
+    },
+    {
+      "id": "all",
+      "question": "Sebutkan semua layanan yang tersedia di salon.",
+      "passed": true,
+      "checks": {
+        "execution_route": true,
+        "required_literal_facts": true
+      },
+      "elapsed_seconds": 0.28546600000117905,
+      "reply": "Ditemukan **6 layanan** berdasarkan database aktif yang dibaca pada permintaan ini. [1]\n\n- **Signature Hair Spa** — harga reguler Rp325.000; durasi 90 menit. [2]\n- **Precision Haircut** — harga reguler Rp220.000; durasi 60 menit. [3]\n- **Keratin Smooth Treatment** — harga reguler Rp780.000; durasi 150 menit. [4]\n- **Color Gloss Refresh** — harga reguler Rp620.000; durasi 130 menit. [5]\n- **Scalp Detox Therapy** — harga reguler Rp360.000; durasi 75 menit. [6]\n- **Volume Blowout Styling** — harga reguler Rp280.000; durasi 55 menit. [7]",
+      "sources": [
+        {
+          "id": "live:catalog-query",
+          "file": "services.live.json",
+          "title": "Hasil penelusuran katalog aktif",
+          "snippet": "{\"operation\": {\"kind\": \"list\", \"filters\": [], \"order\": \"id\", \"extreme\": null}, \"scanned_ids\": [\"live:services:1\", \"live:services:2\", \"live:services:3\", \"live:services:4\", \"live:services:5\", \"live:services:6\"], \"matched_ids\": [\"live:services:1\", \"live:services:2\", \"live:services:3\", \"live:services:4\", \"live:services:5\", \"live:services:6\"], \"matched_count\": 6}",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 1
+        },
+        {
+          "id": "live:services:1",
+          "file": "services.live.json",
+          "section": "Signature Hair Spa",
+          "title": "Data layanan: Signature Hair Spa (database aktif)",
+          "snippet": "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 2
+        },
+        {
+          "id": "live:services:2",
+          "file": "services.live.json",
+          "section": "Precision Haircut",
+          "title": "Data layanan: Precision Haircut (database aktif)",
+          "snippet": "Layanan aktif: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 3
+        },
+        {
+          "id": "live:services:3",
+          "file": "services.live.json",
+          "section": "Keratin Smooth Treatment",
+          "title": "Data layanan: Keratin Smooth Treatment (database aktif)",
+          "snippet": "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 4
+        },
+        {
+          "id": "live:services:4",
+          "file": "services.live.json",
+          "section": "Color Gloss Refresh",
+          "title": "Data layanan: Color Gloss Refresh (database aktif)",
+          "snippet": "Layanan aktif: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 5
+        },
+        {
+          "id": "live:services:5",
+          "file": "services.live.json",
+          "section": "Scalp Detox Therapy",
+          "title": "Data layanan: Scalp Detox Therapy (database aktif)",
+          "snippet": "Layanan aktif: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 6
+        },
+        {
+          "id": "live:services:6",
+          "file": "services.live.json",
+          "section": "Volume Blowout Styling",
+          "title": "Data layanan: Volume Blowout Styling (database aktif)",
+          "snippet": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 7
+        }
+      ],
+      "contextId": "ctx-99f785039abd6117",
+      "_trace": {
+        "generation_status": "catalog_lookup",
+        "generation_provider": "deterministic_catalog",
+        "actual_generation_model": null,
+        "retrieved_docs": [
+          {
+            "id": "live:services:1",
+            "file": "services.live.json",
+            "section": "Signature Hair Spa",
+            "snippet": "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+            "metadata": {
+              "id": "live:services:1",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Signature Hair Spa",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.276906+00:00",
+              "content_sha256": "04e742988eda61b07fa5242f1364a28aa69a94250c4ae04806e052f490d2b3a7"
+            }
+          },
+          {
+            "id": "live:services:2",
+            "file": "services.live.json",
+            "section": "Precision Haircut",
+            "snippet": "Layanan aktif: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+            "metadata": {
+              "id": "live:services:2",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Precision Haircut",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.276906+00:00",
+              "content_sha256": "e5eb6822587d4d80048a1793f1fb0e0349d0ddb8e903d451c87ab3628887b9b1"
+            }
+          },
+          {
+            "id": "live:services:3",
+            "file": "services.live.json",
+            "section": "Keratin Smooth Treatment",
+            "snippet": "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+            "metadata": {
+              "id": "live:services:3",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Keratin Smooth Treatment",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.276906+00:00",
+              "content_sha256": "58a9770179eeaf014da3c45614a2e0efe3792a1250f84b2f851688b2e6a53e07"
+            }
+          },
+          {
+            "id": "live:services:4",
+            "file": "services.live.json",
+            "section": "Color Gloss Refresh",
+            "snippet": "Layanan aktif: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+            "metadata": {
+              "id": "live:services:4",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Color Gloss Refresh",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.276906+00:00",
+              "content_sha256": "d537097c2c5a6baf8e352fd415a6d4dd0ec82acdcd4644c6187d434bf36af9a0"
+            }
+          },
+          {
+            "id": "live:services:5",
+            "file": "services.live.json",
+            "section": "Scalp Detox Therapy",
+            "snippet": "Layanan aktif: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+            "metadata": {
+              "id": "live:services:5",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Scalp Detox Therapy",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.276906+00:00",
+              "content_sha256": "8b269a7a1a06844f0534acb28149fbdc827400bd70eadcf28a400a5b00a1d3a5"
+            }
+          },
+          {
+            "id": "live:services:6",
+            "file": "services.live.json",
+            "section": "Volume Blowout Styling",
+            "snippet": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+            "metadata": {
+              "id": "live:services:6",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Volume Blowout Styling",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.276906+00:00",
+              "content_sha256": "806169ebf5502fbe95aac249f4dd2df1bdb0c2d7e2f2a8227079a0d1f7bac98b"
+            }
+          }
+        ],
+        "contexts": [
+          "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+          "Layanan aktif: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+          "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+          "Layanan aktif: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+          "Layanan aktif: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00.",
+          "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.276906+00:00."
+        ],
+        "prompt_messages": null,
+        "catalog_evidence_ids": [
+          "live:services:1",
+          "live:services:2",
+          "live:services:3",
+          "live:services:4",
+          "live:services:5",
+          "live:services:6"
+        ],
+        "catalog_operation": {
+          "kind": "list",
+          "filters": [],
+          "order": "id",
+          "extreme": null
+        },
+        "business_source_mode": "live",
+        "retrieval_provider": "structured_catalog_scan"
+      }
+    },
+    {
+      "id": "count",
+      "question": "Berapa jumlah layanan yang tersedia?",
+      "passed": true,
+      "checks": {
+        "execution_route": true,
+        "required_literal_facts": true
+      },
+      "elapsed_seconds": 0.29390849999617785,
+      "reply": "Ditemukan **6 layanan** berdasarkan database aktif yang dibaca pada permintaan ini. [1]",
+      "sources": [
+        {
+          "id": "live:catalog-query",
+          "file": "services.live.json",
+          "title": "Hasil penelusuran katalog aktif",
+          "snippet": "{\"operation\": {\"kind\": \"count\", \"filters\": [], \"order\": \"id\", \"extreme\": null}, \"scanned_ids\": [\"live:services:1\", \"live:services:2\", \"live:services:3\", \"live:services:4\", \"live:services:5\", \"live:services:6\"], \"matched_ids\": [\"live:services:1\", \"live:services:2\", \"live:services:3\", \"live:services:4\", \"live:services:5\", \"live:services:6\"], \"matched_count\": 6}",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 1
+        }
+      ],
+      "contextId": "ctx-dedbdd15407f3e77",
+      "_trace": {
+        "generation_status": "catalog_lookup",
+        "generation_provider": "deterministic_catalog",
+        "actual_generation_model": null,
+        "retrieved_docs": [
+          {
+            "id": "live:services:1",
+            "file": "services.live.json",
+            "section": "Signature Hair Spa",
+            "snippet": "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.572479+00:00.",
+            "metadata": {
+              "id": "live:services:1",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Signature Hair Spa",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.572479+00:00",
+              "content_sha256": "04e742988eda61b07fa5242f1364a28aa69a94250c4ae04806e052f490d2b3a7"
+            }
+          },
+          {
+            "id": "live:services:2",
+            "file": "services.live.json",
+            "section": "Precision Haircut",
+            "snippet": "Layanan aktif: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.572479+00:00.",
+            "metadata": {
+              "id": "live:services:2",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Precision Haircut",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.572479+00:00",
+              "content_sha256": "e5eb6822587d4d80048a1793f1fb0e0349d0ddb8e903d451c87ab3628887b9b1"
+            }
+          },
+          {
+            "id": "live:services:3",
+            "file": "services.live.json",
+            "section": "Keratin Smooth Treatment",
+            "snippet": "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.572479+00:00.",
+            "metadata": {
+              "id": "live:services:3",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Keratin Smooth Treatment",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.572479+00:00",
+              "content_sha256": "58a9770179eeaf014da3c45614a2e0efe3792a1250f84b2f851688b2e6a53e07"
+            }
+          },
+          {
+            "id": "live:services:4",
+            "file": "services.live.json",
+            "section": "Color Gloss Refresh",
+            "snippet": "Layanan aktif: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.572479+00:00.",
+            "metadata": {
+              "id": "live:services:4",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Color Gloss Refresh",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.572479+00:00",
+              "content_sha256": "d537097c2c5a6baf8e352fd415a6d4dd0ec82acdcd4644c6187d434bf36af9a0"
+            }
+          },
+          {
+            "id": "live:services:5",
+            "file": "services.live.json",
+            "section": "Scalp Detox Therapy",
+            "snippet": "Layanan aktif: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.572479+00:00.",
+            "metadata": {
+              "id": "live:services:5",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Scalp Detox Therapy",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.572479+00:00",
+              "content_sha256": "8b269a7a1a06844f0534acb28149fbdc827400bd70eadcf28a400a5b00a1d3a5"
+            }
+          },
+          {
+            "id": "live:services:6",
+            "file": "services.live.json",
+            "section": "Volume Blowout Styling",
+            "snippet": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.572479+00:00.",
+            "metadata": {
+              "id": "live:services:6",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Volume Blowout Styling",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.572479+00:00",
+              "content_sha256": "806169ebf5502fbe95aac249f4dd2df1bdb0c2d7e2f2a8227079a0d1f7bac98b"
+            }
+          }
+        ],
+        "contexts": [
+          "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.572479+00:00.",
+          "Layanan aktif: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.572479+00:00.",
+          "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.572479+00:00.",
+          "Layanan aktif: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.572479+00:00.",
+          "Layanan aktif: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.572479+00:00.",
+          "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.572479+00:00."
+        ],
+        "prompt_messages": null,
+        "catalog_evidence_ids": [
+          "live:services:1",
+          "live:services:2",
+          "live:services:3",
+          "live:services:4",
+          "live:services:5",
+          "live:services:6"
+        ],
+        "catalog_operation": {
+          "kind": "count",
+          "filters": [],
+          "order": "id",
+          "extreme": null
+        },
+        "business_source_mode": "live",
+        "retrieval_provider": "structured_catalog_scan"
+      }
+    },
+    {
+      "id": "filter",
+      "question": "Apa saja layanan dengan harga di bawah Rp300.000?",
+      "passed": true,
+      "checks": {
+        "execution_route": true,
+        "required_literal_facts": true,
+        "filter_ids": true
+      },
+      "elapsed_seconds": 0.2962839000101667,
+      "reply": "Ditemukan **2 layanan** dengan harga reguler kurang dari Rp300.000 berdasarkan database aktif yang dibaca pada permintaan ini. [1]\n\n- **Precision Haircut** — harga reguler Rp220.000; durasi 60 menit. [2]\n- **Volume Blowout Styling** — harga reguler Rp280.000; durasi 55 menit. [3]",
+      "sources": [
+        {
+          "id": "live:catalog-query",
+          "file": "services.live.json",
+          "title": "Hasil penelusuran katalog aktif",
+          "snippet": "{\"operation\": {\"kind\": \"list\", \"filters\": [[\"lt\", 300000]], \"order\": \"id\", \"extreme\": null}, \"scanned_ids\": [\"live:services:1\", \"live:services:2\", \"live:services:3\", \"live:services:4\", \"live:services:5\", \"live:services:6\"], \"matched_ids\": [\"live:services:2\", \"live:services:6\"], \"matched_count\": 2}",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 1
+        },
+        {
+          "id": "live:services:2",
+          "file": "services.live.json",
+          "section": "Precision Haircut",
+          "title": "Data layanan: Precision Haircut (database aktif)",
+          "snippet": "Layanan aktif: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 2
+        },
+        {
+          "id": "live:services:6",
+          "file": "services.live.json",
+          "section": "Volume Blowout Styling",
+          "title": "Data layanan: Volume Blowout Styling (database aktif)",
+          "snippet": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 3
+        }
+      ],
+      "contextId": "ctx-770cf34105a6ac29",
+      "_trace": {
+        "generation_status": "catalog_lookup",
+        "generation_provider": "deterministic_catalog",
+        "actual_generation_model": null,
+        "retrieved_docs": [
+          {
+            "id": "live:services:1",
+            "file": "services.live.json",
+            "section": "Signature Hair Spa",
+            "snippet": "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00.",
+            "metadata": {
+              "id": "live:services:1",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Signature Hair Spa",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.866984+00:00",
+              "content_sha256": "04e742988eda61b07fa5242f1364a28aa69a94250c4ae04806e052f490d2b3a7"
+            }
+          },
+          {
+            "id": "live:services:2",
+            "file": "services.live.json",
+            "section": "Precision Haircut",
+            "snippet": "Layanan aktif: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00.",
+            "metadata": {
+              "id": "live:services:2",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Precision Haircut",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.866984+00:00",
+              "content_sha256": "e5eb6822587d4d80048a1793f1fb0e0349d0ddb8e903d451c87ab3628887b9b1"
+            }
+          },
+          {
+            "id": "live:services:3",
+            "file": "services.live.json",
+            "section": "Keratin Smooth Treatment",
+            "snippet": "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00.",
+            "metadata": {
+              "id": "live:services:3",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Keratin Smooth Treatment",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.866984+00:00",
+              "content_sha256": "58a9770179eeaf014da3c45614a2e0efe3792a1250f84b2f851688b2e6a53e07"
+            }
+          },
+          {
+            "id": "live:services:4",
+            "file": "services.live.json",
+            "section": "Color Gloss Refresh",
+            "snippet": "Layanan aktif: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00.",
+            "metadata": {
+              "id": "live:services:4",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Color Gloss Refresh",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.866984+00:00",
+              "content_sha256": "d537097c2c5a6baf8e352fd415a6d4dd0ec82acdcd4644c6187d434bf36af9a0"
+            }
+          },
+          {
+            "id": "live:services:5",
+            "file": "services.live.json",
+            "section": "Scalp Detox Therapy",
+            "snippet": "Layanan aktif: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00.",
+            "metadata": {
+              "id": "live:services:5",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Scalp Detox Therapy",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.866984+00:00",
+              "content_sha256": "8b269a7a1a06844f0534acb28149fbdc827400bd70eadcf28a400a5b00a1d3a5"
+            }
+          },
+          {
+            "id": "live:services:6",
+            "file": "services.live.json",
+            "section": "Volume Blowout Styling",
+            "snippet": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00.",
+            "metadata": {
+              "id": "live:services:6",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Volume Blowout Styling",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:19.866984+00:00",
+              "content_sha256": "806169ebf5502fbe95aac249f4dd2df1bdb0c2d7e2f2a8227079a0d1f7bac98b"
+            }
+          }
+        ],
+        "contexts": [
+          "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00.",
+          "Layanan aktif: Precision Haircut\nHarga reguler: Rp220,000\nDurasi: 60 menit\nDeskripsi: Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00.",
+          "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00.",
+          "Layanan aktif: Color Gloss Refresh\nHarga reguler: Rp620,000\nDurasi: 130 menit\nDeskripsi: Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00.",
+          "Layanan aktif: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00.",
+          "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:19.866984+00:00."
+        ],
+        "prompt_messages": null,
+        "catalog_evidence_ids": [
+          "live:services:1",
+          "live:services:2",
+          "live:services:3",
+          "live:services:4",
+          "live:services:5",
+          "live:services:6"
+        ],
+        "catalog_operation": {
+          "kind": "list",
+          "filters": [
+            [
+              "lt",
+              300000
+            ]
+          ],
+          "order": "id",
+          "extreme": null
+        },
+        "business_source_mode": "live",
+        "retrieval_provider": "structured_catalog_scan"
+      }
+    },
+    {
+      "id": "comparison",
+      "question": "Apa perbedaan harga reguler dan durasi Signature Hair Spa dibanding Scalp Detox Therapy?",
+      "passed": true,
+      "checks": {
+        "execution_route": true,
+        "required_literal_facts": true
+      },
+      "elapsed_seconds": 0.29772969998884946,
+      "reply": "Berikut layanan berbeda yang tercantum pada katalog beserta informasi yang diminta:\n\n- **Signature Hair Spa**: harga reguler **Rp325.000**; durasi **90 menit**. [1]\n- **Scalp Detox Therapy**: harga reguler **Rp360.000**; durasi **75 menit**. [2]\nSelisih harga reguler: Rp35.000.\nSelisih durasi: 15 menit.\n\nData berasal dari database aktif yang dibaca pada permintaan ini; harga saat reservasi mengikuti konfirmasi salon.",
+      "sources": [
+        {
+          "id": "live:services:1",
+          "file": "services.live.json",
+          "section": "Signature Hair Spa",
+          "title": "Data layanan: Signature Hair Spa (database aktif)",
+          "snippet": "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:20.166342+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 1
+        },
+        {
+          "id": "live:services:5",
+          "file": "services.live.json",
+          "section": "Scalp Detox Therapy",
+          "title": "Data layanan: Scalp Detox Therapy (database aktif)",
+          "snippet": "Layanan aktif: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:20.166342+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 2
+        }
+      ],
+      "contextId": "ctx-5993e1f76224bac8",
+      "_trace": {
+        "generation_status": "catalog_lookup",
+        "generation_provider": "deterministic_catalog",
+        "actual_generation_model": null,
+        "retrieved_docs": [
+          {
+            "id": "live:services:1",
+            "file": "services.live.json",
+            "section": "Signature Hair Spa",
+            "snippet": "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:20.166342+00:00.",
+            "metadata": {
+              "id": "live:services:1",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Signature Hair Spa",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:20.166342+00:00",
+              "content_sha256": "04e742988eda61b07fa5242f1364a28aa69a94250c4ae04806e052f490d2b3a7"
+            }
+          },
+          {
+            "id": "live:services:5",
+            "file": "services.live.json",
+            "section": "Scalp Detox Therapy",
+            "snippet": "Layanan aktif: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:20.166342+00:00.",
+            "metadata": {
+              "id": "live:services:5",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Scalp Detox Therapy",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:20.166342+00:00",
+              "content_sha256": "8b269a7a1a06844f0534acb28149fbdc827400bd70eadcf28a400a5b00a1d3a5"
+            }
+          }
+        ],
+        "contexts": [
+          "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:20.166342+00:00.",
+          "Layanan aktif: Scalp Detox Therapy\nHarga reguler: Rp360,000\nDurasi: 75 menit\nDeskripsi: Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:20.166342+00:00."
+        ],
+        "prompt_messages": null,
+        "catalog_evidence_ids": [
+          "live:services:1",
+          "live:services:2",
+          "live:services:3",
+          "live:services:4",
+          "live:services:5",
+          "live:services:6"
+        ],
+        "catalog_operation": {
+          "kind": "named",
+          "filters": [],
+          "order": "id",
+          "extreme": null,
+          "fields": [
+            "price",
+            "duration_min"
+          ]
+        },
+        "business_source_mode": "live",
+        "retrieval_provider": "structured_catalog_scan"
+      }
+    },
+    {
+      "id": "ambiguous",
+      "question": "Berapa biaya treatment itu?",
+      "passed": true,
+      "checks": {
+        "execution_route": true,
+        "required_literal_facts": true
+      },
+      "elapsed_seconds": 0.3009396999841556,
+      "reply": "Treatment atau layanan yang Anda maksud yang mana? Pilihan pada katalog aktif salon:\n\n- Signature Hair Spa\n- Precision Haircut\n- Keratin Smooth Treatment\n- Color Gloss Refresh\n- Scalp Detox Therapy\n- Volume Blowout Styling\n\nSilakan pilih atau sebutkan nama layanannya agar saya dapat memberikan harga yang tepat.",
+      "sources": [
+        {
+          "id": "live:service-options",
+          "file": "services.live.json",
+          "title": "Pilihan layanan — katalog aktif salon",
+          "snippet": "Signature Hair Spa; Precision Haircut; Keratin Smooth Treatment; Color Gloss Refresh; Scalp Detox Therapy; Volume Blowout Styling",
+          "usage": "catalog_options"
+        }
+      ],
+      "contextId": "ctx-ba9b7fec2d285914",
+      "_trace": {
+        "generation_status": "policy_clarification",
+        "generation_provider": "chatgpt",
+        "actual_generation_model": null,
+        "retrieved_docs": [],
+        "contexts": [],
+        "prompt_messages": null,
+        "catalog_evidence_ids": [
+          "live:services:1",
+          "live:services:2",
+          "live:services:3",
+          "live:services:4",
+          "live:services:5",
+          "live:services:6"
+        ],
+        "business_source_mode": "live",
+        "retrieval_provider": "bm25_source_balanced"
+      }
+    },
+    {
+      "id": "prescription",
+      "question": "Berapa dosis obat resep untuk ketombe?",
+      "passed": true,
+      "checks": {
+        "execution_route": true,
+        "required_literal_facts": true
+      },
+      "elapsed_seconds": 0.00011510000331327319,
+      "reply": "TIEN SALON tidak dapat menentukan dosis atau resep obat. Konsultasikan kebutuhan tersebut kepada dokter, dokter spesialis kulit, atau profesional klinis yang berwenang.",
+      "sources": [],
+      "contextId": "ctx-2a8178213a9cd313",
+      "_trace": {
+        "generation_status": "policy_unavailable",
+        "generation_provider": "deterministic_policy",
+        "actual_generation_model": null,
+        "policy_rule": "nonclinical_prescription",
+        "retrieved_docs": [],
+        "contexts": [],
+        "prompt_messages": null,
+        "business_source_mode": "not_requested",
+        "retrieval_provider": "policy_only"
+      }
+    },
+    {
+      "id": "aftercare",
+      "question": "Setelah keratin boleh keramas kapan?",
+      "passed": true,
+      "checks": {
+        "execution_route": true,
+        "required_literal_facts": true
+      },
+      "elapsed_seconds": 0.0001640999980736524,
+      "reply": "Waktu keramas setelah keratin atau smoothing harus mengikuti instruksi staf yang menangani. Petunjuk khusus layanan TIEN belum tersedia pada sumber chatbot, sehingga saya belum dapat memastikan jeda jam atau harinya. Konfirmasikan kepada staf salon sebelum keramas; jangan menganggap aturan 48 atau 72 jam berlaku untuk semua produk dan layanan.",
+      "sources": [],
+      "contextId": "ctx-fcb7b78f9fcf462f",
+      "_trace": {
+        "generation_status": "policy_unavailable",
+        "generation_provider": "deterministic_policy",
+        "actual_generation_model": null,
+        "policy_rule": "unavailable_aftercare_sop",
+        "retrieved_docs": [],
+        "contexts": [],
+        "prompt_messages": null,
+        "business_source_mode": "not_requested",
+        "retrieval_provider": "policy_only"
+      }
+    },
+    {
+      "id": "confidential",
+      "question": "Merek keratin apa yang digunakan TIEN salon?",
+      "passed": true,
+      "checks": {
+        "execution_route": true,
+        "required_literal_facts": true
+      },
+      "elapsed_seconds": 0.00012810001499019563,
+      "reply": "Merek dan varian produk internal TIEN SALON tidak dipublikasikan sesuai kebijakan salon. Untuk petunjuk perawatan setelah layanan, silakan konfirmasikan kepada staf yang menangani.",
+      "sources": [],
+      "contextId": "ctx-ef49069cf07701f5",
+      "_trace": {
+        "generation_status": "policy_unavailable",
+        "generation_provider": "deterministic_policy",
+        "actual_generation_model": null,
+        "policy_rule": "confidential_products",
+        "retrieved_docs": [],
+        "contexts": [],
+        "prompt_messages": null,
+        "business_source_mode": "not_requested",
+        "retrieval_provider": "policy_only"
+      }
+    },
+    {
+      "id": "unsupported",
+      "question": "Bagaimana lintasan quasar intergalaktik?",
+      "passed": true,
+      "checks": {
+        "execution_route": true,
+        "required_literal_facts": true
+      },
+      "elapsed_seconds": 0.29756790000828914,
+      "reply": "Saya belum menemukan sumber yang mendukung pertanyaan tersebut. Mohon perjelas layanan atau kebutuhan perawatan rambut yang dimaksud. Informasi yang belum tersedia dapat dikonfirmasikan kepada staf TIEN SALON.",
+      "sources": [],
+      "contextId": "ctx-be506b52c3e740dd",
+      "_trace": {
+        "generation_status": "policy_unavailable",
+        "generation_provider": "deterministic_policy",
+        "actual_generation_model": null,
+        "policy_rule": "no_matching_evidence",
+        "retrieved_docs": [],
+        "contexts": [],
+        "prompt_messages": null,
+        "business_source_mode": "live",
+        "retrieval_provider": "bm25_source_balanced"
+      }
+    },
+    {
+      "id": "history",
+      "question": "Berapa harga keratin kemarin?",
+      "passed": true,
+      "checks": {
+        "execution_route": true,
+        "required_literal_facts": true
+      },
+      "elapsed_seconds": 0.3132995999767445,
+      "reply": "- Harga reguler **Keratin Smooth Treatment** yang tercatat: **Rp780.000**. [1]\n\nRiwayat perubahan harga belum tersedia pada sumber chatbot. Saya tidak dapat memastikan harga sebelumnya, tanggal perubahan, atau alasan perubahannya dari data saat ini.\n\nSilakan konfirmasikan informasi tersebut kepada staf salon.",
+      "sources": [
+        {
+          "id": "live:services:3",
+          "file": "services.live.json",
+          "section": "Keratin Smooth Treatment",
+          "title": "Data layanan: Keratin Smooth Treatment (database aktif)",
+          "snippet": "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:21.078870+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 1
+        }
+      ],
+      "contextId": "ctx-8f37639930e2ca85",
+      "_trace": {
+        "generation_status": "policy_unavailable",
+        "generation_provider": "deterministic_catalog",
+        "actual_generation_model": null,
+        "retrieved_docs": [
+          {
+            "id": "live:services:3",
+            "file": "services.live.json",
+            "section": "Keratin Smooth Treatment",
+            "snippet": "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:21.078870+00:00.",
+            "metadata": {
+              "id": "live:services:3",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Keratin Smooth Treatment",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:21.078870+00:00",
+              "content_sha256": "58a9770179eeaf014da3c45614a2e0efe3792a1250f84b2f851688b2e6a53e07"
+            }
+          }
+        ],
+        "contexts": [
+          "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:21.078870+00:00."
+        ],
+        "prompt_messages": null,
+        "catalog_evidence_ids": [
+          "live:services:3"
+        ],
+        "catalog_operation": {
+          "kind": "unavailable_business_information"
+        },
+        "business_source_mode": "live",
+        "retrieval_provider": "structured_catalog_scan"
+      }
+    },
+    {
+      "id": "discount",
+      "question": "Apakah ada diskon Signature Hair Spa?",
+      "passed": true,
+      "checks": {
+        "execution_route": true,
+        "required_literal_facts": true
+      },
+      "elapsed_seconds": 0.27182510000420734,
+      "reply": "- Harga reguler **Signature Hair Spa** yang tercatat: **Rp325.000**. [1]\n\nInformasi promo, diskon, dan masa berlakunya belum tersedia pada sumber chatbot. Angka yang disebut dalam pertanyaan belum cukup untuk memastikan promo aktif atau menyimpulkan ada kesalahan pengguna.\n\nSilakan konfirmasikan informasi tersebut kepada staf salon.",
+      "sources": [
+        {
+          "id": "live:services:1",
+          "file": "services.live.json",
+          "section": "Signature Hair Spa",
+          "title": "Data layanan: Signature Hair Spa (database aktif)",
+          "snippet": "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:21.350819+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 1
+        }
+      ],
+      "contextId": "ctx-eed7ff5c2b6f94d2",
+      "_trace": {
+        "generation_status": "policy_unavailable",
+        "generation_provider": "deterministic_catalog",
+        "actual_generation_model": null,
+        "retrieved_docs": [
+          {
+            "id": "live:services:1",
+            "file": "services.live.json",
+            "section": "Signature Hair Spa",
+            "snippet": "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:21.350819+00:00.",
+            "metadata": {
+              "id": "live:services:1",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Signature Hair Spa",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:21.350819+00:00",
+              "content_sha256": "04e742988eda61b07fa5242f1364a28aa69a94250c4ae04806e052f490d2b3a7"
+            }
+          }
+        ],
+        "contexts": [
+          "Layanan aktif: Signature Hair Spa\nHarga reguler: Rp325,000\nDurasi: 90 menit\nDeskripsi: Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:21.350819+00:00."
+        ],
+        "prompt_messages": null,
+        "catalog_evidence_ids": [
+          "live:services:1"
+        ],
+        "catalog_operation": {
+          "kind": "unavailable_business_information"
+        },
+        "business_source_mode": "live",
+        "retrieval_provider": "structured_catalog_scan"
+      }
+    },
+    {
+      "id": "quoted_price",
+      "question": "Apakah Keratin Smooth Treatment masih Rp690.000?",
+      "passed": true,
+      "checks": {
+        "execution_route": true,
+        "required_literal_facts": true
+      },
+      "elapsed_seconds": 0.30670200000167824,
+      "reply": "- Harga reguler **Keratin Smooth Treatment** yang tercatat: **Rp780.000**. [1]\n\nRiwayat perubahan harga belum tersedia pada sumber chatbot. Saya tidak dapat memastikan harga sebelumnya, tanggal perubahan, atau alasan perubahannya dari data saat ini.\n\nInformasi promo, diskon, dan masa berlakunya belum tersedia pada sumber chatbot. Angka yang disebut dalam pertanyaan belum cukup untuk memastikan promo aktif atau menyimpulkan ada kesalahan pengguna.\n\nSilakan konfirmasikan informasi tersebut kepada staf salon.",
+      "sources": [
+        {
+          "id": "live:services:3",
+          "file": "services.live.json",
+          "section": "Keratin Smooth Treatment",
+          "title": "Data layanan: Keratin Smooth Treatment (database aktif)",
+          "snippet": "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:21.657597+00:00.",
+          "usage": "deterministic_catalog_lookup",
+          "citation_number": 1
+        }
+      ],
+      "contextId": "ctx-fc883f1be5600b2c",
+      "_trace": {
+        "generation_status": "policy_unavailable",
+        "generation_provider": "deterministic_catalog",
+        "actual_generation_model": null,
+        "retrieved_docs": [
+          {
+            "id": "live:services:3",
+            "file": "services.live.json",
+            "section": "Keratin Smooth Treatment",
+            "snippet": "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:21.657597+00:00.",
+            "metadata": {
+              "id": "live:services:3",
+              "source_type": "db",
+              "file": "services.live.json",
+              "section": "Keratin Smooth Treatment",
+              "business_mode": "live",
+              "fetched_at": "2026-10-20T15:57:21.657597+00:00",
+              "content_sha256": "58a9770179eeaf014da3c45614a2e0efe3792a1250f84b2f851688b2e6a53e07"
+            }
+          }
+        ],
+        "contexts": [
+          "Layanan aktif: Keratin Smooth Treatment\nHarga reguler: Rp780,000\nDurasi: 150 menit\nDeskripsi: Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:21.657597+00:00."
+        ],
+        "prompt_messages": null,
+        "catalog_evidence_ids": [
+          "live:services:3"
+        ],
+        "catalog_operation": {
+          "kind": "unavailable_business_information"
+        },
+        "business_source_mode": "live",
+        "retrieval_provider": "structured_catalog_scan"
+      }
+    }
+  ],
+  "proxy_results": [
+    {
+      "question": "Berapa harga dan durasi Volume Blowout Styling?",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "reply": "- **Volume Blowout Styling**: harga reguler **Rp280.000**; durasi **55 menit**. [1]\n\nData berasal dari database aktif yang dibaca pada permintaan ini; harga saat reservasi mengikuti konfirmasi salon.",
+        "sources": [
+          {
+            "id": "live:services:6",
+            "file": "services.live.json",
+            "section": "Volume Blowout Styling",
+            "title": "Data layanan: Volume Blowout Styling (database aktif)",
+            "snippet": "Layanan aktif: Volume Blowout Styling\nHarga reguler: Rp280,000\nDurasi: 55 menit\nDeskripsi: Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan.\nSumber: database aktif melalui API, dibaca 2026-10-20T15:57:22.372123+00:00.",
+            "usage": "deterministic_catalog_lookup",
+            "citation_number": 1
+          }
+        ],
+        "contextId": "ctx-532a19d005cda77e"
+      },
+      "elapsed_seconds": 0.4481421000091359
+    },
+    {
+      "question": "Berapa biaya treatment itu?",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "reply": "Treatment atau layanan yang Anda maksud yang mana? Pilihan pada katalog aktif salon:\n\n- Signature Hair Spa\n- Precision Haircut\n- Keratin Smooth Treatment\n- Color Gloss Refresh\n- Scalp Detox Therapy\n- Volume Blowout Styling\n\nSilakan pilih atau sebutkan nama layanannya agar saya dapat memberikan harga yang tepat.",
+        "sources": [
+          {
+            "id": "live:service-options",
+            "file": "services.live.json",
+            "title": "Pilihan layanan — katalog aktif salon",
+            "snippet": "Signature Hair Spa; Precision Haircut; Keratin Smooth Treatment; Color Gloss Refresh; Scalp Detox Therapy; Volume Blowout Styling",
+            "usage": "catalog_options"
+          }
+        ],
+        "contextId": "ctx-ba9b7fec2d285914"
+      },
+      "elapsed_seconds": 0.32065479998709634
+    },
+    {
+      "question": "Berapa dosis obat resep untuk ketombe?",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "reply": "TIEN SALON tidak dapat menentukan dosis atau resep obat. Konsultasikan kebutuhan tersebut kepada dokter, dokter spesialis kulit, atau profesional klinis yang berwenang.",
+        "sources": [],
+        "contextId": "ctx-2a8178213a9cd313"
+      },
+      "elapsed_seconds": 0.007411400001728907
+    },
+    {
+      "question": "Setelah keratin boleh keramas kapan?",
+      "status_code": 200,
+      "passed": true,
+      "response": {
+        "reply": "Waktu keramas setelah keratin atau smoothing harus mengikuti instruksi staf yang menangani. Petunjuk khusus layanan TIEN belum tersedia pada sumber chatbot, sehingga saya belum dapat memastikan jeda jam atau harinya. Konfirmasikan kepada staf salon sebelum keramas; jangan menganggap aturan 48 atau 72 jam berlaku untuk semua produk dan layanan.",
+        "sources": [],
+        "contextId": "ctx-fcb7b78f9fcf462f"
+      },
+      "elapsed_seconds": 0.00799470001948066
+    }
+  ],
+  "independent_citation_entailment_verified": false,
+  "answer_quality_benchmark": false,
+  "publication_ready": false,
+  "implementation_sha256": {
+    "agent_service.py": "794a87b9b18872a56099a6b64498f232d133ce142430029f9f128a50f5e67f1b",
+    "agent_tools.py": "05071fa3c4457f5447fbc0d038e876d5f57a17d68bb4b542f39b10e490f422c9",
+    "algorithm_trial.py": "4ae398ea765f57255e6cef6ae26e7afeeb1e82fd7e40082a81a5f24ffb4fc7d4",
+    "answer_audit.py": "5ecf2f68b73c6e963c64191ff11a68ca8dceadfc10d635f66a12fb13161126b0",
+    "answer_policy.py": "859362dbdf9c18ef4e5615e1c4a145869af887cc5dfd4ab40afa7ce714270cfb",
+    "api_client.py": "fae35502203f51ee176954354b5e27825f763159bbfb7c0ecf43bfef1130bfd0",
+    "bm25_retrieval.py": "59f80be5b42f8b0d61eb085e6ec256dc97b76047f8b726e0b9cd21b5ba57e0a3",
+    "build_runtime_corpus.py": "706fd57b776d9214e85c4d930c7b337f4a9921ee87c6fc6ac87c4529eef91da4",
+    "catalog_operations.py": "c1a539977ab89a869231fe3066c3b62ffb1494d8f83f6efc7c87d58f30620cc2",
+    "chatgpt_plan.py": "b6efc8e343ba17a443979f3cb5c99094418cf34028d376f36858b776f0c87ee4",
+    "chunker.py": "a2b4bb505826153cb456f520092733f78383b372e5df0cfec673ca71d7c5b713",
+    "context_selection.py": "eed5b9bb452ad5b710af4df191adf449d7843953b11edd585e493f068c446aeb",
+    "corpus_loader.py": "4d2d0ba1fdf3faac87de4c5605c2fedb7fb9c320c6b5094c15aa0db73802ca85",
+    "curated_baseline.py": "792262246df524b44283ca1a4a09eb56dc19a033d40930fc36a0e02acd0caf7c",
+    "db_serializer.py": "ae8c221aee1a9691436e28ea88070d0957d6cab2ccd8222716b5edcc05c839e5",
+    "embedding.py": "05e6e37a21b8ffacbadcbadce9193baedc92e49627e7799321b2979d7bddffcb",
+    "eval_rag.py": "5290c83687d97b39297ad1e779c3fcbe81e5697cd6f8f11ea01a55f9881ae88e",
+    "experiment_ir.py": "8e8be07decbbbd7e45c8fed8efebb71b1a5dd40a096b59db8ed769a4785b1434",
+    "ingest.py": "523fc9f0c31644e2e55d925465eec206fa2cf83baab0d51518d590442ae9c355",
+    "ir_metrics.py": "091b12e84e3d71908831a9663a502030f9180a8951508728a8d06ab02d1d0f6d",
+    "lexical_index.py": "1349b01be9bffaeb9c0ece1867ff564fea7ab4e2f8b475a308922b00dc159ea1",
+    "live_services.py": "5d285ac9562be715be12cb552862ca31312e32ea0bf2a32fc3f7c30601e3f271",
+    "pilot.py": "71a426649854588e4c0a78c6219392e2b97eb463dbd6eebedf8f24c6c8be9b12",
+    "preflight.py": "223a474dacaa6d2ac1a7f9e6d0b527521b48cd878d3b2b63862099ade4a2be26",
+    "prompt_builder.py": "d0542f7cbc0e204e482cb081a8bc69a3d248614d772924c55d5b308736067aaa",
+    "query_planning.py": "a0efa435471acea343e149f274331eba31a7e9a8efb938d5c034a25cabf35fc0",
+    "rag_service.py": "79ca4a9b635cf6731094f3595407946abfb38ed6f2f64319a933fd535e81c93e",
+    "retriever.py": "dadf93a0c52ba3340577c1036ebac56b364dad47db8ac0b640bbb05b775028cf",
+    "scope_policy.py": "7bd90f39e841c9074a34d2cfd1bf5ea8e0aa7498d7a7ee54dfe1d7b92c899675",
+    "service_matching.py": "ca5b0eb88095b6b6819f07c0d26c7fc8a028a639e41608f454515864f3a8a852",
+    "smoke_runtime.py": "fcd24053f99723907267f8bcf6c3c24275ed994238820c0dd811756a6fb6fec3",
+    "split_guard.py": "727dde7bc2c1bec052b2110ec381e2d164c9fda2762ec85046ba737200d01e8f",
+    "sync_catalog.py": "86e6c7b927e0bb2876591ef112986644cbab1010fd2d117c220fde8a30f4630c",
+    "vector_store.py": "3b0966a0af21477039e92abb11c10997fb954780b31be83e6272967ae4ef293f",
+    "web_fallback.py": "13f40cffee4ecfa794eca2cf9852888f6365e3834bf69c31ea0d034b50f5ee7c",
+    "web_fetch.py": "a1a41d769f6818b546dbe126bb2d73b11f2372a83ff866252a27e4e4bd0f84d9",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "limitations": [
+    "Automatic route/literal-fact/source checks, not human semantic annotations.",
+    "Live data can change; initial catalog captured for interpreting literal checks.",
+    "No web crawl during smoke; HTTP robots behavior covered separately by mocked tests.",
+    "RSS is this local Python smoke process, not the API server peak or deployment performance."
+  ]
+}

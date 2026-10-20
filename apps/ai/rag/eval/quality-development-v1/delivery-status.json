@@ -1,0 +1,146 @@
+{
+  "recorded_at_utc": "2026-10-20T16:46:07.280967+00:00",
+  "runtime_status": "running",
+  "active_context_selection": "source_scoped",
+  "regression_tests_passed": 165,
+  "context_metrics": {
+    "all": {
+      "total": 24,
+      "scored": 20,
+      "precision_at_5": 0.25,
+      "precision_returned": 0.25,
+      "recall": 1.0,
+      "f1_at_5": 0.38988095238095244,
+      "f1_returned": 0.38988095238095244,
+      "complete_evidence": 1.0,
+      "map_at_5": 0.9683333333333334,
+      "mrr_at_5": 0.975,
+      "mean_context_characters": 951.3,
+      "mean_returned_items": 5
+    },
+    "source_scoped": {
+      "total": 24,
+      "scored": 20,
+      "precision_at_5": 0.25,
+      "precision_returned": 0.7841666666666667,
+      "recall": 1.0,
+      "f1_at_5": 0.38988095238095244,
+      "f1_returned": 0.8375,
+      "complete_evidence": 1.0,
+      "map_at_5": 0.9933333333333333,
+      "mrr_at_5": 1.0,
+      "mean_context_characters": 356.5,
+      "mean_returned_items": 2.05
+    }
+  },
+  "answer_evaluation": {
+    "total": 24,
+    "pipeline_errors": 0,
+    "judged": 16,
+    "response_types": {
+      "catalog_lookup": 7,
+      "llm_success": 12,
+      "policy_unavailable": 4,
+      "policy_clarification": 1
+    },
+    "metrics": {
+      "faithfulness": {
+        "mean": 1,
+        "scored": 16,
+        "zeros": 0,
+        "not_applicable": 0,
+        "missing": 8
+      },
+      "answer_relevancy": {
+        "mean": 0.9875,
+        "scored": 16,
+        "zeros": 0,
+        "not_applicable": 0,
+        "missing": 8
+      },
+      "citation_support": {
+        "mean": 0.9333333333333333,
+        "scored": 15,
+        "zeros": 1,
+        "not_applicable": 1,
+        "missing": 8
+      },
+      "reference_unit_coverage": {
+        "mean": 1,
+        "scored": 16,
+        "zeros": 0,
+        "not_applicable": 0,
+        "missing": 8
+      }
+    },
+    "timing_by_route": {
+      "catalog_lookup": {
+        "count": 7,
+        "median_seconds": 0.0007997999782674015,
+        "p95_seconds": 0.002950920001603661
+      },
+      "llm_success": {
+        "count": 12,
+        "median_seconds": 5.377005599992117,
+        "p95_seconds": 9.924449745001038
+      },
+      "policy_unavailable": {
+        "count": 4,
+        "median_seconds": 0.000830150005640462,
+        "p95_seconds": 0.0009771150071173906
+      },
+      "policy_clarification": {
+        "count": 1,
+        "median_seconds": 0.001024700002744794,
+        "p95_seconds": 0.001024700002744794
+      }
+    }
+  },
+  "numeric_judge_scope": "16 of 24 questions before citation/prompt fixes; 8 still missing due to timeout",
+  "supplementary_ai_review_cases": 8,
+  "supplementary_review_merged_into_numeric_scores": false,
+  "clinical_validation_or_human_approval_fabricated": false,
+  "publication_ready": false,
+  "current_implementation_sha256": {
+    "agent_service.py": "794a87b9b18872a56099a6b64498f232d133ce142430029f9f128a50f5e67f1b",
+    "agent_tools.py": "05071fa3c4457f5447fbc0d038e876d5f57a17d68bb4b542f39b10e490f422c9",
+    "algorithm_trial.py": "4ae398ea765f57255e6cef6ae26e7afeeb1e82fd7e40082a81a5f24ffb4fc7d4",
+    "answer_audit.py": "5ecf2f68b73c6e963c64191ff11a68ca8dceadfc10d635f66a12fb13161126b0",
+    "answer_policy.py": "04d9040d3aad69a86cac7716d0417bf39afdbc4ca061fb83c7e6878b207c620b",
+    "api_client.py": "fae35502203f51ee176954354b5e27825f763159bbfb7c0ecf43bfef1130bfd0",
+    "bm25_retrieval.py": "e91e531aab45d3e880639203b95ca6a3ae1f99fbdd4ad010d51393bb71c7eaae",
+    "build_runtime_corpus.py": "706fd57b776d9214e85c4d930c7b337f4a9921ee87c6fc6ac87c4529eef91da4",
+    "catalog_operations.py": "c1a539977ab89a869231fe3066c3b62ffb1494d8f83f6efc7c87d58f30620cc2",
+    "chatgpt_plan.py": "b6efc8e343ba17a443979f3cb5c99094418cf34028d376f36858b776f0c87ee4",
+    "chunker.py": "a2b4bb505826153cb456f520092733f78383b372e5df0cfec673ca71d7c5b713",
+    "context_selection.py": "eed5b9bb452ad5b710af4df191adf449d7843953b11edd585e493f068c446aeb",
+    "corpus_loader.py": "4d2d0ba1fdf3faac87de4c5605c2fedb7fb9c320c6b5094c15aa0db73802ca85",
+    "curated_baseline.py": "792262246df524b44283ca1a4a09eb56dc19a033d40930fc36a0e02acd0caf7c",
+    "db_serializer.py": "ae8c221aee1a9691436e28ea88070d0957d6cab2ccd8222716b5edcc05c839e5",
+    "embedding.py": "05e6e37a21b8ffacbadcbadce9193baedc92e49627e7799321b2979d7bddffcb",
+    "eval_rag.py": "5290c83687d97b39297ad1e779c3fcbe81e5697cd6f8f11ea01a55f9881ae88e",
+    "evidence_selection.py": "6e1b104a177f2f1c6263aad388a8d9a85ffe85aaa69d62a22f6e973bd4aadc2b",
+    "experiment_ir.py": "8e8be07decbbbd7e45c8fed8efebb71b1a5dd40a096b59db8ed769a4785b1434",
+    "ingest.py": "523fc9f0c31644e2e55d925465eec206fa2cf83baab0d51518d590442ae9c355",
+    "ir_metrics.py": "091b12e84e3d71908831a9663a502030f9180a8951508728a8d06ab02d1d0f6d",
+    "lexical_index.py": "1349b01be9bffaeb9c0ece1867ff564fea7ab4e2f8b475a308922b00dc159ea1",
+    "live_services.py": "4d6541241af769f43d395aa5bf3b0df051f46cc56ec5517f79eeff1393b37eae",
+    "pilot.py": "71a426649854588e4c0a78c6219392e2b97eb463dbd6eebedf8f24c6c8be9b12",
+    "preflight.py": "515edd5d1fbe89bbcdac19866e3debe03d50fa442c3a50e24aba708f8a3d573f",
+    "prompt_builder.py": "5916a9360c7cdef8f77e754b4e62b9ffd14ee71653cb8c7517beb3f6c5137742",
+    "quality_study.py": "65ae5fbc668650e6d4c6fde0a65d9cb6275db154c0eb6f84af0a4da247bb9ad7",
+    "query_planning.py": "a0efa435471acea343e149f274331eba31a7e9a8efb938d5c034a25cabf35fc0",
+    "rag_service.py": "79ca4a9b635cf6731094f3595407946abfb38ed6f2f64319a933fd535e81c93e",
+    "retriever.py": "dadf93a0c52ba3340577c1036ebac56b364dad47db8ac0b640bbb05b775028cf",
+    "scope_policy.py": "7bd90f39e841c9074a34d2cfd1bf5ea8e0aa7498d7a7ee54dfe1d7b92c899675",
+    "service_matching.py": "ca5b0eb88095b6b6819f07c0d26c7fc8a028a639e41608f454515864f3a8a852",
+    "smoke_runtime.py": "fcd24053f99723907267f8bcf6c3c24275ed994238820c0dd811756a6fb6fec3",
+    "split_guard.py": "727dde7bc2c1bec052b2110ec381e2d164c9fda2762ec85046ba737200d01e8f",
+    "sync_catalog.py": "86e6c7b927e0bb2876591ef112986644cbab1010fd2d117c220fde8a30f4630c",
+    "vector_store.py": "3b0966a0af21477039e92abb11c10997fb954780b31be83e6272967ae4ef293f",
+    "web_fallback.py": "13f40cffee4ecfa794eca2cf9852888f6365e3834bf69c31ea0d034b50f5ee7c",
+    "web_fetch.py": "a1a41d769f6818b546dbe126bb2d73b11f2372a83ff866252a27e4e4bd0f84d9",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "runbook": "docs/20-studi-kualitas-dan-seleksi-konteks.md"
+}

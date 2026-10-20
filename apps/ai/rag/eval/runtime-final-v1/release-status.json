@@ -1,0 +1,44 @@
+{
+  "release": "rag-local-v1",
+  "completed_at_utc": "2026-10-20T16:01:36.850598+00:00",
+  "local_implementation_status": "verified_running",
+  "unit_and_regression_tests": {
+    "passed": 149,
+    "failed_or_errors": 0
+  },
+  "runtime_smoke": {
+    "passed": 17,
+    "total": 17,
+    "environment": "isolated RAG-only venv"
+  },
+  "earlier_online_smoke": {
+    "passed": 16,
+    "total": 16,
+    "successful_chatgpt_generations": 2
+  },
+  "frontend_to_catalog_check": "passed",
+  "live_services": 6,
+  "curated_runtime_documents": 7,
+  "browser_required": false,
+  "paid_api_fallback": false,
+  "database_modified": false,
+  "cv_pipeline_modified": false,
+  "cloud_deployed": false,
+  "research_status": "development_results_only; final human reference review and independent test not completed",
+  "running_urls": {
+    "frontend": "http://127.0.0.1:3000/consult",
+    "api": "http://127.0.0.1:4000/api/health",
+    "rag": "http://127.0.0.1:5000/ai/health"
+  },
+  "runbook": "docs/19-finalisasi-rag-dan-operasional.md",
+  "artifact_sha256": {
+    "final-smoke-minimal.json": "b899ee4c193fac6285209693bc7c34dc37915f56230b9c5c9a12f18aaf3fb03e",
+    "frontend-minimal-check.json": "fa3892edd0e57d1352fee615f0a0bf253209d5eba1385822c7445829335d9e5d",
+    "live-smoke.json": "33df0fd263a4cc14351e278a7d8df270608a05f7e8f56dcb675254d3b7ea6567",
+    "preflight-after-start.json": "a94181a1fc00e144154fcdf689360cf07c0658eb9fccaaca3b03fcab6ea5b27e",
+    "preflight-minimal.json": "9b22ff390345d08049c6cbaeade500e287e3e273a8d82b8f7711c852487bd58d",
+    "preflight.json": "b24ec3d8d4f9c87882c6d27083aeb4c9d6d6faf813b79c3ac4c6aff68dd80437",
+    "python-tests.xml": "c9054478e3f6d131be4639b3ffa49cd3f719ab93b092bfd1648230fd53d58b16",
+    "web-fetch-probe.json": "34c6b76419fd42f5726dce42477c5052fd31063b73518d511f086c46a3e29c86"
+  }
+}

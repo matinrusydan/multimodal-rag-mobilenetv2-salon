@@ -7,10 +7,11 @@ Collection one per topic (harga, layanan, gaya-rambut, tips-perawatan, booking-i
 from __future__ import annotations
 
 import logging
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 
-import chromadb
-from chromadb.api.models.Collection import Collection
+if TYPE_CHECKING:
+    import chromadb
+    from chromadb.api.models.Collection import Collection
 
 from app.config import settings
 
@@ -40,6 +41,7 @@ class VectorStore:
 
     def _get_client(self):
         if self._client is None:
+            import chromadb
             if settings.chroma_mode == "http":
                 self._client = chromadb.HttpClient(host=settings.chroma_url, port=8000)
             else:

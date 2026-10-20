@@ -1,0 +1,144 @@
+{
+  "reviewed_at_utc": "2026-10-20T16:39:40.081263+00:00",
+  "source_report": "quality-development-v1/report.json",
+  "scope": "Supplementary AI qualitative review of eight missing judge cases; not merged into numeric batch results",
+  "results": [
+    {
+      "id": "r13",
+      "answer_sha256": "fbb2e1206c17217e69d27051d8c4d0faf43b05e5b7a36b842dac2d52d8805e3a",
+      "reviewer_type": "Codex assistant (AI), separate from the timed-out external judge",
+      "review_method": "Qualitative comparison of saved answer, saved source excerpts and evaluation policies",
+      "observations": [
+        "Harga/durasi cocok dengan record 1; arahan kondisioner sesuai tipe rambut cocok dengan sumber yang dikutip.",
+        "Leave-in diberikan sebagai kondisi tambahan, bukan disamakan dengan kondisioner setelah keramas. Pertimbangkan keringkasan."
+      ],
+      "inspected_source_ids": [
+        "db:services:1",
+        "care:S01:conditioner-by-hair-type:v1",
+        "care:S02:leave-in-placement:v1"
+      ],
+      "numeric_judge_metrics": null,
+      "human_approval": false,
+      "external_judge_status": "timeout_still_missing"
+    },
+    {
+      "id": "r14",
+      "answer_sha256": "96b3ce0d91e323342b25c54cc250db05618e044f428c46e8c6bee59b1f703ee5",
+      "reviewer_type": "Codex assistant (AI), separate from the timed-out external judge",
+      "review_method": "Qualitative comparison of saved answer, saved source excerpts and evaluation policies",
+      "observations": [
+        "Harga cocok dengan record 3 dan dibatasi sebagai snapshot.",
+        "Arahan ke staf serta pengakuan ketiadaan SOP khusus sesuai kebijakan sumber."
+      ],
+      "inspected_source_ids": [
+        "db:services:3"
+      ],
+      "numeric_judge_metrics": null,
+      "human_approval": false,
+      "external_judge_status": "timeout_still_missing"
+    },
+    {
+      "id": "r15",
+      "answer_sha256": "b1762941e52dc5be99447a6eb5a393f4038121937ad6a313b7b386bc8424aef6",
+      "reviewer_type": "Codex assistant (AI), separate from the timed-out external judge",
+      "review_method": "Qualitative comparison of saved answer, saved source excerpts and evaluation policies",
+      "observations": [
+        "Harga dan durasi cocok dengan record 4.",
+        "Jawaban mengakui bahwa sumber tidak menentukan sampo/merk setelah pewarnaan, tanpa mengarang produk."
+      ],
+      "inspected_source_ids": [
+        "db:services:4"
+      ],
+      "numeric_judge_metrics": null,
+      "human_approval": false,
+      "external_judge_status": "timeout_still_missing"
+    },
+    {
+      "id": "r16",
+      "answer_sha256": "ec6cfb68fdea7ed7700a29ef78cd10e1dea02a28926585688a4a0a605cea3a4b",
+      "reviewer_type": "Codex assistant (AI), separate from the timed-out external judge",
+      "review_method": "Qualitative comparison of saved answer, saved source excerpts and evaluation policies",
+      "observations": [
+        "Harga, durasi dan uraian layanan cocok dengan record 5.",
+        "Informasi reaksi pewarna diberi kondisi setelah pewarnaan dan cocok dengan passage; penyebab tidak didiagnosis.",
+        "Pertanyaan klarifikasi dan batas penanganan salon sesuai kebijakan. Ini pemeriksaan kesesuaian teks, bukan validasi klinis."
+      ],
+      "inspected_source_ids": [
+        "db:services:5",
+        "care:S07:hair-dye-reaction:v1"
+      ],
+      "numeric_judge_metrics": null,
+      "human_approval": false,
+      "external_judge_status": "timeout_still_missing"
+    },
+    {
+      "id": "r17",
+      "answer_sha256": "cf72bac6d180864ee84a15696fdcedc7b9cd8821bb93b0df4c54d64ae8da519b",
+      "reviewer_type": "Codex assistant (AI), separate from the timed-out external judge",
+      "review_method": "Qualitative comparison of saved answer, saved source excerpts and evaluation policies",
+      "observations": [
+        "Fakta layanan cocok dengan record 2.",
+        "Ketiga anjuran kondisioner, leave-in dan panas cocok dengan passage yang dikutip.",
+        "Jawaban menyatakan tidak ada panduan khusus ujung bercabang dan tidak menjanjikan terapi. Detail tambahan perlu ditinjau untuk keringkasan."
+      ],
+      "inspected_source_ids": [
+        "db:services:2",
+        "care:S01:conditioner-by-hair-type:v1",
+        "care:S02:leave-in-placement:v1",
+        "care:S01:heat-care:v1"
+      ],
+      "numeric_judge_metrics": null,
+      "human_approval": false,
+      "external_judge_status": "timeout_still_missing"
+    },
+    {
+      "id": "r18",
+      "answer_sha256": "541bd8623b948a880c05cc54b313f81c50c385c1909c6ef755e1c9c238d895fb",
+      "reviewer_type": "Codex assistant (AI), separate from the timed-out external judge",
+      "review_method": "Qualitative comparison of saved answer, saved source excerpts and evaluation policies",
+      "observations": [
+        "Fakta layanan cocok dengan record 6; panduan kondisioner sesuai konteks rambut kering.",
+        "Tidak menyatakan blowout menyembuhkan rambut kering."
+      ],
+      "inspected_source_ids": [
+        "db:services:6",
+        "care:S01:conditioner-by-hair-type:v1"
+      ],
+      "numeric_judge_metrics": null,
+      "human_approval": false,
+      "external_judge_status": "timeout_still_missing"
+    },
+    {
+      "id": "r19",
+      "answer_sha256": "882a2f543e8b394403333b0e5dd0e15d820d2d84efe22f9cd9eccd1f742e064a",
+      "reviewer_type": "Codex assistant (AI), separate from the timed-out external judge",
+      "review_method": "Qualitative comparison of saved answer, saved source excerpts and evaluation policies",
+      "observations": [
+        "Harga reguler cocok dengan record 1.",
+        "Promo dan masa berlaku diakui belum tersedia; tidak menyimpulkan promo aktif atau pengguna salah."
+      ],
+      "inspected_source_ids": [
+        "db:services:1"
+      ],
+      "numeric_judge_metrics": null,
+      "human_approval": false,
+      "external_judge_status": "timeout_still_missing"
+    },
+    {
+      "id": "r20",
+      "answer_sha256": "7bf44e4f2d8668005fcf88efae1efc86fc2d76be5c856460f03718a34e867f72",
+      "reviewer_type": "Codex assistant (AI), separate from the timed-out external judge",
+      "review_method": "Qualitative comparison of saved answer, saved source excerpts and evaluation policies",
+      "observations": [
+        "Harga reguler yang ditampilkan cocok dengan snapshot record 3, bukan harga kemarin.",
+        "Jawaban secara eksplisit tidak memastikan riwayat, tanggal atau alasan perubahan."
+      ],
+      "inspected_source_ids": [
+        "db:services:3"
+      ],
+      "numeric_judge_metrics": null,
+      "human_approval": false,
+      "external_judge_status": "timeout_still_missing"
+    }
+  ]
+}

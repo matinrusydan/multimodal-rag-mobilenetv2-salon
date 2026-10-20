@@ -1,0 +1,4430 @@
+[
+  {
+    "id": "r01",
+    "question": "Berapa harga reguler dan durasi Signature Hair Spa yang tercatat?",
+    "reference_answer_proposal": "Signature Hair Spa: harga reguler Rp325.000, durasi 90 menit, sesuai snapshot 20 Oktober 2026.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "ya betul RP.325.000 dan 90 menit",
+    "evidence_ids_proposed": [
+      "db:services:1"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r02",
+    "question": "Berapa harga reguler dan durasi Precision Haircut yang tercatat?",
+    "reference_answer_proposal": "Precision Haircut: harga reguler Rp220.000, durasi 60 menit, sesuai snapshot 20 Oktober 2026.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "ya betul",
+    "evidence_ids_proposed": [
+      "db:services:2"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r03",
+    "question": "Berapa harga reguler dan durasi Keratin Smooth Treatment yang tercatat?",
+    "reference_answer_proposal": "Keratin Smooth Treatment: harga reguler Rp780.000, durasi 150 menit, sesuai snapshot 20 Oktober 2026.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima",
+    "evidence_ids_proposed": [
+      "db:services:3"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r04",
+    "question": "Berapa harga reguler dan durasi Color Gloss Refresh yang tercatat?",
+    "reference_answer_proposal": "Color Gloss Refresh: harga reguler Rp620.000, durasi 130 menit, sesuai snapshot 20 Oktober 2026.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima",
+    "evidence_ids_proposed": [
+      "db:services:4"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r05",
+    "question": "Berapa harga reguler dan durasi Scalp Detox Therapy yang tercatat?",
+    "reference_answer_proposal": "Scalp Detox Therapy: harga reguler Rp360.000, durasi 75 menit, sesuai snapshot 20 Oktober 2026.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima",
+    "evidence_ids_proposed": [
+      "db:services:5"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r06",
+    "question": "Berapa harga reguler dan durasi Volume Blowout Styling yang tercatat?",
+    "reference_answer_proposal": "Volume Blowout Styling: harga reguler Rp280.000, durasi 55 menit, sesuai snapshot 20 Oktober 2026.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima",
+    "evidence_ids_proposed": [
+      "db:services:6"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r07",
+    "question": "Untuk kondisioner setelah keramas, apakah area pemakaiannya sama untuk semua tipe rambut?",
+    "reference_answer_proposal": "Tidak selalu; area pemakaian disesuaikan dengan tipe rambut sesuai panduan.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima",
+    "evidence_ids_proposed": [
+      "care:S01:conditioner-by-hair-type:v1"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r08",
+    "question": "Menurut panduan, sampo seperti apa yang digunakan setelah pewarnaan?",
+    "reference_answer_proposal": "Dokumentasi terpilih belum cukup untuk menentukan sampo khusus setelah pewarnaan atau produk tertentu.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima",
+    "evidence_ids_proposed": [],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r09",
+    "question": "Apa catatan panduan mengenai menyisir rambut keriting saat kering?",
+    "reference_answer_proposal": "Untuk rambut keriting, hindari brushing saat kering; uraikan kusut saat basah dengan alat dan produk yang sesuai.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima",
+    "evidence_ids_proposed": [
+      "care:S03:curly-detangling:v1"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r10",
+    "question": "Apa panduan umum untuk mengurangi risiko kerusakan saat memakai alat styling panas?",
+    "reference_answer_proposal": "Batasi alat styling panas; gunakan pengaturan rendah atau sedang dan pelindung panas sesuai petunjuk produk.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima",
+    "evidence_ids_proposed": [
+      "care:S01:heat-care:v1"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r11",
+    "question": "Apa isi panduan untuk rambut kering atau kusam?",
+    "reference_answer_proposal": "Untuk rambut kering, gunakan kondisioner sepanjang batang sesuai panduan umum.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima",
+    "evidence_ids_proposed": [
+      "care:S01:conditioner-by-hair-type:v1"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r12",
+    "question": "Menurut panduan, apa tindak lanjut bila kerontokan berlebihan menetap?",
+    "reference_answer_proposal": "Konsultasikan kepada dokter kulit untuk pemeriksaan penyebab; chatbot tidak memberi diagnosis.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima",
+    "evidence_ids_proposed": [
+      "care:S04:hair-loss-referral:v1"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r13",
+    "question": "Berapa harga Signature Hair Spa dan di bagian mana kondisioner dipakai menurut panduan?",
+    "reference_answer_proposal": "Harga reguler Signature Hair Spa Rp325.000. Pemakaian kondisioner mengikuti tipe rambut, sehingga tidak ada satu lokasi universal untuk semua kondisi.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima",
+    "evidence_ids_proposed": [
+      "care:S01:conditioner-by-hair-type:v1",
+      "db:services:1"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r14",
+    "question": "Berapa harga reguler Keratin Smooth Treatment dan siapa yang memberi instruksi perawatan setelahnya?",
+    "reference_answer_proposal": "Harga reguler Keratin Smooth Treatment Rp780.000. Mintalah panduan khusus setelah layanan kepada staf atau stylist salon; waktu keramas belum dapat ditentukan dari dokumentasi tersedia.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima",
+    "evidence_ids_proposed": [
+      "db:services:3"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r15",
+    "question": "Berapa harga Color Gloss Refresh dan sampo apa yang disebut panduan setelah pewarnaan?",
+    "reference_answer_proposal": "Harga reguler Color Gloss Refresh Rp620.000. Sumber terpilih belum cukup untuk menentukan sampo khusus pewarnaan atau merek tertentu.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima. tapi jika user menanyakan shampoo apa, bisa fallback ke web crawling",
+    "evidence_ids_proposed": [
+      "db:services:4"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r16",
+    "question": "Berapa harga Scalp Detox Therapy dan apa tindak lanjut panduan bila kulit kepala perih?",
+    "reference_answer_proposal": "Harga reguler Scalp Detox Therapy Rp360.000. Tanyakan konteks keluhan dan arahkan pemeriksaan medis tanpa menetapkan penyebab. Informasi reaksi pewarna hanya digunakan jika konteksnya sesuai.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "kalo ini harus ditrace dulu penyebab kepala perih apa. dijawabaan ini sebaiknya berkonsultasi dengan profesional. oke jika tidak ada dokumentasi nya memang boleh melakukan fallback seperti itu, tapi kalo bisa crawling terlebih dahulu, lalu diakhir untuk jawaban yang aman konsultasi ke professional seperti dokter kulit",
+    "evidence_ids_proposed": [
+      "db:services:5"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r17",
+    "question": "Berapa biaya Precision Haircut dan apa isi panduan mengenai ujung bercabang?",
+    "reference_answer_proposal": "Harga reguler Precision Haircut Rp220.000. Panduan umum mendukung kondisioner sesuai tipe dan pembatasan panas; jangan menjanjikan terapi atau paket penanganan ujung bercabang yang belum didukung.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima",
+    "evidence_ids_proposed": [
+      "care:S01:conditioner-by-hair-type:v1",
+      "care:S01:heat-care:v1",
+      "db:services:2"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r18",
+    "question": "Berapa harga serta durasi Volume Blowout Styling dan isi panduan untuk rambut kering?",
+    "reference_answer_proposal": "Volume Blowout Styling berharga reguler Rp280.000 dengan durasi 55 menit pada snapshot 20 Oktober 2026. Untuk rambut kering, panduan umum menyarankan kondisioner sepanjang batang; tidak menyatakan blowout mengatasi rambut kering.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "terima tapi jawaban kurang terurai",
+    "evidence_ids_proposed": [
+      "care:S01:conditioner-by-hair-type:v1",
+      "db:services:6"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r19",
+    "question": "Markdown menyebut Hair Spa promo Rp285.000. Berapa harga reguler pada database dan apakah promo itu bisa dipastikan?",
+    "reference_answer_proposal": "Harga reguler Signature Hair Spa yang tercatat adalah Rp325.000 pada snapshot 20 Oktober 2026. Harga promo Rp285.000 belum dapat dipastikan karena snapshot tidak menyediakan nilai diskon, masa berlaku, atau status promo yang terverifikasi.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "nanti kita akan migration untuk menambahkan column disscount",
+    "evidence_ids_proposed": [
+      "db:services:1"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r20",
+    "question": "Berapa harga Keratin kemarin sebelum berubah hari ini?",
+    "reference_answer_proposal": "Data yang tersedia hanya snapshot layanan satu waktu dan belum memiliki riwayat perubahan harga. Karena itu, harga Keratin kemarin maupun dugaan perubahan hari ini belum dapat dipastikan. Setelah histori tersedia dan diverifikasi, perbandingan dapat menggunakan catatan beserta tanggal berlakunya.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "harus ada column atau table log atau history untuk perubahan harga. nanti jika sudah ada, sistem dapat membaca terlebih dahulu log nya",
+    "evidence_ids_proposed": [],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r21",
+    "question": "Berapa biaya treatment itu?",
+    "reference_answer_proposal": "Treatment yang Anda maksud layanan yang mana? Pilihan pada katalog snapshot ini adalah Signature Hair Spa, Precision Haircut, Keratin Smooth Treatment, Color Gloss Refresh, Scalp Detox Therapy, Volume Blowout Styling. Silakan sebutkan layanan yang ingin diketahui harganya.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "berikan fallback untuk bertanya balik ke user untuk treatment apa? terus berikan opsi atau pilihan layanan yang tersedia di salon ini",
+    "evidence_ids_proposed": [],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r22",
+    "question": "Berapa dosis obat resep yang harus saya minum untuk ketombe?",
+    "reference_answer_proposal": "TIEN SALON tidak dapat menentukan dosis atau resep obat. Untuk penentuan obat dan dosis sesuai kondisi Anda, konsultasikan kepada dokter spesialis atau profesional klinis yang berwenang.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "untuk pertanyaan ini fallback ke user bahwasannya TIEN SALON tidak dapat menentukan dosis atau resep obat, perlu dilakukan konsultasi ke dokter spesialis atau profesional klinis",
+    "evidence_ids_proposed": [],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r23",
+    "question": "Apa perbedaan harga reguler dan durasi Signature Hair Spa dibanding Scalp Detox Therapy?",
+    "reference_answer_proposal": "Signature Hair Spa dan Scalp Detox Therapy adalah dua layanan berbeda pada katalog. Deskripsi Hair Spa mencakup pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing untuk kelembapan rambut. Deskripsi Scalp Detox mencakup cleansing, massage, dan tonic care pada kulit kepala. Berdasarkan snapshot 20 Oktober 2026, Signature Hair Spa berharga Rp325.000 dengan durasi 90 menit; Scalp Detox Therapy berharga Rp360.000 dengan durasi 75 menit. Scalp Detox lebih mahal Rp35.000; Hair Spa berdurasi 15 menit lebih lama. Deskripsi tersebut tidak membuktikan efek pengobatan.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "sebelum menjawab perbandingan harga dan durasi. jelaskan dulu bahwasannya keduanya adalah layanan yang berbeda (jika layanan nya berbeda). jika layanan nya sama, maka tinggal fallback bahwasannya keduanya merupakan jenis layanan yang sama, dan hair spa dengan scalp detox therapy hanya beda di bla bla bla",
+    "evidence_ids_proposed": [
+      "db:services:1",
+      "db:services:5"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  },
+  {
+    "id": "r24",
+    "question": "Apakah Keratin Smooth Treatment masih Rp690.000? Berapa harga reguler yang tercatat?",
+    "reference_answer_proposal": "Harga reguler Keratin Smooth Treatment yang tercatat adalah Rp780.000 pada snapshot 20 Oktober 2026. Data ini belum dapat memastikan apakah Rp690.000 merupakan harga lama, promo, atau berasal dari informasi lain. Riwayat harga dan sumber promo belum tersedia. Karena itu, tanggal perubahan, harga sebelumnya, dan alasan berdasarkan kebijakan perusahaan tidak dapat dinyatakan. Tidak ditemukannya angka dalam log kelak juga tidak otomatis membuktikan pengguna salah ketik.",
+    "reference_review_status": "pending",
+    "previous_manual_response": "ini perlu ada log. jika semisal pada log itu tidak teratat 690.000, berarti user typo atau human error, dan jelaskan harga layanan sebelumnya dan sekarang. jika ada sebutkan ada oerubahan harga sejak tanggal sekian dan sesuai kebijakan perusahaan kami",
+    "evidence_ids_proposed": [
+      "db:services:3"
+    ],
+    "source_business_fields": [
+      {
+        "service_id": 1,
+        "field": "name",
+        "value": "Signature Hair Spa"
+      },
+      {
+        "service_id": 1,
+        "field": "price",
+        "value": 325000
+      },
+      {
+        "service_id": 1,
+        "field": "duration_min",
+        "value": 90
+      },
+      {
+        "service_id": 1,
+        "field": "category",
+        "value": "Hair Treatment"
+      },
+      {
+        "service_id": 1,
+        "field": "description",
+        "value": "Ritual hair spa khas TIEN SALON dengan pijatan relaksasi kulit kepala, masker rambut bernutrisi, dan finishing lembut untuk mengembalikan kelembapan rambut."
+      },
+      {
+        "service_id": 2,
+        "field": "name",
+        "value": "Precision Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "price",
+        "value": 220000
+      },
+      {
+        "service_id": 2,
+        "field": "duration_min",
+        "value": 60
+      },
+      {
+        "service_id": 2,
+        "field": "category",
+        "value": "Haircut"
+      },
+      {
+        "service_id": 2,
+        "field": "description",
+        "value": "Layanan haircut dengan konsultasi singkat, shaping presisi, dan styling akhir agar potongan rambut terasa rapi, ringan, dan mudah diatur."
+      },
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      },
+      {
+        "service_id": 3,
+        "field": "category",
+        "value": "Smoothing"
+      },
+      {
+        "service_id": 3,
+        "field": "description",
+        "value": "Perawatan keratin untuk membantu mengurangi tampilan frizz dan membuat rambut terasa lebih halus tanpa menghilangkan karakter natural rambut."
+      },
+      {
+        "service_id": 4,
+        "field": "name",
+        "value": "Color Gloss Refresh"
+      },
+      {
+        "service_id": 4,
+        "field": "price",
+        "value": 620000
+      },
+      {
+        "service_id": 4,
+        "field": "duration_min",
+        "value": 130
+      },
+      {
+        "service_id": 4,
+        "field": "category",
+        "value": "Hair Coloring"
+      },
+      {
+        "service_id": 4,
+        "field": "description",
+        "value": "Layanan pewarnaan rambut untuk menyegarkan tone, menambah kilau, dan membuat warna rambut terlihat lebih hidup dengan hasil tetap elegan."
+      },
+      {
+        "service_id": 5,
+        "field": "name",
+        "value": "Scalp Detox Therapy"
+      },
+      {
+        "service_id": 5,
+        "field": "price",
+        "value": 360000
+      },
+      {
+        "service_id": 5,
+        "field": "duration_min",
+        "value": 75
+      },
+      {
+        "service_id": 5,
+        "field": "category",
+        "value": "Scalp Care"
+      },
+      {
+        "service_id": 5,
+        "field": "description",
+        "value": "Ritual detox kulit kepala dengan cleansing, massage, dan tonic care untuk membantu rambut terasa lebih ringan dari akar."
+      },
+      {
+        "service_id": 6,
+        "field": "name",
+        "value": "Volume Blowout Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "price",
+        "value": 280000
+      },
+      {
+        "service_id": 6,
+        "field": "duration_min",
+        "value": 55
+      },
+      {
+        "service_id": 6,
+        "field": "category",
+        "value": "Hair Styling"
+      },
+      {
+        "service_id": 6,
+        "field": "description",
+        "value": "Styling rambut dengan blowout natural untuk memberi volume, movement, dan hasil akhir yang rapi tanpa terlihat berlebihan."
+      }
+    ],
+    "proposed_business_fields_for_review": [
+      {
+        "service_id": 3,
+        "field": "name",
+        "value": "Keratin Smooth Treatment"
+      },
+      {
+        "service_id": 3,
+        "field": "price",
+        "value": 780000
+      },
+      {
+        "service_id": 3,
+        "field": "duration_min",
+        "value": 150
+      }
+    ],
+    "required_business_fields": [],
+    "required_answer_units": [],
+    "policy_checks": [],
+    "answer": null,
+    "answer_source": null,
+    "observed_business_fields": [],
+    "claims": [],
+    "review_status": "pending",
+    "reviewer": null,
+    "reviewed_at": null,
+    "instruction": "Review reference and required facts first. Then attach an actual saved system answer; annotate its claims, fields and citations. Empty arrays are unannotated, not passing scores."
+  }
+]

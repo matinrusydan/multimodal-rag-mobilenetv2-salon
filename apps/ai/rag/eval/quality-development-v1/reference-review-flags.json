@@ -1,0 +1,445 @@
+[
+  {
+    "id": "r01",
+    "question": "Berapa harga reguler dan durasi Signature Hair Spa yang tercatat?",
+    "structural_checks": {
+      "id": "r01",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r02",
+    "question": "Berapa harga reguler dan durasi Precision Haircut yang tercatat?",
+    "structural_checks": {
+      "id": "r02",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r03",
+    "question": "Berapa harga reguler dan durasi Keratin Smooth Treatment yang tercatat?",
+    "structural_checks": {
+      "id": "r03",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r04",
+    "question": "Berapa harga reguler dan durasi Color Gloss Refresh yang tercatat?",
+    "structural_checks": {
+      "id": "r04",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r05",
+    "question": "Berapa harga reguler dan durasi Scalp Detox Therapy yang tercatat?",
+    "structural_checks": {
+      "id": "r05",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r06",
+    "question": "Berapa harga reguler dan durasi Volume Blowout Styling yang tercatat?",
+    "structural_checks": {
+      "id": "r06",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r07",
+    "question": "Untuk kondisioner setelah keramas, apakah area pemakaiannya sama untuk semua tipe rambut?",
+    "structural_checks": {
+      "id": "r07",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": null,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r08",
+    "question": "Menurut panduan, sampo seperti apa yang digunakan setelah pewarnaan?",
+    "structural_checks": {
+      "id": "r08",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": null,
+      "gold_text_survives_400_char_window": null,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final.",
+      "Metrik retrieval N/A; periksa perilaku klarifikasi/batas informasi secara terpisah.",
+      "Tinjau apakah seluruh bagian pertanyaan mempunyai bukti, atau jawaban perlu mengakui batas dokumentasi."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r09",
+    "question": "Apa catatan panduan mengenai menyisir rambut keriting saat kering?",
+    "structural_checks": {
+      "id": "r09",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": null,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r10",
+    "question": "Apa panduan umum untuk mengurangi risiko kerusakan saat memakai alat styling panas?",
+    "structural_checks": {
+      "id": "r10",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": null,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "assistant_repaired_scope_and_labels_at_user_request; no new researcher/expert review inferred",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r11",
+    "question": "Apa isi panduan untuk rambut kering atau kusam?",
+    "structural_checks": {
+      "id": "r11",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": null,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "assistant_repaired_scope_and_labels_at_user_request; no new researcher/expert review inferred",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final.",
+      "Tinjau apakah seluruh bagian pertanyaan mempunyai bukti, atau jawaban perlu mengakui batas dokumentasi."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r12",
+    "question": "Menurut panduan, apa tindak lanjut bila kerontokan berlebihan menetap?",
+    "structural_checks": {
+      "id": "r12",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": null,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r13",
+    "question": "Berapa harga Signature Hair Spa dan di bagian mana kondisioner dipakai menurut panduan?",
+    "structural_checks": {
+      "id": "r13",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r14",
+    "question": "Berapa harga reguler Keratin Smooth Treatment dan siapa yang memberi instruksi perawatan setelahnya?",
+    "structural_checks": {
+      "id": "r14",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final.",
+      "Tinjau apakah seluruh bagian pertanyaan mempunyai bukti, atau jawaban perlu mengakui batas dokumentasi."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r15",
+    "question": "Berapa harga Color Gloss Refresh dan sampo apa yang disebut panduan setelah pewarnaan?",
+    "structural_checks": {
+      "id": "r15",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final.",
+      "Tinjau apakah seluruh bagian pertanyaan mempunyai bukti, atau jawaban perlu mengakui batas dokumentasi."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r16",
+    "question": "Berapa harga Scalp Detox Therapy dan apa tindak lanjut panduan bila kulit kepala perih?",
+    "structural_checks": {
+      "id": "r16",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final.",
+      "Bukti kondisional tidak boleh dipakai sebagai diagnosis/penjelasan universal.",
+      "Tinjau apakah seluruh bagian pertanyaan mempunyai bukti, atau jawaban perlu mengakui batas dokumentasi."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r17",
+    "question": "Berapa biaya Precision Haircut dan apa isi panduan mengenai ujung bercabang?",
+    "structural_checks": {
+      "id": "r17",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final.",
+      "Tinjau apakah seluruh bagian pertanyaan mempunyai bukti, atau jawaban perlu mengakui batas dokumentasi."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r18",
+    "question": "Berapa harga serta durasi Volume Blowout Styling dan isi panduan untuk rambut kering?",
+    "structural_checks": {
+      "id": "r18",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "assistant_repaired_scope_and_labels_at_user_request; no new researcher/expert review inferred",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r19",
+    "question": "Markdown menyebut Hair Spa promo Rp285.000. Berapa harga reguler pada database dan apakah promo itu bisa dipastikan?",
+    "structural_checks": {
+      "id": "r19",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r20",
+    "question": "Berapa harga Keratin kemarin sebelum berubah hari ini?",
+    "structural_checks": {
+      "id": "r20",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": null,
+      "gold_text_survives_400_char_window": null,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final.",
+      "Metrik retrieval N/A; periksa perilaku klarifikasi/batas informasi secara terpisah."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r21",
+    "question": "Berapa biaya treatment itu?",
+    "structural_checks": {
+      "id": "r21",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": null,
+      "gold_text_survives_400_char_window": null,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final.",
+      "Metrik retrieval N/A; periksa perilaku klarifikasi/batas informasi secara terpisah."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r22",
+    "question": "Berapa dosis obat resep yang harus saya minum untuk ketombe?",
+    "structural_checks": {
+      "id": "r22",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": null,
+      "gold_text_survives_400_char_window": null,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final.",
+      "Metrik retrieval N/A; periksa perilaku klarifikasi/batas informasi secara terpisah."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r23",
+    "question": "Apa perbedaan harga reguler dan durasi Signature Hair Spa dibanding Scalp Detox Therapy?",
+    "structural_checks": {
+      "id": "r23",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  },
+  {
+    "id": "r24",
+    "question": "Apakah Keratin Smooth Treatment masih Rp690.000? Berapa harga reguler yang tercatat?",
+    "structural_checks": {
+      "id": "r24",
+      "all_gold_ids_resolve": true,
+      "expected_business_records_match": true,
+      "gold_text_survives_400_char_window": true,
+      "human_review_status": "new_reference_and_evidence_mapping_pending_researcher_review",
+      "semantic_reference_approval": "not_performed_by_structural_audit",
+      "warning": "Gold covers supported factual needs only; it may not cover every part of the question."
+    },
+    "review_flags": [
+      "Acuan revisi belum memperoleh persetujuan peneliti final."
+    ],
+    "review_status": "AI_prepared_pending_human",
+    "human_reviewer": null
+  }
+]

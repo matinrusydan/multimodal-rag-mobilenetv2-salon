@@ -1,8 +1,4 @@
-"""LLM provider for the RAG answer — Gemini via google-genai, with a deterministic
-offline fallback that builds the reply from retrieved docs (same as Node RagService).
-
-Port of `apps/api/src/services/RagService.ts`.
-"""
+"""Evidence-based consultation with structured catalog, BM25 and optional LLM."""
 
 from __future__ import annotations
 
@@ -13,14 +9,17 @@ import logging
 import os
 import re
 import time
+from dataclasses import replace
 from typing import Optional
 
 from app.config import settings
 from app.rag.embedding import embed
 from app.rag.prompt_builder import build_prompt, context_snippets
+from app.rag.context_selection import context_records
 from app.rag.retriever import RetrievedDoc, retriever
-from app.rag.web_fallback import live_crawl_docs
+from app.rag.web_fallback import live_crawl_docs,needs_web_fallback
 from app.settings_loader import gemini_api_key
+from app.rag.corpus_loader import load_corpus
 
 logger = logging.getLogger(__name__)
 
@@ -94,8 +93,11 @@ class RagService:
         self.top_k = settings.rag_top_k
 
     @staticmethod
-    def _ctx_hash(query: str, doc_ids: list[str], hair_context: Optional[dict]) -> str:
-        raw = json.dumps({"query": query, "hairContext": hair_context, "docIds": doc_ids}, sort_keys=True)
+    def _ctx_hash(query: str, doc_ids: list[str], hair_context: Optional[dict], context_spans=None) -> str:
+        identity = {"query": query, "hairContext": hair_context, "docIds": doc_ids}
+        if context_spans is not None:
+            identity['contextSpans'] = context_spans
+        raw = json.dumps(identity, sort_keys=True)
         return "ctx-" + hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16]
 
     @staticmethod
@@ -106,7 +108,7 @@ class RagService:
             section = f" — {d.section}" if d.section else ""
             snippet = " ".join((d.snippet or "").split())[:240]
             lines.append(f"{i + 1}. {source}{section}\n   {snippet}")
-        return f"(Mode offline — tanpa generasi LLM.) Berdasarkan knowledge base untuk \"{query}\":\n\n" + "\n".join(lines)
+        return f"Penyusunan jawaban otomatis sedang tidak tersedia. Berikut kutipan sumber yang berhasil ditemukan untuk \"{query}\":\n\n" + "\n".join(lines)
 
     async def _call_one(self, client, model: str, system_prompt, contents) -> tuple[str, str]:
         """Panggil satu model; return (model, text). Raise bila gagal."""
@@ -194,13 +196,26 @@ class RagService:
         generation_model: Optional[str] = None,
         live_services: bool = False,
     ) -> dict:
+        from app.rag.scope_policy import scope_policy
+        policy_reply=scope_policy(query)
+        if policy_reply:
+            payload={'reply':policy_reply['reply'],'sources':[],
+                     'contextId':self._ctx_hash(query,[policy_reply['rule']],hair_context)}
+            if include_trace:
+                payload['_trace']={'generation_status':'policy_unavailable',
+                    'generation_provider':'deterministic_policy','actual_generation_model':None,
+                    'policy_rule':policy_reply['rule'],'retrieved_docs':[],'contexts':[],
+                    'prompt_messages':None,'business_source_mode':'not_requested',
+                    'retrieval_provider':'policy_only'}
+            return payload
         # Evaluation calls remain frozen unless explicitly opted into live data.
         live_corpus = None
         catalog_status = 'snapshot'
         if live_services:
             if settings.rag_retrieval_provider not in {'bm25','bm25_source_balanced'}:
                 raise ValueError('Live services require BM25 retrieval')
-            frozen = json.loads(settings.rag_corpus_file.read_text(encoding='utf-8'))
+            frozen = load_corpus(settings.rag_runtime_corpus_file or settings.rag_corpus_file,
+                                 require_manifest=settings.rag_runtime_corpus_file is not None)
             live_corpus = [d for d in frozen if d['source_type'] != 'db']
             from app.rag.live_services import load_services
             try:
@@ -211,7 +226,7 @@ class RagService:
                 catalog_status = 'unavailable'
         if settings.rag_retrieval_provider in {'bm25','bm25_source_balanced'}:
             from app.rag.catalog_operations import catalog_answer
-            catalog_corpus = live_corpus if live_services else json.loads(settings.rag_corpus_file.read_text(encoding='utf-8'))
+            catalog_corpus = live_corpus if live_services else load_corpus(settings.rag_corpus_file)
             lookup = catalog_answer(query,catalog_corpus,mode=catalog_status)
             if lookup:
                 payload={'reply':lookup['reply'],'sources':lookup['sources'],
@@ -236,60 +251,75 @@ class RagService:
                                        'business_source_mode':catalog_status,
                                        'retrieval_provider':settings.rag_retrieval_provider}
                 return payload
-        # Deteksi mode sumber:
-        #  - kesehatan rambut (rontok/ketombe) -> WEB-ONLY (full alodokter)
-        #  - layanan salon yang menyentuh kondisi rambut (bleaching/smoothing/rusak)
-        #    -> MIX (KB salon + web kesehatan)
-        #  - lainnya -> KB lokal saja
-        is_health_topic = False
-        is_hair_concern = False
-        use_web = settings.web_fallback_enabled if allow_web is None else allow_web
-        if use_web:
-            from app.crawler.stealth import detect_hair_concern, detect_health_topic
-
-            is_health_topic = detect_health_topic(query)
-            is_hair_concern = not is_health_topic and detect_hair_concern(query)
-
+            from app.rag.care_intent import conditioner_clarification,unresolved_reference
+            from app.rag.service_matching import match_services
+            named=match_services(query,[d for d in catalog_corpus if d['source_type']=='db'])
+            care_question=unresolved_reference(query,known_service=bool(named)) or conditioner_clarification(query)
+            if care_question:
+                # Resolve the explicit business part without assuming a care product.
+                facts=[]
+                if re.search(r'\b(harga|biaya|tarif)\b',query,re.I):facts.append('harga')
+                if re.search(r'\b(durasi|menit)\b',query,re.I):facts.append('durasi')
+                modifiers=[]
+                if re.search(r'promo|diskon',query,re.I):modifiers.append('promo diskon')
+                if re.search(r'riwayat|histori|kemarin|sebelumnya|bulan lalu|minggu lalu|harga lama',query,re.I):modifiers.append('riwayat harga')
+                business= catalog_answer('Berapa '+' dan '.join(facts)+' '+ ' dan '.join(d['fields']['name'] for d in named)+' '+' '.join(modifiers)+'?',
+                                         catalog_corpus,mode=catalog_status) if named and facts else None
+                payload={'reply':(business['reply']+'\n\n' if business else '')+care_question['reply'],
+                         'sources':business['sources'] if business else [],
+                         'contextId':self._ctx_hash(query,[care_question['rule']]+[d['id'] for d in named],hair_context)}
+                if include_trace:
+                    payload['_trace']={'generation_status':'policy_clarification','generation_provider':'deterministic_policy',
+                        'policy_rule':care_question['rule'],'actual_generation_model':None,
+                        'retrieved_docs':[{'id':d.id,'file':d.file,'section':d.section,'snippet':d.snippet,'metadata':d.metadata} for d in business['docs']] if business else [],
+                        'contexts':[d.snippet for d in business['docs']] if business else [],'prompt_messages':None,
+                        'business_source_mode':catalog_status,'retrieval_provider':'explicit_product_clarification'}
+                return payload
+        # Retrieve local evidence first. Web augments missing topic coverage;
+        # enabling it must not discard curated evidence or live catalog facts.
+        if settings.rag_retrieval_provider in {'bm25','bm25_source_balanced'}:
+            from app.rag.bm25_retrieval import retrieve
+            kb_docs=retrieve(query,self.top_k,corpus=live_corpus) if live_services else retrieve(query,self.top_k)
+        else:
+            query_embedding=(await embed([query],strict=True))[0] if strict_embedding else (await embed([query]))[0]
+            kb_docs=await retriever.retrieve(query_embedding,top_k=self.top_k,query=query)
+        use_web=settings.web_fallback_enabled if allow_web is None else allow_web
         webpage_docs: list[RetrievedDoc] = []
         web_sources: list[dict] = []
-
-        if is_health_topic or is_hair_concern:
-            # Live crawl alodokter untuk kedua mode (web-only & mix).
+        if use_web and needs_web_fallback(query,kb_docs):
             webpage_docs, web_sources = await live_crawl_docs(
                 query,
                 max_pages=settings.web_fallback_max_docs,
             )
+        if settings.rag_context_selection=='source_scoped':
+            from app.rag.care_intent import compatible_product_evidence
+            webpage_docs=[d for d in webpage_docs if compatible_product_evidence(query,
+                {'section':d.section or '', 'text':d.snippet or '', 'source_type':(d.metadata or {}).get('source_type')})]
+        docs=kb_docs+webpage_docs
 
-        if is_health_topic and not live_services:
-            # Full web mode: skip ChromaDB sepenuhnya.
-            docs = webpage_docs
-            logger.info("web-only mode (topik kesehatan): %d doc web", len(docs))
-        else:
-            # Mode KB (normal) atau mix: retrieve dari ChromaDB.
-            if settings.rag_retrieval_provider in {'bm25','bm25_source_balanced'}:
-                from app.rag.bm25_retrieval import retrieve
-                kb_docs = retrieve(query, self.top_k, corpus=live_corpus) if live_services else retrieve(query, self.top_k)
-            else:
-                query_embedding = (await embed([query], strict=True))[0] if strict_embedding else (await embed([query]))[0]
-                kb_docs = await retriever.retrieve(query_embedding, top_k=self.top_k, query=query)
-
-            if (is_hair_concern or is_health_topic) and webpage_docs:
-                # Mix: dokumen web di depan, lalu KB salon.
-                docs = webpage_docs + kb_docs
-                logger.info(
-                    "mix mode (layanan + kondisi rambut): %d doc web + %d KB doc",
-                    len(webpage_docs),
-                    len(kb_docs),
-                )
-            else:
-                docs = kb_docs
+        if not docs or (settings.rag_retrieval_provider in {'bm25','bm25_source_balanced'}
+                        and all((d.metadata or {}).get('bm25_score',1)<=0 for d in docs)):
+            payload={'reply':'Saya belum menemukan sumber yang mendukung pertanyaan tersebut. Mohon perjelas layanan atau kebutuhan perawatan rambut yang dimaksud. Informasi yang belum tersedia dapat dikonfirmasikan kepada staf TIEN SALON.',
+                     'sources':[],'contextId':self._ctx_hash(query,['no_matching_evidence'],hair_context)}
+            if include_trace:
+                payload['_trace']={'generation_status':'policy_unavailable',
+                    'generation_provider':'deterministic_policy','actual_generation_model':None,
+                    'policy_rule':'no_matching_evidence','retrieved_docs':[],'contexts':[],
+                    'prompt_messages':None,'business_source_mode':catalog_status,
+                    'retrieval_provider':settings.rag_retrieval_provider}
+            return payload
 
         doc_ids = [f"{d.id or d.file}#{d.section or ''}:{hashlib.sha256((d.snippet or '').encode('utf-8')).hexdigest()[:16]}" for d in docs]
-        context_id = self._ctx_hash(query, doc_ids, hair_context)
+        context_id = self._ctx_hash(query, doc_ids, hair_context,
+                                    context_records(docs,query,settings.rag_context_strategy))
 
         if settings.ai_llm_provider == 'chatgpt':
             from app.rag import chatgpt_plan
-            is_local = not chatgpt_plan.available()
+            try:
+                is_local = not chatgpt_plan.available()
+            except (ValueError,OSError,TypeError,AttributeError) as exc:
+                logger.warning('ChatGPT session unavailable (%s)',type(exc).__name__)
+                is_local=True
         else:
             is_local = settings.ai_llm_provider != 'gemini' or not gemini_api_key()
 
@@ -306,7 +336,8 @@ class RagService:
             from app.rag.answer_policy import cited_sources, source_payload
             citation_trace=None
             if generation_status=='llm_success':
-                reply,shown_sources,citation_trace=cited_sources(reply,docs)
+                used=context_snippets(docs,query)
+                reply,shown_sources,citation_trace=cited_sources(reply,[replace(d,snippet=text) for d,text in zip(docs,used)])
             else:
                 shown_sources=[source_payload(d) for d in docs[:5]]
                 if catalog_status == 'unavailable':
@@ -319,10 +350,11 @@ class RagService:
                          "snippet": d.snippet, "distance": d.distance, "metadata": d.metadata}
                         for d in docs
                     ],
-                    "contexts": context_snippets(docs) if generation_status == "llm_success" else [" ".join((d.snippet or "").split())[:240] for d in docs[:5]],
+                    "contexts": context_snippets(docs,query) if generation_status == "llm_success" else [" ".join((d.snippet or "").split())[:240] for d in docs[:5]],
+                    "context_spans": context_records(docs,query,settings.rag_context_strategy) if generation_status=='llm_success' else None,
                     "prompt_messages": messages if generation_status == "llm_success" else None,
                     "generation_status": generation_status,
-                    "source_mode": "web_only" if is_health_topic else ("mixed_web_kb" if is_hair_concern else "kb"),
+                    "source_mode": "mixed_web_kb" if webpage_docs else "kb",
                     "actual_generation_model": (generation_model or (settings.chatgpt_model if settings.ai_llm_provider == 'chatgpt' else None)) if generation_status == "llm_success" else None,
                     "generation_provider": settings.ai_llm_provider,
                     "retrieval_provider": settings.rag_retrieval_provider,
@@ -338,22 +370,22 @@ class RagService:
             return response(reply, "offline_extracts")
 
         messages = build_prompt(query, docs, hair_context, hair_features, web_sources=web_sources_uniq)
-        if settings.rag_retrieval_provider in {'bm25','bm25_source_balanced'}:
+        if settings.rag_retrieval_provider in {'bm25','bm25_source_balanced'} and not live_services:
             from app.rag.bm25_retrieval import evaluation_policy_context
             policy = evaluation_policy_context()
             if policy:
-                if live_services:
-                    context = json.loads(policy)
-                    policy = json.dumps({'policy_instructions':context.get('policy_instructions',[])},ensure_ascii=False)
                 messages[0]['content'] += '\n\nKEBIJAKAN DAN BATAS SUMBER:\n' + policy
         if live_services:
             from app.rag.live_services import runtime_policy
             messages[0]['content'] += '\n\n' + runtime_policy(catalog_status == 'live')
         try:
             if settings.ai_llm_provider == 'chatgpt':
-                reply = await chatgpt_plan.generate(messages, model=generation_model)
+                reply = await asyncio.wait_for(chatgpt_plan.generate(messages, model=generation_model),
+                                               timeout=settings.rag_generation_timeout_seconds)
             else:
-                reply = await self._call_gemini(messages, model_override=generation_model) if generation_model else await self._call_gemini(messages)
+                reply = await asyncio.wait_for(self._call_gemini(messages, model_override=generation_model),
+                                               timeout=settings.rag_generation_timeout_seconds)
+            if not reply or not reply.strip():raise RuntimeError('Empty model answer')
             generation_status = "llm_success"
         except Exception as exc:
             logger.warning("LLM gagal (%s); fallback offline", type(exc).__name__)

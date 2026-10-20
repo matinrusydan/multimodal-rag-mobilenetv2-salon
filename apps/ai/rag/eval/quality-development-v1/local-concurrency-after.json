@@ -1,0 +1,99 @@
+{
+  "scope": "local deterministic Express chat after connection reuse; no model calls",
+  "results": [
+    {
+      "concurrency": 1,
+      "requests": 6,
+      "successes": 6,
+      "median_seconds": 0.011761250003473833,
+      "p95_interpolated_seconds": 0.11625470000581117,
+      "rows": [
+        {
+          "question": "Berapa harga dan durasi Volume Blowout Styling?",
+          "status": 200,
+          "seconds": 0.15055670001311228,
+          "clarification_citation_present": null
+        },
+        {
+          "question": "Berapa biaya treatment itu?",
+          "status": 200,
+          "seconds": 0.012660600012168288,
+          "clarification_citation_present": true
+        },
+        {
+          "question": "Berapa dosis obat resep untuk ketombe?",
+          "status": 200,
+          "seconds": 0.0049393999797757715,
+          "clarification_citation_present": null
+        },
+        {
+          "question": "Berapa harga dan durasi Volume Blowout Styling?",
+          "status": 200,
+          "seconds": 0.013348699983907863,
+          "clarification_citation_present": null
+        },
+        {
+          "question": "Berapa biaya treatment itu?",
+          "status": 200,
+          "seconds": 0.010861899994779378,
+          "clarification_citation_present": true
+        },
+        {
+          "question": "Berapa dosis obat resep untuk ketombe?",
+          "status": 200,
+          "seconds": 0.004636099998606369,
+          "clarification_citation_present": null
+        }
+      ]
+    },
+    {
+      "concurrency": 3,
+      "requests": 6,
+      "successes": 6,
+      "median_seconds": 0.018756849996862,
+      "p95_interpolated_seconds": 0.0237665000022389,
+      "rows": [
+        {
+          "question": "Berapa harga dan durasi Volume Blowout Styling?",
+          "status": 200,
+          "seconds": 0.020175799989374354,
+          "clarification_citation_present": null
+        },
+        {
+          "question": "Berapa biaya treatment itu?",
+          "status": 200,
+          "seconds": 0.02496340000652708,
+          "clarification_citation_present": true
+        },
+        {
+          "question": "Berapa dosis obat resep untuk ketombe?",
+          "status": 200,
+          "seconds": 0.01636720000533387,
+          "clarification_citation_present": null
+        },
+        {
+          "question": "Berapa harga dan durasi Volume Blowout Styling?",
+          "status": 200,
+          "seconds": 0.01877629998489283,
+          "clarification_citation_present": null
+        },
+        {
+          "question": "Berapa biaya treatment itu?",
+          "status": 200,
+          "seconds": 0.018737400008831173,
+          "clarification_citation_present": true
+        },
+        {
+          "question": "Berapa dosis obat resep untuk ketombe?",
+          "status": 200,
+          "seconds": 0.006557899992913008,
+          "clarification_citation_present": null
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Six samples per level; exploratory timing, not a deployment capacity guarantee.",
+    "Before/after not randomized; process/cache variation may affect timings."
+  ]
+}

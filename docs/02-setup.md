@@ -2,7 +2,7 @@
 
 Dokumen ini menjelaskan prasyarat, instalasi, dan perintah pengembangan untuk monorepo RAG-salon (pnpm + Turbo).
 
-> Status: **Sebagian dibangun** — `apps/api` + `apps/web` sudah berjalan. `apps/ai` (Python) belum diimplementasikan; panduan env & perintah AI sudah final untuk eksekusi.
+> Status 20 Oktober 2026: `apps/ai` sudah berjalan. Untuk RAG BM25 + ChatGPT, gunakan profil dan dependensi minimal pada `docs/19-finalisasi-rag-dan-operasional.md`. Konfigurasi Gemini/Chroma/Crawl4AI di bawah tetap untuk profil awal/opsional, bukan syarat profil RAG minimal.
 
 ---
 

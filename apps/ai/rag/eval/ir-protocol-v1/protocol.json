@@ -1,0 +1,60 @@
+{
+  "version": "ir-protocol-v1",
+  "publication_ready": false,
+  "top_k": 5,
+  "input_sha256": {
+    "questions.json": "2bd9b40ee6c03626478566901fe7d49bf2add6858ca4b7321e459e98e810ec74",
+    "corpus.json": "30019771903906f9fcc533ad9f5253d9369959ce4264301a5703d7560e946992"
+  },
+  "source_package": "curated-development-v2",
+  "methods": [
+    "bm25_scan",
+    "bm25_indexed",
+    "bm25_allocated_no_decomposition",
+    "bm25_source_balanced"
+  ],
+  "independent_test_status": "not_locked_pending_human_reference_and_family_review",
+  "primary_retrieval_outcomes": [
+    "complete_evidence",
+    "recall_at_k"
+  ],
+  "secondary_retrieval_outcomes": [
+    "precision_at_k",
+    "precision_returned",
+    "f1_at_k",
+    "map_at_k",
+    "mrr_at_k",
+    "ndcg_at_k"
+  ],
+  "precision_definition": "relevant unique returned IDs / k; returned precision reported separately",
+  "ap_definition": "sum of precision at relevant ranks within k / all known relevant IDs",
+  "ndcg_definition": "gain=2**grade-1; log2(rank+1); binary only for current judgments",
+  "no_gold": "retrieval N/A; evaluate clarification, refusal, unavailable data separately",
+  "primary_answer_outcomes": [
+    "required_business_field_coverage",
+    "answer_unit_completeness_manual"
+  ],
+  "secondary_answer_outcomes": [
+    "stated_business_field_accuracy",
+    "faithfulness_manual",
+    "citation_support_manual",
+    "policy_compliance_manual"
+  ],
+  "efficiency": [
+    "index_build_ms",
+    "warm_retrieval_median_ms",
+    "warm_retrieval_p95_ms",
+    "python_index_retained_bytes",
+    "python_index_peak_bytes"
+  ],
+  "uncontrolled_in_current_run": [
+    "network",
+    "database",
+    "generation",
+    "deployment_cold_start",
+    "concurrency"
+  ],
+  "fairness": "same corpus/query/tokenizer/BM25 k1=1.5,b=.75/top-k; paired baseline and ablation; snippets share 400-char non-web budget",
+  "annotation": "Narrative Matin responses preserved as lineage. New references and answer outputs require explicit review; no invented K/R/D/S/A scores.",
+  "inference": "Development descriptive only. Freeze family-separated approved test before final comparison. API errors separate from legitimate zero; report N/A and missing denominators."
+}

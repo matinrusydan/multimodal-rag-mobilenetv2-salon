@@ -1,0 +1,374 @@
+[
+  {
+    "id": "r01",
+    "question": "Berapa harga reguler dan durasi Signature Hair Spa yang tercatat?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r02",
+    "question": "Berapa harga reguler dan durasi Precision Haircut yang tercatat?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r03",
+    "question": "Berapa harga reguler dan durasi Keratin Smooth Treatment yang tercatat?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r04",
+    "question": "Berapa harga reguler dan durasi Color Gloss Refresh yang tercatat?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r05",
+    "question": "Berapa harga reguler dan durasi Scalp Detox Therapy yang tercatat?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r06",
+    "question": "Berapa harga reguler dan durasi Volume Blowout Styling yang tercatat?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r07",
+    "question": "Untuk kondisioner setelah keramas, apakah area pemakaiannya sama untuk semua tipe rambut?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r08",
+    "question": "Menurut panduan, sampo seperti apa yang digunakan setelah pewarnaan?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r09",
+    "question": "Apa catatan panduan mengenai menyisir rambut keriting saat kering?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r10",
+    "question": "Apa panduan umum untuk mengurangi risiko kerusakan saat memakai alat styling panas?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r11",
+    "question": "Apa isi panduan untuk rambut kering atau kusam?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r12",
+    "question": "Menurut panduan, apa tindak lanjut bila kerontokan berlebihan menetap?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r13",
+    "question": "Berapa harga Signature Hair Spa dan di bagian mana kondisioner dipakai menurut panduan?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r14",
+    "question": "Berapa harga reguler Keratin Smooth Treatment dan siapa yang memberi instruksi perawatan setelahnya?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r15",
+    "question": "Berapa harga Color Gloss Refresh dan sampo apa yang disebut panduan setelah pewarnaan?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r16",
+    "question": "Berapa harga Scalp Detox Therapy dan apa tindak lanjut panduan bila kulit kepala perih?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r17",
+    "question": "Berapa biaya Precision Haircut dan apa isi panduan mengenai ujung bercabang?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r18",
+    "question": "Berapa harga serta durasi Volume Blowout Styling dan isi panduan untuk rambut kering?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r19",
+    "question": "Markdown menyebut Hair Spa promo Rp285.000. Berapa harga reguler pada database dan apakah promo itu bisa dipastikan?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r20",
+    "question": "Berapa harga Keratin kemarin sebelum berubah hari ini?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r21",
+    "question": "Berapa biaya treatment itu?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r22",
+    "question": "Berapa dosis obat resep yang harus saya minum untuk ketombe?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r23",
+    "question": "Apa perbedaan harga reguler dan durasi Signature Hair Spa dibanding Scalp Detox Therapy?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "r24",
+    "question": "Apakah Keratin Smooth Treatment masih Rp690.000? Berapa harga reguler yang tercatat?",
+    "split": "development",
+    "family_id": null,
+    "review_status": "pending_family_assignment",
+    "reviewer": null,
+    "locked": false
+  },
+  {
+    "id": "candidate-01",
+    "question": "Daftar layanan apa saja yang aktif di salon?",
+    "proposed_scenario": "catalog_list",
+    "split": "test",
+    "family_id": null,
+    "review_status": "draft_assisted_not_validated",
+    "reviewer": null,
+    "locked": false,
+    "reference_answer": null,
+    "evidence_ids": null,
+    "warning": "Candidate only. May overlap development families; revise or move to development after family review. Do not evaluate as held-out test yet."
+  },
+  {
+    "id": "candidate-02",
+    "question": "Ada berapa layanan salon yang sedang aktif?",
+    "proposed_scenario": "catalog_count",
+    "split": "test",
+    "family_id": null,
+    "review_status": "draft_assisted_not_validated",
+    "reviewer": null,
+    "locked": false,
+    "reference_answer": null,
+    "evidence_ids": null,
+    "warning": "Candidate only. May overlap development families; revise or move to development after family review. Do not evaluate as held-out test yet."
+  },
+  {
+    "id": "candidate-03",
+    "question": "Layanan apa yang harganya paling murah dan berapa durasinya?",
+    "proposed_scenario": "catalog_minimum",
+    "split": "test",
+    "family_id": null,
+    "review_status": "draft_assisted_not_validated",
+    "reviewer": null,
+    "locked": false,
+    "reference_answer": null,
+    "evidence_ids": null,
+    "warning": "Candidate only. May overlap development families; revise or move to development after family review. Do not evaluate as held-out test yet."
+  },
+  {
+    "id": "candidate-04",
+    "question": "Urutkan semua layanan dari yang paling mahal.",
+    "proposed_scenario": "catalog_sort",
+    "split": "test",
+    "family_id": null,
+    "review_status": "draft_assisted_not_validated",
+    "reviewer": null,
+    "locked": false,
+    "reference_answer": null,
+    "evidence_ids": null,
+    "warning": "Candidate only. May overlap development families; revise or move to development after family review. Do not evaluate as held-out test yet."
+  },
+  {
+    "id": "candidate-05",
+    "question": "Dengan anggaran 300 ribu, layanan apa yang tersedia?",
+    "proposed_scenario": "catalog_budget",
+    "split": "test",
+    "family_id": null,
+    "review_status": "draft_assisted_not_validated",
+    "reviewer": null,
+    "locked": false,
+    "reference_answer": null,
+    "evidence_ids": null,
+    "warning": "Candidate only. May overlap development families; revise or move to development after family review. Do not evaluate as held-out test yet."
+  },
+  {
+    "id": "candidate-06",
+    "question": "Apakah ada layanan di bawah 200 ribu?",
+    "proposed_scenario": "catalog_empty_filter",
+    "split": "test",
+    "family_id": null,
+    "review_status": "draft_assisted_not_validated",
+    "reviewer": null,
+    "locked": false,
+    "reference_answer": null,
+    "evidence_ids": null,
+    "warning": "Candidate only. May overlap development families; revise or move to development after family review. Do not evaluate as held-out test yet."
+  },
+  {
+    "id": "candidate-07",
+    "question": "Apakah hari ini tersedia diskon untuk Hair Spa?",
+    "proposed_scenario": "unsupported_promotion",
+    "split": "test",
+    "family_id": null,
+    "review_status": "draft_assisted_not_validated",
+    "reviewer": null,
+    "locked": false,
+    "reference_answer": null,
+    "evidence_ids": null,
+    "warning": "Candidate only. May overlap development families; revise or move to development after family review. Do not evaluate as held-out test yet."
+  },
+  {
+    "id": "candidate-08",
+    "question": "Mengapa cat rambut saya cepat luntur setelah dari salon?",
+    "proposed_scenario": "complaint_and_document_gap",
+    "split": "test",
+    "family_id": null,
+    "review_status": "draft_assisted_not_validated",
+    "reviewer": null,
+    "locked": false,
+    "reference_answer": null,
+    "evidence_ids": null,
+    "warning": "Candidate only. May overlap development families; revise or move to development after family review. Do not evaluate as held-out test yet."
+  },
+  {
+    "id": "candidate-09",
+    "question": "Bisa sebutkan merek keratin yang digunakan salon?",
+    "proposed_scenario": "confidential_product",
+    "split": "test",
+    "family_id": null,
+    "review_status": "draft_assisted_not_validated",
+    "reviewer": null,
+    "locked": false,
+    "reference_answer": null,
+    "evidence_ids": null,
+    "warning": "Candidate only. May overlap development families; revise or move to development after family review. Do not evaluate as held-out test yet."
+  },
+  {
+    "id": "candidate-10",
+    "question": "Saya mau treatment, tetapi belum tahu pilih layanan yang mana.",
+    "proposed_scenario": "clarification",
+    "split": "test",
+    "family_id": null,
+    "review_status": "draft_assisted_not_validated",
+    "reviewer": null,
+    "locked": false,
+    "reference_answer": null,
+    "evidence_ids": null,
+    "warning": "Candidate only. May overlap development families; revise or move to development after family review. Do not evaluate as held-out test yet."
+  },
+  {
+    "id": "candidate-11",
+    "question": "Apakah harga haircut berubah bulan lalu?",
+    "proposed_scenario": "unavailable_price_history",
+    "split": "test",
+    "family_id": null,
+    "review_status": "draft_assisted_not_validated",
+    "reviewer": null,
+    "locked": false,
+    "reference_answer": null,
+    "evidence_ids": null,
+    "warning": "Candidate only. May overlap development families; revise or move to development after family review. Do not evaluate as held-out test yet."
+  },
+  {
+    "id": "candidate-12",
+    "question": "Kulit kepala terasa perih, apakah layanan detox pasti menyembuhkan?",
+    "proposed_scenario": "nonclinical_boundary",
+    "split": "test",
+    "family_id": null,
+    "review_status": "draft_assisted_not_validated",
+    "reviewer": null,
+    "locked": false,
+    "reference_answer": null,
+    "evidence_ids": null,
+    "warning": "Candidate only. May overlap development families; revise or move to development after family review. Do not evaluate as held-out test yet."
+  }
+]

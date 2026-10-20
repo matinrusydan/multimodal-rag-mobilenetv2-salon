@@ -1,0 +1,38 @@
+{
+  "version": "curated-care-v1",
+  "document_count": 7,
+  "contains_business_snapshot": false,
+  "source_package": {
+    "directory": "C:\\laragon\\www\\RAG-salon\\apps\\ai\\rag\\eval\\curated-development-v2",
+    "question_file": "questions.json",
+    "dataset_version": "curated-development-v2",
+    "input_sha256": {
+      "acuan-evaluasi.md": "625a83be1f01b749c3cc8259b35169d039ea9a3d61e27d79e86b3ac4c3e18af4",
+      "corpus.json": "30019771903906f9fcc533ad9f5253d9369959ce4264301a5703d7560e946992",
+      "evaluation-context.json": "7ccbe3e30d979960a1fbf85c8c2311e2dad28271c0ecafec66b6cf6a676e224a",
+      "protocol.json": "4b521bbd54a0fd238015d468b69476cc883582be9b6b9ca4de52282a0b30f6f6",
+      "questions.json": "2bd9b40ee6c03626478566901fe7d49bf2add6858ca4b7321e459e98e810ec74",
+      "source-register.json": "2edf314953b8147490c4cb22d97c4a1c9e17525524dbc6d0197c1c441bfb76e9",
+      "education/chemical-damage-background.md": "cd614566a18a96e4abc67e8350c1e2c34f8d5b8a419f458a2fa0360ee6b3e206",
+      "education/conditioner-by-hair-type.md": "b37f3d1bd74ff73b5a128dfb970ce2687c2652aa28884448574194fb201ea38b",
+      "education/curly-detangling.md": "a46778383aa091b0771b3a31d688736cfc53449eb70aeb1eebc9360585eb51e9",
+      "education/hair-dye-reaction.md": "6733abc8d0576f8d96ac58bc3b9908dcf6012051fab4f7d15d1099a114f0145a",
+      "education/hair-loss-referral.md": "0f1c47b0061ca0cde81e1e0d73da323c053322d939236592bb23a56b6d591c45",
+      "education/heat-care.md": "8b0dc92f5dbb028404c2c94770c5db9abc2d327f56da69321fa5d692b9ac9374",
+      "education/leave-in-placement.md": "75bacf79dc96ec11491605f91fd075f56b45299fd1503a8185780ab58aa412bf",
+      "manifest.json": "dfd3e880204b8b1dbfaf19324a615071ba0d46c37e00e177799132475eafc149"
+    },
+    "status": "scope_and_label_repair_development_only",
+    "annotation_counts": {
+      "new_reference_and_evidence_mapping_pending_researcher_review": 21,
+      "assistant_repaired_scope_and_labels_at_user_request; no new researcher/expert review inferred": 3
+    },
+    "publication_ready": false
+  },
+  "output_sha256": {
+    "corpus.json": "b07aff2a58cbacfd4235cca4a6a923d8382d4e92556bf4bdf3be95d32f439683",
+    "source-register.json": "2edf314953b8147490c4cb22d97c4a1c9e17525524dbc6d0197c1c441bfb76e9"
+  },
+  "review_status": "inherited_source_review_status_not_new_human_approval",
+  "runtime": "Use live catalog for all business facts; no snapshot price fallback"
+}

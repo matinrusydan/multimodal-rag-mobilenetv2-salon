@@ -8,8 +8,8 @@ from app.rag import rag_service
 
 def catalog(tmp_path):
     path=tmp_path/'corpus.json'
-    path.write_text(json.dumps([{'id':'db:1','source_type':'db','fields':{'name':'Keratin Smooth Treatment'}},
-                                {'id':'db:2','source_type':'db','fields':{'name':'Signature Hair Spa'}}]))
+    path.write_text(json.dumps([{'id':'db:1','source_type':'db','section':'Keratin Smooth Treatment','file':'services.json','text':'Keratin Smooth Treatment','fields':{'name':'Keratin Smooth Treatment'}},
+                                {'id':'db:2','source_type':'db','section':'Signature Hair Spa','file':'services.json','text':'Signature Hair Spa','fields':{'name':'Signature Hair Spa'}}]))
     return path
 
 
@@ -18,6 +18,8 @@ def test_ambiguous_price_asks_and_lists_without_guessing(tmp_path):
     result=service_clarification('Berapa biaya treatment itu?',path)
     assert 'yang mana' in result['reply']
     assert 'Keratin Smooth Treatment' in result['reply'] and 'Signature Hair Spa' in result['reply']
+    assert all('- '+name+' [1]' in result['reply'] for name in ('Keratin Smooth Treatment','Signature Hair Spa'))
+    assert result['sources'][0]['citation_number']==1
     assert 'Rp' not in result['reply'] and 'Jika yang dimaksud' not in result['reply']
     assert service_clarification('Berapa harga keratin?',path) is None
     assert service_clarification('Bagaimana memakai kondisioner?',path) is None
