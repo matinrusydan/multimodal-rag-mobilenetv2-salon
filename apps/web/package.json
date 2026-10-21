@@ -2,6 +2,9 @@
   "name": "web",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "node ../../scripts/freeport.mjs 3000 -- next dev",
     "build": "next build",
@@ -50,7 +53,7 @@
     "cmdk": "1.1.1",
     "date-fns": "4.4.0",
     "embla-carousel-react": "8.6.0",
-    "framer-motion": "latest",
+    "framer-motion": "13.2.0",
     "input-otp": "1.4.2",
     "iron-session": "^8.0.4",
     "lucide-react": "^1.17.0",

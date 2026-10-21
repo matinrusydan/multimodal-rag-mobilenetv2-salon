@@ -1,150 +1,104 @@
-# RAG-Salon — Multimodal RAG + Computer Vision (Salon)
+# RAG-Salon — TIEN Salon
 
-Project penelitian/skripsi: sistem **multimodal** yang menggabungkan **Computer Vision (CV)** untuk
-analisis foto rambut dan **Retrieval-Augmented Generation (RAG)** untuk konsultasi berbasis
-pengetahuan salon. Fokus penelitian ada di **CV & RAG**; aplikasi web/admin berfungsi sebagai
-wadah demo & integrasi end-to-end.
+Prototipe konsultasi layanan/perawatan rambut berbasis **Retrieval-Augmented Generation**.
+Monorepo pnpm + Turbo: Next.js, Express, FastAPI, dan PostgreSQL.
 
-> Dokumen analisis CV & RAG untuk bimbingan TA: **[`docs/09-analisis-cv-rag.md`](docs/09-analisis-cv-rag.md)**
-> Diagram arsitektur: **[`docs/diagrams/`](docs/diagrams/)**
+## Profil aplikasi saat ini
 
----
+- Konsultasi teks: **BM25 + seleksi bukti + katalog layanan live + ChatGPT** melalui izin aplikasi sendiri.
+- Harga/durasi berasal dari API layanan aktif; kegagalan katalog tidak diganti harga snapshot.
+- Tombol **Analisis Foto** menampilkan **“Fitur belum tersedia”**. Endpoint analisis mengembalikan HTTP 503, bukan memproses foto.
+- Implementasi/dataset/bobot CV dan artefak penelitian tetap disimpan untuk tahap berikutnya, tetapi tidak menjadi dependensi runtime produksi.
+- Draf paper dan hasil development bukan bukti kualitas produksi atau hasil uji independen.
 
-## 1. Arsitektur Singkat
+**Panduan deployment:** [docs/23-deployment-rag-only.md](docs/23-deployment-rag-only.md).
+Target: **Vercel (web) + Railway (API, AI, PostgreSQL)**; image backend juga dapat digunakan di Render.
+Persiapan konfigurasi tidak berarti layanan sudah dideploy atau izin inferensi cloud sudah terverifikasi.
 
-Monorepo **pnpm + Turbo** dengan 3 app:
+## Arsitektur
 
-| App | Stack | Port | Peran |
-|---|---|---|---|
-| `apps/web` | Next.js 16 (App Router) | 3000 | Landing page, reservasi, panel admin |
-| `apps/api` | Express + TypeScript + Knex/PostgreSQL | 4000 | REST API, RBAC, proxy ke brain engine |
-| `apps/ai` | FastAPI (Python) | 5000 | **Brain engine**: CV (ONNX) + RAG (ChromaDB + Gemini) + Crawler |
-
-```
-Next.js (3000) ──▶ Express (4000) ──▶ FastAPI (5000)
-                       │                    ├── CV   : MobileNetV2 ONNX + MediaPipe (viewpoint gate)
-                       │                    └── RAG  : ChromaDB + Gemini embed/LLM
-                       └── PostgreSQL (5432)
+```text
+Browser → Next.js /api/* → Express /api/* → FastAPI /ai/*
+                                ↓               ↓
+                           PostgreSQL     katalog live dari Express
+                                         + bundle bukti runtime
+                                         + ChatGPT application grant
 ```
 
----
+| App | Teknologi | Port lokal |
+|---|---|---|
+| `apps/web` | Next.js 16, React, TypeScript | 3000 |
+| `apps/api` | Express, Knex, PostgreSQL, JWT/RBAC | 4000 |
+| `apps/ai` | FastAPI, BM25, ChatGPT | 5000 |
 
-## 2. Prasyarat
+`app.rag_app:app` merupakan komposisi AI ringan; `app.main:app` adalah entrypoint kompatibilitas.
+Keduanya tidak memuat model CV. Agent admin dan knowledge CRUD dipertahankan; crawler/reingest
+legacy tidak tersedia pada profil BM25 minimal. Mengedit knowledge legacy tidak otomatis
+mengubah bundle BM25 yang terversi.
 
-- **Node.js ≥ 20** + **pnpm 10** (`npm i -g pnpm`)
-- **Python 3.12/3.13** (venv di `apps/ai/.venv`)
-- **PostgreSQL 17** berjalan di `127.0.0.1:5432` (database `rag_salon`)
-- (Opsional) **Graphviz** untuk regenerasi diagram — lihat `docs/diagrams/README`.
+## Setup lokal
 
----
+Prasyarat: **Node.js 22.x**, **pnpm 10.15.1**, PostgreSQL, dan Python 3.13 untuk profil minimal.
+Konfigurasi development dan produksi berbeda; jangan mengandalkan default Gemini/Chroma pada
+kode untuk menjalankan profil ChatGPT.
 
-## 3. Menjalankan Website
+1. Pasang workspace dengan `pnpm install`.
+2. Siapkan konfigurasi lokal dari contoh masing-masing app, tanpa meng-commit secret.
+3. Ikuti [setup RAG minimal](docs/19-finalisasi-rag-dan-operasional.md) untuk venv,
+   provider, model yang diizinkan akun, dan corpus runtime.
+4. Siapkan database/migrasi/RBAC setelah memastikan target database benar. Jangan menjalankan
+   demo seed pada produksi.
 
-```bash
-# dari root
-pnpm install
+```powershell
+# Dari root; scripts development saat ini memakai venv Windows.
+pnpm local
 
-# jalankan semua app (web :3000, api :4000, ai :5000) via Turbo
-pnpm dev          # = pnpm local
-
-# atau jalankan FastAPI brain engine saja
-pnpm ai
+# Atau jalankan satu app; jangan duplikasi AI pada port 5000.
+pnpm --filter web dev
+pnpm --filter api dev
+pnpm --filter ai start:rag
 ```
 
-> `pnpm ai` (dan `pnpm dev`) otomatis **membebaskan port** yang dipakai sebelum start
-> (via `scripts/freeport.mjs`), jadi tidak lagi error `WinError 10048` kalau ada instance
-> lama yang masih jalan.
+**Perhatian:** `pnpm local` sudah menjalankan AI. Script dev memakai `freeport.mjs`, yang dapat
+menghentikan proses lain pada port aplikasi. Gunakan Docker/production commands pada hosting,
+bukan script dev tersebut.
 
-Kalau ingin terpisah (disarankan saat debug):
+## Pemeriksaan dan pengujian
 
-```bash
-# Terminal 1 — backend API
-cd apps/api && pnpm dev            # http://127.0.0.1:4000
-
-# Terminal 2 — web
-cd apps/web && pnpm dev            # http://127.0.0.1:3000
+```powershell
+pnpm --filter api typecheck
+pnpm --filter web typecheck
+pnpm --filter web test
+pnpm --filter web build
+pnpm test:rag
 ```
 
-**Akun demo** (seed): `admin@rag-salon.id` / `Password123!` (superadmin).
+**Jangan menjalankan `pnpm test`, `pnpm test:api`, migrasi, atau seed terhadap database produksi.**
+Sebagian tes API memanggil `prepareDb()` yang menghapus dan membuat ulang tabel menggunakan
+`DATABASE_URL` biasa. Gunakan database disposable dan persetujuan operator.
 
----
+`pnpm lint`/`pnpm lint:fix`, migrasi, dan seed perlu konfirmasi sesuai aturan proyek.
+Tidak ada migrate/seed/repair otomatis pada startup image.
 
-## 4. Menjalankan FastAPI (Brain Engine) — CV & RAG
+## Data dan operasi
 
-```bash
-cd apps/ai
+- **Liveness:** `/api/health`, `/ai/health`.
+- **Readiness:** `/api/ready`, `/ai/ready`; readiness tidak melakukan generasi berbayar/berkuota.
+- **Session ChatGPT:** volume privat writable Linux melalui `XDG_DATA_HOME=/data`; satu replica AI.
+- **Corpus runtime:** `apps/ai/rag/runtime/`, dibundel immutable bersama manifest/checksum.
+- **Knowledge legacy:** direktori persistent terpisah; bukan corpus runtime aktif.
+- **Database:** PostgreSQL terkelola dengan backup dan TLS sesuai provider.
 
-# pastikan venv & dependency
-.venv\Scripts\python.exe -m pip install -r requirements.txt
+Tidak menyalin file kredensial DPAPI Windows ke Linux. Initial login/re-auth ChatGPT pada cloud
+memerlukan langkah operator dan transport loopback yang aman; detail dan gate-nya ada pada runbook.
+Tidak ada fallback otomatis ke API berbayar atau kredensial aplikasi lain.
 
-# jalankan server
-.venv\Scripts\python.exe -m uvicorn app.main:app --port 5000 --host 127.0.0.1
-# atau dari root: pnpm ai
-```
+## Referensi
 
-Endpoint utama:
-
-| Endpoint | Fungsi |
-|---|---|
-| `GET /ai/health` | Health check |
-| `POST /ai/analyze` | **CV**: analisis foto rambut (viewpoint → type → length) |
-| `POST /ai/chat` | **RAG**: konsultasi pelanggan (ChromaDB + Gemini) |
-| `POST /ai/agent` | Agent admin (RAG katalog + tool-call data live) |
-| `GET /ai/knowledge` | Kelola dokumen knowledge base `.md` |
-
-Environment penting di `apps/ai/.env`: `GEMINI_API_KEY`, `API_BASE_URL`, `AI_INTERNAL_TOKEN`,
-`CHROMA_PERSIST_DIR`, `CRAWL_TIPS_URLS`.
-
-**Ingest / crawl knowledge base RAG:**
-
-```bash
-pnpm rag:ingest        # ingest app/rag/knowledge/*.md -> ChromaDB
-pnpm crawl:tips        # crawl sumber tips (alodokter dll) -> knowledge
-pnpm rag:sync-catalog  # serialize katalog layanan DB -> ChromaDB (agent admin)
-```
-
----
-
-## 5. Database: migrate, seed, dan REPAIR (menu kembali ke awal)
-
-```bash
-pnpm migrate    # jalankan migrasi skema
-pnpm seed       # isi data awal (RBAC, menu, layanan, user demo)
-```
-
-### ⚠️ Kalau data/menu "hilang" atau kembali ke daftar awal
-
-Gejala: kolom hilang walau migrasi tercatat "applied", `pnpm seed` gagal dengan error
-`column "status" does not exist`, sehingga **menu tidak ikut ter-update**.
-
-Perbaikan satu perintah:
-
-```bash
-pnpm db:repair
-```
-
-`db:repair` akan: (1) hapus record migrasi "reensure" yang bermasalah, (2) jalankan ulang
-migrasi untuk memastikan **semua kolom ada**, lalu (3) `seed` ulang. Setelah itu menu/admin
-kembali ke struktur yang benar.
-
-Perintah seed granular (bila perlu):
-
-```bash
-cd apps/api
-pnpm migrate            # migrate:latest
-pnpm seed               # semua seed
-pnpm db:repair          # repair + migrate + seed
-```
-
-> Penyebab umum: `knex_migrations` sinkron tetapi skema DB ter-rollback/restore dari dump lama,
-> jadi migrasi tidak dijalankan ulang padahal kolomnya hilang.
-
----
-
-## 6. Lihat juga
-
-- **Analisis CV & RAG (bahan bimbingan):** [`docs/09-analisis-cv-rag.md`](docs/09-analisis-cv-rag.md)
-- **Roadmap CV lengkap:** [`docs/08-roadmap-cv-lengkap.md`](docs/08-roadmap-cv-lengkap.md)
-- **Kajian matematis rujukan:** [`docs/06-kajian-matematis-referensi.md`](docs/06-kajian-matematis-referensi.md)
-- **Diagram (flowchart & sequence):** [`docs/diagrams/`](docs/diagrams/)
-- **README CV modular:** [`apps/api/cv/README.md`](apps/api/cv/README.md)
+- [Deployment RAG-only](docs/23-deployment-rag-only.md)
+- [Arsitektur](docs/01-arsitektur.md)
+- [Setup development dan profil lama](docs/02-setup.md)
+- [Operasional RAG minimal](docs/19-finalisasi-rag-dan-operasional.md)
+- [Seleksi bukti dan evaluasi](docs/21-penguatan-seleksi-dan-evaluasi-lanjutan.md)
+- [Penanganan ambiguitas](docs/22-penanganan-ambiguitas-konsultasi.md)
+- [Roadmap CV — acuan tertinggi pekerjaan CV](docs/08-roadmap-cv-lengkap.md)

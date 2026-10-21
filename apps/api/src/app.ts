@@ -10,6 +10,7 @@ import routes from './routes';
 
 export function createApp() {
   const app = express();
+  app.set('trust proxy', env.TRUST_PROXY);
 
   app.use(
     helmet({
@@ -18,7 +19,9 @@ export function createApp() {
   );
   app.use(
     cors({
-      origin: env.CORS_ORIGIN.split(','),
+      origin: env.CORS_ORIGIN.split(',')
+        .map((origin) => origin.trim())
+        .filter(Boolean),
       credentials: true,
     }),
   );

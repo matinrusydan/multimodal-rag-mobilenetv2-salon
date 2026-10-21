@@ -2,6 +2,8 @@ import type { NextRequest } from 'next/server';
 
 import { backendRequest, problem, routeError, routeOk } from '@/lib/backend';
 
+export const maxDuration = 120;
+
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as {
@@ -15,6 +17,7 @@ export async function POST(request: NextRequest) {
     }
     const data = await backendRequest('/chat', {
       method: 'POST',
+      timeoutMs: 100_000,
       body: JSON.stringify({
         message: body.message,
         hairContext: body.hairContext,

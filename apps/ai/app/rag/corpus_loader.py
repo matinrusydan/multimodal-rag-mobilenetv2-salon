@@ -21,6 +21,8 @@ def load_corpus(path,*,require_manifest=False):
         if require_manifest and not manifest_path.exists():raise ValueError('Runtime manifest required')
         if manifest_path.exists():
             manifest=json.loads(manifest_path.read_text(encoding='utf-8'))
+            if not isinstance(manifest, dict) or not isinstance(manifest.get('output_sha256'), dict):
+                raise ValueError('Invalid runtime manifest')
             expected=manifest.get('output_sha256',{}).get(path.name)
             if expected is None or hashlib.sha256(content).hexdigest()!=expected:
                 raise ValueError('Corpus hash mismatch')

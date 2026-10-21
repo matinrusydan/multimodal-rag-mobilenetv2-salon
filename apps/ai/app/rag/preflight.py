@@ -3,6 +3,7 @@ import argparse
 import asyncio
 from datetime import datetime,timezone
 import json
+import time
 from pathlib import Path
 
 from app.config import settings
@@ -18,6 +19,7 @@ async def check(check_catalog=False):
     record('context_selection',settings.rag_context_selection in {'all','source_scoped'},value=settings.rag_context_selection)
     record('generation_deadline',0<settings.rag_generation_timeout_seconds<=60,value_seconds=settings.rag_generation_timeout_seconds)
     record('live_catalog_enabled',settings.rag_live_services)
+    record('runtime_bundle_configured', settings.rag_runtime_corpus_file is not None)
     path=settings.rag_runtime_corpus_file or settings.rag_corpus_file
     try:
         corpus=load_corpus(path,require_manifest=settings.rag_runtime_corpus_file is not None)
@@ -26,11 +28,22 @@ async def check(check_catalog=False):
     except ValueError:
         record('runtime_corpus',False,reason='Knowledge corpus missing or invalid')
     if settings.ai_llm_provider=='chatgpt':
-        from app.rag import chatgpt_plan
-        try:available=chatgpt_plan.available()
-        except (ValueError,OSError,TypeError,AttributeError):available=False
+        from app import chatgpt_auth
+        # Inspect only the application's own store. Never refresh or call a model.
+        available = False
+        expired = None
+        try:
+            profile = chatgpt_auth.load()
+            expired = profile.get('expires_at', 0) <= time.time()
+            available = bool(profile.get('access_token')
+                             and chatgpt_auth.PLAN_SCOPE in profile.get('scopes', [])
+                             and (not expired or profile.get('refresh_token')))
+        except Exception:
+            # A DPAPI/storage failure is not a reason to expose credential details.
+            pass
         record('generation_configuration',bool(settings.chatgpt_model and available),provider='chatgpt',
-               model=settings.chatgpt_model,application_session_available=available,
+               model_configured=bool(settings.chatgpt_model),application_session_available=available,
+               session_expired=expired,provider_verified=False,
                inference_status='not_tested_no_model_call')
     else:
         record('generation_configuration',False,provider=settings.ai_llm_provider,
@@ -38,7 +51,7 @@ async def check(check_catalog=False):
     if check_catalog:
         from app.rag.live_services import load_services
         try:
-            rows=await load_services()
+            rows=await asyncio.wait_for(load_services(), timeout=3)
             record('catalog_api',True,active_services=len(rows))
         except Exception as exc:
             record('catalog_api',False,error_type=type(exc).__name__)

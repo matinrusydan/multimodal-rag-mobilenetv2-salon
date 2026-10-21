@@ -1,179 +1,145 @@
 # 02 — Setup
 
-Dokumen ini menjelaskan prasyarat, instalasi, dan perintah pengembangan untuk monorepo RAG-salon (pnpm + Turbo).
-
-> Status 20 Oktober 2026: `apps/ai` sudah berjalan. Untuk RAG BM25 + ChatGPT, gunakan profil dan dependensi minimal pada `docs/19-finalisasi-rag-dan-operasional.md`. Konfigurasi Gemini/Chroma/Crawl4AI di bawah tetap untuk profil awal/opsional, bukan syarat profil RAG minimal.
-
----
+Panduan development monorepo pnpm + Turbo. Produksi memakai prosedur terpisah di
+[23-deployment-rag-only.md](./23-deployment-rag-only.md).
 
 ## 1. Prasyarat
 
 | Tool | Versi | Catatan |
 |---|---|---|
-| Node.js | 18+ (disarankan 20/22 LTS) | Wajib |
-| pnpm | 9+ | Package manager |
-| PostgreSQL | 14+ | Database RBAC & data |
-| **Python** | **3.10+** | **Wajib** — untuk `apps/ai` (FastAPI, onnxruntime, Crawl4AI) |
-| Turbo | via devDependency | Dikelola pnpm |
+| Node.js | 22.x | Sama dengan konfigurasi hosting |
+| pnpm | 10.15.1 | Pin `packageManager` root |
+| PostgreSQL | 14+ | Database aplikasi/RBAC |
+| Python | 3.13 | Profil RAG minimal; snapshot dependensi berasal dari 3.13.3 |
+| Turbo | devDependency | Tidak perlu instal global |
 
----
+Workspace berisi `apps/*` dan `packages/*`. Jalankan perintah dari root kecuali dinyatakan lain.
+Pada Windows gunakan `127.0.0.1` untuk koneksi lokal.
 
-## 2. Struktur Workspace
+## 2. Instalasi JavaScript
 
-```yaml
-# pnpm-workspace.yaml
-packages:
-  - apps/*
-  - packages/*
-  - e2e
-```
-
----
-
-## 3. Instalasi
-
-```bash
-# dari root repo
+```powershell
 pnpm install
 ```
 
-Ini akan menginstal seluruh workspace (web, api, shared packages).
+Konfigurasi Biome: single quotes, indentasi 2 spasi, trailing commas, lebar 100 karakter.
+Jangan menjalankan lint, migrasi, seed, atau db:repair tanpa konfirmasi.
 
----
+## 3. Konfigurasi lokal
 
-## 4. Variabel Environment
+Siapkan sendiri file berikut dari contoh yang sesuai; jangan commit secret:
 
-### Untuk `apps/api` (Express)
-
-```env
-NODE_ENV=development
-PORT=4000
-HOST=127.0.0.1
-
-DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:5432/rag_salon
-DB_CLIENT=postgres
-
-JWT_SECRET=change-me
-JWT_EXPIRES_IN=1d
-
-SECURITY_ENFORCE_ENABLED=true
-CORS_ORIGIN=http://localhost:3000
-```
-
-### Untuk `apps/ai` (FastAPI Brain Engine)
-
-```env
-AI_PORT=5000
-AI_HOST=127.0.0.1
-
-# Gemini (embed + LLM)
-GEMINI_API_KEY=...
-
-# Embedding & LLM provider
-AI_EMBEDDING_PROVIDER=gemini      # "gemini" (gemini-embedding-001, 768d)
-
-AI_LLM_PROVIDER=gemini            # "gemini" (gemini-3.6-flash)
-# Fallback berantai saat model utama kena rate-limit/quota (429):
-AI_LLM_FALLBACK_MODELS=gemini-3.1-flash-lite,gemini-flash-lite-latest,gemini-3-flash-preview,gemini-flash-latest
-AI_LLM_COOLDOWN_SECONDS=120       # lama skip model yang kena 429 (detik)
-# ChromaDB
-AI_CHROMA_MODE=persistent          # "persistent" | "http"
-CHROMA_URL=http://127.0.0.1:8000   # hanya utk mode http
-CHROMA_PERSIST_DIR=./chroma_db
-
-# CV models
-MODEL_LENGTH_PATH=./cv/weights/hair_length.onnx
-MODEL_TYPE_PATH=./cv/weights/hair_type.onnx
-CONFIDENCE_THRESHOLD=0.5
-
-# Crawl4AI
-CRAWL_BASE_URL=http://127.0.0.1:3000   # situs salon lokal (Next.js dev)
-CRAWL_USE_BROWSER=false                  # false=raw HTTP; true=Playwright (SPA)
-CRAWL_DELAY_MS=1500
-CRAWL_TIPS_URL=https://alodokter.com    # sumber tips eksternal
-CRAWL_HEADLESS=false                  # false=bypass anti-bot; true=ringan
-WEB_FALLBACK_ENABLED=true             # live crawl alodokter saat query kesehatan rambut
-WEB_FALLBACK_MAX_DOCS=2
-WEB_CACHE_TTL_SECONDS=3600            # cache hasil crawl (detik)
-```
-
-> **Catatan ChromaDB**: mode `persistent` (default) menggunakan ChromaDB embedded tanpa server terpisah — cocok untuk dev lokal. Mode `http` menghubungkan ke ChromaDB server di `CHROMA_URL`.
-
-> **Windows + uvicorn**: `uvicorn --reload` di Windows menggunakan selector loop yang tidak bisa spawn subprocess Playwright. Aliran `web_fallback` otomatis menjalankan crawl di thread terpisah (`asyncio.to_thread`) dengan fresh Proactor loop — tidak perlu konfigurasi tambahan.
-
-### Untuk `apps/web` (Next.js)
-
-```env
-BACKEND_URL=http://127.0.0.1:4000       # akses server-side ke API
-NEXT_PUBLIC_BACKEND_URL=http://127.0.0.1:4000  # akses client-side (jarang)
-SESSION_SECRET=change-me-session-secret
-NEXT_PUBLIC_API_URL=http://127.0.0.1:4000/api
-```
-
-> **Windows**: gunakan `127.0.0.1`, bukan `localhost` untuk menghindari kendala bind IPv6.
-
----
-
-## 5. Perintah Pengembangan
-
-Semua dijalankan dari root repo.
-
-| Tujuan | Perintah |
+| File lokal | Nilai penting |
 |---|---|
-| Jalankan semua app (dev) | `pnpm local` |
-| Jalankan FastAPI brain engine (dev) | `pnpm ai` |
-| Migrasi DB | `pnpm migrate` |
-| Seed (admin + RBAC) | `pnpm seed` |
-| Crawl situs salon → KB | `pnpm crawl:site` |
-| Crawl tips eksternal → KB | `pnpm crawl:tips` |
-| Ingest KB → ChromaDB | `pnpm rag:ingest` |
-| Build semua | `pnpm build` |
-| Lint | `pnpm lint` |
-| Lint + fix | `pnpm lint:fix` |
-| Format | `pnpm format` |
-| Format + write | `pnpm format:write` |
-| Test API saja | `pnpm test:api` |
-| Test Web saja | `pnpm test:web` |
-| Test semua | `pnpm test` |
-| Tambah dep ke web | `pnpm --filter web add <pkg>` |
-| Tambah dep ke api | `pnpm --filter api add <pkg>` |
+| `apps/api/.env` | DATABASE_URL, JWT_SECRET, AI_URL, AI_INTERNAL_TOKEN, CORS_ORIGIN |
+| `apps/web/.env.local` | BACKEND_URL, SESSION_SECRET |
+| `apps/ai/.env` | Provider/model ChatGPT, profil BM25, corpus runtime, katalog live, internal token |
 
-**Alur setup awal:**
+Contoh koneksi lokal: `BACKEND_URL=http://127.0.0.1:4000`,
+`AI_URL=http://127.0.0.1:5000`, `API_BASE_URL=http://127.0.0.1:4000`.
+Internal token Express dan AI harus sama. BACKEND_URL dan SESSION_SECRET **server-side only**;
+browser memakai route handler same-origin Next.js, bukan NEXT_PUBLIC_API_URL.
 
-```bash
-pnpm install
-# setup venv Python di apps/ai
-cd apps/ai && python -m venv .venv && .venv\Scripts\activate
-pip install -r requirements.txt
-cd ../..
+Profil operasional yang dipilih:
+
+```dotenv
+AI_LLM_PROVIDER=chatgpt
+# Isi slug model yang diizinkan grant aplikasi.
+AI_CHATGPT_MODEL=
+RAG_RETRIEVAL_PROVIDER=bm25_source_balanced
+RAG_LIVE_SERVICES=true
+RAG_CONTEXT_SELECTION=source_scoped
+RAG_RUNTIME_CORPUS_FILE=./rag/runtime/curated-care-v1/corpus.json
+```
+
+Path corpus relatif di atas diasumsikan dari `apps/ai`. Ikuti
+[19-finalisasi-rag-dan-operasional.md](./19-finalisasi-rag-dan-operasional.md) untuk profil
+minimal, setup izin ChatGPT, dan preflight. Default kode Gemini/Chroma tidak otomatis memilih
+profil tersebut. `start:rag` hanya memilih entrypoint.
+
+`app.rag_app:app` adalah runtime ringan; `app.main:app` alias kompatibilitas ke aplikasi sama.
+Analisis foto unavailable. Tidak perlu model ONNX/Playwright untuk menjalankan profil minimal.
+Implementasi CV dan skrip eksperimen tetap tersimpan, bukan dihapus atau dilatih ulang.
+
+## 4. Python dan interpreter
+
+Contoh Windows untuk environment RAG minimal:
+
+```powershell
+python -m venv apps/ai/.venv
+apps/ai/.venv/Scripts/python.exe -m pip install -r apps/ai/requirements-rag.lock.txt
+# pytest tidak termasuk dependency runtime minimal; pasang terpisah untuk pengujian.
+```
+
+Script pnpm AI memakai `apps/ai/.venv/Scripts/python.exe`, bukan `.venv-rag` atau interpreter
+PATH secara otomatis. Dependensi penuh/eksperimen terdapat pada `requirements.txt` dan
+instruksi penelitian terkait. Snapshot minimal Windows bukan bukti dependensi Linux teruji.
+
+## 5. Database
+
+Siapkan PostgreSQL dan pastikan DATABASE_URL menunjuk database development yang benar.
+Migrasi/seed adalah langkah manual setelah konfirmasi operator:
+
+```powershell
+# Hanya setelah target database dan konsekuensinya disetujui.
 pnpm migrate
 pnpm seed
-pnpm local      # (terminal 1: Express + Next)
-pnpm ai         # (terminal 2: FastAPI brain engine)
 ```
 
----
+Seed demo memiliki akun/password hardcoded: **jangan gunakan unchanged pada produksi**.
+Tidak ada seed atau migrasi otomatis saat startup. `db:repair` juga bukan pemeriksaan read-only.
+Lihat runbook deployment untuk gate bootstrap RBAC/admin/katalog produksi.
 
-## 6. Urutan Wire-Up Disarankan untuk Eksekusi
+## 6. Menjalankan aplikasi
 
-1. Scaffold root (workspace + turbo + biome).
-2. `apps/api` — Express app, Knex, migrasi + seed.
-3. `packages/shared-types` — Zod schemas.
-4. `apps/api` — RBAC middleware + routes.
-5. `apps/web` — salin UI `TIEN-SALON-New`, sesuaikan URL EN.
-6. `apps/web` — integrasi SSR ke API + halaman konsultasi.
-7. `apps/ai` — FastAPI brain engine (CV + RAG + crawler). *(belum dieksekusi)*
+```powershell
+# Seluruh aplikasi, termasuk AI.
+pnpm local
 
----
+# Alternatif: jalankan masing-masing pada terminal terpisah, bukan bersamaan dengan local.
+pnpm --filter web dev
+pnpm --filter api dev
+pnpm --filter ai start:rag
+```
 
-## 7. Catatan Operasional
+Port lokal lazim web/API/AI: 3000/4000/5000. Script dev menggunakan `freeport.mjs`, yang bisa
+menghentikan proses lain pada port tersebut. Jangan sekaligus menjalankan `pnpm local` dan
+`pnpm ai`, atau dua entrypoint AI pada port sama. Hosting memakai production start/Docker,
+bukan freeport atau venv Windows.
 
-- **Jangan jalankan `pnpm lint` global secara sembarangan tanpa perlu** — lint hanya file yang disentuh (pola dashboard-ops).
-- **Jangan auto-execute migrasi/seed** tanpa konfirmasi.
-- API key Gemini **hanya di `.env`** — jangan commit.
-- Model ONNX (`hair_length.onnx`, `hair_type.onnx`) diletakkan di `apps/ai/cv/weights/`.
-- Bioma konfigurasi: single quotes, trailing commas, 2-space indent, 100 line width.
+## 7. Pemeriksaan aman dan tes
 
----
+```powershell
+pnpm --filter api typecheck
+pnpm --filter web typecheck
+pnpm --filter web test
+pnpm --filter web build
+pnpm test:rag
+```
 
-_Lanjut baca: [03-backend.md](./03-backend.md)_
+Tes API terisolasi yang baru tidak memakai DB dan harus dipanggil eksplisit:
+
+```powershell
+pnpm --filter api exec vitest run tests/deployment-env-isolated.test.ts tests/deployment-routes-isolated.test.ts tests/deployment-proxy-isolated.test.ts
+```
+
+**Jangan menjalankan root `pnpm test` atau `pnpm test:api` sembarangan.** Helper prepareDb()
+memakai DATABASE_URL biasa untuk migration down/up/seed. Suite terkait memerlukan database
+disposable dan konfirmasi. Health liveness `/api/health` tidak memeriksa DB;
+`/api/ready` yang memeriksa koneksinya. `/ai/ready` memeriksa konfigurasi/corpus/session lokal
+dan katalog, tanpa generasi model; tidak membuktikan inferensi berhasil.
+
+## 8. Profil legacy/eksperimen
+
+Gemini/Chroma, Crawl4AI offline, dan skrip penelitian masih tersedia untuk kebutuhan terdahulu,
+bukan syarat runtime RAG minimal. Jangan menjalankan crawl/reingest untuk memperbarui BM25:
+corpus BM25 harus dibuat sebagai bundle baru dengan manifest/checksum yang valid. Knowledge CRUD
+legacy juga tidak mengubah bundle runtime aktif.
+
+Web fallback operasional memakai HTTP terbatas/allowlist, bukan browser Playwright atau bypass
+anti-bot. Jangan mencampur konfigurasinya dengan crawler offline lama. Pada runtime BM25 minimal,
+endpoint crawl/reingest legacy mengembalikan unavailable terkontrol.
+
+Lihat [arsitektur](./01-arsitektur.md), [operasional RAG](./19-finalisasi-rag-dan-operasional.md),
+dan [deployment](./23-deployment-rag-only.md). Untuk pekerjaan penelitian CV, roadmap
+[08-roadmap-cv-lengkap.md](./08-roadmap-cv-lengkap.md) tetap acuan tertinggi.

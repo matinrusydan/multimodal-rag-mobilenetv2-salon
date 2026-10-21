@@ -24,6 +24,15 @@ def _check_token(token: str | None) -> None:
         raise HTTPException(status_code=401, detail="Token internal tidak valid")
 
 
+def _require_legacy_maintenance() -> None:
+    if not settings.legacy_maintenance_enabled:
+        raise HTTPException(
+            status_code=503,
+            detail='Fitur belum tersedia pada profil RAG ini. Perubahan dokumen tidak '
+                   'memperbarui korpus runtime tervalidasi secara otomatis.',
+        )
+
+
 def _safe_path(name: str) -> Path:
     if not _SAFE_NAME.match(name):
         raise HTTPException(status_code=400, detail="Nama file tidak valid (harus *.md)")
@@ -80,6 +89,7 @@ async def delete_knowledge(name: str, x_internal_token: str | None = Header(defa
 @router.post("/rag/reingest")
 async def reingest(x_internal_token: str | None = Header(default=None)) -> dict:
     _check_token(x_internal_token)
+    _require_legacy_maintenance()
     from app.rag.ingest import plan_ingest
 
     summaries = plan_ingest(settings.rag_knowledge_dir, force=False)
@@ -95,6 +105,7 @@ class CrawlRequest(BaseModel):
 async def crawl(req: CrawlRequest, x_internal_token: str | None = Header(default=None)) -> dict:
     """Jalankan crawl tips dari target URL (default dari setting DB)."""
     _check_token(x_internal_token)
+    _require_legacy_maintenance()
     from app.crawler.crawl_tips import crawl_tips
 
     targets = [t for t in req.targets if t.strip()]

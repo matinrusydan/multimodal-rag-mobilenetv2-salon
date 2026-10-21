@@ -14,6 +14,7 @@ type ModalProps = {
   children: React.ReactNode;
   footer?: React.ReactNode;
   className?: string;
+  onCloseAutoFocus?: React.ComponentProps<typeof Dialog.Content>['onCloseAutoFocus'];
 };
 
 export function Modal({
@@ -24,12 +25,16 @@ export function Modal({
   children,
   footer,
   className,
+  onCloseAutoFocus,
 }: ModalProps) {
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
         <Dialog.Overlay className="admin-modal__overlay" />
-        <Dialog.Content className={cn('admin-modal__content', className)}>
+        <Dialog.Content
+          className={cn('admin-modal__content', className)}
+          onCloseAutoFocus={onCloseAutoFocus}
+        >
           <div className="admin-modal__header">
             <Dialog.Title className="admin-modal__title">{title}</Dialog.Title>
             <Dialog.Close className="admin-modal__close" aria-label="Tutup">

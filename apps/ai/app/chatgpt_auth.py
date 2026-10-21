@@ -152,7 +152,20 @@ def access_token():
         return profile['access_token']
 
 
-def login(timeout=180):
+def _callback_port(value):
+    try:
+        port = int(value)
+    except (TypeError, ValueError):
+        raise argparse.ArgumentTypeError('Port callback harus antara 1 dan 65535') from None
+    if isinstance(value, bool) or str(port) != str(value) or not 1 <= port <= 65535:
+        raise argparse.ArgumentTypeError('Port callback harus antara 1 dan 65535')
+    return port
+
+
+def login(timeout=180, *, no_browser=False, callback_port=None):
+    port = 0 if callback_port is None else _callback_port(callback_port)
+    if timeout <= 0:
+        raise ValueError('Batas waktu login harus positif')
     with session_lock():
         profile=load();profile.setdefault('host_id','urn:uuid:'+str(uuid.uuid4()));save(profile)
         state,nonce,verifier=[secrets.token_urlsafe(32) for _ in range(3)]
@@ -167,15 +180,20 @@ def login(timeout=180):
                 result.update({k:v[0] for k,v in q.items()});self.send_response(200)
                 self.send_header('Content-Type','text/plain; charset=utf-8');self.end_headers()
                 self.wfile.write(b'Kembali ke terminal RAG Salon untuk melihat hasil verifikasi login.')
-        with HTTPServer(('127.0.0.1',0),Callback) as server:
+        with HTTPServer(('127.0.0.1',port),Callback) as server:
             redirect=f'http://127.0.0.1:{server.server_port}/auth/callback'
             params={'client_id':profile.get('client_id','dynamic_agent_client'),'ext_agent_host_id':profile['host_id'],
                     'response_type':'code','redirect_uri':redirect,'scope':'openid profile email offline_access resource.invoke '+PLAN_SCOPE,
                     'resource':RESOURCE,'state':state,'nonce':nonce,'code_challenge_method':'S256','code_challenge':challenge}
             if not profile.get('client_id'):params['agent_name_hint']='RAG Salon'
-            print('Continue with ChatGPT — setujui penggunaan paket hanya untuk aplikasi RAG Salon di browser.')
-            if not webbrowser.open(AUTHORIZE+'?'+urlencode(params)):
-                raise RuntimeError('Browser tidak dapat dibuka; jalankan login di sesi desktop interaktif')
+            authorization_url = AUTHORIZE+'?'+urlencode(params)
+            if no_browser:
+                # Only the authorization URL is printed, never callback URLs/codes.
+                print(authorization_url, flush=True)
+            else:
+                print('Continue with ChatGPT — setujui penggunaan paket hanya untuk aplikasi RAG Salon di browser.')
+                if not webbrowser.open(authorization_url):
+                    raise RuntimeError('Browser tidak dapat dibuka; jalankan login di sesi desktop interaktif')
             deadline=time.monotonic()+timeout;server.timeout=1
             while not result and time.monotonic()<deadline:server.handle_request()
         if not result:raise RuntimeError('Login melewati batas waktu; jalankan login ulang')
@@ -192,15 +210,20 @@ def login(timeout=180):
         if profile.get('subject') and identity['sub']!=profile['subject']:raise ValueError('Akun berbeda dari sesi tersimpan')
         profile.update(subject=identity['sub'],email=identity.get('email'))
         save(_apply_tokens(profile,tokens))
-        print('Login dan izin paket terverifikasi. Jalankan models untuk melihat pilihan model; inferensi belum diuji.')
+        if not no_browser:
+            print('Login dan izin paket terverifikasi. Jalankan models untuk melihat pilihan model; inferensi belum diuji.')
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('command',choices=['login','status','models','logout'])
+    parser.add_argument('--no-browser', action='store_true', help='Cetak URL login tanpa membuka browser')
+    parser.add_argument('--callback-port', type=_callback_port, help='Port callback loopback (1–65535)')
     args=parser.parse_args()
+    if args.command != 'login' and (args.no_browser or args.callback_port is not None):
+        parser.error('--no-browser dan --callback-port hanya berlaku untuk login')
     try:
-        if args.command=='login':login()
+        if args.command=='login':login(no_browser=args.no_browser, callback_port=args.callback_port)
         elif args.command=='status':
             p=load();print(json.dumps({'connected':bool(p.get('access_token')),
                  'plan_permission':PLAN_SCOPE in p.get('scopes',[]),'expired':p.get('expires_at',0)<=time.time()}))

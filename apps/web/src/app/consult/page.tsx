@@ -6,7 +6,7 @@ import { Section } from '@/components/ui/section';
 export const metadata: Metadata = {
   title: 'Konsultasi Rambut',
   description:
-    'Chatbot konsultasi TIEN SALON berbasis RAG, dengan dukungan analisis foto rambut (CV).',
+    'Konsultasi teks TIEN SALON tentang perawatan rambut, layanan, dan harga berbasis RAG.',
 };
 
 export default function ConsultPage() {
@@ -14,7 +14,7 @@ export default function ConsultPage() {
     <Section
       eyebrow="Konsultasi"
       title="Tanya tentang rambutmu"
-      description="Chatbot berbasis RAG menjawab berdasarkan knowledge base salon. Unggah foto untuk analisis panjang & jenis rambut otomatis."
+      description="Konsultasikan perawatan, layanan, dan harga melalui chatbot teks berbasis RAG. Analisis foto belum tersedia."
     >
       <ConsultChat />
     </Section>

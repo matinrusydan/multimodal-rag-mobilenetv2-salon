@@ -17,20 +17,41 @@ export interface SessionData {
 
 export const SESSION_COOKIE = 'tien_session';
 
-const SESSION_OPTIONS = {
-  cookieName: SESSION_COOKIE,
-  password: process.env.SESSION_SECRET ?? 'tien-salon-dev-session-secret-2026-32chars-min',
-  cookieOptions: {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax' as const,
-    path: '/',
-  },
-};
+const DEV_SESSION_SECRET = 'tien-salon-dev-session-secret-2026-32chars-min';
+
+export function sessionPassword(
+  secret: string | undefined,
+  environment: string | undefined,
+): string {
+  const value = secret?.trim();
+  if (
+    environment === 'production' &&
+    (!value ||
+      value.length < 32 ||
+      value === DEV_SESSION_SECRET ||
+      /^(change[-_ ]?me|dev(?:elopment)?[-_ ]|example[-_ ]|your[-_ ])/i.test(value))
+  ) {
+    throw new Error('SESSION_SECRET wajib diisi minimal 32 karakter dan bukan secret bawaan.');
+  }
+  return secret ?? DEV_SESSION_SECRET;
+}
+
+function sessionOptions() {
+  return {
+    cookieName: SESSION_COOKIE,
+    password: sessionPassword(process.env.SESSION_SECRET, process.env.NODE_ENV),
+    cookieOptions: {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax' as const,
+      path: '/',
+    },
+  };
+}
 
 export async function getSession(): Promise<SessionData | null> {
   const cookieStore = await cookies();
-  const session = await getIronSession<SessionData>(cookieStore, SESSION_OPTIONS);
+  const session = await getIronSession<SessionData>(cookieStore, sessionOptions());
   if (!session.token || !session.user) {
     return null;
   }
@@ -39,7 +60,7 @@ export async function getSession(): Promise<SessionData | null> {
 
 export async function setSession(data: SessionData): Promise<void> {
   const cookieStore = await cookies();
-  const session = await getIronSession<SessionData>(cookieStore, SESSION_OPTIONS);
+  const session = await getIronSession<SessionData>(cookieStore, sessionOptions());
   session.token = data.token;
   session.user = data.user;
   await session.save();
@@ -47,7 +68,7 @@ export async function setSession(data: SessionData): Promise<void> {
 
 export async function clearSession(): Promise<void> {
   const cookieStore = await cookies();
-  const session = await getIronSession<SessionData>(cookieStore, SESSION_OPTIONS);
+  const session = await getIronSession<SessionData>(cookieStore, sessionOptions());
   session.destroy();
 }
 

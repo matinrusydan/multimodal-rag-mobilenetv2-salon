@@ -95,6 +95,48 @@ class Settings:
         self.agent_internal_token: str | None = os.getenv("AI_INTERNAL_TOKEN") or None
         # Nama koleksi ChromaDB untuk katalog (hasil serialize DB).
         self.rag_catalog_topic: str = os.getenv("RAG_CATALOG_TOPIC", "katalog")
+        # Production is opt-in; legacy development defaults remain supported.
+        self.production: bool = any(
+            os.getenv(name, '').strip().lower() == 'production'
+            for name in ('AI_ENV', 'NODE_ENV', 'ENVIRONMENT')
+        )
+        self.validate_runtime()
+
+    @property
+    def legacy_maintenance_enabled(self) -> bool:
+        return not self.production and self.rag_retrieval_provider == 'chroma'
+
+    def validate_runtime(self) -> None:
+        """Reject unsafe production settings without reporting secret values."""
+        if not self.production:
+            return
+        token = self.agent_internal_token or ''
+        compact = token.lower().replace('-', '').replace('_', '').replace(' ', '')
+        if (len(token) < 32 or len(set(token)) < 8
+                or any(ord(char) < 33 or ord(char) > 126 for char in token) or any(
+            word in compact for word in ('changeme', 'replaceme', 'example', 'placeholder', 'yourtoken')
+        )):
+            raise ValueError('AI_INTERNAL_TOKEN must be a strong secret of at least 32 characters')
+        required = {
+            'AI_LLM_PROVIDER': self.ai_llm_provider == 'chatgpt',
+            'AI_CHATGPT_MODEL': bool(self.chatgpt_model),
+            'RAG_RETRIEVAL_PROVIDER': self.rag_retrieval_provider == 'bm25_source_balanced',
+            'RAG_LIVE_SERVICES': self.rag_live_services,
+            'RAG_RUNTIME_CORPUS_FILE': self.rag_runtime_corpus_file is not None,
+            'RAG_CONTEXT_SELECTION': self.rag_context_selection == 'source_scoped',
+        }
+        for name, valid in required.items():
+            if not os.getenv(name, '').strip() or not valid:
+                raise ValueError(f'{name} must be explicitly configured for the production RAG profile')
+        if (not 1 <= self.rag_top_k <= 20
+                or self.rag_context_strategy not in {'head', 'query_window'}
+                or not 0 < self.rag_generation_timeout_seconds <= 60):
+            raise ValueError('Invalid production RAG retrieval or generation limits')
+        from urllib.parse import urlsplit
+        target = urlsplit(self.api_base_url)
+        if (target.scheme not in {'http', 'https'} or not target.hostname
+                or target.username or target.password or target.query or target.fragment):
+            raise ValueError('API_BASE_URL must be an HTTP(S) origin without credentials')
 
 
 settings = Settings()
