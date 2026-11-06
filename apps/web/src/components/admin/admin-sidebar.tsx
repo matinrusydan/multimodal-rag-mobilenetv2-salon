@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, ChevronDown, LogOut, Scissors } from 'lucide
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type React from 'react';
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { getAdminIcon } from '@/lib/admin-icons';
 import { useAuth } from '@/lib/use-auth';
@@ -29,32 +29,41 @@ function isActive(pathname: string, path: string): boolean {
 
 export function AdminSidebar() {
   const pathname = usePathname();
-  const { user, logout } = useAuth();
+  const { user, isReady, logout } = useAuth();
+
+  // State terisolasi per komponen berbasis useState
   const [menus, setMenus] = useState<MenuItem[]>([]);
   const [menusUserId, setMenusUserId] = useState<number | null>(null);
   const [menuState, setMenuState] = useState<'loading' | 'error' | 'ready'>('loading');
   const [retry, setRetry] = useState(0);
   const [collapsed, setCollapsed] = useState(false);
-  const [openGroups, setOpenGroups] = useState<Set<number>>(new Set());
+  const [openGroups, setOpenGroups] = useState<Set<number>>(() => new Set());
 
+  // Sinkronisasi status collapsed dari localStorage tanpa re-render berlebih jika false
   useEffect(() => {
     try {
-      setCollapsed(localStorage.getItem(STORAGE_KEY) === '1');
+      if (localStorage.getItem(STORAGE_KEY) === '1') {
+        setCollapsed(true);
+      }
     } catch {
       /* ignore */
     }
   }, []);
 
+  // Fetch menu per user dengan abort controller & penanganan isReady
   useEffect(() => {
-    setMenus([]);
-    setMenusUserId(null);
+    if (!isReady) return;
+
     if (!user) {
+      setMenus([]);
+      setMenusUserId(null);
       setMenuState('ready');
       return;
     }
 
     const controller = new AbortController();
     setMenuState('loading');
+
     fetch('/api/admin/menus/me', { cache: 'no-store', signal: controller.signal })
       .then(async (res) => {
         if (!res.ok) throw new Error('Menu request failed');
@@ -64,37 +73,68 @@ export function AdminSidebar() {
         if (controller.signal.aborted) return;
         const all = body.data ?? [];
         setMenus(all.filter((menu) => menu.path.startsWith('/admin') || menu.path === '#'));
-        setMenusUserId(user!.id);
+        setMenusUserId(user.id);
         setMenuState('ready');
       })
       .catch(() => {
         if (!controller.signal.aborted) {
           setMenus([]);
+          setMenusUserId(null);
           setMenuState('error');
         }
       });
+
     return () => controller.abort();
-  }, [user?.id, retry]);
+  }, [user?.id, isReady, retry]);
 
   const visibleMenus = user?.id === menusUserId ? menus : [];
-  const { roots, childrenOf } = useMemo(() => {
-    const roots = visibleMenus.filter((m) => !m.parentId);
-    const map = new Map<number, MenuItem[]>();
+
+  // 1. Pembuatan tree & map dalam satu kali iterasi O(N) ter-memoize
+  const { roots, childrenOf, menuMap } = useMemo(() => {
+    const rootsList: MenuItem[] = [];
+    const childrenMap = new Map<number, MenuItem[]>();
+    const nodeMap = new Map<number, MenuItem>();
+
     for (const m of visibleMenus) {
-      if (m.parentId) {
-        const arr = map.get(m.parentId) ?? [];
+      nodeMap.set(m.id, m);
+      if (!m.parentId) {
+        rootsList.push(m);
+      } else {
+        const arr = childrenMap.get(m.parentId) ?? [];
         arr.push(m);
-        map.set(m.parentId, arr);
+        childrenMap.set(m.parentId, arr);
       }
     }
-    for (const arr of map.values()) arr.sort((a, b) => a.sortOrder - b.sortOrder);
-    return { roots: roots.sort((a, b) => a.sortOrder - b.sortOrder), childrenOf: map };
+
+    rootsList.sort((a, b) => a.sortOrder - b.sortOrder);
+    for (const arr of childrenMap.values()) {
+      arr.sort((a, b) => a.sortOrder - b.sortOrder);
+    }
+
+    return { roots: rootsList, childrenOf: childrenMap, menuMap: nodeMap };
   }, [visibleMenus]);
 
-  // Initial state: semua dropdown tertutup (children muncul setelah diklik).
-  // Tidak auto-open walau halaman aktif.
+  // 2. Pre-kalkulasi ID aktif O(N) - menggantikan pencarian rekursif O(N^2) di dalam render
+  const activeMenuIds = useMemo(() => {
+    const set = new Set<number>();
+    if (!pathname || visibleMenus.length === 0) return set;
 
-  const toggleCollapsed = () => {
+    for (const m of visibleMenus) {
+      if (isActive(pathname, m.path)) {
+        set.add(m.id);
+        let parentId = m.parentId;
+        while (parentId !== null) {
+          set.add(parentId);
+          const parent = menuMap.get(parentId);
+          parentId = parent?.parentId ?? null;
+        }
+      }
+    }
+    return set;
+  }, [pathname, visibleMenus, menuMap]);
+
+  // 3. Callback stabil via useCallback
+  const toggleCollapsed = useCallback(() => {
     setCollapsed((prev) => {
       const next = !prev;
       try {
@@ -104,27 +144,30 @@ export function AdminSidebar() {
       }
       return next;
     });
-  };
+  }, []);
 
-  const toggleGroup = (id: number) => {
+  const toggleGroup = useCallback((id: number) => {
     setOpenGroups((cur) => {
       const next = new Set(cur);
       if (next.has(id)) next.delete(id);
       else next.add(id);
       return next;
     });
-  };
+  }, []);
 
-  // Render node secara rekursif (mendukung 3+ level).
+  const handleRetry = useCallback(() => {
+    setRetry((count) => count + 1);
+  }, []);
+
+  // 4. Render node teroptimasi O(1) per pemeriksaan aktif
   const renderNode = (menu: MenuItem, level: number): React.ReactNode => {
     const kids = childrenOf.get(menu.id) ?? [];
     const hasKids = kids.length > 0;
     const hasIcon = Boolean(menu.icon);
     const indent = level > 0;
 
-    // Leaf: link.
+    // Leaf: link
     if (!hasKids) {
-      // Tanpa children & tanpa icon & path '#' -> judul teks murni.
       if (!hasIcon && (!menu.path || menu.path === '#')) {
         if (collapsed) return null;
         return (
@@ -152,11 +195,7 @@ export function AdminSidebar() {
       );
     }
 
-    // Punya children.
-    const Icon = menu.icon ? getAdminIcon(menu.icon) : null;
-
-    // Judul grup statis: HANYA level-0 tanpa icon (mis. "Akses & Keamanan").
-    // Isi langsung terlihat (bukan dropdown).
+    // Level-0 tanpa icon -> judul grup statis
     if (!hasIcon && level === 0) {
       return (
         <div key={menu.id} className="admin-sidebar__section">
@@ -172,9 +211,11 @@ export function AdminSidebar() {
       );
     }
 
-    // Parent menu (ber-icon ATAU tanpa icon pada level > 0) -> dropdown/accordion.
+    // Parent dropdown / accordion
+    const Icon = menu.icon ? getAdminIcon(menu.icon) : null;
     const open = openGroups.has(menu.id);
-    const groupActive = subtreeHasActive(menu.id);
+    const groupActive = activeMenuIds.has(menu.id);
+
     return (
       <div key={menu.id} className="admin-sidebar__group">
         <button
@@ -200,12 +241,6 @@ export function AdminSidebar() {
     );
   };
 
-  function subtreeHasActive(id: number): boolean {
-    const node = visibleMenus.find((m) => m.id === id);
-    if (node && isActive(pathname, node.path)) return true;
-    return (childrenOf.get(id) ?? []).some((k) => subtreeHasActive(k.id));
-  }
-
   return (
     <aside
       className={cn('admin-sidebar', collapsed && 'admin-sidebar--collapsed')}
@@ -226,10 +261,14 @@ export function AdminSidebar() {
         {menuState === 'error' ? (
           <div role="alert">
             <p>Menu gagal dimuat.</p>
-            <button type="button" onClick={() => setRetry((count) => count + 1)}>Coba lagi</button>
+            <button type="button" onClick={handleRetry}>
+              Coba lagi
+            </button>
           </div>
         ) : null}
-        {menuState === 'ready' && user && roots.length === 0 ? <p>Belum ada menu yang tersedia.</p> : null}
+        {menuState === 'ready' && user && roots.length === 0 ? (
+          <p>Belum ada menu yang tersedia.</p>
+        ) : null}
         {roots.map((menu) => renderNode(menu, 0))}
       </nav>
 
@@ -263,3 +302,4 @@ export function AdminSidebar() {
     </aside>
   );
 }
+
