@@ -73,6 +73,7 @@ const ADMIN_ROUTES = [
   { path: '/admin/permissions', name: 'Kelola Permission', method: 'GET' },
   { path: '/admin/routes', name: 'Kelola Route', method: 'GET' },
   { path: '/admin/menus', name: 'Kelola Menu', method: 'GET' },
+  { path: '/admin/payments', name: 'Kelola Pembayaran', method: 'GET' },
 ];
 
 const MENUS = [
@@ -81,12 +82,6 @@ const MENUS = [
   { name: 'Konsultasi', path: '/consult', icon: 'sparkles', sort_order: 3 },
   { name: 'Reservasi Baru', path: '/reservation', icon: 'calendar', sort_order: 4 },
   { name: 'Pembayaran', path: '/payment', icon: 'wallet', sort_order: 5 },
-  { name: 'Pengguna', path: '/admin/users', icon: 'users', sort_order: 10 },
-  { name: 'Roles', path: '/admin/roles', icon: 'shield', sort_order: 11 },
-  { name: 'Permissions', path: '/admin/permissions', icon: 'key', sort_order: 12 },
-  { name: 'Routes', path: '/admin/routes', icon: 'route', sort_order: 13 },
-  { name: 'Menus', path: '/admin/menus', icon: 'list', sort_order: 14 },
-  { name: 'Akses Menu', path: '/admin/role-menus', icon: 'shield', sort_order: 15 },
 ];
 
 const SERVICES = [

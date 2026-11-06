@@ -12,7 +12,19 @@ export function validate(targets: ValidateTargets): RequestHandler {
     try {
       if (targets.body) req.body = targets.body.parse(req.body);
       if (targets.params) req.params = targets.params.parse(req.params);
-      if (targets.query) req.query = targets.query.parse(req.query);
+      if (targets.query) {
+        const parsed = targets.query.parse(req.query);
+        try {
+          req.query = parsed;
+        } catch {
+          Object.defineProperty(req, 'query', {
+            value: parsed,
+            writable: true,
+            enumerable: true,
+            configurable: true,
+          });
+        }
+      }
       next();
     } catch (err) {
       next(err);

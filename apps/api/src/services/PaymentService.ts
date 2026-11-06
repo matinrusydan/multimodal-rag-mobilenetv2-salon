@@ -1,5 +1,5 @@
 import type { SimulatePaymentRequest } from '@rag-salon/shared-types';
-import { paymentRepository } from '../repositories/PaymentRepository';
+import { type AdminPaymentRow, paymentRepository } from '../repositories/PaymentRepository';
 import { reservationRepository } from '../repositories/ReservationRepository';
 import { HttpError } from '../utils/problemDetails';
 
@@ -16,7 +16,86 @@ export interface SimulatePaymentResult {
   paidAt: string;
 }
 
+export interface AdminPaymentItem {
+  id: number;
+  code: string;
+  reservationId: number;
+  reservationCode: string;
+  reservationDate: string;
+  userId: number;
+  customerName: string;
+  customerEmail: string;
+  serviceNames: string | null;
+  method: string;
+  status: string;
+  amount: number;
+  paidAt: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+function mapAdminPayment(row: AdminPaymentRow): AdminPaymentItem {
+  return {
+    id: row.id,
+    code: row.code,
+    reservationId: row.reservation_id,
+    reservationCode: row.reservation_code,
+    reservationDate: row.reservation_date,
+    userId: row.user_id,
+    customerName: row.customer_name,
+    customerEmail: row.customer_email,
+    serviceNames: row.service_names,
+    method: row.method,
+    status: row.status,
+    amount: Number(row.amount),
+    paidAt: row.paid_at,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+  };
+}
+
 export class PaymentService {
+  private ensureAdminAccess(auth: AuthLike, actionMessage: string) {
+    const isSuper = auth.type === 0 || auth.permissions.includes('*');
+    const hasBroadRead =
+      auth.permissions.includes('reservations.read') ||
+      auth.permissions.includes('payments.manage');
+    if (!isSuper && !hasBroadRead) {
+      throw new HttpError(403, `Anda tidak memiliki izin untuk ${actionMessage}`);
+    }
+  }
+
+  async listAdmin(
+    auth: AuthLike,
+    query: { page: number; pageSize?: number; limit?: number; status?: string; search?: string },
+  ): Promise<{ items: AdminPaymentItem[]; total: number; page: number; pageSize: number; limit: number }> {
+    this.ensureAdminAccess(auth, 'melihat daftar pembayaran');
+    const page = Math.max(1, query.page || 1);
+    const pageSize = Math.min(100, Math.max(1, query.pageSize ?? query.limit ?? 20));
+    const { rows, total } = await paymentRepository.listAdmin({
+      page,
+      pageSize,
+      status: query.status,
+      search: query.search,
+    });
+    return {
+      items: rows.map(mapAdminPayment),
+      total,
+      page,
+      pageSize,
+      limit: pageSize,
+    };
+  }
+
+  async detailAdmin(auth: AuthLike, id: number): Promise<AdminPaymentItem> {
+    this.ensureAdminAccess(auth, 'melihat detail pembayaran');
+    const row = await paymentRepository.findAdminById(id);
+    if (!row) {
+      throw new HttpError(404, 'Pembayaran tidak ditemukan');
+    }
+    return mapAdminPayment(row);
+  }
+
   async simulate(auth: AuthLike, input: SimulatePaymentRequest): Promise<SimulatePaymentResult> {
     const reservation = await reservationRepository.findByCode(input.reservationId);
     if (!reservation) {

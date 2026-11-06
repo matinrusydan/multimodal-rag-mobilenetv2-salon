@@ -48,6 +48,9 @@
     "seed": {
       "dependsOn": ["migrate"],
       "cache": false
+    },
+    "db:repair": {
+      "cache": false
     }
   }
 }

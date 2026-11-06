@@ -19,19 +19,7 @@ interface MenuItem {
   sortOrder: number;
 }
 
-const FALLBACK: MenuItem[] = [
-  { id: -2, name: 'Kelola Pengguna', path: '/admin/users', icon: 'users', parentId: null, sortOrder: 10 },
-  { id: -3, name: 'Kelola Role', path: '/admin/roles', icon: 'shield', parentId: null, sortOrder: 11 },
-  { id: -4, name: 'Permissions', path: '/admin/permissions', icon: 'key', parentId: null, sortOrder: 12 },
-  { id: -5, name: 'Routes', path: '/admin/routes', icon: 'route', parentId: null, sortOrder: 13 },
-  { id: -6, name: 'Menus', path: '/admin/menus', icon: 'list', parentId: null, sortOrder: 14 },
-  { id: -7, name: 'Akses Menu', path: '/admin/role-menus', icon: 'shield', parentId: null, sortOrder: 15 },
-];
-
 const STORAGE_KEY = 'adminSidebarCollapsed';
-
-// Cache modul agar menu tidak di-fetch ulang saat navigasi antar halaman admin.
-let menusCache: MenuItem[] | null = null;
 
 function isActive(pathname: string, path: string): boolean {
   if (path === '/admin') return pathname === '/admin';
@@ -43,6 +31,9 @@ export function AdminSidebar() {
   const pathname = usePathname();
   const { user, logout } = useAuth();
   const [menus, setMenus] = useState<MenuItem[]>([]);
+  const [menusUserId, setMenusUserId] = useState<number | null>(null);
+  const [menuState, setMenuState] = useState<'loading' | 'error' | 'ready'>('loading');
+  const [retry, setRetry] = useState(0);
   const [collapsed, setCollapsed] = useState(false);
   const [openGroups, setOpenGroups] = useState<Set<number>>(new Set());
 
@@ -55,32 +46,41 @@ export function AdminSidebar() {
   }, []);
 
   useEffect(() => {
-    // Pakai cache bila sudah ada -> tidak fetch ulang saat navigasi.
-    if (menusCache) {
-      setMenus(menusCache);
+    setMenus([]);
+    setMenusUserId(null);
+    if (!user) {
+      setMenuState('ready');
       return;
     }
-    let cancelled = false;
-    fetch('/api/admin/menus/me', { cache: 'no-store' })
-      .then((res) => res.json())
-      .then((body: { data?: MenuItem[] }) => {
-        if (cancelled) return;
-        const all = body.data ?? [];
-        const adminMenus = all.filter((m) => m.path.startsWith('/admin') || m.path === '#');
-        const finalMenus = adminMenus.length > 0 ? adminMenus : FALLBACK;
-        menusCache = finalMenus;
-        setMenus(finalMenus);
-      })
-      .catch(() => setMenus(FALLBACK));
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
+    const controller = new AbortController();
+    setMenuState('loading');
+    fetch('/api/admin/menus/me', { cache: 'no-store', signal: controller.signal })
+      .then(async (res) => {
+        if (!res.ok) throw new Error('Menu request failed');
+        return (await res.json()) as { data?: MenuItem[] };
+      })
+      .then((body) => {
+        if (controller.signal.aborted) return;
+        const all = body.data ?? [];
+        setMenus(all.filter((menu) => menu.path.startsWith('/admin') || menu.path === '#'));
+        setMenusUserId(user!.id);
+        setMenuState('ready');
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) {
+          setMenus([]);
+          setMenuState('error');
+        }
+      });
+    return () => controller.abort();
+  }, [user?.id, retry]);
+
+  const visibleMenus = user?.id === menusUserId ? menus : [];
   const { roots, childrenOf } = useMemo(() => {
-    const roots = menus.filter((m) => !m.parentId);
+    const roots = visibleMenus.filter((m) => !m.parentId);
     const map = new Map<number, MenuItem[]>();
-    for (const m of menus) {
+    for (const m of visibleMenus) {
       if (m.parentId) {
         const arr = map.get(m.parentId) ?? [];
         arr.push(m);
@@ -89,7 +89,7 @@ export function AdminSidebar() {
     }
     for (const arr of map.values()) arr.sort((a, b) => a.sortOrder - b.sortOrder);
     return { roots: roots.sort((a, b) => a.sortOrder - b.sortOrder), childrenOf: map };
-  }, [menus]);
+  }, [visibleMenus]);
 
   // Initial state: semua dropdown tertutup (children muncul setelah diklik).
   // Tidak auto-open walau halaman aktif.
@@ -201,7 +201,7 @@ export function AdminSidebar() {
   };
 
   function subtreeHasActive(id: number): boolean {
-    const node = menus.find((m) => m.id === id);
+    const node = visibleMenus.find((m) => m.id === id);
     if (node && isActive(pathname, node.path)) return true;
     return (childrenOf.get(id) ?? []).some((k) => subtreeHasActive(k.id));
   }
@@ -222,6 +222,14 @@ export function AdminSidebar() {
       </div>
 
       <nav className="admin-sidebar__nav">
+        {menuState === 'loading' ? <p role="status">Memuat menu...</p> : null}
+        {menuState === 'error' ? (
+          <div role="alert">
+            <p>Menu gagal dimuat.</p>
+            <button type="button" onClick={() => setRetry((count) => count + 1)}>Coba lagi</button>
+          </div>
+        ) : null}
+        {menuState === 'ready' && user && roots.length === 0 ? <p>Belum ada menu yang tersedia.</p> : null}
         {roots.map((menu) => renderNode(menu, 0))}
       </nav>
 

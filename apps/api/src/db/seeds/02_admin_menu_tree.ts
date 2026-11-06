@@ -41,7 +41,7 @@ const MENUS: MenuNode[] = [
     icon: null,
     children: [
       { name: 'Reservasi', path: '/admin/reservations', icon: 'calendar' },
-      { name: 'Pembayaran', path: '/payment', icon: 'wallet' },
+      { name: 'Pembayaran', path: '/admin/payments', icon: 'wallet' },
     ],
   },
   {
@@ -77,6 +77,11 @@ const MENUS: MenuNode[] = [
 
 export async function seed(knex: Knex): Promise<void> {
   await knex.transaction(async (trx) => {
+    // Restore the customer link if an earlier admin tree moved it under Transaksi.
+    await trx('menus').where({ path: '/payment' }).whereNotNull('parent_id').update({
+      parent_id: null,
+      sort_order: 5,
+    });
     const managedIds: number[] = [];
 
     // Cari node: leaf by path, grup by name (path '#').

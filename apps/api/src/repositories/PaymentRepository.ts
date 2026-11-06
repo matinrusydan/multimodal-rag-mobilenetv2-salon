@@ -14,7 +14,79 @@ export interface PaymentRow {
   updated_at: string;
 }
 
+export interface AdminPaymentRow extends PaymentRow {
+  reservation_code: string;
+  reservation_date: string;
+  customer_id: number;
+  customer_name: string;
+  customer_email: string;
+  service_names: string | null;
+}
+
 export class PaymentRepository extends BaseRepository {
+  private adminQuery() {
+    return this.db('payments as p')
+      .join('reservations as r', 'r.id', 'p.reservation_id')
+      .join('users as u', 'u.id', 'p.user_id')
+      .leftJoin('reservation_items as ri', 'ri.reservation_id', 'r.id')
+      .select(
+        'p.id',
+        'p.code',
+        'p.reservation_id',
+        'p.user_id',
+        'p.method',
+        'p.status',
+        'p.amount',
+        'p.paid_at',
+        'p.created_at',
+        'p.updated_at',
+        'r.code as reservation_code',
+        'r.date as reservation_date',
+        'u.id as customer_id',
+        'u.name as customer_name',
+        'u.email as customer_email',
+        this.db.raw("string_agg(DISTINCT ri.service_name, ', ') as service_names"),
+      )
+      .groupBy(
+        'p.id',
+        'p.code',
+        'p.reservation_id',
+        'p.user_id',
+        'p.method',
+        'p.status',
+        'p.amount',
+        'p.paid_at',
+        'p.created_at',
+        'p.updated_at',
+        'r.code',
+        'r.date',
+        'u.id',
+        'u.name',
+        'u.email',
+      );
+  }
+
+  async listAdmin(input: { page: number; pageSize: number; status?: string; search?: string }): Promise<{ rows: AdminPaymentRow[]; total: number }> {
+    const applyFilters = (query: any) => {
+      if (input.status) query.where('p.status', input.status);
+      if (input.search) {
+        const term = `%${input.search}%`;
+        query.where((builder: any) => builder.whereILike('p.code', term)
+          .orWhereILike('u.name', term).orWhereILike('u.email', term).orWhereILike('r.code', term));
+      }
+      return query;
+    };
+    const count = applyFilters(this.db('payments as p').join('reservations as r', 'r.id', 'p.reservation_id').join('users as u', 'u.id', 'p.user_id'));
+    const totalRow = await count.countDistinct({ total: 'p.id' }).first() as { total?: number | string };
+    const rows = await applyFilters(this.adminQuery()).orderBy('p.created_at', 'desc')
+      .limit(input.pageSize).offset((input.page - 1) * input.pageSize) as AdminPaymentRow[];
+    return { rows, total: Number(totalRow?.total ?? 0) };
+  }
+
+  async findAdminById(id: number): Promise<AdminPaymentRow | undefined> {
+    return this.adminQuery().where('p.id', id).first() as Promise<AdminPaymentRow | undefined>;
+  }
+
   async findByReservationId(reservationId: number): Promise<PaymentRow | undefined> {
     return this.db<PaymentRow>('payments').where({ reservation_id: reservationId }).first();
   }

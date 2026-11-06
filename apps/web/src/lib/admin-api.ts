@@ -72,6 +72,22 @@ export interface ReservationItem {
   createdAt?: string;
 }
 
+export interface PaymentItem {
+  id: number;
+  code: string;
+  reservationId: number;
+  reservationCode: string;
+  userId: number;
+  customerName?: string;
+  customerEmail?: string;
+  serviceNames?: string | null;
+  method: string;
+  status: string;
+  amount: number;
+  paidAt: string | null;
+  createdAt: string;
+}
+
 async function adminRequest<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`/api/admin/${path}`, {
     cache: 'no-store',

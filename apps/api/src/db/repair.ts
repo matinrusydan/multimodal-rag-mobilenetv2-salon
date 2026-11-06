@@ -32,16 +32,10 @@ async function run() {
   const [batch, log] = await client.migrate.latest();
   console.log(`[repair] migrate selesai. batch=${batch}, dijalankan=${log.length}`);
 
-  await client.destroy();
+  const seedResult = await client.seed.run();
+  console.log(`[repair] seed selesai. dijalankan=${seedResult[0].length}`);
 
-  // Jalankan seed via proses terpisah (agar import seed fresh).
-  const { spawnSync } = await import('node:child_process');
-  const res = spawnSync(
-    process.platform === 'win32' ? 'npx.cmd' : 'npx',
-    ['tsx', 'src/db/seed.ts'],
-    { stdio: 'inherit', cwd: process.cwd() },
-  );
-  console.log(`[repair] seed exit code: ${res.status}`);
+  await client.destroy();
 }
 
 run().catch((err) => {
