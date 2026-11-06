@@ -68,8 +68,19 @@ data/train/
 data/val/
 data/test/
 apps/api/cv/dataset/extra/
+apps/api/cv/dataset/new_dataset/
 apps/api/cv/dataset/*.zip
 # CATATAN: apps/api/cv/dataset/figaro1k/ = dataset FINAL terkurasi -> SENGAJA di-track (jangan di-ignore)
+
+# CV source recovery (materi lokal/kandidat; metadata atau skrip tetap boleh di-track)
+apps/api/cv/geometry/source_recovery/manual_recovered_originals/
+apps/api/cv/geometry/source_recovery/manual_reverse_search/
+apps/api/cv/geometry/source_recovery/pinterest_candidates/*.jpg
+apps/api/cv/geometry/source_recovery/pinterest_candidates/*.jpeg
+apps/api/cv/geometry/source_recovery/pinterest_candidates/*.png
+apps/api/cv/geometry/source_recovery/pinterest_candidates/*.webp
+apps/api/cv/geometry/source_recovery/pinterest_candidates/*.gif
+apps/api/cv/geometry/source_recovery/pinterest_related/
 
 # Gambar hasil crawling / harvest (JANGAN di-commit; bisa di-harvest ulang)
 apps/ai/app/crawler/harvest/
@@ -111,6 +122,11 @@ apps/api/cv/geometry/reports/*.log.err
 # Agent docs (lokal saja, jangan commit)
 AGENTS.md
 PRD.md
+
+# Local research papers and generated submission outputs (keep outside Git)
+/artikel/
+/output/
+docs/project-memory.md
 
 # CV outputs - visualization outputs
 apps/api/cv/outputs/
