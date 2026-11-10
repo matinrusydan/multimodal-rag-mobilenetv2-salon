@@ -6,7 +6,7 @@ Audit statis: **6 November 2026**. Dokumen otoritatif pekerjaan CV: `docs/08-roa
 
 Dokumen 08 menyebut output `apps/api/cv/geometry/reports/phase0_decision.json` dan `backbone_decision.json`. Checkout saat audit **tidak memiliki** kedua berkas di lokasi target. Namun hasil tersebut **ada di lokasi legacy lain**:
 
-- `apps/api/cv/viewpoint/reports/phase0_decision.json`: status `KONDISIONAL_FINAL`, 57 sampel keseluruhan (44 back, 8 front, 5 side); back pose detected 28/44, shoulder OK 27/44, head OK 28/44.
+- Uji lite terbaru: kohort 252 menghasilkan 141 keluaran bahu dan 143 kepala/proxy; kohort 137 menghasilkan 73 bahu dan 74 kepala/proxy. Ini ketersediaan keluaran, bukan validasi anatomis. Laporan uji lama 44 gambar dipertahankan di arsip dokumentasi `docs/archive/cv-2026-11-10/`.
 - `apps/api/cv/hair_length/reports/backbone_decision.json`: keputusan eksperimen backbone `efficientnet_v2_s` pada hold-out tertentu. Ini bukan kelulusan gate geometri.
 
 Jangan menyebut kedua keputusan itu "tidak ada" secara umum atau memindahkannya ke `geometry/` tanpa provenance.
@@ -15,8 +15,8 @@ Jangan menyebut kedua keputusan itu "tidak ada" secara umum atau memindahkannya 
 
 | Fase | Output target | Status checkout | Syarat lanjut |
 |---|---|---|---|
-| **0 — Pose feasibility** | Pose/head/shoulder back-view + keputusan | **Kondisional**: shoulder 61.4% dan head 63.6% pada seluruh sampel back; conditional on detected pose lebih tinggi | Gate ≥70% shoulder dan ≥80% head pada back-view belum terbukti lulus; evaluasi sesudah cleaning atau pivot harus dicatat. |
-| **1 — Data cleaning/viewpoint** | back-view valid, dedupe, split group | **Parsial**: modul legacy `cv/viewpoint/`; laporan filter target `geometry/reports/viewpoint_filter.json` belum ditemukan | ≥150 citra back-view valid + validasi manusia dan leakage prevention. |
+| **0 — Kelayakan pose untuk geometri** | Keluaran landmark dan validasi manusia | **Belum dibuktikan lulus**; hasil lite hanya hitungan ketersediaan | Validasi anatomis sebelum memakai geometri pose; tidak membatasi hair type/segmentasi. |
+| **1 — Kurasi data** | data sesuai task, dedupe, split group | **Parsial**; artefak final target `geometry/` belum ditemukan | ≥150 citra valid untuk task, validasi label/kualitas dan leakage prevention. |
 | **2 — Segmentasi UNet** | mask ONNX dan evaluasi | **Belum terbukti** di target `geometry/` | IoU validasi ≥0.75, Dice dan latensi sesuai roadmap. |
 | **3 — Geometri head-unit** | fitur panjang/volume dan tied-hair detection | **Belum final**; ada hasil lama di folder CV lain | Ukur rasio relatif tanpa cm absolut, validasi landmark/mask. |
 | **4 — Hirarkis/evaluasi** | keluaran 4 kelas + volume dan report | **Belum final** di target `geometry/` | Macro-F1, per-class F1, confusion matrix, ECE, kalibrasi dan audit kasus gagal. |

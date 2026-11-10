@@ -19,7 +19,6 @@ def model_paths() -> dict:
     return {
         "hair_type": str(AI_WEIGHTS / "hair_type.onnx"),
         "hair_length": str(AI_WEIGHTS / "hair_length.onnx"),
-        "viewpoint_cnn": str(CV_DIR / "viewpoint" / "weights" / "viewpoint_cnn.pth"),
     }
 
 
@@ -28,7 +27,6 @@ def local_model_paths() -> dict:
     return {
         "hair_type": str(CV_DIR / "hair_type" / "weights" / "hair_type.onnx"),
         "hair_length": str(CV_DIR / "hair_length" / "weights" / "hair_length.onnx"),
-        "viewpoint_cnn": str(CV_DIR / "viewpoint" / "weights" / "viewpoint_cnn.pth"),
     }
 
 

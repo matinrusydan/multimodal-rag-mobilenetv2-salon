@@ -46,22 +46,13 @@ def cv_pipeline_flowchart() -> None:
     g.node("input", "Foto rambut (mentah)", fillcolor="#E3F2FD")
     g.node("pre", "Preprocessing\nRGB -> EXIF -> resize 256\n-> center-crop 224\n-> ImageNet norm", fillcolor="#E8F5E9")
 
-    with g.subgraph(name="cluster_gate") as s:
-        s.attr(label="TAHAP 0 — Viewpoint Gate (mediapipe)", style="dashed", color="#888")
-        s.node("gate", "Prediksi posisi\n(depan / samping / belakang)", fillcolor="#FFF8E1")
-        s.node("stop", "STOP: minta foto ulang\n(dari belakang)", shape="box", fillcolor="#FFEBEE")
-        s.node("pass", "LOLOS (belakang)", shape="box", fillcolor="#E8F5E9")
-
     g.node("type", "TAHAP 1 — Hair Type\nCNN (MobileNetV2)\nlurus/bergelombang/\nkeriting/sangat-keriting", fillcolor="#E1F5FE")
     g.node("length", "TAHAP 2 — Hair Length\nCNN / geometris\npendek/pendek-menengah/\nmenengah/panjang", fillcolor="#E1F5FE")
     g.node("out", "Hasil: hairLength + hairType\n(+ features: warna, tekstur, risk)", fillcolor="#F3E5F5")
     g.node("rag", "Diteruskan ke RAG\n(konteks multimodal)", fillcolor="#FCE4EC")
 
     g.edge("input", "pre")
-    g.edge("pre", "gate")
-    g.edge("gate", "stop", label="depan/samping")
-    g.edge("gate", "pass", label="belakang")
-    g.edge("pass", "type")
+    g.edge("pre", "type")
     g.edge("type", "length")
     g.edge("length", "out")
     g.edge("out", "rag")
@@ -135,21 +126,15 @@ def sequence_analyze_cv() -> None:
     actors = [
         ("web", "Web (Next.js)", "#E3F2FD"),
         ("api", "Express API", "#E8F5E9"),
-        ("ai", "FastAPI /ai/analyze", "#FFF8E1"),
-        ("gate", "Viewpoint Gate\n(mediapipe)", "#E1F5FE"),
-        ("cnn", "CNN ONNX\n(type/length)", "#F3E5F5"),
+        ("ai", "FastAPI /ai/analyze\n(target; not active)", "#FFF8E1"),
     ]
     for k, label, color in actors:
         g.node(k, label, fillcolor=color)
 
-    g.edge("web", "api", label="POST /api/analyze (multipart image)")
-    g.edge("api", "ai", label="POST /ai/analyze")
-    g.edge("ai", "gate", label="preprocessing")
-    g.edge("gate", "ai", label="belakang / tolak", style="dashed")
-    g.edge("ai", "cnn", label="infer (jika belakang)")
-    g.edge("cnn", "ai", label="type + length", style="dashed")
-    g.edge("ai", "api", label="{hairLength, hairType, features}", style="dashed")
-    g.edge("api", "web", label="200 OK", style="dashed")
+    g.edge("web", "api", label="POST /api/analyze (target; currently returns 503)")
+    g.edge("api", "ai", label="target proxy path (disabled)", style="dashed")
+    g.edge("ai", "api", label="no active CV response", style="dashed")
+    g.edge("api", "web", label="503 Service Unavailable (current)", style="dashed")
     _render(g, "sequence_analyze_cv")
 
 
@@ -170,13 +155,13 @@ def system_architecture() -> None:
 
     with g.subgraph(name="cluster_ai") as c:
         c.attr(label="Brain Engine (FastAPI :5000)", style="dashed", color="#888")
-        c.node("cv", "CV\nMediaPipe gate + ONNX CNN", fillcolor="#E1F5FE")
+        c.node("cv", "CV\nplanned: ONNX hair type/length", fillcolor="#E1F5FE")
         c.node("rag", "RAG\nChromaDB + Gemini", fillcolor="#F3E5F5")
         c.node("crawl", "Crawler\nCrawl4AI", fillcolor="#FCE4EC")
 
     g.edge("web", "api", label="REST")
     g.edge("api", "pg", label="Knex")
-    g.edge("api", "cv", label="proxy /ai/analyze")
+    g.edge("api", "cv", label="target /api/analyze (currently 503; disabled)", style="dashed")
     g.edge("api", "rag", label="proxy /ai/chat, /ai/agent")
     g.edge("rag", "crawl", label="web fallback / ingest", style="dashed")
     _render(g, "system_architecture")

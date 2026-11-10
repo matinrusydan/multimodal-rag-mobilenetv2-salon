@@ -1,12 +1,12 @@
 # common/ — Utilitas Bersama
 
-Kode yang dipakai bersama oleh `viewpoint/`, `hair_type/`, `hair_length/`.
+Kode yang dipakai bersama oleh `hair_type/` dan `hair_length/`.
 
 ## Isi
 
 | File | Fungsi |
 |---|---|
-| `constants.py` | Label tetap semua task + path config |
+| `constants.py` | Label tetap jenis dan panjang rambut + path config |
 | `preprocessing.py` | Pipeline gambar (resize, normalize ImageNet, CLAHE opsional) |
 | `io_utils.py` | Helper load image, baca/tulis JSON, list dataset |
 

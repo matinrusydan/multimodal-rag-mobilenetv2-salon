@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """hair_type/train.py — Latih CNN jenis rambut (MobileNetV2).
 
-Data: dataset back-view (hasil filter viewpoint). Input 224x224 ImageNet-norm.
+Data: dataset foto dari arah belakang. Input 224x224 ImageNet-norm.
 Output: hair_type/weights/hair_type.onnx + reports.
 
 Jalankan (venv ComfyUI/GPU):

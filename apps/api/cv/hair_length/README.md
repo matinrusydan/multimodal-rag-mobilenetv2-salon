@@ -36,5 +36,5 @@ cd C:\laragon\www\RAG-salon\apps\api\cv
 
 ## Catatan
 
-- Training data **hanya foto back-view** (hasil filter `viewpoint/`).
+- Training data menggunakan foto dari arah belakang.
 - Benchmark & model existing ada di `../weights/`.

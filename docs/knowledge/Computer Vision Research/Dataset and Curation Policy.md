@@ -6,7 +6,7 @@ Audit statis: **6 November 2026**. Seluruh sumber tetap dipertahankan; penulisan
 
 | Direktori | Peran | Status |
 |---|---|---|
-| `apps/api/cv/dataset/figaro1k/` | Dataset dasar back-view terkurasi | 252 file teramati saat audit; tetap base, bukan diganti Pinterest. |
+| `apps/api/cv/dataset/figaro1k/` | Dataset dasar terkurasi | 252 file teramati saat audit; tetap base, bukan diganti Pinterest. |
 | `apps/api/cv/dataset/new_dataset/` | Arsip mentah koleksi awal | Read-only; perlu recovery/resolusi dan QC. |
 | `apps/api/cv/geometry/source_recovery/` | Manifest recovery dan kandidat terisolasi | Belum menjadi ground truth atau split final. |
 | `source_recovery/manual_reverse_search/` | Thumbnail pencarian ulang manual | Bukan data siap training. |
@@ -23,7 +23,7 @@ Jumlah kelas dari memory sebelumnya tidak dihitung ulang dalam audit ini; 252 ad
 3. Login manual di browser/profil khusus. **Jangan memasukkan token/cookie ke script atau percakapan.**
 4. Batas persetujuan koleksi terkait adalah **maksimal 40 gambar**. Keberadaan script tidak membuktikan run interaktif sudah dilakukan.
 5. Simpan kandidat terpisah beserta provenance sumber.
-6. Periksa hak penggunaan, resolusi, label hair type, sudut back-view, ujung rambut terlihat, ikatan, watermark dan kualitas.
+6. Periksa hak penggunaan, resolusi, label hair type, bagian rambut yang diperlukan task, ikatan, watermark dan kualitas.
 7. Lakukan exact/near-duplicate check lintas seluruh sumber **sebelum** split.
 8. Group subject/duplicate family, baru buat train/val/test dengan seed tetap.
 9. Merge hanya melalui manifest keputusan yang dapat diaudit, bukan menyalin kandidat langsung ke base.

@@ -32,5 +32,5 @@ cd C:\laragon\www\RAG-salon\apps\api\cv
 
 ## Catatan
 
-- Training data **hanya foto back-view** (hasil filter `viewpoint/`).
+- Training data menggunakan foto dari arah belakang.
 - Model existing ada di `../weights/hair_type.onnx` (dipakai runtime).

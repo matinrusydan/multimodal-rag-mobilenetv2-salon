@@ -9,7 +9,7 @@ Audit statis: **6 November 2026**. Tabel ini membedakan keberadaan implementasi,
 | Web + API | ✅ Implementasi tersedia | Next.js BFF, Express CRUD/auth/RBAC/proxy ditemukan; runtime belum diuji ulang. |
 | RAG | ⚠️ Prototipe lokal + bukti evaluasi historis | Runtime BM25/katalog live/ChatGPT tersedia; human approval, independent test, dan deployment masih terbuka. |
 | CV runtime publik | ⏳ Dinonaktifkan | Express `/api/analyze` sengaja mengembalikan 503; FastAPI aktif tidak memasang router CV. |
-| CV penelitian | ⚠️ Banyak artefak, roadmap final belum selesai | Fase 0 kondisional; implementasi lama tersebar di `viewpoint/`, `hair_length/`, `hair_type/`; target `geometry/` belum berisi pipeline fase 0–5. |
+| CV penelitian | ⚠️ Banyak artefak, roadmap bertahap | Kelayakan pose untuk geometri belum dibuktikan lulus (Fase 0); Fase 1 kurasi data lolos teknis (385 citra); Fase 2 segmentasi MobileNetV2-UNet lolos gate numerik (val IoU 0.9305, ONNX CPU 28.79 ms); Fase 3 parsial (fitur bentuk mask eksploratif tanpa pose); panjang/volume dan Fase 4–5 belum dikerjakan. |
 | Dataset tambahan | 🔄 Kandidat terisolasi | Koleksi interaktif maksimal 40 pin, QC, lisensi, label, dan deduplikasi belum selesai. |
 | Deployment | ⏳ Belum terbukti | Konfigurasi/readiness docs tersedia, tetapi smoke test domain HTTPS belum tercatat lulus. |
 | Publikasi | ⚠️ Draft/paket tersedia lokal | Blind-review dan beberapa konfirmasi penulis masih terbuka. |
@@ -44,15 +44,15 @@ Audit statis: **6 November 2026**. Tabel ini membedakan keberadaan implementasi,
 
 | ID | Fase | Status | Bukti aktual | Gate / pekerjaan berikutnya |
 |---|---|---|---|---|
-| CV-00 | Gate pose back-view | ⚠️ Kondisional | `apps/api/cv/viewpoint/reports/phase0_decision.json`: back pose 63.6%, shoulder 61.4%, head 63.6% | Gate awal ≥70% shoulder dan ≥80% head belum lulus pada seluruh sampel. Cleaning/pivot harus dibuktikan. |
-| CV-01 | Cleaning dan viewpoint | ⚠️ Parsial/legacy | Modul ada di `apps/api/cv/viewpoint/`, bukan target `geometry/`; artefak final `geometry/reports/viewpoint_filter.json` tidak ditemukan | Hasilkan daftar back-view valid ≥150, human verification dan dedupe. |
+| CV-00 | Kelayakan pose untuk geometri | ⚠️ Belum dibuktikan lulus | Uji lite: kohort 252 memiliki 141 keluaran bahu dan 143 kepala/proxy; kohort 137 memiliki 73 bahu dan 74 kepala/proxy. Historis 44 gambar disimpan di arsip dokumentasi. | Validasi anatomis manusia diperlukan sebelum memakai geometri pose; pose gagal tidak mengecualikan gambar dari hair type/segmentasi. |
+| CV-01 | Kurasi data | ⚠️ Parsial/legacy | Implementasi dan artefak target `geometry/` belum lengkap. | Kurasi label/kualitas/lisensi, deduplikasi dan split bebas leakage; bukan klasifikasi orientasi foto. |
 | CV-02 | Segmentasi rambut UNet | ⏳ Belum terverifikasi | Target `geometry/train_segmentation.py`, bobot dan `segmentation_eval.json` tidak ditemukan | Train/evaluasi dengan split group; gate IoU ≥0.75. |
 | CV-03 | Geometri head-unit | ⏳ Belum final | Artefak lama ada di lokasi lain, target pipeline `geometry/` tidak ditemukan | Mask→pose→rasio relatif, tied-hair handling, validasi manusia. |
 | CV-04 | Klasifikasi hierarkis/evaluasi | ⏳ Belum final | `geometry/classify_hierarchical.py` dan `classification_eval.json` tidak ditemukan | Laporkan macro-F1, per-class F1, confusion matrix, ECE. |
 | CV-05 | Integrasi/deployment | ⏳ Dinonaktifkan | Express analyze 503; runtime FastAPI tidak memasang router analyze | Hanya integrasikan sesudah semua gate dan kontrak output lulus. |
 | CV-BB | Eksperimen backbone hair length legacy | ⚠️ Hasil tersedia, bukan roadmap selesai | `hair_length/reports/backbone_decision.json` memilih EfficientNetV2-S dari eksperimen hold-out | Pisahkan dari klaim pipeline geometris dan validasi independen. |
 
-**Koreksi lokasi artefak:** roadmap merujuk `geometry/reports/phase0_decision.json` dan `backbone_decision.json`, tetapi checkout ini menyimpannya masing-masing di `cv/viewpoint/reports/` dan `cv/hair_length/reports/`. Ini menunjukkan drift struktur yang harus dibereskan secara terkontrol, bukan dengan memindahkan artefak lama sembarangan.
+**Koreksi lokasi artefak:** roadmap merujuk `geometry/reports/phase0_decision.json` dan `backbone_decision.json`, tetapi checkout menyimpan artefak historis di luar struktur target `geometry/`. Ini menunjukkan drift struktur yang harus dibereskan secara terkontrol, bukan dengan memindahkan artefak lama sembarangan.
 
 ## D. Dataset dan kurasi
 
@@ -60,10 +60,10 @@ Audit statis: **6 November 2026**. Tabel ini membedakan keberadaan implementasi,
 |---|---|---|---|---|
 | DATA-01 | Base dataset Figaro1k terkurasi | ✅ 252 file teramati | `cv/dataset/figaro1k` | Jaga sebagai base; jangan overwrite. |
 | DATA-02 | Arsip mentah `new_dataset` | ⚠️ lokal/legacy | `cv/dataset/new_dataset` | Read-only; banyak gambar kecil menurut audit sebelumnya. |
-| DATA-03 | Recovery manual | 🔄 | `geometry/source_recovery/*` | Review lisensi, resolusi, label dan viewpoint. |
+| DATA-03 | Recovery manual | 🔄 | `geometry/source_recovery/*` | Review lisensi, resolusi, label dan deduplikasi. |
 | DATA-04 | Related Pinterest ≤40 | ⏳ Run interaktif belum terbukti | collector + tests tersedia | Login manual, jalankan koleksi, lalu QC; jangan masukkan token. |
 | DATA-05 | Deduplikasi sebelum split | ⏳ | Belum ada artefak final split deduplicated di target geometry | Perceptual hash/group split sebelum train/val/test. |
-| DATA-06 | Merge terkontrol | ⏳ | Kandidat masih terisolasi | Merge hanya setelah approval hak pakai, label, back-view dan dedupe. |
+| DATA-06 | Merge terkontrol | ⏳ | Kandidat masih terisolasi | Merge hanya setelah approval hak pakai, label, kualitas dan dedupe. |
 
 ## E. Publikasi dan supplementary (lokal, bukan produk runtime)
 

@@ -23,7 +23,6 @@
 
 | Komponen | Status | Metrik utama |
 |---|---|---|
-| **Viewpoint gate** (depan/samping/belakang, mediapipe) | Aktif, heuristik | Akurasi **80.3%** (n=193; 83.8% di luar ragu) |
 | **Hair type** (lurus/bergelombang/keriting/sangat-keriting, CNN) | Terlatih | Akurasi **92.3%** (puncak hold-out), macro-F1 **0.61** ⚠️ |
 | **Hair length** (geometris) | Terlatih | Akurasi **54.2%**, macro-F1 **0.50** |
 | **Hair length** (CNN/EfficientNetV2-S, hold-out asli) | Terlatih | Akurasi **85.5%**, macro-F1 **0.80** |
@@ -40,8 +39,7 @@
    hanya beda tipis; data bersih mengalahkan data banyak).
 2. **Kelas ambigu & kelas minoritas** — `bergelombang` vs `keriting` vs `sangat-keriting` tumpang
    tindih; setelah kurasi, `sangat-keriting` hanya 5 gambar → kelas praktis hilang.
-3. **Viewpoint / pose detection** — MediaPipe gagal deteksi pose pada 36% foto back-view → gate
-   Fase 0 **kondisional**.
+3. **Ketersediaan landmark geometri** — hasil pose bukan prasyarat bagi hair type maupun segmentasi; validitas anatomis perlu diuji sebelum memakai fitur geometri.
 
 ---
 
@@ -56,11 +54,6 @@ Foto user (mentah)
    ↓
 [ common/ ]      preprocessing + constants + io
    ↓
-[ viewpoint/ ]   TAHAP 0 — GATE posisi (depan/samping/belakang)
-   │              hanya "belakang" diterima (VIEWPOINT_ACCEPTED)
-   ├─ depan/samping → STOP ("foto ulang dari belakang")
-   └─ belakang → LANJUT
-              ↓
 [ hair_type/ ]   TAHAP 1 — jenis rambut (4 kelas)
 [ hair_length/ ] TAHAP 2 — panjang rambut (4 kelas)
               ↓
@@ -68,12 +61,11 @@ Foto user (mentah)
 ```
 
 - Label tetap (`common/constants.py`):
-  - Viewpoint: `depan`, `samping`, `belakang`.
   - Hair type: `lurus`, `bergelombang`, `keriting`, `sangat-keriting`.
   - Hair length: `pendek`, `pendek-menengah`, `menengah`, `panjang`.
 
 **Catatan:** ada 2 generasi kode —
-- **Pipeline modular baru** (`viewpoint/`, `hair_type/`, `hair_length/`, `common/`, `pipeline/`).
+- **Pipeline modular baru** (`hair_type/`, `hair_length/`, `common/`, `pipeline/`).
 - **Warisan** (`scripts/`) — banyak versi eksperimen (train_length_v2..v6, ensemble, dst).
 
 ### B.2 Dataset
@@ -82,7 +74,7 @@ Lokasi: `apps/api/cv/dataset/`.
 
 | Folder | Kelas | Jumlah gambar | Sumber / catatan |
 |---|---|---|---|
-| `figaro1k/` | lurus | 89 | Figaro-1k, **hasil kurasi manual** (back-view), 252 gambar total |
+| `figaro1k/` | lurus | 89 | Figaro-1k, **hasil kurasi manual**, 252 gambar total |
 | | bergelombang | 86 | |
 | | keriting | 72 | |
 | | sangat-keriting | **5** ⚠️ | sangat sedikit (kelas praktis hilang) |
@@ -93,13 +85,12 @@ Lokasi: `apps/api/cv/dataset/`.
 | `hair_length_geometris/` | (label geometris) | — | hasil labeling geometris |
 
 > **Catatan penting (dataset Figaro):** dataset semula 600 gambar (150/kelas). Pada kurasi manual
-> (back-view) disisakan **252 gambar** (89/86/72/**5**); 348 sisanya dibuang karena bukan back-view
-> / tidak layak. Konsekuensi: kelas `sangat-keriting` menjadi minoritas ekstrem.
+> disisakan **252 gambar** (89/86/72/**5**); 348 sisanya tidak dipakai setelah kurasi. Konsekuensi:
+> kelas `sangat-keriting` menjadi minoritas ekstrem.
 > Tensor `preprocessed/` dibangun ulang dari 252 gambar (**652 tensor**: 600 train + 52 val).
 
-- **Viewpoint**: sebagian foto Figaro sudah dianotasi manual (ground truth `viewpoint_verification_A.json`, n=193) untuk mengukur akurasi gate.
 - **Preprocessing tensors**: `preprocessed/`, `preprocessed_length/`, `preprocessed_length_merged/` (`.pt` NCHW).
-- **Dataset back-view asli langka di internet umum** → pernah dilakukan harvest (Openverse/HF/Bing/CLIP filter) & anotasi manual. Ini salah satu kendala yang bisa diangkat ke dosen.
+- Data citra berlabel yang sesuai untuk task sulit dikumpulkan dari sumber publik → pernah dilakukan harvest dan anotasi manual. Ini salah satu kendala yang bisa diangkat ke dosen.
 
 ### B.3 Preprocessing (`scripts/preprocess.py`)
 
@@ -176,10 +167,6 @@ Split: **20% val per kelas**, `seed=42`.
 **Hair length (CNN/ensemble)** — `reports/hair_length_ensemble.json` (val 250):
 - Best **accuracy 0.824** (seed 42; ensemble 3-seed + TTA = 0.824).
 
-**Viewpoint gate** — `viewpoint/reports/viewpoint_accuracy.json` (n=193 vs anotasi manusia):
-- **Accuracy 0.8031** (0.8378 tanpa label "ragu"). Per kelas prediksi:
-  belakang 0.842, depan 0.732, samping 0.684.
-
 **Analisis separability fitur** — `reports/hair_separability.json` (n=600):
 - Fitur paling diskriminatif: **`bbox_aspect`** (F=63.8), lalu `solidity` (F=18.0).
 - Namun **keriting vs sangat-keriting hanya ~63–67%** dengan threshold tunggal → **bukti kelas ambigu**.
@@ -194,23 +181,17 @@ Split: **20% val per kelas**, `seed=42`.
    `bergelombang↔keriting↔sangat-keriting` (F1 bergelombang 0.72; separability ~0.63–0.67);
    `pendek-menengah` (F1 0.27) — batas panjang sulit. Setelah kurasi, **`sangat-keriting` hanya
    5 gambar** → **F1 0** (macro-F1 turun ke 0.61) — bukti keseimbangan kelas wajib dijaga.
-3. **Gate viewpoint / pose.**
-   Fase 0 **KONDISIONAL**: pose terdeteksi hanya **64%** pada back-view; 16/44 `no_pose`.
-   Di antara yang terdeteksi, landmark andal (shoulder 96%, head 100%). Model heavy tidak membantu.
-   Dugaan akar: anotasi viewpoint tidak akurat + pose tertutup rambut.
+3. **Geometri pose belum tervalidasi.** Hasil ketersediaan landmark tidak membuktikan akurasi anatomis; klasifikasi hair type dan segmentasi tetap dapat berjalan tanpa pose.
 4. **Data back-view asli sulit didapat** dari sumber publik legal → butuh strategi harvest + anotasi.
 5. Deployment backbone & metadata label sempat tidak sinkron (sudah diperbaiki).
 
 ### B.7 REKOMENDASI (usulan untuk TA)
 
-- **Data**: prioritaskan **anotasi manual & keseimbangan kelas**; tambah dataset back-view
-  spesifik (Figaro-1k dipertahankan sebagai core + augmentasi terarah); buang `no_pose` untuk
-  Fase 1.
+- **Data**: prioritaskan **anotasi manual & keseimbangan kelas**; pertahankan citra tanpa keluaran pose untuk task hair type/segmentasi bila label dan kualitasnya sesuai.
 - **Model**: pertimbangkan **fine-grained** & **hierarkis** (type → length/ketebalan), atau
   segmentasi (UNet) sebelum klasifikasi untuk memisahkan rambut dari latar.
 - **Evaluasi**: laporkan **macro-F1 + confusion matrix** (bukan hanya accuracy), plus
   **kalibrasi** (ECE) untuk keandalan.
-- **Viewpoint**: gate hybrid (heuristik + CNN kecil) atau perbaiki anotasi viewpoint.
 - **Kontribusi**: bangun **dataset back-view salon** (aset orisinal) sebagai nilai jual skripsi.
 
 ### B.8 TEMUAN RETRAIN DATASET TERKURASI (252 gambar)
@@ -261,11 +242,6 @@ ditingkatkan; `GEMINI_API_KEY` & latensi eksternal.
 |---|---|
 | `common/constants.py` | Label tetap, path, normalisasi ImageNet |
 | `common/io_utils.py`, `common/preprocess.py` | IO & preprocessing bersama |
-| `viewpoint/gate.py` | Gate posisi (mediapipe) |
-| `viewpoint/verify.py`, `measure.py`, `pose_check.py` | Verifikasi & pengukuran gate |
-| `viewpoint/train_cnn.py`, `evaluate.py`, `build_dataset.py` | CNN viewpoint + evaluasi |
-| `viewpoint/clean_annotation.py`, `apply_clean.py`, `filter_harvested.py` | Cleaning dataset & anotasi |
-| `viewpoint/clip_filter.py` | Filter semantic (CLIP) untuk harvest |
 | `hair_type/train.py`, `evaluate.py`, `labels.py` | Klasifikasi jenis rambut |
 | `hair_length/train.py`, `evaluate.py`, `bench_backbones.py` | Klasifikasi panjang + benchmark |
 | `pipeline/run.py`, `pipeline/adapters.py` | Orkestrasi end-to-end + adaptor apps/ai |
@@ -303,6 +279,6 @@ ditingkatkan; `GEMINI_API_KEY` & latensi eksternal.
 1. Apakah **kontribusi dataset back-view salon** (anotasi orisinal) cukup sebagai novelty,
    di samping model klasifikasi?
 2. Batas minimal **metrik uji** yang diharapkan (macro-F1? per-kelas?) untuk skripsi.
-3. Arah perbaikan prioritas: **perbaiki gate viewpoint** atau **fokus hair type/length**?
+3. Arah perbaikan prioritas: **validasi geometri pose** atau **fokus hair type/length**?
 4. Apakah pendekatan **hierarkis (type → length/volume)** disetujui sebagai arsitektur final?
 5. Perlukah **segmentasi rambut (UNet)** atau cukup klasifikasi CNN end-to-end?

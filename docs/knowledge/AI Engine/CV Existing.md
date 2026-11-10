@@ -21,7 +21,7 @@ Jadi keberadaan `onnxruntime`, file model, router, ataupun test CV bukan bukti f
 | `apps/ai/app/cv/hair_features.py` | Fitur citra tambahan. |
 | `apps/ai/app/routers/analyze.py` | Endpoint multipart inference yang tidak terpasang di runtime aktif. |
 
-Pipeline lama dan hasil eksperimen lebih luas berada di `apps/api/cv/{hair_type,hair_length,viewpoint,pipeline,reports,weights}`. Jangan anggap itu pipeline geometris roadmap final.
+Pipeline lama dan hasil eksperimen lebih luas berada di direktori CV legacy (termasuk `hair_type`, `hair_length`, `pipeline`, `reports`, dan `weights`). Jangan anggap itu pipeline geometris roadmap final.
 
 ## Konsekuensi untuk pengembangan
 

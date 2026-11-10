@@ -9,11 +9,6 @@ Foto user (mentah)
       ↓
 [ common/ ]        utilitas bersama (preprocessing, constants, io)
       ↓
-[ viewpoint/ ]     TAHAP 0 — GATE: vonis posisi (depan/samping/belakang)
-      │             hanya "belakang" yang lolos
-      ├─ depan/samping → STOP ("mohon foto ulang dari belakang")
-      └─ belakang → LANJUT
-              ↓
 [ hair_type/ ]     TAHAP 1 — jenis rambut (lurus/bergelombang/keriting/sangat-keriting)
 [ hair_length/ ]   TAHAP 2 — panjang rambut (pendek/pendek-menengah/menengah/panjang)
               ↓
@@ -22,7 +17,7 @@ Foto user (mentah)
 
 ## Prinsip
 
-1. **Viewpoint sebagai filter** — dataset training hair_type/length **hanya** foto back-view.
+1. **Jenis foto data** — dataset training hair_type/length menggunakan foto dari arah belakang.
 2. **Isolasi modul** — tiap folder mandiri (script + weights + reports sendiri).
 3. **Tulis ulang** — modul baru ditulis bersih, bukan copy mentah `scripts/` lama.
 4. **Label tetap** — nama kelas konsisten dengan `apps/ai` & UI (lihat `common/constants.py`).
@@ -31,7 +26,6 @@ Foto user (mentah)
 
 | Folder | Peran | Status |
 |---|---|---|
-| `viewpoint/` | Gate posisi (heuristik + CNN), verifikasi, pengukuran | aktif |
 | `hair_type/` | Klasifikasi jenis rambut (CNN) | aktif |
 | `hair_length/` | Klasifikasi panjang rambut (CNN) | aktif |
 | `common/` | Utilitas dibagi (preprocessing, constants, io) | aktif |

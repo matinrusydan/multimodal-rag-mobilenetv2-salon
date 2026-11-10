@@ -128,7 +128,7 @@ def run(url: str, output: Path, download: bool, min_side: int) -> dict:
     image_url = find_pin_image(page)
     result = {"pin_id": pin_id, "pin_url": final_page, "image_url": image_url,
               "status": "preview_only", "rights_review": "required",
-              "viewpoint_label_review": "required"}
+              "label_review": "required"}
     if not download:
         return result
     # Network access is permitted only for pinimg, and output must remain isolated.

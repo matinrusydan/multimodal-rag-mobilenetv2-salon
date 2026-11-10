@@ -28,10 +28,10 @@ Audit statis: **6 November 2026**. Menjalankan pengujian memerlukan server, depe
 - Evaluasi CV wajib melaporkan:
   - Macro-F1 dan per-class metrics untuk mengatasi imbalance.
   - Confusion matrix per label kontrak.
-  - Evaluasi per sudut pandang (back vs front vs side bila ada).
+  - Evaluasi robustness per-subkelompok yang relevan bila metadata tersedia; jangan jadikan estimasi pose sebagai prasyarat task yang tidak bergantung pose.
   - Kalibrasi probabilitas / ECE.
 - Dilarang melaporkan akurasi global saja untuk dataset kelas tidak seimbang.
 
 Riwayat hasil pengujian tersimpan pada:
 - `apps/ai/rag/eval/` (RAG artifacts)
-- `apps/api/cv/hair_length/reports/`, `apps/api/cv/viewpoint/reports/` (CV artifacts)
+- `apps/api/cv/hair_length/reports/` dan lokasi artefak CV historis lainnya (CV artifacts)

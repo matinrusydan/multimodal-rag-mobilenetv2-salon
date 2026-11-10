@@ -70,6 +70,7 @@ data/test/
 apps/api/cv/dataset/extra/
 apps/api/cv/dataset/new_dataset/
 apps/api/cv/dataset/*.zip
+apps/api/cv/geometry/data/
 # CATATAN: apps/api/cv/dataset/figaro1k/ = dataset FINAL terkurasi -> SENGAJA di-track (jangan di-ignore)
 
 # CV source recovery (materi lokal/kandidat; metadata atau skrip tetap boleh di-track)
@@ -100,6 +101,8 @@ apps/api/cv/viewpoint/reports/*.err
 # Artefak riset sementara (figur & log; metrik JSON tetap di-commit)
 apps/api/cv/reports/*.png
 apps/api/cv/geometry/reports/**/*.png
+apps/api/cv/geometry/reports/**/*.jpg
+apps/api/cv/geometry/reports/**/*.jpeg
 apps/api/cv/annotation/reports/**/*.png
 apps/api/cv/geometry/reports/*.log
 apps/api/cv/geometry/reports/*.log.err

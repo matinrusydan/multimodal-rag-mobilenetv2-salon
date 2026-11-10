@@ -40,7 +40,7 @@
 - `geometry/`: direktori isolasi implementasi target roadmap CV baru (Fase 0–5), pengunduh pin, dan pemulihan dataset (`source_recovery/`).
 - `dataset/`: penyimpanan dataset lokal (`figaro1k/` 252 citra terkurasi, `new_dataset/` arsip mentah).
 - `weights/`: berkas bobot model ONNX dan PyTorch historis/warisan.
-- `reports/`, `viewpoint/`, `hair_length/`, `hair_type/`: skrip dan artefak eksperimen legacy terdahulu.
+- `reports/`, modul pose legacy, `hair_length/`, `hair_type/`: skrip dan artefak eksperimen terdahulu.
 
 ## Arah dependensi (pola umum)
 
