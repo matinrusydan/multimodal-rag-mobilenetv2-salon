@@ -1,0 +1,328 @@
+{
+  "phase": "4_hair_type_classification",
+  "timestamp_utc": "2026-11-10T16:34:04.821700+00:00",
+  "seed": 42,
+  "device_used": "cuda",
+  "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "architecture": {
+    "name": "efficientnet_v2_s",
+    "pretrained": true,
+    "img_size": 224,
+    "param_count": 20182612,
+    "classes": [
+      "lurus",
+      "bergelombang",
+      "keriting",
+      "sangat-keriting"
+    ]
+  },
+  "dataset": {
+    "manifest": "apps/api/cv/geometry/reports/phase1/curated_manifest.json",
+    "train_count": 269,
+    "val_count": 57,
+    "test_count": 59,
+    "class_distribution_train": {
+      "lurus": 85,
+      "bergelombang": 81,
+      "keriting": 70,
+      "sangat-keriting": 33
+    }
+  },
+  "training": {
+    "epochs_configured": 35,
+    "epochs_run": 14,
+    "best_epoch": 4,
+    "duration_seconds": 174.19,
+    "batch_size": 16,
+    "lr": 0.0003,
+    "class_weighted_loss": true
+  },
+  "gate": {
+    "status": "LULUS",
+    "criterion": "val_accuracy >= 0.85",
+    "actual_val_accuracy": 0.9825,
+    "actual_val_macro_f1": 0.9857
+  },
+  "val_metrics": {
+    "accuracy": 0.9825,
+    "macro_f1": 0.9857,
+    "weighted_f1": 0.9825,
+    "ece": 0.054,
+    "per_class": {
+      "lurus": {
+        "precision": 1.0,
+        "recall": 0.9444,
+        "f1": 0.9714,
+        "support": 18
+      },
+      "bergelombang": {
+        "precision": 0.9444,
+        "recall": 1.0,
+        "f1": 0.9714,
+        "support": 17
+      },
+      "keriting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 15
+      },
+      "sangat-keriting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 7
+      }
+    },
+    "confusion_matrix": [
+      [
+        17,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        17,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        15,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        7
+      ]
+    ],
+    "loss": 0.0856
+  },
+  "val_by_cohort": {
+    "figaro1k": {
+      "count": 37,
+      "accuracy": 0.973,
+      "macro_f1": 0.9791
+    },
+    "new_dataset": {
+      "count": 20,
+      "accuracy": 1.0,
+      "macro_f1": 1.0
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.8814,
+    "macro_f1": 0.874,
+    "weighted_f1": 0.8829,
+    "ece": 0.0654,
+    "per_class": {
+      "lurus": {
+        "precision": 0.9412,
+        "recall": 0.8421,
+        "f1": 0.8889,
+        "support": 19
+      },
+      "bergelombang": {
+        "precision": 0.85,
+        "recall": 0.9444,
+        "f1": 0.8947,
+        "support": 18
+      },
+      "keriting": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.8889,
+        "support": 15
+      },
+      "sangat-keriting": {
+        "precision": 0.7,
+        "recall": 1.0,
+        "f1": 0.8235,
+        "support": 7
+      }
+    },
+    "confusion_matrix": [
+      [
+        16,
+        3,
+        0,
+        0
+      ],
+      [
+        1,
+        17,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        12,
+        3
+      ],
+      [
+        0,
+        0,
+        0,
+        7
+      ]
+    ],
+    "loss": 0.25371
+  },
+  "test_by_cohort": {
+    "figaro1k": {
+      "count": 37,
+      "accuracy": 0.8378,
+      "macro_f1": 0.648
+    },
+    "new_dataset": {
+      "count": 22,
+      "accuracy": 0.9545,
+      "macro_f1": 0.9556
+    }
+  },
+  "onnx": {
+    "path": "apps/api/cv/geometry/weights/hair_type.onnx",
+    "output_shape": [
+      1,
+      4
+    ],
+    "mean_ms": 26.4,
+    "p95_ms": 30.68,
+    "min_ms": 18.47,
+    "max_ms": 32.26,
+    "file_size_mb": 76.846
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.02854,
+      "val_loss": 0.35315,
+      "val_accuracy": 0.9123,
+      "val_macro_f1": 0.9247,
+      "val_ece": 0.1534,
+      "lr": 0.0002992
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.29995,
+      "val_loss": 0.18581,
+      "val_accuracy": 0.9474,
+      "val_macro_f1": 0.9545,
+      "val_ece": 0.0716,
+      "lr": 0.0002968
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.37258,
+      "val_loss": 0.27982,
+      "val_accuracy": 0.9123,
+      "val_macro_f1": 0.9075,
+      "val_ece": 0.1039,
+      "lr": 0.0002929
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.21866,
+      "val_loss": 0.0856,
+      "val_accuracy": 0.9825,
+      "val_macro_f1": 0.9857,
+      "val_ece": 0.054,
+      "lr": 0.0002875
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.16963,
+      "val_loss": 0.14904,
+      "val_accuracy": 0.9474,
+      "val_macro_f1": 0.955,
+      "val_ece": 0.0581,
+      "lr": 0.0002806
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.12309,
+      "val_loss": 0.24982,
+      "val_accuracy": 0.8947,
+      "val_macro_f1": 0.9093,
+      "val_ece": 0.0484,
+      "lr": 0.0002723
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.15791,
+      "val_loss": 0.13838,
+      "val_accuracy": 0.9298,
+      "val_macro_f1": 0.9404,
+      "val_ece": 0.084,
+      "lr": 0.0002628
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.14952,
+      "val_loss": 0.17629,
+      "val_accuracy": 0.8947,
+      "val_macro_f1": 0.9031,
+      "val_ece": 0.0706,
+      "lr": 0.000252
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.15638,
+      "val_loss": 0.13269,
+      "val_accuracy": 0.9474,
+      "val_macro_f1": 0.9558,
+      "val_ece": 0.0372,
+      "lr": 0.0002402
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.15235,
+      "val_loss": 0.38517,
+      "val_accuracy": 0.8596,
+      "val_macro_f1": 0.8798,
+      "val_ece": 0.0711,
+      "lr": 0.0002275
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.14972,
+      "val_loss": 0.21656,
+      "val_accuracy": 0.8947,
+      "val_macro_f1": 0.9097,
+      "val_ece": 0.053,
+      "lr": 0.000214
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.08912,
+      "val_loss": 0.19959,
+      "val_accuracy": 0.9123,
+      "val_macro_f1": 0.9238,
+      "val_ece": 0.0539,
+      "lr": 0.0001998
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.06322,
+      "val_loss": 0.25429,
+      "val_accuracy": 0.8596,
+      "val_macro_f1": 0.8806,
+      "val_ece": 0.0773,
+      "lr": 0.0001851
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.03584,
+      "val_loss": 0.23306,
+      "val_accuracy": 0.8772,
+      "val_macro_f1": 0.8976,
+      "val_ece": 0.0705,
+      "lr": 0.0001702
+    }
+  ]
+}

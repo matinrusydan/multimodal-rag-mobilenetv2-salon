@@ -1,0 +1,37 @@
+{
+  "phase": "1_duplicate_review_resolution",
+  "decision_date": "2026-11-10",
+  "decision_source": "Explicit user clarification after web annotation: Buang ketiganya",
+  "original_annotations": "duplicate_review_decisions.json",
+  "status": "RESOLVED_NOT_APPLIED",
+  "supersedes_pair_keep_decisions": [3, 4, 5],
+  "resolved_group": {
+    "relation": "sama",
+    "action": "exclude_all_from_curated_dataset",
+    "image_ids": [
+      "new_dataset/sangat keriting/download (13).jpg",
+      "new_dataset/sangat keriting/images (11).jpg",
+      "new_dataset/sangat keriting/images (4).jpg"
+    ],
+    "preserve_original_source_files": true
+  },
+  "other_decisions": [
+    {
+      "pair_index": 1,
+      "relation": "sama",
+      "selected_image_id": "new_dataset/bergelombang/download (6).jpg",
+      "approved_label": "keriting",
+      "excluded_image_id": "figaro1k/keriting/00320.jpg"
+    },
+    {
+      "pair_index": 2,
+      "relation": "berbeda",
+      "action": "keep_both_with_reviewed_labels",
+      "images": [
+        {"image_id": "figaro1k/lurus/00010.jpg", "approved_label": "lurus"},
+        {"image_id": "new_dataset/keriting/download (4).jpg", "approved_label": "keriting"}
+      ]
+    }
+  ],
+  "notes": "Resolution preserves original web annotations. No source images were removed, moved, renamed, or relabeled; selections apply to a future curated dataset only."
+}

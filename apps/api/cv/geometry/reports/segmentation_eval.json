@@ -1,0 +1,331 @@
+{
+  "phase": "2_hair_segmentation",
+  "timestamp_utc": "2026-11-10T15:18:41.796958+00:00",
+  "seed": 42,
+  "device_used": "cuda",
+  "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "architecture": {
+    "name": "mobilenet_v2",
+    "pretrained": true,
+    "base_features": 32,
+    "img_size": 256,
+    "bilinear": true,
+    "loss": "0.5 * BCEWithLogits + 0.5 * SoftDice",
+    "param_count": 6626481
+  },
+  "dataset": {
+    "source": "figaro1k (curated_manifest.json)",
+    "train_count": 177,
+    "val_count": 37,
+    "test_count": 37
+  },
+  "training": {
+    "epochs_configured": 45,
+    "epochs_run": 24,
+    "best_epoch": 12,
+    "duration_seconds": 164.6,
+    "batch_size": 16,
+    "lr": 0.001
+  },
+  "gate": {
+    "status": "LULUS",
+    "criteria": {
+      "val_mean_iou_ge": 0.75,
+      "val_mean_dice_ge": 0.85,
+      "cpu_latency_lt_ms": 200.0
+    },
+    "actual": {
+      "val_mean_iou": 0.9305,
+      "val_mean_dice": 0.9635,
+      "cpu_latency_mean_ms": 28.79
+    }
+  },
+  "val_metrics": {
+    "loss": 0.15378393071728783,
+    "mean_iou": 0.9304915520782008,
+    "std_iou": 0.03948877843639663,
+    "mean_dice": 0.9635410915751758,
+    "std_dice": 0.02217598515397781,
+    "global_iou": 0.9322704249791272,
+    "global_dice": 0.9649481904057804,
+    "precision": 0.9626768665958585,
+    "recall": 0.9672302574104014,
+    "pixel_accuracy": 0.9737284892314297,
+    "confusion": {
+      "tp": 876860,
+      "fp": 33996,
+      "fn": 29708,
+      "tn": 1484268
+    }
+  },
+  "test_metrics": {
+    "loss": 0.14423091427699938,
+    "mean_iou": 0.9441324936342831,
+    "std_iou": 0.023861141319222096,
+    "mean_dice": 0.9711077460194398,
+    "std_dice": 0.012694005867979202,
+    "global_iou": 0.9468584870689712,
+    "global_dice": 0.9727039672970471,
+    "precision": 0.9702345067496861,
+    "recall": 0.975186030563286,
+    "pixel_accuracy": 0.9779481630067659,
+    "confusion": {
+      "tp": 952747,
+      "fp": 29229,
+      "fn": 24243,
+      "tn": 1418613
+    }
+  },
+  "test_by_hair_class": {
+    "bergelombang": {
+      "count": 13,
+      "mean_iou": 0.9399,
+      "mean_dice": 0.9689,
+      "global_iou": 0.939
+    },
+    "keriting": {
+      "count": 10,
+      "mean_iou": 0.9425,
+      "mean_dice": 0.9702,
+      "global_iou": 0.9519
+    },
+    "lurus": {
+      "count": 14,
+      "mean_iou": 0.9492,
+      "mean_dice": 0.9738,
+      "global_iou": 0.9496
+    }
+  },
+  "onnx": {
+    "path": "apps/api/cv/geometry/weights/hair_segmentation.onnx",
+    "output_shape": [
+      1,
+      1,
+      256,
+      256
+    ],
+    "mean_ms": 28.791295002156403,
+    "p95_ms": 34.246140014147386,
+    "min_ms": 17.814299993915483,
+    "max_ms": 34.34379998361692,
+    "file_size_mb": 25.249
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.46552,
+      "val_loss": 0.3791,
+      "val_mean_iou": 0.72171,
+      "val_mean_dice": 0.83332,
+      "val_global_iou": 0.72244,
+      "lr": 0.0009988
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.35954,
+      "val_loss": 0.27687,
+      "val_mean_iou": 0.80081,
+      "val_mean_dice": 0.88299,
+      "val_global_iou": 0.80603,
+      "lr": 0.0009952
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.32798,
+      "val_loss": 0.27589,
+      "val_mean_iou": 0.90034,
+      "val_mean_dice": 0.94718,
+      "val_global_iou": 0.90156,
+      "lr": 0.0009892
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.29882,
+      "val_loss": 0.29207,
+      "val_mean_iou": 0.90901,
+      "val_mean_dice": 0.95113,
+      "val_global_iou": 0.91348,
+      "lr": 0.0009808
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.27575,
+      "val_loss": 0.26541,
+      "val_mean_iou": 0.89683,
+      "val_mean_dice": 0.94473,
+      "val_global_iou": 0.89836,
+      "lr": 0.0009701
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.24751,
+      "val_loss": 0.25073,
+      "val_mean_iou": 0.91504,
+      "val_mean_dice": 0.95474,
+      "val_global_iou": 0.9168,
+      "lr": 0.0009572
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.22418,
+      "val_loss": 0.22507,
+      "val_mean_iou": 0.90678,
+      "val_mean_dice": 0.94825,
+      "val_global_iou": 0.90263,
+      "lr": 0.0009421
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.20781,
+      "val_loss": 0.18091,
+      "val_mean_iou": 0.91942,
+      "val_mean_dice": 0.95762,
+      "val_global_iou": 0.91694,
+      "lr": 0.0009248
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.18874,
+      "val_loss": 0.1992,
+      "val_mean_iou": 0.9303,
+      "val_mean_dice": 0.96361,
+      "val_global_iou": 0.92993,
+      "lr": 0.0009055
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.17269,
+      "val_loss": 0.20341,
+      "val_mean_iou": 0.9267,
+      "val_mean_dice": 0.96149,
+      "val_global_iou": 0.92855,
+      "lr": 0.0008842
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.15866,
+      "val_loss": 0.19506,
+      "val_mean_iou": 0.9292,
+      "val_mean_dice": 0.96295,
+      "val_global_iou": 0.9295,
+      "lr": 0.0008611
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.14967,
+      "val_loss": 0.15378,
+      "val_mean_iou": 0.93049,
+      "val_mean_dice": 0.96354,
+      "val_global_iou": 0.93227,
+      "lr": 0.0008362
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.14289,
+      "val_loss": 0.17183,
+      "val_mean_iou": 0.92298,
+      "val_mean_dice": 0.95939,
+      "val_global_iou": 0.92107,
+      "lr": 0.0008098
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.14756,
+      "val_loss": 0.11427,
+      "val_mean_iou": 0.9273,
+      "val_mean_dice": 0.96182,
+      "val_global_iou": 0.92591,
+      "lr": 0.0007818
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.13621,
+      "val_loss": 0.13914,
+      "val_mean_iou": 0.90648,
+      "val_mean_dice": 0.94891,
+      "val_global_iou": 0.91401,
+      "lr": 0.0007525
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.12097,
+      "val_loss": 0.13284,
+      "val_mean_iou": 0.92058,
+      "val_mean_dice": 0.95769,
+      "val_global_iou": 0.92564,
+      "lr": 0.000722
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.1189,
+      "val_loss": 0.1203,
+      "val_mean_iou": 0.90493,
+      "val_mean_dice": 0.9491,
+      "val_global_iou": 0.90687,
+      "lr": 0.0006904
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.11384,
+      "val_loss": 0.13631,
+      "val_mean_iou": 0.91184,
+      "val_mean_dice": 0.95198,
+      "val_global_iou": 0.91293,
+      "lr": 0.000658
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.10579,
+      "val_loss": 0.12677,
+      "val_mean_iou": 0.90866,
+      "val_mean_dice": 0.94674,
+      "val_global_iou": 0.91292,
+      "lr": 0.0006248
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.10322,
+      "val_loss": 0.1195,
+      "val_mean_iou": 0.91563,
+      "val_mean_dice": 0.952,
+      "val_global_iou": 0.92002,
+      "lr": 0.000591
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.09462,
+      "val_loss": 0.11564,
+      "val_mean_iou": 0.92056,
+      "val_mean_dice": 0.95471,
+      "val_global_iou": 0.92713,
+      "lr": 0.0005567
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.09184,
+      "val_loss": 0.11479,
+      "val_mean_iou": 0.92116,
+      "val_mean_dice": 0.95594,
+      "val_global_iou": 0.9279,
+      "lr": 0.0005223
+    },
+    {
+      "epoch": 23,
+      "train_loss": 0.08967,
+      "val_loss": 0.09733,
+      "val_mean_iou": 0.92171,
+      "val_mean_dice": 0.9564,
+      "val_global_iou": 0.92833,
+      "lr": 0.0004877
+    },
+    {
+      "epoch": 24,
+      "train_loss": 0.08669,
+      "val_loss": 0.09291,
+      "val_mean_iou": 0.92622,
+      "val_mean_dice": 0.9602,
+      "val_global_iou": 0.93308,
+      "lr": 0.0004533
+    }
+  ]
+}

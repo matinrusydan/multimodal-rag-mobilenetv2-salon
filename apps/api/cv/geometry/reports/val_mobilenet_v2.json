@@ -1,0 +1,132 @@
+{
+  "phase": "4_hair_type_classification",
+  "timestamp_utc": "2026-11-10T16:29:37.236029+00:00",
+  "seed": 42,
+  "device_used": "cuda",
+  "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "architecture": {
+    "name": "mobilenet_v2",
+    "pretrained": true,
+    "img_size": 224,
+    "param_count": 2228996,
+    "classes": [
+      "lurus",
+      "bergelombang",
+      "keriting",
+      "sangat-keriting"
+    ]
+  },
+  "dataset": {
+    "manifest": "apps/api/cv/geometry/reports/phase1/curated_manifest.json",
+    "train_count": 269,
+    "val_count": 57,
+    "test_count": 59,
+    "class_distribution_train": {
+      "lurus": 85,
+      "bergelombang": 81,
+      "keriting": 70,
+      "sangat-keriting": 33
+    }
+  },
+  "training": {
+    "epochs_configured": 35,
+    "epochs_run": 0,
+    "best_epoch": 0,
+    "duration_seconds": 0.0,
+    "batch_size": 16,
+    "lr": 0.0003,
+    "class_weighted_loss": true
+  },
+  "gate": {
+    "status": "LULUS",
+    "criterion": "val_accuracy >= 0.85",
+    "actual_val_accuracy": 0.9649,
+    "actual_val_macro_f1": 0.9714
+  },
+  "val_metrics": {
+    "accuracy": 0.9649,
+    "macro_f1": 0.9714,
+    "weighted_f1": 0.9649,
+    "ece": 0.0968,
+    "per_class": {
+      "lurus": {
+        "precision": 0.9444,
+        "recall": 0.9444,
+        "f1": 0.9444,
+        "support": 18
+      },
+      "bergelombang": {
+        "precision": 0.9412,
+        "recall": 0.9412,
+        "f1": 0.9412,
+        "support": 17
+      },
+      "keriting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 15
+      },
+      "sangat-keriting": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 7
+      }
+    },
+    "confusion_matrix": [
+      [
+        17,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        16,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        15,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        7
+      ]
+    ],
+    "loss": 0.18638
+  },
+  "val_by_cohort": {
+    "figaro1k": {
+      "count": 37,
+      "accuracy": 0.973,
+      "macro_f1": 0.9788
+    },
+    "new_dataset": {
+      "count": 20,
+      "accuracy": 0.95,
+      "macro_f1": 0.953
+    }
+  },
+  "test_metrics": null,
+  "test_by_cohort": null,
+  "onnx": {
+    "path": "apps/api/cv/geometry/weights/hair_type_mobilenet_v2.onnx",
+    "output_shape": [
+      1,
+      4
+    ],
+    "mean_ms": 3.51,
+    "p95_ms": 3.94,
+    "min_ms": 2.48,
+    "max_ms": 4.13,
+    "file_size_mb": 8.477
+  },
+  "history": []
+}

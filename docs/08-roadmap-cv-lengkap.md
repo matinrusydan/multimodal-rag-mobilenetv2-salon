@@ -2,7 +2,7 @@
 
 > **Dokumen induk** untuk seluruh pekerjaan Computer Vision (CV) proyek RAG-salon, dari awal hingga selesai.
 >
-> Fokus: klasifikasi **hair type** & **hair length/volume** dari foto **back-view** berbasis segmentasi + geometri proporsi tubuh.
+> Fokus: klasifikasi **hair type** & **hair length/volume** berbasis segmentasi + geometri proporsi tubuh. Klasifikasi hair type dan segmentasi tidak mensyaratkan keluaran pose.
 >
 > **Status:** MASTER PLAN — eksekusi bertahap.
 > **Prasyarat:** [06-kajian-matematis-referensi.md](./06-kajian-matematis-referensi.md) · [07-fase0-verifikasi-gate.md](./07-fase0-verifikasi-gate.md)
@@ -13,15 +13,19 @@
 
 | Item | Status | Temuan |
 |---|---|---|
-| **Fase 0** (gate MediaPipe back-view) | ⚠️ **KONDISIONAL — selesai dianalisis** | Pose terdeteksi 64% (back). Di antara yang terdeteksi, shoulder **96%** & head **100%** OK → masalah = pose detection rate, bukan pemilihan landmark. 16/44 `no_pose`. Model heavy tidak membantu (0.568 < 0.614). |
-| **TAHAP 1 (cleaning dataset)** | ✅ **Diimplementasikan** | 3 script: `viewpoint_gate.py` (prediksi paksa pilih 4 kelas), `verify_viewpoint.py` (verifikasi manusia/model pengukuran, koreksi opsional), `analyze_viewpoint_accuracy.py` (ukur akurasi as-is + confusion). Temuan: MediaPipe **berhalusinasi** visibility hidung di foto belakang → sinyal diganti geometris + Face Landmarker. Prediksi Figaro: depan 338 / samping 119 / belakang 143 (belum diverifikasi manusia). |
+| **Kelayakan pose untuk geometri** | ⚠️ **Belum dibuktikan lulus** | Hasil lite semua kohort: 252 gambar menghasilkan 141 bahu dan 143 kepala/proxy tersedia; kohort 137 menghasilkan 73 bahu dan 74 kepala/proxy. Ketersediaan bukan validasi anatomis. Lihat dokumen Fase 0 aktif. |
 | **Deployment runtime** | ✅ Sudah ConvNeXt-Tiny | `apps/ai/cv/weights/hair_length.onnx` = `hair_length_final.onnx` (md5 identik), ConvNeXt-Tiny 111MB. Metadata label sempat salah (`mobilenet_v2`) — **sudah diperbaiki**. |
 | **Backbone benchmark v2** | ✅ Selesai (15 backbone) | Juara awal: `efficientnet_v2_s` (84.18%). |
 | **Validasi backbone 3-seed** | ✅ Selesai | `efficientnet_v2_s` (0.8293±0.0086) > `convnext_tiny` (0.8177±0.0163). Menang + stabil + lebih kecil. |
-| **Fase 1–5** | ❌ Belum dieksekusi | — |
+| **Fase 0 (Pose Feasibility)** | ✅ Selesai (Kondisional) | 389 citra kanonikal dievaluasi; ketersediaan pose/bahu ~55%. Gate pose tidak membatasi type/segmentasi. |
+| **Fase 1 (Kurasi & Split)** | ✅ LULUS | Audit 389 citra, deduplikasi & resolusi konflik (4 dibuang, 3 direlabel), split 70/15/15 deterministik 385 citra valid (Gate ≥150 terpenuhi). |
+| **Fase 2 (Segmentasi UNet)** | ✅ Gate numerik LULUS (10 November 2026) | MobileNetV2-UNet pretrained, 251 pasangan (177/37/37); val IoU 0.9305, Dice 0.9635; test IoU 0.9441, Dice 0.9711; ONNX CPU 28.79 ms. Identitas subjek belum diverifikasi dan test tidak mencakup sangat-keriting; generalisasi belum dibuktikan. |
+| **Fase 3** | 🔄 Parsial: fitur mask eksploratif | Pembersihan opsional dan fitur bentuk tanpa pose; keputusan ikatan belum dikalibrasi. Geometri panjang/volume ditunda karena gate Fase 0 belum lulus; gate Fase 3 belum dinilai. Lihat `geometry/README-phase3.md`. |
+| **Fase 4 (Hair Type & Inferensi Hirarkis)** | ✅ Gate LULUS (10 November 2026) | EfficientNetV2-S menang seleksi validasi (val acc 0.9825, val mF1 0.9857, ECE 0.0540); locked test acc 0.8814, test mF1 0.8740, ECE 0.0654. Pipeline hirarkis `classify_hierarchical.py` aktif menggabungkan Stage 1 type + Stage 2 segmentasi, dengan penanganan pose `blocked_phase0_gate` transparan. Lihat `geometry/README-phase4.md`. |
+| **Fase 5 (Integrasi Production)** | ❌ Belum dieksekusi | — |
 
 **Keputusan backbone final:** `efficientnet_v2_s` (lihat `geometry/reports/backbone_decision.json`).
-**Keputusan Fase 0:** KONDISIONAL → wajib lanjut **Fase 1 data cleaning** (buang `no_pose`), lalu gate diharapkan lulus (conditional 96–100%). Lihat `geometry/reports/phase0_decision.json`.
+**Keputusan Fase 0:** kelayakan pose untuk geometri belum dibuktikan lulus. Jangan membuang citra yang tidak menghasilkan pose: citra tersebut tetap dapat digunakan untuk hair type dan segmentasi. Lihat [dokumen Fase 0](./07-fase0-verifikasi-gate.md).
 
 ---
 
@@ -33,7 +37,7 @@
 4. [Struktur Folder](#4-struktur-folder)
 5. [Prinsip Kerja Wajib](#5-prinsip-kerja-wajib)
 6. [FASE 0 — Verifikasi Gate](#6-fase-0--verifikasi-gate)
-7. [FASE 1 — Data Cleaning & Viewpoint Filter](#7-fase-1--data-cleaning--viewpoint-filter)
+7. [FASE 1 — Kurasi Data](#7-fase-1--kurasi-data)
 8. [FASE 2 — Segmentasi Rambut (UNet)](#8-fase-2--segmentasi-rambut-unet)
 9. [FASE 3 — Pipeline Geometris](#9-fase-3--pipeline-geometris)
 10. [FASE 4 — Klasifikasi Hirarkis & Validasi](#10-fase-4--klasifikasi-hirarkis--validasi)
@@ -53,9 +57,9 @@ Pemilik salon sering tidak responsif menjawab konsultasi pelanggan. Pelanggan in
 ### 1.2 Target Output Sistem
 
 ```
-INPUT: Foto rambut dari BELAKANG (user TIDAK memperlihatkan wajah)
+INPUT: Foto rambut yang memenuhi kualitas minimum
    ↓
-STAGE 0: Validasi input (viewpoint, kualitas)
+VALIDASI INPUT: kualitas dan deteksi ikatan rambut
    ↓
 STAGE 1: HAIR TYPE (straight / wavy / curly / kinky)
    ↓
@@ -92,12 +96,11 @@ STAGE 2: Atribut kondisional
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    INPUT: FOTO BACK-VIEW                     │
+│                    INPUT: FOTO RAMBUT                        │
 └───────────────────────────┬─────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────┐
-│ STAGE 0 — INPUT VALIDATION                                   │
-│  • Viewpoint check (back / back_left / back_right)           │
+│ INPUT VALIDATION                                             │
 │  • Kualitas (resolusi, blur)                                 │
 │  • Deteksi ikatan rambut (gumpalan) → "foto ulang"           │
 └───────────────────────────┬─────────────────────────────────┘
@@ -130,8 +133,8 @@ STAGE 2: Atribut kondisional
 
 | Fase | Nama | Durasi | Gate → Lanjut? |
 |---|---|---|---|
-| **0** | Verifikasi Gate (MediaPipe back-view) | 3–5 hari | ✅ LULUS wajib |
-| **1** | Data Cleaning & Viewpoint Filter | 1 minggu | ✅ data valid ≥ target |
+| **0** | Kelayakan landmark untuk geometri | 3–5 hari | Keputusan geometri pose; bukan gate hair type/segmentasi |
+| **1** | Kurasi Data | 1 minggu | ✅ data valid ≥ target |
 | **2** | Segmentasi Rambut (UNet) | 1 minggu | ✅ IoU ≥ target |
 | **3** | Pipeline Geometris | 1,5 minggu | ✅ fitur terbentuk |
 | **4** | Klasifikasi Hirarkis & Validasi | 2 minggu | ✅ metrik ≥ target |
@@ -157,7 +160,7 @@ apps/api/cv/
     ├── README.md
     │
     ├── pose_feasibility.py          # Fase 0
-    ├── filter_viewpoint.py          # Fase 1
+    ├── curate_dataset.py             # Fase 1
     ├── train_segmentation.py        # Fase 2
     ├── segment_infer.py             # Fase 2
     ├── threshold_binary.py          # Fase 3
@@ -171,7 +174,7 @@ apps/api/cv/
     ├── weights/                     # Fase 2 (hair_segmentation.onnx)
     └── reports/
         ├── pose_feasibility.json
-        ├── viewpoint_filter.json
+        ├── dataset_curation.json
         ├── segmentation_eval.json
         ├── geometric_features.json
         ├── classification_eval.json
@@ -199,84 +202,65 @@ apps/api/cv/
 
 > **Detail lengkap:** [07-fase0-verifikasi-gate.md](./07-fase0-verifikasi-gate.md)
 
-**Tujuan:** membuktikan MediaPipe Pose dapat mendeteksi landmark **bahu** pada foto back-view.
+**Tujuan:** mengukur ketersediaan dan validitas landmark pose sebagai prasyarat bagi geometri yang bergantung pose. Fase ini tidak membatasi hair type CNN atau segmentasi.
 
 **Aktivitas:**
 1. Buat `geometry/pose_feasibility.py`
-2. Uji pada ≥60 foto (30 back + 15 front + 15 side)
-3. Ukur detection rate bahu & kepala, stabilitas rasio head:shoulder
-4. Cross-check manusia (Spearman ρ) pada 20 gambar
+2. Uji seluruh kohort yang diusulkan dan laporkan denominator
+3. Ukur ketersediaan bahu dan landmark kepala/proxy secara terpisah
+4. Validasi posisi anatomis melalui pemeriksaan manusia berstrata
 
-**Gate:** shoulder detection rate (back) **≥ 70%** DAN head **≥ 80%**.
+**Kriteria:** ambang yang ditetapkan sebelumnya hanya memutuskan kelanjutan geometri pose; tidak menjadi prasyarat bagi type/segmentasi.
 
-**Jika LULUS** → Fase 1. **Jika KONDISIONAL** → uji pivot (P1–P3). **Jika PIVOT** → ganti acuan/dataset (P4–P5).
+Hasil tidak memadai → tunda/ganti geometri pose saja; citra tetap dipertimbangkan untuk type/segmentasi.
 
 **Output:** `geometry/reports/pose_feasibility.json` + visualisasi.
 
 ### Hasil Aktual (selesai dieksekusi)
 
-| Metrik | Nilai (back-view) |
+| Metrik | Ketersediaan pada uji historis |
 |---|---|
-| Pose terdeteksi | **64%** (28/44) |
-| Shoulder OK | 61% (27/44) |
-| Head OK | 64% (28/44) |
-| **Conditional (pose terdeteksi)** | **shoulder 96%, head 100%** |
+| Pose terdeteksi | 28/44 pada subset historis |
+| Kedua bahu tersedia | 27/44 pada subset historis |
+| Kepala/proxy tersedia | 28/44 pada subset historis |
 
-**Keputusan: KONDISIONAL.** Akar masalah = **pose detection rate** (16 `no_pose`), BUKAN pemilihan landmark. Ketika pose terdeteksi, MediaPipe andal (96–100%).
-**Pivot yang diuji:** P1 (model heavy) **gagal** (0.568 < 0.614); P4 (acuan kepala) tidak menyelesaikan karena `no_pose` juga menghilangkan kepala.
-**Rekomendasi:** lanjut **Fase 1 data cleaning** (buang citra `no_pose`), lalu gate diharapkan lulus. Detail: `geometry/reports/phase0_decision.json`.
+Hasil historis ini tidak membuktikan validitas anatomis dan tidak dinyatakan lulus. Hasil uji lite seluruh kohort (252: bahu 141, kepala/proxy 143; 137: bahu 73, kepala/proxy 74) juga hanya hitungan ketersediaan. Kepala/proxy bukan ukuran anatomi tervalidasi. Citra tanpa keluaran pose bukan alasan membuang data untuk klasifikasi type atau segmentasi.
 
 ---
 
-## 7. FASE 1 — Data Cleaning & Viewpoint Filter
+## 7. FASE 1 — Kurasi Data
 
-**Tujuan:** memastikan dataset training hanya berisi foto back-view valid.
+**Tujuan:** memastikan dataset training memenuhi kebutuhan label, kualitas, lisensi, deduplikasi, dan split. Seleksi sudut kamera bukan tahap klasifikasi.
 
-> **STATUS: TAHAP 1 DIIMPLEMENTASIKAN** (fokus: hapus foto depan/samping).
+> **STATUS:** pekerjaan kurasi terdahulu tetap tercatat di arsip; jangan menafsirkan pose gagal sebagai alasan penghapusan.
 > Lihat `apps/api/cv/geometry/README.md` untuk cara jalan.
 
-### 7.0 Alur Tahap 1 (implementasi aktual)
+### 7.0 Prinsip kurasi
 
 ```
-Dataset kotor
+Validasi lisensi, label, kualitas, deduplikasi, dan kecocokan dengan tugas
     ↓
-[1] Model gate prediksi viewpoint (paksa pilih 4 kelas: depan/samping/belakang/belakang_nyerong)
-    → geometry/viewpoint_gate.py → reports/viewpoint_predictions.json
-    ↓
-[2] Verifikasi manusia (MODE PENGUKURAN, sampling cerdas, koreksi OPSIONAL)
-    → geometry/verify_viewpoint.py → ground_truth/viewpoint_verification_<id>.json
-    Anotator menjawab: "Benar? [Ya/Tidak/Ragu]"
-    ↓
-[3] Ukur akurasi model AS-IS (baseline jujur)
-    → geometry/analyze_viewpoint_accuracy.py → reports/viewpoint_accuracy.json
-    ↓
-Dataset bersih + laporan: berapa % tebakan model SALAH (tanpa bantuan)
+Split bebas kebocoran menurut subjek/sumber
 ```
 
-**Prinsip:** "Don't fix what you haven't measured." Ukur kemampuan model apa adanya dulu,
-baru putuskan perlu koreksi atau tidak. Koreksi manusia = opsional.
-
-**Sinyal gate (v2):** Face Landmarker (fitur wajah asli) + geometri pose relatif + BlazeFace.
-Catatan kritis: MediaPipe Pose **berhalusinasi** visibility hidung tinggi di foto belakang
-(nose_vis 0.86 padahal tidak terlihat) → sinyal visibility mentah diganti geometri posisi.
+**Prinsip:** "Don't fix what you haven't measured." Deduplikasi dan keputusan kurasi harus dapat direproduksi.
 
 ### 7.1 Aktivitas
 
-1. **Manifest viewpoint** — kumpulkan label viewpoint dari anotasi yang ada
-   - Sumber: `annotation/ground_truth/_archive_annotator_A_p240_v2.json` (kolom `viewpoint`)
-2. **Verifikasi viewpoint** (bila perlu) — anotasi cepat Ya/Tidak/Ragu
-3. **`geometry/filter_viewpoint.py`** — filter hanya `back`, `back_left`, `back_right`
-4. **(Paralel) Cari dataset back-view baru** di Kaggle / HuggingFace:
+1. Validasi label kelas dan metadata sumber dataset
+2. Tinjau kualitas citra, lisensi, dan kecocokan dengan task
+3. Deduplikasi exact dan near-duplicate sebelum split
+4. (Paralel) Cari dataset tambahan di Kaggle / HuggingFace:
    - Kata kunci: "hair back view", "hair length dataset", "hairstyle back"
-   - Kriteria: foto asli, back-view, ujung rambut terlihat
-5. **Deduplikasi** — near-duplicate check (dHash) sebelum split
+   - Kriteria: foto asli dan bagian rambut yang dibutuhkan task terlihat
+5. Simpan alasan inklusi/eksklusi per task secara terpisah
 
 ### 7.2 Schema Filter
 
 ```json
 {
   "image_id": "figaro1k/lurus/00029.jpg",
-  "viewpoint": "back",
+  "quality_valid": true,
   "valid_for_training": true,
   "reason": null
 }
@@ -284,12 +268,12 @@ Catatan kritis: MediaPipe Pose **berhalusinasi** visibility hidung tinggi di fot
 
 ### 7.3 Gate
 
-- Jumlah citra back-view valid **≥ 150** (minimum viable untuk training)
-- Jika < 150 → **wajib** tambah dataset baru sebelum lanjut
+- Jumlah citra valid untuk task **≥ 150** (minimum viable untuk training)
+- Jika < 150 → tinjau kebutuhan data sebelum lanjut
 
 ### 7.4 Output
 
-- `geometry/reports/viewpoint_filter.json`
+- `geometry/reports/dataset_curation.json`
 - Daftar citra valid siap pakai (path + split assignment)
 
 ---
@@ -342,6 +326,8 @@ Catatan kritis: MediaPipe Pose **berhalusinasi** visibility hidung tinggi di fot
 ---
 
 ## 9. FASE 3 — Pipeline Geometris
+
+> **Catatan status eksekusi (10 November 2026):** Karena Gate Fase 0 (Pose Feasibility) berstatus `NOT_MET` (belum dibuktikan lulus dan belum tervalidasi manusia), modul yang bergantung pada landmark pose (`pose_landmarks.py`, `measure_length.py`, dan `measure_volume.py`) **ditunda**. Eksekusi Fase 3 dimulai secara parsial dan terisolasi pada operasi mask non-pose (`threshold_binary.py`, `detect_tied_hair.py`, `extract_mask_features.py`) pada split training tanpa klasifikasi ikatan otomatis yang belum terkalibrasi.
 
 **Tujuan:** ekstraksi fitur geometris dari mask + pose, normalisasi head-unit.
 
@@ -420,9 +406,9 @@ kelas   = tipis / sedang / tebal
 ### 10.1 Pipeline `classify_hierarchical.py`
 
 ```
-Stage 0: viewpoint filter + ikatan detection → valid?
-Stage 1: hair type (CNN)
-Stage 2: 
+Validasi kualitas + ikatan rambut (bila tersedia) → sesuai task?
+Hair type (CNN)
+Geometri pose opsional hanya bila lolos validasi:
    straight/wavy → measure_length()
    curly         → measure_length() + measure_volume()
    kinky         → measure_volume()
@@ -446,7 +432,7 @@ Untuk **tiap task** (type, length, volume) — bandingkan fair.
 | **Macro-F1** | metrik utama (imbalance) |
 | Precision, Recall per kelas | detail |
 | Confusion matrix | analisis error |
-| Per-viewpoint | robustness |
+| Per-subkelompok kualitas/sumber | robustness |
 | Per-hair-type | fairness |
 
 ### 10.4 Metrik Tambahan (geometris)
@@ -463,8 +449,32 @@ Untuk **tiap task** (type, length, volume) — bandingkan fair.
 
 ### 10.6 Output
 
-- `geometry/reports/classification_eval.json`
-- Model ONNX final (type + segmentation)
+- `geometry/reports/hair_type_eval.json` (dan laporan seleksi arsitektur `val_*.json`)
+- `geometry/reports/figures/hair_type_efficientnet_v2_s_test_confusion.png`
+- Model ONNX final: `geometry/weights/hair_type.onnx` + `hair_segmentation.onnx`
+- CLI inferensi: `geometry/classify_hierarchical.py`
+
+### 10.7 Hasil Aktual (10 November 2026)
+
+**Gate Hair Type Accuracy $\ge 0.85$ LULUS:**
+- **Seleksi Arsitektur (Validation Split, 57 citra):**
+  - `efficientnet_v2_s` (val acc 0.9825, val Macro-F1 0.9857, ECE 0.0540, loss 0.0856) mengungguli `mobilenet_v2` (val acc 0.9649, val Macro-F1 0.9714, ECE 0.0968, loss 0.1864).
+  - Model pemenang dipilih murni berdasarkan metrik validasi tanpa membuka data test.
+- **Evaluasi Locked Test Split (59 citra, evaluasi objektif):**
+  - Test Accuracy: **0.8814** (52/59 benar)
+  - Test Macro-F1: **0.8740**
+  - Test Weighted-F1: **0.8829**
+  - Test ECE: **0.0654**
+  - Per-class F1: `lurus` 0.8889 (support 19), `bergelombang` 0.8947 (support 18), `keriting` 0.8889 (support 15), `sangat-keriting` 0.8235 (support 7, recall 100%).
+  - Cohort breakdown: `new_dataset` acc 0.9545 (mF1 0.9556); `figaro1k` acc 0.8378 (mF1 0.6480, 0 support sangat-keriting).
+- **ONNX Model & Latensi:**
+  - `weights/hair_type.onnx`: 76.85 MB, benchmark CPU 26.40 ms (budget roadmap <500 ms).
+  - Bersama `hair_segmentation.onnx` (28.79 ms), total latensi inferensi inti model ~55.19 ms.
+- **Pipeline Hirarkis (`classify_hierarchical.py`):**
+  - Terintegrasi end-to-end menghubungkan klasifikasi jenis rambut dengan segmentasi UNet dan estimasi siluet.
+  - Penanganan ikatan rambut berstatus `uncalibrated` (`tied: null`).
+  - Penanganan geometri berbasis pose transparan berstatus `blocked_phase0_gate` (tanpa menggugurkan hasil type/segmentasi yang valid).
+  - Laporan detail di `geometry/README-phase4.md`.
 
 ---
 
@@ -474,19 +484,19 @@ Untuk **tiap task** (type, length, volume) — bandingkan fair.
 
 - Adapter `apps/ai` → panggil pipeline CV
 - Endpoint memakai model ONNX baru
-- Fallback bila landmark gagal (skip length, minta foto ulang)
+- Jika landmark tidak tersedia/valid, jangan menolak citra: lewati hanya fitur panjang/volume berbasis pose, pertahankan hasil type/segmentasi, dan tandai atribut geometri tidak tersedia.
 
 ### 11.2 Dataset Baru & Validasi
 
-- Integrasikan dataset back-view tambahan
+- Integrasikan dataset tambahan yang sesuai task
 - Uji generalisasi lintas dataset
-- Uji robustness (viewpoint, cahaya, resolusi)
+- Uji robustness (pose, cahaya, resolusi)
 
 ### 11.3 Publikasi
 
 - **Paper SINTA** — novelty: proporsi tubuh → panjang rambut (celah riset `[GAP]`)
 - **Skripsi** — CV + RAG + web lengkap
-- Tabel & figur: benchmark arsitektur, analisis per-viewpoint, confusion matrix
+- Tabel & figur: benchmark arsitektur, analisis per-subkelompok, confusion matrix
 
 ### 11.4 Dokumentasi
 
@@ -500,8 +510,8 @@ Untuk **tiap task** (type, length, volume) — bandingkan fair.
 
 Proyek CV dinyatakan **selesai** bila:
 
-- [ ] Fase 0 lulus gate (MediaPipe back-view valid)
-- [ ] Dataset back-view valid ≥ 150 citra
+- [ ] Kelayakan geometri pose divalidasi; jika tidak, geometri pose tidak dipakai
+- [ ] Dataset valid untuk task ≥ 150 citra
 - [ ] Model segmentasi IoU ≥ 0.75
 - [ ] Pipeline geometris berjalan end-to-end
 - [ ] Klasifikasi hirarkis (type → length/volume) menghasilkan output stabil
@@ -516,7 +526,7 @@ Proyek CV dinyatakan **selesai** bila:
 
 | Risiko | Prob | Dampak | Mitigasi |
 |---|---|---|---|
-| MediaPipe gagal back-view | Sedang–Tinggi | Tinggi | Gate Fase 0, pivot P1–P5 |
+| Landmark pose tidak valid | Sedang–Tinggi | Tinggi | Validasi khusus geometri; gunakan pendekatan tanpa pose jika gagal |
 | Dataset valid sedikit | Sedang | Tinggi | Cari dataset baru (Fase 1 paralel) |
 | Segmentasi IoU rendah | Sedang | Sedang | Arsitektur kuat, augmentasi |
 | Ambang geometris tidak akurat | Sedang | Tinggi | Kalibrasi dengan human GT kecil |
@@ -533,7 +543,7 @@ Proyek CV dinyatakan **selesai** bila:
 |---|---|
 | [06-kajian-matematis-referensi.md](./06-kajian-matematis-referensi.md) | Angka rasio terverifikasi (head-unit 7.5–8), rumus, bibliografi |
 | [07-fase0-verifikasi-gate.md](./07-fase0-verifikasi-gate.md) | Detail rencana & eksekusi Fase 0 |
-| `apps/api/cv/annotation/` | Pipeline anotasi (viewpoint, QC, agreement) |
+| `apps/api/cv/annotation/` | Pipeline anotasi historis, QC, agreement |
 | `apps/api/cv/geometry/` | Implementasi seluruh Fase 0–5 |
 
 ### Angka kunci dari kajian (dikutip aman)

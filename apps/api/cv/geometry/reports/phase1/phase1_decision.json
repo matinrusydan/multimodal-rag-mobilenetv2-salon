@@ -1,0 +1,78 @@
+{
+  "gate": "fase_1_kurasi_data",
+  "status": "LULUS",
+  "criteria": "Jumlah citra valid untuk task >= 150",
+  "actual_count": 385,
+  "threshold": 150,
+  "timestamp_utc": "2026-11-10T13:16:08.620553+00:00",
+  "summary": {
+    "total": 385,
+    "split_counts": {
+      "train": 269,
+      "val": 57,
+      "test": 59
+    },
+    "split_percentages": {
+      "train": 69.9,
+      "val": 14.8,
+      "test": 15.3
+    },
+    "class_totals": {
+      "lurus": 122,
+      "bergelombang": 116,
+      "keriting": 100,
+      "sangat-keriting": 47
+    },
+    "by_class": {
+      "lurus": {
+        "train": 85,
+        "val": 18,
+        "test": 19
+      },
+      "bergelombang": {
+        "train": 81,
+        "val": 17,
+        "test": 18
+      },
+      "keriting": {
+        "train": 70,
+        "val": 15,
+        "test": 15
+      },
+      "sangat-keriting": {
+        "train": 33,
+        "val": 7,
+        "test": 7
+      }
+    },
+    "by_cohort": {
+      "figaro1k": {
+        "train": 177,
+        "val": 37,
+        "test": 37
+      },
+      "new_dataset": {
+        "train": 92,
+        "val": 20,
+        "test": 22
+      }
+    }
+  },
+  "curation_metadata": {
+    "raw_total": 389,
+    "excluded_count": 4,
+    "excluded_image_ids": [
+      "figaro1k/keriting/00320.jpg",
+      "new_dataset/sangat keriting/download (13).jpg",
+      "new_dataset/sangat keriting/images (11).jpg",
+      "new_dataset/sangat keriting/images (4).jpg"
+    ],
+    "relabeled_count": 3,
+    "relabeled_map": {
+      "new_dataset/bergelombang/download (6).jpg": "keriting",
+      "figaro1k/lurus/00010.jpg": "lurus",
+      "new_dataset/keriting/download (4).jpg": "keriting"
+    },
+    "curated_total": 385
+  }
+}
