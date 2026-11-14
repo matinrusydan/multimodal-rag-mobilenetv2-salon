@@ -56,19 +56,21 @@ def set_seed(seed: int) -> None:
 def load_hair_type_split_records(
     manifest_path: Path,
     dataset_dir: Path,
+    class_names: Optional[List[str]] = None,
 ) -> Dict[str, List[dict]]:
     """Load curated image records grouped by Phase 1 split (train/val/test)."""
     if not manifest_path.exists():
         raise FileNotFoundError(f"Curated manifest not found: {manifest_path}")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
+    class_to_idx = {c: i for i, c in enumerate(class_names or HAIR_TYPE_CLASSES)}
     splits: Dict[str, List[dict]] = {"train": [], "val": [], "test": []}
     for rec in manifest.get("records", []):
         split = rec.get("split")
         if split not in splits:
             continue
         label = rec.get("approved_label")
-        if label not in CLASS_TO_IDX:
+        if label not in class_to_idx:
             raise ValueError(f"Unknown approved label: {label} in {rec['image_id']}")
         img_path = dataset_dir / rec["image_id"]
         if not img_path.is_file():
@@ -79,7 +81,7 @@ def load_hair_type_split_records(
                 "image_id": rec["image_id"],
                 "cohort": rec.get("cohort", "unknown"),
                 "hair_class": label,
-                "class_idx": CLASS_TO_IDX[label],
+                "class_idx": class_to_idx[label],
                 "img_path": img_path,
                 "width": rec.get("width"),
                 "height": rec.get("height"),
@@ -246,9 +248,11 @@ def evaluate_model(
     loader: DataLoader,
     criterion: nn.Module,
     device: torch.device,
+    class_names: Optional[List[str]] = None,
 ) -> dict:
     """Evaluate model on a DataLoader returning loss and full classification metrics."""
     model.eval()
+    class_names = class_names or HAIR_TYPE_CLASSES
     total_loss = 0.0
     total_samples = 0
     all_probs = []
@@ -268,10 +272,10 @@ def evaluate_model(
         all_probs.append(probs)
         all_targets.append(targets.cpu().numpy())
 
-    probs_arr = np.concatenate(all_probs, axis=0) if all_probs else np.zeros((0, len(HAIR_TYPE_CLASSES)))
+    probs_arr = np.concatenate(all_probs, axis=0) if all_probs else np.zeros((0, len(class_names)))
     targets_arr = np.concatenate(all_targets, axis=0) if all_targets else np.zeros(0, dtype=int)
 
-    metrics = compute_classification_metrics(probs_arr, targets_arr, HAIR_TYPE_CLASSES)
+    metrics = compute_classification_metrics(probs_arr, targets_arr, class_names)
     metrics["loss"] = round(total_loss / max(1, total_samples), 5)
     return metrics
 
@@ -307,13 +311,14 @@ def benchmark_onnx_cpu(onnx_path: Path, img_size: int = 224, runs: int = 20) -> 
     }
 
 
-def save_confusion_matrix_plot(cm: list[list[int]], out_path: Path, title: str = "Hair Type Confusion Matrix") -> None:
+def save_confusion_matrix_plot(cm: list[list[int]], out_path: Path, title: str = "Hair Type Confusion Matrix", class_names: Optional[List[str]] = None) -> None:
     """Render and save confusion matrix heatmap."""
     try:
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
 
+        class_names = class_names or HAIR_TYPE_CLASSES
         cm_arr = np.array(cm)
         fig, ax = plt.subplots(figsize=(6, 5))
         cax = ax.matshow(cm_arr, cmap=plt.cm.Blues, alpha=0.8)
@@ -323,10 +328,10 @@ def save_confusion_matrix_plot(cm: list[list[int]], out_path: Path, title: str =
                 ax.text(x=j, y=i, s=str(cm_arr[i, j]), va="center", ha="center", fontsize=11)
 
         fig.colorbar(cax)
-        ax.set_xticks(range(len(HAIR_TYPE_CLASSES)))
-        ax.set_yticks(range(len(HAIR_TYPE_CLASSES)))
-        ax.set_xticklabels(HAIR_TYPE_CLASSES, rotation=30, ha="left")
-        ax.set_yticklabels(HAIR_TYPE_CLASSES)
+        ax.set_xticks(range(len(class_names)))
+        ax.set_yticks(range(len(class_names)))
+        ax.set_xticklabels(class_names, rotation=30, ha="left")
+        ax.set_yticklabels(class_names)
         ax.set_xlabel("Predicted Label")
         ax.set_ylabel("True Label")
         ax.set_title(title, pad=15)
@@ -360,16 +365,20 @@ def train_and_evaluate(
     eval_ckpt: Optional[Path] = None,
     report_name: str = "hair_type_eval.json",
     onnx_name: str = "hair_type.onnx",
+    class_names: Optional[List[str]] = None,
 ) -> dict:
     """Run Stage 1 Hair Type training, validation, locked test evaluation, and ONNX export."""
     set_seed(seed)
+    class_names = list(class_names or HAIR_TYPE_CLASSES)
+    if len(class_names) < 2 or len(set(class_names)) != len(class_names):
+        raise ValueError("Class names must be distinct and contain at least two labels")
 
     if device_str:
         device = torch.device(device_str)
     else:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    splits = load_hair_type_split_records(manifest_path, dataset_dir)
+    splits = load_hair_type_split_records(manifest_path, dataset_dir, class_names)
     print(
         f"Phase 4 Hair Type Classifier | arch={arch} (pretrained={pretrained}) | device={device}"
         + (f" ({torch.cuda.get_device_name(0)})" if device.type == "cuda" else "")
@@ -386,16 +395,16 @@ def train_and_evaluate(
 
     # Compute inverse class frequency weights
     if use_class_weights:
-        class_counts = np.bincount([r["class_idx"] for r in splits["train"]], minlength=len(HAIR_TYPE_CLASSES))
+        class_counts = np.bincount([r["class_idx"] for r in splits["train"]], minlength=len(class_names))
         total_train = len(splits["train"])
-        weights_arr = total_train / (len(HAIR_TYPE_CLASSES) * np.maximum(class_counts, 1).astype(np.float32))
+        weights_arr = total_train / (len(class_names) * np.maximum(class_counts, 1).astype(np.float32))
         class_weights = torch.from_numpy(weights_arr).float().to(device)
         print(f"Class counts: {class_counts.tolist()} | Class weights: {[round(w, 3) for w in weights_arr.tolist()]}")
         criterion = nn.CrossEntropyLoss(weight=class_weights)
     else:
         criterion = nn.CrossEntropyLoss()
 
-    model = build_hair_type_model(arch=arch, pretrained=pretrained, num_classes=len(HAIR_TYPE_CLASSES)).to(device)
+    model = build_hair_type_model(arch=arch, pretrained=pretrained, num_classes=len(class_names)).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=max(1, epochs), eta_min=1e-5)
 
@@ -444,7 +453,7 @@ def train_and_evaluate(
             scheduler.step()
             train_loss = train_loss_sum / max(1, train_n)
 
-            val_metrics = evaluate_model(model, val_loader, criterion, device)
+            val_metrics = evaluate_model(model, val_loader, criterion, device, class_names)
             history.append(
                 {
                     "epoch": epoch,
@@ -477,7 +486,7 @@ def train_and_evaluate(
 
     # Load best checkpoint for final evaluation and ONNX export
     model.load_state_dict(torch.load(best_ckpt, map_location=device, weights_only=True))
-    val_final = evaluate_model(model, val_loader, criterion, device)
+    val_final = evaluate_model(model, val_loader, criterion, device, class_names)
 
     # Subgroup breakdown on validation
     val_by_cohort = {}
@@ -485,7 +494,7 @@ def train_and_evaluate(
         c_recs = [r for r in splits["val"] if r["cohort"] == cohort]
         c_ds = HairTypeDataset(c_recs, img_size=img_size, augment=False, seed=seed)
         c_loader = DataLoader(c_ds, batch_size=batch_size, shuffle=False, num_workers=0)
-        c_res = evaluate_model(model, c_loader, criterion, device)
+        c_res = evaluate_model(model, c_loader, criterion, device, class_names)
         val_by_cohort[cohort] = {
             "count": len(c_recs),
             "accuracy": c_res["accuracy"],
@@ -494,13 +503,13 @@ def train_and_evaluate(
 
     # Evaluate on locked test split if requested
     if not skip_test:
-        test_final = evaluate_model(model, test_loader, criterion, device)
+        test_final = evaluate_model(model, test_loader, criterion, device, class_names)
         test_by_cohort = {}
         for cohort in sorted({r["cohort"] for r in splits["test"]}):
             c_recs = [r for r in splits["test"] if r["cohort"] == cohort]
             c_ds = HairTypeDataset(c_recs, img_size=img_size, augment=False, seed=seed)
             c_loader = DataLoader(c_ds, batch_size=batch_size, shuffle=False, num_workers=0)
-            c_res = evaluate_model(model, c_loader, criterion, device)
+            c_res = evaluate_model(model, c_loader, criterion, device, class_names)
             test_by_cohort[cohort] = {
                 "count": len(c_recs),
                 "accuracy": c_res["accuracy"],
@@ -510,6 +519,7 @@ def train_and_evaluate(
             test_final["confusion_matrix"],
             figures_dir / f"hair_type_{arch}_test_confusion.png",
             title=f"Hair Type ({arch}) Locked Test Confusion Matrix",
+            class_names=class_names,
         )
     else:
         test_final = None
@@ -535,14 +545,14 @@ def train_and_evaluate(
             "pretrained": pretrained,
             "img_size": img_size,
             "param_count": sum(p.numel() for p in model.parameters()),
-            "classes": HAIR_TYPE_CLASSES,
+            "classes": class_names,
         },
         "dataset": {
-            "manifest": str(manifest_path.relative_to(HERE.parents[3]).as_posix()),
+            "manifest": manifest_path.resolve().as_posix(),
             "train_count": len(splits["train"]),
             "val_count": len(splits["val"]),
             "test_count": len(splits["test"]),
-            "class_distribution_train": {c: int(np.bincount([r['class_idx'] for r in splits['train']], minlength=len(HAIR_TYPE_CLASSES))[i]) for i, c in enumerate(HAIR_TYPE_CLASSES)},
+            "class_distribution_train": {c: int(np.bincount([r['class_idx'] for r in splits['train']], minlength=len(class_names))[i]) for i, c in enumerate(class_names)},
         },
         "training": {
             "epochs_configured": epochs,
@@ -564,7 +574,7 @@ def train_and_evaluate(
         "test_metrics": test_final,
         "test_by_cohort": test_by_cohort,
         "onnx": {
-            "path": str(onnx_path.relative_to(HERE.parents[3]).as_posix()),
+            "path": onnx_path.resolve().as_posix(),
             **onnx_bench,
         },
         "history": history,

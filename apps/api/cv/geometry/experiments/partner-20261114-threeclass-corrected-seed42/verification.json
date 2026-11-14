@@ -1,0 +1,15 @@
+{
+  "onnx_checker": "passed",
+  "dynamic_batches": [
+    1,
+    2
+  ],
+  "max_logit_absolute_errors": [
+    2.384185791015625e-06,
+    4.76837158203125e-06
+  ],
+  "active_model_files_unchanged": 5,
+  "all_source_hashes_verified": true,
+  "evaluation_membership_and_labels_preserved": true,
+  "limitations": "Known two duplicate train copies removed; full subject/session independence not established."
+}

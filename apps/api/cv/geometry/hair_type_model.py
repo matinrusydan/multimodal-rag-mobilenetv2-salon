@@ -11,10 +11,6 @@ import argparse
 from pathlib import Path
 from typing import Optional, Tuple
 
-import torch
-import torch.nn as nn
-from torchvision import models
-
 HAIR_TYPE_CLASSES = ["lurus", "bergelombang", "keriting", "sangat-keriting"]
 
 
@@ -23,13 +19,16 @@ def build_hair_type_model(
     pretrained: bool = True,
     num_classes: int = len(HAIR_TYPE_CLASSES),
     dropout: float = 0.3,
-) -> nn.Module:
+):
     """Build a PyTorch classifier for hair type.
 
     Supported architectures:
     - 'efficientnet_v2_s': Benchmark winner (21.5M params), high accuracy and stability.
     - 'mobilenet_v2': Lightweight alternative (3.5M params), fast CPU inference.
     """
+    import torch
+    import torch.nn as nn
+    from torchvision import models
     if arch == "efficientnet_v2_s":
         weights = models.EfficientNet_V2_S_Weights.DEFAULT if pretrained else None
         model = models.efficientnet_v2_s(weights=weights)
@@ -59,6 +58,8 @@ def export_hair_type_onnx(
     opset: int = 17,
 ) -> Path:
     """Export trained PyTorch model to ONNX with dynamic batch size."""
+    import torch
+
     onnx_path = Path(onnx_path)
     onnx_path.parent.mkdir(parents=True, exist_ok=True)
     model_cpu = model.to("cpu").eval()

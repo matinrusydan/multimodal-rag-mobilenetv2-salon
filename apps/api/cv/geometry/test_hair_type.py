@@ -3,6 +3,8 @@ from __future__ import annotations
 
 import sys
 import unittest
+import tempfile
+from unittest.mock import patch
 from pathlib import Path
 
 import numpy as np
@@ -13,16 +15,24 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from hair_type_model import HAIR_TYPE_CLASSES, build_hair_type_model
+from hair_type_model import HAIR_TYPE_CLASSES, build_hair_type_model, export_hair_type_onnx
 from train_hair_type import (
     CLASS_TO_IDX,
     HairTypeDataset,
     compute_classification_metrics,
     load_hair_type_split_records,
+    evaluate_model,
 )
 
 
 class HairTypeModelTests(unittest.TestCase):
+    def test_export_has_local_torch_dependency(self):
+        model = torch.nn.Sequential(torch.nn.Flatten(), torch.nn.Linear(3 * 8 * 8, 4))
+        with tempfile.TemporaryDirectory() as directory, patch('torch.onnx.export') as export:
+            target = Path(directory) / 'model.onnx'
+            self.assertEqual(export_hair_type_onnx(model, target, img_size=8), target)
+            self.assertEqual(export.call_args.args[1].shape, (1, 3, 8, 8))
+
     def test_model_build_and_forward_shapes(self):
         for arch in ("mobilenet_v2", "efficientnet_v2_s"):
             model = build_hair_type_model(arch=arch, pretrained=False, num_classes=4, dropout=0.2)
@@ -38,6 +48,16 @@ class HairTypeModelTests(unittest.TestCase):
 
 
 class ClassificationMetricsTests(unittest.TestCase):
+    def test_three_class_evaluation_does_not_change_canonical_labels(self):
+        classes = ['lurus', 'bergelombang', 'keriting']
+        loader = torch.utils.data.DataLoader(torch.utils.data.TensorDataset(
+            torch.eye(3) * 10, torch.arange(3)), batch_size=3)
+        result = evaluate_model(torch.nn.Identity(), loader, torch.nn.CrossEntropyLoss(), torch.device('cpu'), classes)
+        self.assertEqual(result['macro_f1'], 1.0)
+        self.assertEqual(set(result['per_class']), set(classes))
+        self.assertEqual(len(result['confusion_matrix']), 3)
+        self.assertEqual(len(HAIR_TYPE_CLASSES), 4)
+
     def test_perfect_predictions(self):
         probs = np.array([
             [1.0, 0.0, 0.0, 0.0],

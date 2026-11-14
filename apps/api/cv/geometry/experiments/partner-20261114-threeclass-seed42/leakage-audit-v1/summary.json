@@ -1,0 +1,20 @@
+{
+  "images": 654,
+  "split_counts": {
+    "val": 57,
+    "train": 538,
+    "test": 59
+  },
+  "cross_split_pairs_screened": 65771,
+  "exact_cross_split_pairs": [],
+  "local_feature_pairs_checked": 3825,
+  "geometric_flag_count": 24,
+  "manifest_sha256": "ac8dcaeba0959e63aa4b5235931e10bdeefe9ab8ca2f8c7aad15fd5ad6eaae74",
+  "limitations": [
+    "Heuristic retrieval, not exhaustive local-feature verification.",
+    "No reliable subject IDs or original source URLs; subject independence cannot be established.",
+    "SIFT descriptors are not flip-invariant; flipped hashes aid retrieval, not guaranteed feature verification.",
+    "Geometric matches may be background/watermark, requiring visual review.",
+    "No datasets, models or splits modified."
+  ]
+}
