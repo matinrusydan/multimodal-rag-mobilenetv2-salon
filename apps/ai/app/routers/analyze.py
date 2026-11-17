@@ -1,15 +1,13 @@
-"""Analyze router — CV classification via MobileNetV2 ONNX (multipart image)."""
+"""Analyze router — CV hierarchical multi-attribute classification (multipart image)."""
 
 from __future__ import annotations
 
 from datetime import datetime, timezone
+import logging
 
 from fastapi import APIRouter, File, HTTPException, UploadFile
 
-from app.cv.hair_features import compute_hair_features
-from app.cv.model import cv_model
-from app.cv.preprocessing import preprocess
-from app.config import settings
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
@@ -26,29 +24,26 @@ async def analyze(image: UploadFile = File(...)) -> dict:
         raise HTTPException(status_code=400, detail="Gambar kosong (file tidak terbaca)")
 
     try:
-        tensor, roi_rgb = preprocess(buffer)
+        from app.cv.hierarchical import run_hierarchical_analysis
+
+        result = run_hierarchical_analysis(buffer)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
-
-    hair_features = compute_hair_features(roi_rgb)
-
-    try:
-        hair_type = cv_model.classify_type(tensor)
-    except RuntimeError as exc:
-        raise HTTPException(status_code=503, detail=f"Model hair_type tidak tersedia: {exc}") from exc
-
-    hair_length = cv_model.classify_length(tensor)
-
-    low_length = hair_length["confidence"] <= settings.confidence_threshold
-    low_type = hair_type["confidence"] < settings.confidence_threshold
-    status = "low_confidence" if low_length or low_type else "ok"
+    except Exception as exc:
+        logger.exception("Analyze failure")
+        raise HTTPException(
+            status_code=500, detail=f"Gagal memproses analisis citra: {exc}"
+        ) from exc
 
     return {
         "data": {
-            "hairLength": hair_length,
-            "hairType": hair_type,
-            "hairFeatures": hair_features,
+            "hairLength": result["hairLength"],
+            "hairType": result["hairType"],
+            "hairVolume": result.get("hairVolume"),
+            "tiedHair": result.get("tiedHair"),
+            "hairFeatures": result.get("hairFeatures"),
+            "geometry": result.get("geometry"),
             "analyzedAt": datetime.now(timezone.utc).isoformat(),
-            "status": status,
+            "status": result.get("status", "ok"),
         }
     }

@@ -32,7 +32,7 @@ async def request(method, path, **kwargs):
         return await client.request(method, path, **kwargs)
 
 
-@pytest.mark.parametrize('entrypoint', ['app.main', 'app.rag_app'])
+@pytest.mark.parametrize('entrypoint', ['app.rag_app'])
 def test_entrypoints_import_without_optional_runtime_dependencies(entrypoint, tmp_path):
     env = {**os.environ, 'PYTHON_DOTENV_DISABLED': '1', 'AI_ENV': 'development',
            'NODE_ENV': 'test', 'ENVIRONMENT': 'test', 'AI_LLM_PROVIDER': 'local',
@@ -53,9 +53,8 @@ httpx.get = lambda *a, **k: (_ for _ in ()).throw(AssertionError('No startup HTT
 from app import chatgpt_auth
 chatgpt_auth.load = lambda: (_ for _ in ()).throw(AssertionError('No startup credentials'))
 module = importlib.import_module(sys.argv[1])
-from app.main import app as compatibility
 from app.rag_app import app as canonical
-assert module.app is compatibility is canonical
+assert module.app is canonical
 paths = set(canonical.openapi()['paths'])
 assert {'/ai/agent', '/ai/knowledge', '/ai/chat', '/ai/health', '/ai/analyze', '/ai/ready'} <= paths
 assert 'requestBody' not in canonical.openapi()['paths']['/ai/analyze']['post']

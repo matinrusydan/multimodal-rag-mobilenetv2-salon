@@ -78,11 +78,50 @@ class ClassifyHierarchicalTests(unittest.TestCase):
             self.assertEqual(res["stage1_hair_type"]["predicted_class"], "keriting")
             self.assertEqual(res["stage2_segmentation"]["hair_coverage"], 0.36)
             self.assertEqual(res["stage2_conditional_attributes"]["target_attributes"], ["length", "volume"])
-            self.assertEqual(res["stage2_conditional_attributes"]["length"]["status"], "blocked_phase0_gate")
-            self.assertEqual(res["stage2_conditional_attributes"]["volume"]["status"], "reference_not_validated")
-            self.assertIsNone(res["tied_hair_assessment"]["tied"])
-            self.assertEqual(res["tied_hair_assessment"]["status"], "uncalibrated")
+            self.assertEqual(res["stage2_conditional_attributes"]["length"]["status"], "ok")
+            self.assertIn(res["stage2_conditional_attributes"]["length"]["predicted_class"], ["pendek", "pendek-menengah", "menengah", "panjang"])
+            self.assertEqual(res["stage2_conditional_attributes"]["volume"]["status"], "ok")
+            self.assertIn(res["stage2_conditional_attributes"]["volume"]["volume_class"], ["tipis", "sedang", "tebal"])
+            self.assertFalse(res["tied_hair_assessment"]["tied"])
+            self.assertEqual(res["tied_hair_assessment"]["status"], "calibrated")
             self.assertEqual(cleaned_mask.shape, (100, 100))
+
+            # Verify legacy disabled-geometry mode still works transparently
+            res_legacy, _ = pipeline.predict_pil(dummy_img, enable_geometry=False)
+            self.assertEqual(res_legacy["stage2_conditional_attributes"]["length"]["status"], "blocked_phase0_gate")
+            self.assertEqual(res_legacy["stage2_conditional_attributes"]["volume"]["status"], "reference_not_validated")
+            self.assertIsNone(res_legacy["tied_hair_assessment"]["tied"])
+            self.assertEqual(res_legacy["tied_hair_assessment"]["status"], "uncalibrated")
+
+    def test_hair_type_classifier_dynamic_classes(self):
+        with patch("onnxruntime.InferenceSession") as mock_session_cls:
+            mock_session = MagicMock()
+            mock_session_cls.return_value = mock_session
+            mock_input = MagicMock()
+            mock_input.name = "input"
+            mock_output_3 = MagicMock()
+            mock_output_3.shape = [None, 3]
+            mock_session.get_inputs.return_value = [mock_input]
+            mock_session.get_outputs.return_value = [mock_output_3]
+            mock_session.run.return_value = [np.array([[0.1, 0.8, 0.1]], dtype=np.float32)]
+
+            with patch("pathlib.Path.exists", return_value=True):
+                clf3 = HairTypeClassifier(Path("fake_3class.onnx"))
+                self.assertEqual(clf3.classes, ["lurus", "bergelombang", "keriting"])
+                res = clf3.predict_pil(Image.new("RGB", (100, 100)))
+                self.assertEqual(res["predicted_class"], "bergelombang")
+                self.assertEqual(list(res["probabilities"].keys()), ["lurus", "bergelombang", "keriting"])
+
+            mock_output_4 = MagicMock()
+            mock_output_4.shape = [None, 4]
+            mock_session.get_outputs.return_value = [mock_output_4]
+            mock_session.run.return_value = [np.array([[0.1, 0.1, 0.1, 0.7]], dtype=np.float32)]
+            with patch("pathlib.Path.exists", return_value=True):
+                clf4 = HairTypeClassifier(Path("fake_4class.onnx"))
+                self.assertEqual(clf4.classes, ["lurus", "bergelombang", "keriting", "sangat-keriting"])
+                res4 = clf4.predict_pil(Image.new("RGB", (100, 100)))
+                self.assertEqual(res4["predicted_class"], "sangat-keriting")
+                self.assertEqual(list(res4["probabilities"].keys()), ["lurus", "bergelombang", "keriting", "sangat-keriting"])
 
 
 if __name__ == "__main__":

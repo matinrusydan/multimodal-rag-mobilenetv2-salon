@@ -1,0 +1,210 @@
+{
+  "seed": 42,
+  "source_images": 269,
+  "accepted_for_training": 269,
+  "source_counts": {
+    "bergelombang": 3,
+    "keriting": 49,
+    "lurus": 200,
+    "sangat-keriting": 17
+  },
+  "training_addition_counts": {
+    "bergelombang": 3,
+    "keriting": 49,
+    "lurus": 200,
+    "sangat-keriting": 17
+  },
+  "split_counts": {
+    "val": 57,
+    "train": 538,
+    "test": 59
+  },
+  "user_confirmed_folder_label_corrections": [
+    {
+      "id": "444af1d4d1ba4af38b54e312fb5819db",
+      "manifest_label": "keriting",
+      "approved_folder_label": "bergelombang"
+    },
+    {
+      "id": "072267ce059d45ba853ef7130b410284",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "179e3c7e1fb747da92fae4c86a456570",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "2156aa1edc0e446fa3be6a2412e0fbd1",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "2d80de79df4c4afa96a8d0975ef1e7ce",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "2f89670127604c5eb62bf25ff3df06d3",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "2fd063a41b304d1bbd0953969b7ca4e9",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "31ef3ffd24204bf3ad7ab11a40d74d75",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "3479f829835e4dfb8b742fd6eed2e510",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "377e76de7b9048b2b27339b7b5065659",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "4a944f58050544799a5ecdf3263fe582",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "4ac881a135e643e8a3ebdeb06302e18b",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "4be7a6e7468547e0940b4b014da29f9f",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "59db3153340e4c09b37259b4a88ba548",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "795332fca18d4b20b2de0f6b00347634",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "7b28b77bfbd349729be88003895a141d",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "7e639d9b68224c4fb62583b814f281a3",
+      "manifest_label": "sangat-keriting",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "8f3816767ca54648adb370680ed55fd3",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "8f71f7c5d3cb45a7a9643802340745ba",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "9437f775411f4f4eae65d676bff85dc6",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "9e0cf821410a453883560455b2594af8",
+      "manifest_label": "sangat-keriting",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "a16cb08bf8e54ca8af55c436c2c25cc6",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "be83b3522b9840c4b606aeab824ecc2e",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "c458c6bb58754de7ab62bea0df154b28",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "ccd862e5fefd4fd2a9292b97db71a8f1",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "d5ff93f23cc54b459f708464fc5ec79c",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "e593e7e07d81459e95101ad2db63b0eb",
+      "manifest_label": "sangat-keriting",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "f25c2cd9026843de9d8d6aee3f3a228f",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "f6164d5715564be8be98e32dadf27ea5",
+      "manifest_label": "lurus",
+      "approved_folder_label": "keriting"
+    },
+    {
+      "id": "70af4f9ec5004b66ac0da7b1a31ba5f9",
+      "manifest_label": "keriting",
+      "approved_folder_label": "sangat-keriting"
+    },
+    {
+      "id": "94446ecd515a40a2adc794c4a91d2f3b",
+      "manifest_label": "keriting",
+      "approved_folder_label": "sangat-keriting"
+    },
+    {
+      "id": "a15be6c74eb24b3cb6d8f2a38a1e3314",
+      "manifest_label": "keriting",
+      "approved_folder_label": "sangat-keriting"
+    },
+    {
+      "id": "c99bd0dab4f045e8bc475a9a6bbef11c",
+      "manifest_label": "keriting",
+      "approved_folder_label": "sangat-keriting"
+    },
+    {
+      "id": "e66c5705d25747058f030b760fb2aaa1",
+      "manifest_label": "keriting",
+      "approved_folder_label": "sangat-keriting"
+    },
+    {
+      "id": "eb66c28db9b64ae4b168fc1bac6e7ad1",
+      "manifest_label": "lurus",
+      "approved_folder_label": "sangat-keriting"
+    }
+  ],
+  "missing_excluded_by_user": [
+    "e4e25a184c1b43f38f49fd1a78f3583e"
+  ],
+  "deduplication_holds": [],
+  "baseline_manifest_sha256": "a5bce7cf1e305008aa9f03edc6a6e7caf6c429c531d6c3ecfea6ec68c5fb116e",
+  "limitations": [
+    "Supplemental images used for train only; original val/test preserved.",
+    "Hash checks do not establish subject independence or catch all crops/flips.",
+    "Source rights not independently verified.",
+    "Existing test has been evaluated previously; not a new untouched test set."
+  ]
+}

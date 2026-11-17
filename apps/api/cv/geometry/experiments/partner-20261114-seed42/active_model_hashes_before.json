@@ -1,0 +1,7 @@
+{
+  "apps\\api\\cv\\geometry\\weights\\hair_type.onnx": "dd5551d21a7ae580547c57e9b5b0c207ecf2c14e1555a0c426cb6635ce30a48c",
+  "apps\\api\\cv\\geometry\\weights\\hair_type_efficientnet_v2_s.onnx": "dd5551d21a7ae580547c57e9b5b0c207ecf2c14e1555a0c426cb6635ce30a48c",
+  "apps\\api\\cv\\geometry\\weights\\hair_type_efficientnet_v2_s_best.pt": "c682e5839521abec198f4337fe67c3ac7c4b38c5c4a0b02cf3abd553b694b57e",
+  "apps\\api\\cv\\geometry\\weights\\hair_type_mobilenet_v2.onnx": "42356788a7f60376d959d0cb2f0092b8105131d2a20dd177cd989bb972c711b9",
+  "apps\\api\\cv\\geometry\\weights\\hair_type_mobilenet_v2_best.pt": "44e6f35c9c2b13c982f4899f76f397ce0ae5b610175346119302b2f72b26daa9"
+}

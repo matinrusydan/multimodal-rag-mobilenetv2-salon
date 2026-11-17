@@ -56,25 +56,39 @@ async function createApp() {
 }
 
 describe('isolated deployment routes', () => {
-  it('returns immediate analyze 503 for no file, invalid multipart, or arbitrary image data', async () => {
+  it('validates /api/analyze upload and forwards valid images to AI service', async () => {
     const app = await createApp();
-    for (const pending of [
-      request(app).post('/api/analyze'),
-      request(app).post('/api/analyze').set('Content-Type', 'multipart/form-data; boundary=bad').send('not multipart'),
-      request(app).post('/api/analyze').attach('image', Buffer.from('not an image'), 'hair.jpg'),
-    ]) {
-      const res = await pending;
-      expect(res.status).toBe(503);
-      expect(res.body).toMatchObject({ status: 503, title: 'Fitur belum tersedia' });
-      expect(res.body.detail).toContain('chat');
-    }
+    const missing = await request(app).post('/api/analyze');
+    expect(missing.status).toBe(400);
+    expect(missing.body).toMatchObject({ status: 400, title: 'Gambar diperlukan' });
+
+    const invalidType = await request(app)
+      .post('/api/analyze')
+      .attach('image', Buffer.from('not an image'), { filename: 'note.txt', contentType: 'text/plain' });
+    expect(invalidType.status).toBe(400);
     expect(fetch).not.toHaveBeenCalled();
+
+    vi.mocked(fetch).mockResolvedValueOnce(
+      Response.json({
+        data: {
+          hairLength: { label: 'menengah', confidence: 0.85 },
+          hairType: { label: 'lurus', confidence: 0.98 },
+          status: 'ok',
+        },
+      }),
+    );
+    const valid = await request(app)
+      .post('/api/analyze')
+      .attach('image', Buffer.from('fake-jpeg'), { filename: 'hair.jpg', contentType: 'image/jpeg' });
+    expect(valid.status).toBe(200);
+    expect(valid.body.data.hairType.label).toBe('lurus');
+    expect(fetch).toHaveBeenCalledTimes(1);
   });
 
   it('preserves the analyze posting limiter', async () => {
     const app = await createApp();
     for (let i = 0; i < 30; i++) {
-      expect((await request(app).post('/api/analyze')).status).toBe(503);
+      expect((await request(app).post('/api/analyze')).status).toBe(400);
     }
     const res = await request(app).post('/api/analyze');
     expect(res.status).toBe(429);

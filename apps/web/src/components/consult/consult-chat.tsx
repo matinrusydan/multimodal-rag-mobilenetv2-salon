@@ -1,14 +1,18 @@
 'use client';
 
+import type React from 'react';
 import { useRef, useState } from 'react';
-
-import type { ChatResponse } from '@rag-salon/shared-types';
 
 import { MarkdownLite } from '@/components/consult/markdown-lite';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Modal } from '@/components/ui/modal';
 import { cn } from '@/lib/utils';
+import type {
+  AnalyzeResponse,
+  ChatResponse,
+  HairContext,
+  HairFeatures,
+} from '@rag-salon/shared-types';
 
 type Message = {
   id: number;
@@ -21,7 +25,7 @@ const WELCOME: Message = {
   id: 0,
   role: 'assistant',
   content:
-    'Halo! Saya asisten TIEN SALON. Ceritakan kondisi rambutmu atau tanyakan perawatan, layanan, dan harga melalui konsultasi teks. Analisis foto belum tersedia.',
+    'Halo! Saya asisten TIEN SALON. Tanyakan rekomendasi perawatan rambut, atau unggah foto rambutmu untuk analisis multi-atribut otomatis.',
 };
 
 function nextMessageId(): number {
@@ -32,10 +36,16 @@ export function ConsultChat() {
   const [messages, setMessages] = useState<Message[]>([WELCOME]);
   const [input, setInput] = useState('');
   const [contextId, setContextId] = useState<string>();
+  const [hairContext, setHairContext] = useState<HairContext>();
+  const [hairFeatures, setHairFeatures] = useState<HairFeatures>();
+  const [hairVolume, setHairVolume] = useState<{ label: string; confidence: number } | null>(null);
+  const [tiedHair, setTiedHair] = useState<{ tied: boolean | null; style: string | null } | null>(
+    null,
+  );
   const [isSending, setIsSending] = useState(false);
-  const [photoModalOpen, setPhotoModalOpen] = useState(false);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [error, setError] = useState('');
-  const photoButtonRef = useRef<HTMLElement | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleSend = async () => {
     const message = input.trim();
@@ -51,7 +61,7 @@ export function ConsultChat() {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ message, contextId }),
+        body: JSON.stringify({ message, hairContext, hairFeatures, contextId }),
       });
       const body = (await res.json().catch(() => null)) as {
         data?: ChatResponse;
@@ -79,11 +89,118 @@ export function ConsultChat() {
     }
   };
 
+  const handleAnalyze = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file || isAnalyzing) {
+      return;
+    }
+    setError('');
+    setIsAnalyzing(true);
+
+    try {
+      const formData = new FormData();
+      formData.append('image', file);
+      const res = await fetch('/api/analyze', {
+        method: 'POST',
+        body: formData,
+      });
+      const body = (await res.json().catch(() => null)) as {
+        data?: AnalyzeResponse & {
+          hairVolume?: { label: string; confidence: number } | null;
+          tiedHair?: { tied: boolean | null; style: string | null } | null;
+        };
+        detail?: string;
+        title?: string;
+      } | null;
+
+      if (!res.ok || !body?.data) {
+        setError(body?.detail ?? body?.title ?? 'Gagal menganalisis foto.');
+        return;
+      }
+
+      const result = body.data;
+      const context: HairContext = {
+        hairLength: result.hairLength.label as HairContext['hairLength'],
+        hairType: result.hairType.label as HairContext['hairType'],
+      };
+      setHairContext(context);
+      setHairFeatures(result.hairFeatures);
+      setHairVolume(result.hairVolume ?? null);
+      setTiedHair(result.tiedHair ?? null);
+
+      const parts = [
+        `Analisis foto selesai: jenis rambut ${context.hairType}, panjang ${context.hairLength}.`,
+      ];
+      if (result.hairVolume?.label) {
+        parts.push(`Ketebalan/volume: ${result.hairVolume.label}.`);
+      }
+      if (result.tiedHair?.tied) {
+        parts.push(
+          `Bentuk tatanan: terikat (${result.tiedHair.style || 'terikat'}). Disarankan rambut terurai untuk akurasi optimal.`,
+        );
+      }
+      if (result.hairFeatures?.color || result.hairFeatures?.texture) {
+        const bits: string[] = [];
+        if (result.hairFeatures.color) bits.push(`warna ${result.hairFeatures.color}`);
+        if (result.hairFeatures.texture) bits.push(`tekstur ${result.hairFeatures.texture}`);
+        parts.push(`Perkiraan visual: ${bits.join(', ')}.`);
+      }
+      const risk = result.hairFeatures?.riskSigns;
+      if (risk?.bleach || risk?.dry) {
+        const flags: string[] = [];
+        if (risk.bleach) flags.push('indikasi pewarnaan/bleaching');
+        if (risk.dry) flags.push('indikasi cenderung kering');
+        parts.push(
+          `Catatan: terdeteksi ${flags.join(' & ')} — perlu konfirmasi stylist saat treatment kimia.`,
+        );
+      }
+      setMessages((current) => [
+        ...current,
+        {
+          id: nextMessageId(),
+          role: 'assistant',
+          content: parts.join(' '),
+        },
+      ]);
+    } catch {
+      setError('Terjadi kesalahan jaringan saat menganalisis foto.');
+    } finally {
+      setIsAnalyzing(false);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+    }
+  };
+
   return (
     <section className="consult-chat">
       <div className="consult-chat__banner">
-        <Badge tone="amber">KONSULTASI — Chatbot teks berbasis RAG</Badge>
+        <Badge tone="amber">KONSULTASI — Chatbot RAG + Analisis CV Hirarkis</Badge>
       </div>
+      {hairContext ? (
+        <div className="consult-chat__context">
+          <span>Konteks analisis aktif:</span>
+          <Badge>{hairContext.hairType}</Badge>
+          <Badge>{hairContext.hairLength}</Badge>
+          {hairVolume ? <Badge tone="amber">volume: {hairVolume.label}</Badge> : null}
+          {tiedHair?.tied ? <Badge tone="rose">{tiedHair.style || 'terikat'}</Badge> : null}
+          {hairFeatures?.color ? <Badge tone="amber">{hairFeatures.color}</Badge> : null}
+          {hairFeatures?.texture ? <Badge tone="amber">{hairFeatures.texture}</Badge> : null}
+          {hairFeatures?.riskSigns?.dry ? <Badge tone="rose">indikasi kering</Badge> : null}
+          {hairFeatures?.riskSigns?.bleach ? <Badge tone="rose">indikasi bleach</Badge> : null}
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => {
+              setHairContext(undefined);
+              setHairFeatures(undefined);
+              setHairVolume(null);
+              setTiedHair(null);
+            }}
+            className="consult-chat__clear"
+          >
+            Hapus
+          </Button>
+        </div>
+      ) : null}
       <div className="consult-chat__messages" aria-live="polite">
         {messages.map((message) => (
           <div
@@ -140,15 +257,20 @@ export function ConsultChat() {
       </div>
       {error ? <p className="text-red-500 text-sm font-semibold">{error}</p> : null}
       <div className="consult-chat__composer">
+        <input
+          type="file"
+          ref={fileInputRef}
+          accept="image/jpeg,image/png,image/webp"
+          onChange={handleAnalyze}
+          hidden
+        />
         <Button
           variant="outline"
           size="sm"
-          onClick={(event) => {
-            photoButtonRef.current = event.currentTarget;
-            setPhotoModalOpen(true);
-          }}
+          onClick={() => fileInputRef.current?.click()}
+          disabled={isAnalyzing}
         >
-          Analisis Foto
+          {isAnalyzing ? 'Menganalisis...' : 'Analisis Foto'}
         </Button>
         <input
           type="text"
@@ -166,18 +288,6 @@ export function ConsultChat() {
           Kirim
         </Button>
       </div>
-      <Modal
-        open={photoModalOpen}
-        onOpenChange={setPhotoModalOpen}
-        title="Fitur belum tersedia"
-        description="Analisis foto belum tersedia."
-        onCloseAutoFocus={(event) => {
-          event.preventDefault();
-          photoButtonRef.current?.focus();
-        }}
-      >
-        <p>Silakan ceritakan kondisi rambutmu melalui konsultasi teks.</p>
-      </Modal>
     </section>
   );
 }

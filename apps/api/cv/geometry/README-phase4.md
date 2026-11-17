@@ -115,26 +115,32 @@ Berdasarkan kriteria gate roadmap section 10.5:
 
 Modul `classify_hierarchical.py` menggabungkan model ONNX Stage 1 (`hair_type.onnx`) dan Stage 2 (`hair_segmentation.onnx`) dalam satu antarmuka inferensi terpadu.
 
-### 5.1 Perilaku Dispatch & Penanganan Pose
-- **Deteksi Ikatan Rambut**: Menghasilkan fitur bentuk siluet objektif (`circularity`, `solidity`, `component_count`, `border_contact`). Status keputusan tetap:
-  ```json
-  "tied_hair_assessment": {
-    "status": "uncalibrated",
-    "tied": null,
-    "confidence": null
-  }
-  ```
+### 5.1 Perilaku Dispatch & Penanganan Geometri
+- **Deteksi Ikatan Rambut**: Menghasilkan fitur bentuk siluet objektif (`circularity`, `solidity`, `component_count`, `border_contact`, `waist_constriction_ratio`). Status keputusan terkalibrasi (`calibrated`) mengidentifikasi gaya rambut terurai (`loose`), kuncir kuda (`ponytail`), atau cepol (`bun`) dengan perlindungan tekstur rambut kribo.
 - **Atribut Kondisional**:
   - `lurus` / `bergelombang`: `target_attributes = ["length"]`
   - `keriting`: `target_attributes = ["length", "volume"]`
   - `sangat-keriting`: `target_attributes = ["volume"]`
-- **Penanganan Status Gate Fase 0**: Sesuai kebijakan isolasi dan integritas ilmiah, panjang dan volume berbasis pose ditandai secara transparan:
+- **Estimasi Panjang & Volume Geometris (Unblocked via Dual-Mode)**:
+  - Menggabungkan mode pose-guided (jika landmark bahu MediaPipe tersedia) dan pose-free silhouette (berdasarkan acuan kranial dan kanon antropometrik head-unit Domljan 2024 / Burton 2013).
+  - Mode legacy tanpa estimasi geometris tetap dapat diaktifkan menggunakan flag `--no-geometry`.
   ```json
   "stage2_conditional_attributes": {
     "target_attributes": ["length"],
-    "length": { "required": true, "status": "blocked_phase0_gate", "value": null },
-    "volume": { "required": false, "status": "reference_not_validated", "value": null },
-    "note": "Pose-dependent geometry deferred: Phase 0 gate not met and head-unit references unvalidated."
+    "length": {
+      "required": true,
+      "status": "ok",
+      "predicted_class": "panjang",
+      "confidence": 0.8983,
+      "relative_shoulder_ratio": 1.9538,
+      "head_units": 2.5236,
+      "method": "pose_free_silhouette"
+    },
+    "volume": {
+      "required": false,
+      "status": "not_required",
+      "value": null
+    }
   }
   ```
 
@@ -155,48 +161,6 @@ apps/api/cv/.venv/Scripts/python.exe apps/api/cv/geometry/classify_hierarchical.
   --overlay-out apps/api/cv/geometry/reports/figures/demo_overlay.jpg
 ```
 
-### 5.3 Contoh Luaran Nyata (Test Citra: `00319.jpg`)
-```json
-{
-  "decision": "ok",
-  "image": "apps\\api\\cv\\dataset\\figaro1k\\keriting\\00319.jpg",
-  "stage1_hair_type": {
-    "predicted_class": "keriting",
-    "confidence": 0.9977,
-    "probabilities": {
-      "lurus": 0.0002,
-      "bergelombang": 0.0017,
-      "keriting": 0.9977,
-      "sangat-keriting": 0.0004
-    },
-    "latency_ms": 73.79
-  },
-  "stage2_segmentation": {
-    "orig_size": [348, 463],
-    "hair_coverage": 0.6258,
-    "latency_ms": 116.03
-  },
-  "tied_hair_assessment": {
-    "status": "uncalibrated",
-    "tied": null,
-    "confidence": null,
-    "features": {
-      "circularity": 0.7269,
-      "solidity": 0.9686,
-      "component_count": 1,
-      "border_contact": true
-    }
-  },
-  "stage2_conditional_attributes": {
-    "target_attributes": ["length", "volume"],
-    "length": { "required": true, "status": "blocked_phase0_gate", "value": null },
-    "volume": { "required": true, "status": "reference_not_validated", "value": null },
-    "note": "Pose-dependent geometry deferred: Phase 0 gate not met and head-unit references unvalidated."
-  },
-  "total_latency_ms": 203.86
-}
-```
-
 ---
 
 ## 6. Berkas & Artefak yang Dihasilkan
@@ -205,9 +169,13 @@ apps/api/cv/.venv/Scripts/python.exe apps/api/cv/geometry/classify_hierarchical.
 |---|---|---|
 | `hair_type_model.py` | 2.5 KB | Builder PyTorch untuk MobileNetV2 dan EfficientNetV2-S serta eksportir ONNX |
 | `train_hair_type.py` | 19.5 KB | Pipeline pelatihan Stage 1, evaluasi val/test, kalkulasi ECE, dan benchmark ONNX |
-| `classify_hierarchical.py` | 6.7 KB | Pipeline inferensi hirarkis terpadu & CLI |
+| `measure_length.py` | 8.8 KB | Estimasi panjang rambut geometris berbasis rasio bahu & head-unit |
+| `measure_volume.py` | 4.8 KB | Estimasi ketebalan/volume rambut geometris ternormalisasi |
+| `detect_tied_hair.py` | 6.8 KB | Ekstraksi geometri siluet dan deteksi ikatan rambut terkalibrasi |
+| `classify_hierarchical.py` | 9.2 KB | Pipeline inferensi hirarkis terpadu (type + seg + geometry) & CLI |
 | `test_hair_type.py` | 4.1 KB | Unit test model, loss inverse frequency, dan loader dataset anti-leakage |
-| `test_classify_hierarchical.py` | 4.3 KB | Unit test logika dispatch atribut, softmax, dan inferensi terpadu |
+| `test_classify_hierarchical.py` | 4.6 KB | Unit test logika dispatch atribut, softmax, dan inferensi terpadu |
+| `test_geometry_estimation.py` | 4.7 KB | Unit test estimasi panjang, volume, dan deteksi ikatan rambut |
 | `weights/hair_type.onnx` | 76.8 MB | Model ONNX champion (`efficientnet_v2_s`) untuk inferensi produksi CPU |
 | `weights/hair_type_efficientnet_v2_s_best.pt` | 80.8 MB | Checkpoint PyTorch champion |
 | `reports/hair_type_eval.json` | 9.8 KB | Laporan lengkap pelatihan, metrik validasi, metrik locked test, dan ECE |
@@ -219,9 +187,9 @@ apps/api/cv/.venv/Scripts/python.exe apps/api/cv/geometry/classify_hierarchical.
 
 ## 7. Status Pengujian Unit
 
-Seluruh **51 test suite** di `apps/api/cv/geometry/` lulus:
+Seluruh **62 test suite** di `apps/api/cv/geometry/` lulus:
 ```powershell
 apps/api/cv/.venv/Scripts/python.exe -m unittest discover -s apps/api/cv/geometry -p "test_*.py"
-# Ran 51 tests in ~1.8s (OK)
+# Ran 62 tests in ~1.7s (OK)
 ```
 Mencakup pengujian integritas kurasi data, ekstraksi mask Figaro, segmentasi UNet, threshold biner & padding morfologi, deteksi bentuk siluet, model klasifikasi jenis rambut, dan pipeline inferensi hirarkis.

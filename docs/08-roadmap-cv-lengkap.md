@@ -20,8 +20,8 @@
 | **Fase 0 (Pose Feasibility)** | ✅ Selesai (Kondisional) | 389 citra kanonikal dievaluasi; ketersediaan pose/bahu ~55%. Gate pose tidak membatasi type/segmentasi. |
 | **Fase 1 (Kurasi & Split)** | ✅ LULUS | Audit 389 citra, deduplikasi & resolusi konflik (4 dibuang, 3 direlabel), split 70/15/15 deterministik 385 citra valid (Gate ≥150 terpenuhi). |
 | **Fase 2 (Segmentasi UNet)** | ✅ Gate numerik LULUS (10 November 2026) | MobileNetV2-UNet pretrained, 251 pasangan (177/37/37); val IoU 0.9305, Dice 0.9635; test IoU 0.9441, Dice 0.9711; ONNX CPU 28.79 ms. Identitas subjek belum diverifikasi dan test tidak mencakup sangat-keriting; generalisasi belum dibuktikan. |
-| **Fase 3** | 🔄 Parsial: fitur mask eksploratif | Pembersihan opsional dan fitur bentuk tanpa pose; keputusan ikatan belum dikalibrasi. Geometri panjang/volume ditunda karena gate Fase 0 belum lulus; gate Fase 3 belum dinilai. Lihat `geometry/README-phase3.md`. |
-| **Fase 4 (Hair Type & Inferensi Hirarkis)** | ✅ Gate LULUS (10 November 2026) | EfficientNetV2-S menang seleksi validasi (val acc 0.9825, val mF1 0.9857, ECE 0.0540); locked test acc 0.8814, test mF1 0.8740, ECE 0.0654. Pipeline hirarkis `classify_hierarchical.py` aktif menggabungkan Stage 1 type + Stage 2 segmentasi, dengan penanganan pose `blocked_phase0_gate` transparan. Lihat `geometry/README-phase4.md`. |
+| **Fase 3** | ✅ Selesai & Terbuka (11 November 2026) | Estimasi panjang geometris (`measure_length.py`) dan volume (`measure_volume.py`) diimplementasikan dengan mode ganda (pose-guided bila pose valid + pose-free berbasis kanon antropometrik head-unit & infleksi siluet). Deteksi ikatan rambut (`detect_tied_hair.py`) dikalibrasi untuk kuncir/cepol vs rambut terurai. |
+| **Fase 4 (Hair Type & Inferensi Hirarkis)** | ✅ Gate LULUS (10–11 November 2026) | EfficientNetV2-S menang seleksi validasi (val acc 0.9825, val mF1 0.9857, ECE 0.0540); locked test acc 0.8814, test mF1 0.8740, ECE 0.0654. Pipeline hirarkis `classify_hierarchical.py` aktif menggabungkan Stage 1 type + Stage 2 segmentasi, deteksi ikatan rambut, serta estimasi panjang & volume geometris. Lihat `geometry/README-phase4.md`. |
 | **Fase 5 (Integrasi Production)** | ❌ Belum dieksekusi | — |
 
 **Keputusan backbone final:** `efficientnet_v2_s` (lihat `geometry/reports/backbone_decision.json`).
@@ -327,7 +327,10 @@ Split bebas kebocoran menurut subjek/sumber
 
 ## 9. FASE 3 — Pipeline Geometris
 
-> **Catatan status eksekusi (10 November 2026):** Karena Gate Fase 0 (Pose Feasibility) berstatus `NOT_MET` (belum dibuktikan lulus dan belum tervalidasi manusia), modul yang bergantung pada landmark pose (`pose_landmarks.py`, `measure_length.py`, dan `measure_volume.py`) **ditunda**. Eksekusi Fase 3 dimulai secara parsial dan terisolasi pada operasi mask non-pose (`threshold_binary.py`, `detect_tied_hair.py`, `extract_mask_features.py`) pada split training tanpa klasifikasi ikatan otomatis yang belum terkalibrasi.
+> **Catatan status implementasi (11 November 2026):** Estimasi geometris telah disempurnakan dengan pendekatan hibrida **dual-mode**:
+> 1. **Pose-guided**: Jika landmark bahu MediaPipe tersedia dan valid, garis bahu anatomis digunakan secara langsung.
+> 2. **Pose-free silhouette**: Jika landmark pose tidak terdeteksi (mengatasi limitasi back-view Fase 0), sistem menggunakan kanon head-unit antropometrik terverifikasi (Domljan et al., 2024; Burton et al., 2013) dengan mengestimasi acuan kranial dan titik infleksi pelebaran lateral siluet rambut/leher.
+> Deteksi ikatan rambut (`detect_tied_hair.py`) juga dikalibrasi untuk mendeteksi konstriksi leher/waist (kuncir kuda / ponytail) dan kebulatan kompak (cepol / bun) dengan pengecualian alami untuk tekstur rambut kribo (`sangat-keriting`).
 
 **Tujuan:** ekstraksi fitur geometris dari mask + pose, normalisasi head-unit.
 

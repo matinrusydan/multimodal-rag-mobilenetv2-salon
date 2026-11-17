@@ -1,18 +1,12 @@
 import { Router } from 'express';
+import multer from 'multer';
 import { postingLimiter } from '../config/rateLimit';
-import { sendProblem } from '../utils/problemDetails';
+import { analyze } from '../controllers/analyzeController';
+
+const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 5 * 1024 * 1024 } });
 
 const router = Router();
 
-router.post('/', postingLimiter, (_req, res) => {
-  sendProblem(
-    res,
-    {
-      title: 'Fitur belum tersedia',
-      detail: 'Analisis foto belum tersedia. Konsultasi melalui chat tetap dapat digunakan.',
-    },
-    503,
-  );
-});
+router.post('/', postingLimiter, upload.single('image'), analyze);
 
 export default router;

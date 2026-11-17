@@ -1,0 +1,128 @@
+{
+  "saved_at": "2026-11-16T07:45:31Z",
+  "model_info": {
+    "name": "hair_type.onnx",
+    "path": "C:\\laragon\\www\\RAG-salon\\apps\\api\\cv\\geometry\\experiments\\partner-20261114-threeclass-corrected-seed42\\weights\\hair_type.onnx",
+    "size_mb": 76.84,
+    "classes": [
+      "lurus",
+      "bergelombang",
+      "keriting"
+    ]
+  },
+  "records": [
+    {
+      "id": "455075a5",
+      "filename": "All Posts • Instagram.jpg",
+      "true_label": "bergelombang",
+      "pred_label": "bergelombang",
+      "is_correct": true,
+      "confidence": 0.8296,
+      "probabilities": {
+        "lurus": 0.1629,
+        "bergelombang": 0.8296,
+        "keriting": 0.0075
+      },
+      "latency_ms": 37.89,
+      "width": 736,
+      "height": 1308,
+      "tested_at": "2026-11-16 14:45:28"
+    },
+    {
+      "id": "3552814a",
+      "filename": "Very long hair (2).jpg",
+      "true_label": "lurus",
+      "pred_label": "lurus",
+      "is_correct": true,
+      "confidence": 0.9997,
+      "probabilities": {
+        "lurus": 0.9997,
+        "bergelombang": 0.0002,
+        "keriting": 0.0001
+      },
+      "latency_ms": 34.91,
+      "width": 427,
+      "height": 640,
+      "tested_at": "2026-11-16 14:45:12"
+    },
+    {
+      "id": "9f493804",
+      "filename": "Wavy Hair.jpg",
+      "true_label": "bergelombang",
+      "pred_label": "bergelombang",
+      "is_correct": true,
+      "confidence": 0.4166,
+      "probabilities": {
+        "lurus": 0.1686,
+        "bergelombang": 0.4166,
+        "keriting": 0.4149
+      },
+      "latency_ms": 44.1,
+      "width": 718,
+      "height": 1200,
+      "tested_at": "2026-11-16 14:44:48"
+    },
+    {
+      "id": "8656a5c9",
+      "filename": "download (1).jpg",
+      "true_label": "lurus",
+      "pred_label": "lurus",
+      "is_correct": true,
+      "confidence": 0.9993,
+      "probabilities": {
+        "lurus": 0.9993,
+        "bergelombang": 0.0003,
+        "keriting": 0.0004
+      },
+      "latency_ms": 23.34,
+      "width": 360,
+      "height": 480,
+      "tested_at": "2026-11-16 14:42:06"
+    },
+    {
+      "id": "89efd2f2",
+      "filename": "iluminado cacheado dourado ⭐️.jpg",
+      "true_label": "keriting",
+      "pred_label": "keriting",
+      "is_correct": true,
+      "confidence": 0.9996,
+      "probabilities": {
+        "lurus": 0.0,
+        "bergelombang": 0.0004,
+        "keriting": 0.9996
+      },
+      "latency_ms": 39.71,
+      "width": 736,
+      "height": 1104,
+      "tested_at": "2026-11-16 14:36:25"
+    },
+    {
+      "id": "fd3a3893",
+      "filename": "download.jpg",
+      "true_label": "keriting",
+      "pred_label": "keriting",
+      "is_correct": true,
+      "confidence": 0.9997,
+      "probabilities": {
+        "lurus": 0.0,
+        "bergelombang": 0.0002,
+        "keriting": 0.9997
+      },
+      "latency_ms": 36.16,
+      "width": 736,
+      "height": 959,
+      "tested_at": "2026-11-16 14:35:49"
+    }
+  ],
+  "rejected_records": [
+    {
+      "filename": "Curly hair.jpg",
+      "reason": "Citra 'Curly hair.jpg' DITOLAK: Terdeteksi merupakan data TRAIN lama (ID: images (8).jpg, Kelas: keriting).",
+      "split": "train",
+      "name": "images (8).jpg",
+      "label": "keriting",
+      "match_type": "exact_file_hash",
+      "rejected_at": "2026-11-16 14:36:11"
+    }
+  ]
+}

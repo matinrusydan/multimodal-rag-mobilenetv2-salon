@@ -1,0 +1,29 @@
+{
+  "imported_at_utc": "2026-11-12T16:39:52.308672+00:00",
+  "total": 230,
+  "counts": {
+    "lurus": 200,
+    "bergelombang": 0,
+    "keriting": 29,
+    "sangat-keriting": 1
+  },
+  "source_manifest_sha256": "b391e190cb477737b50142f905bee8dc4fb34ab7b54910b770cacca2238b3661",
+  "user_confirmed_label_corrections": 15,
+  "all_destination_sha256_verified": true,
+  "quarantine_and_rejected_excluded": true,
+  "source_modified": false,
+  "training_splits_and_models_modified": false,
+  "limitations": [
+    "Rights/source URLs not recorded by collector.",
+    "No new perceptual or subject-level deduplication performed.",
+    "Not automatically enrolled in training or evaluation splits."
+  ],
+  "post_import_exclusions": [
+    {
+      "id": "6787e6b09e2c4aa891f20f844af5dce5",
+      "reason": "user_confirmed_duplicate_accidentally_approved",
+      "archive": "C:\\laragon\\www\\RAG-salon\\apps\\api\\cv\\geometry\\partner_dataset_excluded\\rejected\\lurus\\6787e6b09e2c4aa891f20f844af5dce5.jpg",
+      "timestamp_utc": "2026-11-12T16:40:44.745544+00:00"
+    }
+  ]
+}

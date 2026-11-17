@@ -21,33 +21,49 @@ afterEach(() => {
 });
 
 describe('/api/analyze', () => {
-  it('mengembalikan 503 tanpa membaca body atau menghubungi layanan', async () => {
+  it('meneruskan unggahan gambar ke backend /api/analyze', async () => {
     const { POST } = await import('./analyze/route');
-    const request = {
-      formData: vi.fn(() => {
-        throw new Error('must not parse');
-      }),
-      json: vi.fn(() => {
-        throw new Error('must not parse');
-      }),
-      text: vi.fn(() => {
-        throw new Error('must not parse');
-      }),
+    const fakeData = {
+      hairType: { label: 'lurus', confidence: 0.98 },
+      hairLength: { label: 'menengah', confidence: 0.85 },
+      status: 'ok',
     };
-    const response = await Reflect.apply(POST, undefined, [request]);
-    expect(response.status).toBe(503);
-    expect(response.headers.get('content-type')).toBe('application/problem+json');
-    expect(await response.json()).toEqual({
-      type: 'about:blank#503',
-      status: 503,
-      title: 'Fitur belum tersedia',
-      detail: 'Analisis foto belum tersedia. Silakan gunakan konsultasi teks.',
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ ok: true, data: fakeData }),
     });
-    expect(request.formData).not.toHaveBeenCalled();
-    expect(request.json).not.toHaveBeenCalled();
-    expect(request.text).not.toHaveBeenCalled();
-    expect(fetchMock).not.toHaveBeenCalled();
-    expect(getSession).not.toHaveBeenCalled();
+
+    const formData = new FormData();
+    const file = new File(['fake-image-bytes'], 'hair.jpg', { type: 'image/jpeg' });
+    formData.append('image', file);
+
+    const request = new NextRequest('https://web.example.test/api/analyze', {
+      method: 'POST',
+      body: formData,
+    });
+
+    const response = await POST(request);
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ ok: true, data: fakeData });
+    expect(fetchMock).toHaveBeenCalledWith(
+      'https://backend.example.test/api/analyze',
+      expect.objectContaining({ method: 'POST' }),
+    );
+  });
+
+  it('menolak permintaan tanpa gambar dengan 400', async () => {
+    const { POST } = await import('./analyze/route');
+    const formData = new FormData();
+    const request = new NextRequest('https://web.example.test/api/analyze', {
+      method: 'POST',
+      body: formData,
+    });
+    const response = await POST(request);
+    expect(response.status).toBe(400);
+    expect(await response.json()).toMatchObject({
+      title: 'Permintaan tidak valid',
+      detail: 'Gambar wajib diunggah.',
+    });
   });
 });
 

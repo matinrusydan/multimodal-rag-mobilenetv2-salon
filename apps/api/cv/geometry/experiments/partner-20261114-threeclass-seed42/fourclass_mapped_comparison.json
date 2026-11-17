@@ -1,0 +1,46 @@
+{
+  "val": {
+    "method": "map four-class argmax predictions and targets to three classes; not sum-probability inference",
+    "confusion_matrix": [
+      [
+        17,
+        1,
+        0
+      ],
+      [
+        1,
+        15,
+        1
+      ],
+      [
+        0,
+        0,
+        22
+      ]
+    ],
+    "accuracy": 0.9473684210526315,
+    "macro_f1": 0.9437710437710437
+  },
+  "test": {
+    "method": "map four-class argmax predictions and targets to three classes; not sum-probability inference",
+    "confusion_matrix": [
+      [
+        17,
+        2,
+        0
+      ],
+      [
+        1,
+        16,
+        1
+      ],
+      [
+        0,
+        0,
+        22
+      ]
+    ],
+    "accuracy": 0.9322033898305084,
+    "macro_f1": 0.9285285285285285
+  }
+}

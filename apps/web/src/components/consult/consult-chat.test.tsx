@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -22,35 +22,94 @@ afterEach(() => {
 });
 
 describe('ConsultChat', () => {
-  it('membuka modal tanpa unggahan dan mengembalikan fokus setelah ditutup', async () => {
-    const user = userEvent.setup();
+  it('menyediakan input file tersembunyi dan tombol trigger Analisis Foto', async () => {
     const { container } = render(<ConsultChat />);
+    const fileInput = container.querySelector('input[type="file"]') as HTMLInputElement;
     const photoButton = screen.getByRole('button', { name: 'Analisis Foto' });
 
-    expect(container.querySelector('input[type="file"]')).toBeNull();
-    await user.click(photoButton);
-    expect(screen.getByRole('dialog', { name: 'Fitur belum tersedia' })).toBeInTheDocument();
-    await user.click(screen.getByRole('button', { name: 'Tutup' }));
-    await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument());
-    expect(photoButton).toHaveFocus();
-    expect(fetchMock).not.toHaveBeenCalled();
+    expect(fileInput).not.toBeNull();
+    expect(fileInput.accept).toBe('image/jpeg,image/png,image/webp');
+    expect(photoButton).toBeInTheDocument();
   });
 
-  it.each(['{Enter}', ' '])('mendukung keyboard %s dan Escape tanpa analisis', async (key) => {
-    const user = userEvent.setup();
-    render(<ConsultChat />);
-    const photoButton = screen.getByRole('button', { name: 'Analisis Foto' });
-    await user.tab();
-    expect(photoButton).toHaveFocus();
-    await user.keyboard(key);
-    expect(screen.getByRole('dialog', { name: 'Fitur belum tersedia' })).toBeInTheDocument();
-    await user.keyboard('{Escape}');
-    await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument());
-    expect(photoButton).toHaveFocus();
-    expect(fetchMock).not.toHaveBeenCalled();
+  it('melakukan analisis foto, menampilkan badge konteks dan atribut multi-atribut', async () => {
+    const analyzeData = {
+      hairType: { label: 'lurus', confidence: 0.99 },
+      hairLength: { label: 'menengah', confidence: 0.85 },
+      hairVolume: { label: 'sedang', confidence: 0.8 },
+      tiedHair: { tied: false, style: 'loose', confidence: 0.9 },
+      hairFeatures: {
+        color: 'cokelat',
+        texture: 'halus',
+        health: 'tidak-diketahui',
+        riskSigns: { bleach: false, dry: true },
+      },
+      status: 'ok',
+    };
+
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ ok: true, data: analyzeData }),
+    });
+
+    const { container } = render(<ConsultChat />);
+    const fileInput = container.querySelector('input[type="file"]') as HTMLInputElement;
+
+    const file = new File(['fake-hair-image'], 'photo.jpg', { type: 'image/jpeg' });
+    fireEvent.change(fileInput, { target: { files: [file] } });
+
+    await waitFor(() => {
+      expect(screen.getByText('lurus')).toBeInTheDocument();
+      expect(screen.getByText('menengah')).toBeInTheDocument();
+      expect(screen.getByText('volume: sedang')).toBeInTheDocument();
+      expect(screen.getByText('cokelat')).toBeInTheDocument();
+      expect(screen.getByText('indikasi kering')).toBeInTheDocument();
+    });
+
+    expect(
+      screen.getByText(/Analisis foto selesai: jenis rambut lurus, panjang menengah/i),
+    ).toBeInTheDocument();
   });
 
-  it('mempertahankan chat teks, contextId, markdown, dan sumber setelah modal ditutup', async () => {
+  it('menangani hasil klasifikasi 3-kelas keriting dengan atribut volume dan tatanan terikat', async () => {
+    const analyzeData = {
+      hairType: { label: 'keriting', confidence: 0.98 },
+      hairLength: { label: 'panjang', confidence: 0.88 },
+      hairVolume: { label: 'tebal', confidence: 0.82 },
+      tiedHair: { tied: true, style: 'ponytail', confidence: 0.95 },
+      hairFeatures: {
+        color: 'hitam',
+        texture: 'kasar',
+        health: 'tidak-diketahui',
+        riskSigns: { bleach: false, dry: false },
+      },
+      status: 'ok',
+    };
+
+    fetchMock.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ ok: true, data: analyzeData }),
+    });
+
+    const { container } = render(<ConsultChat />);
+    const fileInput = container.querySelector('input[type="file"]') as HTMLInputElement;
+
+    const file = new File(['fake-curly-hair'], 'curly.jpg', { type: 'image/jpeg' });
+    fireEvent.change(fileInput, { target: { files: [file] } });
+
+    await waitFor(() => {
+      expect(screen.getByText('keriting')).toBeInTheDocument();
+      expect(screen.getByText('panjang')).toBeInTheDocument();
+      expect(screen.getByText('volume: tebal')).toBeInTheDocument();
+      expect(screen.getByText('ponytail')).toBeInTheDocument();
+    });
+
+    expect(
+      screen.getByText(/Analisis foto selesai: jenis rambut keriting, panjang panjang/i),
+    ).toBeInTheDocument();
+  });
+
+  it('mempertahankan chat teks, contextId, markdown, dan sumber', async () => {
     const user = userEvent.setup();
     fetchMock
       .mockResolvedValueOnce({
@@ -88,9 +147,6 @@ describe('ConsultChat', () => {
     expect(JSON.parse(fetchMock.mock.calls[0][1].body)).toEqual({ message: 'Rambut saya kering' });
 
     await user.type(input, 'Apa layanannya?');
-    await user.click(screen.getByRole('button', { name: 'Analisis Foto' }));
-    await user.keyboard('{Escape}');
-    expect(input).toHaveValue('Apa layanannya?');
     await user.click(screen.getByRole('button', { name: 'Kirim' }));
     expect(await screen.findByText('Silakan tanyakan layanan.')).toBeInTheDocument();
     expect(JSON.parse(fetchMock.mock.calls[1][1].body)).toEqual({
