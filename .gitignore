@@ -134,6 +134,16 @@ docs/project-memory.md
 # CV outputs - visualization outputs
 apps/api/cv/outputs/
 
+# CV experiment artifacts (weights, tensors, dataset images) - ratusan MB, jangan masuk Git
+# Metrik JSON, manifest, dan laporan .md tetap di-track
+apps/api/cv/geometry/experiments/**/weights/
+apps/api/cv/geometry/experiments/**/dataset/
+apps/api/cv/geometry/partner_dataset/
+apps/api/cv/geometry/partner_dataset_excluded/
+# Gambar review leakage audit (pasangan/preview/sheet); pairs.json dan temuan tetap di-track
+apps/api/cv/geometry/experiments/**/leakage-audit-v1/*.jpg
+apps/api/cv/geometry/experiments/**/leakage-audit-v1/previews/
+
 # BEGIN oh-my-opencode-slim worktrees
 .slim/worktrees/
 .slim/worktrees.json
